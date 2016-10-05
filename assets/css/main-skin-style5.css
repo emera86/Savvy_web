@@ -112,7 +112,7 @@ a:hover {
 
 .sidebar__site-name {
     padding: 0;
-    font: normal bold 2.125em/1.33em 'Amatic SC'
+    font: normal bold 2.656em/1.663em 'Amatic SC'
 }
 
 body {
@@ -169,13 +169,13 @@ body {
     overflow: hidden;
     background: #edce02;
     color: #fff;
-    font: normal bold 1.778em 'Amatic SC';
+    font: normal bold 2.223em 'Amatic SC';
     line-height: 75px
 }
 
 .layout-title__subtitle {
     float: right;
-    font: normal bold .5629999999999999em 'Amatic SC';
+    font: normal bold 0.704em 'Amatic SC';
     line-height: inherit
 }
 
@@ -321,7 +321,7 @@ body {
     bottom: 30px;
     color: #c2bfc7;
     font-family: 'Amatic SC';
-    font-size: 24px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     -webkit-transition: inherit;
@@ -1393,7 +1393,7 @@ textarea {
     margin: 0;
     padding-bottom: 11px;
     color: #fff;
-    font: normal bold 2.125em/1.33em 'Amatic SC'
+    font: normal bold 2.656em/1.663em 'Amatic SC'
 }
 
 .page-home__sign {
@@ -1494,7 +1494,7 @@ textarea {
 
 .page-404__title {
     margin: 0;
-    font: normal bold 8.333em/1em 'Amatic SC'
+    font: normal bold 10.416em/1.25em 'Amatic SC'
 }
 
 .page-404__description,.page-404__link {
@@ -1844,7 +1844,7 @@ textarea {
     }
 
     .main-nav__item-content {
-        font-size: 19.63636364px;
+        /*font-size: 19.63636364px;*/
         bottom: 17.27272727px
     }
 
