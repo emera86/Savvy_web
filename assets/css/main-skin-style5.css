@@ -2,6 +2,16 @@
     height: 100%
 }
 
+/* OLD */  
+
+/*  font: normal normal 2.125em/1.33em 'Amatic SC'
+    font: normal normal 1.778em 'Amatic SC';
+    font: normal normal .5629999999999999em 'Amatic SC';
+    font-family: 'Amatic SC';
+    font-size: 24px;
+    font: normal normal 2.125em/1.33em 'Amatic SC'
+    font: normal normal 8.333em/1em 'Amatic SC' */
+
 .btn:active,.btn:active:focus,.btn:focus,a,a:focus,input:focus,textarea:focus {
     outline: 0
 }
