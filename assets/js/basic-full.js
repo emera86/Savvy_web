@@ -2934,3 +2934,21 @@ function(a, b) {
         return d
     }
 }(jQuery, window);
+
+//var classn = document.getElementsByClassName("page-portfolio__item__info");
+
+var HideShow = function() {
+    var classn = document.getElementsByClassName("page-portfolio__item__info");
+    for (var i = 0; i < classn.length; i++) {
+        var spann = classn[i].previousSibling;
+        var attribute = classn[i].getAttribute("top");
+        if (attribute == "0px") {
+            spann.setAttribute("visibility", "visible");
+        } else
+            spann.setAttribute("visibility", "hidden");   
+    }
+};
+
+//for (var i = 0; i < classn.length; i++) {
+//    classn[i].addEventListener('click', HideShow, false);
+//}

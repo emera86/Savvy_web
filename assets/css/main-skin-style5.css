@@ -1463,7 +1463,8 @@ textarea {
     height: 100%;
     position: absolute;
     padding: 10% 80px 10% 60px;
-    display: none;
+    /*display: none;*/
+    display: visible;
     background: rgba(138,126,140,.8);
     pointer-events: none;
     overflow: hidden
