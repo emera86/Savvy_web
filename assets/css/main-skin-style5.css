@@ -12,6 +12,9 @@
     font: normal normal 2.125em/1.33em 'Amatic SC'
     font: normal normal 8.333em/1em 'Amatic SC' */
 
+/* Yellow: #edce02, #f2d830
+replaced by #eea403 */
+
 .btn:active,.btn:active:focus,.btn:focus,a,a:focus,input:focus,textarea:focus {
     outline: 0
 }
@@ -194,7 +197,7 @@ body {
     margin: 0;
     z-index: 1;
     overflow: hidden;
-    background: #edce02;
+    background: #eea403;
     color: #fff;
     font: normal bold 2.223em 'Amatic SC';
     line-height: 75px
@@ -310,7 +313,7 @@ body {
 }
 
 .main-nav__item--active .main-nav__item-icon,.main-nav__item--active:hover .main-nav__item-icon {
-    color: #f2d830
+    color: #eea403
 }
 
 .main-nav__item--active .main-nav__item-content,.main-nav__item--active:hover .main-nav__item-content {
@@ -348,7 +351,7 @@ body {
     bottom: 30px;
     color: #c2bfc7;
     font-family: 'Amatic SC';
-    font-size: 30px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     -webkit-transition: inherit;
@@ -416,7 +419,7 @@ body {
     width: 60px;
     height: 60px;
     float: right;
-    background-color: #f2d830;
+    background-color: #eea403;
     transition: all 500ms ease-in;
     position: relative;
     z-index: 21;
@@ -545,11 +548,11 @@ body {
     width: 115px;
     height: 115px;
     position: relative;
-    color: #f2d830;
+    color: #eea403;
     font-size: 36px;
     border-width: 3px;
     border-style: dashed;
-    border-color: #f2d830;
+    border-color: #eea403;
     border-radius: 100%
 }
 
@@ -592,7 +595,7 @@ body {
 
 .btn--style1,input[type=reset],input[type=button],input[type=submit] {
     display: block;
-    border: 2px solid #f2d830;
+    border: 2px solid #eea403;
     background: 0 0;
     border-radius: 70px;
     color: #3f3f3f;
@@ -643,15 +646,15 @@ body {
 }
 
 .btn--style1:hover,.btn--style3:hover {
-    border-color: #f2d830;
-    background: #f2d830;
+    border-color: #eea403;
+    background: #eea403;
     color: #fff
 }
 
 .donut-chart {
     margin-bottom: 10px;
     position: relative;
-    color: #f2d830
+    color: #eea403
 }
 
 .donut-chart-wrap {
@@ -785,7 +788,7 @@ textarea {
 
 .list-style--check li:before {
     margin-right: 10px;
-    color: #f2d830;
+    color: #eea403;
     font: normal normal normal 1.222em/1em FontAwesome;
     -webkit-font-smoothing: antialiased;
     transform: translate(0,0);
@@ -839,7 +842,7 @@ textarea {
 }
 
 .star-on-png {
-    color: #f2d830
+    color: #eea403
 }
 
 .star-off-png {
@@ -895,10 +898,10 @@ textarea {
     width: 140px;
     height: 140px;
     position: relative;
-    border: 2px solid #f2d830;
+    border: 2px solid #eea403;
     border-radius: 100%;
     font-size: 44px;
-    color: #f2d830
+    color: #eea403
 }
 
 .service-item__icon i:before {
@@ -1130,7 +1133,7 @@ textarea {
     width: 35px;
     height: 0;
     margin-bottom: 15px;
-    border-bottom: 5px solid #f2d830;
+    border-bottom: 5px solid #eea403;
     border-radius: 3px
 }
 
@@ -1285,7 +1288,7 @@ textarea {
     width: 35px;
     height: 0;
     margin-top: 15px;
-    border-bottom: 5px solid #f2d830;
+    border-bottom: 5px solid #eea403;
     border-radius: 3px
 }
 
@@ -1357,7 +1360,7 @@ textarea {
 
 .google-map--contact {
     height: 276px;
-    color: #f2d830
+    color: #eea403
 }
 
 .google-map--contact a {
@@ -1383,12 +1386,12 @@ textarea {
     margin-right: 10px;
     color: #fff;
     font-size: 30px;
-    background: #f2d830;
+    background: #eea403;
     border-radius: 100%
 }
 
 .layout-body--home .layout,.page-home {
-    background: #edce02
+    background: #eea403
 }
 
 @media (min-width: 910px) {
@@ -1511,7 +1514,7 @@ textarea {
 }
 
 .layout-body--404 .layout,.page-404 {
-    background: #edce02
+    background: #eea403
 }
 
 .about-author,.blog-post:nth-child(even) {
@@ -1768,8 +1771,8 @@ textarea {
 }
 
 .comments__pagination a:hover {
-    border-color: #f2d830;
-    background: #f2d830;
+    border-color: #eea403;
+    background: #eea403;
     color: #fff
 }
 
