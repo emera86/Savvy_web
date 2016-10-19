@@ -94,7 +94,7 @@ var Template = {
         this._initAjaxPagesLoading($("section.page-portfolio"))
     },
     initGoogleMap: function() {
-        var a = document.getElementById("savvyMapCanvas");
+        var a = document.getElementById("MapCanvas");
         if (a) {
             var b = this.googleMapConfig || {}
               , c = jQuery.extend({
