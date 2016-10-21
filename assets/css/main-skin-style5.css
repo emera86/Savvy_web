@@ -1474,7 +1474,7 @@ textarea {
     width: 100%;
     height: 100%;
     position: absolute;
-    padding: 10% 80px 10% 60px;
+    padding: 6% 50px 6% 50px;
     /*display: none;*/
     display: visible;
     background: rgba(138,126,140,.8);
@@ -2305,5 +2305,5 @@ textarea {
     .sidebar__site-picture {
         text-align: center;
         margin: 0 auto;
-        width: 70%;
+        width: 100%;
 }

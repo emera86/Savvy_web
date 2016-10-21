@@ -388,7 +388,7 @@ Template.menu = {
         }),
         this.isFileProtocol() || this.getMenuItems(!0).on("click", function(a) {
             a.which > 1 || a.ctrlKey || (a.preventDefault(),
-            document.location.hash = "#" + $(this).attr("href"))//
+            document.location.hash = "#" + $(this).attr("href"))
         }),
         $(window).on("resize", function() {
             c._fixSliderPosition()
@@ -640,3 +640,8 @@ jQuery(Template.menu).on("pageLoaded", function() {
         })
     }
 });
+
+function open_win() 
+{
+window.open("http://quehaydecomer.blogspot.com.es/");
+}
