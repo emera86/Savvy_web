@@ -2307,3 +2307,9 @@ textarea {
         margin: 0 auto;
         width: 100%;
 }
+
+@media (max-width: 480px) {
+  .profile-pic { 
+    display:none;
+  }
+}
