@@ -45,6 +45,7 @@ replaced by #eea403 */
     width: 100%;
     vertical-align: baseline;
     margin: 0 auto;
+    display: block;
 }
 
 .about-author__title,.comments__form__title,.comments__title,.layout-title,.main-nav__item-content,.page-home__page-title,.share-box__title,.sidebar__site-name {
@@ -65,7 +66,7 @@ replaced by #eea403 */
 body {
     background: #3c3c3c;
     font: normal normal 18px/1.8em 'Open Sans Condensed',sans-serif;
-    color: #3f3f3f
+    color: #3f3f3f;
 }
 
 @media (max-width: 1132px),(max-height:800px) {
@@ -2308,13 +2309,7 @@ textarea {
 }
 
 @media (max-width: 480px) {
-    .sidebar__site-picture { 
+    body .sidebar__site-picture { 
         display: none !important;
-    }
-}
-
-@media (min-width: 481px) {
-    .sidebar__site-picture { 
-        display: block;
     }
 }
