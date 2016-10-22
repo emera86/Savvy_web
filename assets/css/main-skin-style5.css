@@ -45,7 +45,7 @@ replaced by #eea403 */
     width: 100%;
     vertical-align: baseline;
     margin: 0 auto;
-    display: block;
+    /*display: block;*/
 }
 
 .about-author__title,.comments__form__title,.comments__title,.layout-title,.main-nav__item-content,.page-home__page-title,.share-box__title,.sidebar__site-name {
