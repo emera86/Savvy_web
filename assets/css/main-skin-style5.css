@@ -2308,7 +2308,7 @@ textarea {
         width: 100%;
 }
 
-@media (max-width: 480px) {
+@media screen and(max-width: 480px){
     body .sidebar__site-picture { 
         display: none !important;
     }
