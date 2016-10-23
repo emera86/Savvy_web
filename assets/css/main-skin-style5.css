@@ -1687,7 +1687,7 @@ textarea {
 }
 
 .blog-post__content {
-    margin: 0 0 30px
+    margin: 0; /*0 0 30px*/
 }
 
 .comment-item {
@@ -2072,11 +2072,12 @@ textarea {
         padding: 45px
     }
 
-    .page-home,.sidebar {
+    .sidebar {
         padding-top: 60px
     }
 
     .page-home {
+        padding-top: 25px; /*60*/
         padding-bottom: 60px
     }
 
@@ -2175,7 +2176,7 @@ textarea {
 
     .footer,.layout-col,.layout-container,.layout-container-main,.sidebar,.sidebar-container {
         padding-left: 40px;
-        padding-right: 40px
+        padding-right: 40px; 
     }
 
     .header-wrap,.layout-header,.layout-sidebar,.layout-title {
@@ -2208,8 +2209,8 @@ textarea {
     }
 
     .footer,.sidebar,.sidebar-container {
-        padding-top: 40px;
-        padding-bottom: 40px
+        padding-top: 30px; /*40*/
+        padding-bottom: 20px; /*40*/
     }
 
     .layout-row {
@@ -2221,9 +2222,14 @@ textarea {
         padding: 0 40px
     }
 
-    .about-author,.achievement-grid,.layout-horizontal-padding,.service-item,.skill-section,.timeline-item {
+    .about-author,.achievement-grid,.service-item,.skill-section,.timeline-item {
         padding-top: 40px;
         padding-bottom: 40px
+    }
+
+    .layout-horizontal-padding {
+        padding-top: 20px; /*20*/
+        padding-bottom: 20px; /*40*/
     }
 
     .layout-horizontal-padding--clean {
@@ -2273,14 +2279,14 @@ textarea {
 @media (min-width: 450px)and (max-width: 991px) {
     .sidebar__site-picture {
         width: 60%;
-        /*margin-top: 30px*/
+        margin-bottom: 5px;
     }
 }
 
 @media (max-width: 450px) {
     .sidebar__site-picture {
         width: 70%;
-        /*margin-top: 30px*/
+        margin-bottom: 5px;
     }
 }
 
