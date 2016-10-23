@@ -36,7 +36,7 @@ replaced by #eea403 */
 }
 
 .sidebar__site-name {
-    margin: 0;
+    margin-top: 15px; /*margin:0*/
     opacity: .55;
     filter: alpha(opacity=55)
 }
