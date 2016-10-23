@@ -45,7 +45,7 @@ replaced by #eea403 */
     width: 100%;
     vertical-align: baseline;
     margin: 0 auto;
-    /*display: block;*/
+    display: block;
 }
 
 .about-author__title,.comments__form__title,.comments__title,.layout-title,.main-nav__item-content,.page-home__page-title,.share-box__title,.sidebar__site-name {
@@ -2273,7 +2273,7 @@ textarea {
 @media (min-width: 450px)and (max-width: 991px) {
     .sidebar__site-picture {
         width: 60%;
-        margin-top: 30px
+        /*margin-top: 30px*/
     }
 }
 
@@ -2308,8 +2308,8 @@ textarea {
         width: 100%;
 }
 
-@media screen and(max-width: 480px){
+/*@media screen and(max-width: 480px){
     body .sidebar__site-picture { 
         display: none !important;
     }
-}
+}*/
