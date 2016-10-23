@@ -2313,9 +2313,3 @@ textarea {
         margin: 0 auto;
         width: 100%;
 }
-
-/*@media screen and(max-width: 480px){
-    body .sidebar__site-picture { 
-        display: none !important;
-    }
-}*/
