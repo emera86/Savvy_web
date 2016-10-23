@@ -2280,7 +2280,7 @@ textarea {
 @media (max-width: 450px) {
     .sidebar__site-picture {
         width: 70%;
-        margin-top: 30px
+        /*margin-top: 30px*/
     }
 }
 
