@@ -30,7 +30,7 @@ replaced by #eea403 */
 }
 
 .footer__copyright {
-    margin: 0;
+    margin-bottom: -20px;
     opacity: .55;
     filter: alpha(opacity=55)
 }
