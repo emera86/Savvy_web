@@ -36,7 +36,6 @@ replaced by #eea403 */
 }
 
 .sidebar__site-name {
-    margin-top: 15px; /*margin:0*/
     opacity: .55;
     filter: alpha(opacity=55)
 }
@@ -2288,6 +2287,9 @@ textarea {
         width: 70%;
         margin-bottom: 5px;
     }
+    .sidebar__site-name {
+        margin-top: 15px;
+    }
 }
 
 @media (min-width: 990px) {
@@ -2301,15 +2303,33 @@ textarea {
     text-align: center;
     margin: 0 auto;
     }
+    .sidebar__site-name {
+        margin-top: 15px;
+    }
 }
 
-@media (min-width: 992px)and (max-width: 1200px){
+@media (min-width: 992px)and (max-width: 1199px){
     .sidebar__site-name {
         text-align: center;
-        margin: 0 auto;
+        margin-top: 15px;
     }
     .sidebar__site-picture {
         text-align: center;
         margin: 0 auto;
         width: 100%;
+    }
+}
+
+@media (min-width: 1200px){
+    .sidebar__site-name {
+        text-align: left;
+        margin-top: 0 auto;
+        padding-top: 0;
+        padding-left: 60px;
+    }
+    .sidebar__site-picture {
+        text-align: center;
+        margin: 0 auto;
+        width: 140%;
+    }
 }
