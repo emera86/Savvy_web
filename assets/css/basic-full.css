@@ -6918,6 +6918,11 @@ hr {
     user-select: none
 }
 
+.btn-custom {
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
 .btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
