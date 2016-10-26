@@ -734,7 +734,7 @@ a:hover {
 	height: auto;
 	background-color: rgba(20,20,20,0.9);
 	color: #474747;
-	padding: 70px 30px 70px 30px;
+	padding: 50px 30px 50px 30px;
 	position: relative;
 	float: left;
 	box-sizing: border-box;
@@ -1011,6 +1011,7 @@ transform:rotate(360deg)}
 	}
 	.counters p {
 		font-size: 13px !important;
+		padding-top: 20px;
 	}
 	.contact-response {
 		width: 60%;
