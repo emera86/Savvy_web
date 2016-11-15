@@ -2057,9 +2057,14 @@ textarea {
         padding: 0 70px
     }
 
-    .about-author,.layout-horizontal-padding,.service-item,.skill-section,.timeline-item {
+    .about-author,.layout-horizontal-padding,.service-item,.timeline-item {
         padding-top: 45px;
         padding-bottom: 45px
+    }
+
+    .skill-section {
+        padding-top: 20px;
+        padding-bottom: 20px
     }
 
     .layout-horizontal-padding--clean {
