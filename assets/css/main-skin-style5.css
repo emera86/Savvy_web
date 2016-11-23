@@ -2201,9 +2201,14 @@ textarea {
         padding-top:0!important
     }
 
-    .footer,.layout-col,.layout-container,.layout-container-main,.sidebar,.sidebar-container {
+    .footer,.layout-col,.layout-container-main,.sidebar,.sidebar-container {
         padding-left: 40px;
         padding-right: 40px; 
+    }
+
+    .layout-container {
+        padding-left: 30px;
+        padding-right: 30px; 
     }
 
     .header-wrap,.layout-header,.layout-sidebar,.layout-title {
