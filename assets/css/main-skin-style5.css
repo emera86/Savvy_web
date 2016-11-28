@@ -1431,6 +1431,10 @@ textarea {
         text-align:center
     }
 
+    .page-home p {
+        text-align:left
+    }
+
     .page-home__thumbnail-wrap {
         margin-top: 40px
     }
