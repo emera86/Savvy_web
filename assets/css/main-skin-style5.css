@@ -64,7 +64,7 @@ replaced by #eea403 */
 
 body {
     background: #3c3c3c;
-    font: normal normal 20px/1.8em 'Open Sans Condensed',sans-serif; \* 18 *\
+    font: normal normal 20px/1.8em 'Open Sans Condensed',sans-serif; /* 18 */
     color: #3f3f3f;
 }
 
@@ -484,7 +484,7 @@ body {
     display: block;
     overflow: hidden;
     background: #f6f5f7;
-    color: #b6afba;
+    color: #776b80; /* #b6afba */
     line-height: 65px;
     font-size: 20px;
     cursor: pointer
