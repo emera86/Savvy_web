@@ -64,13 +64,13 @@ replaced by #eea403 */
 
 body {
     background: #3c3c3c;
-    font: normal normal 20px/1.8em 'Open Sans Condensed',sans-serif; /* 18 */
+    font: normal normal 18px/1.8em 'Open Sans Condensed',sans-serif;
     color: #3f3f3f;
 }
 
 @media (max-width: 1132px),(max-height:800px) {
     body {
-        font-size:20px
+        font-size:16px
     }
 }
 
@@ -484,7 +484,7 @@ body {
     display: block;
     overflow: hidden;
     background: #f6f5f7;
-    color: #776b80; /* #b6afba */
+    color: #b6afba;
     line-height: 65px;
     font-size: 20px;
     cursor: pointer
@@ -527,14 +527,14 @@ body {
     margin: 0;
     margin-bottom: 5px;
     color: #626262;
-    font: normal 800 34px 'Open Sans Condensed',sans-serif;
+    font: normal 800 32px 'Open Sans Condensed',sans-serif;
     line-height: 35px
 }
 
 .achievement-item__sub-title {
     margin: 0;
     color: #626262;
-    font: normal 800 24px 'Open Sans Condensed',sans-serif
+    font: normal 800 22px 'Open Sans Condensed',sans-serif
 }
 
 .achievement-item__icon {
@@ -598,7 +598,7 @@ body {
     background: 0 0;
     border-radius: 70px;
     color: #3f3f3f;
-    font: normal 700 .900em 'Open Sans Condensed',sans-serif
+    font: normal 700 .889em 'Open Sans Condensed',sans-serif
 }
 
 .btn--style2,.btn--style2:hover {
@@ -669,17 +669,17 @@ body {
     position: absolute;
     text-align: center;
     color: #c4c1c7;
-    font: normal 800 37px 'Open Sans Condensed',sans-serif;
+    font: normal 800 35px 'Open Sans Condensed',sans-serif;
     line-height: 150px
 }
 
 .donut-chart__title {
     margin-bottom: 20px;
-    font: normal 700 20px 'Open Sans Condensed',sans-serif
+    font: normal 700 18px 'Open Sans Condensed',sans-serif
 }
 
 .donut-chart__sub-title {
-    font: normal normal 18px 'Open Sans Condensed',sans-serif
+    font: normal normal 16px 'Open Sans Condensed',sans-serif
 }
 
 .donut-chart__pallete-second-color {
@@ -753,7 +753,7 @@ textarea {
 
 ::-webkit-input-placeholder {
     color: #bdbdbd;
-    font: normal normal 18px/32px 'Open Sans Condensed',sans-serif;
+    font: normal normal 16px/30px 'Open Sans Condensed',sans-serif;
     text-transform: uppercase;
     vertical-align: middle;
     padding-top: 2px
@@ -761,7 +761,7 @@ textarea {
 
 ::-moz-placeholder {
     color: #bdbdbd;
-    font: normal normal 18px/32px 'Open Sans Condensed',sans-serif;
+    font: normal normal 16px/30px 'Open Sans Condensed',sans-serif;
     text-transform: uppercase;
     vertical-align: middle;
     padding-top: 2px
@@ -769,7 +769,7 @@ textarea {
 
 :-ms-input-placeholder {
     color: #bdbdbd;
-    font: normal normal 18px/32px 'Open Sans Condensed',sans-serif;
+    font: normal normal 16px/30px 'Open Sans Condensed',sans-serif;
     text-transform: uppercase;
     vertical-align: middle;
     padding-top: 2px
@@ -827,7 +827,7 @@ textarea {
     width: 110px;
     float: right;
     color: #c4c1c7;
-    font: normal 800 38px 'Open Sans Condensed',sans-serif
+    font: normal 800 36px 'Open Sans Condensed',sans-serif
 }
 
 .star-off-png,.star-on-png {
@@ -920,7 +920,7 @@ textarea {
 
 .service-item__description {
     margin: 0;
-    font: normal normal 18px/1.8em 'Open Sans Condensed',sans-serif
+    font: normal normal 16px/1.8em 'Open Sans Condensed',sans-serif
 }
 
 @media (max-width: 430px) {
@@ -958,7 +958,7 @@ textarea {
     border-radius: 15px;
     background-color: #f0edf2;
     color: #9a959e;
-    font: normal 700 20px 'Open Sans Condensed',sans-serif
+    font: normal 700 18px 'Open Sans Condensed',sans-serif
 }
 
 .share-box__item .count:before {
@@ -1132,7 +1132,7 @@ textarea {
 
 .testimonial__name {
     left: 145px;
-    font: 800 20px 'Open Sans Condensed',sans-serif
+    font: 800 18px 'Open Sans Condensed',sans-serif
 }
 
 .testimonial__name:before {
@@ -1153,7 +1153,7 @@ textarea {
 
 .testimonial__text p {
     margin: 0 0 25px;
-    font: 18px/1.8em 'Open Sans Condensed',sans-serif
+    font: 16px/1.8em 'Open Sans Condensed',sans-serif
 }
 
 .testimonial__with-image .testimonial__text:after,.testimonial__with-image .testimonial__text:before {
@@ -1329,11 +1329,11 @@ textarea {
     margin: 0;
     margin-bottom: 10px;
     color: #626262;
-    font: normal 700 17px 'Open Sans Condensed',sans-serif
+    font: normal 700 15px 'Open Sans Condensed',sans-serif
 }
 
 .timeline-item__description {
-    font: normal normal 20px 'Open Sans Condensed',sans-serif;
+    font: normal normal 16px 'Open Sans Condensed',sans-serif;
     line-height: 1.8em
 }
 
@@ -1489,7 +1489,6 @@ textarea {
 .page-portfolio__item__info {
     width: 100%;
     height: 100%;
-    font: 16px;
     position: absolute;
     padding: 6% 30px 6% 30px;
     /*display: none;*/
@@ -1512,14 +1511,14 @@ textarea {
 .page-portfolio__item__title {
     margin: 0;
     color: #fff;
-    font: normal 700 26px 'Open Sans Condensed',sans-serif
+    font: normal 700 24px 'Open Sans Condensed',sans-serif
 }
 
 .page-portfolio__item__content {
     margin: 3% 0 4%;
     line-height: 1.8em;
     color: #fff;
-    font: normal normal 18px/1.8em 'Open Sans Condensed',sans-serif
+    font: normal normal 16px/1.8em 'Open Sans Condensed',sans-serif
 }
 
 .list-style--check--resume {
@@ -1529,14 +1528,14 @@ textarea {
 .portfolio-single__info__name {
     margin-right: 15px;
     display: inline-block;
-    font: normal 700 20px 'Open Sans Condensed',sans-serif
+    font: normal 700 18px 'Open Sans Condensed',sans-serif
 }
 
 .portfolio-single__info__description {
     margin: 0 0 10px;
     display: inline-block;
     color: #5f5f5f;
-    font: normal normal 20px 'Open Sans Condensed',sans-serif
+    font: normal normal 18px 'Open Sans Condensed',sans-serif
 }
 
 .layout-body--404 .layout,.page-404 {
@@ -1613,7 +1612,7 @@ textarea {
     margin: 10px 20px 0 0;
     float: left;
     color: #dbd7de;
-    font: normal 800 20px 'Open Sans Condensed',sans-serif
+    font: normal 800 18px 'Open Sans Condensed',sans-serif
 }
 
 .blog-post__article-info li i {
@@ -1791,7 +1790,7 @@ textarea {
     border: 2px solid #d5d0d9;
     border-radius: 100%;
     color: #3f3f3f;
-    font: 600 20px 'Open Sans Condensed',sans-serif;
+    font: 600 18px 'Open Sans Condensed',sans-serif;
     -o-transition: all .3s ease-in-out;
     line-height: 41px
 }
@@ -1826,7 +1825,7 @@ textarea {
     border-bottom: none;
     position: relative;
     color: #3f3f3f;
-    font: 600 18px 'Open Sans Condensed',sans-serif;
+    font: 600 16px 'Open Sans Condensed',sans-serif;
     text-transform: uppercase
 }
 
