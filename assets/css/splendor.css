@@ -154,6 +154,10 @@ textarea {
   max-width: 100%;
 }
 
+img {
+  align-self: center;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
 
 html {
