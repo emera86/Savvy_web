@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="assets/css/splendor.css">
-
 <h1 id="sas-programming-essentials">SAS Programming Essentials</h1>
 
 
@@ -30,17 +28,23 @@
 <h3 id="accessing-sas-libraries">Accessing SAS libraries</h3>
 
 <ul>
-<li><p><strong>libref</strong>: library reference name (shortcut to the physical location). There are three rules for valid librefs:</p>
-
+<li><strong>libref</strong>: library reference name (shortcut to the physical location). There are three rules for valid librefs: <br>
 <ul><li>A length of one to eight characters</li>
 <li>Begin with a letter or underscore</li>
-<li>The remaining characters are letters, numbers, or underscores</li></ul>
+<li>The remaining characters are letters, numbers, or underscores</li></ul></li>
+</ul>
 
-<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">OPTIONS</span> <span class="hljs-type">VALIDVARNAME</span>=<span class="hljs-type">V7</span> (<span class="hljs-default"><span class="hljs-keyword">default</span>) | <span class="hljs-type">UPCASE</span> | <span class="hljs-type">ANY</span>;</span></code></pre></li>
-<li><p><strong>libref.data-set-name</strong>: data set reference two-level name</p></li>
+
+
+<pre class="prettyprint"><code class=" hljs haskell"> <span class="hljs-type">OPTIONS</span> <span class="hljs-type">VALIDVARNAME</span>=<span class="hljs-type">V7</span> (<span class="hljs-default"><span class="hljs-keyword">default</span>) | <span class="hljs-type">UPCASE</span> | <span class="hljs-type">ANY</span>;</span></code></pre>
+
+<ul>
+<li><strong>libref.data-set-name</strong>: data set reference two-level name</li>
 <li><strong>data-set-name</strong>: when the data set belongs to a temporary library, you can optionally use a one-level name (SAS assumes that it is contained in the <strong>work</strong> library, which is the default)</li>
 <li>The <strong>LIBNAME</strong> statement associates the <strong>libref</strong> with the physical location of the library/data for the current SAS session</li>
 </ul>
+
+
 
 <pre class="prettyprint"><code class=" hljs vbnet">LIBNAME libref-name <span class="hljs-comment">'SAS-library-folder-path' <span class="hljs-xmlDocTag">&lt;options&gt;</span>;</span></code></pre>
 
@@ -55,14 +59,17 @@
 <li>To erase the association between SAS and a custom library</li>
 </ul>
 
+
+
 <pre class="prettyprint"><code class=" hljs ruleslanguage">LIBNAME libref-name <span class="hljs-keyword">CLEAR</span>;</code></pre>
 
 <ul>
 <li>To check the <strong>contents of a library</strong> programatically</li>
 </ul>
 
-<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">PROC CONTENTS DATA</span>=<span class="hljs-string">libref._ALL_;
-RUN;</span></code></pre>
+
+
+<pre class="prettyprint"><code class="language-PROC CONTENTS DATA=libref._ALL_; hljs ">RUN;</code></pre>
 
 <ul>
 <li>To hide the descriptors of all data sets in the library (it could generate a very long report) you can add the option <strong>nods</strong> (only compatible with the keybord <strong>_all_</strong>)</li>
@@ -110,6 +117,8 @@ RUN;</code></pre>
 <li>Other attributes: <strong>format</strong>, <strong>informat</strong>, <strong>label</strong></li>
 </ul>
 
+
+
 <h2 id="producing-detailed-reports">Producing detailed reports</h2>
 
 <p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m415/m415_4_a_sum.htm">Chapter summary in SAS</a></p>
@@ -143,6 +152,8 @@ RUN;</code></pre>
 
 <p><strong>Note:</strong> To compare with a SAS date value you need to express is as a SAS date constant: <strong>‘DDMM&lt;\YY&gt;YY’D</strong></p>
 
+
+
 <h3 id="sorting-and-grouping-report-data">Sorting and Grouping Report Data</h3>
 
 
@@ -157,6 +168,8 @@ RUN;</code></pre>
 <li>The <strong>NODUPKEY</strong> option deletes observations with duplicate <strong>BY</strong> values</li>
 <li><strong>DUPOUT</strong> writes duplicate observations to a separate output data set</li>
 </ul>
+
+
 
 <h3 id="enhancing-reports">Enhancing Reports</h3>
 
@@ -177,6 +190,8 @@ TITLE;                     <span class="hljs-comment">/* Cancel (erase) all titl
 <hr>
 
 <p>Assigning <strong>temporary labels</strong> to display in the report instead of the variable names:</p>
+
+
 
 <pre class="prettyprint"><code class=" hljs applescript">PROC PRINT DATA=SAS-data-<span class="hljs-keyword">set</span> LABEL;           /* you need <span class="hljs-keyword">to</span> add <span class="hljs-keyword">the</span> LABEL option <span class="hljs-keyword">to</span> display <span class="hljs-keyword">the</span> labels */ 
     LABEL variable1 = 'new variable1 <span class="hljs-property">name</span>' 
@@ -1467,9 +1482,9 @@ RUN;</code></p>
 <li>The data contains independent observations</li>
 <li>The distributions of the two populations are normal (check histograms and normal probability/Q-Q plots)</li>
 <li>The variances in these normal distributions are equal (<strong>F-test</strong> is the formal way to verify this assumption) <br>
-F statistic: <script type="math/tex" id="MathJax-Element-247">F=max(s_1^2,s_2^2)/min(s_1^2,s_2^2) \ge 1</script> <br>
-H0: σ<script type="math/tex" id="MathJax-Element-248">_1^2</script> <script type="math/tex" id="MathJax-Element-249">=</script>  σ<script type="math/tex" id="MathJax-Element-250">_2^2\rightarrow F \approx 1</script> <br>
-Ha: σ<script type="math/tex" id="MathJax-Element-251">_1^2</script> <script type="math/tex" id="MathJax-Element-252">\ne</script>  σ<script type="math/tex" id="MathJax-Element-253">_2^2\rightarrow F\gt 1</script> <br>
+F statistic: <script type="math/tex" id="MathJax-Element-493">F=max(s_1^2,s_2^2)/min(s_1^2,s_2^2) \ge 1</script> <br>
+H0: σ<script type="math/tex" id="MathJax-Element-494">_1^2</script> <script type="math/tex" id="MathJax-Element-495">=</script>  σ<script type="math/tex" id="MathJax-Element-496">_2^2\rightarrow F \approx 1</script> <br>
+Ha: σ<script type="math/tex" id="MathJax-Element-497">_1^2</script> <script type="math/tex" id="MathJax-Element-498">\ne</script>  σ<script type="math/tex" id="MathJax-Element-499">_2^2\rightarrow F\gt 1</script> <br>
 The <strong>Pr&gt;F</strong> value in the <strong>Equality of Variances</strong> table represents the <strong>p-value</strong> of the F-test for equal variances</li>
 </ul>
 
@@ -1538,9 +1553,9 @@ QUIT;</code></p>
 <ul>
 <li>Of the <strong>between-group variability</strong> is significantly larger than the <strong>within-group variability</strong>, you reject the null that all the group means are equal</li>
 <li>You partition out the variability using sums of squares:  <br>
-<ul><li><strong>Between-group</strong> variation: also called Model Sum of Squares (SSM): <script type="math/tex" id="MathJax-Element-254">\sum n_i (\overline Y_i- \overline {\overline Y})^2</script></li>
-<li><strong>Within-group</strong> variation: also called Error Sum of Squares (SSE): <script type="math/tex" id="MathJax-Element-255">\sum \sum (Y_{ij}- \overline Y_i)^2</script></li>
-<li><strong>Total</strong> variation: also called the Total Sum of Squares (SST): <script type="math/tex" id="MathJax-Element-256">\sum \sum (Y_{ij}- \overline {\overline Y})^2</script></li></ul></li>
+<ul><li><strong>Between-group</strong> variation: also called Model Sum of Squares (SSM): <script type="math/tex" id="MathJax-Element-500">\sum n_i (\overline Y_i- \overline {\overline Y})^2</script></li>
+<li><strong>Within-group</strong> variation: also called Error Sum of Squares (SSE): <script type="math/tex" id="MathJax-Element-501">\sum \sum (Y_{ij}- \overline Y_i)^2</script></li>
+<li><strong>Total</strong> variation: also called the Total Sum of Squares (SST): <script type="math/tex" id="MathJax-Element-502">\sum \sum (Y_{ij}- \overline {\overline Y})^2</script></li></ul></li>
 <li><strong>SSM</strong> and <strong>SSE</strong> represent pieces of <strong>SST</strong>: the SSM is the variability explanied by the predictor variable levels and SSE the variability not explained by the predictor variable levels</li>
 <li>You want the larger piece of the total to be better represented by what you can explain (SSM) vs what you cant’t explain (SSE) </li>
 </ul>
@@ -1594,7 +1609,7 @@ QUIT;</code></p>
 
 <ul>
 <li>The <strong>comparisonwise error rate (CER)</strong> is the probability of a Type I error on a single pairwise test (α)</li>
-<li>The <strong>experimentwise error rate (EER)</strong> is the probability of making at least one Type I error when performing the whole set of comparisons. It takes into consideration the number of pairwise comparisons you make, so it increases as the number of tests increase: <script type="math/tex" id="MathJax-Element-257">EER=1-(1-\alpha)^{\# \\\ of \\\ comparisons}</script></li>
+<li>The <strong>experimentwise error rate (EER)</strong> is the probability of making at least one Type I error when performing the whole set of comparisons. It takes into consideration the number of pairwise comparisons you make, so it increases as the number of tests increase: <script type="math/tex" id="MathJax-Element-503">EER=1-(1-\alpha)^{\# \\\ of \\\ comparisons}</script></li>
 </ul>
 
 <p><strong><em>Tukey’s Multiple Comparison Method</em></strong></p>
@@ -1602,14 +1617,14 @@ QUIT;</code></p>
 <ul>
 <li>This method, which is also known as the <strong>Honestly Significant Difference</strong> test, is a popular multiple comparison test that <strong>controls the EER</strong></li>
 <li>This tests compares all possible pairs of means, so <strong>it can only be used when you make pairwise comparisons</strong></li>
-<li>This method controls <script type="math/tex" id="MathJax-Element-258">EER=\alpha</script> when <strong>all possible pairwise comparisons are considered</strong> and controls <script type="math/tex" id="MathJax-Element-259">EER<\alpha</script> when fewer than all pairwise comparisons are considered</li>
+<li>This method controls <script type="math/tex" id="MathJax-Element-504">EER=\alpha</script> when <strong>all possible pairwise comparisons are considered</strong> and controls <script type="math/tex" id="MathJax-Element-505">EER<\alpha</script> when fewer than all pairwise comparisons are considered</li>
 </ul>
 
 <p><strong><em>Dunnett’s Multiple Comparison Method</em></strong></p>
 
 <ul>
 <li>This method is a specialised multiple comparison test that allows you to <strong>compare a single control group to all other groups</strong></li>
-<li>It controls <script type="math/tex" id="MathJax-Element-260">EER \le \alpha</script> when all groups are compared to the reference group (control)</li>
+<li>It controls <script type="math/tex" id="MathJax-Element-506">EER \le \alpha</script> when all groups are compared to the reference group (control)</li>
 <li>It accounts for the correlation that exists between the comparisons and <strong>you can conduct one-sided tests</strong> of hypothesis against the reference group</li>
 </ul>
 
@@ -1628,7 +1643,7 @@ QUIT;</code></p>
 <ul><li>It can be undestood as a least squares mean by least squares mean plot</li>
 <li>The point estimates for differences between the means for each pairwise comparison can be found at the intersections of the gray grid lines (intersection of appropriate indexes)</li>
 <li>The red/blue diagonal lines show the <strong>confidence intervals for the true differences of the means</strong> for each pairwise comparison</li>
-<li>The grey 45<script type="math/tex" id="MathJax-Element-261">^{\circ}</script> reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li></ul></li>
+<li>The grey 45<script type="math/tex" id="MathJax-Element-507">^{\circ}</script> reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li></ul></li>
 </ul>
 
 <p><img src="https://lh3.googleusercontent.com/-yuw0XR4JPqs/WNknWl3atwI/AAAAAAAAABk/V_lTXMtgO_QDm7VJ9jPy29h7MIxZbyhzQCLcB/s0/diffogram.png" alt="enter image description here" title="Diffogram"></p>
@@ -1687,7 +1702,7 @@ RUN; <br>
 QUIT;</code></p>
 
 <p>This program is <strong>fitting to this model</strong>: <br>
-<script type="math/tex" id="MathJax-Element-262">Y_{ijk}=\mu + \alpha_i+\beta_j+(\alpha\beta)_{ij}+\epsilon_{ijk}</script> <br>
+<script type="math/tex" id="MathJax-Element-508">Y_{ijk}=\mu + \alpha_i+\beta_j+(\alpha\beta)_{ij}+\epsilon_{ijk}</script> <br>
 dependent = overall mean + intependent1 + independent2 + interaction12 + unaccounted for variation </p>
 
 <ul>
@@ -1801,36 +1816,36 @@ RUN;</code></p>
 
 <h3 id="simple-linear-regression">Simple Linear Regression</h3>
 
-<p>You use correlation analysis to determine the strength of the linear relationship between continuous response variables. Now you need to go a step further and <strong>define the linear relationship itself</strong>: <script type="math/tex" id="MathJax-Element-263">Y= \beta_0+\beta_1*X+\epsilon</script></p>
+<p>You use correlation analysis to determine the strength of the linear relationship between continuous response variables. Now you need to go a step further and <strong>define the linear relationship itself</strong>: <script type="math/tex" id="MathJax-Element-509">Y= \beta_0+\beta_1*X+\epsilon</script></p>
 
 <ul>
-<li><script type="math/tex" id="MathJax-Element-264">Y</script> is the response variable </li>
-<li><script type="math/tex" id="MathJax-Element-265">X</script> is the predictor variable</li>
-<li><script type="math/tex" id="MathJax-Element-266">\beta_0</script> is the intercept parameter</li>
-<li><script type="math/tex" id="MathJax-Element-267">\beta_1</script> is the slope parameter</li>
-<li><script type="math/tex" id="MathJax-Element-268">\epsilon</script> is the error term</li>
+<li><script type="math/tex" id="MathJax-Element-510">Y</script> is the response variable </li>
+<li><script type="math/tex" id="MathJax-Element-511">X</script> is the predictor variable</li>
+<li><script type="math/tex" id="MathJax-Element-512">\beta_0</script> is the intercept parameter</li>
+<li><script type="math/tex" id="MathJax-Element-513">\beta_1</script> is the slope parameter</li>
+<li><script type="math/tex" id="MathJax-Element-514">\epsilon</script> is the error term</li>
 </ul>
 
-<p>The method of <strong>least squares</strong> produces parameter estimates <script type="math/tex" id="MathJax-Element-269">\hat \beta_0</script> and <script type="math/tex" id="MathJax-Element-270">\hat \beta_1</script> with certain <strong>optimum properties</strong> which make them the Best Linear Unbiased Estimators (<strong>BLUE</strong>):</p>
+<p>The method of <strong>least squares</strong> produces parameter estimates <script type="math/tex" id="MathJax-Element-515">\hat \beta_0</script> and <script type="math/tex" id="MathJax-Element-516">\hat \beta_1</script> with certain <strong>optimum properties</strong> which make them the Best Linear Unbiased Estimators (<strong>BLUE</strong>):</p>
 
 <ul>
 <li>They are <strong>unbiased estimates</strong> of the population parameters</li>
 <li>They have <strong>minimum variance</strong></li>
 </ul>
 
-<p>To find out how much better is the model that takes the predictor variable into account than a model that ignores the predictor variable, you can compare the <strong>simple linear regression model</strong> to a <strong>baseline model</strong> (<script type="math/tex" id="MathJax-Element-271">Y= \bar Y</script> independent of <script type="math/tex" id="MathJax-Element-272">X</script>). For your comparison, you calculate the <strong>explained</strong>, <strong>unexplained</strong> and <strong>total variability</strong> in the simple linear regression model.</p>
+<p>To find out how much better is the model that takes the predictor variable into account than a model that ignores the predictor variable, you can compare the <strong>simple linear regression model</strong> to a <strong>baseline model</strong> (<script type="math/tex" id="MathJax-Element-517">Y= \bar Y</script> independent of <script type="math/tex" id="MathJax-Element-518">X</script>). For your comparison, you calculate the <strong>explained</strong>, <strong>unexplained</strong> and <strong>total variability</strong> in the simple linear regression model.</p>
 
 <ul>
-<li>The <strong>explained variability (SSM)</strong> is the difference between the regression line and the mean of the response variable: <script type="math/tex" id="MathJax-Element-273">\sum(\hat Y_i-\bar Y)^2</script></li>
-<li>The <strong>unexplained variability (SSE)</strong> is the difference between the observed values and the regression line: <script type="math/tex" id="MathJax-Element-274">\sum(Y_i-\hat Y_i)^2</script></li>
-<li>The <strong>total variability</strong> is the difference between the observed values and the mean of the response variable: <script type="math/tex" id="MathJax-Element-275">\sum(Y_i-\bar Y)^2</script></li>
+<li>The <strong>explained variability (SSM)</strong> is the difference between the regression line and the mean of the response variable: <script type="math/tex" id="MathJax-Element-519">\sum(\hat Y_i-\bar Y)^2</script></li>
+<li>The <strong>unexplained variability (SSE)</strong> is the difference between the observed values and the regression line: <script type="math/tex" id="MathJax-Element-520">\sum(Y_i-\hat Y_i)^2</script></li>
+<li>The <strong>total variability</strong> is the difference between the observed values and the mean of the response variable: <script type="math/tex" id="MathJax-Element-521">\sum(Y_i-\bar Y)^2</script></li>
 </ul>
 
 <p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
 
 <ul>
-<li>H0: the regression model does not fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-276">= 0</script>)</li>
-<li>Ha: the regression model does fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-277">= \hat\beta_1 \ne 0</script>)</li>
+<li>H0: the regression model does not fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-522">= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-523">= \hat\beta_1 \ne 0</script>)</li>
 </ul>
 
 <p>These <strong>assumptions</strong> underlie the hypothesis test for the regression model and have to be met for a simple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
@@ -1906,7 +1921,7 @@ QUIT;</code></pre>
 
 <p>In <strong>multiple regression</strong> you can model the relationship between the response variable and <strong>more than one predictor variable</strong>. It is a powerful tool for both <strong>analytical or explanatory analysis and for prediction</strong>.</p>
 
-<p><script type="math/tex" id="MathJax-Element-278">Y=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_kX_k+\epsilon</script> (<script type="math/tex" id="MathJax-Element-279">k+1</script> parameters)</p>
+<p><script type="math/tex" id="MathJax-Element-524">Y=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_kX_k+\epsilon</script> (<script type="math/tex" id="MathJax-Element-525">k+1</script> parameters)</p>
 
 <p><strong><em>Advantages</em></strong></p>
 
@@ -1925,20 +1940,20 @@ QUIT;</code></pre>
 <p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
 
 <ul>
-<li>H0: the regression model does not fit the data better than the baseline model (<script type="math/tex" id="MathJax-Element-280">\beta_1=\beta_2=...=\beta_k= 0</script>)</li>
-<li>Ha: the regression model does fit the data better than the baseline model (at least one <script type="math/tex" id="MathJax-Element-281">\beta_i \ne 0</script>)</li>
+<li>H0: the regression model does not fit the data better than the baseline model (<script type="math/tex" id="MathJax-Element-526">\beta_1=\beta_2=...=\beta_k= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (at least one <script type="math/tex" id="MathJax-Element-527">\beta_i \ne 0</script>)</li>
 </ul>
 
 <p>These <strong>assumptions</strong> have to be met for a multiple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
 
 <ul>
-<li>A linear function of the <script type="math/tex" id="MathJax-Element-282">X</script>s accurately models the mean of the <script type="math/tex" id="MathJax-Element-283">Y</script>s</li>
+<li>A linear function of the <script type="math/tex" id="MathJax-Element-528">X</script>s accurately models the mean of the <script type="math/tex" id="MathJax-Element-529">Y</script>s</li>
 <li>The error terms are normally distributed with a mean of 0</li>
 <li>The error terms have constant variances</li>
 <li>The error terms are independent at each value of the predictor variable</li>
 </ul>
 
-<p>The <strong>regular <script type="math/tex" id="MathJax-Element-284">R^2</script></strong> values never decrease when you add more terms to the model, but the <strong>adjusted <script type="math/tex" id="MathJax-Element-285">R^2</script></strong> value takes into account the number of terms in the model by including a penalty for the complexity of the model. The <strong>adjusted <script type="math/tex" id="MathJax-Element-286">R^2</script></strong> value increases only if new terms that you add significantly improve the model enough to warrant increasing the complexity of the model. It enables proper comparison between models with different parameter counts. When an <strong>adjusted <script type="math/tex" id="MathJax-Element-287">R^2</script> increases by removing a variable</strong> from the models, it strongly implies that the removed <strong>variable was not necessary</strong>.</p>
+<p>The <strong>regular <script type="math/tex" id="MathJax-Element-530">R^2</script></strong> values never decrease when you add more terms to the model, but the <strong>adjusted <script type="math/tex" id="MathJax-Element-531">R^2</script></strong> value takes into account the number of terms in the model by including a penalty for the complexity of the model. The <strong>adjusted <script type="math/tex" id="MathJax-Element-532">R^2</script></strong> value increases only if new terms that you add significantly improve the model enough to warrant increasing the complexity of the model. It enables proper comparison between models with different parameter counts. When an <strong>adjusted <script type="math/tex" id="MathJax-Element-533">R^2</script> increases by removing a variable</strong> from the models, it strongly implies that the removed <strong>variable was not necessary</strong>.</p>
 
 
 
@@ -1984,12 +1999,12 @@ RUN;</code></pre>
 
 <p><strong><em>All-possible regression methods</em></strong></p>
 
-<p>SAS computes all possible models and ranks the results. Then, to evaluate the models, you compare statistics side by side (<script type="math/tex" id="MathJax-Element-288">R^2</script>, adjusted <script type="math/tex" id="MathJax-Element-289">R^2</script> and <script type="math/tex" id="MathJax-Element-290">C_p</script> statistic).</p>
+<p>SAS computes all possible models and ranks the results. Then, to evaluate the models, you compare statistics side by side (<script type="math/tex" id="MathJax-Element-534">R^2</script>, adjusted <script type="math/tex" id="MathJax-Element-535">R^2</script> and <script type="math/tex" id="MathJax-Element-536">C_p</script> statistic).</p>
 
 <ul>
-<li><p><strong>Mallows’ <script type="math/tex" id="MathJax-Element-291">C_p</script></strong> statistic helps you detect model bias if you are underfitting/overfitting the model, it is a simple indicator of effective variable selection within a model</p></li>
-<li><p>To select the best model for prediction (most accurate model for predicting future values of <script type="math/tex" id="MathJax-Element-292">Y</script>), you should use the <strong>Mallows’ criterion</strong>:  <script type="math/tex" id="MathJax-Element-293">C_p \le p</script>, which is the <strong>number of parameters</strong> in the model including the intercept</p></li>
-<li>To select the best model for parameter estimation (analytical or explanatory analysis), you should use <strong>Hocking’s criterion</strong>: <script type="math/tex" id="MathJax-Element-294">C_p\le2p-p_{full}+1</script></li>
+<li><p><strong>Mallows’ <script type="math/tex" id="MathJax-Element-537">C_p</script></strong> statistic helps you detect model bias if you are underfitting/overfitting the model, it is a simple indicator of effective variable selection within a model</p></li>
+<li><p>To select the best model for prediction (most accurate model for predicting future values of <script type="math/tex" id="MathJax-Element-538">Y</script>), you should use the <strong>Mallows’ criterion</strong>:  <script type="math/tex" id="MathJax-Element-539">C_p \le p</script>, which is the <strong>number of parameters</strong> in the model including the intercept</p></li>
+<li>To select the best model for parameter estimation (analytical or explanatory analysis), you should use <strong>Hocking’s criterion</strong>: <script type="math/tex" id="MathJax-Element-540">C_p\le2p-p_{full}+1</script></li>
 </ul>
 
 
@@ -2008,7 +2023,7 @@ QUIT;</code></pre>
 
 <p><img src="https://lh3.googleusercontent.com/-MKHCheN7vUA/WONM3WW0qSI/AAAAAAAAADE/tHJAjyHK-QE5j4UVlxmT7KHTA_bvGJLxwCLcB/s0/mallows_cp_best_model.png" alt="enter image description here" title="Mallows' Cp to select the best model"></p>
 
-<p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows’ criterion</strong> for <script type="math/tex" id="MathJax-Element-295">C_p</script>, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking’s criterion</strong> for <script type="math/tex" id="MathJax-Element-296">C_p</script> parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
+<p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows’ criterion</strong> for <script type="math/tex" id="MathJax-Element-541">C_p</script>, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking’s criterion</strong> for <script type="math/tex" id="MathJax-Element-542">C_p</script> parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
 
 <hr>
 
@@ -2088,12 +2103,12 @@ QUIT;</code></pre>
 <p>The calculations of all information criteria begin the same way:</p>
 
 <ol>
-<li>First you calculate <script type="math/tex" id="MathJax-Element-297">n\cdot log(SSE/n)</script> </li>
+<li>First you calculate <script type="math/tex" id="MathJax-Element-543">n\cdot log(SSE/n)</script> </li>
 <li>Then, each criterion adds a penalty that represents the complexity of the model (each type of information criterion invokes a different penalty component) <br>
-<ul><li>AIC: <script type="math/tex" id="MathJax-Element-298">2p+n+2</script></li>
-<li>AICC: <script type="math/tex" id="MathJax-Element-299">n(n+p)/(n-p-2)</script></li>
-<li>BIC: <script type="math/tex" id="MathJax-Element-300">2(p+2)1-2q^2</script></li>
-<li>SBC: <script type="math/tex" id="MathJax-Element-301">p\cdot log(n)</script></li></ul></li>
+<ul><li>AIC: <script type="math/tex" id="MathJax-Element-544">2p+n+2</script></li>
+<li>AICC: <script type="math/tex" id="MathJax-Element-545">n(n+p)/(n-p-2)</script></li>
+<li>BIC: <script type="math/tex" id="MathJax-Element-546">2(p+2)1-2q^2</script></li>
+<li>SBC: <script type="math/tex" id="MathJax-Element-547">p\cdot log(n)</script></li></ul></li>
 </ol>
 
 
@@ -2108,7 +2123,7 @@ QUIT;</code></pre>
 
 <h3 id="examining-residuals">Examining Residuals</h3>
 
-<p>You can use the <strong>residual values</strong> (difference between each observed value of <script type="math/tex" id="MathJax-Element-302">Y</script> and its predicted value) from the regression analysis to verify the <strong>assumptions of the linear regression</strong>. Residuals are estimates of the errors, so you can <strong>plot the residuals to check the assumptions of the errors</strong>.</p>
+<p>You can use the <strong>residual values</strong> (difference between each observed value of <script type="math/tex" id="MathJax-Element-548">Y</script> and its predicted value) from the regression analysis to verify the <strong>assumptions of the linear regression</strong>. Residuals are estimates of the errors, so you can <strong>plot the residuals to check the assumptions of the errors</strong>.</p>
 
 <ul>
 <li>You can plot residuals vs the predicted values to check for <strong>violations of equal variances</strong></li>
@@ -2154,8 +2169,8 @@ QUIT;</code></pre>
 <p>Also known as <strong>studientized or standardized residuals</strong>, the STUDENT residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
 
 <ul>
-<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is <script type="math/tex" id="MathJax-Element-303">>2</script></strong>, you can suspect that the corresponding observation is an outlier</li>
-<li>For <strong>large sample sizes</strong>, it’s very likely that even more STUDENT <strong>residuals greater than <script type="math/tex" id="MathJax-Element-304">\pm2</script></strong> will occur just by chance, so you should typically use a larger cutoff value of <script type="math/tex" id="MathJax-Element-305">>3</script></li>
+<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is <script type="math/tex" id="MathJax-Element-549">>2</script></strong>, you can suspect that the corresponding observation is an outlier</li>
+<li>For <strong>large sample sizes</strong>, it’s very likely that even more STUDENT <strong>residuals greater than <script type="math/tex" id="MathJax-Element-550">\pm2</script></strong> will occur just by chance, so you should typically use a larger cutoff value of <script type="math/tex" id="MathJax-Element-551">>3</script></li>
 </ul>
 
 <hr>
@@ -2165,7 +2180,7 @@ QUIT;</code></pre>
 <p>Fore each observation, the Cook’s D statistic is <strong>calculated as if that observation weren’t in the data set</strong> as well as the set of parameter estimates with all the observations in your regression analysis. </p>
 
 <ul>
-<li>If any observation has a Cook’s D <strong>statistic <script type="math/tex" id="MathJax-Element-306">>4/n</script></strong> that observation is influential</li>
+<li>If any observation has a Cook’s D <strong>statistic <script type="math/tex" id="MathJax-Element-552">>4/n</script></strong> that observation is influential</li>
 <li>The Cook’s D statistic is most useful for identifying influential observations when the purpose of your model is <strong>parameter estimation</strong></li>
 </ul>
 
@@ -2177,7 +2192,7 @@ QUIT;</code></pre>
 
 <ul>
 <li>If the RSTUDENT residual is different from the STUDENT residual, the observation is probably influential</li>
-<li>If the absolute value of the RSTUDENT residuals is <script type="math/tex" id="MathJax-Element-307">>2</script> or <script type="math/tex" id="MathJax-Element-308">>3</script>, you’ve probably detected an influential observation</li>
+<li>If the absolute value of the RSTUDENT residuals is <script type="math/tex" id="MathJax-Element-553">>2</script> or <script type="math/tex" id="MathJax-Element-554">>3</script>, you’ve probably detected an influential observation</li>
 </ul>
 
 <hr>
@@ -2195,9 +2210,9 @@ QUIT;</code></pre>
 <p>If the <strong>standardized difference</strong> between these predicted values <strong>is large</strong>, that particular observation has a <strong>large effect on the model fit</strong>.</p>
 
 <ul>
-<li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-309">2</script></li>
-<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-310">2 \cdot sqrt(p/n)</script></li>
-<li>If the absolute value of DFFITS for any observation is <script type="math/tex" id="MathJax-Element-311">></script> cutoff value, you’ve detected an influential observation</li>
+<li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-555">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-556">2 \cdot sqrt(p/n)</script></li>
+<li>If the absolute value of DFFITS for any observation is <script type="math/tex" id="MathJax-Element-557">></script> cutoff value, you’ve detected an influential observation</li>
 <li>DFFITS is most useful for <strong>predictive models</strong></li>
 </ul>
 
@@ -2211,8 +2226,8 @@ QUIT;</code></pre>
 <li>One DFBETA is calculated per predictor variable per observation</li>
 <li>Each value is calculated by taking the estimated coefficient for that particular predictor variable <strong>using all the data</strong>, subtracting the estimated coefficient for that particular predictor variable with the <strong>current observation removed</strong> and dividing by its standard error</li>
 <li>Large DFBETAS indicate observations that are influential in estimating a given parameter: <br>
-<ul><li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-312">2</script></li>
-<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-313">2 \cdot sqrt(1/n)</script></li></ul></li>
+<ul><li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-558">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-559">2 \cdot sqrt(1/n)</script></li></ul></li>
 </ul>
 
 <hr>
@@ -2274,7 +2289,7 @@ RUN;</code></pre>
 
 <ol>
 <li><strong>Recheck</strong> for data entry errors</li>
-<li>If the data appears to be valid, <strong>consider whether you have an adequate model</strong> (a different model might fit the data better). Divide the number of influential observations you detect by the number of observations in you data set: if the result is <strong><script type="math/tex" id="MathJax-Element-314">>5\%</script> you probably have the wrong model</strong>.</li>
+<li>If the data appears to be valid, <strong>consider whether you have an adequate model</strong> (a different model might fit the data better). Divide the number of influential observations you detect by the number of observations in you data set: if the result is <strong><script type="math/tex" id="MathJax-Element-560">>5\%</script> you probably have the wrong model</strong>.</li>
 <li>Determine whether the influential observation is <strong>valid but just unusual</strong></li>
 <li>As a general rule you should <strong>not exclude data</strong> (some unusual observations contain important information)</li>
 <li>If you choose to exclude some observations, include in your report a <strong>description of the types of observations that you excluded and why</strong> and discuss the limitation of the conclusions given the exclusions</li>
@@ -2301,7 +2316,7 @@ RUN;
 QUIT;</span></code></pre>
 
 <ul>
-<li>The <strong>VIF</strong> (variance inflation factor, <script type="math/tex" id="MathJax-Element-315">VIF_i=1/(1-R_i^2)</script>) option measures the magnitude of collinearity in a model (VIF<script type="math/tex" id="MathJax-Element-316">>10</script> for any predictor in the model, those predictors are probably involved in collinearity)</li>
+<li>The <strong>VIF</strong> (variance inflation factor, <script type="math/tex" id="MathJax-Element-561">VIF_i=1/(1-R_i^2)</script>) option measures the magnitude of collinearity in a model (VIF<script type="math/tex" id="MathJax-Element-562">>10</script> for any predictor in the model, those predictors are probably involved in collinearity)</li>
 <li>Other options are <strong>COLLIN</strong> (includes the intercept when analyzing collinearity and helps identify the predictors that are causing the problem) and <strong>COLLINOINT</strong> (requests the same analysis as COLLIN but excludes the intercept)</li>
 </ul>
 
@@ -2317,7 +2332,7 @@ QUIT;</span></code></pre>
 <li>Identify some <strong>good candidate models</strong> using PROC REG:  <br>
 <ul><li>First check for collinearity </li>
 <li>Use all-possible regression or stepwise selection methods and subject matter knowledge to select model candidates</li>
-<li>Identify the good ones with the Mallows’ (prediction) or Hocking’s (explanatory) criterion for <script type="math/tex" id="MathJax-Element-317">C_p</script></li></ul></li>
+<li>Identify the good ones with the Mallows’ (prediction) or Hocking’s (explanatory) criterion for <script type="math/tex" id="MathJax-Element-563">C_p</script></li></ul></li>
 <li><p><strong>Check and validate your assumtions</strong> by creating residual plots and conducting a few other statistical tests</p></li>
 <li><p>Deal with any <strong>problems in your data</strong>: </p>
 
@@ -2371,7 +2386,7 @@ RUN;</code></pre>
 <h3 id="tests-of-association">Tests of Association</h3>
 
 <p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables (H0 is true):  <br>
-<script type="math/tex" id="MathJax-Element-318">Expected=Row \ total\cdot Column\ total/Total \ sample \ size</script></p>
+<script type="math/tex" id="MathJax-Element-564">Expected=Row \ total\cdot Column\ total/Total \ sample \ size</script></p>
 
 <ul>
 <li>If the <strong>sample size decreases</strong>, the <strong>chi-square value decreases</strong> and the <strong>p-value for the chi-square statistic increases</strong></li>
@@ -2386,16 +2401,16 @@ RUN;</code></pre>
 <li>Values farther away from 0 indicate a relatively strong association between the variables</li>
 </ul>
 
-<p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: <script type="math/tex" id="MathJax-Element-319">Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}</script>; <script type="math/tex" id="MathJax-Element-320">Odds=p_{event}/(1-p_{event})</script></p>
+<p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: <script type="math/tex" id="MathJax-Element-565">Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}</script>; <script type="math/tex" id="MathJax-Element-566">Odds=p_{event}/(1-p_{event})</script></p>
 
 <ul>
-<li>The value of the odds ratio can range from 0 to <script type="math/tex" id="MathJax-Element-321">\infty</script>; it cannot be negative</li>
-<li>When the odds ratio is <script type="math/tex" id="MathJax-Element-322">1</script>, there is no association between variables</li>
-<li>When the odds ratio <script type="math/tex" id="MathJax-Element-323">>1</script>/<script type="math/tex" id="MathJax-Element-324"><1</script>, the group in the numerator/denominator is more likely to have the outcome</li>
+<li>The value of the odds ratio can range from 0 to <script type="math/tex" id="MathJax-Element-567">\infty</script>; it cannot be negative</li>
+<li>When the odds ratio is <script type="math/tex" id="MathJax-Element-568">1</script>, there is no association between variables</li>
+<li>When the odds ratio <script type="math/tex" id="MathJax-Element-569">>1</script>/<script type="math/tex" id="MathJax-Element-570"><1</script>, the group in the numerator/denominator is more likely to have the outcome</li>
 <li>The odds ratio is approximately the same <strong>regardless of the sample size</strong></li>
 <li>To estimate the true odds ratio while taking into account the variability of the sample statistic, you can calculate <strong>confidence intervals</strong></li>
 <li>You can use an odds ratio to <strong>test for significance</strong> between two categorical variables</li>
-<li>Odds ratio expressed as percent difference: <script type="math/tex" id="MathJax-Element-325">(odd \ ratio -1) \cdot 100</script></li>
+<li>Odds ratio expressed as percent difference: <script type="math/tex" id="MathJax-Element-571">(odd \ ratio -1) \cdot 100</script></li>
 </ul>
 
 
@@ -2406,9 +2421,9 @@ RUN;</code></pre>
 RUN;</code></pre>
 
 <ul>
-<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: <script type="math/tex" id="MathJax-Element-326">\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: <script type="math/tex" id="MathJax-Element-572">\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
 <li><strong>EXPECTED</strong> prints the expected cell frequencies</li>
-<li><strong>CELLCHI2</strong> prints each cell’s contribution to the total chi-square statistic: <script type="math/tex" id="MathJax-Element-327"> \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>CELLCHI2</strong> prints each cell’s contribution to the total chi-square statistic: <script type="math/tex" id="MathJax-Element-573"> \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
 <li><strong>NOCOL</strong> suppresses the printing of the column percentages</li>
 <li><strong>NOPERCENT</strong> supresses the printing of the cell percentages</li>
 <li><strong>RELRISK</strong> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; PROC FREQ uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
@@ -2443,7 +2458,7 @@ RUN;</code></pre>
 <ul>
 <li><strong>MEASURES</strong> produces the Spearman correlation statistic along with other measurement of association</li>
 <li><strong>CL</strong> produces confidence bounds for the statistics that the MEASURES option requests</li>
-<li>The confidence bounds are valid only if the sample size is large (<script type="math/tex" id="MathJax-Element-328">>25</script>)</li>
+<li>The confidence bounds are valid only if the sample size is large (<script type="math/tex" id="MathJax-Element-574">>25</script>)</li>
 <li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
 </ul>
 
