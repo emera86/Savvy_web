@@ -1,7 +1,7 @@
 <html>
         <script type="text/javascript">          
-              var sasheader = "<head>" + require('./sas_manual_header.html') + "</head>" ;
-              var sascontent = "<body>" + require('./sas_manual_content.html') + "</body>";
+              var sasheader = "<head>" + gulp.src('./sas_manual_header.html') + "</head>" ;
+              var sascontent = "<body>" + gulp.src('./sas_manual_content.html') + "</body>";
               var sasmanual = sasheader + sascontent ;
               document.write(sasmanual);
         </script>
