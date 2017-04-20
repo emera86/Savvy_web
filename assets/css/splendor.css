@@ -223,8 +223,8 @@ code {
 
 pre {
   /*background-color: #fafafa;*/
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #333333;
+  color: #F2F1F0;
   font-size: .8rem;
   /*overflow-x: scroll;*/
   padding: 1.125em;
