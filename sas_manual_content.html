@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="assets/css/splendor.css">
-
 <h1 id="sas-programming-essentials">SAS Programming Essentials</h1>
 
 
@@ -71,7 +69,8 @@
 
 
 
-<pre class="prettyprint"><code class="language-PROC CONTENTS DATA=libref._ALL_; hljs ">RUN;</code></pre>
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">PROC CONTENTS DATA</span>=<span class="hljs-string">libref._ALL_;
+RUN;</span></code></pre>
 
 <ul>
 <li>To hide the descriptors of all data sets in the library (it could generate a very long report) you can add the option <strong>nods</strong> (only compatible with the keybord <strong>_all_</strong>)</li>
