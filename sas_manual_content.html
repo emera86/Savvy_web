@@ -1,0 +1,2634 @@
+<h1 id="sas-programming-essentials">SAS Programming Essentials</h1>
+
+
+
+<h2 id="getting-started-with-sas-programming">Getting Started with SAS Programming</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m411/m411_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h2 id="working-with-sas-programs">Working with SAS Programs</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m412/m412_3_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p><strong><em>Comments</em></strong></p>
+
+<pre><code>/* comment */
+
+* comment statement;
+</code></pre>
+
+<h2 id="accessing-data">Accessing data</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m413/m413_3_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="accessing-sas-libraries">Accessing SAS libraries</h3>
+
+<ul>
+<li><p><strong>libref</strong>: library reference name (shortcut to the physical location). There are three rules for valid librefs:</p>
+
+<ul><li>A length of one to eight characters</li>
+<li>Begin with a letter or underscore</li>
+<li>The remaining characters are letters, numbers, or underscores</li></ul>
+
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">OPTIONS</span> <span class="hljs-type">VALIDVARNAME</span>=<span class="hljs-type">V7</span> (<span class="hljs-default"><span class="hljs-keyword">default</span>) | <span class="hljs-type">UPCASE</span> | <span class="hljs-type">ANY</span>;</span></code></pre></li>
+<li><p><strong>libref.data-set-name</strong>: data set reference two-level name</p></li>
+<li><strong>data-set-name</strong>: when the data set belongs to a temporary library, you can optionally use a one-level name (SAS assumes that it is contained in the <strong>work</strong> library, which is the default)</li>
+<li>The <strong>LIBNAME</strong> statement associates the <strong>libref</strong> with the physical location of the library/data for the current SAS session</li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs vbnet">LIBNAME libref-name <span class="hljs-comment">'SAS-library-folder-path' <span class="hljs-xmlDocTag">&lt;options&gt;</span>;</span></code></pre>
+
+<p><em>Example</em></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs javascript">%<span class="hljs-keyword">let</span> path=<span class="hljs-regexp">/folders/m</span>yfolders/ecprg193; 
+    libname orion <span class="hljs-string">"&amp;path"</span>;</code></pre>
+
+<ul>
+<li>To erase the association between SAS and a custom library</li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs ruleslanguage">LIBNAME libref-name <span class="hljs-keyword">CLEAR</span>;</code></pre>
+
+<ul>
+<li>To check the <strong>contents of a library</strong> programatically</li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">PROC CONTENTS DATA</span>=<span class="hljs-string">libref._ALL_;
+RUN;</span></code></pre>
+
+<ul>
+<li>To hide the descriptors of all data sets in the library (it could generate a very long report) you can add the option <strong>nods</strong> (only compatible with the keybord <strong>_all_</strong>)</li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">PROC CONTENTS DATA</span>=<span class="hljs-string">libref._ALL_ NODS;
+RUN;</span></code></pre>
+
+<ul>
+<li>To access a data set you can use a <strong>proc print</strong> step</li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+RUN;</code></pre>
+
+
+
+<h3 id="examining-sas-data-sets">Examining SAS data sets</h3>
+
+<p>Parts of a library (SAS notation):</p>
+
+<ul>
+<li>Table = <strong>data set</strong></li>
+<li>Column = <strong>variable</strong></li>
+<li>Row = <strong>observation</strong></li>
+</ul>
+
+<p>The <strong>descriptor portion</strong> (PROC CONTENTS) contains information about the attributes of the data set (metadata), including the variable names. It is show in three tables:</p>
+
+<ul>
+<li>Table 1: general information about the data set (name, creation date/time, etc.)</li>
+<li>Table 2: operating environment information, file location, etc.</li>
+<li>Table 3: alphabetic list of varibles in the data set and their attributes</li>
+</ul>
+
+<p>The <strong>data portion</strong> (PROC PRINT) contains the data values, stored in variables (numeric/character)</p>
+
+<ul>
+<li>Numeric values: right-aligned</li>
+<li>Character values: left-aligned</li>
+<li><strong>Missing values</strong>: <strong><em>blank</em></strong> for character variables and <strong><em>period</em></strong> for numeric ones. To change this default behaviour use  <code>MISSING='new-character'</code></li>
+<li>Valid <strong>character values</strong>: letters, numbers, special characters and blanks</li>
+<li>Valid <strong>numeric values</strong>: digits 0-9, minus sign, single decimal point, scientific notation (E)</li>
+<li>Values length: for character variables 1 byte = 1 character, numeric variables have 8 bytes of storage by default (16-17 significant digits)</li>
+<li>Other attributes: <strong>format</strong>, <strong>informat</strong>, <strong>label</strong></li>
+</ul>
+
+<h2 id="producing-detailed-reports">Producing detailed reports</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m415/m415_4_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="subsetting-report-data">Subsetting Report Data</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>(OBS<span class="hljs-subst">=</span><span class="hljs-number">3</span>) NOOBS;  <span class="hljs-comment">/* OBS=3 prints only 3 elements | NOOBS hides the 'Obs' */</span>
+    <span class="hljs-built_in">VAR</span> variable1 variable2 variable3;       <span class="hljs-comment">/* prints out only this variables in the report */</span>
+    <span class="hljs-keyword">SUM</span> variable1 variable2;                 <span class="hljs-comment">/* adds an extra line at the end with the total */</span>
+    <span class="hljs-keyword">WHERE</span> variable3<span class="hljs-subst">&lt;</span><span class="hljs-number">1000</span>;                    <span class="hljs-comment">/* operators: &lt; &gt; &lt;= &gt;= = ^= in + - / * ** &amp; | ~ ^ ? */</span>
+    <span class="hljs-keyword">WHERE</span> variable4 <span class="hljs-keyword">in</span> (<span class="hljs-string">'Child'</span>,<span class="hljs-string">'Elder'</span>);    <span class="hljs-comment">/* only the last WHERE condition is applied */</span>
+    <span class="hljs-keyword">WHERE</span> variable1<span class="hljs-subst">=</span><span class="hljs-number">20</span> <span class="hljs-literal">AND</span> variable4 CONTAINS <span class="hljs-string">'case-sensitive-substring'</span>;  <span class="hljs-comment">/* CONTAINS = ? */</span>
+    ID variable1                             <span class="hljs-comment">/* replaces the 'Obs' column by a selected variable values */</span>
+    <span class="hljs-keyword">BY</span> variable3                             <span class="hljs-comment">/* separate in different tables for different variable values (sort first) */</span>
+RUN;</code></pre>
+
+<p>Special <strong>WHERE operators</strong>:</p>
+
+<ul>
+<li><strong>BETWEEN x AND y</strong>: an inclusive range</li>
+<li><strong>WHERE SAME AND</strong>: augment a previous where expression (both applied)</li>
+<li><strong>IS NULL</strong>: a missing value</li>
+<li><strong>IS MISSING</strong>: a missing value</li>
+<li><strong>LIKE</strong>: matches a pattern (% = any number of characters, _ = one character). E.g.: ‘T_m%’</li>
+<li>The <strong>SOUNDS-LIKE (=*)</strong> operator selects observations that contain a spelling variation of a specified word or words. This operator uses the <em>Soundex</em> algorithm to compare the variable value and the operand.</li>
+</ul>
+
+<p><strong>Note:</strong> To compare with a SAS date value you need to express is as a SAS date constant: <strong>‘DDMM&lt;\YY&gt;YY’D</strong></p>
+
+<h3 id="sorting-and-grouping-report-data">Sorting and Grouping Report Data</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC SORT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+    OUT<span class="hljs-subst">=</span><span class="hljs-literal">new</span><span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> NODUPKEY;                                           <span class="hljs-comment">/* optional */</span>
+    DUPOUT<span class="hljs-subst">=</span>work<span class="hljs-built_in">.</span>duplicates;                                                  <span class="hljs-comment">/* optional */</span>
+    <span class="hljs-keyword">BY</span> <span class="hljs-keyword">ASCENDING</span> variable1<span class="hljs-attribute">-to</span><span class="hljs-attribute">-be</span><span class="hljs-attribute">-sorted</span> <span class="hljs-keyword">DESCENDING</span> variable2<span class="hljs-attribute">-to</span><span class="hljs-attribute">-be</span><span class="hljs-attribute">-sorted</span>;   <span class="hljs-comment">/* optional (ASCENDING is the default order)*/</span>
+RUN;</code></pre>
+
+<ul>
+<li>The <strong>NODUPKEY</strong> option deletes observations with duplicate <strong>BY</strong> values</li>
+<li><strong>DUPOUT</strong> writes duplicate observations to a separate output data set</li>
+</ul>
+
+<h3 id="enhancing-reports">Enhancing Reports</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">TITLEline <span class="hljs-string">'text'</span>;       
+FOOTNOTEline <span class="hljs-string">'text'</span>;
+
+TITLE1 <span class="hljs-string">'text1'</span>;
+TITLE1 <span class="hljs-string">'text1_change'</span>;     <span class="hljs-comment">/* Change title text and also cancels all footnotes with higher numbers */</span>
+TITLE;                     <span class="hljs-comment">/* Cancel (erase) all titles */</span></code></pre>
+
+<ul>
+<li>The <strong>lines</strong> specifies the line (1-10) on which the title/footnote will appear (line = 1 is the default value)</li>
+<li>The title/footnote will remain until you <strong>change</strong> it, <strong>cancel</strong> it or you <strong>end your SAS session</strong></li>
+</ul>
+
+<hr>
+
+<p>Assigning <strong>temporary labels</strong> to display in the report instead of the variable names:</p>
+
+<pre class="prettyprint"><code class=" hljs applescript">PROC PRINT DATA=SAS-data-<span class="hljs-keyword">set</span> LABEL;           /* you need <span class="hljs-keyword">to</span> add <span class="hljs-keyword">the</span> LABEL option <span class="hljs-keyword">to</span> display <span class="hljs-keyword">the</span> labels */ 
+    LABEL variable1 = 'new variable1 <span class="hljs-property">name</span>' 
+          variable2 = 'new variable2 <span class="hljs-property">name</span>';
+    LABEL variable3 = 'new variable3 <span class="hljs-property">name</span>';
+RUN;</code></pre>
+
+<ul>
+<li>The <strong>LABEL</strong> lengths can go up to 256 characters long</li>
+<li>You can specify several labels in one <strong>LABEL</strong> statement or use a separate <strong>LABEL</strong> statement for each variable</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs applescript">PROC PRINT DATA=SAS-data-<span class="hljs-keyword">set</span> SPLIT='*';           /* you no longer need <span class="hljs-keyword">to</span> add <span class="hljs-keyword">the</span> LABEL option, SPLIT <span class="hljs-keyword">does</span> <span class="hljs-keyword">the</span> same work */ 
+    LABEL variable1 = 'new variable1*long <span class="hljs-property">name</span>';   /* <span class="hljs-keyword">the</span> variable <span class="hljs-property">name</span> ocuppies <span class="hljs-number">2</span> lines now */
+RUN;</code></pre>
+
+
+
+<h2 id="formatting-data-values">Formatting data values</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m416/m416_3_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="using-sas-formats">Using SAS formats</h3>
+
+<p><code> <br>
+   PROC PRINT DATA=SAS-data-base; <br>
+        FORMAT variable1 variable2 format; <br>
+        FORMAT variable3 format3 variable4 format4; <br>
+    RUN; <br>
+</code></p>
+
+<p>Format definition: <strong>&lt;<span>$</span>&gt;<em>format</em>&lt;\w&gt;.&lt;\d&gt;</strong></p>
+
+<ul>
+<li><strong>&lt;<span>$</span>&gt;</strong> = character format</li>
+<li><strong><em>format</em></strong> = format name</li>
+<li><strong>&lt;\w&gt;</strong> = total width (includes special characters, commas, decimal point and decimal places)</li>
+<li><strong>.</strong> = required syntax (dot)</li>
+<li><strong>&lt;\d&gt;</strong> = decimal places (numeric format)</li>
+</ul>
+
+<p>SAS formats (<a href="http://support.sas.com/documentation/cdl/en/leforinforref/64790/HTML/default/viewer.htm#p0z62k899n6a7wn1r5in6q5253v1.htm">Dictionary of formats</a>):</p>
+
+<ul>
+<li><strong><span>$</span>w.</strong> = writes standard character data</li>
+<li><strong><span>$</span>UPCASE.</strong> = writes a string in uppercase</li>
+<li><strong><span>$</span>QUOTE.</strong> = writes a string in quotation marks </li>
+<li><strong>w.d</strong> = writes standard numeric data</li>
+<li><strong>COMMAw.d</strong> = writes numeric values with a comma that separates every three digits and a period that separates the decimal fraction</li>
+<li><strong>DOLLARw.d</strong> = writes numeric values with a leading dollar sign, a comma that separates every three digits and a period that separates the decimal fraction</li>
+<li><strong>COMMAXw.d</strong> = writes numeric values with a period that separates every three digits and a coma that separates the decimal fraction</li>
+<li><strong>EUROXw.d</strong> = writes numeric values with a leading euro symbol, a period that separates every three digits and a comma that separates the decimal fraction</li>
+</ul>
+
+<p>SAS date values: <strong>MMDDYY&lt;\w&gt;.</strong> / <strong>DDMMYY&lt;\w&gt;.</strong> / <strong>MONYY&lt;\w&gt;.</strong> / <strong>DATE&lt;\w&gt;.</strong> / <strong>WEEKDATE.</strong> <br>
+- w = 6: only date numbers <br>
+- w = 8: date numbers with <strong>/</strong> separators (just the last 2 digits of year) <br>
+- w = 10: date numbers with <strong>/</strong> separators (full 4-digit year)</p>
+
+<p><strong>Note:</strong> dates before 01/01/1960 (0 value) will appear as negative numbers</p>
+
+
+
+<h3 id="creating-and-applying-user-defined-formats">Creating and applying user-defined formats</h3>
+
+<pre><code>PROC FORMAT;
+    VALUE &lt;$&gt;format-name value-or-range1='formatted-value1'
+                         value-or-range2='formatted-value2';
+RUN;
+</code></pre>
+
+<p>“</p>
+
+<p><code>PROC PRINT DATA=SAS-data-set; <br>
+    FORMAT variable1 &lt;$&gt;format-name.; <br>
+RUN;</code></p>
+
+<ul>
+<li>A format name can have a maximum of <strong>32 characters</strong></li>
+<li>The name of a format that applies to <strong>character values</strong> must begin with a <strong>dollar sign</strong> followed by a letter or underscore</li>
+<li>The name of a format that applies to <strong>numeric values</strong> must begin with a letter or underscore</li>
+<li>A format name cannot end in a number</li>
+<li>All remaining characters can be letters, underscores or numbers</li>
+<li>A user defined format name cannot be the name of a SAS format</li>
+</ul>
+
+<p>Each <strong>value-range set</strong> has three parts:</p>
+
+<ul>
+<li><strong>value-or-range</strong>: specifies one or more values to be formatted (it can be a value, a range or a list of values)</li>
+<li><strong>=</strong>: equal sign</li>
+<li><strong>formatted-value</strong>: the formatted value you want to display instead of the stored value/s (it is allways a character string no matter wheter the format applies to character values or numeric values)</li>
+</ul>
+
+<p><code>PROC FORMAT LIBRARY = my-format-library;   /* To save the custom formats */ <br>
+    VALUE string 'A'-'H'='First' <br>
+                 'I','J','K'='Middle' <br>
+                  OTHER = 'End';           /* Non-specified values */ <br>
+    VALUE tiers low-&lt;50000='Tier1'         /* 50000 not included */ <br>
+                50000-&lt;100000='Tier2'      /* 100000 not included */ <br>
+                100000-high='Tier3' <br>
+                .='Missing value'; <br>
+RUN;</code></p>
+
+<p><strong>Note1:</strong> if you omit the <strong>LIBRARY</strong> option, then formats and informats are stored in the <strong>work.formats</strong> catalog</p>
+
+<p><strong>Note2:</strong> if you do not includ the keyword <strong>OTHER</strong>, then SAS applies the format only to values that match the value-range sets that you specify and the rest of values are displayed as they are stored in the data set</p>
+
+<p><strong>Note3:</strong> you can only use the <strong>&lt;</strong> symbol to define a non-inclusive range.</p>
+
+<p><code>OPTIONS FMTSEARCH = (libref1 libref2... librefn)</code></p>
+
+<ul>
+<li>The <strong>FMTSEARCH</strong> system option controls the order in which format catalogs are searched until the desired member is found.</li>
+<li>The <strong>WORK.FORMATS</strong> catalog is always searched first, unless it appears in the <strong>FMTSEARCH</strong> list. </li>
+</ul>
+
+
+
+<h2 id="reading-sas-data-sets">Reading SAS data sets</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m417/m417_4_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p>To create a new data set that is a subset of a previous data set:</p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    WHERE where-expression;
+    variable_name = expression;     /* new variable */
+RUN;
+</code></pre>
+
+<p><strong>Note1:</strong> if a missing value is involved in an arithmetic calculation the result will be a missing value too</p>
+
+<p><strong>Note2:</strong> new variables being created in the DATA step and not contained in the original data set cannot be used in a WHERE statement</p>
+
+
+
+<h3 id="customizing-a-sas-data-set">Customizing a SAS data set</h3>
+
+<p>How to select a subset of the variables/observations of the original data set:</p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    DROP variable-list;        /* original variables to exclude */
+    KEEP variable-list;        /* original variables to include + new variables */
+RUN;
+</code></pre>
+
+<p>How SAS processes the <strong>DATA</strong> step:</p>
+
+<p><strong>Compilation phase</strong></p>
+
+<ul>
+<li>SAS scan each DATA step statement for syntax errors and converts the program into machine code if everything’s alright. </li>
+<li>SAS also creates the program data vector (<strong>PDV</strong>) in memory to hold the current observation. <br>
+<ul><li><strong>_N_</strong>: iteration number of the DATA step</li>
+<li><strong>_ERROR_</strong>: its value is 0 is there are no errors (1 if there are some)</li></ul></li>
+<li>SAS creates the descriptor portion of the new data set (takes the original one, adds the new variables and flags the variables to be dropped). </li>
+</ul>
+
+<p><strong>Execution phase</strong></p>
+
+<ul>
+<li>SAS initializes the PDV to missing</li>
+<li>SAS reads and processes the observations from the input data set </li>
+<li>SAS creates observations in the data portion of the output data set (an implicit output/implicit return loop over all the observations that continues until EOF)</li>
+</ul>
+
+<hr>
+
+<p>Subsetting <strong>IF</strong> statement: </p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    IF expression;
+RUN;
+</code></pre>
+
+<ul>
+<li>When the expression is false, SAS excludes the observation from the output data set and continues processing</li>
+<li>While original values can be managed with a <strong>WHERE</strong> statement as well as an <strong>IF</strong> statement, for <strong>new variable</strong> conditionals only <strong>IF</strong> can be used</li>
+<li>You should subset as early as possible in your program for more efficient processing (a <strong>WHERE</strong> before an <strong>IF</strong> can make the processing more efficient).</li>
+<li>In a <strong>PROC</strong> step <strong>IF</strong> statements are <strong>NOT allowed</strong></li>
+</ul>
+
+<hr>
+
+<p>Subsetting <strong>IF-THEN/DELETE</strong> statement: </p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    IF expression1 or expression2 then delete;
+RUN;
+</code></pre>
+
+<ul>
+<li>The <strong>IF-THEN/DELETE</strong> statement eliminates the observations where the <strong>conditions are not met</strong> (on the contrary of what the <strong>IF</strong> does)</li>
+<li>The <strong>DELETE</strong> statement stops processing the current observation. It is often used in a THEN clause of an IF-THEN statement or as part of a conditionally executed DO group.</li>
+</ul>
+
+<hr>
+
+<p>Addition of several variables: <code>Total=sum(var1, var2, var3)</code></p>
+
+<p>Count of nonmissing values: <code>Nonmissing=n(var1, var2, var3)</code></p>
+
+
+
+<h3 id="adding-permanent-attributes">Adding permanent attributes</h3>
+
+<p><strong><em>Permanent variable labels</em></strong></p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    LABEL variable1='label1'
+          variable2='label2';
+RUN;
+
+PROC PRINT DATA=output-SAS-data-set label;
+RUN;
+</code></pre>
+
+<ul>
+<li>If you use the <strong>LABEL</strong> statement in the <strong>PROC</strong> step the labels are <strong>temporary</strong> while if you use it in the <strong>DATA</strong> step, SAS <strong>permanently</strong> associates the labels to the variables</li>
+<li>Labels and formats that you specify in <strong>PROC</strong> steps override the permanent labels in the current step. However, the permanent labels are not changed.</li>
+</ul>
+
+<p><strong><em>Permanent variable formats</em></strong></p>
+
+<pre><code>DATA output-SAS-data-set;
+    SET input-SAS-data-set;
+    FORMAT variable1 format1
+           variable2 format2;
+RUN;
+</code></pre>
+
+
+
+<h2 id="reading-spreadsheet-and-database-data">Reading spreadsheet and database data</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m418/m418_3_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="reading-spreadsheet-data">Reading spreadsheet data</h3>
+
+<p>To determine the SAS products that are included in your SAS license, you can run the following PROC SETINIT step:</p>
+
+<pre><code>PROC SETINIT;
+RUN;
+</code></pre>
+
+<hr>
+
+<p>SAS/ACCESS LIBNAME statement (read/write/update data):</p>
+
+<pre><code>LIBNAME libref &lt;engine&gt; &lt;PATH=&gt;"workbook-name" &lt;options&gt;;
+</code></pre>
+
+<p>E.g.:<br>
+<strong>Default engine:</strong> <code>LIBNAME orionx excel "&amp;path/sales.xls"</code><br>
+<strong>PC Files server engine:</strong> <code>LIBNAME orionx pcfiles PATH="&amp;path/sales.xls"</code><br></p>
+
+<ul>
+<li><strong>&lt;\engine&gt;</strong>: excel (if both SAS and Office are 32/64 bits), pcfiles (if the value is different)</li>
+<li>The icon of the library will be different (a globe) indicating that the data is outside SAS</li>
+<li>The members whose name ends with a <strong><span>$</span></strong> are the <strong>spreadsheets</strong> while the others are named <strong>ranges</strong>. In case it has the <strong><span>$</span></strong>, you need to refer to that Excel worksheet in a special way to account for that special character (SAS name literal): <code>libref.'worksheetname\$'n</code></li>
+<li>You can use the <strong><code>VALIDVARNAME = v7</code></strong> option in SAS Enterprise Guide to cause it to behave the same as in the SAS window environment</li>
+<li>Is important to disassociate the library: the workbook cannot be opened in Excel meanwhile (SAS puts a lock on the Excel file when the libref is assigned): <strong><code>LIBNAME libref CLEAR;</code></strong></li>
+</ul>
+
+<hr>
+
+<p>Import the xls data:</p>
+
+<pre><code>PROC IMPORT DATAFILE="/folders/myfolders/reading_test.xlsx"
+        OUT=work.myexcel
+        DBMS=xlsx 
+        REPLACE;
+RUN;
+</code></pre>
+
+
+
+<h3 id="reading-database-data">Reading database data</h3>
+
+<pre><code>LIBNAME libref engine &lt;SAS/ACCESS options&gt;;
+</code></pre>
+
+<ul>
+<li><strong>engine</strong>: oracle or BD2</li>
+<li><strong>SAS/ACCESS options</strong>: USER, PASSWORD/PW, PATH (specifies the Oracle driver, node and database), SCHEMA (enables you to read database objects such as tables and views)</li>
+</ul>
+
+
+
+<h2 id="reading-raw-data-files">Reading raw data files</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m419/m419_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="introduction-to-reading-raw-data-files">Introduction to reading raw data files</h3>
+
+<ul>
+<li><strong>Raw data files</strong> are not software specific</li>
+<li>A <strong>delimited raw data file</strong> is an external text file in which the values are separated by spaces or other special characters.</li>
+<li>A <strong>list input</strong> will be used to work with delimited raw data files that contain standard and/or nonstandard data</li>
+<li><strong>Standard data</strong> is data that SAS can read without any special instructions</li>
+<li><strong>Nonstandard data</strong> includes values like dates or numeric values that include special characters like dollar signs (extra instructions needed)</li>
+</ul>
+
+
+
+<h3 id="reading-standard-delimited-data">Reading standard delimited data</h3>
+
+<pre><code>DATA output-SAS-data-set-name;
+    LENGTH variable(s) &lt;$&gt; length;
+    INFILE 'raw-data-file-name' DLM='delimiter';  
+    INPUT variable1 &lt;$&gt; variable2 &lt;$&gt; ... variableN &lt;$&gt;;    /* $ = char var */     
+RUN;
+</code></pre>
+
+<p><strong>E.g.:</strong><br></p>
+
+<pre><code>DATA work.sales1;
+    LENGTH First_Name Last_Name $ 12 Gender $ 1;
+    INFILE '&amp;path/sales.csv' DLM=',';  
+    INPUT Employee_ID Gender $ Salary $ Job_Title $ Country $; 
+RUN;
+</code></pre>
+
+<ul>
+<li>With <strong>list input</strong>, the default length for all variables is 8 bytes</li>
+<li>SAS uses an <strong>input buffer</strong> only if the input data is a raw data file</li>
+<li>The variable names will appear in the report as stated in the <strong>LENGTH</strong> statement (watch out the uppercase/lowercase)</li>
+<li>The <strong>LENGTH</strong> statement must precede the <strong>INPUT</strong> statement in order to correctly set the length of the variable</li>
+<li>The variables not specified in the <strong>LENGTH</strong> statement will appear at the end of the table. If you want to keep the original order you should include all variables even if you want them to have the defaul length (8)</li>
+</ul>
+
+
+
+<h3 id="reading-nonstandard-delimited-data">Reading nonstandard delimited data</h3>
+
+<p>You can use a <strong>modified list input</strong> to read all of the fields from a raw data file (including nonstandard variables)</p>
+
+<ul>
+<li>Informats are similar to formats except that <strong>formats</strong> provide instruction on how to <strong>write</strong> a value while <strong>informats</strong> provide instruction on how to <strong>read</strong> a value</li>
+<li>The <strong>colon format modifier (:)</strong> causes SAS to read up to the delimiter</li>
+</ul>
+
+<p><code>INPUT variable &lt;$&gt; variable &lt;:informat&gt;;</code></p>
+
+<p><strong>E.g.:</strong><br></p>
+
+<pre><code>:date.
+:mmddyy.
+</code></pre>
+
+<ul>
+<li><strong>COMMA./DOLLAR.</strong>: reads nonstandard numeric data and removes embedded commas, blanks, dollar sign, percent signs and dashes</li>
+<li><strong>COMMAX./DOLLARX.</strong>: reads nonstandard numeric data and removes embedded non-numeric characters; reverses the roles of the decima point and the comma</li>
+<li><strong>EUROX.</strong>: reads nonstandard numeric data and removes embedded non-numeric characters in European currency</li>
+<li><strong><span>$</span>CHAR.</strong>: reads character values and preserves leading blanks</li>
+<li><strong><span>$</span>UPCASE.</strong>: reads character values and converts them to uppercase</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>You cannot use a <strong>WHERE</strong> statement when the input data is a raw data file instead of a SAS data set</li>
+</ul>
+
+<hr>
+
+<pre><code>DATA (...);
+    INFILE DATALINES DLM=',';   /* only if datalines are delimited */
+    INPUT (...);
+    DATALINES;
+&lt;instream data&gt;
+;
+</code></pre>
+
+<ul>
+<li>The null statement (<strong>;</strong>) indicates the end of the input data</li>
+<li>You precede the instream data with the <em>DATALINES</em> statement and follow it with a null statement</li>
+<li>The instream data should be the <strong>last part of the DATA step</strong> except for a null statement</li>
+</ul>
+
+<p><strong>E.g.:</strong><br></p>
+
+<p><code>data work.managers; <br>
+   infile datalines dlm='/'; <br>
+   input ID First :$12. Last :$12. Gender $ Salary :comma.  <br>
+            Title :$25. HireDate :date.; <br>
+   datalines; <br>
+120102/Tom/Zhou/M/108,255/Sales Manager/01Jun1993 <br>
+120103/Wilson/Dawes/M/87,975/Sales Manager/01Jan1978 <br>
+120261/Harry/Highpoint/M/243,190/Chief Sales Officer/01Aug1991 <br>
+121143/Louis/Favaron/M/95,090/Senior Sales Manager/01Jul2001 <br>
+121144/Renee/Capachietti/F/83,505/Sales Manager/01Nov1995 <br>
+121145/Dennis/Lansberry/M/84,260/Sales Manager/01Apr1980 <br>
+;</code></p>
+
+<p><code>title 'Orion Star Management Team'; <br>
+proc print data=work.managers noobs; <br>
+   format HireDate mmddyy10.; <br>
+run; <br>
+title;</code></p>
+
+
+
+<h3 id="validating-data">Validating data</h3>
+
+<p>When SAS encounters a data error, it prints messages and a ruler in the log and assigns a missing value to the affected variable. Then SAS continues processing.</p>
+
+<hr>
+
+<p><strong><em>Missing values between delimiters (consecutive delimiters)</em></strong></p>
+
+<p><code>INFILE 'raw-data-file-name' &lt;DLM=&gt; DSD;</code></p>
+
+<p>The <strong>DSD</strong> option sets the default delimiter to a comma, treats consecutive delimiters as missing values and enables SAS to read values with embedded delimiters if the value is surrounded by quotation marks</p>
+
+<hr>
+
+<p><strong><em>Missing values at the end of a line</em></strong></p>
+
+<p><code>INFILE 'raw-data-file-name' MISSOVER;</code></p>
+
+<p>With the <strong>MISSOVER</strong> option, if SAS reaches the end of a record without finding values for all fields, variables without values are set to <em>missing</em>.</p>
+
+
+
+<h2 id="manipulating-data">Manipulating Data</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m421/m421_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="using-sas-functions">Using SAS functions</h3>
+
+<p><strong><em>SUM function</em></strong></p>
+
+<p><code>SUM(argument1, argument2, ...)</code></p>
+
+<ul>
+<li>The arguments must be numeric values</li>
+<li>The <strong>SUM</strong> function ignores missing values, so if an argument has a missing value, the result of the SUM function is the sum of the nonmissing values</li>
+<li>If you add two values by <strong>+</strong>, if one of them is missing, the result will be a missing value which makes the <strong>SUM</strong> function a better choice</li>
+</ul>
+
+<hr>
+
+<p><strong><em>DATE funtion</em></strong></p>
+
+<p><code>YEAR(SAS-date) <br>
+QTR(SAS-date) <br>
+MONTH(SAS-date) <br>
+DAY(SAS-date) <br>
+WEEKDAY(SAS-date) <br>
+TODAY()                /* Obtain the current date and convert to SAS-date (no argument) */ <br>
+DATE()                 /* Obtain the current date and convert to SAS-date (no argument) */ <br>
+MDY(month, day, year)</code></p>
+
+<ul>
+<li>The arguments must be numeric values (except from <strong>TODAY()</strong> and <strong>DATE()</strong> functions)</li>
+<li>You can subtract dates: <code>Agein2012=(Bday2012-Birth_Date)/365.25;</code></li>
+</ul>
+
+<hr>
+
+<p><strong><em>Concatenation function</em></strong></p>
+
+<p><code>CATX(' ', First_Name, Last_Name)</code></p>
+
+<p>The <strong>CATX</strong> function removes leading and trailing blanks, inserts delimiters, and returns a concatenated character string. In the code, you first specify a character string that is used as a delimiter between concatenated items.</p>
+
+<hr>
+
+<p><strong><em>Time interval function</em></strong></p>
+
+<p><code>INTCK('year', Hire_Date, '01JAN2012'd)</code></p>
+
+<p>The <strong>INTCK</strong> function returns the number of interval boundaries of a given kind that lie between the two dates, times, or datetime values. In the code, you first specify the interval value.</p>
+
+<hr>
+
+<p><strong><em>What happens if you use a variable to describe a new one that you are gonna DROP in that same DATA statement?</em></strong></p>
+
+<p>The <strong>DROP</strong> statement is a compile-time-only statement. SAS sets a drop flag for the dropped variables, but the variables are in the PDV and, therefore, are available for processing.</p>
+
+
+
+<h3 id="conditional-processing">Conditional processing</h3>
+
+<p><strong><em>IF-THEN-ELSE conditional structures</em></strong></p>
+
+<p><code>IF expression THEN statement; <br>
+ELSE IF expression THEN statement; <br>
+ELSE statement;</code></p>
+
+<p>In the conditional expressions involving strings watch out for possible mixed case values where the condition may not be met: <code>Country = upcase(Country);</code> to avoid problems</p>
+
+<hr>
+
+<p><strong><em>Executing multiple statements in an IF-THEN-ELSE statement</em></strong></p>
+
+<p><code>IF expression THEN <br>
+    DO; <br>
+        executable statements; <br>
+    END; <br>
+ELSE IF expression THEN <br>
+    DO; <br>
+        executable statements; <br>
+    END;</code></p>
+
+
+
+<hr>
+
+<p>In the <strong>DATA</strong> step, the first reference to a variable determines its length. The first reference to a new variable can be in a <strong>LENGTH</strong> statement, an <strong>assignment</strong> statement, or <strong>another</strong> statement such as an INPUT statement. After a variable is created in the PDV, the length of the variable’s first value doesn’t matter. </p>
+
+<p>To avoid truncation in a variable defined inside a conditional structure you can:</p>
+
+<ul>
+<li>Define the longer string as the first condition</li>
+<li>Add some blanks at the end of shorter strings to fit the longer one</li>
+<li>Define the length explicitly before any other reference to the variable</li>
+</ul>
+
+<hr>
+
+<p><strong><em>SELECT group</em></strong></p>
+
+<p><code>SELECT(Gender); <br>
+      WHEN('F') DO; <br>
+         Gift1='Scarf'; <br>
+         Gift2='Pedometer'; <br>
+      END; <br>
+      WHEN('M') DO; <br>
+         Gift1='Gloves'; <br>
+         Gift2='Money Clip'; <br>
+      END; <br>
+      OTHERWISE DO; <br>
+         Gift1='Coffee'; <br>
+         Gift2='Calendar'; <br>
+      END; <br>
+END;</code></p>
+
+<ul>
+<li>The <strong>SELECT</strong> statement executes one of several statements or groups of statements</li>
+<li>The <strong>SELECT</strong> statement begins a SELECT group. They contain <strong>WHEN</strong> statements that identify SAS statements that are executed when a particular condition is true</li>
+<li>Use at least one <strong>WHEN</strong> statement in a SELECT group</li>
+<li>An optional <strong>OTHERWISE</strong> statement specifies a statement to be executed if no <strong>WHEN</strong> condition is met</li>
+<li>An <strong>END</strong> statement ends a <strong>SELECT</strong> group</li>
+</ul>
+
+
+
+<h2 id="combining-sas-data-sets">Combining SAS Data Sets</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m421/m421_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="concatenating-data-sets">Concatenating Data Sets</h3>
+
+<p><strong><em>Combine files vertically by concatenating</em></strong></p>
+
+<p><code>DATA SAS-data-set; <br>
+    SET SAS-data-set1 SAS-data-set2 ...; <br>
+RUN;</code></p>
+
+<p><strong><em>Combine two different variables that are actually the same one</em></strong></p>
+
+<p><code>DATA SAS-data-set; <br>
+    SET SAS-data-set1 (RENAME=(old-name1 = new-name1 old-name2 = new-name2)) SAS-data-set2 ...; <br>
+RUN;</code></p>
+
+<ul>
+<li>The name change affects the PDV and the output data set, but has no effect on the input data set</li>
+<li>The <strong>variable attributes</strong> are assigned from the <strong>first data set</strong> in the SET statement</li>
+<li>You will get an <strong>error</strong> in the DATA step if a variable is defined with <strong>different data types</strong> in the files that you are trying to concatenate</li>
+</ul>
+
+
+
+<h3 id="merging-sas-data-sets-one-to-one">Merging SAS Data Sets One-to-One</h3>
+
+<p><strong><em>Combine files horizontally by merging</em></strong></p>
+
+<ul>
+<li>The <strong>match-merging</strong> is a process based on the values of common variables</li>
+<li>Data sets are merged in the order that they appear in the MERGE statement</li>
+<li>You may need to <strong>SORT</strong> the files by the <strong>BY-variable(s)</strong> before merging the files</li>
+</ul>
+
+<p><code>DATA SAS-data-set; <br>
+    MERGE SAS-data-set1 (RENAME=(old-name1 = new-name1 ...)) SAS-data-set2 ...; <br>
+    BY &lt;DESCENDING&gt; BY-variable(s); <br>
+    &lt;additional SAS statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li>In a <strong>one-to-one</strong> relationship, a single observastion in one data set is related to one, and only one, observation in another data set based on the values of one or more common variables</li>
+<li>In a <strong>one-to-many</strong> relationship, a single observation in one data set is related to one or more observations in another data set</li>
+<li>In a <strong>many-to-one</strong> relationship, multiple observations in one data set are related to one observation in another data set</li>
+<li>In a <strong>many-to-many</strong> relationship, multiple observations in one data set are related to multiple observations in another data set</li>
+<li>Sometimes the data sets have <strong>non-matches</strong>: at least one observation in one of the data sets is unrelated to any observation in another data set based on the values of one or more common variables</li>
+</ul>
+
+
+
+<h3 id="merging-sas-data-sets-one-to-many">Merging SAS Data Sets One-to-Many</h3>
+
+<p><code>DATA SAS-data-set; <br>
+    MERGE SAS-data-set1 SAS-data-set2 ...; <br>
+    BY &lt;DESCENDING&gt; BY-variable(s); <br>
+    &lt;additional SAS statements&gt; <br>
+RUN;</code></p>
+
+<p><em>In a <strong>one-to-many merge</strong>, does it matter which data set is listed first in the MERGE statement?</em></p>
+
+<p>When you reverse the order of the data sets in the MERGE statement, the results are the same, but the order of the variables is different. SAS performs a <strong>many-to-one merge</strong>.</p>
+
+<hr>
+
+<p><strong>MERGENOBY</strong> (= NOWARN (default) | WARN | ERROR) controls whether a message is issued when MERGE processing occurs without an associated BY statement</p>
+
+<ul>
+<li>Performing a merge without a BY statement merges the observations based on their positions</li>
+<li>This is almost never done intentionally and can lead to unexpected results</li>
+</ul>
+
+
+
+<h3 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches</h3>
+
+<p><code>DATA SAS-data-set; <br>
+    MERGE SAS-data-set1 SAS-data-set2 ...; <br>
+    BY &lt;DESCENDING&gt; BY-variable(s); <br>
+    &lt;additional SAS statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li>After the merging, the output data set contains <strong>both matches and non-matches</strong></li>
+<li>You want the new data set to contain only the observations that match across the input data sets, and not those ones that are missing in one of the data sets that you are merging</li>
+</ul>
+
+<p><code>DATA SAS-data-set; <br>
+    MERGE SAS-data-set1 (IN=variable1)  <br>
+          SAS-data-set2 (IN=variable2) ...; <br>
+    BY &lt;DESCENDING&gt; BY-variable(s); <br>
+    &lt;additional SAS statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li>When you spefify the <strong>IN</strong> option after an input data set in the MERGE statement, SAS creates a <strong>temporary numeric variable</strong> that indicates whether the data set contributed data to the current observation (0 = it did not contribute to the current observation, 1 = it did contribute)</li>
+<li>These variables are only available <strong>during execution</strong></li>
+</ul>
+
+<p><code>DATA SAS-data-set; <br>
+    MERGE SAS-data-set1 (IN=variable1)  <br>
+          SAS-data-set2 (IN=variable2) ...; <br>
+    BY &lt;DESCENDING&gt; BY-variable(s); <br>
+    IF variable1 = 1 and variable2 = 1;     /* write only matches */ <br>
+    &lt;additional SAS statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong><em>Matches</em></strong></li>
+</ul>
+
+<p><code>IF variable1 = 1 and variable2 = 1  <br>
+IF variable1 and variable2</code> <br>
+- <strong><em>Non-matches from either data set</em></strong></p>
+
+<p><code>IF variable1 = 0 or not variable2 = 0 <br>
+IF not variable1 or not variable2</code></p>
+
+<p><strong><em>E.g.:</em></strong><br>
+<code>DATA SAS-new-data-set1 SAS-new-data-set2; <br>
+    MERGE SAS-data-set1 (in=var1) SAS-data-set2 (in=var2); <br>
+    BY BY-variable(s); <br>
+    IF var2 THEN OUTPUT SAS-new-data-set1; <br>
+    ELSE IF var1 and not var2 THEN OUTPUT SAS-new-data-set2; <br>
+    KEEP variable1 variable2 variable5 variable8; <br>
+run;</code></p>
+
+
+
+<h2 id="creating-summary-reports">Creating Summary Reports</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m422/m422_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="using-proc-freq-to-create-summary-reports">Using PROC FREQ to Create Summary Reports</h3>
+
+<ul>
+<li>When you’re summarizing data, there’s no need to show a frequency distribution for variables that have a large number of distinct values</li>
+<li>Frequency distributions work best with variables whose values meet two criteria: variable with <strong>categorical values</strong> and values are <strong>best summarized by counts instead of averages</strong></li>
+<li>Variables that have continuous numerical values, such as dollar amounts and dates, will need to be <strong>grouped into categories</strong> by <strong>applying formats</strong> inside the PROC FREQ step (substitute an specific range of those values by a tag)</li>
+</ul>
+
+<p><code>PROC FREQ DATA=SAS-data-set &lt;option(s)&gt;; <br>
+    TABLES variable(s) &lt;loption(s)&gt;; <br>
+    &lt;additional statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong>PROC FREQ</strong> produces frequency tables that report the distribution of any or all variable values in a SAS data set</li>
+<li>In the <strong>TABLE</strong> statement you specify the frequency tables to produce </li>
+<li>To create <strong>one-way</strong> frequency tables you specify one or more variable names separated by space</li>
+<li><strong>WATCH OUT</strong>: if you omit the <strong>TABLE</strong> statement, SAS produces a one-way table for every variable in the data set</li>
+<li>The <strong>PROC FREQ</strong> step automatically displays output in a report, so you don’t need to add a PROC PRINT step </li>
+<li>Each unique variable’s value displayed in the 1<sup>st</sup> column of the output is called a <strong>level of the variable</strong></li>
+</ul>
+
+<hr>
+
+<p><code>PROC FREQ DATA=SAS-data-set &lt;option(s)&gt;; <br>
+    TABLES variable/NOCUM NOPERCENT; <br>
+    &lt;additional statements&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong>NOCUM</strong> option supresses the display of  the cummulative frequency and cummulative percent values </li>
+<li><strong>NOPERCENT</strong> option supresses the display of all percentages</li>
+</ul>
+
+<hr>
+
+<p><code>PROC SORT DATA=SAS-data-set <br>
+    OUT=SAS-data-set-sorted; <br>
+    BY variable_sorted; <br>
+RUN;</code></p>
+
+<p><code>PROC FREQ DATA=SAS-data-set-sorted; <br>
+    TABLES variable-freq; <br>
+    BY variable_sorted; <br>
+RUN;</code></p>
+
+<ul>
+<li>Whenever you use the <strong>BY</strong> statement, the data set must be sorted by the variable named in the statement</li>
+<li>Using this we will get a frequency table on <strong><code>variable_freq</code></strong> for each value of <strong><code>variable_sorted</code></strong></li>
+</ul>
+
+<hr>
+
+<p><strong><em>Crosstabulation tables</em></strong></p>
+
+<ul>
+<li>Sometimes it is useful to view a single table with statistics for each distintic combination of values of the selected variables</li>
+<li>The simplest crosstabulation table is a <strong>two-way table</strong></li>
+</ul>
+
+<p><code>PROC FREQ DATA=SAS-data-set; <br>
+    TABLES variable1 * variable2 / NOFREQ NOPERCENT NOROW NOCOL; <br>
+RUN;</code></p>
+
+<p><code>variable1 = table rows <br>
+variable2 = table columns</code></p>
+
+<p>Information contained in crosstabulation tables (legend):</p>
+
+<ul>
+<li><strong>Frequency</strong>: indicates the number of observations with the unique combination of values represented in that cell</li>
+<li><strong>Percent</strong>: indicates the cell’s percentage of the total frequency</li>
+<li><strong>Row Pct</strong>: cell’s percentage of the total frequency for its row</li>
+<li><strong>Col Pct</strong>: cell’s percentage of the total frequency for its column  <br>
+<br><br></li>
+<li><strong>LIST</strong> option format: the first two columns specify each possible combination of the two variables; it displays the same statistics as the default <strong>one-way frequency</strong> table</li>
+<li><strong>CROSSLIST</strong> option format: it displays the same statistics as the default <strong>crosstabulation</strong> table</li>
+</ul>
+
+<hr>
+
+<p>The <strong>FORMAT=</strong> option allows you to format the frequency value (to any SAS numeric format or a user-defined numeric format while its length is not more than 24) and to change the width of the column (e.g. to allow variable labels to fit in one line). </p>
+
+<p><code>PROC FREQ DATA=SAS-data-set; <br>
+    TABLES variable1 * variable2 / <br>
+    FORMAT = &lt;w&gt;.; <br>
+    FORMAT variable1 $format-name.; <br>
+RUN;</code></p>
+
+<p>The <strong>FORMAT=</strong> option applies only to crosstabulation tables displayed in the default format. It doesn’t apply to crosstabulation tables produced with the <strong>LIST</strong>/<strong>CROSSLIST</strong> option</p>
+
+
+
+<h3 id="using-proc-freq-for-data-validation">Using PROC FREQ for Data Validation</h3>
+
+<p>You can use a <strong>PROC FREQ</strong> step with the <strong>TABLES</strong> statement to detect invalud numeric and character data by looking at distinct values. The <strong>FREQ</strong> procedure <strong>lists all discrete values</strong> for a variable and <strong>reports its missing values</strong>.</p>
+
+<p><code>PROC FREQ DATA=SAS-data-set &lt;ORDER=FREQ&gt;; <br>
+    TABLES variable; <br>
+RUN;</code></p>
+
+<ul>
+<li>You can check for non-expected variable’s values</li>
+<li>You can check for missing values</li>
+<li>You can find duplicated values</li>
+</ul>
+
+<hr>
+
+<p>The table showing the <strong>Number of Variable Levels</strong> can indicate whether a variable contains duplicate/missing/non-expected values:</p>
+
+<p><code>PROC FREQ DATA=SAS-data-set NLEVELS; <br>
+    TABLES variable / NOPRINT; <br>
+RUN;</code></p>
+
+<hr>
+
+<p>You can use a <strong>WHERE</strong> statement to print out only the invalid values to be checked:</p>
+
+<p><code>PROC PRINT DATA=SAS-data-set; <br>
+    WHERE gender NOT IN ('F','M') OR <br>
+          job_title IS NULL OR <br>
+          salary NOT BETWEEN 24000 AND 500000 OR <br>
+          employee IS MISSING; <br>
+RUN;</code></p>
+
+<hr>
+
+<p>You can output the tables to a new data set instead of displaying it:</p>
+
+<p><code>PROC FREQ DATA=SAS-data-set NOPRINT; <br>
+   TABLE variable / OUT=SAS-new-data-set; <br>
+run;</code></p>
+
+
+
+<h3 id="using-the-means-and-univariate-procedures">Using the MEANS and UNIVARIATE Procedures</h3>
+
+<p><strong>PROC MEANS</strong> produces summary reports with descriptive statistics and you can create statistics for groups of observations</p>
+
+<ul>
+<li>It automatically displays output in a report and you can also save the output in a SAS data set</li>
+<li>It reports the <strong>number of nonmissing values</strong> of the analysis variable (N), and the <strong>mean</strong>, the <strong>standard deviation</strong> and <strong>minimum/maximum values</strong> of every numeric variable in the data set</li>
+<li>The variables in the <strong>CLASS</strong> statement are called <strong>classification variables</strong> or <strong>class variables</strong> (they typically have few discrete values)</li>
+<li>Each combination of class variable values is called a <strong>class level</strong></li>
+<li>The data set <strong>doesn’t need to be sorted</strong> or indexed by the class variables</li>
+<li><strong>N Obs</strong> reports the number of observations with each unique combination of class variables, whether or not there are missing values (if these <strong>N Obs</strong> are identical to <strong>N</strong>, there are no missing values in you data set)</li>
+</ul>
+
+<p><code>PROC MEANS DATA=SAS-data-set &lt;statistic(s)&gt;; <br>
+    VAR analysis-variable(s); <br>
+    CLASS classification-variable(s); <br>
+RUN;</code></p>
+
+<p>To write the report in a new data set (including total addition):</p>
+
+<p><code>PROC MEANS DATA=SAS-data-set NOPRINT NWAY; <br>
+    OUTPUT OUT=SAS-new-data-set SUM=addition-new-variable; <br>
+    VAR analysis-variable(s); <br>
+    CLASS classification-variable(s); <br>
+RUN;</code></p>
+
+<p>Format options: </p>
+
+<ul>
+<li><code>MAXDEC=number</code> (default format = BESTw.) <code>NONOBS</code></li>
+<li><code>FW=number</code>: specifies that the field width for all columns is <em>number</em></li>
+<li><code>PRINTALLTYPES</code>: displays statistics for all requested combination of class variables</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/R84N_PMRcXBBgDksyuhN6i--5J_vun1oLe5CRgMIvZdFZNSbSAxMkrKzCo5z7Zn_2aPnoFY=s0" alt="enter image description here" title="Descriptive statistics"> <br>
+<img src="https://lh3.googleusercontent.com/aQuAOJzy4JgnaWUPOUwU80TvOp9DeQXr3Iesbw1EVHVJrZKjUw-TC4S27Mhd6Dt8NJ7V7j4=s0" alt="enter image description here" title="Quantile statistics"></p>
+
+<hr>
+
+<p><strong><em>Alternative procedure to validate data: </em></strong> <strong>PROC MEANS</strong></p>
+
+<ul>
+<li>The <strong>MIN</strong>/<strong>MAX</strong> values can be useful to check if the data is within a range</li>
+<li><strong>NMISS</strong> option displays the number of observations with missing values</li>
+</ul>
+
+<hr>
+
+<p><strong><em>Alternative procedure to validate data: </em></strong> <strong>PROC UNIVARIATE</strong></p>
+
+<p><strong>PROC UNIVARIATE</strong> is a procedure that is useful for detecting data outliers that also produces summary reports of <strong>descriptive statistics</strong></p>
+
+<p><code>PROC UNIVARIATE DATA=SAS-data-set; <br>
+    VAR variable(s); <br>
+    ID variable_to_relate; <br>
+    HISTOGRAM variables &lt;/options&gt;; <br>
+    PROBPLOT variables &lt;/options&gt;; <br>
+    INSET keywords &lt;/options&gt;; <br>
+RUN;</code></p>
+
+<ul>
+<li>If you omit the <strong>VAR</strong> statement, all numeric variables in the data set are analyzed</li>
+<li>The <strong>Extreme Observations</strong> table contains useful information to locate outliers: it displays the 5 lowest/highest values by default along with the corresponding observation number. The <strong>ID</strong> statement specifies that SAS will use this variable as a label in the table of extreme observations and as an identifier for any extreme.</li>
+<li>To specify the number of listed observations you can use <strong>NEXTROBS=</strong></li>
+<li><strong>HISTOGRAM/PROBPLOT</strong> options: normal(mu=est sigma=est) creates a normal curve overlay to the histogram using the estimates of the population mean and standard deviation</li>
+<li><strong>INSET</strong> writes a legend for the graph. <code>/ position=ne</code> moves the <strong>INSET</strong> to the north-east corner of the graph.</li>
+</ul>
+
+<p>To include in the report only one of the automatically produced tables:</p>
+
+<p>1) Check the specific table name in the <strong>LOG information</strong> using <strong>ODS TRACE</strong>:</p>
+
+<p><code>ODS TRACE ON; <br>
+PROC UNIVARIATE DATA=SAS-data-set; <br>
+    VAR variable(s); <br>
+RUN; <br>
+ODS TRACE OFF;</code></p>
+
+<p>2) Select the wanted table with <strong>ODS SELECT</strong>:</p>
+
+<p><code>ODS SELECT ExtremeObs; <br>
+PROC UNIVARIATE DATA=SAS-data-set; <br>
+    VAR variable(s); <br>
+RUN;</code></p>
+
+<hr>
+
+<p><strong><em>SUMMARY of validation procedures</em></strong></p>
+
+<p><img src="https://lh3.googleusercontent.com/qa02E3GQU_EU1ZHWX40Ewy-WsXd7hmzfJ5HXBOCDvHrtxRGjrlh6R3hjEupj5Ul9mDreXO8=s0" alt="enter image description here" title="Validation procedures"></p>
+
+
+
+<h3 id="using-the-sas-output-delivery-system">Using the SAS Output Delivery System</h3>
+
+<p><code>ODS destination FILE="filename" &lt;options&gt;; <br>
+    &lt;SAS code to generate the report&gt; <br>
+ODS destination CLOSE;</code></p>
+
+<ul>
+<li>You can have multiple destinations open and execute multiple procedures</li>
+<li>All generated output will be sent to every open destination</li>
+<li>You might not be able to view the file, or the most updated file, outside of SAS until you close the destination</li>
+</ul>
+
+<p><strong>E.g.:</strong></p>
+
+<p><code>ODS pdf FILE="C:/output/test.pdf"; <br>
+(...) <br>
+ODS pdf CLOSE;</code></p>
+
+<p><code>ODS csvall FILE="C:/output/test.cvs"; <br>
+ODS rtf FILE="C:/output/test.rtf"; <br>
+(...) <br>
+ODS csvall CLOSE; <br>
+ODS rtf CLOSE;</code></p>
+
+<p><strong><em>Allowed file formats and their corresponding destinations:</em></strong> <br>
+<img src="https://lh3.googleusercontent.com/p3gAmRNbwqP8WfUOSKCLxTA042D3e_F9OUkxYJ0XHspC7MAfzfAnK0ghvpLZQXJWNWdbPd0=s0" alt="enter image description here" title="SAS Output Delivery System"></p>
+
+
+
+<h1 id="statistics-introduction-to-anova-regression-and-logistic-regression">Statistics: Introduction to ANOVA, Regression and Logistic Regression</h1>
+
+
+
+<h2 id="introduction-to-statistics">Introduction to Statistics</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m551/m551_6_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="basic-statistical-concepts">Basic Statistical Concepts</h3>
+
+<ul>
+<li><strong><em>Descriptive statistics (exploratory data analysis, EDA)</em></strong> <br>
+<ul><li>Explore your data</li></ul></li>
+<li><strong><em>Inferential statistics (explanatory modelling)</em></strong> <br>
+<ul><li><strong>How is X related to Y?</strong></li>
+<li>Sample sizes are typically small and include few variables</li>
+<li>The focus is on the parameters of the model</li>
+<li>To assess the model, you use p-values and confidence intervals</li></ul></li>
+<li><strong><em>Predictive modelling</em></strong> <br>
+<ul><li><strong>If you know X, can you predict Y?</strong></li>
+<li>Sample sizes are large and include many predictive (input) variables</li>
+<li>The focus is on the predictions of observations rather than the parameters of the model</li>
+<li>To assess a predictive model, you validate predictions using holdout sample data</li></ul></li>
+</ul>
+
+
+
+<hr>
+
+<p><strong>How to generate random (representative) samples (population subsets)</strong></p>
+
+<p><code>PROC SURVEYSELECT DATA=SAS-data-set  <br>
+                  OUT=name-of-output-data-set <br>
+                  METHOD=method-of-random-sampling <br>
+                  SEED=seed-value  <br>
+                  SAMPSIZE=number-of-observations-desired; <br>
+     &lt;STRATA stratification-variable(s);&gt; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong>METHOD</strong>: specifies the random sampling method to be used. For simple random sampling without replacement, use <strong>METHOD=SRS</strong>. For simple random sampling with replacement, use <strong>METHOD=URS</strong>. For other selection methods and details on sampling algorithms, see the SAS online documentation for PROC SURVEYSELECT.</li>
+<li><strong>SEED</strong>: specifies the initial seed for random number generation. If no SEED option is specified, SAS uses the system time as its seed value. This creates a different random sample every time the procedure is run.</li>
+<li><strong>SAMPSIZE</strong>: indicates the number of observations to be included in the sample. To select a certain fraction of the original data set rather than a given number of observations, use the <strong>SAMPRATE</strong> option.</li>
+</ul>
+
+<hr>
+
+<ul>
+<li><strong>Parameters</strong>: numerical values (typically unknown, you can’t measure the entire population) that summarize characteristics of a population (greek letters)</li>
+<li><strong>Statistics</strong>: summarizes characteristics of a sample (standard alphabet)</li>
+</ul>
+
+<hr>
+
+<ul>
+<li><strong>Independent variable</strong>: it can take different values, it affects or determines a <strong>dependent variable</strong>. It can be called predictor, explanatory, control or input variable.</li>
+<li><strong>Dependent variable</strong>: it can take different values in response to an <strong>independent variable</strong>. Also known as response, outcome or target variable.</li>
+</ul>
+
+<hr>
+
+<p><strong><em>Scale of measurement</em></strong>: variable’s classification</p>
+
+<ul>
+<li><strong>Quantitative/numerical variables</strong>: counts or measurements, you can perform arithmetical operations with it <br>
+<ul><li><strong>Discrete data</strong>: variables that can have only a countable number of values within a measurement range</li>
+<li><strong>Continuous data</strong>: variables that are measured on a scale that has infinite number of values and has no breaks or jumps</li>
+<li><strong>Interval scale data</strong>: it can be rank-ordered like ordinal data but also has a sensible spacing of observations such that differenes between measurements are meaningful but it lacks a true zero (ratios are meaningless)</li>
+<li><strong>Ratio scale data</strong>: it is rank-ordered with meaningful spacing and also includes a true zero point and can therefore accurately indicate the ratio difference between two spaces on the measurement scale</li></ul></li>
+<li><strong>Categorical/attribute variables</strong>: variables that denote groupings or labels <br>
+<ul><li><strong>Nominal data (qualitative/classification variable)</strong>: exhibits no ordering within its observed levels, groups or categories</li>
+<li><strong>Ordinal data</strong>: the observed labels can be ordered in some meaningful way that implies that the differences between the groups or categories are due to magnitude</li></ul></li>
+</ul>
+
+<hr>
+
+<ul>
+<li><strong>Univariate analysis</strong> provides techniques for analyzing and describing a sigle variable. It reveals patterns in the data by looking at the <strong>range</strong> of values, measures of <strong>dispersion</strong>, the <strong>central tendecy</strong> of the values and <strong>frequency distribution</strong>.</li>
+<li><strong>Bivariate analysis</strong> describes and explains the relationships between two variables and how they change or covary together. It include techniques such as <strong>correlation analysis</strong> and <strong>chi-square tests of independance</strong>.</li>
+<li><strong>Multivariate/Multivariable analysis</strong> examines two or more variables at the same time in order to understand the relationships among them.  <br>
+<ul><li>Techniques such as <strong>mutiple linear regression</strong> and n-way <strong>ANOVA</strong> are typically called <strong>multivariable</strong> analysis (only one response variable). </li>
+<li>Techniques such as <strong>factora analysis</strong> and <strong>clustering</strong> are typically called <strong>mutivariate</strong> analysis (they consider more than one response variable).</li></ul></li>
+</ul>
+
+
+
+<h3 id="descriptive-statistics">Descriptive Statistics</h3>
+
+<p><strong>Measures of central tendencies</strong>: mean (affected by outliers), median (less sensitive to outliers), mode</p>
+
+<p>25th percentile = 1st/lower quartile = Q1<br>
+50th percentile = median = middle quartile = Q2<br>
+75th percentile = 3rd/upper quartile = Q3<br></p>
+
+<p>The <strong>interquartile range (IQR)</strong> is the difference between Q1 and Q3, it is a <strong>robust estimate of the variability</strong> because changes in the upper/lower 25% of the data do not affect it. If there are <strong>outliers</strong> in the data, then the IQR is a more reliable measure of the spread than the overall range.</p>
+
+<p>The <strong>coefficient of variation (CV)</strong> is a measure of the standard deviation expressed as a percentage of the mean (S/mean*100)</p>
+
+
+
+<h3 id="picturing-your-data">Picturing Your Data</h3>
+
+<p><strong>Normal distribution</strong>: (μ-σ,μ+σ) = 68%; (μ-2σ,μ+2σ) = 95%; (μ-3σ,μ+3σ) = 99%</p>
+
+<p><em>How to check the normality of a sample?</em></p>
+
+<ul>
+<li>Compare the <strong>mean</strong> and the <strong>median</strong>: if they are nearly equal, that is an indicator of symmetry (requirement for normality).</li>
+<li>Check that <strong>skewness</strong> and <strong>kurtosis</strong> are close to 0.</li>
+<li><strong>Statistical summaries:*</strong> <strong>skewness</strong> and <strong>kurtosis</strong> measure certain aspects of the shape of a distribution (they are <strong>0</strong> and <strong>3</strong> for a normal distribution, although SAS has standardized both to 0)</li>
+<li><strong>Skewness</strong> measures the tendency of your data to be more spread out on one side of the mean than on the other (asymmetry of the distribution).  <br>
+<ul><li>You can think of the direction of skewness as the direction the data is trailing off to. </li>
+<li>A <strong>right-skewed</strong> distribution tells us that the mean is <strong>greater than the median</strong>.</li></ul></li>
+<li><strong>Kurtosis</strong> measures the tendency of your data to be concentrated toward the center or toward the tails of the distribution (peakedness of the data, tail thickness).  <br>
+<ul><li>A <strong>negative kurtosis (platykurtic distribution)</strong> means that the data has lighter tails than in a normal distribution. </li>
+<li>A <strong>positive kurtosis (leptokurtic/heavy-tailed/outlier-prone distribution)</strong> means that the data has heavier tails and is more concentrated around the mean than a normal distribution.</li>
+<li>Rectangular, bimodal and multimodal distributions tend to have low values of kurtosis.</li>
+<li><strong>Asymmetric distributions</strong> also tend to have nonzero kurtosis. In these cases, understanding kurtosis is considerably more complex and can be difficult to assess visually.</li></ul></li>
+<li>If <strong>skewness/kurtosis</strong>: <br>
+<ul><li>Both are greater than 1 or less than -1: data is not normal</li>
+<li>Either is greater than 2 or less than -2: data is not normal</li></ul></li>
+</ul>
+
+
+
+<hr>
+
+<p><strong><em>PLOTS PRODUCED WITH PROC UNIVARIATE</em></strong></p>
+
+<ul>
+<li><strong>Histograms</strong></li>
+<li><strong>Normal probability plots</strong>: expected percentiles from standard normal vs actual data values</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/oQg9v6o7-BVphCe0xL8cP2L49JBQL7hixl7_uwJUEKQkMdbotX-f906RXjowuwCe3llq05I=s0" alt="enter image description here" title="Normal Probability Plots"></p>
+
+<p><strong><em>PLOTS PRODUCED WITH PROC SGSCATTER</em></strong></p>
+
+<ul>
+<li><strong>Scatter plots</strong>: you can create a <strong>single-cell</strong> (simple Y by X) scatter plot, a <strong>multi-cell</strong> scatter plot with multiple independent scatter plots in a grid and a <strong>scatter plot matrix</strong>, which produces a matrix of scatter plots comparing multiple variables.</li>
+</ul>
+
+<p><strong><em>PLOTS PRODUCED WITH PROC SGPLOT</em></strong></p>
+
+<p><code>PROC SGPLOT DATA=SAS-data-set &lt;options&gt;; <br>
+        DOT category-variable &lt;/options&gt;; <br>
+        HBAR category-variable &lt;/options&gt;; <br>
+        VBAR category-variable &lt;/options&gt;; <br>
+        HBOX response-variable &lt;/options&gt;; <br>
+        VBOX response-variable &lt;/options&gt;; <br>
+        HISTOGRAM response-variable &lt;/options&gt;; <br>
+        SCATTER X=variable Y=variable &lt;/options&gt;; <br>
+        NEEDLE X=variable Y=numeric-variable &lt;/options&gt;; <br>
+        REG X=numeric-variable Y=numeric-variable &lt;/options&gt;; <br>
+RUN;</code></p>
+
+<p>Anywhere in the procedure you can add <strong>reference lines</strong>:<br>
+<code>REFLINE variable | value-1 &lt;... value-n&gt; &lt;/option(s)&gt;</code><br>
+<strong>E.g.:</strong> <code>REFLINE 1200 / axis=y lineattrs=(color=blue);</code></p>
+
+<ul>
+<li><strong>Scatter plots (SCATTER)</strong></li>
+<li><strong>Line graphs</strong></li>
+<li><strong>Histograms (HISTOGRAM)</strong> with overlaid distribution curves</li>
+<li><strong>Regression lines (REG)</strong> with confidence and prediction bands</li>
+<li><strong>Dot plots (DOT)</strong></li>
+<li><strong>Box plots (HBOX/VBOX)</strong>: it makes it easy to see how spread out your data is and if there are any outliers. The box represents the middle 50% of your data (IQR). The lower/middle/upper <strong>line of the box</strong> represent Q1/Q2/Q3. The <strong>diamond</strong> denotes the mean (easy to check how close the mean is to the median). The <strong>whiskers</strong> extend as far as the data extends to a maximum length of 1.5 times the IQR above Q3. Any data points farther than this distance are considered possible outliers and are represented in this plot as <strong>circles</strong>.</li>
+<li><strong>Bar charts (HBAR/VBAR)</strong></li>
+<li><strong>Needle plot (NEEDLE)</strong>: creates a plot with needles connecting each point to the baseline</li>
+<li>You can also <strong>overlay plots together</strong> to produce many different types of graphs</li>
+</ul>
+
+<p><strong><em>PLOTS PRODUCED WITH PROC SGPANEL</em></strong></p>
+
+<ul>
+<li><strong>Panels of plots</strong> for different levels of a factor or several different time periods depending on the classification variable</li>
+<li><strong>Side-by-side histograms</strong> which provide a visual comparison for your data</li>
+</ul>
+
+<p><strong><em>PLOTS PRODUCED WITH PROC SGRENDER</em></strong></p>
+
+<ul>
+<li><strong>Plots from graphs templates you have modified or written yourself</strong></li>
+</ul>
+
+<hr>
+
+<p>To specify options for graphs you submit the <strong>ODS GRAPHICS</strong> statement:<br>
+<code>ODS GRAPHICS ON &lt;options&gt;;</code></p>
+
+<ul>
+<li>To select/exclude specific test results, graphs or tables from you output, you can use <strong>ODS SELECT</strong> and <strong>ODS EXCLUDE</strong> statements.</li>
+<li>You can use ODS templates to modify the layout and details of each graph</li>
+<li>You can use ODS styles to control the general appearance and consistency of yous graphs and tables (by default <strong>HTMLBLUE</strong>).</li>
+</ul>
+
+<p>Another way to control you output is to use the <strong>PLOT</strong> option which is usually available in the procedure statement:<br>
+<code>PROC UNIVARIATE DATA=SAS-data-set PLOTS=options;</code><br>
+This option enables you to specify which graphs SAS should create, either in addtion or instead of the default plots.</p>
+
+
+
+<h3 id="confidence-intervals-for-the-mean">Confidence Intervals for the Mean</h3>
+
+<ul>
+<li>A <strong>point estimator</strong> is a sample statistic used to estimate a population parameter</li>
+<li>An estimator takes on different values from sample to sample, so it’s important to know its variance</li>
+<li>A statistic that measures the variability of your estimator is the <strong>standard error</strong></li>
+<li>It differs from the standard deviation: the <strong>standard deviation</strong> deals with the variability of your data while <strong>standard error</strong> deals with the variability of you sample statistic</li>
+</ul>
+
+<p><strong>E.g.:</strong> Standard error of the mean = standard deviation/sqrt(sample size)</p>
+
+<p>The <strong>distribution of sample means</strong> is always less variable than the data.</p>
+
+<ul>
+<li>Because we know that point estimators vary from sample to sample, it would be nice to have an estimator of the mean that directly accounts for this natural variability</li>
+<li>The <strong>interval estimator</strong> gives us a range of values that is likely to contain the population mean</li>
+<li>It is calculated from the <strong>standard error</strong> and a value that is determined by the <strong>degree of certainty</strong> we require (<strong>significance level</strong>)</li>
+<li><strong>Confidence intervals</strong> are a type of interval estimator used to estimate the population mean</li>
+<li>You can make the confidence interval narrower by increasing the sample size and by decreasing the confidence level</li>
+</ul>
+
+<p>CI = sample mean ± quantile * standard error</p>
+
+<ul>
+<li>The <strong>CLM</strong> option of <strong>PROC MEANS</strong> calculates the confidence limits for the mean, you can add <strong>alpha=</strong> to change the default 0.05 value for a 95% confidence level</li>
+<li>The <strong>central limit theorem</strong> states that the distribution of sample means is approximately normal regardless of the population distribution’s shape, if the sample size is large enough (~30 observations)</li>
+</ul>
+
+
+
+<h3 id="hypothesis-testing">Hypothesis Testing</h3>
+
+<ul>
+<li>The <strong>null hypothesis (H0)</strong> is what you assume to be true when you start your analysis</li>
+<li>The <strong>alternative hypothesis (Ha/H1)</strong> is your initial research hypothesis, that is, your proposed explanation</li>
+</ul>
+
+<p>Decision-making process: <br>
+1. Define null and alternative hypothesis <br>
+2. Specify significance level (type I error rate) <br>
+3. Collect data <br>
+4. Reject or fail to reject the null hypothesis</p>
+
+<p><img src="https://lh3.googleusercontent.com/KaQmpAoTHu1NsLpiBusArHKbs5Zn0AP5eV0CB2PwBObxixZQ98gaUDJVGZSnSj8Li4Hwfvw=s0" alt="enter image description here" title="Error types"></p>
+
+<ul>
+<li>The type I and II errors are <strong>inversely related</strong>: as one type increases the other decreases </li>
+<li><p>The <strong>power</strong> is the probability of a <strong>correct rejection</strong> = 1 - β</p>
+
+<ul><li>It is the ability of the statistical test to detect a true difference</li>
+<li>It is the ability to successfully reject a false null hypothesis</li></ul></li>
+<li><p>A <strong>p-value</strong> measures the probability of observing a value as extreme as the one observed</p>
+
+<ul><li>The p-value is used to determine <strong>statistical significance</strong></li>
+<li>It helps you assess whether you should reject the null hypothesis</li></ul></li>
+<li><p>The <strong>p-value</strong> is affected by:</p>
+
+<ul><li>The <strong>effect size</strong>: the difference between the observed statistic and the hypothesized value</li>
+<li>The <strong>sample size</strong>: the larger the sample size, the more sure you are about the sample statistics, the lower the p-value is</li></ul></li>
+<li><p>A reference distribution enables you to quantify the probability (p-value) of observing a particular outcome (the calculated sample statistic) or a more extreme outcome, if the nul hypothesis is true</p></li>
+<li>Two common reference distributions for statistical hypothesis testing are the <strong>t distribution</strong> and the <strong>F distribution</strong></li>
+<li>These distributions are characterized by the <strong>degrees of freedom</strong> associated with your data</li>
+<li>The <strong>t distribution</strong> arises when you’re making inferences about a population mean and the population standard deviation is unknown and has to be estimated from the data <br>
+<ul><li>It is <strong>approximately normal</strong> as the <strong>sample size grows larger</strong></li>
+<li>The t distribution is a <strong>symmetric distribution</strong> like the normal distribution except that the t distribution has <strong>thicker tails</strong></li>
+<li>The <strong>t statistic</strong> is positive/negative when the sample is more/less than the hypothesized mean</li>
+<li>If the data doesn’t come from a normal distribution, then the t statistic approximately follows a t distribution as long as the sample size is large (<strong>central limit theorem</strong>)</li></ul></li>
+</ul>
+
+<p>Calculation with <strong>PROC UNIVARIATE</strong>:</p>
+
+<p><code>ODS SELECT TESTSFORLOCATION; <br>
+PROC UNIVARIATE DATA=SAS-data-set MU0=number alpha=number; <br>
+    VAR variable(s); <br>
+    ID variable_to_relate; <br>
+    HISTOGRAM variables &lt;/options&gt;; <br>
+    PROBPLOT variables &lt;/options&gt;; <br>
+    INSET keywords &lt;/options&gt;; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong>TESTSFORLOCATION</strong> displays only the p-values calculation</li>
+<li>By default <strong>MU0 = 0</strong></li>
+</ul>
+
+
+
+<h2 id="analysis-of-variance-anova">Analysis of Variance (ANOVA)</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m552/m552_7_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p><img src="https://lh3.googleusercontent.com/xOC5eoOUs-6v-b-VnQU6ivGQQPIOQH7ACcKMS2jfrOTK1HJLuBbchpYm3cuganuJ_gNJsBU=s0" alt="enter image description here" title="ANOVA"></p>
+
+
+
+<h3 id="graphical-analysis-of-associations">Graphical Analysis of Associations</h3>
+
+<ul>
+<li>Before analyzing your data, you need to have a general idea of any associations between <strong>predictor variables</strong> and <strong>response variables</strong></li>
+<li>An <strong>association</strong> exists between two variables when the expected value of one variable differs at different levels of the other variable</li>
+<li>One method for doing this is to conduct a <strong>graphical analysis</strong> of your data</li>
+<li>Associations between <strong>categorical</strong> predictor variable and a <strong>continuous</strong> response variable can be explored with <strong>SGPLOT</strong> to product <strong>box plots (box-and-whisker plots)</strong> (<strong>X</strong> predictor variable vs <strong>Y</strong> response variable)</li>
+<li>If the <strong>regression line</strong> conecting the means of Y at each value of X is not horizontal <strong>there might be an association</strong> between them</li>
+<li>If the <strong>regression line</strong> is horizontal <strong>there is no association</strong>: knowing the value of X doesn’t tell you anything about the value of Y</li>
+</ul>
+
+<p><code>PROC SGPLOT DATA=SAS-data-set; <br>
+        VBOX response-variable / CATEGORY=predictor-variable CONNECT=MEAN DATALABEL=outlier-ID-variable; <br>
+RUN;</code></p>
+
+
+
+<h3 id="two-sample-t-tests">Two-Sample t-Tests</h3>
+
+<ul>
+<li>You can use a <strong>one-sample t-test</strong> to determine if the mean of a population is equal to a particular value or not</li>
+<li>When you collect a random sample of independent observations from two differen populations, you can perform a <strong>two-sample t-test</strong></li>
+</ul>
+
+<p>When you compare the means of two populations using a <strong>two-sample t-test</strong> you make three assumptions:</p>
+
+<ul>
+<li>The data contains independent observations</li>
+<li>The distributions of the two populations are normal (check histograms and normal probability/Q-Q plots)</li>
+<li>The variances in these normal distributions are equal (<strong>F-test</strong> is the formal way to verify this assumption) <br>
+F statistic: <script type="math/tex" id="MathJax-Element-247">F=max(s_1^2,s_2^2)/min(s_1^2,s_2^2) \ge 1</script> <br>
+H0: σ<script type="math/tex" id="MathJax-Element-248">_1^2</script> <script type="math/tex" id="MathJax-Element-249">=</script>  σ<script type="math/tex" id="MathJax-Element-250">_2^2\rightarrow F \approx 1</script> <br>
+Ha: σ<script type="math/tex" id="MathJax-Element-251">_1^2</script> <script type="math/tex" id="MathJax-Element-252">\ne</script>  σ<script type="math/tex" id="MathJax-Element-253">_2^2\rightarrow F\gt 1</script> <br>
+The <strong>Pr&gt;F</strong> value in the <strong>Equality of Variances</strong> table represents the <strong>p-value</strong> of the F-test for equal variances</li>
+</ul>
+
+<p><strong>Two-sided Tests</strong></p>
+
+<ul>
+<li><strong>PROC TTEST</strong> performs a two-sided two-sample t-test by default (confidence limits and ODS graphics included)</li>
+<li>It <strong>automatically test the assumption of equal variances</strong> and provides an exact two-sample t-test (<strong>pooled</strong>) when the assumptions are met and an approximate t-test (<strong>scatterthwaite</strong>) when it is not met </li>
+<li>The pooled and scatterthwaite t-tests are equal when the variances are equal</li>
+</ul>
+
+<p><code>PROC TTEST DATA=SAS-data-set &lt;options&gt;; <br>
+                         plots(shownull)=interval;         \* shownull = vertical reference line at the mean value of H0 *\ <br>
+    CLASS variable;                                              \* Classification variable *\ <br>
+    VAR variable(s);                                              \* Continuous response variables *\ <br>
+RUN;</code></p>
+
+<p><strong>One-sided Tests</strong></p>
+
+<ul>
+<li>It <strong>can increase the power</strong> of a statistical test, meaning that if you are right about the direction of the true difference, you will more likely detect a significant difference with a one-sided test than with a tow-sided test</li>
+<li>The difference between the mean values for the null hypothesis will be defined by the alphabetical order of the classification variables (e.g.: female - male)</li>
+</ul>
+
+<p><code>PROC TTEST DATA=SAS-data-set  <br>
+                       plots(only shownull)=interval H0=0 SIDES=u;         \* only = suppress the default plots; u/l = upper/lower-tailed t-test  *\ <br>
+    CLASS variable;                                              \* Classification variable *\ <br>
+    VAR variable(s);                                              \* Continuous response variables *\ <br>
+RUN;</code></p>
+
+
+
+<h3 id="one-way-anova">One-Way ANOVA</h3>
+
+<p>When you want to determine whether there are significant differences between the <strong>means of two or more populations</strong>, you can use analysis of variance (ANOVA).</p>
+
+<ul>
+<li>You have a continuous dependent (<strong>response</strong>) variable and a categorical independent (<strong>predictor</strong>) variable</li>
+<li>You can have <strong>many levels of the predictor variable</strong>, but you can have <strong>only one predictor variable</strong></li>
+<li>The <strong>squared value of the t statistic</strong> for a two-sample t-test is equal to the <strong>F statistic</strong> of a one-way ANOVA with two populations</li>
+<li>With ANOVA the <strong>H0</strong> is that all of the population means are equal and <strong>Ha</strong> is that not all the population means are equal (at least one mean is different)</li>
+</ul>
+
+<p>To perform an ANOVA test you make three assumptions:</p>
+
+<ul>
+<li>You have a <strong>good, random, representative sample</strong></li>
+<li>The <strong>error terms are normally distributed</strong> <br>
+<ul><li>The <strong>residuals</strong> (each observation minus its group mean) are estimates of the error term in the model so you verify this assumption by examining diagnostic plots of the residuals (if they are approximately normal, the error terms will be too)</li>
+<li>If your sample sizes are reasonably large and approximately equal across groups, then only severe departures from normality are considered a problem</li>
+<li>Residuals always sum to 0, regardless of the number of observations.</li></ul></li>
+<li>The <strong>error terms have equal variances</strong> across the predictor variable levels: you can conduct a formal test for equal variances and also plot the residuals vs predicted values as a way to graphically verify this assumption</li>
+</ul>
+
+<p>You can use <strong>PROC GLM</strong> to verify the ANOVA assumptions and perform the ANOVA test. It fits a general linear model of which ANOVA is a special case and also displays the sums of squares associated with each hypothesis it tests. <br>
+<code>PROC GLM DATA=SAS-data-set <br>
+                  PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print each plot on a separated page */ <br>
+    CLASS variable(s); <br>
+    MODEL dependents=intependents &lt;/options&gt;; <br>
+    MEANS effects / HOVTEST &lt;/options&gt;;                /* HOVTEST = homogeneity of variance test option (Levene's test by default) + plot of residuals vs predicted values (means) */ <br>
+RUN; <br>
+QUIT;</code></p>
+
+<hr>
+
+<ul>
+<li>Of the <strong>between-group variability</strong> is significantly larger than the <strong>within-group variability</strong>, you reject the null that all the group means are equal</li>
+<li>You partition out the variability using sums of squares:  <br>
+<ul><li><strong>Between-group</strong> variation: also called Model Sum of Squares (SSM): <script type="math/tex" id="MathJax-Element-254">\sum n_i (\overline Y_i- \overline {\overline Y})^2</script></li>
+<li><strong>Within-group</strong> variation: also called Error Sum of Squares (SSE): <script type="math/tex" id="MathJax-Element-255">\sum \sum (Y_{ij}- \overline Y_i)^2</script></li>
+<li><strong>Total</strong> variation: also called the Total Sum of Squares (SST): <script type="math/tex" id="MathJax-Element-256">\sum \sum (Y_{ij}- \overline {\overline Y})^2</script></li></ul></li>
+<li><strong>SSM</strong> and <strong>SSE</strong> represent pieces of <strong>SST</strong>: the SSM is the variability explanied by the predictor variable levels and SSE the variability not explained by the predictor variable levels</li>
+<li>You want the larger piece of the total to be better represented by what you can explain (SSM) vs what you cant’t explain (SSE) </li>
+</ul>
+
+
+
+<h3 id="anova-with-data-from-a-randomized-block-design">ANOVA with Data from a Randomized Block Design</h3>
+
+<p>In an <strong>observational study</strong>, you often examine what already occurred, and therefore have little control over factors contributing to the outcome. In a <strong>controlled experiment</strong>, you can manipulate the <strong>factors of interest</strong> and can more reasonably claim causation.</p>
+
+<ul>
+<li>The variation due to the <strong>nuisance factors</strong> (fundamental to the probabilistic model but are no longer of interest) is part of the random variation that the error sum of squares accounts for.</li>
+<li>Including a <strong>blocking variable</strong> in the model is in essence like adding a second predictor variable to the model in terms of the way you write it</li>
+<li>The way you set up your experiment and data collection is what defines it as a blocking factor</li>
+<li>Although you’re not specifically interested in its effect, <strong>controlling the blocking variable makes it easier to detect an effect of the factor of interest</strong></li>
+<li>In a model that does not include a blocking variable, its effects are lumped into the error term of the model (unaccounted for variation)</li>
+<li>When you include a blocking variable in your ANOVA model, any effects caused by the nuisance factors that are common within a sector are accounted for in the <strong>model sum of squares rather than the error sum of squares</strong></li>
+</ul>
+
+<p>You make two more assumptions when you include a blocking factor in the model:</p>
+
+<ul>
+<li>Primary variable levels are <strong>randomly assigned</strong> within each block</li>
+<li>The effects of the primary variable are <strong>constant across the levels</strong> of the blocking factor (the effects don’t depend on the block they are in, there are <strong>no interactions</strong> with the blocking variable)</li>
+</ul>
+
+<p><strong>Note:</strong> Levene’s test for homogeneity is <strong>only available for one-way ANOVA models</strong>, so in this case, you have to use the Residuals by Predicted plot.</p>
+
+<p><code>PROC GLM DATA=SAS-data-set <br>
+                 PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print each plot on a separated page */ <br>
+    CLASS variable(s) blocking-factor(s); <br>
+    MODEL dependents=intependents blocking-factor(s)&lt;/options&gt;; <br>
+RUN; <br>
+QUIT;</code></p>
+
+<ul>
+<li><strong><em>Rule of thumb</em></strong>: if the <strong>F-value is &gt; 1</strong>, then it helped to add the blocking factor in your model </li>
+<li>If you compare the MSE (<em>Mean Square</em> in the table) without and with including the blocking variable in the model,  there is a drop of its value meaning that <strong>you have been able to account for a bit more of the unexplained variability due to the nuisance factors</strong> helping o have more precise estimates of the effect of your primary variable</li>
+<li>It is also reflected in the <em>R-Square</em> value that is increased when a blocking factor is added to the model</li>
+<li>Thanks to adding a blocking variable to your model you can get your primary variable to be significant</li>
+<li>The <strong>Type III SS</strong> at the bottom of the output tests for the difference due to each variable, controlling for or adjusting for the other variable</li>
+</ul>
+
+
+
+<h3 id="anova-post-hoc-tests">ANOVA Post Hoc Tests</h3>
+
+<p>This test is used to determine which means differ from other means and control the error rate using <strong>multiple comparison method</strong>.</p>
+
+<p>Assuming the null hypothesis is true for your different comparisons, the probability that you conclude a difference exist at least one time when there really  isn’t a difference increases with the more tests you perform. So <strong>the chance that you make a Type I error increases each time you conduct a statistical test</strong>.</p>
+
+<ul>
+<li>The <strong>comparisonwise error rate (CER)</strong> is the probability of a Type I error on a single pairwise test (α)</li>
+<li>The <strong>experimentwise error rate (EER)</strong> is the probability of making at least one Type I error when performing the whole set of comparisons. It takes into consideration the number of pairwise comparisons you make, so it increases as the number of tests increase: <script type="math/tex" id="MathJax-Element-257">EER=1-(1-\alpha)^{\# \\\ of \\\ comparisons}</script></li>
+</ul>
+
+<p><strong><em>Tukey’s Multiple Comparison Method</em></strong></p>
+
+<ul>
+<li>This method, which is also known as the <strong>Honestly Significant Difference</strong> test, is a popular multiple comparison test that <strong>controls the EER</strong></li>
+<li>This tests compares all possible pairs of means, so <strong>it can only be used when you make pairwise comparisons</strong></li>
+<li>This method controls <script type="math/tex" id="MathJax-Element-258">EER=\alpha</script> when <strong>all possible pairwise comparisons are considered</strong> and controls <script type="math/tex" id="MathJax-Element-259">EER<\alpha</script> when fewer than all pairwise comparisons are considered</li>
+</ul>
+
+<p><strong><em>Dunnett’s Multiple Comparison Method</em></strong></p>
+
+<ul>
+<li>This method is a specialised multiple comparison test that allows you to <strong>compare a single control group to all other groups</strong></li>
+<li>It controls <script type="math/tex" id="MathJax-Element-260">EER \le \alpha</script> when all groups are compared to the reference group (control)</li>
+<li>It accounts for the correlation that exists between the comparisons and <strong>you can conduct one-sided tests</strong> of hypothesis against the reference group</li>
+</ul>
+
+<p><code>PROC GLM DATA=SAS-data-set; <br>
+    CLASS variable(s); <br>
+    MODEL dependents=intependents &lt;/options&gt;; <br>
+    LSMEANS effects &lt;/options-test-1&gt;; <br>
+    LSMEANS effects &lt;/options-test-2&gt;; <br>
+    [...] <br>
+    LSMEANS effects &lt;/options-test-n&gt;; <br>
+RUN; <br>
+QUIT;</code></p>
+
+<ul>
+<li><strong>PDIFF=ALL</strong> requests p-values for the differences between ALL the means and a <strong>diffogram</strong> is produced automatically displaying all pairwise least square means differences and indicating which are significant <br>
+<ul><li>It can be undestood as a least squares mean by least squares mean plot</li>
+<li>The point estimates for differences between the means for each pairwise comparison can be found at the intersections of the gray grid lines (intersection of appropriate indexes)</li>
+<li>The red/blue diagonal lines show the <strong>confidence intervals for the true differences of the means</strong> for each pairwise comparison</li>
+<li>The grey 45<script type="math/tex" id="MathJax-Element-261">^{\circ}</script> reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li></ul></li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/-yuw0XR4JPqs/WNknWl3atwI/AAAAAAAAABk/V_lTXMtgO_QDm7VJ9jPy29h7MIxZbyhzQCLcB/s0/diffogram.png" alt="enter image description here" title="Diffogram"></p>
+
+<ul>
+<li>The <strong>ADJUST=</strong> option specifies the adjustment method for multiple comparisons</li>
+<li>If you don’t specify an option SAS uses the <strong>Tukey method by default</strong>, if you specify <strong>ADJUST=Dunnett</strong> the GLM procedure produces multiple comparisons using <strong>Dunnett’s method</strong> and a <strong>control plot</strong>  <br>
+<ul><li>The control plot displays the least squares mean and confidence limits of each group compared to the reference group </li>
+<li>The middle <strong>horizontal line represents its least square mean value</strong> (you can see the arithmetic mean value un the <strong>upper right corner</strong> of the graph)</li>
+<li>The <strong>shaded area</strong> goes from the <strong>lower decision limit (LDL)</strong> to the <strong>upper decision limit (UDL)</strong></li>
+<li>There is a vertical line for each group that you’re comparing to the reference (control) group. If a <strong>vertical line extends past the shaded area</strong>, then the group represented by the line is <strong>significantly different</strong> (small p-value) than the reference group </li></ul></li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/-ZI5PKbFT1ns/WNkoofa4E3I/AAAAAAAAAB0/0RNlG7_94QMV3s864uB5UncYOw7VEMkYgCLcB/s0/controlplot.PNG" alt="enter image description here" title="Control plot"></p>
+
+<ul>
+<li><strong>PDIFF=CONTROLU(‘value’)</strong> specifies the control group for the Dunnett’s case: the direction of the sign in Ha is the same as the direction you are testing, so this is a <strong>one-sided upper-tailed t-test</strong></li>
+<li>If you specify <strong>ADJUST=T</strong> SAS will make no adjustments for multiple comparisons: is not recommended as there’s a tendency to find <strong>more significant pairwise differences than might actually exist</strong></li>
+</ul>
+
+
+
+<h3 id="two-way-anova-with-interactions">Two-Way ANOVA with Interactions</h3>
+
+<p>When you have a continuous response variable and <strong>two categorical predictor variables</strong>, you use the <strong>two-way ANOVA model</strong></p>
+
+<ul>
+<li><strong>Effect</strong>: the magnitude of the expected change in the response variable presumably caused by the change in value of a predictor variable in the model</li>
+<li>In addition, the variables in a model can be referred to as effects or terms</li>
+<li><strong>Main effect</strong>: is the effect of a single predictor variable</li>
+<li><strong>Interaction effects</strong>: when the relationship of the response variable with a predictor changes with the changing of another predictor variable (the effect of one variable depends on the value of the other variable)</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/-GK8G9YC7d1s/WNk5aOIcxAI/AAAAAAAAACM/nuq7AoAjh98_cci-KnaWTzhjbsCW_mSHACLcB/s0/interactionplot.png" alt="enter image description here" title="Interaction plot"></p>
+
+<p>When you consider an ANOVA with more than one predictor variable, it’s called <strong>n-way ANOVA</strong> where <em>n</em> represents the number of predictor variables</p>
+
+<ul>
+<li>The analysis in a <strong>randomized block design</strong> is actually a <strong>special type of two-way ANOVA</strong> in which you have one factor of interest and one blocking factor</li>
+<li>When you analyze a two-way ANOVA with interactions, you first look at any tests for <strong>interactions among the factors</strong> <br>
+<ul><li>If there is <strong>no interaction between the factors</strong> you can interpret the tests for the individual factor effects to determine their significance/non-significance</li>
+<li>If an <strong>interaction exists between any factors</strong>, the tests for the individual factor effects might be misleading due to masking of these effect by the interaction (this is specially true for unbalanced data with different number of observations for each combination of groups)</li></ul></li>
+<li>When the interaction is not statistically significant <strong>you can analyze the main effect with the model in its current form</strong> (generally the method you use when you analyze designed experiments)</li>
+<li>Even when you analyze designed experiments, some statisticians might suggest that if the interaction is not significant, <strong>you can delete the interaction effect from your model, rerun the model and then just analyze the main effects</strong> increasing the power of the main effects test</li>
+<li>If the <strong>interaction term is significant</strong>, it is good practice to keep the main effect terms that make up the interaction in the model, whether they are significant or not (this preserves model hierarchy)</li>
+<li>You have to make the <strong>same three assumptions used in the ANOVA test</strong></li>
+<li>The interaction terms are also called <strong>product terms</strong> or <strong>crossed effects</strong></li>
+</ul>
+
+<p><code>PROC GLM DATA=SAS-data-set; <br>
+    CLASS independent1 independent2; <br>
+    MODEL dependent = independent1 independent2 independent1*independent2; <br>
+    or <br>
+    MODEL dependent = independent1 | independent2; <br>
+RUN; <br>
+QUIT;</code></p>
+
+<p>This program is <strong>fitting to this model</strong>: <br>
+<script type="math/tex" id="MathJax-Element-262">Y_{ijk}=\mu + \alpha_i+\beta_j+(\alpha\beta)_{ij}+\epsilon_{ijk}</script> <br>
+dependent = overall mean + intependent1 + independent2 + interaction12 + unaccounted for variation </p>
+
+<ul>
+<li>In <strong>most situations</strong> you will want to use the <strong>Type III SS</strong></li>
+<li>The <strong>Type I SS (sequential)</strong> are the sums of squares you obtain from fitting the effects in the order you specify in the model </li>
+<li>The <strong>Type III SS (marginal)</strong> are the sums of squares you obtain from fitting each effect after all the other terms in the model, that is the sums of squares for each effect corrected for the other terms in the model</li>
+<li>When examining these results you first have to <strong>look at the interaction term and if it’s significant</strong> (p-value), the <strong>main effects don’t tell you the whole story</strong>. It that is the case, you don’t need to worry all that much about the significance of the main effects at this point for two reasons: <br>
+<ul><li>You know that the effect of each variable1 level changes for the different variable2 levels</li>
+<li>You want to include the main effects in the model, whether they are significant or not, to preserve model hierarchy</li></ul></li>
+<li>You can analyze the interaction between terms by looking at the <strong>interaction plot</strong> that SAS produces by default when you include an interaction term in the model</li>
+<li>To analyze and interpret the effect of one of the interacting variables you need to add the <strong>LSMEANS</strong> statement to your program</li>
+</ul>
+
+<p><code>PROC GLM DATA=SAS-data-set ORDER=INTERNAL PLOTS(ONLY)=INTPLOT; <br>
+    CLASS independent1 independent2; <br>
+    MODEL dependent = intependent1 independent2 independent1*independent2; <br>
+    LSMEANS independent1*independent2 / SLICE= independent1; <br>
+RUN; <br>
+QUIT;</code></p>
+
+<p>SAS creates two types of mean plots when you use the LSMEANS statement with an interaction term:</p>
+
+<ul>
+<li>The first plot displays the <strong>least squares mean (LS-Mean) for every effect level</strong> </li>
+<li>The second plot contains the same information rearranged so you can <strong>look a little closer at the combination levels</strong></li>
+</ul>
+
+<hr>
+
+<p>You can add a <strong>STORE</strong> statement to save your analysis results in an <strong>item store</strong> (a binary file format that cannot be modified). This allows you to <strong>run post-processing analysis</strong> on the stored results even if you no longer have access to the original data set. The STORE statement applies to the following SAS/STAT procedures: GENMOD, GLIMMIX, GLM, GLMSELECT, LOGISTIC, MIXED, ORTHOREG, PHREG, PROBIT, SURVEYLOGISTIC, SURVEYPHREG, and SURVEYREG.</p>
+
+<p><code>STORE &lt;OUT=&gt;item-store-name <br>
+            &lt;/ LABEL='label'&gt;;</code></p>
+
+<ul>
+<li><strong>item-store-name</strong> is a usual one- or two-level SAS name, similar to the names that are used for SAS data sets</li>
+<li><strong>label</strong> identifies the estimate on the output (is optional)</li>
+</ul>
+
+<p>To perform post-fitting statistical analysis and plotting for the contents of the store item, you use the <strong>PLM procedure</strong>. The statements and options that are available vary depending upon which procedure you used to produce the item store.</p>
+
+<p><code>PROC PLM RESTORE=item-store-specification &lt;options&gt;; <br>
+    EFFECTPLOT INTERACTION(SLICEBY=variable) &lt;plot-type &lt;(plot-definition options)&gt;&gt; / CLM &lt;/ options&gt;; <br>
+    LSMEANS &lt;model-effects&gt; &lt;/ options&gt;; <br>
+    LSMESTIMATE model-effect &lt;'label'&gt; values <br>
+        &lt;divisor=n&gt;&lt;,...&lt;'label'&gt; values <br>
+        &lt;divisor=n&gt; &lt;/ options&gt;; <br>
+    SHOW options; <br>
+    SLICE model-effect / SLICEBY=variable ADJUST=tukey &lt;/ options&gt;; <br>
+    WHERE expression; <br>
+RUN;</code></p>
+
+<ul>
+<li><strong>RESTORE</strong> specifies the source item store for processing</li>
+<li><strong>EFFECTPLOT</strong> produces a display of the fitted model and provides options for changing and enhancing the displays</li>
+<li><strong>LSMEANS</strong> computes and compares least squares means (LS-means) of fixed effects</li>
+<li><strong>LSMESTIMATE</strong>   provides custom hypothesis tests among least squares means</li>
+<li><strong>SHOW</strong> uses ODS to display contents of the item store. This statement is useful for verifying that the contents of the item store apply to the analysis and for generating ODS tables.</li>
+<li><strong>SLICE</strong> provides a general mechanism for performing a partitioned analysis of the LS-means for an interaction (analysis of simple effects) and it uses the same options as the LSMEANS statement</li>
+<li><strong>WHERE</strong> is used in the PLM procedure when the item store contains <strong>BY-variable</strong> information and you want to apply the PROC PLM statements to only a subset of the BY groups</li>
+</ul>
+
+
+
+<h2 id="regression">Regression</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m553/m553_6_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p><img src="https://lh3.googleusercontent.com/-Y-23_trrs6A/WON7VhnzxPI/AAAAAAAAADY/vRxCZowh9tItWRSSGTHZYpa2Ur4Qh97nwCLcB/s0/summary3-6.png" alt="enter image description here" title="Summary lessons 3-6"></p>
+
+
+
+<h3 id="exploratory-data-analysis">Exploratory Data Analysis</h3>
+
+<p>A useful set of techniques for investigating your data is known as <strong>exploratory data analysis</strong>.</p>
+
+<p><strong><em>Scatter plots</em></strong></p>
+
+<p><code>PROC SGSCATTER DATA=SAS-data-base; <br>
+    PLOT vairableY*(variableX1 variableX2) / REG; <br>
+RUN;</code></p>
+
+<ul>
+<li>If you have <strong>so many observations</strong> that the scatter plot of the whole data set is difficult to interpret, you might run PROC SGSCATTER on a <strong>random sample of observations</strong></li>
+</ul>
+
+<p><strong><em>Correlation analysis</em></strong></p>
+
+<p>The closer the <strong>Pearson</strong> correlation coefficient is to +1/-1, the stronger the positive/negative linear relationship is between the two variables. The closer the correlation coefficient is to 0, the weaker the linear relationship and if it is 0 variables are uncorrelated.</p>
+
+<ul>
+<li>When you interpret the correlation, be cautious about the effect of <strong>large sample sizes</strong>: even a correlation of 0.01 can be statistically significant with a large enough sample size and you would almost always reject the hypothesis H0: ρ=0, even if the value of your correlation is small for all practical purposes</li>
+<li>Some <strong>common errors</strong> on interpreting correlations are concluding a <strong>cause-and-effect relationship</strong> between the variables misinterpreting the kind of relationship between the variables and failing to recognize the influence of outliers on the correlation <br>
+<ul><li>The variables might be related but not causally</li>
+<li>Correlation coefficients can be large because both variables are affected by other variables</li>
+<li>Variables might be strongly correlated by chance</li></ul></li>
+<li>Just because the correlation coefficient is close to 0 doesn’t mean that no relationship exists between the two variables: they might have a <strong>non-linear relationship</strong></li>
+<li>Another common error is failing to recognize the <strong>influence of outliers</strong> on the correlation <br>
+<ul><li>If you have an outlier you should report both correlation coefficients (with and without the outlier) to report how influential the unusual data point is in your analysis</li></ul></li>
+</ul>
+
+<p>The <strong>PROC CORR</strong> also produces <strong>scatter plots</strong> or a <strong>scatter plot matrix</strong>.</p>
+
+<p><code>PROC CORR DATA=SAS-data-set RANK|NOSIMPLE PLOTS(ONLY)=MATRIX(NVAR=ALL HISTOGRAM)|SCATTER(NVAR=ALL ELLIPSE=NONE) &lt;options&gt;; <br>
+    VAR variable(s)X; <br>
+    WITH variable(s)Y; <br>
+    ID variable4label; <br>
+RUN;</code></p>
+
+
+
+<h3 id="simple-linear-regression">Simple Linear Regression</h3>
+
+<p>You use correlation analysis to determine the strength of the linear relationship between continuous response variables. Now you need to go a step further and <strong>define the linear relationship itself</strong>: <script type="math/tex" id="MathJax-Element-263">Y= \beta_0+\beta_1*X+\epsilon</script></p>
+
+<ul>
+<li><script type="math/tex" id="MathJax-Element-264">Y</script> is the response variable </li>
+<li><script type="math/tex" id="MathJax-Element-265">X</script> is the predictor variable</li>
+<li><script type="math/tex" id="MathJax-Element-266">\beta_0</script> is the intercept parameter</li>
+<li><script type="math/tex" id="MathJax-Element-267">\beta_1</script> is the slope parameter</li>
+<li><script type="math/tex" id="MathJax-Element-268">\epsilon</script> is the error term</li>
+</ul>
+
+<p>The method of <strong>least squares</strong> produces parameter estimates <script type="math/tex" id="MathJax-Element-269">\hat \beta_0</script> and <script type="math/tex" id="MathJax-Element-270">\hat \beta_1</script> with certain <strong>optimum properties</strong> which make them the Best Linear Unbiased Estimators (<strong>BLUE</strong>):</p>
+
+<ul>
+<li>They are <strong>unbiased estimates</strong> of the population parameters</li>
+<li>They have <strong>minimum variance</strong></li>
+</ul>
+
+<p>To find out how much better is the model that takes the predictor variable into account than a model that ignores the predictor variable, you can compare the <strong>simple linear regression model</strong> to a <strong>baseline model</strong> (<script type="math/tex" id="MathJax-Element-271">Y= \bar Y</script> independent of <script type="math/tex" id="MathJax-Element-272">X</script>). For your comparison, you calculate the <strong>explained</strong>, <strong>unexplained</strong> and <strong>total variability</strong> in the simple linear regression model.</p>
+
+<ul>
+<li>The <strong>explained variability (SSM)</strong> is the difference between the regression line and the mean of the response variable: <script type="math/tex" id="MathJax-Element-273">\sum(\hat Y_i-\bar Y)^2</script></li>
+<li>The <strong>unexplained variability (SSE)</strong> is the difference between the observed values and the regression line: <script type="math/tex" id="MathJax-Element-274">\sum(Y_i-\hat Y_i)^2</script></li>
+<li>The <strong>total variability</strong> is the difference between the observed values and the mean of the response variable: <script type="math/tex" id="MathJax-Element-275">\sum(Y_i-\bar Y)^2</script></li>
+</ul>
+
+<p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
+
+<ul>
+<li>H0: the regression model does not fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-276">= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-277">= \hat\beta_1 \ne 0</script>)</li>
+</ul>
+
+<p>These <strong>assumptions</strong> underlie the hypothesis test for the regression model and have to be met for a simple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
+
+<ul>
+<li>The mean of the response variable is linearly related to the value of the predictor variable</li>
+<li>The error terms are normally distributed with a mean of 0</li>
+<li>The error terms have equal variances</li>
+<li>The error terms are independent at each value of the predictor variable</li>
+</ul>
+
+<p><code>PROC REG DATA=SAS-data-set &lt;options&gt;; <br>
+    MODEL dependent=regressor / CLM CLI &lt;/options&gt;; <br>
+    ID regressor; <br>
+RUN; <br>
+QUIT;</code></p>
+
+<p>To asses the level of precision around the mean estimates you can produce <strong>confidence intervals</strong> around the means. Confidence intervals become wider as you move away from the mean of the predictor variable. The wider the confidence interval the less precise it is. You might also want to construct <strong>prediction intervals</strong> for a single observation. A prediction interval is wider than a confidence interval because <strong>single observations have more variability than sample means</strong>.</p>
+
+<p>For producing <strong>predicted values</strong> with PROC REG:</p>
+
+<ul>
+<li>Create a data set containing the values of the independent variables for which you want to make predictions</li>
+<li>Concatenate the new data set with the original data set</li>
+<li>Fit a simple linear regression model to the new data set and specify the <strong>P</strong> option in the MODEL statement</li>
+</ul>
+
+<p>Because the concatenated observations contain <strong>missing values</strong> for the response variable, PROC REG does not include these observations when fitting the regression model. However, PROC REG does <strong>produce predicted values</strong> for these observations.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs sql">DATA SAS-predictions-data-<span class="hljs-operator"><span class="hljs-keyword">set</span>;</span>
+    INPUT dependent @@;
+    DATALINES;
+[new values separated with blanks]
+;
+RUN;
+
+DATA SAS-new-data-<span class="hljs-operator"><span class="hljs-keyword">set</span>;</span>
+    <span class="hljs-operator"><span class="hljs-keyword">SET</span> SAS-predictions-data-<span class="hljs-keyword">set</span> SAS-original-data-<span class="hljs-keyword">set</span>;</span>
+RUN;
+
+PROC REG DATA=SAS-new-data-<span class="hljs-operator"><span class="hljs-keyword">set</span>;</span>
+    MODEL dependent=regressor / P;
+    ID regressor;
+RUN;
+QUIT;</code></pre>
+
+<p>When you use a model to predict future values of the response variable given certain values of the predictor variable, you must <strong>stay within (or near) the range of values for the predictor variable used to create the model</strong>. The relationship between the predictor variable and the response variable might be different beyond the range of the data.</p>
+
+<p>If you have a large data set and have already fitted the regression model, you can predict values more efficiently by using <strong>PROC REG</strong> and <strong>PROC SCORE</strong>:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC REG <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-original</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> NOPRINT OUTEST<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-estimates</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    MODEL dependent<span class="hljs-subst">=</span>regressor <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    ID regressor;
+RUN;
+QUIT;
+
+PROC SCORE <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-predictions</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+            SCORE<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-estimates</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+            OUT<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-scored</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+            <span class="hljs-keyword">TYPE</span><span class="hljs-subst">=</span>PARMS
+            <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);
+RUN;
+QUIT;</code></pre>
+
+
+
+<h3 id="multiple-regression">Multiple Regression</h3>
+
+<p>In <strong>multiple regression</strong> you can model the relationship between the response variable and <strong>more than one predictor variable</strong>. It is a powerful tool for both <strong>analytical or explanatory analysis and for prediction</strong>.</p>
+
+<p><script type="math/tex" id="MathJax-Element-278">Y=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_kX_k+\epsilon</script> (<script type="math/tex" id="MathJax-Element-279">k+1</script> parameters)</p>
+
+<p><strong><em>Advantages</em></strong></p>
+
+<ul>
+<li>Multiple linear regression is a more powerful tool</li>
+<li>You can determine whether a relationship exists between the response variable and more than one predictor variable at the same time</li>
+</ul>
+
+<p><strong><em>Disadvantages</em></strong></p>
+
+<ul>
+<li>You need to perform a selection process to decide which model to use</li>
+<li>The more predictors you have, the more complicated interpreting the model becomes</li>
+</ul>
+
+<p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
+
+<ul>
+<li>H0: the regression model does not fit the data better than the baseline model (<script type="math/tex" id="MathJax-Element-280">\beta_1=\beta_2=...=\beta_k= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (at least one <script type="math/tex" id="MathJax-Element-281">\beta_i \ne 0</script>)</li>
+</ul>
+
+<p>These <strong>assumptions</strong> have to be met for a multiple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
+
+<ul>
+<li>A linear function of the <script type="math/tex" id="MathJax-Element-282">X</script>s accurately models the mean of the <script type="math/tex" id="MathJax-Element-283">Y</script>s</li>
+<li>The error terms are normally distributed with a mean of 0</li>
+<li>The error terms have constant variances</li>
+<li>The error terms are independent at each value of the predictor variable</li>
+</ul>
+
+<p>The <strong>regular <script type="math/tex" id="MathJax-Element-284">R^2</script></strong> values never decrease when you add more terms to the model, but the <strong>adjusted <script type="math/tex" id="MathJax-Element-285">R^2</script></strong> value takes into account the number of terms in the model by including a penalty for the complexity of the model. The <strong>adjusted <script type="math/tex" id="MathJax-Element-286">R^2</script></strong> value increases only if new terms that you add significantly improve the model enough to warrant increasing the complexity of the model. It enables proper comparison between models with different parameter counts. When an <strong>adjusted <script type="math/tex" id="MathJax-Element-287">R^2</script> increases by removing a variable</strong> from the models, it strongly implies that the removed <strong>variable was not necessary</strong>.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC REG <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    MODEL dependent<span class="hljs-subst">=</span>regressor1 regressor2 <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;
+QUIT;
+
+PROC GLM <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+        PLOTS(ONLY)<span class="hljs-subst">=</span>(CONTOURFIT);
+        MODEL dependent<span class="hljs-subst">=</span>regressor1 regressor2;
+        STORE OUT<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-multiple</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+RUN;
+QUIT;
+
+PROC PLM RESTORE<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-multiple</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> PLOTS<span class="hljs-subst">=</span><span class="hljs-literal">ALL</span>;
+    EFFECTPLOT CONTOUR (Y<span class="hljs-subst">=</span>regressor1 X<span class="hljs-subst">=</span>regressor2);
+    EFFECTPLOT SLICEFIT (X<span class="hljs-subst">=</span>regressor2 SLICEBY<span class="hljs-subst">=</span>regressor1<span class="hljs-subst">=</span><span class="hljs-number">250</span> <span class="hljs-keyword">to</span> <span class="hljs-number">1000</span> <span class="hljs-keyword">by</span> <span class="hljs-number">250</span>);
+RUN;</code></pre>
+
+<ul>
+<li>In PROC GLM, when you run a linear regression model with only two predictor variables, the output includes a contour fit plot by default. We specify <strong>CONTOURFIT</strong> to tell SAS to overlay the contour plot with a scatter plot of the observed data</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/-NLdUzu7afu8/WOJldkIvudI/AAAAAAAAACs/Vo3RCSrIwvkcOUVi8mwEiurtjsOANjBTQCLcB/s0/contour-multiple-regression.png" alt="enter image description here" title="Contour plot"></p>
+
+<p>The plot shows <strong>predicted values</strong> of the response variable as <strong>gradations of the background color</strong> from blue, representing low values, to red, representing high values. The <strong>dots</strong>, which are similarly coloured, represent the <strong>actual data</strong>. Observations that are perfectly fit would show the same color within the circle as outside the circle. The <strong>lines on the graph</strong> help you read the actual predictions at even intervals.</p>
+
+<ul>
+<li>The <strong>CONTOUR</strong> option displays a contour plot of predicted values against two continuous covariates</li>
+<li>The <strong>SLICEFIT</strong> option displys a curve of predicted values vs a continuous variable grouped by the levels of another effect</li>
+</ul>
+
+<p>Clearly the <strong>PROC GLM</strong> contour fit plot is <strong>more useful</strong>. However, if you do not have access to the original data set and can run <strong>PROC PLM</strong> only on the item store, this plot still gives you an idea of the relationship between the predictor variables and predicted values.</p>
+
+
+
+<h3 id="model-building-and-interpretation">Model Building and Interpretation</h3>
+
+<p>The brute force approach to find a good model is to start including all the predictor variables available and rerun the model <strong>removing the least significant remaining term</strong> each time <strong>until</strong> you’re left with a model where <strong>only significant terms remain</strong>. With a small number of predictor variables a manual approach isn’t too difficult but with a large number of predictor variables it’s very tedious. Fortunately, if you specify the model selection technique to use, SAS finds good candidate models in an automatic way.</p>
+
+<hr>
+
+<p><strong><em>All-possible regression methods</em></strong></p>
+
+<p>SAS computes all possible models and ranks the results. Then, to evaluate the models, you compare statistics side by side (<script type="math/tex" id="MathJax-Element-288">R^2</script>, adjusted <script type="math/tex" id="MathJax-Element-289">R^2</script> and <script type="math/tex" id="MathJax-Element-290">C_p</script> statistic).</p>
+
+<ul>
+<li><p><strong>Mallows’ <script type="math/tex" id="MathJax-Element-291">C_p</script></strong> statistic helps you detect model bias if you are underfitting/overfitting the model, it is a simple indicator of effective variable selection within a model</p></li>
+<li><p>To select the best model for prediction (most accurate model for predicting future values of <script type="math/tex" id="MathJax-Element-292">Y</script>), you should use the <strong>Mallows’ criterion</strong>:  <script type="math/tex" id="MathJax-Element-293">C_p \le p</script>, which is the <strong>number of parameters</strong> in the model including the intercept</p></li>
+<li>To select the best model for parameter estimation (analytical or explanatory analysis), you should use <strong>Hocking’s criterion</strong>: <script type="math/tex" id="MathJax-Element-294">C_p\le2p-p_{full}+1</script></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">PROC REG DATA=SASdata-set PLOTS(ONLY)=(CP) <span class="hljs-tag">&lt;<span class="hljs-title">options</span>&gt;</span>;
+    <span class="hljs-tag">&lt;<span class="hljs-title">label:</span>&gt;</span> MODEL dependent=regressors  / SELECTION=CP RSQUARE ADJRSQ BEST=n <span class="hljs-tag">&lt;/<span class="hljs-title">options</span>&gt;</span>;
+RUN;
+QUIT;</code></pre>
+
+<ul>
+<li><strong>BEST</strong> prints an specific number of the best candidate models according to a few different statistical criteria</li>
+<li><strong>SELECTION</strong> option is used to specify the method used to select the model (<strong>CP</strong>, <strong>RSQUARE</strong> and <strong>ADJRSQ</strong> to calculate with the all-possible regression model; the first statistic determines the sorting order)</li>
+<li>For this all-possible regression model,we add the label <strong>ALL_REG:</strong></li>
+<li>With <strong>PLOTS=(CP)</strong> we produce a plot:</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/-MKHCheN7vUA/WONM3WW0qSI/AAAAAAAAADE/tHJAjyHK-QE5j4UVlxmT7KHTA_bvGJLxwCLcB/s0/mallows_cp_best_model.png" alt="enter image description here" title="Mallows' Cp to select the best model"></p>
+
+<p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows’ criterion</strong> for <script type="math/tex" id="MathJax-Element-295">C_p</script>, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking’s criterion</strong> for <script type="math/tex" id="MathJax-Element-296">C_p</script> parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
+
+<hr>
+
+<p><strong><em>Stepwise selection methods</em></strong></p>
+
+<p>Here you choose a selection method (<strong>stepwise</strong>, <strong>forward</strong> or <strong>backward</strong> approaches) and SAS constructs a model based on that method. When you have a <strong>large number of potential predictor variables</strong>, the stepwise regression methods might be a better option. You can use either the <strong>REG</strong> procedure or the <strong>GLMSELECT</strong> procedure to perform stepwise selection methods</p>
+
+<ul>
+<li><strong>Forward selection</strong> starts with no predictor variables in the model <br>
+<ol><li>It selects the best one-variable model</li>
+<li>It selects the best two-variable model that includes the variable from the first model (after a variable is added to the model, it stays in even if it becomes insignificant later)</li>
+<li>It keeps adding variables, one at a time, until no significant terms are left to add</li></ol></li>
+<li><strong>Backward selection/elimination</strong> starts with all predictor variables in the model <br>
+<ol><li>It removes variables one at a time, starting with the most non-significant variable (after a variable is removed from the model, it cannot reenter)</li>
+<li>It stops when only significant terms are left in the model</li></ol></li>
+<li><strong>Stepwise selection</strong> combines aspects of both forward and backward selection <br>
+<ol><li>It starts with no predictor variables in the model and starts adding variables, one at a time, as in forward selection</li>
+<li>However, as in backward selection, stepwise selection can drop non-significant variables, one at a time</li>
+<li>It stops when everything in the model is currently significant and everything not in the model is not significant</li></ol></li>
+</ul>
+
+<p>Statisticians in general agree on first using <strong>stepwise methods</strong> to identify several good candidates models and then applying your <strong>subject matter expertise</strong> to choose the best model. Because the techniques for selecting or eliminating variables differ between the three selection methods, <strong>they don’t always produce the same final model</strong>. There is no one method that is best and <strong>you need to be cautious</strong> when reporting statistical quantities produced by these methods:</p>
+
+<ul>
+<li>Using automated model selections results in <strong>biases in parameter estimates</strong>, <strong>predictions</strong> and <strong>standard errors</strong></li>
+<li><strong>Incorrect</strong> calculation of <strong>degrees of freedom</strong></li>
+<li><strong>p-values</strong> that tend to err on the side of <strong>overestimating significance</strong></li>
+</ul>
+
+<p>How can you <strong>avoid these issues</strong>?</p>
+
+<ul>
+<li>You can hold out some of your data in order to perform an honest assessment of how well your model performs on a different sample of data (<strong>holdout/validation data</strong>) than you use to develop the model (<strong>training data</strong>)</li>
+<li>Other honest assessment approaches include <strong>cross-validation</strong> (if your data set is not large enough to split) or <strong>bootstraping</strong> (a resampling method that tries to approximate the distribution of the parameter estimates to estimate the standard error and p-values)</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">PROC GLMSELECT DATA=SAS-data-set <span class="hljs-tag">&lt;<span class="hljs-title">options</span>&gt;</span>;
+    CLASS variables;
+    <span class="hljs-tag">&lt;<span class="hljs-title">label:</span>&gt;</span> MODEL dependent(s) = regressor(s) / <span class="hljs-tag">&lt;/<span class="hljs-title">options</span>&gt;</span>;
+RUN;
+QUIT;</code></pre>
+
+<ul>
+<li>The <strong>SELECTION</strong> option specifies the method to be used to select the model (<strong>FORWARD</strong> | <strong>BACKWARD</strong> | <strong>STEPWISE</strong> = default value)</li>
+<li>The <strong>SELECT</strong> option specifies the criterion to be used to determine which variable to add/remove from the model (<strong>SL</strong> = significance level as the selection criterion)</li>
+<li>The <strong>SLENTRY</strong> option determines the significance level for a variable to enter the model (default = 0.5 for forward and 0.15 for stepwise)</li>
+<li>The <strong>SLSTAY</strong> option determines the significance level for a variable to stay in the model (default = 0.1 for backward and 0.15 for stepwise)</li>
+<li>You can display p-values in the <em>Parameter Estimates</em> table by including the <strong>SHOWPVALUES</strong> option int he MODEL statement</li>
+<li>The <strong>DETAILS</strong> option specifies the level of detail produced (<strong>ALL</strong> | <strong>STEPS</strong> | <strong>SUMMARY</strong>)</li>
+</ul>
+
+<hr>
+
+<p>Recommendations to decide which model is best for your needs:</p>
+
+<ol>
+<li>Run all model selection methods</li>
+<li>Look for commonalities across the results </li>
+<li>Narrow down your choice of models by using your subject matter knowledge</li>
+</ol>
+
+
+
+<h3 id="information-criterion-and-other-selection-options">Information Criterion and Other Selection Options</h3>
+
+<p>There are other selection criteria that you can use to select variables for a model as well as evaluate competing models. These statistics are collectively referred to as <strong>information criteria</strong>. Each information criterion searched for a model that minimizes the <strong>unexplained variability</strong> with as <strong>few effects in the model as possible</strong>. The model with the <strong>smaller information criterion is considered to be better*</strong>. For types are available in <strong>PROC GLMSELECT</strong>:</p>
+
+<ul>
+<li>Akaike’s information criterion (SELECT=<strong>AIC</strong>)</li>
+<li>Correcterd Akaike’s information criterion (SELECT=<strong>AICC</strong>)</li>
+<li>Sawa Bayesian information criterion (SELECT=<strong>BIC</strong>)</li>
+<li>Schwarz Bayesian information criterion (SELECT=<strong>SBC</strong>, it could be called <strong>BIC</strong> in some other SAS procedures)</li>
+</ul>
+
+<p>The calculations of all information criteria begin the same way:</p>
+
+<ol>
+<li>First you calculate <script type="math/tex" id="MathJax-Element-297">n\cdot log(SSE/n)</script> </li>
+<li>Then, each criterion adds a penalty that represents the complexity of the model (each type of information criterion invokes a different penalty component) <br>
+<ul><li>AIC: <script type="math/tex" id="MathJax-Element-298">2p+n+2</script></li>
+<li>AICC: <script type="math/tex" id="MathJax-Element-299">n(n+p)/(n-p-2)</script></li>
+<li>BIC: <script type="math/tex" id="MathJax-Element-300">2(p+2)1-2q^2</script></li>
+<li>SBC: <script type="math/tex" id="MathJax-Element-301">p\cdot log(n)</script></li></ul></li>
+</ol>
+
+
+
+<h2 id="model-post-fitting-for-inference">Model Post-Fitting for Inference</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m554/m554_4_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p>How to <strong>verify the assumptions</strong> and <strong>diagnose problems</strong> that you encounter in <strong>linear regression</strong>?</p>
+
+
+
+<h3 id="examining-residuals">Examining Residuals</h3>
+
+<p>You can use the <strong>residual values</strong> (difference between each observed value of <script type="math/tex" id="MathJax-Element-302">Y</script> and its predicted value) from the regression analysis to verify the <strong>assumptions of the linear regression</strong>. Residuals are estimates of the errors, so you can <strong>plot the residuals to check the assumptions of the errors</strong>.</p>
+
+<ul>
+<li>You can plot residuals vs the predicted values to check for <strong>violations of equal variances</strong></li>
+<li>You can also use this plot to check for <strong>violations of linearity and independence</strong></li>
+<li>You can plot the residuals vs the values of the independent variables to <strong>further examine any violations of equal variances</strong> (you can see which predictor contributes to the violation of the assumption)</li>
+<li>You can use a histogram or a normal probability plot of the residuals to determine whether or not the <strong>errors are normally distributed</strong></li>
+</ul>
+
+<p>You want to see a <strong>random scatter of the residual values</strong> above and below the reference line at 0. If you see <strong>patterns or trends</strong> in the residual values, the assumptions might not be valid and the models might have problems.</p>
+
+<p><img src="https://lh3.googleusercontent.com/-84ce_WbduHI/WOOAkeq-iiI/AAAAAAAAADs/e2ZzJE_XoLE8DnfdqNt-aaHhOzw8Z-ucgCLcB/s0/assumption-violation.PNG" alt="enter image description here" title="Assumptions violation examples"></p>
+
+<p><strong>Note</strong>: To take autocorrelation (correlated over time) into account, you might need to use a regression procedure such as <strong>PROC AUTOREG</strong></p>
+
+<p>You can also use these plots to <strong>detect outliers</strong>, which often reflect data errors or unusual circumstances. They can affect your regression results, so you want to know whether any outliers are present and causing problems and investigate if they result from <strong>data entry error or some other problem</strong> that you can correct.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">PROC</span> <span class="hljs-type">REG</span> <span class="hljs-type">DATA</span>=<span class="hljs-type">SAS</span>-<span class="hljs-typedef"><span class="hljs-keyword">data</span>-set <span class="hljs-type">PLOTS</span><span class="hljs-container">(<span class="hljs-type">ONLY</span>)</span>=<span class="hljs-container">(<span class="hljs-type">QQ</span> <span class="hljs-type">RESIDUALBYPREDICTED</span> <span class="hljs-type">RESIDUALS</span>)</span>&lt;options&gt;;</span>
+    &lt;label:&gt; <span class="hljs-type">MODEL</span> dependent=regressor(s) &lt;/options&gt;;
+    <span class="hljs-type">ID</span> variable4identification;
+<span class="hljs-type">RUN</span>;
+<span class="hljs-type">QUIT</span>;</code></pre>
+
+<ul>
+<li><strong>QQ</strong> requests a residual quantile-quantile plot to assess the normality of the residual error</li>
+<li><strong>RESIDUALBYPREDICTED</strong> requests a plot of residuals by predicted values to verify the equal variance assumption, the independence assumption and model adequacy</li>
+<li><strong>RESIDUALS</strong> requests a panel of plots of residuals by the predictor variables in the model. If any of the <em>Residual by Regressors</em> plots show signs of unequal variance, we can determine which predictor variable is involved in the problem.</li>
+</ul>
+
+
+
+<h3 id="identifying-influential-observations">Identifying Influential Observations</h3>
+
+<p>An influential observation is different from an outlier. An <strong>outlier</strong> is an unusual observation that has a large residual compare to the rest of the points. An <strong>influential observation</strong> can sometimes have a large residual compared to the rest of the points, but it is an observation so far away from the rest of the data that it singlehandedly exerts influence on the slope of the regression line.</p>
+
+<p><img src="https://lh3.googleusercontent.com/-SRVHsMC3NQg/WOOVPEZxDLI/AAAAAAAAAEA/1vGwrG2XlWISRMTx2fguuh109zyLXfVGACLcB/s0/outlier_vs_influential-observation.PNG" alt="enter image description here" title="outlier vs influential observation"></p>
+
+<hr>
+
+<p><strong><em>Using STUDENT residuals to detect outliers</em></strong></p>
+
+<p>Also known as <strong>studientized or standardized residuals</strong>, the STUDENT residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
+
+<ul>
+<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is <script type="math/tex" id="MathJax-Element-303">>2</script></strong>, you can suspect that the corresponding observation is an outlier</li>
+<li>For <strong>large sample sizes</strong>, it’s very likely that even more STUDENT <strong>residuals greater than <script type="math/tex" id="MathJax-Element-304">\pm2</script></strong> will occur just by chance, so you should typically use a larger cutoff value of <script type="math/tex" id="MathJax-Element-305">>3</script></li>
+</ul>
+
+<hr>
+
+<p><strong><em>Using Cook’s D statistics to detect influential observations</em></strong></p>
+
+<p>Fore each observation, the Cook’s D statistic is <strong>calculated as if that observation weren’t in the data set</strong> as well as the set of parameter estimates with all the observations in your regression analysis. </p>
+
+<ul>
+<li>If any observation has a Cook’s D <strong>statistic <script type="math/tex" id="MathJax-Element-306">>4/n</script></strong> that observation is influential</li>
+<li>The Cook’s D statistic is most useful for identifying influential observations when the purpose of your model is <strong>parameter estimation</strong></li>
+</ul>
+
+<hr>
+
+<p><strong><em>Using RSTUDENT residuals to detect influential observations</em></strong></p>
+
+<p>RSTUDENT residuals are similar to STUDENT residuals. For each observation, the RSTUDENT residual is the <strong>residual divided by the standard error estimated with the current observation deleted</strong>.</p>
+
+<ul>
+<li>If the RSTUDENT residual is different from the STUDENT residual, the observation is probably influential</li>
+<li>If the absolute value of the RSTUDENT residuals is <script type="math/tex" id="MathJax-Element-307">>2</script> or <script type="math/tex" id="MathJax-Element-308">>3</script>, you’ve probably detected an influential observation</li>
+</ul>
+
+<hr>
+
+<p><strong><em>Using DFFITS statistics to detect influential observations</em></strong></p>
+
+<p>DFFITS measures the impact that each observation has on its own predicted value. For each observation, DFFITS is <strong>calculated using two predicted values</strong>:</p>
+
+<ul>
+<li>The first predicted value is calculated from a model using the entire data set to estimate model parameters</li>
+<li>The second predicted value is calculated from a model using the data set with that particular observation removed to estimate model parameters</li>
+<li>The difference between the two predicted values is divided by the standard error of the predicted value, without the observation</li>
+</ul>
+
+<p>If the <strong>standardized difference</strong> between these predicted values <strong>is large</strong>, that particular observation has a <strong>large effect on the model fit</strong>.</p>
+
+<ul>
+<li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-309">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-310">2 \cdot sqrt(p/n)</script></li>
+<li>If the absolute value of DFFITS for any observation is <script type="math/tex" id="MathJax-Element-311">></script> cutoff value, you’ve detected an influential observation</li>
+<li>DFFITS is most useful for <strong>predictive models</strong></li>
+</ul>
+
+<hr>
+
+<p><strong><em>Using DFBETAS statistics to explore the influenced predictor variable</em></strong></p>
+
+<p>To help identifying which parameter the observation might be influencing most you can use DFBETAS (difference in betas). It measure the change in each parameter estimate. </p>
+
+<ul>
+<li>One DFBETA is calculated per predictor variable per observation</li>
+<li>Each value is calculated by taking the estimated coefficient for that particular predictor variable <strong>using all the data</strong>, subtracting the estimated coefficient for that particular predictor variable with the <strong>current observation removed</strong> and dividing by its standard error</li>
+<li>Large DFBETAS indicate observations that are influential in estimating a given parameter: <br>
+<ul><li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-312">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-313">2 \cdot sqrt(1/n)</script></li></ul></li>
+</ul>
+
+<hr>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC GLMSELECT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-subst">&lt;</span>label:<span class="hljs-subst">&gt;</span> MODEL dependent(s) <span class="hljs-subst">=</span> regressor(s) <span class="hljs-subst">/</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;
+QUIT;
+
+ODS OUTPUT RSTUDENTBYPREDICTED<span class="hljs-subst">=</span>name<span class="hljs-attribute">-rstud</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+           COOKSDPLOT<span class="hljs-subst">=</span>name<span class="hljs-attribute">-cooksd</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+           DFFITSPLOT<span class="hljs-subst">=</span>name<span class="hljs-attribute">-dffits</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+           DFBETASPANEL<span class="hljs-subst">=</span>name<span class="hljs-attribute">-dfbs</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+
+PROC REG <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> PLOTS(ONLY LABEL)<span class="hljs-subst">=</span>
+                                (RSTUDENTBYPREDICTED 
+                                 COOKSD 
+                                 DFFITS 
+                                 DFBETAS) <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-subst">&lt;</span>label:<span class="hljs-subst">&gt;</span> MODEL dependent<span class="hljs-subst">=&amp;</span>_GLSIND <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        ID variable4identification;
+RUN;
+QUIT;
+
+<span class="hljs-built_in">DATA</span> influential;
+    MERGE name<span class="hljs-attribute">-rstud</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+        name<span class="hljs-attribute">-cooksd</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+        name<span class="hljs-attribute">-dffits</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+        name<span class="hljs-attribute">-dfbs</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-keyword">BY</span> observation;
+
+    <span class="hljs-keyword">IF</span> (ABS(RSTUDENT)<span class="hljs-subst">&gt;</span><span class="hljs-number">3</span>) <span class="hljs-literal">OR</span> (COOKSDLABEL NE <span class="hljs-string">' '</span>) <span class="hljs-literal">OR</span> DFFITSOUT THEN FLAG<span class="hljs-subst">=</span><span class="hljs-number">1</span>;
+    <span class="hljs-built_in">ARRAY</span> DFBETAS{<span class="hljs-subst">*</span>} _DFBETASOUT: ;
+    <span class="hljs-keyword">DO</span> I<span class="hljs-subst">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">TO</span> DIM(DFBETAS);
+        <span class="hljs-keyword">IF</span> DFBETAS{I} THEN FLAG<span class="hljs-subst">=</span><span class="hljs-number">1</span>;
+    END;
+
+    <span class="hljs-keyword">IF</span> ABS(RSTUDENT)<span class="hljs-subst">&lt;=</span><span class="hljs-number">3</span> THEN RSTUDENT<span class="hljs-subst">=</span><span class="hljs-built_in">.</span>;
+    <span class="hljs-keyword">IF</span> COOKSDLABEL <span class="hljs-literal">EQ</span> <span class="hljs-string">' '</span> THEN COOKSD<span class="hljs-subst">=</span><span class="hljs-built_in">.</span>;
+
+    <span class="hljs-keyword">IF</span> FLAG<span class="hljs-subst">=</span><span class="hljs-number">1</span>;
+    DROP I FLAG;
+RUN;
+
+PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>influential;
+    ID observation;
+    <span class="hljs-built_in">VAR</span> RSTUDENT COOKSD DFFITSOUT _DFBETASOUT: ;
+RUN;</code></pre>
+
+<ul>
+<li>PROC GLMSELECT automatically creates the <strong>&amp;_GLSIND</strong> macro variable which stores the list of effects that are in the model whose variable order you can check in the <em>Influence Diagnostics</em> panel</li>
+<li>The <strong>ODS</strong> statement takes the data that creates each of the requested plots and saves it in the specified data set</li>
+<li>The <strong>LABEL</strong> option includes a label for the extreme observations in the plot (labeled with the observation numbers if there is not ID specified)</li>
+</ul>
+
+<p>Having <strong>influential observations doesn’t violate regression assumptions</strong>, but it’s a major nuisance that you need to address:</p>
+
+<ol>
+<li><strong>Recheck</strong> for data entry errors</li>
+<li>If the data appears to be valid, <strong>consider whether you have an adequate model</strong> (a different model might fit the data better). Divide the number of influential observations you detect by the number of observations in you data set: if the result is <strong><script type="math/tex" id="MathJax-Element-314">>5\%</script> you probably have the wrong model</strong>.</li>
+<li>Determine whether the influential observation is <strong>valid but just unusual</strong></li>
+<li>As a general rule you should <strong>not exclude data</strong> (some unusual observations contain important information)</li>
+<li>If you choose to exclude some observations, include in your report a <strong>description of the types of observations that you excluded and why</strong> and discuss the limitation of the conclusions given the exclusions</li>
+</ol>
+
+
+
+<h3 id="detecting-collinearity">Detecting Collinearity</h3>
+
+<p>Collinearity (or multicollinearity) is a problem that you face in multiple regression. It occurs when two or more <strong>predictor variables are highly correlated with each other</strong> (<strong>redundant information</strong> among them, the predictor variables explain much of the same variation in the response). Collinearity doesn’t violate the assumptions of multiple regression.</p>
+
+<ul>
+<li>Collinearity can <strong>hide significant effects</strong> (if you include only one of the collinear variables in the model it is significant but when there are more than one included none of them are significant)</li>
+<li>Collinearity <strong>increases the variance</strong> of the parameter estimates, making them <strong>unstable</strong> (the data points don’t spread out enough in the space to provide stable support for the plane defined by the model) and, in turn, this <strong>increases the prediction error</strong> of the model</li>
+</ul>
+
+<p>When an overall model is highly significant but the individual variables don’t tell the same story, it’s a <strong>warning sign of collinearity</strong>. When the <strong>standard error for an estimate is larger than the parameter estimate</strong> itself, it’s not going to be statistically significant. The SE tells us how variable the corresponding parameter estimate is: when the standard errors are high, the <strong>model lacks stability</strong>.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs handlebars"><span class="xml"><span class="hljs-tag"><span class="hljs-attribute">PROC</span> <span class="hljs-attribute">REG</span> <span class="hljs-attribute">DATA</span>=<span class="hljs-value">SAS-data-set</span> &lt;<span class="hljs-attribute">options</span>&gt;</span>;
+    <span class="hljs-tag">&lt;<span class="hljs-title">label:</span>&gt;</span> MODEL dependent = regressors / VIF <span class="hljs-tag">&lt;/<span class="hljs-title">options</span>&gt;</span>;
+RUN;
+QUIT;</span></code></pre>
+
+<ul>
+<li>The <strong>VIF</strong> (variance inflation factor, <script type="math/tex" id="MathJax-Element-315">VIF_i=1/(1-R_i^2)</script>) option measures the magnitude of collinearity in a model (VIF<script type="math/tex" id="MathJax-Element-316">>10</script> for any predictor in the model, those predictors are probably involved in collinearity)</li>
+<li>Other options are <strong>COLLIN</strong> (includes the intercept when analyzing collinearity and helps identify the predictors that are causing the problem) and <strong>COLLINOINT</strong> (requests the same analysis as COLLIN but excludes the intercept)</li>
+</ul>
+
+<hr>
+
+<p><strong><em>Effective modeling cycle</em></strong></p>
+
+<ol>
+<li>You want to get to know your data by <strong>performing preliminary analysis</strong>:  <br>
+<ul><li>Plot your data</li>
+<li>Calculate descriptive statistics </li>
+<li>Perform correlation analysis</li></ul></li>
+<li>Identify some <strong>good candidate models</strong> using PROC REG:  <br>
+<ul><li>First check for collinearity </li>
+<li>Use all-possible regression or stepwise selection methods and subject matter knowledge to select model candidates</li>
+<li>Identify the good ones with the Mallows’ (prediction) or Hocking’s (explanatory) criterion for <script type="math/tex" id="MathJax-Element-317">C_p</script></li></ul></li>
+<li><p><strong>Check and validate your assumtions</strong> by creating residual plots and conducting a few other statistical tests</p></li>
+<li><p>Deal with any <strong>problems in your data</strong>: </p>
+
+<ul><li>Determine whether any influential observations might be throwing off your model calculations</li>
+<li>Determine whether any variables are collinear</li></ul></li>
+<li><p><strong>Revise your model</strong></p></li>
+<li><p><strong>Validate your model</strong> with data not used to build the  model (prediction testing)</p></li>
+</ol>
+
+
+
+<h2 id="categorical-data-analysis">Categorical Data Analysis</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m556/m556_5_a_sum.htm">Chapter summary in SAS</a></p>
+
+<p>When you response variable is categorical, you need to use a different kind of regression analysis: <strong>logistic regression</strong>.</p>
+
+
+
+<h3 id="describing-categorical-data">Describing Categorical Data</h3>
+
+<p>When you examine the distribution of a <strong>categorical variable</strong>, you want to know the <strong>values</strong> of the variable and the <strong>frequency or count</strong> of each value in the data (<strong>one-way frequency able</strong>).</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    TABLES variable1 variable2 variable3 <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-subst">&lt;</span>additional statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
+
+<p>To look for a possible <strong>association</strong> between two or more categorical variables, you can create a <strong>crosstabulation</strong>/<strong>contingency table</strong> (when it displays statistics for two variables is also called <strong>two-way frequency able</strong>).</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    TABLES <span class="hljs-built_in">variable</span><span class="hljs-attribute">-rows</span><span class="hljs-subst">*</span><span class="hljs-built_in">variable</span><span class="hljs-attribute">-columns</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        <span class="hljs-subst">&lt;</span>additional statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
+
+<p>Two distribution plots are associated with a frequency or crosstabulation table: a <strong>frequency plot</strong>, PLOTS=<strong>(FREQPLOT)</strong>, and a <strong>cumulative frequency plot</strong>.</p>
+
+<p>In PROC FREQ output, the default order for character values is <strong>alphaumeric</strong>. To reorder the values of an ordinal variable in your FROC FREQ output you can:</p>
+
+<ul>
+<li>Create a <strong>new variable</strong> in which the values are stored in logical order</li>
+<li>Apply a <a href="https://support.sas.com/edu/OLTRN/ECST131/eclibjr/tempformat.htm"><strong>temporary format</strong></a> to the original variable</li>
+</ul>
+
+
+
+<h3 id="tests-of-association">Tests of Association</h3>
+
+<p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables (H0 is true):  <br>
+<script type="math/tex" id="MathJax-Element-318">Expected=Row \ total\cdot Column\ total/Total \ sample \ size</script></p>
+
+<ul>
+<li>If the <strong>sample size decreases</strong>, the <strong>chi-square value decreases</strong> and the <strong>p-value for the chi-square statistic increases</strong></li>
+<li>Hypothesis testing: <strong>H0</strong>: no association; <strong>Ha</strong>: association</li>
+</ul>
+
+<p><strong>Cramer’s V statistic</strong> is one measure of strength of an association between two categorical variables</p>
+
+<ul>
+<li>For two-by-two tables, Cramer’s V is in the range of -1 to 1</li>
+<li>For larger tables, Cramer’s V is int he range of 0 to 1 </li>
+<li>Values farther away from 0 indicate a relatively strong association between the variables</li>
+</ul>
+
+<p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: <script type="math/tex" id="MathJax-Element-319">Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}</script>; <script type="math/tex" id="MathJax-Element-320">Odds=p_{event}/(1-p_{event})</script></p>
+
+<ul>
+<li>The value of the odds ratio can range from 0 to <script type="math/tex" id="MathJax-Element-321">\infty</script>; it cannot be negative</li>
+<li>When the odds ratio is <script type="math/tex" id="MathJax-Element-322">1</script>, there is no association between variables</li>
+<li>When the odds ratio <script type="math/tex" id="MathJax-Element-323">>1</script>/<script type="math/tex" id="MathJax-Element-324"><1</script>, the group in the numerator/denominator is more likely to have the outcome</li>
+<li>The odds ratio is approximately the same <strong>regardless of the sample size</strong></li>
+<li>To estimate the true odds ratio while taking into account the variability of the sample statistic, you can calculate <strong>confidence intervals</strong></li>
+<li>You can use an odds ratio to <strong>test for significance</strong> between two categorical variables</li>
+<li>Odds ratio expressed as percent difference: <script type="math/tex" id="MathJax-Element-325">(odd \ ratio -1) \cdot 100</script></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    TABLES <span class="hljs-built_in">variable</span><span class="hljs-attribute">-rows</span><span class="hljs-subst">*</span><span class="hljs-built_in">variable</span><span class="hljs-attribute">-columns</span> <span class="hljs-subst">/</span> CHISQ EXPECTED <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-subst">&lt;</span>additional statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
+
+<ul>
+<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: <script type="math/tex" id="MathJax-Element-326">\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>EXPECTED</strong> prints the expected cell frequencies</li>
+<li><strong>CELLCHI2</strong> prints each cell’s contribution to the total chi-square statistic: <script type="math/tex" id="MathJax-Element-327"> \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>NOCOL</strong> suppresses the printing of the column percentages</li>
+<li><strong>NOPERCENT</strong> supresses the printing of the cell percentages</li>
+<li><strong>RELRISK</strong> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; PROC FREQ uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
+</ul>
+
+<hr>
+
+<p>For <strong>ordinal associations</strong>, the <strong>Mantel-Haenszel</strong> chi-square test is a more powerful test.</p>
+
+<ul>
+<li>The levels must be in a <strong>logical order</strong> for the test results to be meaningful</li>
+<li>Hypothesis testing: <strong>H0</strong>: no ordinal association; <strong>Ha</strong>: ordinal association</li>
+<li>Similarly to the Pearson case, the Mantel-Haenszel chi-square statistic/p-value indicate whether an association exists but not its magnitude and they depend on and reflect the sample size</li>
+</ul>
+
+<p>To measure the <strong>strength of the association</strong> between two ordinal variables you can use the <strong>Spearman correlation</strong> statistic.</p>
+
+<ul>
+<li>You should only use it if both variables are ordinal and are in logical order</li>
+<li>Is considered to be a rank correlation because it provides a degree of association between the ranks of the ordinal variables</li>
+<li>This statistic has a <strong>range between -1 and +1</strong>: values close to -1/+1 indicate that there is a relatively high degree of negative/positive correlation and values close to 0 indicate a weak correlation</li>
+<li>It is <strong>not affected by the sample size</strong></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+        TABLES <span class="hljs-built_in">variable</span><span class="hljs-attribute">-rows</span><span class="hljs-subst">*</span><span class="hljs-built_in">variable</span><span class="hljs-attribute">-columns</span> <span class="hljs-subst">/</span> CHISQ EXPECTED <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        <span class="hljs-subst">&lt;</span>additional statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
+
+<ul>
+<li><strong>MEASURES</strong> produces the Spearman correlation statistic along with other measurement of association</li>
+<li><strong>CL</strong> produces confidence bounds for the statistics that the MEASURES option requests</li>
+<li>The confidence bounds are valid only if the sample size is large (<script type="math/tex" id="MathJax-Element-328">>25</script>)</li>
+<li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
+</ul>
+
+
+
+<h3 id="introduction-to-logistic-regression">Introduction to Logistic Regression</h3>
+
+<p>Logistic Regression is a generalized linear model that you can use to predict a categorical response/outcome on the basis if one or more continuous or categorical predictor variables. There are three models:</p>
+
+<p><img src="https://lh3.googleusercontent.com/-_wxj3yC7ZCE/WOd2RpxTQOI/AAAAAAAAAEg/HYmLKYjBYr8Thq7HwseFdK3hU8Tnreo8ACLcB/s0/logistic_regression_types.PNG" alt="enter image description here" title="Logistic regression types"></p>
+
+<p>Some reasons why you <strong>can’t use linear regression</strong> with a <strong>binary response variable</strong> are:</p>
+
+<ul>
+* 
+</ul>
+
+
+
+<h3 id="multiple-logistic-regression">Multiple Logistic Regression</h3>
+
+
+
+<h2 id="model-building-and-scoring-for-prediction">Model Building and Scoring for Prediction</h2>
+
+<p><a href="https://support.sas.com/edu/OLTRN/ECST131/m555/m555_3_a_sum.htm">Chapter summary in SAS</a></p>
+
+
+
+<h3 id="introduction-to-predictive-modeling">Introduction to Predictive Modeling</h3>
+
+
+
+<h3 id="scoring-predictive-models">Scoring Predictive Models</h3>
+
+
+
+<h1 id="macros">Macros</h1>
+
+<p>You can learn about macros in the <strong>SAS Macro Language 1: Essentials course</strong>.</p>
+
+
+
+<h3 id="macro-program-for-creating-box-plots-for-all-of-predictor-variables">Macro Program for Creating Box Plots for All of Predictor Variables</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs haml"><span class="hljs-tag">%<span class="hljs-title">let</span></span> categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces 
+         Season_Sold Garage_Type_2 Foundation_2 Heating_QC 
+         Masonry_Veneer Lot_Shape_2 Central_Air;
+<span class="hljs-comment">/* Macro Usage: %box(DSN = , Response = , CharVar = ) */</span>
+<span class="hljs-tag">%<span class="hljs-title">macro</span></span> box(dsn      = ,
+           response = ,
+           Charvar  = );
+<span class="hljs-tag">%<span class="hljs-title">let</span></span> i = 1 ;
+<span class="hljs-tag">%<span class="hljs-title">do</span></span> %while(%scan(&amp;charvar,&amp;i,%str( )) ^= %str()) ;
+<span class="hljs-tag">    %<span class="hljs-title">let</span></span> var = %scan(&amp;charvar,&amp;i,%str( ));
+    proc sgplot data=&amp;dsn;
+        vbox &amp;response / category=&amp;var 
+                         grouporder=ascending 
+                         connect=mean;
+        title "&amp;response across Levels of &amp;var";
+    run;
+<span class="hljs-tag">    %<span class="hljs-title">let</span></span> i = %eval(&amp;i + 1 ) ;
+<span class="hljs-tag">%<span class="hljs-title">end</span></span> ;
+<span class="hljs-tag">%<span class="hljs-title">mend</span></span> box;
+<span class="hljs-tag">%<span class="hljs-title">box</span>(<span class="hljs-attribute">dsn</span>      = statdata.ameshousing3,
+     <span class="hljs-attribute">response</span> = SalePrice,
+     <span class="hljs-attribute">charvar</span>  = &amp;categorical)</span>;
+title;
+options label;</code></pre>
+
+
+
+<h1 id="missing-data">Missing data</h1>
+
+<p>Depending on the <strong>type of data and model</strong> you will be using, techniques such as <strong>multiple imputation</strong> or <strong>direct maximum likelihood</strong> may better serve your needs. The main goals of statistical analysis with missing data are:</p>
+
+<ul>
+<li>Minimize bias</li>
+<li>Maximize use of available information</li>
+<li>Obtain appropriate estimates of uncertainty</li>
+</ul>
+
+<p>To use the more appropriate imputation method you should consider the missing data mechanism of your data which describes the process that is believed to have generated the missing values:</p>
+
+<ul>
+<li><strong>Missing completely at random (MCAR)</strong>:  neither the variables in the dataset nor the unobserved value of the variable itself predict whether a value will be missing</li>
+<li><strong>Missing at random (MAR)</strong>: other variables (but not the variable itself) in the dataset can be used to predict missingness on a given variable</li>
+<li><strong>Missing not at random (MNAR)</strong>: value of the unobserved variable itself predicts missingness</li>
+</ul>
+
+<p>Imputed values are <strong>not</strong> equivalent to observed values and serve only to help estimate the covariances between variables needed for inference.</p>
+
+<p>Some of the imputation techniques are:</p>
+
+<ul>
+<li><strong>Complete case analysis (listwise deletion)</strong>:  deleting cases in a particular dataset that are missing data on any variable of interest (for MCAR cases the power is reduced but it does not add any bias) </li>
+<li><strong>Available case analysis (pairwise deletion)</strong>:  deleting cases where a variable required for a particular analysis is missing, but including those cases in analyses for which all required variables are present</li>
+<li><strong>Mean Imputation</strong>:</li>
+<li><strong>Single Imputation</strong>:</li>
+<li><strong>Stochastic Imputation</strong>: </li>
+</ul>
+
+
+
+<h2 id="direct-maximum-likelihood">Direct maximum likelihood</h2>
+
+
+
+<h2 id="multiple-imputation">Multiple imputation</h2>
+
+<p>Multiple Imputation is always superior to any of the single imputation methods because:</p>
+
+<ul>
+<li>A single imputed value is never used</li>
+<li>The variance estimates reflect the appropriate amount of uncertainty surrounding parameter estimates</li>
+</ul>
+
+<p>There are several decisions to be made before performing a multiple imputation including <strong>distribution</strong>, <strong>auxiliary variables</strong> and <strong>number of imputations</strong> that can affect the quality of the imputation.</p>
+
+<ol>
+<li><strong>Imputation phase (PROC MI)</strong>:  the user specifies the imputation model to be used and the number  <br>
+   of imputed datasets to be created</li>
+<li><strong>Analysis phase (PROG GLM/PROC GENMOD)</strong>: runs the analytic model of interest within each of the imputed datasets</li>
+<li><strong>Pooling phase (PROC MIANALYZE)</strong>: combines all the estimates across all the imputed datasets and outputs one set of parameter estimates for the model of interest</li>
+</ol>
+
+<p><strong><em>MVN or FCS?</em></strong></p>
+
+<p><strong><em>Auxiliary variables</em></strong></p>
+
+<ul>
+<li>They can can help improve the likelihood of meeting the MAR assumption </li>
+<li>They help yield more accurate and stable estimates and thus reduce the estimated standard errors in analytic models </li>
+<li>Including them can also help to increase power</li>
+</ul>
+
+<p><strong><em>Number of imputations (m)</em></strong></p>
+
+<ul>
+<li>Estimates of coefficients stabilize at much lower values of <em>m</em> than estimates of variances and covariances of error terms </li>
+<li>A larger number of imputations may also allow hypothesis tests with less restrictive assumptions (i.e., that do not assume equal fractions of missing information for all coefficients)</li>
+<li>Multiple runs of m imputations are recommended to assess the stability of the parameter estimates</li>
+<li>Recommendations:  <br>
+<ul><li>For low fractions of missing information (and relatively simple analysis techniques) 5-20 imputations and 50 or more when the proportion of missing data is relatively high</li>
+<li>The number of imputations should equal the percentage of incomplete cases (<em>m</em>=max(FMI%)), this way the error associated with estimating the regression coefficients, standard errors and the resulting p-values is considerably reduced and results in an adequate level of reproducibility</li></ul></li>
+</ul>
+
+<p><strong>More comments</strong></p>
+
+<ul>
+<li>You should include the dependent variable (DV) in the imputation model unless you would like to impute independent variables (IVs) assuming they are uncorrelated with your DV</li>
+<li>Although MI can perform well up to 50% missing observations,  the larger the amount the higher the chance of finding estimation problems during the imputation process and the lower the chance of meeting the MAR assumption</li>
+</ul>
+
+
+
+<h1 id="misc">Misc</h1>
+
+<p>When you name a process flow Autoexec, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you start practising in the course.</p>
+
+<p>For the SAS Enterprise Guide you need to add this command to get the plots displayed in the output:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs apache"><span class="hljs-keyword">ODS</span> GRAPHICS <span class="hljs-literal">ON</span>;<span class="hljs-sqbracket">
+[your code here]</span>
+<span class="hljs-keyword">ODS</span> GRAPHICS <span class="hljs-literal">OFF</span>;</code></pre>
+
+<p>When you add the <strong>ODS TRACE</strong> statement, SAS writes a trace record to the log that includes information about each output object (name, label, template, path):</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs apache"><span class="hljs-keyword">ODS</span> TRACE <span class="hljs-literal">ON</span>;<span class="hljs-sqbracket">
+[your code here]</span>
+<span class="hljs-keyword">ODS</span> TRACE <span class="hljs-literal">OFF</span>;</code></pre>
+
+<p>You produce a list of the possible output elements in the log that you may specify in the <strong>ODS SELECT/EXCLUDE</strong> statement:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs sql">ODS <span class="hljs-operator"><span class="hljs-keyword">SELECT</span> lmeans diff meanplot diffplot controlplot;</span>
+[your code here]</code></pre>
+
+<p>This way you can see the actual variable level values in the output rather than some indexes:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vhdl">FORMAT <span class="hljs-keyword">variable</span> DOSEF.;</code></pre>
