@@ -43,8 +43,8 @@
 
   img {
     max-width: 100% !important;
-    display: block;
-    margin: auto;
+    /* display: block;
+    margin: auto; */
   }
 
   p,
