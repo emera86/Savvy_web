@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="assets/css/splendor.css">
 <h1 id="sas-programming-essentials">SAS Programming Essentials</h1>
 
 
@@ -14,6 +13,8 @@
 <p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m412/m412_3_a_sum.htm">Chapter summary in SAS</a></p>
 
 <p><strong><em>Comments</em></strong></p>
+
+
 
 <pre class="prettyprint"><code class=" hljs markdown">/<span class="hljs-bullet">* comment *</span>/
 <span class="hljs-bullet">* </span>comment statement;</code></pre>
@@ -135,7 +136,7 @@ RUN;</code></pre>
 
 
 
-<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>(OBS<span class="hljs-subst">=</span><span class="hljs-number">3</span>) NOOBS;  <span class="hljs-comment">/* OBS=3 prints only 3 elements | NOOBS hides the 'Obs' */</span>
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>(OBS<span class="hljs-subst">=</span><span class="hljs-number">3</span>) NOOBS;   <span class="hljs-comment">/* OBS=3 prints only 3 elements | NOOBS hides the 'Obs' */</span>
     <span class="hljs-built_in">VAR</span> variable1 variable2 variable3;       <span class="hljs-comment">/* prints out only this variables in the report */</span>
     <span class="hljs-keyword">SUM</span> variable1 variable2;                 <span class="hljs-comment">/* adds an extra line at the end with the total */</span>
     <span class="hljs-keyword">WHERE</span> variable3<span class="hljs-subst">&lt;</span><span class="hljs-number">1000</span>;                    <span class="hljs-comment">/* operators: &lt; &gt; &lt;= &gt;= = ^= in + - / * ** &amp; | ~ ^ ? */</span>
@@ -212,7 +213,7 @@ RUN;</code></pre>
 
 
 
-<pre class="prettyprint"><code class=" hljs applescript">PROC PRINT DATA=SAS-data-<span class="hljs-keyword">set</span> SPLIT='*';           /* you no longer need <span class="hljs-keyword">to</span> add <span class="hljs-keyword">the</span> LABEL option, SPLIT <span class="hljs-keyword">does</span> <span class="hljs-keyword">the</span> same work */ 
+<pre class="prettyprint"><code class=" hljs applescript">PROC PRINT DATA=SAS-data-<span class="hljs-keyword">set</span> SPLIT='*';            /* you no longer need <span class="hljs-keyword">to</span> add <span class="hljs-keyword">the</span> LABEL option, SPLIT <span class="hljs-keyword">does</span> <span class="hljs-keyword">the</span> same work */ 
     LABEL variable1 = 'new variable1*long <span class="hljs-property">name</span>';   /* <span class="hljs-keyword">the</span> variable <span class="hljs-property">name</span> ocuppies <span class="hljs-number">2</span> lines now */
 RUN;</code></pre>
 
@@ -226,12 +227,12 @@ RUN;</code></pre>
 
 <h3 id="using-sas-formats">Using SAS formats</h3>
 
-<p><code> <br>
-   PROC PRINT DATA=SAS-data-base; <br>
-        FORMAT variable1 variable2 format; <br>
-        FORMAT variable3 format3 variable4 format4; <br>
-    RUN; <br>
-</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-base</span>;
+    FORMAT variable1 variable2 format;
+    FORMAT variable3 format3 variable4 format4;
+RUN;</code></pre>
 
 <p>Format definition: <strong>&lt;<span>$</span>&gt;<em>format</em>&lt;\w&gt;.&lt;\d&gt;</strong></p>
 
@@ -257,9 +258,9 @@ RUN;</code></pre>
 </ul>
 
 <p>SAS date values: <strong>MMDDYY&lt;\w&gt;.</strong> / <strong>DDMMYY&lt;\w&gt;.</strong> / <strong>MONYY&lt;\w&gt;.</strong> / <strong>DATE&lt;\w&gt;.</strong> / <strong>WEEKDATE.</strong> <br>
-- w = 6: only date numbers <br>
-- w = 8: date numbers with <strong>/</strong> separators (just the last 2 digits of year) <br>
-- w = 10: date numbers with <strong>/</strong> separators (full 4-digit year)</p>
+* w = 6: only date numbers <br>
+* w = 8: date numbers with <strong>/</strong> separators (just the last 2 digits of year) <br>
+* w = 10: date numbers with <strong>/</strong> separators (full 4-digit year)</p>
 
 <p><strong>Note:</strong> dates before 01/01/1960 (0 value) will appear as negative numbers</p>
 
@@ -267,17 +268,18 @@ RUN;</code></pre>
 
 <h3 id="creating-and-applying-user-defined-formats">Creating and applying user-defined formats</h3>
 
-<pre><code>PROC FORMAT;
-    VALUE &lt;$&gt;format-name value-or-range1='formatted-value1'
-                         value-or-range2='formatted-value2';
-RUN;
-</code></pre>
 
-<p>“</p>
 
-<p><code>PROC PRINT DATA=SAS-data-set; <br>
-    FORMAT variable1 &lt;$&gt;format-name.; <br>
-RUN;</code></p>
+<pre class="prettyprint"><code class=" hljs lasso">PROC FORMAT;
+    VALUE <span class="hljs-subst">&lt;</span>$<span class="hljs-subst">&gt;</span>format<span class="hljs-attribute">-name</span> value<span class="hljs-attribute">-or</span><span class="hljs-attribute">-range1</span><span class="hljs-subst">=</span><span class="hljs-string">'formatted-value1'</span>
+                         value<span class="hljs-attribute">-or</span><span class="hljs-attribute">-range2</span><span class="hljs-subst">=</span><span class="hljs-string">'formatted-value2'</span>;
+RUN;</code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    FORMAT variable1 <span class="hljs-subst">&lt;</span>$<span class="hljs-subst">&gt;</span>format<span class="hljs-attribute">-name</span><span class="hljs-built_in">.</span>;
+RUN;</code></pre>
 
 <ul>
 <li>A format name can have a maximum of <strong>32 characters</strong></li>
@@ -296,15 +298,17 @@ RUN;</code></p>
 <li><strong>formatted-value</strong>: the formatted value you want to display instead of the stored value/s (it is allways a character string no matter wheter the format applies to character values or numeric values)</li>
 </ul>
 
-<p><code>PROC FORMAT LIBRARY = my-format-library;   /* To save the custom formats */ <br>
-    VALUE string 'A'-'H'='First' <br>
-                 'I','J','K'='Middle' <br>
-                  OTHER = 'End';           /* Non-specified values */ <br>
-    VALUE tiers low-&lt;50000='Tier1'         /* 50000 not included */ <br>
-                50000-&lt;100000='Tier2'      /* 100000 not included */ <br>
-                100000-high='Tier3' <br>
-                .='Missing value'; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FORMAT LIBRARY <span class="hljs-subst">=</span> my<span class="hljs-attribute">-format</span><span class="hljs-attribute">-library</span>;   <span class="hljs-comment">/* To save the custom formats */</span>
+    VALUE <span class="hljs-built_in">string</span> <span class="hljs-string">'A'</span><span class="hljs-subst">-</span><span class="hljs-string">'H'</span><span class="hljs-subst">=</span><span class="hljs-string">'First'</span>
+                 <span class="hljs-string">'I'</span>,<span class="hljs-string">'J'</span>,<span class="hljs-string">'K'</span><span class="hljs-subst">=</span><span class="hljs-string">'Middle'</span>
+                  OTHER <span class="hljs-subst">=</span> <span class="hljs-string">'End'</span>;           <span class="hljs-comment">/* Non-specified values */</span>
+    VALUE tiers low<span class="hljs-subst">-&lt;</span><span class="hljs-number">50000</span><span class="hljs-subst">=</span><span class="hljs-string">'Tier1'</span>         <span class="hljs-comment">/* 50000 not included */</span>
+                <span class="hljs-number">50000</span><span class="hljs-subst">-&lt;</span><span class="hljs-number">100000</span><span class="hljs-subst">=</span><span class="hljs-string">'Tier2'</span>      <span class="hljs-comment">/* 100000 not included */</span>
+                <span class="hljs-number">100000</span><span class="hljs-attribute">-high</span><span class="hljs-subst">=</span><span class="hljs-string">'Tier3'</span>
+                <span class="hljs-built_in">.</span><span class="hljs-subst">=</span><span class="hljs-string">'Missing value'</span>;
+RUN;</code></pre>
 
 <p><strong>Note1:</strong> if you omit the <strong>LIBRARY</strong> option, then formats and informats are stored in the <strong>work.formats</strong> catalog</p>
 
@@ -312,7 +316,9 @@ RUN;</code></p>
 
 <p><strong>Note3:</strong> you can only use the <strong>&lt;</strong> symbol to define a non-inclusive range.</p>
 
-<p><code>OPTIONS FMTSEARCH = (libref1 libref2... librefn)</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">OPTIONS FMTSEARCH </span>=<span class="hljs-string"> (libref1 libref2... librefn)</span></code></pre>
 
 <ul>
 <li>The <strong>FMTSEARCH</strong> system option controls the order in which format catalogs are searched until the desired member is found.</li>
@@ -327,12 +333,13 @@ RUN;</code></p>
 
 <p>To create a new data set that is a subset of a previous data set:</p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
-    WHERE where-expression;
-    variable_name = expression;     /* new variable */
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">where</span><span class="hljs-attribute">-expression</span>;
+    variable_name <span class="hljs-subst">=</span> expression;     <span class="hljs-comment">/* new variable */</span>
+RUN;</code></pre>
 
 <p><strong>Note1:</strong> if a missing value is involved in an arithmetic calculation the result will be a missing value too</p>
 
@@ -344,12 +351,13 @@ RUN;
 
 <p>How to select a subset of the variables/observations of the original data set:</p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
-    DROP variable-list;        /* original variables to exclude */
-    KEEP variable-list;        /* original variables to include + new variables */
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    DROP <span class="hljs-built_in">variable</span><span class="hljs-attribute">-list</span>;        <span class="hljs-comment">/* original variables to exclude */</span>
+    KEEP <span class="hljs-built_in">variable</span><span class="hljs-attribute">-list</span>;        <span class="hljs-comment">/* original variables to include + new variables */</span>
+RUN;</code></pre>
 
 <p>How SAS processes the <strong>DATA</strong> step:</p>
 
@@ -375,11 +383,12 @@ RUN;
 
 <p>Subsetting <strong>IF</strong> statement: </p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
-    IF expression;
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+        <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+        <span class="hljs-keyword">IF</span> expression;
+RUN;</code></pre>
 
 <ul>
 <li>When the expression is false, SAS excludes the observation from the output data set and continues processing</li>
@@ -392,11 +401,12 @@ RUN;
 
 <p>Subsetting <strong>IF-THEN/DELETE</strong> statement: </p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
-    IF expression1 or expression2 then delete;
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-keyword">IF</span> expression1 <span class="hljs-literal">or</span> expression2 then delete;
+RUN;</code></pre>
 
 <ul>
 <li>The <strong>IF-THEN/DELETE</strong> statement eliminates the observations where the <strong>conditions are not met</strong> (on the contrary of what the <strong>IF</strong> does)</li>
@@ -405,25 +415,26 @@ RUN;
 
 <hr>
 
-<p>Addition of several variables: <code>Total=sum(var1, var2, var3)</code></p>
+<p>Addition of several variables: <strong>Total=sum(var1, var2, var3)</strong></p>
 
-<p>Count of nonmissing values: <code>Nonmissing=n(var1, var2, var3)</code></p>
-
-
+<p>Count of nonmissing values: <strong>Nonmissing=n(var1, var2, var3)</strong></p>
 
 <h3 id="adding-permanent-attributes">Adding permanent attributes</h3>
 
 <p><strong><em>Permanent variable labels</em></strong></p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
-    LABEL variable1='label1'
-          variable2='label2';
-RUN;
 
-PROC PRINT DATA=output-SAS-data-set label;
-RUN;
-</code></pre>
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    LABEL variable1<span class="hljs-subst">=</span><span class="hljs-string">'label1'</span>
+            variable2<span class="hljs-subst">=</span><span class="hljs-string">'label2'</span>;
+RUN;</code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> label;
+RUN;</code></pre>
 
 <ul>
 <li>If you use the <strong>LABEL</strong> statement in the <strong>PROC</strong> step the labels are <strong>temporary</strong> while if you use it in the <strong>DATA</strong> step, SAS <strong>permanently</strong> associates the labels to the variables</li>
@@ -432,12 +443,13 @@ RUN;
 
 <p><strong><em>Permanent variable formats</em></strong></p>
 
-<pre><code>DATA output-SAS-data-set;
-    SET input-SAS-data-set;
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> output<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> input<span class="hljs-attribute">-SAS</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
     FORMAT variable1 format1
-           variable2 format2;
-RUN;
-</code></pre>
+        variable2 format2;
+RUN;</code></pre>
 
 
 
@@ -451,16 +463,18 @@ RUN;
 
 <p>To determine the SAS products that are included in your SAS license, you can run the following PROC SETINIT step:</p>
 
-<pre><code>PROC SETINIT;
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs ">PROC SETINIT;
+RUN;</code></pre>
 
 <hr>
 
 <p>SAS/ACCESS LIBNAME statement (read/write/update data):</p>
 
-<pre><code>LIBNAME libref &lt;engine&gt; &lt;PATH=&gt;"workbook-name" &lt;options&gt;;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs xml">LIBNAME libref <span class="hljs-tag">&lt;<span class="hljs-title">engine</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">PATH=</span>&gt;</span>"workbook-name" <span class="hljs-tag">&lt;<span class="hljs-title">options</span>&gt;</span>;</code></pre>
 
 <p>E.g.:<br>
 <strong>Default engine:</strong> <code>LIBNAME orionx excel "&amp;path/sales.xls"</code><br>
@@ -478,19 +492,19 @@ RUN;
 
 <p>Import the xls data:</p>
 
-<pre><code>PROC IMPORT DATAFILE="/folders/myfolders/reading_test.xlsx"
-        OUT=work.myexcel
-        DBMS=xlsx 
-        REPLACE;
-RUN;
-</code></pre>
 
 
+<pre class="prettyprint"><code class=" hljs avrasm">PROC IMPORT DATAFILE=<span class="hljs-string">"/folders/myfolders/reading_test.xlsx"</span>
+            <span class="hljs-keyword">OUT</span>=work<span class="hljs-preprocessor">.myexcel</span>
+            DBMS=xlsx 
+            REPLACE<span class="hljs-comment">;</span>
+RUN<span class="hljs-comment">;</span></code></pre>
 
 <h3 id="reading-database-data">Reading database data</h3>
 
-<pre><code>LIBNAME libref engine &lt;SAS/ACCESS options&gt;;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs xml">LIBNAME libref engine <span class="hljs-tag">&lt;<span class="hljs-title">SAS</span>/<span class="hljs-attribute">ACCESS</span> <span class="hljs-attribute">options</span>&gt;</span>;</code></pre>
 
 <ul>
 <li><strong>engine</strong>: oracle or BD2</li>
@@ -519,21 +533,23 @@ RUN;
 
 <h3 id="reading-standard-delimited-data">Reading standard delimited data</h3>
 
-<pre><code>DATA output-SAS-data-set-name;
+
+
+<pre class="prettyprint"><code class=" hljs r">DATA output-SAS-data-set-name;
     LENGTH variable(s) &lt;$&gt; length;
-    INFILE 'raw-data-file-name' DLM='delimiter';  
-    INPUT variable1 &lt;$&gt; variable2 &lt;$&gt; ... variableN &lt;$&gt;;    /* $ = char var */     
-RUN;
-</code></pre>
+    INFILE <span class="hljs-string">'raw-data-file-name'</span> DLM=<span class="hljs-string">'delimiter'</span>;  
+    INPUT variable1 &lt;$&gt; variable2 &lt;$&gt; <span class="hljs-keyword">...</span> variableN &lt;$&gt;;    /* $ = char var */     
+RUN;</code></pre>
 
 <p><strong>E.g.:</strong><br></p>
 
-<pre><code>DATA work.sales1;
-    LENGTH First_Name Last_Name $ 12 Gender $ 1;
-    INFILE '&amp;path/sales.csv' DLM=',';  
-    INPUT Employee_ID Gender $ Salary $ Job_Title $ Country $; 
-RUN;
-</code></pre>
+
+
+<pre class="prettyprint"><code class=" hljs ruby"><span class="hljs-constant">DATA</span> work.sales1;
+    <span class="hljs-constant">LENGTH</span> <span class="hljs-constant">First_Name</span> <span class="hljs-constant">Last_Name</span> <span class="hljs-variable">$ </span><span class="hljs-number">12</span> <span class="hljs-constant">Gender</span> <span class="hljs-variable">$ </span><span class="hljs-number">1</span>;
+    <span class="hljs-constant">INFILE</span> <span class="hljs-string">'&amp;path/sales.csv'</span> <span class="hljs-constant">DLM</span>=<span class="hljs-string">','</span>;  
+    <span class="hljs-constant">INPUT</span> <span class="hljs-constant">Employee_ID</span> <span class="hljs-constant">Gender</span> <span class="hljs-variable">$ </span><span class="hljs-constant">Salary</span> <span class="hljs-variable">$ </span><span class="hljs-constant">Job_Title</span> <span class="hljs-variable">$ </span><span class="hljs-constant">Country</span> <span class="hljs-variable">$;</span> 
+<span class="hljs-constant">RUN</span>;</code></pre>
 
 <ul>
 <li>With <strong>list input</strong>, the default length for all variables is 8 bytes</li>
@@ -554,7 +570,9 @@ RUN;
 <li>The <strong>colon format modifier (:)</strong> causes SAS to read up to the delimiter</li>
 </ul>
 
-<p><code>INPUT variable &lt;$&gt; variable &lt;:informat&gt;;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs ruby"><span class="hljs-constant">INPUT</span> variable &lt;<span class="hljs-variable">$&gt;</span> variable &lt;<span class="hljs-symbol">:informat&gt;</span>;</code></pre>
 
 <p><strong>E.g.:</strong><br></p>
 
@@ -578,13 +596,14 @@ RUN;
 
 <hr>
 
-<pre><code>DATA (...);
-    INFILE DATALINES DLM=',';   /* only if datalines are delimited */
-    INPUT (...);
+
+
+<pre class="prettyprint"><code class=" hljs r">DATA (<span class="hljs-keyword">...</span>);
+    INFILE DATALINES DLM=<span class="hljs-string">','</span>;   /* only <span class="hljs-keyword">if</span> datalines are delimited */
+    INPUT (<span class="hljs-keyword">...</span>);
     DATALINES;
 &lt;instream data&gt;
-;
-</code></pre>
+;</code></pre>
 
 <ul>
 <li>The null statement (<strong>;</strong>) indicates the end of the input data</li>
@@ -594,24 +613,28 @@ RUN;
 
 <p><strong>E.g.:</strong><br></p>
 
-<p><code>data work.managers; <br>
-   infile datalines dlm='/'; <br>
-   input ID First :$12. Last :$12. Gender $ Salary :comma.  <br>
-            Title :$25. HireDate :date.; <br>
-   datalines; <br>
-120102/Tom/Zhou/M/108,255/Sales Manager/01Jun1993 <br>
-120103/Wilson/Dawes/M/87,975/Sales Manager/01Jan1978 <br>
-120261/Harry/Highpoint/M/243,190/Chief Sales Officer/01Aug1991 <br>
-121143/Louis/Favaron/M/95,090/Senior Sales Manager/01Jul2001 <br>
-121144/Renee/Capachietti/F/83,505/Sales Manager/01Nov1995 <br>
-121145/Dennis/Lansberry/M/84,260/Sales Manager/01Apr1980 <br>
-;</code></p>
 
-<p><code>title 'Orion Star Management Team'; <br>
-proc print data=work.managers noobs; <br>
-   format HireDate mmddyy10.; <br>
-run; <br>
-title;</code></p>
+
+<pre class="prettyprint"><code class=" hljs ruby">data work.managers;
+   infile datalines dlm=<span class="hljs-string">'/'</span>;
+   input <span class="hljs-constant">ID</span> <span class="hljs-constant">First</span> <span class="hljs-symbol">:</span><span class="hljs-variable">$12</span>. <span class="hljs-constant">Last</span> <span class="hljs-symbol">:</span><span class="hljs-variable">$12</span>. <span class="hljs-constant">Gender</span> <span class="hljs-variable">$ </span><span class="hljs-constant">Salary</span> <span class="hljs-symbol">:comma</span>. 
+            <span class="hljs-constant">Title</span> <span class="hljs-symbol">:</span><span class="hljs-variable">$25</span>. <span class="hljs-constant">HireDate</span> <span class="hljs-symbol">:date</span>.;
+   datalines;
+<span class="hljs-number">120102</span>/<span class="hljs-constant">Tom</span>/<span class="hljs-constant">Zhou</span>/<span class="hljs-constant">M</span>/<span class="hljs-number">108</span>,<span class="hljs-number">255</span>/<span class="hljs-constant">Sales</span> <span class="hljs-constant">Manager</span>/<span class="hljs-number">01</span>Jun1993
+<span class="hljs-number">120103</span>/<span class="hljs-constant">Wilson</span>/<span class="hljs-constant">Dawes</span>/<span class="hljs-constant">M</span>/<span class="hljs-number">87</span>,<span class="hljs-number">975</span>/<span class="hljs-constant">Sales</span> <span class="hljs-constant">Manager</span>/<span class="hljs-number">01</span>Jan1978
+<span class="hljs-number">120261</span>/<span class="hljs-constant">Harry</span>/<span class="hljs-constant">Highpoint</span>/<span class="hljs-constant">M</span>/<span class="hljs-number">243</span>,<span class="hljs-number">190</span>/<span class="hljs-constant">Chief</span> <span class="hljs-constant">Sales</span> <span class="hljs-constant">Officer</span>/<span class="hljs-number">01</span>Aug1991
+<span class="hljs-number">121143</span>/<span class="hljs-constant">Louis</span>/<span class="hljs-constant">Favaron</span>/<span class="hljs-constant">M</span>/<span class="hljs-number">95</span>,09<span class="hljs-number">0</span>/<span class="hljs-constant">Senior</span> <span class="hljs-constant">Sales</span> <span class="hljs-constant">Manager</span>/<span class="hljs-number">01</span>Jul2001
+<span class="hljs-number">121144</span>/<span class="hljs-constant">Renee</span>/<span class="hljs-constant">Capachietti</span>/<span class="hljs-constant">F</span>/<span class="hljs-number">83</span>,<span class="hljs-number">505</span>/<span class="hljs-constant">Sales</span> <span class="hljs-constant">Manager</span>/<span class="hljs-number">01</span>Nov1995
+<span class="hljs-number">121145</span>/<span class="hljs-constant">Dennis</span>/<span class="hljs-constant">Lansberry</span>/<span class="hljs-constant">M</span>/<span class="hljs-number">84</span>,<span class="hljs-number">260</span>/<span class="hljs-constant">Sales</span> <span class="hljs-constant">Manager</span>/<span class="hljs-number">01</span>Apr198<span class="hljs-number">0</span>
+;</code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs mel">title <span class="hljs-string">'Orion Star Management Team'</span>;
+<span class="hljs-keyword">proc</span> <span class="hljs-keyword">print</span> data=work.managers noobs;
+   <span class="hljs-keyword">format</span> HireDate mmddyy10.;
+run;
+title;</code></pre>
 
 
 
@@ -623,7 +646,9 @@ title;</code></p>
 
 <p><strong><em>Missing values between delimiters (consecutive delimiters)</em></strong></p>
 
-<p><code>INFILE 'raw-data-file-name' &lt;DLM=&gt; DSD;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs php">INFILE <span class="hljs-string">'raw-data-file-name'</span> &lt;DLM=&gt; DSD;</code></pre>
 
 <p>The <strong>DSD</strong> option sets the default delimiter to a comma, treats consecutive delimiters as missing values and enables SAS to read values with embedded delimiters if the value is surrounded by quotation marks</p>
 
@@ -631,7 +656,9 @@ title;</code></p>
 
 <p><strong><em>Missing values at the end of a line</em></strong></p>
 
-<p><code>INFILE 'raw-data-file-name' MISSOVER;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">INFILE</span> 'raw-<span class="hljs-typedef"><span class="hljs-keyword">data</span>-file-name' <span class="hljs-type">MISSOVER</span>;</span></code></pre>
 
 <p>With the <strong>MISSOVER</strong> option, if SAS reaches the end of a record without finding values for all fields, variables without values are set to <em>missing</em>.</p>
 
@@ -647,7 +674,9 @@ title;</code></p>
 
 <p><strong><em>SUM function</em></strong></p>
 
-<p><code>SUM(argument1, argument2, ...)</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs r">SUM(argument1, argument2, <span class="hljs-keyword">...</span>)</code></pre>
 
 <ul>
 <li>The arguments must be numeric values</li>
@@ -659,25 +688,29 @@ title;</code></p>
 
 <p><strong><em>DATE funtion</em></strong></p>
 
-<p><code>YEAR(SAS-date) <br>
-QTR(SAS-date) <br>
-MONTH(SAS-date) <br>
-DAY(SAS-date) <br>
-WEEKDAY(SAS-date) <br>
-TODAY()                /* Obtain the current date and convert to SAS-date (no argument) */ <br>
-DATE()                 /* Obtain the current date and convert to SAS-date (no argument) */ <br>
-MDY(month, day, year)</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs vbscript"><span class="hljs-built_in">YEAR</span>(SAS-<span class="hljs-built_in">date</span>)     
+QTR(SAS-<span class="hljs-built_in">date</span>)
+<span class="hljs-built_in">MONTH</span>(SAS-<span class="hljs-built_in">date</span>)
+<span class="hljs-built_in">DAY</span>(SAS-<span class="hljs-built_in">date</span>)
+<span class="hljs-built_in">WEEKDAY</span>(SAS-<span class="hljs-built_in">date</span>)
+TODAY()                /* Obtain the current <span class="hljs-built_in">date</span> <span class="hljs-keyword">and</span> convert <span class="hljs-keyword">to</span> SAS-<span class="hljs-built_in">date</span> (no argument) */
+<span class="hljs-built_in">DATE</span>()                 /* Obtain the current <span class="hljs-built_in">date</span> <span class="hljs-keyword">and</span> convert <span class="hljs-keyword">to</span> SAS-<span class="hljs-built_in">date</span> (no argument) */
+MDY(<span class="hljs-built_in">month</span>, <span class="hljs-built_in">day</span>, <span class="hljs-built_in">year</span>)</code></pre>
 
 <ul>
 <li>The arguments must be numeric values (except from <strong>TODAY()</strong> and <strong>DATE()</strong> functions)</li>
-<li>You can subtract dates: <code>Agein2012=(Bday2012-Birth_Date)/365.25;</code></li>
+<li>You can subtract dates: <strong>Agein2012=(Bday2012-Birth_Date)/365.25;</strong></li>
 </ul>
 
 <hr>
 
 <p><strong><em>Concatenation function</em></strong></p>
 
-<p><code>CATX(' ', First_Name, Last_Name)</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs scss"><span class="hljs-function">CATX(<span class="hljs-string">' '</span>, First_Name, Last_Name)</span></code></pre>
 
 <p>The <strong>CATX</strong> function removes leading and trailing blanks, inserts delimiters, and returns a concatenated character string. In the code, you first specify a character string that is used as a delimiter between concatenated items.</p>
 
@@ -685,7 +718,9 @@ MDY(month, day, year)</code></p>
 
 <p><strong><em>Time interval function</em></strong></p>
 
-<p><code>INTCK('year', Hire_Date, '01JAN2012'd)</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs scss"><span class="hljs-function">INTCK(<span class="hljs-string">'year'</span>, Hire_Date, <span class="hljs-string">'01JAN2012'</span>d)</span></code></pre>
 
 <p>The <strong>INTCK</strong> function returns the number of interval boundaries of a given kind that lie between the two dates, times, or datetime values. In the code, you first specify the interval value.</p>
 
@@ -701,24 +736,28 @@ MDY(month, day, year)</code></p>
 
 <p><strong><em>IF-THEN-ELSE conditional structures</em></strong></p>
 
-<p><code>IF expression THEN statement; <br>
-ELSE IF expression THEN statement; <br>
-ELSE statement;</code></p>
 
-<p>In the conditional expressions involving strings watch out for possible mixed case values where the condition may not be met: <code>Country = upcase(Country);</code> to avoid problems</p>
+
+<pre class="prettyprint"><code class=" hljs ruleslanguage"><span class="hljs-keyword">IF</span> expression <span class="hljs-keyword">THEN</span> statement;
+<span class="hljs-keyword">ELSE</span> <span class="hljs-keyword">IF</span> expression <span class="hljs-keyword">THEN</span> statement;
+<span class="hljs-keyword">ELSE</span> statement;</code></pre>
+
+<p>In the conditional expressions involving strings watch out for possible mixed case values where the condition may not be met:  <strong>Country = upcase(Country);</strong> to avoid problems</p>
 
 <hr>
 
 <p><strong><em>Executing multiple statements in an IF-THEN-ELSE statement</em></strong></p>
 
-<p><code>IF expression THEN <br>
-    DO; <br>
-        executable statements; <br>
-    END; <br>
-ELSE IF expression THEN <br>
-    DO; <br>
-        executable statements; <br>
-    END;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs vbnet"><span class="hljs-keyword">IF</span> expression <span class="hljs-keyword">THEN</span>
+    <span class="hljs-keyword">DO</span>;
+        executable statements;
+    <span class="hljs-keyword">END</span>;
+<span class="hljs-keyword">ELSE</span> <span class="hljs-keyword">IF</span> expression <span class="hljs-keyword">THEN</span>
+    <span class="hljs-keyword">DO</span>;
+        executable statements;
+    <span class="hljs-keyword">END</span>;</code></pre>
 
 
 
@@ -738,20 +777,22 @@ ELSE IF expression THEN <br>
 
 <p><strong><em>SELECT group</em></strong></p>
 
-<p><code>SELECT(Gender); <br>
-      WHEN('F') DO; <br>
-         Gift1='Scarf'; <br>
-         Gift2='Pedometer'; <br>
-      END; <br>
-      WHEN('M') DO; <br>
-         Gift1='Gloves'; <br>
-         Gift2='Money Clip'; <br>
-      END; <br>
-      OTHERWISE DO; <br>
-         Gift1='Coffee'; <br>
-         Gift2='Calendar'; <br>
-      END; <br>
-END;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs ruleslanguage"><span class="hljs-keyword">SELECT</span>(Gender);
+      <span class="hljs-keyword">WHEN</span>(<span class="hljs-string">'F'</span>) DO;
+         Gift1=<span class="hljs-string">'Scarf'</span>;
+         Gift2=<span class="hljs-string">'Pedometer'</span>;
+      <span class="hljs-keyword">END</span>;
+      <span class="hljs-keyword">WHEN</span>(<span class="hljs-string">'M'</span>) DO;
+         Gift1=<span class="hljs-string">'Gloves'</span>;
+         Gift2=<span class="hljs-string">'Money Clip'</span>;
+      <span class="hljs-keyword">END</span>;
+      <span class="hljs-keyword">OTHERWISE</span> DO;
+         Gift1=<span class="hljs-string">'Coffee'</span>;
+         Gift2=<span class="hljs-string">'Calendar'</span>;
+      <span class="hljs-keyword">END</span>;
+<span class="hljs-keyword">END</span>;</code></pre>
 
 <ul>
 <li>The <strong>SELECT</strong> statement executes one of several statements or groups of statements</li>
@@ -773,15 +814,19 @@ END;</code></p>
 
 <p><strong><em>Combine files vertically by concatenating</em></strong></p>
 
-<p><code>DATA SAS-data-set; <br>
-    SET SAS-data-set1 SAS-data-set2 ...; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs r">DATA SAS-data-set;
+    SET SAS-data-set1 SAS-data-set2 <span class="hljs-keyword">...</span>;
+RUN;</code></pre>
 
 <p><strong><em>Combine two different variables that are actually the same one</em></strong></p>
 
-<p><code>DATA SAS-data-set; <br>
-    SET SAS-data-set1 (RENAME=(old-name1 = new-name1 old-name2 = new-name2)) SAS-data-set2 ...; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">SET</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> (RENAME<span class="hljs-subst">=</span>(old<span class="hljs-attribute">-name1</span> <span class="hljs-subst">=</span> <span class="hljs-literal">new</span><span class="hljs-attribute">-name1</span> old<span class="hljs-attribute">-name2</span> <span class="hljs-subst">=</span> <span class="hljs-literal">new</span><span class="hljs-attribute">-name2</span>)) SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> <span class="hljs-attribute">...</span>;
+RUN;</code></pre>
 
 <ul>
 <li>The name change affects the PDV and the output data set, but has no effect on the input data set</li>
@@ -801,11 +846,13 @@ RUN;</code></p>
 <li>You may need to <strong>SORT</strong> the files by the <strong>BY-variable(s)</strong> before merging the files</li>
 </ul>
 
-<p><code>DATA SAS-data-set; <br>
-    MERGE SAS-data-set1 (RENAME=(old-name1 = new-name1 ...)) SAS-data-set2 ...; <br>
-    BY &lt;DESCENDING&gt; BY-variable(s); <br>
-    &lt;additional SAS statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs r">DATA SAS-data-set;
+    MERGE SAS-data-set1 (RENAME=(old-name1 = new-name1 <span class="hljs-keyword">...</span>)) SAS-data-set2 <span class="hljs-keyword">...</span>;
+    BY &lt;DESCENDING&gt; BY-variable(s);
+    &lt;additional SAS statements&gt;
+RUN;</code></pre>
 
 <ul>
 <li>In a <strong>one-to-one</strong> relationship, a single observastion in one data set is related to one, and only one, observation in another data set based on the values of one or more common variables</li>
@@ -819,11 +866,13 @@ RUN;</code></p>
 
 <h3 id="merging-sas-data-sets-one-to-many">Merging SAS Data Sets One-to-Many</h3>
 
-<p><code>DATA SAS-data-set; <br>
-    MERGE SAS-data-set1 SAS-data-set2 ...; <br>
-    BY &lt;DESCENDING&gt; BY-variable(s); <br>
-    &lt;additional SAS statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    MERGE SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> <span class="hljs-attribute">...</span>;
+    <span class="hljs-keyword">BY</span> <span class="hljs-subst">&lt;</span><span class="hljs-keyword">DESCENDING</span><span class="hljs-subst">&gt;</span> <span class="hljs-keyword">BY</span><span class="hljs-attribute">-variable</span>(s);
+    <span class="hljs-subst">&lt;</span>additional SAS statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
 
 <p><em>In a <strong>one-to-many merge</strong>, does it matter which data set is listed first in the MERGE statement?</em></p>
 
@@ -842,56 +891,72 @@ RUN;</code></p>
 
 <h3 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches</h3>
 
-<p><code>DATA SAS-data-set; <br>
-    MERGE SAS-data-set1 SAS-data-set2 ...; <br>
-    BY &lt;DESCENDING&gt; BY-variable(s); <br>
-    &lt;additional SAS statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    MERGE SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> <span class="hljs-attribute">...</span>;
+    <span class="hljs-keyword">BY</span> <span class="hljs-subst">&lt;</span><span class="hljs-keyword">DESCENDING</span><span class="hljs-subst">&gt;</span> <span class="hljs-keyword">BY</span><span class="hljs-attribute">-variable</span>(s);
+    <span class="hljs-subst">&lt;</span>additional SAS statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
 
 <ul>
 <li>After the merging, the output data set contains <strong>both matches and non-matches</strong></li>
 <li>You want the new data set to contain only the observations that match across the input data sets, and not those ones that are missing in one of the data sets that you are merging</li>
 </ul>
 
-<p><code>DATA SAS-data-set; <br>
-    MERGE SAS-data-set1 (IN=variable1)  <br>
-          SAS-data-set2 (IN=variable2) ...; <br>
-    BY &lt;DESCENDING&gt; BY-variable(s); <br>
-    &lt;additional SAS statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    MERGE SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> (<span class="hljs-keyword">IN</span><span class="hljs-subst">=</span>variable1) 
+          SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> (<span class="hljs-keyword">IN</span><span class="hljs-subst">=</span>variable2) <span class="hljs-attribute">...</span>;
+    <span class="hljs-keyword">BY</span> <span class="hljs-subst">&lt;</span><span class="hljs-keyword">DESCENDING</span><span class="hljs-subst">&gt;</span> <span class="hljs-keyword">BY</span><span class="hljs-attribute">-variable</span>(s);
+    <span class="hljs-subst">&lt;</span>additional SAS statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
 
 <ul>
 <li>When you spefify the <strong>IN</strong> option after an input data set in the MERGE statement, SAS creates a <strong>temporary numeric variable</strong> that indicates whether the data set contributed data to the current observation (0 = it did not contribute to the current observation, 1 = it did contribute)</li>
 <li>These variables are only available <strong>during execution</strong></li>
 </ul>
 
-<p><code>DATA SAS-data-set; <br>
-    MERGE SAS-data-set1 (IN=variable1)  <br>
-          SAS-data-set2 (IN=variable2) ...; <br>
-    BY &lt;DESCENDING&gt; BY-variable(s); <br>
-    IF variable1 = 1 and variable2 = 1;     /* write only matches */ <br>
-    &lt;additional SAS statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    MERGE SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> (<span class="hljs-keyword">IN</span><span class="hljs-subst">=</span>variable1) 
+          SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> (<span class="hljs-keyword">IN</span><span class="hljs-subst">=</span>variable2) <span class="hljs-attribute">...</span>;
+    <span class="hljs-keyword">BY</span> <span class="hljs-subst">&lt;</span><span class="hljs-keyword">DESCENDING</span><span class="hljs-subst">&gt;</span> <span class="hljs-keyword">BY</span><span class="hljs-attribute">-variable</span>(s);
+    <span class="hljs-keyword">IF</span> variable1 <span class="hljs-subst">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">and</span> variable2 <span class="hljs-subst">=</span> <span class="hljs-number">1</span>;     <span class="hljs-comment">/* write only matches */</span>
+    <span class="hljs-subst">&lt;</span>additional SAS statements<span class="hljs-subst">&gt;</span>
+RUN;</code></pre>
 
 <ul>
 <li><strong><em>Matches</em></strong></li>
 </ul>
 
-<p><code>IF variable1 = 1 and variable2 = 1  <br>
-IF variable1 and variable2</code> <br>
-- <strong><em>Non-matches from either data set</em></strong></p>
 
-<p><code>IF variable1 = 0 or not variable2 = 0 <br>
-IF not variable1 or not variable2</code></p>
 
-<p><strong><em>E.g.:</em></strong><br>
-<code>DATA SAS-new-data-set1 SAS-new-data-set2; <br>
-    MERGE SAS-data-set1 (in=var1) SAS-data-set2 (in=var2); <br>
-    BY BY-variable(s); <br>
-    IF var2 THEN OUTPUT SAS-new-data-set1; <br>
-    ELSE IF var1 and not var2 THEN OUTPUT SAS-new-data-set2; <br>
-    KEEP variable1 variable2 variable5 variable8; <br>
-run;</code></p>
+<pre class="prettyprint"><code class=" hljs php"><span class="hljs-keyword">IF</span> variable1 = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> variable2 = <span class="hljs-number">1</span> 
+<span class="hljs-keyword">IF</span> variable1 <span class="hljs-keyword">and</span> variable2</code></pre>
+
+<ul>
+<li><strong><em>Non-matches from either data set</em></strong></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet"><span class="hljs-keyword">IF</span> variable1 = <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> variable2 = <span class="hljs-number">0</span>
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">not</span> variable1 <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> variable2</code></pre>
+
+<p><strong><em>E.g.:</em></strong><br></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-built_in">DATA</span> SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span>;
+    MERGE SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span> (<span class="hljs-keyword">in</span><span class="hljs-subst">=</span>var1) SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span> (<span class="hljs-keyword">in</span><span class="hljs-subst">=</span>var2);
+    <span class="hljs-keyword">BY</span> <span class="hljs-keyword">BY</span><span class="hljs-attribute">-variable</span>(s);
+    <span class="hljs-keyword">IF</span> var2 THEN OUTPUT SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set1</span>;
+    <span class="hljs-keyword">ELSE</span> <span class="hljs-keyword">IF</span> var1 <span class="hljs-literal">and</span> <span class="hljs-literal">not</span> var2 THEN OUTPUT SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set2</span>;
+    KEEP variable1 variable2 variable5 variable8;
+run;</code></pre>
 
 
 
@@ -909,10 +974,12 @@ run;</code></p>
 <li>Variables that have continuous numerical values, such as dollar amounts and dates, will need to be <strong>grouped into categories</strong> by <strong>applying formats</strong> inside the PROC FREQ step (substitute an specific range of those values by a tag)</li>
 </ul>
 
-<p><code>PROC FREQ DATA=SAS-data-set &lt;option(s)&gt;; <br>
-    TABLES variable(s) &lt;loption(s)&gt;; <br>
-    &lt;additional statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs cpp">PROC FREQ DATA=SAS-data-<span class="hljs-stl_container"><span class="hljs-built_in">set</span> &lt;option(s)&gt;</span>;
+    TABLES variable(s) &lt;loption(s)&gt;;
+    &lt;additional statements&gt;
+RUN;</code></pre>
 
 <ul>
 <li><strong>PROC FREQ</strong> produces frequency tables that report the distribution of any or all variable values in a SAS data set</li>
@@ -925,10 +992,12 @@ RUN;</code></p>
 
 <hr>
 
-<p><code>PROC FREQ DATA=SAS-data-set &lt;option(s)&gt;; <br>
-    TABLES variable/NOCUM NOPERCENT; <br>
-    &lt;additional statements&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs cpp">PROC FREQ DATA=SAS-data-<span class="hljs-stl_container"><span class="hljs-built_in">set</span> &lt;option(s)&gt;</span>;
+    TABLES variable/NOCUM NOPERCENT;
+    &lt;additional statements&gt;
+RUN;</code></pre>
 
 <ul>
 <li><strong>NOCUM</strong> option supresses the display of  the cummulative frequency and cummulative percent values </li>
@@ -937,15 +1006,17 @@ RUN;</code></p>
 
 <hr>
 
-<p><code>PROC SORT DATA=SAS-data-set <br>
-    OUT=SAS-data-set-sorted; <br>
-    BY variable_sorted; <br>
-RUN;</code></p>
 
-<p><code>PROC FREQ DATA=SAS-data-set-sorted; <br>
-    TABLES variable-freq; <br>
-    BY variable_sorted; <br>
-RUN;</code></p>
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC SORT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+    OUT<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span><span class="hljs-attribute">-sorted</span>;
+    <span class="hljs-keyword">BY</span> variable_sorted;
+RUN;
+
+PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span><span class="hljs-attribute">-sorted</span>;
+    TABLES <span class="hljs-built_in">variable</span><span class="hljs-attribute">-freq</span>;
+    <span class="hljs-keyword">BY</span> variable_sorted;
+RUN;</code></pre>
 
 <ul>
 <li>Whenever you use the <strong>BY</strong> statement, the data set must be sorted by the variable named in the statement</li>
@@ -961,12 +1032,14 @@ RUN;</code></p>
 <li>The simplest crosstabulation table is a <strong>two-way table</strong></li>
 </ul>
 
-<p><code>PROC FREQ DATA=SAS-data-set; <br>
-    TABLES variable1 * variable2 / NOFREQ NOPERCENT NOROW NOCOL; <br>
-RUN;</code></p>
 
-<p><code>variable1 = table rows <br>
-variable2 = table columns</code></p>
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    TABLES variable1 <span class="hljs-subst">*</span> variable2 <span class="hljs-subst">/</span> NOFREQ NOPERCENT NOROW NOCOL;
+RUN;
+
+variable1 <span class="hljs-subst">=</span> table <span class="hljs-keyword">rows</span>
+variable2 <span class="hljs-subst">=</span> table columns</code></pre>
 
 <p>Information contained in crosstabulation tables (legend):</p>
 
@@ -984,11 +1057,13 @@ variable2 = table columns</code></p>
 
 <p>The <strong>FORMAT=</strong> option allows you to format the frequency value (to any SAS numeric format or a user-defined numeric format while its length is not more than 24) and to change the width of the column (e.g. to allow variable labels to fit in one line). </p>
 
-<p><code>PROC FREQ DATA=SAS-data-set; <br>
-    TABLES variable1 * variable2 / <br>
-    FORMAT = &lt;w&gt;.; <br>
-    FORMAT variable1 $format-name.; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    TABLES variable1 <span class="hljs-subst">*</span> variable2 <span class="hljs-subst">/</span>
+    FORMAT <span class="hljs-subst">=</span> <span class="hljs-subst">&lt;</span>w<span class="hljs-subst">&gt;</span><span class="hljs-built_in">.</span>;
+    FORMAT variable1 <span class="hljs-variable">$format</span><span class="hljs-attribute">-name</span><span class="hljs-built_in">.</span>;    
+RUN;</code></pre>
 
 <p>The <strong>FORMAT=</strong> option applies only to crosstabulation tables displayed in the default format. It doesn’t apply to crosstabulation tables produced with the <strong>LIST</strong>/<strong>CROSSLIST</strong> option</p>
 
@@ -998,9 +1073,11 @@ RUN;</code></p>
 
 <p>You can use a <strong>PROC FREQ</strong> step with the <strong>TABLES</strong> statement to detect invalud numeric and character data by looking at distinct values. The <strong>FREQ</strong> procedure <strong>lists all discrete values</strong> for a variable and <strong>reports its missing values</strong>.</p>
 
-<p><code>PROC FREQ DATA=SAS-data-set &lt;ORDER=FREQ&gt;; <br>
-    TABLES variable; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs cpp">PROC FREQ DATA=SAS-data-<span class="hljs-stl_container"><span class="hljs-built_in">set</span> &lt;ORDER=FREQ&gt;</span>;
+    TABLES variable;
+RUN;</code></pre>
 
 <ul>
 <li>You can check for non-expected variable’s values</li>
@@ -1012,28 +1089,34 @@ RUN;</code></p>
 
 <p>The table showing the <strong>Number of Variable Levels</strong> can indicate whether a variable contains duplicate/missing/non-expected values:</p>
 
-<p><code>PROC FREQ DATA=SAS-data-set NLEVELS; <br>
-    TABLES variable / NOPRINT; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> NLEVELS;
+    TABLES <span class="hljs-built_in">variable</span> <span class="hljs-subst">/</span> NOPRINT;
+RUN;</code></pre>
 
 <hr>
 
 <p>You can use a <strong>WHERE</strong> statement to print out only the invalid values to be checked:</p>
 
-<p><code>PROC PRINT DATA=SAS-data-set; <br>
-    WHERE gender NOT IN ('F','M') OR <br>
-          job_title IS NULL OR <br>
-          salary NOT BETWEEN 24000 AND 500000 OR <br>
-          employee IS MISSING; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PRINT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-keyword">WHERE</span> gender <span class="hljs-literal">NOT</span> <span class="hljs-keyword">IN</span> (<span class="hljs-string">'F'</span>,<span class="hljs-string">'M'</span>) <span class="hljs-literal">OR</span>
+          job_title IS <span class="hljs-built_in">NULL</span> <span class="hljs-literal">OR</span>
+          salary <span class="hljs-literal">NOT</span> BETWEEN <span class="hljs-number">24000</span> <span class="hljs-literal">AND</span> <span class="hljs-number">500000</span> <span class="hljs-literal">OR</span>
+          employee IS MISSING;
+RUN;</code></pre>
 
 <hr>
 
 <p>You can output the tables to a new data set instead of displaying it:</p>
 
-<p><code>PROC FREQ DATA=SAS-data-set NOPRINT; <br>
-   TABLE variable / OUT=SAS-new-data-set; <br>
-run;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC FREQ <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> NOPRINT;
+   TABLE <span class="hljs-built_in">variable</span> <span class="hljs-subst">/</span> OUT<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+run;</code></pre>
 
 
 
@@ -1050,25 +1133,29 @@ run;</code></p>
 <li><strong>N Obs</strong> reports the number of observations with each unique combination of class variables, whether or not there are missing values (if these <strong>N Obs</strong> are identical to <strong>N</strong>, there are no missing values in you data set)</li>
 </ul>
 
-<p><code>PROC MEANS DATA=SAS-data-set &lt;statistic(s)&gt;; <br>
-    VAR analysis-variable(s); <br>
-    CLASS classification-variable(s); <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs cpp">PROC MEANS DATA=SAS-data-<span class="hljs-stl_container"><span class="hljs-built_in">set</span> &lt;statistic(s)&gt;</span>;
+    VAR analysis-variable(s);
+    CLASS classification-variable(s);
+RUN;</code></pre>
 
 <p>To write the report in a new data set (including total addition):</p>
 
-<p><code>PROC MEANS DATA=SAS-data-set NOPRINT NWAY; <br>
-    OUTPUT OUT=SAS-new-data-set SUM=addition-new-variable; <br>
-    VAR analysis-variable(s); <br>
-    CLASS classification-variable(s); <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC MEANS <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> NOPRINT NWAY;
+    OUTPUT OUT<span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-new</span><span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> <span class="hljs-keyword">SUM</span><span class="hljs-subst">=</span>addition<span class="hljs-attribute">-new</span><span class="hljs-attribute">-variable</span>;
+    <span class="hljs-built_in">VAR</span> analysis<span class="hljs-attribute">-variable</span>(s);
+    CLASS classification<span class="hljs-attribute">-variable</span>(s);
+RUN;</code></pre>
 
 <p>Format options: </p>
 
 <ul>
-<li><code>MAXDEC=number</code> (default format = BESTw.) <code>NONOBS</code></li>
-<li><code>FW=number</code>: specifies that the field width for all columns is <em>number</em></li>
-<li><code>PRINTALLTYPES</code>: displays statistics for all requested combination of class variables</li>
+<li><strong>MAXDEC=number</strong> (default format = BESTw.) <strong>NONOBS</strong></li>
+<li><strong>FW=number</strong>: specifies that the field width for all columns is <em>number</em></li>
+<li><strong>PRINTALLTYPES</strong>: displays statistics for all requested combination of class variables</li>
 </ul>
 
 <p><img src="https://lh3.googleusercontent.com/R84N_PMRcXBBgDksyuhN6i--5J_vun1oLe5CRgMIvZdFZNSbSAxMkrKzCo5z7Zn_2aPnoFY=s0" alt="enter image description here" title="Descriptive statistics"> <br>
@@ -1089,13 +1176,15 @@ RUN;</code></p>
 
 <p><strong>PROC UNIVARIATE</strong> is a procedure that is useful for detecting data outliers that also produces summary reports of <strong>descriptive statistics</strong></p>
 
-<p><code>PROC UNIVARIATE DATA=SAS-data-set; <br>
-    VAR variable(s); <br>
-    ID variable_to_relate; <br>
-    HISTOGRAM variables &lt;/options&gt;; <br>
-    PROBPLOT variables &lt;/options&gt;; <br>
-    INSET keywords &lt;/options&gt;; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC UNIVARIATE <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);
+    ID variable_to_relate;
+    HISTOGRAM variables <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    PROBPLOT variables <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    INSET keywords <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;</code></pre>
 
 <ul>
 <li>If you omit the <strong>VAR</strong> statement, all numeric variables in the data set are analyzed</li>
@@ -1109,18 +1198,22 @@ RUN;</code></p>
 
 <p>1) Check the specific table name in the <strong>LOG information</strong> using <strong>ODS TRACE</strong>:</p>
 
-<p><code>ODS TRACE ON; <br>
-PROC UNIVARIATE DATA=SAS-data-set; <br>
-    VAR variable(s); <br>
-RUN; <br>
-ODS TRACE OFF;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">ODS TRACE <span class="hljs-keyword">ON</span>;
+PROC UNIVARIATE <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);
+RUN;
+ODS TRACE OFF;</code></pre>
 
 <p>2) Select the wanted table with <strong>ODS SELECT</strong>:</p>
 
-<p><code>ODS SELECT ExtremeObs; <br>
-PROC UNIVARIATE DATA=SAS-data-set; <br>
-    VAR variable(s); <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">ODS <span class="hljs-keyword">SELECT</span> ExtremeObs;
+PROC UNIVARIATE <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);
+RUN;</code></pre>
 
 <hr>
 
@@ -1132,9 +1225,11 @@ RUN;</code></p>
 
 <h3 id="using-the-sas-output-delivery-system">Using the SAS Output Delivery System</h3>
 
-<p><code>ODS destination FILE="filename" &lt;options&gt;; <br>
-    &lt;SAS code to generate the report&gt; <br>
-ODS destination CLOSE;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs vhdl">ODS destination <span class="hljs-keyword">FILE</span>=<span class="hljs-string">"filename"</span> &lt;options&gt;;
+    &lt;SAS code <span class="hljs-keyword">to</span> <span class="hljs-keyword">generate</span> the <span class="hljs-keyword">report</span>&gt;
+ODS destination CLOSE;</code></pre>
 
 <ul>
 <li>You can have multiple destinations open and execute multiple procedures</li>
@@ -1144,15 +1239,17 @@ ODS destination CLOSE;</code></p>
 
 <p><strong>E.g.:</strong></p>
 
-<p><code>ODS pdf FILE="C:/output/test.pdf"; <br>
-(...) <br>
-ODS pdf CLOSE;</code></p>
 
-<p><code>ODS csvall FILE="C:/output/test.cvs"; <br>
-ODS rtf FILE="C:/output/test.rtf"; <br>
-(...) <br>
-ODS csvall CLOSE; <br>
-ODS rtf CLOSE;</code></p>
+
+<pre class="prettyprint"><code class=" hljs r">ODS pdf FILE=<span class="hljs-string">"C:/output/test.pdf"</span>;
+(<span class="hljs-keyword">...</span>)
+ODS pdf CLOSE;
+
+ODS csvall FILE=<span class="hljs-string">"C:/output/test.cvs"</span>;
+ODS rtf FILE=<span class="hljs-string">"C:/output/test.rtf"</span>;
+(<span class="hljs-keyword">...</span>)
+ODS csvall CLOSE;
+ODS rtf CLOSE;</code></pre>
 
 <p><strong><em>Allowed file formats and their corresponding destinations:</em></strong> <br>
 <img src="https://lh3.googleusercontent.com/p3gAmRNbwqP8WfUOSKCLxTA042D3e_F9OUkxYJ0XHspC7MAfzfAnK0ghvpLZQXJWNWdbPd0=s0" alt="enter image description here" title="SAS Output Delivery System"></p>
@@ -1192,13 +1289,15 @@ ODS rtf CLOSE;</code></p>
 
 <p><strong>How to generate random (representative) samples (population subsets)</strong></p>
 
-<p><code>PROC SURVEYSELECT DATA=SAS-data-set  <br>
-                  OUT=name-of-output-data-set <br>
-                  METHOD=method-of-random-sampling <br>
-                  SEED=seed-value  <br>
-                  SAMPSIZE=number-of-observations-desired; <br>
-     &lt;STRATA stratification-variable(s);&gt; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs oxygene">PROC SURVEYSELECT DATA=SAS-data-<span class="hljs-keyword">set</span> 
+                  <span class="hljs-keyword">OUT</span>=name-<span class="hljs-keyword">of</span>-output-data-<span class="hljs-keyword">set</span>
+                  <span class="hljs-function"><span class="hljs-keyword">METHOD</span>=<span class="hljs-title">method</span>-<span class="hljs-title">of</span>-<span class="hljs-title">random</span>-<span class="hljs-title">sampling</span>
+                  <span class="hljs-title">SEED</span>=<span class="hljs-title">seed</span>-<span class="hljs-title">value</span> 
+                  <span class="hljs-title">SAMPSIZE</span>=<span class="hljs-title">number</span>-<span class="hljs-title">of</span>-<span class="hljs-title">observations</span>-<span class="hljs-title">desired</span>;</span>
+     &lt;STRATA stratification-variable(s);&gt;
+RUN;</code></pre>
 
 <ul>
 <li><strong>METHOD</strong>: specifies the random sampling method to be used. For simple random sampling without replacement, use <strong>METHOD=SRS</strong>. For simple random sampling with replacement, use <strong>METHOD=URS</strong>. For other selection methods and details on sampling algorithms, see the SAS online documentation for PROC SURVEYSELECT.</li>
@@ -1305,21 +1404,32 @@ RUN;</code></p>
 
 <p><strong><em>PLOTS PRODUCED WITH PROC SGPLOT</em></strong></p>
 
-<p><code>PROC SGPLOT DATA=SAS-data-set &lt;options&gt;; <br>
-        DOT category-variable &lt;/options&gt;; <br>
-        HBAR category-variable &lt;/options&gt;; <br>
-        VBAR category-variable &lt;/options&gt;; <br>
-        HBOX response-variable &lt;/options&gt;; <br>
-        VBOX response-variable &lt;/options&gt;; <br>
-        HISTOGRAM response-variable &lt;/options&gt;; <br>
-        SCATTER X=variable Y=variable &lt;/options&gt;; <br>
-        NEEDLE X=variable Y=numeric-variable &lt;/options&gt;; <br>
-        REG X=numeric-variable Y=numeric-variable &lt;/options&gt;; <br>
-RUN;</code></p>
 
-<p>Anywhere in the procedure you can add <strong>reference lines</strong>:<br>
-<code>REFLINE variable | value-1 &lt;... value-n&gt; &lt;/option(s)&gt;</code><br>
-<strong>E.g.:</strong> <code>REFLINE 1200 / axis=y lineattrs=(color=blue);</code></p>
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC SGPLOT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+        DOT category<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        HBAR category<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        VBAR category<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        HBOX response<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        VBOX response<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        HISTOGRAM response<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        SCATTER X<span class="hljs-subst">=</span><span class="hljs-built_in">variable</span> Y<span class="hljs-subst">=</span><span class="hljs-built_in">variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        NEEDLE X<span class="hljs-subst">=</span><span class="hljs-built_in">variable</span> Y<span class="hljs-subst">=</span>numeric<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+        REG X<span class="hljs-subst">=</span>numeric<span class="hljs-attribute">-variable</span> Y<span class="hljs-subst">=</span>numeric<span class="hljs-attribute">-variable</span> <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;</code></pre>
+
+<p>Anywhere in the procedure you can add <strong>reference lines</strong>:<br></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs r">REFLINE variable | value-<span class="hljs-number">1</span> &lt;<span class="hljs-keyword">...</span> value-n&gt; &lt;/option(s)&gt;</code></pre>
+
+<p><br>
+<strong>E.g.:</strong> </p>
+
+
+
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">REFLINE 1200 / axis</span>=<span class="hljs-string">y lineattrs=(color=blue);</span></code></pre>
 
 <ul>
 <li><strong>Scatter plots (SCATTER)</strong></li>
@@ -1348,8 +1458,11 @@ RUN;</code></p>
 
 <hr>
 
-<p>To specify options for graphs you submit the <strong>ODS GRAPHICS</strong> statement:<br>
-<code>ODS GRAPHICS ON &lt;options&gt;;</code></p>
+<p>To specify options for graphs you submit the <strong>ODS GRAPHICS</strong> statement:<br></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">ODS GRAPHICS ON <span class="hljs-tag">&lt;<span class="hljs-title">options</span>&gt;</span>;</code></pre>
 
 <ul>
 <li>To select/exclude specific test results, graphs or tables from you output, you can use <strong>ODS SELECT</strong> and <strong>ODS EXCLUDE</strong> statements.</li>
@@ -1434,14 +1547,16 @@ This option enables you to specify which graphs SAS should create, either in add
 
 <p>Calculation with <strong>PROC UNIVARIATE</strong>:</p>
 
-<p><code>ODS SELECT TESTSFORLOCATION; <br>
-PROC UNIVARIATE DATA=SAS-data-set MU0=number alpha=number; <br>
-    VAR variable(s); <br>
-    ID variable_to_relate; <br>
-    HISTOGRAM variables &lt;/options&gt;; <br>
-    PROBPLOT variables &lt;/options&gt;; <br>
-    INSET keywords &lt;/options&gt;; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">ODS <span class="hljs-keyword">SELECT</span> TESTSFORLOCATION;
+PROC UNIVARIATE <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> MU0<span class="hljs-subst">=</span>number alpha<span class="hljs-subst">=</span>number;
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);
+    ID variable_to_relate;
+    HISTOGRAM variables <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    PROBPLOT variables <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    INSET keywords <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;</code></pre>
 
 <ul>
 <li><strong>TESTSFORLOCATION</strong> displays only the p-values calculation</li>
@@ -1469,9 +1584,11 @@ RUN;</code></p>
 <li>If the <strong>regression line</strong> is horizontal <strong>there is no association</strong>: knowing the value of X doesn’t tell you anything about the value of Y</li>
 </ul>
 
-<p><code>PROC SGPLOT DATA=SAS-data-set; <br>
-        VBOX response-variable / CATEGORY=predictor-variable CONNECT=MEAN DATALABEL=outlier-ID-variable; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC SGPLOT <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+        VBOX response<span class="hljs-attribute">-variable</span> <span class="hljs-subst">/</span> CATEGORY<span class="hljs-subst">=</span>predictor<span class="hljs-attribute">-variable</span> CONNECT<span class="hljs-subst">=</span>MEAN DATALABEL<span class="hljs-subst">=</span>outlier<span class="hljs-attribute">-ID</span><span class="hljs-attribute">-variable</span>;
+RUN;</code></pre>
 
 
 
@@ -1488,9 +1605,9 @@ RUN;</code></p>
 <li>The data contains independent observations</li>
 <li>The distributions of the two populations are normal (check histograms and normal probability/Q-Q plots)</li>
 <li>The variances in these normal distributions are equal (<strong>F-test</strong> is the formal way to verify this assumption) <br>
-F statistic: <script type="math/tex" id="MathJax-Element-739">F=max(s_1^2,s_2^2)/min(s_1^2,s_2^2) \ge 1</script> <br>
-H0: σ<script type="math/tex" id="MathJax-Element-740">_1^2</script> <script type="math/tex" id="MathJax-Element-741">=</script>  σ<script type="math/tex" id="MathJax-Element-742">_2^2\rightarrow F \approx 1</script> <br>
-Ha: σ<script type="math/tex" id="MathJax-Element-743">_1^2</script> <script type="math/tex" id="MathJax-Element-744">\ne</script>  σ<script type="math/tex" id="MathJax-Element-745">_2^2\rightarrow F\gt 1</script> <br>
+F statistic: <script type="math/tex" id="MathJax-Element-4985">F=max(s_1^2,s_2^2)/min(s_1^2,s_2^2) \ge 1</script> <br>
+H0: σ<script type="math/tex" id="MathJax-Element-4986">_1^2</script> <script type="math/tex" id="MathJax-Element-4987">=</script>  σ<script type="math/tex" id="MathJax-Element-4988">_2^2\rightarrow F \approx 1</script> <br>
+Ha: σ<script type="math/tex" id="MathJax-Element-4989">_1^2</script> <script type="math/tex" id="MathJax-Element-4990">\ne</script>  σ<script type="math/tex" id="MathJax-Element-4991">_2^2\rightarrow F\gt 1</script> <br>
 The <strong>Pr&gt;F</strong> value in the <strong>Equality of Variances</strong> table represents the <strong>p-value</strong> of the F-test for equal variances</li>
 </ul>
 
@@ -1502,11 +1619,13 @@ The <strong>Pr&gt;F</strong> value in the <strong>Equality of Variances</strong>
 <li>The pooled and scatterthwaite t-tests are equal when the variances are equal</li>
 </ul>
 
-<p><code>PROC TTEST DATA=SAS-data-set &lt;options&gt;; <br>
-                         plots(shownull)=interval;         \* shownull = vertical reference line at the mean value of H0 *\ <br>
-    CLASS variable;                                              \* Classification variable *\ <br>
-    VAR variable(s);                                              \* Continuous response variables *\ <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs cpp">PROC TTEST DATA=SAS-data-<span class="hljs-stl_container"><span class="hljs-built_in">set</span> &lt;options&gt;</span>;
+                         plots(shownull)=interval;         \* shownull = vertical reference line at the mean value of H0 *\
+    CLASS variable;                                              \* Classification variable *\
+    VAR variable(s);                                              \* Continuous response variables *\
+RUN;</code></pre>
 
 <p><strong>One-sided Tests</strong></p>
 
@@ -1515,11 +1634,13 @@ RUN;</code></p>
 <li>The difference between the mean values for the null hypothesis will be defined by the alphabetical order of the classification variables (e.g.: female - male)</li>
 </ul>
 
-<p><code>PROC TTEST DATA=SAS-data-set  <br>
-                       plots(only shownull)=interval H0=0 SIDES=u;         \* only = suppress the default plots; u/l = upper/lower-tailed t-test  *\ <br>
-    CLASS variable;                                              \* Classification variable *\ <br>
-    VAR variable(s);                                              \* Continuous response variables *\ <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC TTEST <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> 
+                       plots(only shownull)<span class="hljs-subst">=</span>interval H0<span class="hljs-subst">=</span><span class="hljs-number">0</span> SIDES<span class="hljs-subst">=</span>u;         <span class="hljs-subst">\*</span> only <span class="hljs-subst">=</span> suppress the default plots; u/l <span class="hljs-subst">=</span> upper/lower<span class="hljs-attribute">-tailed</span> t<span class="hljs-attribute">-test</span>  <span class="hljs-subst">*\</span>
+    CLASS <span class="hljs-built_in">variable</span>;                                              <span class="hljs-subst">\*</span> Classification <span class="hljs-built_in">variable</span> <span class="hljs-subst">*\</span>
+    <span class="hljs-built_in">VAR</span> <span class="hljs-built_in">variable</span>(s);                                              <span class="hljs-subst">\*</span> Continuous response variables <span class="hljs-subst">*\</span>
+RUN;</code></pre>
 
 
 
@@ -1545,23 +1666,26 @@ RUN;</code></p>
 <li>The <strong>error terms have equal variances</strong> across the predictor variable levels: you can conduct a formal test for equal variances and also plot the residuals vs predicted values as a way to graphically verify this assumption</li>
 </ul>
 
-<p>You can use <strong>PROC GLM</strong> to verify the ANOVA assumptions and perform the ANOVA test. It fits a general linear model of which ANOVA is a special case and also displays the sums of squares associated with each hypothesis it tests. <br>
-<code>PROC GLM DATA=SAS-data-set <br>
-                  PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print each plot on a separated page */ <br>
-    CLASS variable(s); <br>
-    MODEL dependents=intependents &lt;/options&gt;; <br>
-    MEANS effects / HOVTEST &lt;/options&gt;;                /* HOVTEST = homogeneity of variance test option (Levene's test by default) + plot of residuals vs predicted values (means) */ <br>
-RUN; <br>
-QUIT;</code></p>
+<p>You can use <strong>PROC GLM</strong> to verify the ANOVA assumptions and perform the ANOVA test. It fits a general linear model of which ANOVA is a special case and also displays the sums of squares associated with each hypothesis it tests.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">PROC GLM DATA=SAS-data-<span class="hljs-keyword">set</span>
+                  PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print <span class="hljs-keyword">each</span> plot <span class="hljs-keyword">on</span> a separated page */
+    <span class="hljs-keyword">CLASS</span> variable(s);
+    MODEL dependents=intependents &lt;/options&gt;;
+    MEANS effects / HOVTEST &lt;/options&gt;;                /* HOVTEST = homogeneity <span class="hljs-keyword">of</span> variance test <span class="hljs-keyword">option</span> (Levene<span class="hljs-comment">'s test by default) + plot of residuals vs predicted values (means) */</span>
+RUN;
+QUIT;</code></pre>
 
 <hr>
 
 <ul>
 <li>Of the <strong>between-group variability</strong> is significantly larger than the <strong>within-group variability</strong>, you reject the null that all the group means are equal</li>
 <li>You partition out the variability using sums of squares:  <br>
-<ul><li><strong>Between-group</strong> variation: also called Model Sum of Squares (SSM): <script type="math/tex" id="MathJax-Element-746">\sum n_i (\overline Y_i- \overline {\overline Y})^2</script></li>
-<li><strong>Within-group</strong> variation: also called Error Sum of Squares (SSE): <script type="math/tex" id="MathJax-Element-747">\sum \sum (Y_{ij}- \overline Y_i)^2</script></li>
-<li><strong>Total</strong> variation: also called the Total Sum of Squares (SST): <script type="math/tex" id="MathJax-Element-748">\sum \sum (Y_{ij}- \overline {\overline Y})^2</script></li></ul></li>
+<ul><li><strong>Between-group</strong> variation: also called Model Sum of Squares (SSM): <script type="math/tex" id="MathJax-Element-4992">\sum n_i (\overline Y_i- \overline {\overline Y})^2</script></li>
+<li><strong>Within-group</strong> variation: also called Error Sum of Squares (SSE): <script type="math/tex" id="MathJax-Element-4993">\sum \sum (Y_{ij}- \overline Y_i)^2</script></li>
+<li><strong>Total</strong> variation: also called the Total Sum of Squares (SST): <script type="math/tex" id="MathJax-Element-4994">\sum \sum (Y_{ij}- \overline {\overline Y})^2</script></li></ul></li>
 <li><strong>SSM</strong> and <strong>SSE</strong> represent pieces of <strong>SST</strong>: the SSM is the variability explanied by the predictor variable levels and SSE the variability not explained by the predictor variable levels</li>
 <li>You want the larger piece of the total to be better represented by what you can explain (SSM) vs what you cant’t explain (SSE) </li>
 </ul>
@@ -1590,12 +1714,14 @@ QUIT;</code></p>
 
 <p><strong>Note:</strong> Levene’s test for homogeneity is <strong>only available for one-way ANOVA models</strong>, so in this case, you have to use the Residuals by Predicted plot.</p>
 
-<p><code>PROC GLM DATA=SAS-data-set <br>
-                 PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print each plot on a separated page */ <br>
-    CLASS variable(s) blocking-factor(s); <br>
-    MODEL dependents=intependents blocking-factor(s)&lt;/options&gt;; <br>
-RUN; <br>
-QUIT;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC GLM <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>
+                 PLOTS(ONLY)<span class="hljs-subst">=</span>DIAGNOSTICS(UNPACK);   <span class="hljs-comment">/* print each plot on a separated page */</span>
+    CLASS <span class="hljs-built_in">variable</span>(s) blocking<span class="hljs-attribute">-factor</span>(s);
+    MODEL dependents<span class="hljs-subst">=</span>intependents blocking<span class="hljs-attribute">-factor</span>(s)<span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+RUN;
+QUIT;</code></pre>
 
 <ul>
 <li><strong><em>Rule of thumb</em></strong>: if the <strong>F-value is &gt; 1</strong>, then it helped to add the blocking factor in your model </li>
@@ -1615,7 +1741,7 @@ QUIT;</code></p>
 
 <ul>
 <li>The <strong>comparisonwise error rate (CER)</strong> is the probability of a Type I error on a single pairwise test (α)</li>
-<li>The <strong>experimentwise error rate (EER)</strong> is the probability of making at least one Type I error when performing the whole set of comparisons. It takes into consideration the number of pairwise comparisons you make, so it increases as the number of tests increase: <script type="math/tex" id="MathJax-Element-749">EER=1-(1-\alpha)^{\# \\\ of \\\ comparisons}</script></li>
+<li>The <strong>experimentwise error rate (EER)</strong> is the probability of making at least one Type I error when performing the whole set of comparisons. It takes into consideration the number of pairwise comparisons you make, so it increases as the number of tests increase: <script type="math/tex" id="MathJax-Element-4995">EER=1-(1-\alpha)^{\# \\\ of \\\ comparisons}</script></li>
 </ul>
 
 <p><strong><em>Tukey’s Multiple Comparison Method</em></strong></p>
@@ -1623,33 +1749,35 @@ QUIT;</code></p>
 <ul>
 <li>This method, which is also known as the <strong>Honestly Significant Difference</strong> test, is a popular multiple comparison test that <strong>controls the EER</strong></li>
 <li>This tests compares all possible pairs of means, so <strong>it can only be used when you make pairwise comparisons</strong></li>
-<li>This method controls <script type="math/tex" id="MathJax-Element-750">EER=\alpha</script> when <strong>all possible pairwise comparisons are considered</strong> and controls <script type="math/tex" id="MathJax-Element-751">EER<\alpha</script> when fewer than all pairwise comparisons are considered</li>
+<li>This method controls <script type="math/tex" id="MathJax-Element-4996">EER=\alpha</script> when <strong>all possible pairwise comparisons are considered</strong> and controls <script type="math/tex" id="MathJax-Element-4997">EER<\alpha</script> when fewer than all pairwise comparisons are considered</li>
 </ul>
 
 <p><strong><em>Dunnett’s Multiple Comparison Method</em></strong></p>
 
 <ul>
 <li>This method is a specialised multiple comparison test that allows you to <strong>compare a single control group to all other groups</strong></li>
-<li>It controls <script type="math/tex" id="MathJax-Element-752">EER \le \alpha</script> when all groups are compared to the reference group (control)</li>
+<li>It controls <script type="math/tex" id="MathJax-Element-4998">EER \le \alpha</script> when all groups are compared to the reference group (control)</li>
 <li>It accounts for the correlation that exists between the comparisons and <strong>you can conduct one-sided tests</strong> of hypothesis against the reference group</li>
 </ul>
 
-<p><code>PROC GLM DATA=SAS-data-set; <br>
-    CLASS variable(s); <br>
-    MODEL dependents=intependents &lt;/options&gt;; <br>
-    LSMEANS effects &lt;/options-test-1&gt;; <br>
-    LSMEANS effects &lt;/options-test-2&gt;; <br>
-    [...] <br>
-    LSMEANS effects &lt;/options-test-n&gt;; <br>
-RUN; <br>
-QUIT;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs r">PROC GLM DATA=SAS-data-set;
+    CLASS variable(s);
+    MODEL dependents=intependents &lt;/options&gt;;
+    LSMEANS effects &lt;/options-test-<span class="hljs-number">1</span>&gt;;  
+    LSMEANS effects &lt;/options-test-<span class="hljs-number">2</span>&gt;;
+    [<span class="hljs-keyword">...</span>]
+    LSMEANS effects &lt;/options-test-n&gt;;  
+RUN;
+QUIT;</code></pre>
 
 <ul>
 <li><strong>PDIFF=ALL</strong> requests p-values for the differences between ALL the means and a <strong>diffogram</strong> is produced automatically displaying all pairwise least square means differences and indicating which are significant <br>
 <ul><li>It can be undestood as a least squares mean by least squares mean plot</li>
 <li>The point estimates for differences between the means for each pairwise comparison can be found at the intersections of the gray grid lines (intersection of appropriate indexes)</li>
 <li>The red/blue diagonal lines show the <strong>confidence intervals for the true differences of the means</strong> for each pairwise comparison</li>
-<li>The grey 45<script type="math/tex" id="MathJax-Element-753">^{\circ}</script> reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li></ul></li>
+<li>The grey 45<script type="math/tex" id="MathJax-Element-4999">^{\circ}</script> reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li></ul></li>
 </ul>
 
 <p><img src="https://lh3.googleusercontent.com/-yuw0XR4JPqs/WNknWl3atwI/AAAAAAAAABk/V_lTXMtgO_QDm7VJ9jPy29h7MIxZbyhzQCLcB/s0/diffogram.png" alt="enter image description here" title="Diffogram"></p>
@@ -1699,16 +1827,18 @@ QUIT;</code></p>
 <li>The interaction terms are also called <strong>product terms</strong> or <strong>crossed effects</strong></li>
 </ul>
 
-<p><code>PROC GLM DATA=SAS-data-set; <br>
-    CLASS independent1 independent2; <br>
-    MODEL dependent = independent1 independent2 independent1*independent2; <br>
-    or <br>
-    MODEL dependent = independent1 | independent2; <br>
-RUN; <br>
-QUIT;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC GLM <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span>;
+    CLASS independent1 independent2;
+    MODEL dependent <span class="hljs-subst">=</span> independent1 independent2 independent1<span class="hljs-subst">*</span>independent2;
+    <span class="hljs-literal">or</span>
+    MODEL dependent <span class="hljs-subst">=</span> independent1 <span class="hljs-subst">|</span> independent2;
+RUN;
+QUIT;</code></pre>
 
 <p>This program is <strong>fitting to this model</strong>: <br>
-<script type="math/tex" id="MathJax-Element-754">Y_{ijk}=\mu + \alpha_i+\beta_j+(\alpha\beta)_{ij}+\epsilon_{ijk}</script> <br>
+<script type="math/tex" id="MathJax-Element-5000">Y_{ijk}=\mu + \alpha_i+\beta_j+(\alpha\beta)_{ij}+\epsilon_{ijk}</script> <br>
 dependent = overall mean + intependent1 + independent2 + interaction12 + unaccounted for variation </p>
 
 <ul>
@@ -1722,12 +1852,14 @@ dependent = overall mean + intependent1 + independent2 + interaction12 + unaccou
 <li>To analyze and interpret the effect of one of the interacting variables you need to add the <strong>LSMEANS</strong> statement to your program</li>
 </ul>
 
-<p><code>PROC GLM DATA=SAS-data-set ORDER=INTERNAL PLOTS(ONLY)=INTPLOT; <br>
-    CLASS independent1 independent2; <br>
-    MODEL dependent = intependent1 independent2 independent1*independent2; <br>
-    LSMEANS independent1*independent2 / SLICE= independent1; <br>
-RUN; <br>
-QUIT;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">PROC</span> <span class="hljs-type">GLM</span> <span class="hljs-type">DATA</span>=<span class="hljs-type">SAS</span>-<span class="hljs-typedef"><span class="hljs-keyword">data</span>-set <span class="hljs-type">ORDER</span>=<span class="hljs-type">INTERNAL</span> <span class="hljs-type">PLOTS</span><span class="hljs-container">(<span class="hljs-type">ONLY</span>)</span>=<span class="hljs-type">INTPLOT</span>;</span>
+    <span class="hljs-type">CLASS</span> independent1 independent2;
+    <span class="hljs-type">MODEL</span> dependent = intependent1 independent2 independent1*independent2;
+    <span class="hljs-type">LSMEANS</span> independent1*independent2 / <span class="hljs-type">SLICE</span>= independent1;
+<span class="hljs-type">RUN</span>;
+<span class="hljs-type">QUIT</span>;</code></pre>
 
 <p>SAS creates two types of mean plots when you use the LSMEANS statement with an interaction term:</p>
 
@@ -1740,8 +1872,10 @@ QUIT;</code></p>
 
 <p>You can add a <strong>STORE</strong> statement to save your analysis results in an <strong>item store</strong> (a binary file format that cannot be modified). This allows you to <strong>run post-processing analysis</strong> on the stored results even if you no longer have access to the original data set. The STORE statement applies to the following SAS/STAT procedures: GENMOD, GLIMMIX, GLM, GLMSELECT, LOGISTIC, MIXED, ORTHOREG, PHREG, PROBIT, SURVEYLOGISTIC, SURVEYPHREG, and SURVEYREG.</p>
 
-<p><code>STORE &lt;OUT=&gt;item-store-name <br>
-            &lt;/ LABEL='label'&gt;;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs xml">STORE <span class="hljs-tag">&lt;<span class="hljs-title">OUT=</span>&gt;</span>item-store-name
+            <span class="hljs-tag">&lt;/ <span class="hljs-attribute">LABEL</span>=<span class="hljs-value">'label'</span>&gt;</span>;</code></pre>
 
 <ul>
 <li><strong>item-store-name</strong> is a usual one- or two-level SAS name, similar to the names that are used for SAS data sets</li>
@@ -1750,16 +1884,18 @@ QUIT;</code></p>
 
 <p>To perform post-fitting statistical analysis and plotting for the contents of the store item, you use the <strong>PLM procedure</strong>. The statements and options that are available vary depending upon which procedure you used to produce the item store.</p>
 
-<p><code>PROC PLM RESTORE=item-store-specification &lt;options&gt;; <br>
-    EFFECTPLOT INTERACTION(SLICEBY=variable) &lt;plot-type &lt;(plot-definition options)&gt;&gt; / CLM &lt;/ options&gt;; <br>
-    LSMEANS &lt;model-effects&gt; &lt;/ options&gt;; <br>
-    LSMESTIMATE model-effect &lt;'label'&gt; values <br>
-        &lt;divisor=n&gt;&lt;,...&lt;'label'&gt; values <br>
-        &lt;divisor=n&gt; &lt;/ options&gt;; <br>
-    SHOW options; <br>
-    SLICE model-effect / SLICEBY=variable ADJUST=tukey &lt;/ options&gt;; <br>
-    WHERE expression; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC PLM RESTORE<span class="hljs-subst">=</span>item<span class="hljs-attribute">-store</span><span class="hljs-attribute">-specification</span> <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    EFFECTPLOT INTERACTION(SLICEBY<span class="hljs-subst">=</span><span class="hljs-built_in">variable</span>) <span class="hljs-subst">&lt;</span>plot<span class="hljs-attribute">-type</span> <span class="hljs-subst">&lt;</span>(plot<span class="hljs-attribute">-definition</span> options)<span class="hljs-subst">&gt;&gt;</span> <span class="hljs-subst">/</span> CLM <span class="hljs-subst">&lt;</span><span class="hljs-subst">/</span> options<span class="hljs-subst">&gt;</span>;
+    LSMEANS <span class="hljs-subst">&lt;</span>model<span class="hljs-attribute">-effects</span><span class="hljs-subst">&gt;</span> <span class="hljs-subst">&lt;</span><span class="hljs-subst">/</span> options<span class="hljs-subst">&gt;</span>;
+    LSMESTIMATE model<span class="hljs-attribute">-effect</span> <span class="hljs-subst">&lt;</span><span class="hljs-string">'label'</span><span class="hljs-subst">&gt;</span> values
+        <span class="hljs-subst">&lt;</span>divisor<span class="hljs-subst">=</span>n<span class="hljs-subst">&gt;&lt;</span>,<span class="hljs-attribute">...</span><span class="hljs-subst">&lt;</span><span class="hljs-string">'label'</span><span class="hljs-subst">&gt;</span> values
+        <span class="hljs-subst">&lt;</span>divisor<span class="hljs-subst">=</span>n<span class="hljs-subst">&gt;</span> <span class="hljs-subst">&lt;</span><span class="hljs-subst">/</span> options<span class="hljs-subst">&gt;</span>;
+    SHOW options;
+    SLICE model<span class="hljs-attribute">-effect</span> <span class="hljs-subst">/</span> SLICEBY<span class="hljs-subst">=</span><span class="hljs-built_in">variable</span> ADJUST<span class="hljs-subst">=</span>tukey <span class="hljs-subst">&lt;</span><span class="hljs-subst">/</span> options<span class="hljs-subst">&gt;</span>;
+    <span class="hljs-keyword">WHERE</span> expression;
+RUN;</code></pre>
 
 <ul>
 <li><strong>RESTORE</strong> specifies the source item store for processing</li>
@@ -1787,9 +1923,11 @@ RUN;</code></p>
 
 <p><strong><em>Scatter plots</em></strong></p>
 
-<p><code>PROC SGSCATTER DATA=SAS-data-base; <br>
-    PLOT vairableY*(variableX1 variableX2) / REG; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC SGSCATTER <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-base</span>;
+    PLOT vairableY<span class="hljs-subst">*</span>(variableX1 variableX2) <span class="hljs-subst">/</span> REG;
+RUN;</code></pre>
 
 <ul>
 <li>If you have <strong>so many observations</strong> that the scatter plot of the whole data set is difficult to interpret, you might run PROC SGSCATTER on a <strong>random sample of observations</strong></li>
@@ -1812,46 +1950,48 @@ RUN;</code></p>
 
 <p>The <strong>PROC CORR</strong> also produces <strong>scatter plots</strong> or a <strong>scatter plot matrix</strong>.</p>
 
-<p><code>PROC CORR DATA=SAS-data-set RANK|NOSIMPLE PLOTS(ONLY)=MATRIX(NVAR=ALL HISTOGRAM)|SCATTER(NVAR=ALL ELLIPSE=NONE) &lt;options&gt;; <br>
-    VAR variable(s)X; <br>
-    WITH variable(s)Y; <br>
-    ID variable4label; <br>
-RUN;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs haskell"><span class="hljs-type">PROC</span> <span class="hljs-type">CORR</span> <span class="hljs-type">DATA</span>=<span class="hljs-type">SAS</span>-<span class="hljs-typedef"><span class="hljs-keyword">data</span>-set <span class="hljs-type">RANK</span>|<span class="hljs-type">NOSIMPLE</span> <span class="hljs-type">PLOTS</span><span class="hljs-container">(<span class="hljs-type">ONLY</span>)</span>=<span class="hljs-type">MATRIX</span><span class="hljs-container">(<span class="hljs-type">NVAR</span>=<span class="hljs-type">ALL</span> <span class="hljs-type">HISTOGRAM</span>)</span>|<span class="hljs-type">SCATTER</span><span class="hljs-container">(<span class="hljs-type">NVAR</span>=<span class="hljs-type">ALL</span> <span class="hljs-type">ELLIPSE</span>=<span class="hljs-type">NONE</span>)</span> &lt;options&gt;;</span>
+    <span class="hljs-type">VAR</span> variable(s)<span class="hljs-type">X</span>;
+    <span class="hljs-type">WITH</span> variable(s)<span class="hljs-type">Y</span>;
+    <span class="hljs-type">ID</span> variable4label;
+<span class="hljs-type">RUN</span>;</code></pre>
 
 
 
 <h3 id="simple-linear-regression">Simple Linear Regression</h3>
 
-<p>You use correlation analysis to determine the strength of the linear relationship between continuous response variables. Now you need to go a step further and <strong>define the linear relationship itself</strong>: <script type="math/tex" id="MathJax-Element-755">Y= \beta_0+\beta_1*X+\epsilon</script></p>
+<p>You use correlation analysis to determine the strength of the linear relationship between continuous response variables. Now you need to go a step further and <strong>define the linear relationship itself</strong>: <script type="math/tex" id="MathJax-Element-5001">Y= \beta_0+\beta_1*X+\epsilon</script></p>
 
 <ul>
-<li><script type="math/tex" id="MathJax-Element-756">Y</script> is the response variable </li>
-<li><script type="math/tex" id="MathJax-Element-757">X</script> is the predictor variable</li>
-<li><script type="math/tex" id="MathJax-Element-758">\beta_0</script> is the intercept parameter</li>
-<li><script type="math/tex" id="MathJax-Element-759">\beta_1</script> is the slope parameter</li>
-<li><script type="math/tex" id="MathJax-Element-760">\epsilon</script> is the error term</li>
+<li><script type="math/tex" id="MathJax-Element-5002">Y</script> is the response variable </li>
+<li><script type="math/tex" id="MathJax-Element-5003">X</script> is the predictor variable</li>
+<li><script type="math/tex" id="MathJax-Element-5004">\beta_0</script> is the intercept parameter</li>
+<li><script type="math/tex" id="MathJax-Element-5005">\beta_1</script> is the slope parameter</li>
+<li><script type="math/tex" id="MathJax-Element-5006">\epsilon</script> is the error term</li>
 </ul>
 
-<p>The method of <strong>least squares</strong> produces parameter estimates <script type="math/tex" id="MathJax-Element-761">\hat \beta_0</script> and <script type="math/tex" id="MathJax-Element-762">\hat \beta_1</script> with certain <strong>optimum properties</strong> which make them the Best Linear Unbiased Estimators (<strong>BLUE</strong>):</p>
+<p>The method of <strong>least squares</strong> produces parameter estimates <script type="math/tex" id="MathJax-Element-5007">\hat \beta_0</script> and <script type="math/tex" id="MathJax-Element-5008">\hat \beta_1</script> with certain <strong>optimum properties</strong> which make them the Best Linear Unbiased Estimators (<strong>BLUE</strong>):</p>
 
 <ul>
 <li>They are <strong>unbiased estimates</strong> of the population parameters</li>
 <li>They have <strong>minimum variance</strong></li>
 </ul>
 
-<p>To find out how much better is the model that takes the predictor variable into account than a model that ignores the predictor variable, you can compare the <strong>simple linear regression model</strong> to a <strong>baseline model</strong> (<script type="math/tex" id="MathJax-Element-763">Y= \bar Y</script> independent of <script type="math/tex" id="MathJax-Element-764">X</script>). For your comparison, you calculate the <strong>explained</strong>, <strong>unexplained</strong> and <strong>total variability</strong> in the simple linear regression model.</p>
+<p>To find out how much better is the model that takes the predictor variable into account than a model that ignores the predictor variable, you can compare the <strong>simple linear regression model</strong> to a <strong>baseline model</strong> (<script type="math/tex" id="MathJax-Element-5009">Y= \bar Y</script> independent of <script type="math/tex" id="MathJax-Element-5010">X</script>). For your comparison, you calculate the <strong>explained</strong>, <strong>unexplained</strong> and <strong>total variability</strong> in the simple linear regression model.</p>
 
 <ul>
-<li>The <strong>explained variability (SSM)</strong> is the difference between the regression line and the mean of the response variable: <script type="math/tex" id="MathJax-Element-765">\sum(\hat Y_i-\bar Y)^2</script></li>
-<li>The <strong>unexplained variability (SSE)</strong> is the difference between the observed values and the regression line: <script type="math/tex" id="MathJax-Element-766">\sum(Y_i-\hat Y_i)^2</script></li>
-<li>The <strong>total variability</strong> is the difference between the observed values and the mean of the response variable: <script type="math/tex" id="MathJax-Element-767">\sum(Y_i-\bar Y)^2</script></li>
+<li>The <strong>explained variability (SSM)</strong> is the difference between the regression line and the mean of the response variable: <script type="math/tex" id="MathJax-Element-5011">\sum(\hat Y_i-\bar Y)^2</script></li>
+<li>The <strong>unexplained variability (SSE)</strong> is the difference between the observed values and the regression line: <script type="math/tex" id="MathJax-Element-5012">\sum(Y_i-\hat Y_i)^2</script></li>
+<li>The <strong>total variability</strong> is the difference between the observed values and the mean of the response variable: <script type="math/tex" id="MathJax-Element-5013">\sum(Y_i-\bar Y)^2</script></li>
 </ul>
 
 <p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
 
 <ul>
-<li>H0: the regression model does not fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-768">= 0</script>)</li>
-<li>Ha: the regression model does fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-769">= \hat\beta_1 \ne 0</script>)</li>
+<li>H0: the regression model does not fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-5014">= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (slope <script type="math/tex" id="MathJax-Element-5015">= \hat\beta_1 \ne 0</script>)</li>
 </ul>
 
 <p>These <strong>assumptions</strong> underlie the hypothesis test for the regression model and have to be met for a simple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
@@ -1863,11 +2003,13 @@ RUN;</code></p>
 <li>The error terms are independent at each value of the predictor variable</li>
 </ul>
 
-<p><code>PROC REG DATA=SAS-data-set &lt;options&gt;; <br>
-    MODEL dependent=regressor / CLM CLI &lt;/options&gt;; <br>
-    ID regressor; <br>
-RUN; <br>
-QUIT;</code></p>
+
+
+<pre class="prettyprint"><code class=" hljs lasso">PROC REG <span class="hljs-built_in">DATA</span><span class="hljs-subst">=</span>SAS<span class="hljs-attribute">-data</span><span class="hljs-attribute">-set</span> <span class="hljs-subst">&lt;</span>options<span class="hljs-subst">&gt;</span>;
+    MODEL dependent<span class="hljs-subst">=</span>regressor <span class="hljs-subst">/</span> CLM CLI <span class="hljs-subst">&lt;</span>/options<span class="hljs-subst">&gt;</span>;
+    ID regressor;
+RUN;
+QUIT;</code></pre>
 
 <p>To asses the level of precision around the mean estimates you can produce <strong>confidence intervals</strong> around the means. Confidence intervals become wider as you move away from the mean of the predictor variable. The wider the confidence interval the less precise it is. You might also want to construct <strong>prediction intervals</strong> for a single observation. A prediction interval is wider than a confidence interval because <strong>single observations have more variability than sample means</strong>.</p>
 
@@ -1927,7 +2069,7 @@ QUIT;</code></pre>
 
 <p>In <strong>multiple regression</strong> you can model the relationship between the response variable and <strong>more than one predictor variable</strong>. It is a powerful tool for both <strong>analytical or explanatory analysis and for prediction</strong>.</p>
 
-<p><script type="math/tex" id="MathJax-Element-770">Y=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_kX_k+\epsilon</script> (<script type="math/tex" id="MathJax-Element-771">k+1</script> parameters)</p>
+<p><script type="math/tex" id="MathJax-Element-5016">Y=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_kX_k+\epsilon</script> (<script type="math/tex" id="MathJax-Element-5017">k+1</script> parameters)</p>
 
 <p><strong><em>Advantages</em></strong></p>
 
@@ -1946,20 +2088,20 @@ QUIT;</code></pre>
 <p>If we consider <strong>hypothesis testing</strong> for linear regression:</p>
 
 <ul>
-<li>H0: the regression model does not fit the data better than the baseline model (<script type="math/tex" id="MathJax-Element-772">\beta_1=\beta_2=...=\beta_k= 0</script>)</li>
-<li>Ha: the regression model does fit the data better than the baseline model (at least one <script type="math/tex" id="MathJax-Element-773">\beta_i \ne 0</script>)</li>
+<li>H0: the regression model does not fit the data better than the baseline model (<script type="math/tex" id="MathJax-Element-5018">\beta_1=\beta_2=...=\beta_k= 0</script>)</li>
+<li>Ha: the regression model does fit the data better than the baseline model (at least one <script type="math/tex" id="MathJax-Element-5019">\beta_i \ne 0</script>)</li>
 </ul>
 
 <p>These <strong>assumptions</strong> have to be met for a multiple linear regression analysis to be valid (last three assumptions are the same as for ANOVA):</p>
 
 <ul>
-<li>A linear function of the <script type="math/tex" id="MathJax-Element-774">X</script>s accurately models the mean of the <script type="math/tex" id="MathJax-Element-775">Y</script>s</li>
+<li>A linear function of the <script type="math/tex" id="MathJax-Element-5020">X</script>s accurately models the mean of the <script type="math/tex" id="MathJax-Element-5021">Y</script>s</li>
 <li>The error terms are normally distributed with a mean of 0</li>
 <li>The error terms have constant variances</li>
 <li>The error terms are independent at each value of the predictor variable</li>
 </ul>
 
-<p>The <strong>regular <script type="math/tex" id="MathJax-Element-776">R^2</script></strong> values never decrease when you add more terms to the model, but the <strong>adjusted <script type="math/tex" id="MathJax-Element-777">R^2</script></strong> value takes into account the number of terms in the model by including a penalty for the complexity of the model. The <strong>adjusted <script type="math/tex" id="MathJax-Element-778">R^2</script></strong> value increases only if new terms that you add significantly improve the model enough to warrant increasing the complexity of the model. It enables proper comparison between models with different parameter counts. When an <strong>adjusted <script type="math/tex" id="MathJax-Element-779">R^2</script> increases by removing a variable</strong> from the models, it strongly implies that the removed <strong>variable was not necessary</strong>.</p>
+<p>The <strong>regular <script type="math/tex" id="MathJax-Element-5022">R^2</script></strong> values never decrease when you add more terms to the model, but the <strong>adjusted <script type="math/tex" id="MathJax-Element-5023">R^2</script></strong> value takes into account the number of terms in the model by including a penalty for the complexity of the model. The <strong>adjusted <script type="math/tex" id="MathJax-Element-5024">R^2</script></strong> value increases only if new terms that you add significantly improve the model enough to warrant increasing the complexity of the model. It enables proper comparison between models with different parameter counts. When an <strong>adjusted <script type="math/tex" id="MathJax-Element-5025">R^2</script> increases by removing a variable</strong> from the models, it strongly implies that the removed <strong>variable was not necessary</strong>.</p>
 
 
 
@@ -2005,12 +2147,12 @@ RUN;</code></pre>
 
 <p><strong><em>All-possible regression methods</em></strong></p>
 
-<p>SAS computes all possible models and ranks the results. Then, to evaluate the models, you compare statistics side by side (<script type="math/tex" id="MathJax-Element-780">R^2</script>, adjusted <script type="math/tex" id="MathJax-Element-781">R^2</script> and <script type="math/tex" id="MathJax-Element-782">C_p</script> statistic).</p>
+<p>SAS computes all possible models and ranks the results. Then, to evaluate the models, you compare statistics side by side (<script type="math/tex" id="MathJax-Element-5026">R^2</script>, adjusted <script type="math/tex" id="MathJax-Element-5027">R^2</script> and <script type="math/tex" id="MathJax-Element-5028">C_p</script> statistic).</p>
 
 <ul>
-<li><p><strong>Mallows’ <script type="math/tex" id="MathJax-Element-783">C_p</script></strong> statistic helps you detect model bias if you are underfitting/overfitting the model, it is a simple indicator of effective variable selection within a model</p></li>
-<li><p>To select the best model for prediction (most accurate model for predicting future values of <script type="math/tex" id="MathJax-Element-784">Y</script>), you should use the <strong>Mallows’ criterion</strong>:  <script type="math/tex" id="MathJax-Element-785">C_p \le p</script>, which is the <strong>number of parameters</strong> in the model including the intercept</p></li>
-<li>To select the best model for parameter estimation (analytical or explanatory analysis), you should use <strong>Hocking’s criterion</strong>: <script type="math/tex" id="MathJax-Element-786">C_p\le2p-p_{full}+1</script></li>
+<li><p><strong>Mallows’ <script type="math/tex" id="MathJax-Element-5029">C_p</script></strong> statistic helps you detect model bias if you are underfitting/overfitting the model, it is a simple indicator of effective variable selection within a model</p></li>
+<li><p>To select the best model for prediction (most accurate model for predicting future values of <script type="math/tex" id="MathJax-Element-5030">Y</script>), you should use the <strong>Mallows’ criterion</strong>:  <script type="math/tex" id="MathJax-Element-5031">C_p \le p</script>, which is the <strong>number of parameters</strong> in the model including the intercept</p></li>
+<li>To select the best model for parameter estimation (analytical or explanatory analysis), you should use <strong>Hocking’s criterion</strong>: <script type="math/tex" id="MathJax-Element-5032">C_p\le2p-p_{full}+1</script></li>
 </ul>
 
 
@@ -2029,7 +2171,7 @@ QUIT;</code></pre>
 
 <p><img src="https://lh3.googleusercontent.com/-MKHCheN7vUA/WONM3WW0qSI/AAAAAAAAADE/tHJAjyHK-QE5j4UVlxmT7KHTA_bvGJLxwCLcB/s0/mallows_cp_best_model.png" alt="enter image description here" title="Mallows' Cp to select the best model"></p>
 
-<p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows’ criterion</strong> for <script type="math/tex" id="MathJax-Element-787">C_p</script>, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking’s criterion</strong> for <script type="math/tex" id="MathJax-Element-788">C_p</script> parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
+<p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows’ criterion</strong> for <script type="math/tex" id="MathJax-Element-5033">C_p</script>, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking’s criterion</strong> for <script type="math/tex" id="MathJax-Element-5034">C_p</script> parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
 
 <hr>
 
@@ -2109,12 +2251,12 @@ QUIT;</code></pre>
 <p>The calculations of all information criteria begin the same way:</p>
 
 <ol>
-<li>First you calculate <script type="math/tex" id="MathJax-Element-789">n\cdot log(SSE/n)</script> </li>
+<li>First you calculate <script type="math/tex" id="MathJax-Element-5035">n\cdot log(SSE/n)</script> </li>
 <li>Then, each criterion adds a penalty that represents the complexity of the model (each type of information criterion invokes a different penalty component) <br>
-<ul><li>AIC: <script type="math/tex" id="MathJax-Element-790">2p+n+2</script></li>
-<li>AICC: <script type="math/tex" id="MathJax-Element-791">n(n+p)/(n-p-2)</script></li>
-<li>BIC: <script type="math/tex" id="MathJax-Element-792">2(p+2)1-2q^2</script></li>
-<li>SBC: <script type="math/tex" id="MathJax-Element-793">p\cdot log(n)</script></li></ul></li>
+<ul><li>AIC: <script type="math/tex" id="MathJax-Element-5036">2p+n+2</script></li>
+<li>AICC: <script type="math/tex" id="MathJax-Element-5037">n(n+p)/(n-p-2)</script></li>
+<li>BIC: <script type="math/tex" id="MathJax-Element-5038">2(p+2)1-2q^2</script></li>
+<li>SBC: <script type="math/tex" id="MathJax-Element-5039">p\cdot log(n)</script></li></ul></li>
 </ol>
 
 
@@ -2129,7 +2271,7 @@ QUIT;</code></pre>
 
 <h3 id="examining-residuals">Examining Residuals</h3>
 
-<p>You can use the <strong>residual values</strong> (difference between each observed value of <script type="math/tex" id="MathJax-Element-794">Y</script> and its predicted value) from the regression analysis to verify the <strong>assumptions of the linear regression</strong>. Residuals are estimates of the errors, so you can <strong>plot the residuals to check the assumptions of the errors</strong>.</p>
+<p>You can use the <strong>residual values</strong> (difference between each observed value of <script type="math/tex" id="MathJax-Element-5040">Y</script> and its predicted value) from the regression analysis to verify the <strong>assumptions of the linear regression</strong>. Residuals are estimates of the errors, so you can <strong>plot the residuals to check the assumptions of the errors</strong>.</p>
 
 <ul>
 <li>You can plot residuals vs the predicted values to check for <strong>violations of equal variances</strong></li>
@@ -2175,8 +2317,8 @@ QUIT;</code></pre>
 <p>Also known as <strong>studientized or standardized residuals</strong>, the STUDENT residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
 
 <ul>
-<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is <script type="math/tex" id="MathJax-Element-795">>2</script></strong>, you can suspect that the corresponding observation is an outlier</li>
-<li>For <strong>large sample sizes</strong>, it’s very likely that even more STUDENT <strong>residuals greater than <script type="math/tex" id="MathJax-Element-796">\pm2</script></strong> will occur just by chance, so you should typically use a larger cutoff value of <script type="math/tex" id="MathJax-Element-797">>3</script></li>
+<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is <script type="math/tex" id="MathJax-Element-5041">>2</script></strong>, you can suspect that the corresponding observation is an outlier</li>
+<li>For <strong>large sample sizes</strong>, it’s very likely that even more STUDENT <strong>residuals greater than <script type="math/tex" id="MathJax-Element-5042">\pm2</script></strong> will occur just by chance, so you should typically use a larger cutoff value of <script type="math/tex" id="MathJax-Element-5043">>3</script></li>
 </ul>
 
 <hr>
@@ -2186,7 +2328,7 @@ QUIT;</code></pre>
 <p>Fore each observation, the Cook’s D statistic is <strong>calculated as if that observation weren’t in the data set</strong> as well as the set of parameter estimates with all the observations in your regression analysis. </p>
 
 <ul>
-<li>If any observation has a Cook’s D <strong>statistic <script type="math/tex" id="MathJax-Element-798">>4/n</script></strong> that observation is influential</li>
+<li>If any observation has a Cook’s D <strong>statistic <script type="math/tex" id="MathJax-Element-5044">>4/n</script></strong> that observation is influential</li>
 <li>The Cook’s D statistic is most useful for identifying influential observations when the purpose of your model is <strong>parameter estimation</strong></li>
 </ul>
 
@@ -2198,7 +2340,7 @@ QUIT;</code></pre>
 
 <ul>
 <li>If the RSTUDENT residual is different from the STUDENT residual, the observation is probably influential</li>
-<li>If the absolute value of the RSTUDENT residuals is <script type="math/tex" id="MathJax-Element-799">>2</script> or <script type="math/tex" id="MathJax-Element-800">>3</script>, you’ve probably detected an influential observation</li>
+<li>If the absolute value of the RSTUDENT residuals is <script type="math/tex" id="MathJax-Element-5045">>2</script> or <script type="math/tex" id="MathJax-Element-5046">>3</script>, you’ve probably detected an influential observation</li>
 </ul>
 
 <hr>
@@ -2216,9 +2358,9 @@ QUIT;</code></pre>
 <p>If the <strong>standardized difference</strong> between these predicted values <strong>is large</strong>, that particular observation has a <strong>large effect on the model fit</strong>.</p>
 
 <ul>
-<li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-801">2</script></li>
-<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-802">2 \cdot sqrt(p/n)</script></li>
-<li>If the absolute value of DFFITS for any observation is <script type="math/tex" id="MathJax-Element-803">></script> cutoff value, you’ve detected an influential observation</li>
+<li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-5047">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-5048">2 \cdot sqrt(p/n)</script></li>
+<li>If the absolute value of DFFITS for any observation is <script type="math/tex" id="MathJax-Element-5049">></script> cutoff value, you’ve detected an influential observation</li>
 <li>DFFITS is most useful for <strong>predictive models</strong></li>
 </ul>
 
@@ -2232,8 +2374,8 @@ QUIT;</code></pre>
 <li>One DFBETA is calculated per predictor variable per observation</li>
 <li>Each value is calculated by taking the estimated coefficient for that particular predictor variable <strong>using all the data</strong>, subtracting the estimated coefficient for that particular predictor variable with the <strong>current observation removed</strong> and dividing by its standard error</li>
 <li>Large DFBETAS indicate observations that are influential in estimating a given parameter: <br>
-<ul><li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-804">2</script></li>
-<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-805">2 \cdot sqrt(1/n)</script></li></ul></li>
+<ul><li>The <strong>general cutoff</strong> value is <script type="math/tex" id="MathJax-Element-5050">2</script></li>
+<li>The more <strong>precise cutoff</strong> is <script type="math/tex" id="MathJax-Element-5051">2 \cdot sqrt(1/n)</script></li></ul></li>
 </ul>
 
 <hr>
@@ -2295,7 +2437,7 @@ RUN;</code></pre>
 
 <ol>
 <li><strong>Recheck</strong> for data entry errors</li>
-<li>If the data appears to be valid, <strong>consider whether you have an adequate model</strong> (a different model might fit the data better). Divide the number of influential observations you detect by the number of observations in you data set: if the result is <strong><script type="math/tex" id="MathJax-Element-806">>5\%</script> you probably have the wrong model</strong>.</li>
+<li>If the data appears to be valid, <strong>consider whether you have an adequate model</strong> (a different model might fit the data better). Divide the number of influential observations you detect by the number of observations in you data set: if the result is <strong><script type="math/tex" id="MathJax-Element-5052">>5\%</script> you probably have the wrong model</strong>.</li>
 <li>Determine whether the influential observation is <strong>valid but just unusual</strong></li>
 <li>As a general rule you should <strong>not exclude data</strong> (some unusual observations contain important information)</li>
 <li>If you choose to exclude some observations, include in your report a <strong>description of the types of observations that you excluded and why</strong> and discuss the limitation of the conclusions given the exclusions</li>
@@ -2322,7 +2464,7 @@ RUN;
 QUIT;</span></code></pre>
 
 <ul>
-<li>The <strong>VIF</strong> (variance inflation factor, <script type="math/tex" id="MathJax-Element-807">VIF_i=1/(1-R_i^2)</script>) option measures the magnitude of collinearity in a model (VIF<script type="math/tex" id="MathJax-Element-808">>10</script> for any predictor in the model, those predictors are probably involved in collinearity)</li>
+<li>The <strong>VIF</strong> (variance inflation factor, <script type="math/tex" id="MathJax-Element-5053">VIF_i=1/(1-R_i^2)</script>) option measures the magnitude of collinearity in a model (VIF<script type="math/tex" id="MathJax-Element-5054">>10</script> for any predictor in the model, those predictors are probably involved in collinearity)</li>
 <li>Other options are <strong>COLLIN</strong> (includes the intercept when analyzing collinearity and helps identify the predictors that are causing the problem) and <strong>COLLINOINT</strong> (requests the same analysis as COLLIN but excludes the intercept)</li>
 </ul>
 
@@ -2338,7 +2480,7 @@ QUIT;</span></code></pre>
 <li>Identify some <strong>good candidate models</strong> using PROC REG:  <br>
 <ul><li>First check for collinearity </li>
 <li>Use all-possible regression or stepwise selection methods and subject matter knowledge to select model candidates</li>
-<li>Identify the good ones with the Mallows’ (prediction) or Hocking’s (explanatory) criterion for <script type="math/tex" id="MathJax-Element-809">C_p</script></li></ul></li>
+<li>Identify the good ones with the Mallows’ (prediction) or Hocking’s (explanatory) criterion for <script type="math/tex" id="MathJax-Element-5055">C_p</script></li></ul></li>
 <li><p><strong>Check and validate your assumtions</strong> by creating residual plots and conducting a few other statistical tests</p></li>
 <li><p>Deal with any <strong>problems in your data</strong>: </p>
 
@@ -2392,7 +2534,7 @@ RUN;</code></pre>
 <h3 id="tests-of-association">Tests of Association</h3>
 
 <p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables (H0 is true):  <br>
-<script type="math/tex" id="MathJax-Element-810">Expected=Row \ total\cdot Column\ total/Total \ sample \ size</script></p>
+<script type="math/tex" id="MathJax-Element-5056">Expected=Row \ total\cdot Column\ total/Total \ sample \ size</script></p>
 
 <ul>
 <li>If the <strong>sample size decreases</strong>, the <strong>chi-square value decreases</strong> and the <strong>p-value for the chi-square statistic increases</strong></li>
@@ -2407,16 +2549,16 @@ RUN;</code></pre>
 <li>Values farther away from 0 indicate a relatively strong association between the variables</li>
 </ul>
 
-<p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: <script type="math/tex" id="MathJax-Element-811">Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}</script>; <script type="math/tex" id="MathJax-Element-812">Odds=p_{event}/(1-p_{event})</script></p>
+<p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: <script type="math/tex" id="MathJax-Element-5057">Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}</script>; <script type="math/tex" id="MathJax-Element-5058">Odds=p_{event}/(1-p_{event})</script></p>
 
 <ul>
-<li>The value of the odds ratio can range from 0 to <script type="math/tex" id="MathJax-Element-813">\infty</script>; it cannot be negative</li>
-<li>When the odds ratio is <script type="math/tex" id="MathJax-Element-814">1</script>, there is no association between variables</li>
-<li>When the odds ratio <script type="math/tex" id="MathJax-Element-815">>1</script>/<script type="math/tex" id="MathJax-Element-816"><1</script>, the group in the numerator/denominator is more likely to have the outcome</li>
+<li>The value of the odds ratio can range from 0 to <script type="math/tex" id="MathJax-Element-5059">\infty</script>; it cannot be negative</li>
+<li>When the odds ratio is <script type="math/tex" id="MathJax-Element-5060">1</script>, there is no association between variables</li>
+<li>When the odds ratio <script type="math/tex" id="MathJax-Element-5061">>1</script>/<script type="math/tex" id="MathJax-Element-5062"><1</script>, the group in the numerator/denominator is more likely to have the outcome</li>
 <li>The odds ratio is approximately the same <strong>regardless of the sample size</strong></li>
 <li>To estimate the true odds ratio while taking into account the variability of the sample statistic, you can calculate <strong>confidence intervals</strong></li>
 <li>You can use an odds ratio to <strong>test for significance</strong> between two categorical variables</li>
-<li>Odds ratio expressed as percent difference: <script type="math/tex" id="MathJax-Element-817">(odd \ ratio -1) \cdot 100</script></li>
+<li>Odds ratio expressed as percent difference: <script type="math/tex" id="MathJax-Element-5063">(odd \ ratio -1) \cdot 100</script></li>
 </ul>
 
 
@@ -2427,9 +2569,9 @@ RUN;</code></pre>
 RUN;</code></pre>
 
 <ul>
-<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: <script type="math/tex" id="MathJax-Element-818">\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: <script type="math/tex" id="MathJax-Element-5064">\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
 <li><strong>EXPECTED</strong> prints the expected cell frequencies</li>
-<li><strong>CELLCHI2</strong> prints each cell’s contribution to the total chi-square statistic: <script type="math/tex" id="MathJax-Element-819"> \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
+<li><strong>CELLCHI2</strong> prints each cell’s contribution to the total chi-square statistic: <script type="math/tex" id="MathJax-Element-5065"> \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}</script></li>
 <li><strong>NOCOL</strong> suppresses the printing of the column percentages</li>
 <li><strong>NOPERCENT</strong> supresses the printing of the cell percentages</li>
 <li><strong>RELRISK</strong> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; PROC FREQ uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
@@ -2464,7 +2606,7 @@ RUN;</code></pre>
 <ul>
 <li><strong>MEASURES</strong> produces the Spearman correlation statistic along with other measurement of association</li>
 <li><strong>CL</strong> produces confidence bounds for the statistics that the MEASURES option requests</li>
-<li>The confidence bounds are valid only if the sample size is large (<script type="math/tex" id="MathJax-Element-820">>25</script>)</li>
+<li>The confidence bounds are valid only if the sample size is large (<script type="math/tex" id="MathJax-Element-5066">>25</script>)</li>
 <li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
 </ul>
 
@@ -2499,43 +2641,6 @@ RUN;</code></pre>
 
 
 <h3 id="scoring-predictive-models">Scoring Predictive Models</h3>
-
-
-
-<h1 id="macros">Macros</h1>
-
-<p>You can learn about macros in the <strong>SAS Macro Language 1: Essentials course</strong>.</p>
-
-
-
-<h3 id="macro-program-for-creating-box-plots-for-all-of-predictor-variables">Macro Program for Creating Box Plots for All of Predictor Variables</h3>
-
-
-
-<pre class="prettyprint"><code class=" hljs haml"><span class="hljs-tag">%<span class="hljs-title">let</span></span> categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces 
-         Season_Sold Garage_Type_2 Foundation_2 Heating_QC 
-         Masonry_Veneer Lot_Shape_2 Central_Air;
-<span class="hljs-comment">/* Macro Usage: %box(DSN = , Response = , CharVar = ) */</span>
-<span class="hljs-tag">%<span class="hljs-title">macro</span></span> box(dsn      = ,
-           response = ,
-           Charvar  = );
-<span class="hljs-tag">%<span class="hljs-title">let</span></span> i = 1 ;
-<span class="hljs-tag">%<span class="hljs-title">do</span></span> %while(%scan(&amp;charvar,&amp;i,%str( )) ^= %str()) ;
-<span class="hljs-tag">    %<span class="hljs-title">let</span></span> var = %scan(&amp;charvar,&amp;i,%str( ));
-    proc sgplot data=&amp;dsn;
-        vbox &amp;response / category=&amp;var 
-                         grouporder=ascending 
-                         connect=mean;
-        title "&amp;response across Levels of &amp;var";
-    run;
-<span class="hljs-tag">    %<span class="hljs-title">let</span></span> i = %eval(&amp;i + 1 ) ;
-<span class="hljs-tag">%<span class="hljs-title">end</span></span> ;
-<span class="hljs-tag">%<span class="hljs-title">mend</span></span> box;
-<span class="hljs-tag">%<span class="hljs-title">box</span>(<span class="hljs-attribute">dsn</span>      = statdata.ameshousing3,
-     <span class="hljs-attribute">response</span> = SalePrice,
-     <span class="hljs-attribute">charvar</span>  = &amp;categorical)</span>;
-title;
-options label;</code></pre>
 
 
 
@@ -2620,6 +2725,43 @@ options label;</code></pre>
 <li>You should include the dependent variable (DV) in the imputation model unless you would like to impute independent variables (IVs) assuming they are uncorrelated with your DV</li>
 <li>Although MI can perform well up to 50% missing observations,  the larger the amount the higher the chance of finding estimation problems during the imputation process and the lower the chance of meeting the MAR assumption</li>
 </ul>
+
+
+
+<h1 id="macros">Macros</h1>
+
+<p>You can learn about macros in the <strong>SAS Macro Language 1: Essentials course</strong>.</p>
+
+
+
+<h3 id="macro-program-for-creating-box-plots-for-all-of-predictor-variables">Macro Program for Creating Box Plots for All of Predictor Variables</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs haml"><span class="hljs-tag">%<span class="hljs-title">let</span></span> categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces 
+         Season_Sold Garage_Type_2 Foundation_2 Heating_QC 
+         Masonry_Veneer Lot_Shape_2 Central_Air;
+<span class="hljs-comment">/* Macro Usage: %box(DSN = , Response = , CharVar = ) */</span>
+<span class="hljs-tag">%<span class="hljs-title">macro</span></span> box(dsn      = ,
+           response = ,
+           Charvar  = );
+<span class="hljs-tag">%<span class="hljs-title">let</span></span> i = 1 ;
+<span class="hljs-tag">%<span class="hljs-title">do</span></span> %while(%scan(&amp;charvar,&amp;i,%str( )) ^= %str()) ;
+<span class="hljs-tag">    %<span class="hljs-title">let</span></span> var = %scan(&amp;charvar,&amp;i,%str( ));
+    proc sgplot data=&amp;dsn;
+        vbox &amp;response / category=&amp;var 
+                         grouporder=ascending 
+                         connect=mean;
+        title "&amp;response across Levels of &amp;var";
+    run;
+<span class="hljs-tag">    %<span class="hljs-title">let</span></span> i = %eval(&amp;i + 1 ) ;
+<span class="hljs-tag">%<span class="hljs-title">end</span></span> ;
+<span class="hljs-tag">%<span class="hljs-title">mend</span></span> box;
+<span class="hljs-tag">%<span class="hljs-title">box</span>(<span class="hljs-attribute">dsn</span>      = statdata.ameshousing3,
+     <span class="hljs-attribute">response</span> = SalePrice,
+     <span class="hljs-attribute">charvar</span>  = &amp;categorical)</span>;
+title;
+options label;</code></pre>
 
 
 
