@@ -1,4 +1,4 @@
-baseurl = "https://luciarodrigoinsausti.com/"
+baseurl = "https://luciarodrigoinsausti.com/SASmanual/"
 languageCode = "en-us"
 title = "Learning SAS"
 theme = "hugo-material-docs"
