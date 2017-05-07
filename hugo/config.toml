@@ -9,16 +9,16 @@ canonifyurls = true
 
 [params]
 	# General information
-	author = "Digitalcraftsman"
-	description = "A material design theme for documentations."
-	copyright = "Released under the MIT license"
+	#author = "Digitalcraftsman"
+	#description = "A material design theme for documentations."
+	#copyright = "Released under the MIT license"
 
 	# Repository
-	provider = "GitHub"
-	repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
+	# provider = "GitHub"
+	# repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
 
-	version = "1.0.0"
-	logo = "images/logo.png"
+	#version = "1.0.0"
+	logo = "static/images/sas-logo.png"
 	favicon = ""
 
 	permalink = "#"
@@ -31,8 +31,8 @@ canonifyurls = true
 	highlight_css  = ""
 
 	[params.palette]
-    	primary = "red"
-    	accent  = "teal"
+    	primary = "indigo"
+    	accent  = "light-blue"
 
     [params.font]
     	text = "Ubuntu"
@@ -40,35 +40,15 @@ canonifyurls = true
 
 
 [social]
-	twitter = ""
-	github  = "digitalcraftsman"
-	email   = "hello@email.com"
+	# twitter = ""
+	# github  = "digitalcraftsman"
+	# email   = "hello@email.com"
 
 
 [[menu.main]]
-	name   = "Material"
-	url    = "/"
-	weight = 0
-
-[[menu.main]]
-	name   = "Getting started"
-	url    = "getting-started/"
+	name   = "Essential tips"
+	url    = "content/01_essential.md"
 	weight = 10
-
-[[menu.main]]
-	name   = "Adding content"
-	url    = "adding-content/"
-	weight = 20
-
-[[menu.main]]
-	name   = "Roadmap"
-	url    = "roadmap/"
-	weight = 30
-
-[[menu.main]]
-	name   = "License"
-	url    = "license/"
-	weight = 40
 
 
 [blackfriday]
