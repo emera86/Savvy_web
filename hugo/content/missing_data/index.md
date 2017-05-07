@@ -1,6 +1,7 @@
 ---
-date:  "2017-02-03T22:23:25+02:00"
-title: "Missing Data"
+date:   "2017-02-03T22:23:25+02:00"
+title:  "Missing Data"
+weight: 30
 ---
 
 Depending on the **type of data and model** you will be using, techniques such as **multiple imputation** or **direct maximum likelihood** may better serve your needs. The main goals of statistical analysis with missing data are:

@@ -1,6 +1,7 @@
 ---
-date:  "2017-04-03T22:23:25+02:00"
-title: "SAS Programming Essentials"
+date:   "2017-04-03T22:23:25+02:00"
+title:  "SAS Programming Essentials"
+weight: 10
 ---
 
 ## Getting Started with SAS Programming
@@ -16,7 +17,7 @@ title: "SAS Programming Essentials"
 * comment statement;
 ```
 
-## Accessing data
+## Accessing Data
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m413/m413_3_a_sum.htm)
 
 ### Accessing SAS libraries
@@ -72,7 +73,7 @@ PROC PRINT DATA=SAS-data-set;
 RUN;
 ```
 
-### Examining SAS data sets
+### Examining SAS Data Sets
 
 Parts of a library (SAS notation):
 
@@ -96,7 +97,7 @@ The **data portion** (PROC PRINT) contains the data values, stored in variables 
 * Values length: for character variables 1 byte = 1 character, numeric variables have 8 bytes of storage by default (16-17 significant digits)
 * Other attributes: **format**, **informat**, **label**
 
-## Producing detailed reports
+## Producing Detailed Reports
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m415/m415_4_a_sum.htm)
 
 ### Subsetting Report Data
@@ -175,10 +176,10 @@ PROC PRINT DATA=SAS-data-set SPLIT='*';            /* you no longer need to add 
 RUN;
 ```
 
-## Formatting data values
+## Formatting Data Values
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m416/m416_3_a_sum.htm)
 
-### Using SAS formats
+### Using SAS Formats
 
 ```
 PROC PRINT DATA=SAS-data-base;
@@ -213,7 +214,7 @@ SAS date values: **MMDDYY<\w>.** / **DDMMYY<\w>.** / **MONYY<\w>.** / **DATE<\w>
 
 **Note:** dates before 01/01/1960 (0 value) will appear as negative numbers
 
-### Creating and applying user-defined formats
+### Creating and Applying User-Defined Formats
 
 ```
 PROC FORMAT;
@@ -266,7 +267,7 @@ OPTIONS FMTSEARCH = (libref1 libref2... librefn)
 * The **FMTSEARCH** system option controls the order in which format catalogs are searched until the desired member is found.
 * The **WORK.FORMATS** catalog is always searched first, unless it appears in the **FMTSEARCH** list. 
 
-## Reading SAS data sets
+## Reading SAS Data Sets
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m417/m417_4_a_sum.htm)
 
 To create a new data set that is a subset of a previous data set:
@@ -284,7 +285,7 @@ RUN;
 
 **Note2:** new variables being created in the DATA step and not contained in the original data set cannot be used in a WHERE statement
 
-### Customizing a SAS data set
+### Customizing a SAS Data Set
 
 How to select a subset of the variables/observations of the original data set:
 
@@ -347,7 +348,7 @@ RUN;
 Addition of several variables: **Total=sum(var1, var2, var3)**
 Count of nonmissing values: **Nonmissing=n(var1, var2, var3)**
 
-### Adding permanent attributes
+### Adding Permanent Attributes
 
 ***Permanent variable labels***
 
@@ -377,10 +378,10 @@ DATA output-SAS-data-set;
 RUN;
 ```
 
-## Reading spreadsheet and database data
+## Reading Spreadsheet and Database Data
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m418/m418_3_a_sum.htm)
 
-### Reading spreadsheet data
+### Reading Spreadsheet Data
 
 To determine the SAS products that are included in your SAS license, you can run the following PROC SETINIT step:
 
@@ -419,7 +420,7 @@ PROC IMPORT DATAFILE="/folders/myfolders/reading_test.xlsx"
 RUN;
 ```
 
-### Reading database data
+### Reading Database Data
 
 ```
 LIBNAME libref engine <SAS/ACCESS options>;
@@ -428,10 +429,10 @@ LIBNAME libref engine <SAS/ACCESS options>;
 - **engine**: oracle or BD2
 - **SAS/ACCESS options**: USER, PASSWORD/PW, PATH (specifies the Oracle driver, node and database), SCHEMA (enables you to read database objects such as tables and views)
 
-## Reading raw data files
+## Reading Raw Data Files
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m419/m419_5_a_sum.htm)
 
-### Introduction to reading raw data files
+### Introduction to Reading Raw Data Files
 
 - **Raw data files** are not software specific
 - A **delimited raw data file** is an external text file in which the values are separated by spaces or other special characters.
@@ -439,7 +440,7 @@ LIBNAME libref engine <SAS/ACCESS options>;
 - **Standard data** is data that SAS can read without any special instructions
 - **Nonstandard data** includes values like dates or numeric values that include special characters like dollar signs (extra instructions needed)
 
-### Reading standard delimited data
+### Reading Standard Delimited Data
 
 ```
 DATA output-SAS-data-set-name;
@@ -466,7 +467,7 @@ RUN;
 - The variables not specified in the **LENGTH** statement will appear at the end of the table. If you want to keep the original order you should include all variables even if you want them to have the defaul length (8)
 
 
-### Reading nonstandard delimited data
+### Reading Nonstandard Delimited Data
 
 You can use a **modified list input** to read all of the fields from a raw data file (including nonstandard variables)
 
@@ -540,7 +541,7 @@ run;
 title;
 ```
 
-### Validating data
+### Validating Data
 
 When SAS encounters a data error, it prints messages and a ruler in the log and assigns a missing value to the affected variable. Then SAS continues processing.
 
@@ -567,7 +568,7 @@ With the **MISSOVER** option, if SAS reaches the end of a record without finding
 ## Manipulating Data 
 [Chapter summary in SAS](https://support.sas.com/edu/OLTRN/ECPRG193/m421/m421_5_a_sum.htm)
 
-### Using SAS functions
+### Using SAS Functions
 
 ***SUM function***
 
@@ -620,7 +621,7 @@ The **INTCK** function returns the number of interval boundaries of a given kind
 
 The **DROP** statement is a compile-time-only statement. SAS sets a drop flag for the dropped variables, but the variables are in the PDV and, therefore, are available for processing.
 
-### Conditional processing
+### Conditional Processing
 
 ***IF-THEN-ELSE conditional structures***
 

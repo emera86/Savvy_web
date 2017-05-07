@@ -1,6 +1,7 @@
 ﻿---
-date:  "2017-05-03T22:23:25+02:00"
-title: "Using Macros"
+date:   "2017-05-03T22:23:25+02:00"
+title:  "Using Macros"
+weight: 40
 ---
 
 You can learn about macros in the **SAS Macro Language 1: Essentials course**.

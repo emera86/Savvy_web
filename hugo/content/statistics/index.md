@@ -1,6 +1,7 @@
 ---
-date:  "2017-01-03T22:23:25+02:00"
-title: "Statistics: Introduction to ANOVA, Regression and Logistic Regression"
+date:   "2017-01-03T22:23:25+02:00"
+title:  "Statistics: Introduction to ANOVA, Regression and Logistic Regression"
+weight: 20
 ---
 
 ## Introduction to Statistics
