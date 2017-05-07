@@ -43,6 +43,8 @@
 
   img {
     max-width: 100% !important;
+    /* display: block;
+    margin: auto; */
   }
 
   p,
@@ -179,7 +181,7 @@ p,
   margin: 1rem auto 1rem;
   /*max-width: 36rem;*/
   max-width: 80%;
-  padding: .25rem;
+  /*padding: .25rem;*/
 }
 
 div {
@@ -222,9 +224,11 @@ code {
 }
 
 pre {
-  background-color: #fafafa;
+  /*background-color: #fafafa;*/
+  background-color: #333333;
+  color: #F2F1F0;
   font-size: .8rem;
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
   padding: 1.125em;
 }
 

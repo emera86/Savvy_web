@@ -1,0 +1,51 @@
+<!--<html>
+        <script type="text/javascript">        
+              var sasheader = "<head>" + "./sas_manual_header.html" + "</head>" ;
+              var sascontent = "<body>" + "./sas_manual_content.html" + "</body>";
+              var sasmanual = sasheader + sascontent ;
+              document.write(sasmanual);
+        </script>
+</html>-->
+
+<html>
+    <head>
+         <script>
+                $("#toc").append('<p>In this manual:</p>')
+                $("h1, h2, h3").each(function(i) {
+                        var current = $(this);
+                        current.attr("id", "title" + i);
+                        $("#toc").append("<a id='link" + i + "' href='#title" +
+                                         i + "' title='" + current.attr("tagName") + "'>" + 
+                                         current.html() + "</a>");
+                });
+         </script>
+            
+         <style>
+   .header {
+      width:0%;
+      height:0%;
+      overflow:hidden;
+      border: 0;
+      border-width: 0;
+    }
+    .maincontent {
+      float:left;
+      width:100%;
+      height:100%;
+      overflow-x:hidden;
+      overflow-Y:hidden;
+      border-width: 0;
+    }
+    body {
+      overflow: hidden;
+      border: 0;
+      margin: 0;
+    }
+        </style>
+        <iframe class="header" src="./sas_manual_header.html"></iframe>
+    </head>
+    <body>
+        <div id="toc"></div>
+        <iframe class="maincontent" src="./sas_manual_content.html" seamless="seamless"></iframe>
+    </body>
+</html>
