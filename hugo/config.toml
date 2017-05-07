@@ -1,4 +1,4 @@
-baseurl = "https://luciarodrigoinsausti.com/SASmanual/"
+baseurl = "https://luciarodrigoinsausti.com/SAStutorial/"
 languageCode = "en-us"
 title = "Learning SAS"
 theme = "hugo-material-docs"
@@ -9,16 +9,16 @@ canonifyurls = true
 
 [params]
 	# General information
-	#author = "Digitalcraftsman"
-	#description = "A material design theme for documentations."
-	#copyright = "Released under the MIT license"
+	# author = "Digitalcraftsman"
+	# description = "A material design theme for documentations."
+	# copyright = "Released under the MIT license"
 
 	# Repository
 	# provider = "GitHub"
 	# repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
 
 	#version = "1.0.0"
-	logo = "static/images/sas-logo.png"
+	logo = "images/sas-logo.png"
 	favicon = ""
 
 	permalink = "#"
@@ -28,7 +28,7 @@ canonifyurls = true
 	custom_js  = []
 
 	# Syntax highlighting theme
-	highlight_css  = ""
+	highlight_css  = "stylesheets/prisma-sas.css"
 
 	[params.palette]
     	primary = "indigo"
@@ -44,11 +44,30 @@ canonifyurls = true
 	# github  = "digitalcraftsman"
 	# email   = "hello@email.com"
 
+[[menu.main]]
+	name   = "Essential SAS Programming"
+	url    = "essential/"
+	weight = 10
 
 [[menu.main]]
-	name   = "Essential tips"
-	url    = "content/01_essential.md"
-	weight = 10
+	name   = "Statistics"
+	url    = "statistics/"
+	weight = 20
+
+[[menu.main]]
+	name   = "Missig Data"
+	url    = "missing_data/"
+	weight = 30
+
+[[menu.main]]
+	name   = "Using Macros"
+	url    = "macros/"
+	weight = 40
+
+[[menu.main]]
+	name   = "Miscellanea"
+	url    = "miscellanea/"
+	weight = 50
 
 
 [blackfriday]
