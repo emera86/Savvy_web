@@ -40,8 +40,6 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../css/prism-sas.css">
-    
     
   </head>
   
@@ -158,10 +156,130 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../essentials/" title="The Essentials" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -192,8 +310,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction to Statistics" class="md-nav__link">
-      Introduction to Statistics
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
@@ -273,6 +391,33 @@
   <a href="#tests-of-association" title="Tests of Association" class="md-nav__link">
     Tests of Association
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pearson-chi-square-test" title="Pearson Chi-square Test" class="md-nav__link">
+    Pearson Chi-square Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cramers-v-statistic" title="Cramer's V statistic" class="md-nav__link">
+    Cramer's V statistic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mantel-haenszel-chi-square-test" title="Mantel-Haenszel chi-square test" class="md-nav__link">
+    Mantel-Haenszel chi-square test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -382,6 +527,33 @@
     Tests of Association
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pearson-chi-square-test" title="Pearson Chi-square Test" class="md-nav__link">
+    Pearson Chi-square Test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cramers-v-statistic" title="Cramer's V statistic" class="md-nav__link">
+    Cramer's V statistic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mantel-haenszel-chi-square-test" title="Mantel-Haenszel chi-square test" class="md-nav__link">
+    Mantel-Haenszel chi-square test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -417,7 +589,7 @@
                 
                 <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m556/m556_5_a_sum.htm">Chapter summary in SAS</a></p>
 <p>When you response variable is categorical, you need to use a different kind of regression analysis: <strong>logistic regression</strong>.</p>
-<h3 id="describing-categorical-data">Describing Categorical Data<a class="headerlink" href="#describing-categorical-data" title="Permanent link">&para;</a></h3>
+<h2 id="describing-categorical-data">Describing Categorical Data<a class="headerlink" href="#describing-categorical-data" title="Permanent link">&para;</a></h2>
 <p>When you examine the distribution of a <strong>categorical variable</strong>, you want to know the <strong>values</strong> of the variable and the <strong>frequency or count</strong> of each value in the data (<strong>one-way frequency able</strong>).</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -440,20 +612,22 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<p>Two distribution plots are associated with a frequency or crosstabulation table: a <strong>frequency plot</strong>, PLOTS=<strong>(FREQPLOT)</strong>, and a <strong>cumulative frequency plot</strong>.</p>
-<p>In PROC FREQ output, the default order for character values is <strong>alphaumeric</strong>. To reorder the values of an ordinal variable in your FROC FREQ output you can:</p>
+<p>Two distribution plots are associated with a frequency or crosstabulation table: a <strong>frequency plot</strong>, <code>PLOTS=(FREQPLOT)</code>, and a <strong>cumulative frequency plot</strong>.</p>
+<p>In <code>PROC FREQ</code> output, the default order for character values is <strong>alphaumeric</strong>. To reorder the values of an ordinal variable in your <code>PROC FREQ</code> output you can:</p>
 <ul>
 <li>Create a <strong>new variable</strong> in which the values are stored in logical order</li>
 <li>Apply a <a href="https://support.sas.com/edu/OLTRN/ECST131/eclibjr/tempformat.htm"><strong>temporary format</strong></a> to the original variable</li>
 </ul>
-<h3 id="tests-of-association">Tests of Association<a class="headerlink" href="#tests-of-association" title="Permanent link">&para;</a></h3>
-<p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables (H0 is true): 
+<h2 id="tests-of-association">Tests of Association<a class="headerlink" href="#tests-of-association" title="Permanent link">&para;</a></h2>
+<h3 id="pearson-chi-square-test">Pearson Chi-square Test<a class="headerlink" href="#pearson-chi-square-test" title="Permanent link">&para;</a></h3>
+<p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables ($H_0$ is true): 
 $Expected=Row \ total\cdot Column\ total/Total \ sample \ size$</p>
 <ul>
 <li>If the <strong>sample size decreases</strong>, the <strong>chi-square value decreases</strong> and the <strong>p-value for the chi-square statistic increases</strong></li>
-<li>Hypothesis testing: <strong>H0</strong>: no association; <strong>Ha</strong>: association</li>
+<li>Hypothesis testing: <strong>$H_0$</strong>: no association; <strong>$H_a$</strong>: association</li>
 </ul>
-<p><strong>Cramer's V statistic</strong> is one measure of strength of an association between two categorical variables</p>
+<h3 id="cramers-v-statistic">Cramer's V statistic<a class="headerlink" href="#cramers-v-statistic" title="Permanent link">&para;</a></h3>
+<p>It is one <strong>measure of strength of an association</strong> between two categorical variables:</p>
 <ul>
 <li>For two-by-two tables, Cramer's V is in the range of -1 to 1</li>
 <li>For larger tables, Cramer's V is int he range of 0 to 1 </li>
@@ -462,8 +636,8 @@ $Expected=Row \ total\cdot Column\ total/Total \ sample \ size$</p>
 <p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: $Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}$; $Odds=p_{event}/(1-p_{event})$</p>
 <ul>
 <li>The value of the odds ratio can range from 0 to $\infty$; it cannot be negative</li>
-<li>When the odds ratio is $1$, there is no association between variables</li>
-<li>When the odds ratio $&gt;1$/$&lt;1$, the group in the numerator/denominator is more likely to have the outcome</li>
+<li>When the odds ratio is 1 , there is no association between variables</li>
+<li>When the odds ratio &gt;1/&lt;1, the group in the numerator/denominator is more likely to have the outcome</li>
 <li>The odds ratio is approximately the same <strong>regardless of the sample size</strong></li>
 <li>To estimate the true odds ratio while taking into account the variability of the sample statistic, you can calculate <strong>confidence intervals</strong></li>
 <li>You can use an odds ratio to <strong>test for significance</strong> between two categorical variables</li>
@@ -480,18 +654,18 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li><strong>CHISQ</strong> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: $\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}$</li>
-<li><strong>EXPECTED</strong> prints the expected cell frequencies</li>
-<li><strong>CELLCHI2</strong> prints each cell's contribution to the total chi-square statistic: $ \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}$</li>
-<li><strong>NOCOL</strong> suppresses the printing of the column percentages</li>
-<li><strong>NOPERCENT</strong> supresses the printing of the cell percentages</li>
-<li><strong>RELRISK</strong> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; PROC FREQ uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
+<li><code>CHISQ</code> produces the Pearson chi-square test of association, the likelihood-ratio chi-square and the Mantel-Haenszel: $\sum \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}$</li>
+<li><code>EXPECTED</code> prints the expected cell frequencies</li>
+<li><code>CELLCHI2</code> prints each cell's contribution to the total chi-square statistic: $ \frac{(obs. \ freq. - exp. \ freq.)^2}{exp. \ freq.}$</li>
+<li><code>NOCOL</code> suppresses the printing of the column percentages</li>
+<li><code>NOPERCENT</code> supresses the printing of the cell percentages</li>
+<li><code>RELRISK</code> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; <code>PROC FREQ</code> uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
 </ul>
-<hr />
+<h3 id="mantel-haenszel-chi-square-test">Mantel-Haenszel chi-square test<a class="headerlink" href="#mantel-haenszel-chi-square-test" title="Permanent link">&para;</a></h3>
 <p>For <strong>ordinal associations</strong>, the <strong>Mantel-Haenszel</strong> chi-square test is a more powerful test.</p>
 <ul>
 <li>The levels must be in a <strong>logical order</strong> for the test results to be meaningful</li>
-<li>Hypothesis testing: <strong>H0</strong>: no ordinal association; <strong>Ha</strong>: ordinal association</li>
+<li>Hypothesis testing: <strong>$H_0$</strong>: no ordinal association; <strong>$H_a$</strong>: ordinal association</li>
 <li>Similarly to the Pearson case, the Mantel-Haenszel chi-square statistic/p-value indicate whether an association exists but not its magnitude and they depend on and reflect the sample size</li>
 </ul>
 <p>To measure the <strong>strength of the association</strong> between two ordinal variables you can use the <strong>Spearman correlation</strong> statistic.</p>
@@ -512,19 +686,19 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li><strong>MEASURES</strong> produces the Spearman correlation statistic along with other measurement of association</li>
-<li><strong>CL</strong> produces confidence bounds for the statistics that the MEASURES option requests</li>
-<li>The confidence bounds are valid only if the sample size is large ($&gt;25$)</li>
+<li><code>MEASURES</code> produces the Spearman correlation statistic along with other measurement of association</li>
+<li><code>CL</code> produces confidence bounds for the statistics that the MEASURES option requests</li>
+<li>The confidence bounds are valid only if the sample size is large (&gt;25)</li>
 <li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
 </ul>
-<h3 id="introduction-to-logistic-regression">Introduction to Logistic Regression<a class="headerlink" href="#introduction-to-logistic-regression" title="Permanent link">&para;</a></h3>
+<h2 id="introduction-to-logistic-regression">Introduction to Logistic Regression<a class="headerlink" href="#introduction-to-logistic-regression" title="Permanent link">&para;</a></h2>
 <p>Logistic Regression is a generalized linear model that you can use to predict a categorical response/outcome on the basis if one or more continuous or categorical predictor variables. There are three models:</p>
 <p><img alt="Logistic regression types" src="https://lh3.googleusercontent.com/-_wxj3yC7ZCE/WOd2RpxTQOI/AAAAAAAAAEg/HYmLKYjBYr8Thq7HwseFdK3hU8Tnreo8ACLcB/s0/logistic_regression_types.PNG" title="Logistic regression types" /></p>
 <p>Some reasons why you <strong>can't use linear regression</strong> with a <strong>binary response variable</strong> are:</p>
 <ul>
-<li>aaa</li>
+<li>Reason 1</li>
 </ul>
-<h3 id="multiple-logistic-regression">Multiple Logistic Regression<a class="headerlink" href="#multiple-logistic-regression" title="Permanent link">&para;</a></h3>
+<h2 id="multiple-logistic-regression">Multiple Logistic Regression<a class="headerlink" href="#multiple-logistic-regression" title="Permanent link">&para;</a></h2>
                 
                   
                 

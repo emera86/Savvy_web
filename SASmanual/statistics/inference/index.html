@@ -40,8 +40,6 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../css/prism-sas.css">
-    
     
   </head>
   
@@ -158,10 +156,130 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../essentials/" title="The Essentials" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -192,8 +310,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction to Statistics" class="md-nav__link">
-      Introduction to Statistics
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
@@ -255,6 +373,19 @@
     Examining Residuals
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc-reg" title="PROC REG" class="md-nav__link">
+    PROC REG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -262,12 +393,73 @@
     Identifying Influential Observations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-student-residuals-to-detect-outliers" title="Using STUDENT residuals to detect outliers" class="md-nav__link">
+    Using STUDENT residuals to detect outliers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cooksd-statistics-to-detect-influential-observations" title="Using COOKSD statistics to detect influential observations" class="md-nav__link">
+    Using COOKSD statistics to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rstudent-residuals-to-detect-influential-observations" title="Using RSTUDENT residuals to detect influential observations" class="md-nav__link">
+    Using RSTUDENT residuals to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dffits-statistics-to-detect-influential-observations" title="Using DFFITS statistics to detect influential observations" class="md-nav__link">
+    Using DFFITS statistics to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dfbetas-statistics-to-explore-the-influenced-predictor-variable" title="Using DFBETAS statistics to explore the influenced predictor variable" class="md-nav__link">
+    Using DFBETAS statistics to explore the influenced predictor variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-glmselect" title="PROC GLMSELECT" class="md-nav__link">
+    PROC GLMSELECT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#detecting-collinearity" title="Detecting Collinearity" class="md-nav__link">
     Detecting Collinearity
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effective-modeling-cycle" title="Effective modeling cycle" class="md-nav__link">
+    Effective modeling cycle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -368,6 +560,19 @@
     Examining Residuals
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc-reg" title="PROC REG" class="md-nav__link">
+    PROC REG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -375,12 +580,73 @@
     Identifying Influential Observations
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-student-residuals-to-detect-outliers" title="Using STUDENT residuals to detect outliers" class="md-nav__link">
+    Using STUDENT residuals to detect outliers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-cooksd-statistics-to-detect-influential-observations" title="Using COOKSD statistics to detect influential observations" class="md-nav__link">
+    Using COOKSD statistics to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-rstudent-residuals-to-detect-influential-observations" title="Using RSTUDENT residuals to detect influential observations" class="md-nav__link">
+    Using RSTUDENT residuals to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dffits-statistics-to-detect-influential-observations" title="Using DFFITS statistics to detect influential observations" class="md-nav__link">
+    Using DFFITS statistics to detect influential observations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dfbetas-statistics-to-explore-the-influenced-predictor-variable" title="Using DFBETAS statistics to explore the influenced predictor variable" class="md-nav__link">
+    Using DFBETAS statistics to explore the influenced predictor variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-glmselect" title="PROC GLMSELECT" class="md-nav__link">
+    PROC GLMSELECT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#detecting-collinearity" title="Detecting Collinearity" class="md-nav__link">
     Detecting Collinearity
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effective-modeling-cycle" title="Effective modeling cycle" class="md-nav__link">
+    Effective modeling cycle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -415,9 +681,10 @@
 <p><img alt="Assumptions violation examples" src="https://lh3.googleusercontent.com/-84ce_WbduHI/WOOAkeq-iiI/AAAAAAAAADs/e2ZzJE_XoLE8DnfdqNt-aaHhOzw8Z-ucgCLcB/s0/assumption-violation.PNG" title="Assumptions violation examples" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>To take autocorrelation (correlated over time) into account, you might need to use a regression procedure such as <strong>PROC AUTOREG</strong></p>
+</div>
 <p>You can also use these plots to <strong>detect outliers</strong>, which often reflect data errors or unusual circumstances. They can affect your regression results, so you want to know whether any outliers are present and causing problems and investigate if they result from <strong>data entry error or some other problem</strong> that you can correct.</p>
+<h3 id="proc-reg"><code>PROC REG</code><a class="headerlink" href="#proc-reg" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -431,37 +698,33 @@ QUIT;
 </td></tr></table>
 
 <ul>
-<li><strong>QQ</strong> requests a residual quantile-quantile plot to assess the normality of the residual error</li>
-<li><strong>RESIDUALBYPREDICTED</strong> requests a plot of residuals by predicted values to verify the equal variance assumption, the independence assumption and model adequacy</li>
-<li><strong>RESIDUALS</strong> requests a panel of plots of residuals by the predictor variables in the model. If any of the <em>Residual by Regressors</em> plots show signs of unequal variance, we can determine which predictor variable is involved in the problem.</li>
+<li><code>QQ</code> requests a residual quantile-quantile plot to assess the normality of the residual error</li>
+<li><code>RESIDUALBYPREDICTED</code> requests a plot of residuals by predicted values to verify the equal variance assumption, the independence assumption and model adequacy</li>
+<li><code>RESIDUALS</code> requests a panel of plots of residuals by the predictor variables in the model: if any of the <em>Residual by Regressors</em> plots show signs of unequal variance, we can determine which predictor variable is involved in the problem</li>
 </ul>
 <h2 id="identifying-influential-observations">Identifying Influential Observations<a class="headerlink" href="#identifying-influential-observations" title="Permanent link">&para;</a></h2>
 <p>An influential observation is different from an outlier. An <strong>outlier</strong> is an unusual observation that has a large residual compare to the rest of the points. An <strong>influential observation</strong> can sometimes have a large residual compared to the rest of the points, but it is an observation so far away from the rest of the data that it singlehandedly exerts influence on the slope of the regression line.</p>
 <p><img alt="Outlier vs influential observation" src="https://lh3.googleusercontent.com/-SRVHsMC3NQg/WOOVPEZxDLI/AAAAAAAAAEA/1vGwrG2XlWISRMTx2fguuh109zyLXfVGACLcB/s0/outlier_vs_influential-observation.PNG" title="Outlier vs influential observation" /></p>
-<hr />
-<p><strong><em>Using STUDENT residuals to detect outliers</em></strong></p>
-<p>Also known as <strong>studientized or standardized residuals</strong>, the STUDENT residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
+<h3 id="using-student-residuals-to-detect-outliers">Using <code>STUDENT</code> residuals to detect outliers<a class="headerlink" href="#using-student-residuals-to-detect-outliers" title="Permanent link">&para;</a></h3>
+<p>Also known as <strong>studientized or standardized residuals</strong>, the <code>STUDENT</code> residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
 <ul>
-<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the STUDENT <strong>residual is $&gt;2$</strong>, you can suspect that the corresponding observation is an outlier</li>
-<li>For <strong>large sample sizes</strong>, it's very likely that even more STUDENT <strong>residuals greater than $\pm2$</strong> will occur just by chance, so you should typically use a larger cutoff value of $&gt;3$</li>
+<li>For <strong>relatively small sample sizes</strong>, if the absolute value of the <code>STUDENT</code> <strong>residual is $&gt;2$</strong>, you can suspect that the corresponding observation is an outlier</li>
+<li>For <strong>large sample sizes</strong>, it's very likely that even more <code>STUDENT</code> <strong>residuals greater than $\pm2$</strong> will occur just by chance, so you should typically use a larger cutoff value of $&gt;3$</li>
 </ul>
-<hr />
-<p><strong><em>Using Cook's D statistics to detect influential observations</em></strong></p>
-<p>Fore each observation, the Cook's D statistic is <strong>calculated as if that observation weren't in the data set</strong> as well as the set of parameter estimates with all the observations in your regression analysis. </p>
+<h3 id="using-cooksd-statistics-to-detect-influential-observations">Using <code>COOKSD</code> statistics to detect influential observations<a class="headerlink" href="#using-cooksd-statistics-to-detect-influential-observations" title="Permanent link">&para;</a></h3>
+<p>For each observation, the Cook's D statistic is <strong>calculated as if that observation weren't in the data set</strong> as well as the set of parameter estimates with all the observations in your regression analysis. </p>
 <ul>
 <li>If any observation has a Cook's D <strong>statistic $&gt;4/n$</strong> that observation is influential</li>
 <li>The Cook's D statistic is most useful for identifying influential observations when the purpose of your model is <strong>parameter estimation</strong></li>
 </ul>
-<hr />
-<p><strong><em>Using RSTUDENT residuals to detect influential observations</em></strong></p>
-<p>RSTUDENT residuals are similar to STUDENT residuals. For each observation, the RSTUDENT residual is the <strong>residual divided by the standard error estimated with the current observation deleted</strong>.</p>
+<h3 id="using-rstudent-residuals-to-detect-influential-observations">Using <code>RSTUDENT</code> residuals to detect influential observations<a class="headerlink" href="#using-rstudent-residuals-to-detect-influential-observations" title="Permanent link">&para;</a></h3>
+<p><code>RSTUDENT</code> residuals are similar to <code>STUDENT</code> residuals. For each observation, the <code>RSTUDENT</code> residual is the <strong>residual divided by the standard error estimated with the current observation deleted</strong>.</p>
 <ul>
-<li>If the RSTUDENT residual is different from the STUDENT residual, the observation is probably influential</li>
-<li>If the absolute value of the RSTUDENT residuals is $&gt;2$ or $&gt;3$, you've probably detected an influential observation</li>
+<li>If the RSTUDENT residual is different from the <code>STUDENT</code> residual, the observation is probably influential</li>
+<li>If the absolute value of the <code>RSTUDENT</code> residuals is $&gt;2$ or $&gt;3$, you've probably detected an influential observation</li>
 </ul>
-<hr />
-<p><strong><em>Using DFFITS statistics to detect influential observations</em></strong></p>
-<p>DFFITS measures the impact that each observation has on its own predicted value. For each observation, DFFITS is <strong>calculated using two predicted values</strong>:</p>
+<h3 id="using-dffits-statistics-to-detect-influential-observations">Using <code>DFFITS</code> statistics to detect influential observations<a class="headerlink" href="#using-dffits-statistics-to-detect-influential-observations" title="Permanent link">&para;</a></h3>
+<p><code>DFFITS</code> measures the impact that each observation has on its own predicted value. For each observation, <code>DFFITS</code> is <strong>calculated using two predicted values</strong>:</p>
 <ul>
 <li>The first predicted value is calculated from a model using the entire data set to estimate model parameters</li>
 <li>The second predicted value is calculated from a model using the data set with that particular observation removed to estimate model parameters</li>
@@ -472,19 +735,20 @@ QUIT;
 <li>The <strong>general cutoff</strong> value is $2$</li>
 <li>The more <strong>precise cutoff</strong> is $2 \cdot sqrt(p/n)$</li>
 <li>If the absolute value of DFFITS for any observation is $&gt;$ cutoff value, you've detected an influential observation</li>
-<li>DFFITS is most useful for <strong>predictive models</strong></li>
+<li><code>DFFITS</code> is most useful for <strong>predictive models</strong></li>
 </ul>
-<hr />
-<p><strong><em>Using DFBETAS statistics to explore the influenced predictor variable</em></strong></p>
-<p>To help identifying which parameter the observation might be influencing most you can use DFBETAS (difference in betas). It measure the change in each parameter estimate. </p>
+<h3 id="using-dfbetas-statistics-to-explore-the-influenced-predictor-variable">Using <code>DFBETAS</code> statistics to explore the influenced predictor variable<a class="headerlink" href="#using-dfbetas-statistics-to-explore-the-influenced-predictor-variable" title="Permanent link">&para;</a></h3>
+<p>To help identifying which parameter the observation might be influencing most you can use <code>DFBETAS</code> (difference in betas). It measure the change in each parameter estimate. </p>
 <ul>
-<li>One DFBETA is calculated per predictor variable per observation</li>
+<li>One <code>DFBETAS</code> is calculated per predictor variable per observation</li>
 <li>Each value is calculated by taking the estimated coefficient for that particular predictor variable <strong>using all the data</strong>, subtracting the estimated coefficient for that particular predictor variable with the <strong>current observation removed</strong> and dividing by its standard error</li>
-<li>Large DFBETAS indicate observations that are influential in estimating a given parameter:</li>
+<li>Large <code>DFBETAS</code> indicate observations that are influential in estimating a given parameter:<ul>
 <li>The <strong>general cutoff</strong> value is $2$</li>
 <li>The more <strong>precise cutoff</strong> is $2 \cdot sqrt(1/n)$</li>
 </ul>
-<hr />
+</li>
+</ul>
+<h3 id="proc-glmselect"><code>PROC GLMSELECT</code><a class="headerlink" href="#proc-glmselect" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -576,9 +840,9 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li>PROC GLMSELECT automatically creates the <strong>&amp;_GLSIND</strong> macro variable which stores the list of effects that are in the model whose variable order you can check in the <em>Influence Diagnostics</em> panel</li>
-<li>The <strong>ODS</strong> statement takes the data that creates each of the requested plots and saves it in the specified data set</li>
-<li>The <strong>LABEL</strong> option includes a label for the extreme observations in the plot (labeled with the observation numbers if there is not ID specified)</li>
+<li><code>PROC GLMSELECT</code> automatically creates the <code>&amp;_GLSIND</code> macro variable which stores the list of effects that are in the model whose variable order you can check in the <em>Influence Diagnostics</em> panel</li>
+<li>The <code>ODS</code> statement takes the data that creates each of the requested plots and saves it in the specified data set</li>
+<li>The <code>LABEL</code> option includes a label for the extreme observations in the plot (labeled with the observation numbers if there is not ID specified)</li>
 </ul>
 <p>Having <strong>influential observations doesn't violate regression assumptions</strong>, but it's a major nuisance that you need to address:</p>
 <ol>
@@ -606,11 +870,10 @@ QUIT;
 </td></tr></table>
 
 <ul>
-<li>The <strong>VIF</strong> (variance inflation factor, $VIF_i=1/(1-R_i^2)$) option measures the magnitude of collinearity in a model (VIF$&gt;10$ for any predictor in the model, those predictors are probably involved in collinearity)</li>
-<li>Other options are <strong>COLLIN</strong> (includes the intercept when analyzing collinearity and helps identify the predictors that are causing the problem) and <strong>COLLINOINT</strong> (requests the same analysis as COLLIN but excludes the intercept)</li>
+<li>The <code>VIF</code> (variance inflation factor, $VIF_i=1/(1-R_i^2)$) option measures the magnitude of collinearity in a model (VIF$&gt;10$ for any predictor in the model, those predictors are probably involved in collinearity)</li>
+<li>Other options are <code>COLLIN</code> (includes the intercept when analyzing collinearity and helps identify the predictors that are causing the problem) and <code>COLLINOINT</code> (requests the same analysis as <code>COLLIN</code> but excludes the intercept)</li>
 </ul>
-<hr />
-<p><strong><em>Effective modeling cycle</em></strong></p>
+<h3 id="effective-modeling-cycle">Effective modeling cycle<a class="headerlink" href="#effective-modeling-cycle" title="Permanent link">&para;</a></h3>
 <ol>
 <li>You want to get to know your data by <strong>performing preliminary analysis</strong>: <ul>
 <li>Plot your data</li>
@@ -618,18 +881,22 @@ QUIT;
 <li>Perform correlation analysis</li>
 </ul>
 </li>
-<li>Identify some <strong>good candidate models</strong> using PROC REG: </li>
+<li>Identify some <strong>good candidate models</strong> using <code>PROC REG</code>: <ul>
 <li>First check for collinearity </li>
 <li>Use all-possible regression or stepwise selection methods and subject matter knowledge to select model candidates</li>
 <li>Identify the good ones with the Mallows' (prediction) or Hocking's (explanatory) criterion for $C_p$</li>
+</ul>
+</li>
 <li>
 <p><strong>Check and validate your assumtions</strong> by creating residual plots and conducting a few other statistical tests</p>
 </li>
 <li>
 <p>Deal with any <strong>problems in your data</strong>: </p>
-</li>
+<ul>
 <li>Determine whether any influential observations might be throwing off your model calculations</li>
 <li>Determine whether any variables are collinear</li>
+</ul>
+</li>
 <li>
 <p><strong>Revise your model</strong></p>
 </li>
