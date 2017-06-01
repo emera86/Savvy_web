@@ -466,6 +466,66 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -616,7 +676,21 @@ RUN;
 <p>In <code>PROC FREQ</code> output, the default order for character values is <strong>alphaumeric</strong>. To reorder the values of an ordinal variable in your <code>PROC FREQ</code> output you can:</p>
 <ul>
 <li>Create a <strong>new variable</strong> in which the values are stored in logical order</li>
-<li>Apply a <a href="https://support.sas.com/edu/OLTRN/ECST131/eclibjr/tempformat.htm"><strong>temporary format</strong></a> to the original variable</li>
+<li>Apply a <a href="https://support.sas.com/edu/OLTRN/ECST131/eclibjr/tempformat.htm">temporary format</a> to the original variable</li>
+<li>How to <a href="http://support.sas.com/kb/23/350.html">replace the variable's name with the variable's label in <code>PROC FREQ</code> output</a></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>options validvarname=any;
+PROC FREQ DATA=SAS-data-set (RENAME=(variable1=&quot;Label variable 1&quot;n variable1=&quot;Label variable 1&quot;n));
+    TABLES &quot;Label variable 1&quot;n;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><a href="http://support.sas.com/kb/36/898.html">Count the distinct values of a variable</a>: The question of how to count distinct values of a <code>CLASS</code> or <code>BY</code> variable using either <code>PROC MEANS</code> or <code>PROC SUMMARY</code> is asked frequently. While neither of these procedures has this ability, <code>PROC SQL</code> can count these values using the <code>DISTINCT</code> option.</li>
 </ul>
 <h2 id="tests-of-association">Tests of Association<a class="headerlink" href="#tests-of-association" title="Permanent link">&para;</a></h2>
 <h3 id="pearson-chi-square-test">Pearson Chi-square Test<a class="headerlink" href="#pearson-chi-square-test" title="Permanent link">&para;</a></h3>

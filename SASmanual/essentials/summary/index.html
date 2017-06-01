@@ -439,6 +439,66 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -534,11 +594,11 @@
                   <h1>Creating Summary Reports</h1>
                 
                 <p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m422/m422_5_a_sum.htm">Chapter summary in SAS</a></p>
-<h2 id="using-proc-freq-to-create-summary-reports">Using PROC FREQ to Create Summary Reports<a class="headerlink" href="#using-proc-freq-to-create-summary-reports" title="Permanent link">&para;</a></h2>
+<h2 id="using-proc-freq-to-create-summary-reports">Using <code>PROC FREQ</code> to Create Summary Reports<a class="headerlink" href="#using-proc-freq-to-create-summary-reports" title="Permanent link">&para;</a></h2>
 <ul>
 <li>When you're summarizing data, there's no need to show a frequency distribution for variables that have a large number of distinct values</li>
 <li>Frequency distributions work best with variables whose values meet two criteria: variable with <strong>categorical values</strong> and values are <strong>best summarized by counts instead of averages</strong></li>
-<li>Variables that have continuous numerical values, such as dollar amounts and dates, will need to be <strong>grouped into categories</strong> by <strong>applying formats</strong> inside the PROC FREQ step (substitute an specific range of those values by a tag)</li>
+<li>Variables that have continuous numerical values, such as dollar amounts and dates, will need to be <strong>grouped into categories</strong> by <strong>applying formats</strong> inside the <code>PROC FREQ</code> step (substitute an specific range of those values by a tag)</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -551,13 +611,16 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li><strong>PROC FREQ</strong> produces frequency tables that report the distribution of any or all variable values in a SAS data set</li>
-<li>In the <strong>TABLE</strong> statement you specify the frequency tables to produce </li>
+<li><code>PROC FREQ</code> produces frequency tables that report the distribution of any or all variable values in a SAS data set</li>
+<li>In the <code>TABLE</code> statement you specify the frequency tables to produce </li>
 <li>To create <strong>one-way</strong> frequency tables you specify one or more variable names separated by space</li>
-<li><strong>WATCH OUT</strong>: if you omit the <strong>TABLE</strong> statement, SAS produces a one-way table for every variable in the data set</li>
-<li>The <strong>PROC FREQ</strong> step automatically displays output in a report, so you don't need to add a PROC PRINT step </li>
+<li>The <code>PROC FREQ</code> step automatically displays output in a report, so you don't need to add a <code>PROC PRINT</code> step </li>
 <li>Each unique variable's value displayed in the 1<sup>st</sup> column of the output is called a <strong>level of the variable</strong></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you omit the <code>TABLE</code> statement, SAS produces a one-way table for every variable in the data set, which could be very messy if you have a lot of variables.</p>
+</div>
 <hr />
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -570,8 +633,8 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li><strong>NOCUM</strong> option supresses the display of  the cummulative frequency and cummulative percent values </li>
-<li><strong>NOPERCENT</strong> option supresses the display of all percentages</li>
+<li><code>NOCUM</code> option supresses the display of  the cummulative frequency and cummulative percent values </li>
+<li><code>NOPERCENT</code> option supresses the display of all percentages</li>
 </ul>
 <hr />
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -595,8 +658,8 @@ RUN;
 </td></tr></table>
 
 <ul>
-<li>Whenever you use the <strong>BY</strong> statement, the data set must be sorted by the variable named in the statement</li>
-<li>Using this we will get a frequency table on <strong><code>variable_freq</code></strong> for each value of <strong><code>variable_sorted</code></strong></li>
+<li>Whenever you use the <code>BY</code> statement, the data set must be sorted by the variable named in the statement</li>
+<li>Using this we will get a frequency table on <code>variable_freq</code> for each value of <code>variable_sorted</code></li>
 </ul>
 <hr />
 <p><strong><em>Crosstabulation tables</em></strong></p>
@@ -833,6 +896,36 @@ ODS destination CLOSE;
 
 <p><strong><em>Allowed file formats and their corresponding destinations:</em></strong>
 <img alt="SAS Output Delivery System" src="https://lh3.googleusercontent.com/p3gAmRNbwqP8WfUOSKCLxTA042D3e_F9OUkxYJ0XHspC7MAfzfAnK0ghvpLZQXJWNWdbPd0=s0" title="SAS Output Delivery System" /></p>
+<p>You can also export a database to a different format:</p>
+<ul>
+<li>Export to <code>*.csv</code>:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC EXPORT DATA=sashelp.class
+    OUTFILE=&#39;c:\temp\sashelp class.csv&#39;
+    DBMS=CSV
+    REPLACE;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Export to <code>*.dat</code>:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">data</span> <span class="nt">_null_</span><span class="o">;</span>
+    <span class="nt">set</span> <span class="nt">library</span><span class="p">.</span><span class="nc">SAS-data-set</span><span class="o">;</span>
+    <span class="nt">file</span> <span class="s1">&#39;C:\your-custom-path\your-file-name.dat&#39;</span><span class="o">;</span>
+    <span class="nt">put</span> <span class="nt">variable1</span> <span class="nt">variable2</span> <span class="nt">variable3</span><span class="o">;</span>
+<span class="nt">run</span><span class="o">;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 

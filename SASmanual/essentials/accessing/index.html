@@ -445,6 +445,66 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -580,6 +640,29 @@
 <hr />
 <p>To erase the association between SAS and a custom library:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>LIBNAME libref-name CLEAR;
+</pre></div>
+</td></tr></table>
+
+<p>To delete all the contents of a library:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC DATASETS LIB=library-name MEMTYPE=LIB KILL;
+RUN;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<p>Copy database <strong>test</strong> into <strong>work</strong>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc copy in=test out=work;
+run;
+</pre></div>
+</td></tr></table>
+
+<p>Remove data sets:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC DELETE DATA=data1 data2 data3;
+RUN;
 </pre></div>
 </td></tr></table>
 
