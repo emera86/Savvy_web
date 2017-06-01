@@ -380,6 +380,66 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sas-outputs/reports/" title="Reports" class="md-nav__link">
+      Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sas-outputs/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -416,9 +476,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Macro Program for Creating Box Plots for All of Predictor Variables" class="md-nav__link">
-    Macro Program for Creating Box Plots for All of Predictor Variables
+  <a href="#remove-elementstring-from-macro-variable" title="Remove element/string from macro variable" class="md-nav__link">
+    Remove element/string from macro variable
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
+    Macros Available in SAS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-utility-macros" title="Color Utility Macros" class="md-nav__link">
+    Color Utility Macros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -462,9 +542,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Macro Program for Creating Box Plots for All of Predictor Variables" class="md-nav__link">
-    Macro Program for Creating Box Plots for All of Predictor Variables
+  <a href="#remove-elementstring-from-macro-variable" title="Remove element/string from macro variable" class="md-nav__link">
+    Remove element/string from macro variable
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
+    Macros Available in SAS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-utility-macros" title="Color Utility Macros" class="md-nav__link">
+    Color Utility Macros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -485,8 +585,73 @@
                 
                   <h1>Using Macros</h1>
                 
-                <p>﻿You can learn about macros in the <strong>SAS Macro Language 1: Essentials course</strong>.</p>
-<h3 id="macro-program-for-creating-box-plots-for-all-of-predictor-variables">Macro Program for Creating Box Plots for All of Predictor Variables<a class="headerlink" href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Permanent link">&para;</a></h3>
+                <p>You can learn about macros in the <strong>SAS Macro Language 1: Essentials course</strong>.</p>
+<p><a href="http://jiangtanghu.com/blog/2011/11/08/my-collection-of-sas-macro-repositories/">Here</a> you have some macro repositories.</p>
+<h2 id="remove-elementstring-from-macro-variable">Remove element/string from macro variable<a class="headerlink" href="#remove-elementstring-from-macro-variable" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%put</span> <span class="o">&amp;=</span><span class="n">list</span><span class="p">;</span>     <span class="cm">/* Check list contents before */</span>
+
+<span class="nf">%let</span> <span class="n">removefromlist</span> <span class="o">=</span> <span class="n">string_to_remove</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">list</span> <span class="o">=</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">tranwrd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">list</span><span class="p">.,</span> <span class="o">&amp;</span><span class="n">removefromlist</span><span class="p">.,</span> <span class="nf">%str</span><span class="p">()));;</span>
+
+<span class="nf">%put</span> <span class="o">&amp;=</span><span class="n">list</span><span class="p">;</span>     <span class="cm">/* Check list contents after */</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="macros-available-in-sas">Macros Available in SAS<a class="headerlink" href="#macros-available-in-sas" title="Permanent link">&para;</a></h2>
+<p>Check this <a href="https://www.google.es/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=0ahUKEwjnkNj-p5zUAhUB2RQKHR9KA3MQFghHMAQ&amp;url=http%3A%2F%2Fwww.sascommunity.org%2Fmwiki%2Fimages%2Ff%2Ff2%2F5_Macros.pptx&amp;usg=AFQjCNHr9cDvdo8lzpMwXfZU6qaAxV1-vg&amp;sig2=hWHrTpexhuvP2vnAOIjEFA">powerpoint</a> presentation for more tips.</p>
+<h3 id="color-utility-macros"><a href="http://support.sas.com/documentation/cdl/en/graphref/69717/HTML/default/viewer.htm#n0z9vlsy95ugxcn1qchqznw88m6e.htm">Color Utility Macros</a><a class="headerlink" href="#color-utility-macros" title="Permanent link">&para;</a></h3>
+<p>To initiate these macros in your current session you call the <code>%COLORMAC</code> macro.</p>
+<p>If you submit the following line:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%HELPCLR(HELP);</span>
+</pre></div>
+</td></tr></table>
+
+<p>You will get a guide of the color utility macros available:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>               Color Utility Macros Help              
+
+ HELP is currently available for the following macros 
+
+        CMY        CMYK       CNS        HLS          
+        HVS        RGB        HLS2RGB    RGB2HLS      
+
+ Enter %HELPCLR(macroname) for details on each macro, 
+    or %HELPCLR(ALL) for details on all macros.   
+ ```
+
+### `SG`Annotation Macros
+
+They can be used within a `DATA` to simplify the process of creating annotation observations.
+</pre></div>
+</td></tr></table>
+
+<p>%SGARROW
+  %SGPOLYGON
+  %SGIMAGE
+  %SGPOLYLINE
+  %SGLINE
+  %SGRECTANGLE
+  %SGOVAL
+  %SGTEXT
+  %SGPOLYCONT
+  %SGTEXTCONT</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -510,32 +675,76 @@
 21
 22
 23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">categorical</span><span class="o">=</span><span class="n">House_Style2</span> <span class="n">Overall_Qual2</span> <span class="n">Overall_Cond2</span> <span class="n">Fireplaces</span> 
-         <span class="n">Season_Sold</span> <span class="n">Garage_Type_2</span> <span class="n">Foundation_2</span> <span class="n">Heating_QC</span> 
-         <span class="n">Masonry_Veneer</span> <span class="n">Lot_Shape_2</span> <span class="n">Central_Air</span><span class="p">;</span>
-<span class="cm">/* Macro Usage: %box(DSN = , Response = , CharVar = ) */</span>
-<span class="nf">%macro</span> <span class="n">box</span><span class="p">(</span><span class="n">dsn</span>      <span class="o">=</span> <span class="p">,</span>
-           <span class="n">response</span> <span class="o">=</span> <span class="p">,</span>
-           <span class="n">Charvar</span>  <span class="o">=</span> <span class="p">);</span>
-<span class="nf">%let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-<span class="nf">%do</span> <span class="nf">%while</span><span class="p">(</span><span class="nf">%scan</span><span class="p">(</span><span class="o">&amp;</span><span class="n">charvar</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">,</span><span class="nf">%str</span><span class="p">(</span> <span class="p">))</span> <span class="o">^=</span> <span class="nf">%str</span><span class="p">())</span> <span class="p">;</span>
-    <span class="nf">%let</span> <span class="n">var</span> <span class="o">=</span> <span class="nf">%scan</span><span class="p">(</span><span class="o">&amp;</span><span class="n">charvar</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">,</span><span class="nf">%str</span><span class="p">(</span> <span class="p">));</span>
-    <span class="n">proc</span> <span class="n">sgplot</span> <span class="n">data</span><span class="o">=&amp;</span><span class="n">dsn</span><span class="p">;</span>
-        <span class="n">vbox</span> <span class="o">&amp;</span><span class="n">response</span> <span class="o">/</span> <span class="n">category</span><span class="o">=&amp;</span><span class="n">var</span> 
-                         <span class="n">grouporder</span><span class="o">=</span><span class="n">ascending</span> 
-                         <span class="n">connect</span><span class="o">=</span><span class="n">mean</span><span class="p">;</span>
-        <span class="n">title</span> <span class="s">&quot;&amp;response across Levels of &amp;var&quot;</span><span class="p">;</span>
-    <span class="n">run</span><span class="p">;</span>
-    <span class="nf">%let</span> <span class="n">i</span> <span class="o">=</span> <span class="nf">%eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">;</span>
-<span class="nf">%end</span> <span class="p">;</span>
-<span class="nf">%mend</span> <span class="n">box</span><span class="p">;</span>
-<span class="nf">%box</span><span class="p">(</span><span class="n">dsn</span>      <span class="o">=</span> <span class="n">statdata</span><span class="p">.</span><span class="n">ameshousing3</span><span class="p">,</span>
-     <span class="n">response</span> <span class="o">=</span> <span class="n">SalePrice</span><span class="p">,</span>
-     <span class="n">charvar</span>  <span class="o">=</span> <span class="o">&amp;</span><span class="n">categorical</span><span class="p">);</span>
-<span class="n">title</span><span class="p">;</span>
-<span class="n">options</span> <span class="n">label</span><span class="p">;</span>
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>### Template Modification Macros
+
+* `%MODSTYLE` macro allows you to easily make changes to style templates without accessing the code
+* `%MODTMPLT` macro allows you to easily make limited changes to graph templates without accessing the code
+
+### Graphical Macros
+
+* `%CompactMatrixMacro` (Author: Sanjay Matange): it help you modify graphs based on panels
+* `%NEWSURV` macro (Author: Jeff Meyers): it helps you tune the properties of survival plots
+* `%FORESTPLOT` macro (Author: Jeff Meyers): it allows another way of presenting results
+* `%EULER_MACRO`: useful to present proportion Euler diagrams
+* `%VENN` macro: useful to plot intersection between different events
+* `%GTLPieChartMacro`: useful for pie charts
+
+### Export Macros
+
+* [`%DS2CSV`](http://go.documentation.sas.com/?cdcId=pgmmvacdc&amp;cdcVersion=9.4&amp;docsetId=lebaseutilref&amp;docsetTarget=n0yo3bszlrh0byn1j4fxh4ndei8u.htm&amp;locale=en): exports a dataset to \*.csv format.
+
+### Where to Find these Macros?
+
+* Color utility macros, SGAnnotation macros, `%MODSTYLE` and `%MODTMPLT` are SAS autocall macros
+* [`%AXISBREAK`](http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/)
+* [`%COMPACTMATRIXMACRO`](http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/)
+* [`%ORTHO3D_MACRO`](http://blogs.sas.com/content/graphicallyspeaking/2012/08/19/compact-scatter-plot-matrix/)
+* [`%NEWSURV`](http://www.sascommunity.org/wiki/Kaplan-Meier_Survival_Plotting_Macro_%25NEWSURV)
+* [`%FORESTPLOT`](http://www.sascommunity.org/wiki/Forest_Plotting_Analysis_Macro_%25FORESTPLOT)
+* [`%EULER_MACRO`](http://blogs.sas.com/content/graphicallyspeaking/2014/06/29/proportional-euler-diagram/)
+* [`%VENN`](http://support.sas.com/resources/papers/proceedings13/243-2013.pdf)
+* [`%GTLPIECHARTMACRO`](http://blogs.sas.com/content/graphicallyspeaking/2012/08/26/how-about-some-pie/)
+
+## Macro examples
+
+### Macro Program for Creating Box Plots for All of Predictor Variables
 </pre></div>
 </td></tr></table>
+
+<p>%let categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces 
+         Season_Sold Garage_Type_2 Foundation_2 Heating_QC 
+         Masonry_Veneer Lot_Shape_2 Central_Air;
+/<em> Macro Usage: %box(DSN = , Response = , CharVar = ) </em>/
+%macro box(dsn      = ,
+           response = ,
+           Charvar  = );
+%let i = 1 ;
+%do %while(%scan(&amp;charvar,&amp;i,%str( )) ^= %str()) ;
+    %let var = %scan(&amp;charvar,&amp;i,%str( ));
+    proc sgplot data=&dsn;
+        vbox &amp;response / category=&amp;var 
+                         grouporder=ascending 
+                         connect=mean;
+        title "&amp;response across Levels of &amp;var";
+    run;
+    %let i = %eval(&amp;i + 1 ) ;
+%end ;
+%mend box;
+%box(dsn      = statdata.ameshousing3,
+     response = SalePrice,
+     charvar  = &amp;categorical);
+title;
+options label;
+```</p>
                 
                   
                 
