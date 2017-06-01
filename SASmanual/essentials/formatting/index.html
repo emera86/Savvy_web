@@ -278,26 +278,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-order-categorical-variables" title="How to order categorical variables" class="md-nav__link">
-    How to order categorical variables
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
     </ul>
@@ -485,66 +465,6 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      SAS outputs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        SAS outputs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../sas-outputs/reports/" title="Reports" class="md-nav__link">
-      Reports
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
-      Graphs and Plots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
   <li class="md-nav__item">
     <a href="../../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -648,26 +568,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-order-categorical-variables" title="How to order categorical variables" class="md-nav__link">
-    How to order categorical variables
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
     </ul>
@@ -698,34 +598,28 @@ RUN;
 </td></tr></table>
 
 <h3 id="format-definition">Format definition<a class="headerlink" href="#format-definition" title="Permanent link">&para;</a></h3>
-<p><code>&lt;$&gt;format&lt;w&gt;.&lt;d&gt;</code></p>
+<p><code>&lt;\$&gt;format&lt;\w&gt;.&lt;\d&gt;</code></p>
 <ul>
-<li><code>&lt;$&gt;</code> = character format</li>
+<li><code>&lt;\$&gt;</code> = character format</li>
 <li><code>format</code> = format name</li>
-<li><code>&lt;w&gt;</code> = total width (includes special characters, commas, decimal point and decimal places)</li>
+<li><code>&lt;\w&gt;</code> = total width (includes special characters, commas, decimal point and decimal places)</li>
 <li><code>.</code> = required syntax (dot)</li>
-<li><code>&lt;d&gt;</code> = decimal places (numeric format)</li>
+<li><code>&lt;\d&gt;</code> = decimal places (numeric format)</li>
 </ul>
 <h3 id="sas-formats">SAS formats<a class="headerlink" href="#sas-formats" title="Permanent link">&para;</a></h3>
 <p><a href="http://support.sas.com/documentation/cdl/en/leforinforref/64790/HTML/default/viewer.htm#p0z62k899n6a7wn1r5in6q5253v1.htm">Dictionary of formats</a></p>
 <ul>
-<li><code>$w.</code> = writes standard character data</li>
-<li><code>$QUOTE.</code> = writes a string in quotation marks </li>
+<li><code>\$w.</code> = writes standard character data</li>
+<li><code>\$UPCASE.</code> = writes a string in uppercase</li>
+<li><code>\$QUOTE.</code> = writes a string in quotation marks </li>
 <li><code>w.d</code> = writes standard numeric data</li>
 <li><code>COMMAw.d</code> = writes numeric values with a comma that separates every three digits and a period that separates the decimal fraction</li>
 <li><code>DOLLARw.d</code> = writes numeric values with a leading dollar sign, a comma that separates every three digits and a period that separates the decimal fraction</li>
 <li><code>COMMAXw.d</code> = writes numeric values with a period that separates every three digits and a coma that separates the decimal fraction</li>
 <li><code>EUROXw.d</code> = writes numeric values with a leading euro symbol, a period that separates every three digits and a comma that separates the decimal fraction</li>
-<li><code>DOSEF.</code> = you can see the actual variable level values in the output rather than some indexes</li>
-<li><code>$UPCASE.</code> = writes a string in uppercase</li>
 </ul>
-<p>If you want to uppercase <strong>only the first letter</strong> of words there is not a format but a function that you could use to transform your value:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var_propercase = PROPCASE(var_uppercase);
-</pre></div>
-</td></tr></table>
-
 <h3 id="sas-date-values">SAS date values<a class="headerlink" href="#sas-date-values" title="Permanent link">&para;</a></h3>
-<p><code>MMDDYY&lt;w&gt;.</code> | <code>DDMMYY&lt;w&gt;.</code> | <code>MONYY&lt;w&gt;.</code> | <code>DATE&lt;w&gt;.</code> | <code>WEEKDATE.</code></p>
+<p><code>MMDDYY&lt;\w&gt;.</code> / <code>DDMMYY&lt;\w&gt;.</code> / <code>MONYY&lt;\w&gt;.</code> / <code>DATE&lt;\w&gt;.</code> / <code>WEEKDATE.</code></p>
 <ul>
 <li>w = 6: only date numbers</li>
 <li>w = 8: date numbers with <code>/</code> separators (just the last 2 digits of year)</li>
@@ -792,7 +686,7 @@ RUN;
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol>
-<li>If you omit the <code>LIBRARY</code> option, then formats and informats are stored in the <code>work.formats</code> catalog.</li>
+<li>If you omit the <strong>LIBRARY</strong> option, then formats and informats are stored in the <code>work.formats</code> catalog.</li>
 <li>If you do not include the keyword <code>OTHER</code>, then SAS applies the format only to values that match the value-range sets that you specify and the rest of values are displayed as they are stored in the data set.</li>
 <li>You can only use the <code>&lt;</code> symbol to define a non-inclusive range.</li>
 </ol>
@@ -805,57 +699,6 @@ RUN;
 <li>The <code>FMTSEARCH</code> system option controls the order in which format catalogs are searched until the desired member is found.</li>
 <li>The <code>WORK.FORMATS</code> catalog is always searched first, unless it appears in the <code>FMTSEARCH</code> list.</li>
 </ul>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-order-categorical-variables">How to order categorical variables<a class="headerlink" href="#how-to-order-categorical-variables" title="Permanent link">&para;</a></h3>
-<p>You first create a format that you will apply to an auxiliary variable: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>value SmFmt 1 = &#39;Non-smoker&#39;
-            2 = &#39;Light (1-5)&#39;
-            3 = &#39;Moderate (6-15)&#39;
-            4 = &#39;Heavy (16-25)&#39;
-            5 = &#39;Very Heavy (&gt; 25)&#39;;
-run;
-</pre></div>
-</td></tr></table>
-
-<p>Then you create a data set view rather than a data set in order to save storage space (which might be important for large data sets) on which you define your auxiliary variable with the predefined format:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data Heart / view=Heart;
-    format Smoking_Cat SmFmt.;
-    set sashelp.heart;
-    counter = _n_;
-    keep counter Status Sex AgeAtStart Height Weight Diastolic Systolic Smoking_Cat;
-
-    select (Smoking_Status);
-        when (&#39;Non-smoker&#39;)        Smoking_Cat=1;
-        when (&#39;Light (1-5)&#39;)       Smoking_Cat=2;
-        when (&#39;Moderate (6-15)&#39;)   Smoking_Cat=3;
-        when (&#39;Heavy (16-25)&#39;)     Smoking_Cat=4;
-        when (&#39;Very Heavy (&gt; 25)&#39;) Smoking_Cat=5;
-        when (&#39; &#39;)                 Smoking_Cat=.;
-    end;
-run;
-</pre></div>
-</td></tr></table>
-
-<p>If you then use a <code>PROC REPORT</code> to display your results, the order of appearance will be the numeric order of your auxiliary variable. By using this technique, you can specify any order for the categories of a contingency table.</p>
                 
                   
                 

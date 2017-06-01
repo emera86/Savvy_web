@@ -147,9 +147,41 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Gettin' Started!
+      </label>
+    
     <a href="." title="Gettin' Started!" class="md-nav__link md-nav__link--active">
       Gettin' Started!
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-sas-programming" title="Getting Started with SAS Programming" class="md-nav__link">
+    Getting Started with SAS Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-sas-programs" title="Working with SAS Programs" class="md-nav__link">
+    Working with SAS Programs
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -387,66 +419,6 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      SAS outputs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        SAS outputs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="sas-outputs/reports/" title="Reports" class="md-nav__link">
-      Reports
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
-      Graphs and Plots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
   <li class="md-nav__item">
     <a href="missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -493,6 +465,27 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-sas-programming" title="Getting Started with SAS Programming" class="md-nav__link">
+    Getting Started with SAS Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-sas-programs" title="Working with SAS Programs" class="md-nav__link">
+    Working with SAS Programs
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -506,40 +499,24 @@
                 
                   <h1>Gettin' Started!</h1>
                 
-                <p>Hope this site help you with your SAS programming.
-Contact me if you want any content to be added to this brief (hopefully not so brief in the future) manual. 
-I will be glad to include it.</p>
+                <p>Hope this site help you with your SAS programming.</p>
 <p>Enjoy! :)</p>
+<div class="admonition check">
+<p class="admonition-title">Check</p>
+<p>Contact me if you want any content to be added to this brief manual. 
+I will be glad to include it.</p>
+</div>
 <hr />
-<p>If this is your starting point with SAS programming, maybe these readings could be useful:
-<em> <a href="https://support.sas.com/edu/OLTRN/ECPRG193/m411/m411_5_a_sum.htm">Getting Started with SAS Programming</a>
-</em> <a href="https://support.sas.com/edu/OLTRN/ECPRG193/m412/m412_3_a_sum.htm">Working with SAS Programs</a></p>
-<ul>
-<li>Print out the available SAS packages according to your license and the expiration dates: </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SETINIT; 
-RUN;
-</pre></div>
-</td></tr></table>
-
-<ul>
-<li>Comments:</li>
-</ul>
+<h2 id="getting-started-with-sas-programming">Getting Started with SAS Programming<a class="headerlink" href="#getting-started-with-sas-programming" title="Permanent link">&para;</a></h2>
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m411/m411_5_a_sum.htm">Chapter summary in SAS</a></p>
+<h2 id="working-with-sas-programs">Working with SAS Programs<a class="headerlink" href="#working-with-sas-programs" title="Permanent link">&para;</a></h2>
+<p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m412/m412_3_a_sum.htm">Chapter summary in SAS</a></p>
+<p><strong><em>Comments</em></strong></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">/* comment */</span><span class="w"></span>
 <span class="o">*</span><span class="w"> </span>comment<span class="w"> </span>statement<span class="err">;</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
-
-<ul>
-<li>
-<p>When you name a process flow <code>Autoexec</code>, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you return to the project.</p>
-</li>
-<li>
-<p>How to <a href="http://blogs.sas.com/content/sasdummy/2015/04/03/compare-sas-programs-in-sas-enterprise-guide/">compare SAS programs</a> in SAS Enterprise Guide</p>
-</li>
-</ul>
                 
                   
                 

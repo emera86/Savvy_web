@@ -380,66 +380,6 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      SAS outputs
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        SAS outputs
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sas-outputs/reports/" title="Reports" class="md-nav__link">
-      Reports
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
-      Graphs and Plots
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
   <li class="md-nav__item">
     <a href="../missing_data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
@@ -471,61 +411,9 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Miscellanea
-      </label>
-    
     <a href="./" title="Miscellanea" class="md-nav__link md-nav__link--active">
       Miscellanea
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dealing-with-arrays" title="Dealing with arrays" class="md-nav__link">
-    Dealing with arrays
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declaring-arrays" title="Declaring arrays" class="md-nav__link">
-    Declaring arrays
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#separate-site-id-from-patient-number" title="Separate Site ID from Patient Number" class="md-nav__link">
-    Separate Site ID from Patient Number
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#measure-your-code-execution-time" title="Measure your code execution time" class="md-nav__link">
-    Measure your code execution time
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -545,47 +433,6 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dealing-with-arrays" title="Dealing with arrays" class="md-nav__link">
-    Dealing with arrays
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declaring-arrays" title="Declaring arrays" class="md-nav__link">
-    Declaring arrays
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#separate-site-id-from-patient-number" title="Separate Site ID from Patient Number" class="md-nav__link">
-    Separate Site ID from Patient Number
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#measure-your-code-execution-time" title="Measure your code execution time" class="md-nav__link">
-    Measure your code execution time
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -599,8 +446,75 @@
                 
                   <h1>Miscellanea</h1>
                 
-                <h2 id="dealing-with-arrays">Dealing with arrays<a class="headerlink" href="#dealing-with-arrays" title="Permanent link">&para;</a></h2>
-<h3 id="declaring-arrays">Declaring arrays<a class="headerlink" href="#declaring-arrays" title="Permanent link">&para;</a></h3>
+                <p>When you name a process flow Autoexec, SAS Enterprise Guide prompts you to run the process flow when you open the project. This makes it easy to recreate your data when you start practising in the course.</p>
+<p>For the SAS Enterprise Guide you need to add this command to get the plots displayed in the output:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS GRAPHICS ON;
+[your code here]
+ODS GRAPHICS OFF;
+</pre></div>
+</td></tr></table>
+
+<p>When you add the <strong>ODS TRACE</strong> statement, SAS writes a trace record to the log that includes information about each output object (name, label, template, path):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS TRACE ON;
+[your code here]
+ODS TRACE OFF;
+</pre></div>
+</td></tr></table>
+
+<p>You produce a list of the possible output elements in the log that you may specify in the <strong>ODS SELECT/EXCLUDE</strong> statement:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS SELECT lmeans diff meanplot diffplot controlplot;
+[your code here]
+</pre></div>
+</td></tr></table>
+
+<p>This way you can see the actual variable level values in the output rather than some indexes:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FORMAT variable DOSEF.;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Create different data sets from one:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA data1 data2 data3;
+    SET original_data;
+    IF (condition1) THEN OUTPUT prueba1;
+    IF (condition2) THEN OUTPUT prueba2;
+    IF (condition3) THEN OUTPUT prueba3;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Copy database <strong>test</strong> into <strong>work</strong>:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc copy in=test out=work;
+run;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Remove data sets:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC DELETE DATA=data1 data2 data3;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Declaring <strong>arrays</strong>:</li>
+</ul>
 <p>The dimension has to be known in advance (???)
 There's no way to write an implicit loop through all the elements of the array (???)</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -631,7 +545,13 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<h2 id="separate-site-id-from-patient-number">Separate Site ID from Patient Number<a class="headerlink" href="#separate-site-id-from-patient-number" title="Permanent link">&para;</a></h2>
+<ul>
+<li>IF THEN analogue to "CONTAINS":</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>if find(variable_name,&#39;pattern&#39;) then
+</pre></div>
+</td></tr></table>
+
 <ul>
 <li>Site calculation from the two first numbers of the patient number:</li>
 </ul>
@@ -639,29 +559,56 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol>
-<li><code>PUT</code>: turns the numeric variable <em>patient</em> into a string (<code>z4.</code> adds leading zeroes if needed)</li>
-<li><code>SUBSTR</code>: takes the first <strong>2</strong> characters starting from position <strong>1</strong></li>
-</ol>
-</div>
-<h2 id="measure-your-code-execution-time">Measure your code execution time<a class="headerlink" href="#measure-your-code-execution-time" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>PUT</strong>: turns the numeric variable <em>patient</em> into a string (<strong>z4.</strong> adds leading zeroes if needed)</li>
+<li>
+<p><strong>SUBSTR</strong>: takes the first <strong>2</strong> characters starting from position <strong>1</strong></p>
+</li>
+<li>
+<p><a href="http://support.sas.com/kb/36/898.html">Count the distinct values of a variable</a></p>
+</li>
+<li>
+<p>Remove element/string from macro variable </p>
+</li>
+</ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">datetime_start</span> <span class="o">=</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">TIME</span><span class="p">())</span> <span class="p">;</span>
-<span class="nf">%put</span> <span class="n">START</span> <span class="nl">TIME</span><span class="p">:</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">datetime</span><span class="p">(),</span><span class="n">datetime14</span><span class="p">.);</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%put</span> <span class="o">&amp;=</span><span class="n">list</span><span class="p">;</span>     <span class="cm">/* Check list contents before */</span>
 
-<span class="p">[</span><span class="n">YOUR</span> <span class="n">CODE</span> <span class="n">HERE</span><span class="p">]</span>
+<span class="nf">%let</span> <span class="n">removefromlist</span> <span class="o">=</span> <span class="n">string_to_remove</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">list</span> <span class="o">=</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">tranwrd</span><span class="p">(</span><span class="o">&amp;</span><span class="n">list</span><span class="p">.,</span> <span class="o">&amp;</span><span class="n">removefromlist</span><span class="p">.,</span> <span class="nf">%str</span><span class="p">()));;</span>
 
-<span class="nf">%put</span> <span class="n">END</span> <span class="nl">TIME</span><span class="p">:</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">datetime</span><span class="p">(),</span><span class="n">datetime14</span><span class="p">.);</span>
-<span class="nf">%put</span> <span class="n">TOTAL</span> <span class="nl">TIME</span><span class="p">:</span>  <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">putn</span><span class="p">(</span><span class="nf">%sysevalf</span><span class="p">(</span><span class="nf">%sysfunc</span><span class="p">(</span><span class="n">TIME</span><span class="p">())</span><span class="o">-&amp;</span><span class="n">datetime_start</span><span class="p">.),</span><span class="n">mmss</span><span class="p">.))</span> <span class="p">(</span><span class="nl">mm</span><span class="p">:</span><span class="n">ss</span><span class="p">)</span> <span class="p">;</span>
+<span class="nf">%put</span> <span class="o">&amp;=</span><span class="n">list</span><span class="p">;</span>     <span class="cm">/* Check list contents after */</span>
 </pre></div>
 </td></tr></table>
+
+<ul>
+<li>How to uppercase the first letter of words:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var_propercase = PROPCASE(var_uppercase);
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><a href="http://support.sas.com/kb/23/350.html">How to replace the variable's name with the variable's label in PROC FREQ output</a></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>options validvarname=any;
+PROC FREQ DATA=SAS-data-set (RENAME=(variable1=&quot;Label variable 1&quot;n variable1=&quot;Label variable 1&quot;n));
+    TABLES &quot;Label variable 1&quot;n;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><a href="https://support.sas.com/rnd/base/ods/scratch/styles-tips.pdf">PROC TEMPLATE style tips</a></li>
+<li><a href="http://www.sascommunity.org/wiki/Tips:Use_IS_MISSING_and_IS_NULL_with_Numeric_or_Character_Variables">WHERE variable IS MISSING</a></li>
+</ul>
                 
                   
                 
