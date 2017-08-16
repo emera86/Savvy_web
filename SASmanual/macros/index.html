@@ -5,6 +5,7 @@
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Learning How to Program in SAS">
       
@@ -15,7 +16,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-bfecc7305d.css">
       
     
     
@@ -84,17 +85,17 @@
         
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
+<div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -106,11 +107,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -412,6 +409,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other-analysis/normality-tests/" title="Normality tests" class="md-nav__link">
+      Normality tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
       Propensity Score
     </a>
@@ -465,6 +486,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../procedures/regression-models/" title="General notes on regression procedures" class="md-nav__link">
+      General notes on regression procedures
+    </a>
+  </li>
+
         
           
           
@@ -612,6 +645,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sg-annotation-macros" title="SG Annotation Macros" class="md-nav__link">
+    SG Annotation Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-modification-macros" title="Template Modification Macros" class="md-nav__link">
+    Template Modification Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphical-macros" title="Graphical Macros" class="md-nav__link">
+    Graphical Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-macros" title="Export Macros" class="md-nav__link">
+    Export Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-find-these-macros" title="Where to Find these Macros?" class="md-nav__link">
+    Where to Find these Macros?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-examples" title="Macro examples" class="md-nav__link">
+    Macro examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Macro Program for Creating Box Plots for All of Predictor Variables" class="md-nav__link">
+    Macro Program for Creating Box Plots for All of Predictor Variables
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -631,15 +719,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -733,6 +833,61 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sg-annotation-macros" title="SG Annotation Macros" class="md-nav__link">
+    SG Annotation Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-modification-macros" title="Template Modification Macros" class="md-nav__link">
+    Template Modification Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphical-macros" title="Graphical Macros" class="md-nav__link">
+    Graphical Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-macros" title="Export Macros" class="md-nav__link">
+    Export Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-find-these-macros" title="Where to Find these Macros?" class="md-nav__link">
+    Where to Find these Macros?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro-examples" title="Macro examples" class="md-nav__link">
+    Macro examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Macro Program for Creating Box Plots for All of Predictor Variables" class="md-nav__link">
+    Macro Program for Creating Box Plots for All of Predictor Variables
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -806,6 +961,28 @@
 </td></tr></table>
 
 <p>You will get a guide of the color utility macros available:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Color Utility Macros Help              
+
+HELP is currently available for the following macros 
+
+        CMY        CMYK       CNS        HLS          
+        HVS        RGB        HLS2RGB    RGB2HLS      
+
+Enter %HELPCLR(macroname) for details on each macro, 
+or %HELPCLR(ALL) for details on all macros.   
+</pre></div>
+</td></tr></table>
+
+<h3 id="sg-annotation-macros"><code>SG</code> Annotation Macros<a class="headerlink" href="#sg-annotation-macros" title="Permanent link">&para;</a></h3>
+<p>They can be used within a <code>DATA</code> to simplify the process of creating annotation observations.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -815,37 +992,51 @@
  7
  8
  9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>               Color Utility Macros Help              
-
- HELP is currently available for the following macros 
-
-        CMY        CMYK       CNS        HLS          
-        HVS        RGB        HLS2RGB    RGB2HLS      
-
- Enter %HELPCLR(macroname) for details on each macro, 
-    or %HELPCLR(ALL) for details on all macros.   
- ```
-
-### `SG`Annotation Macros
-
-They can be used within a `DATA` to simplify the process of creating annotation observations.
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="c">%SGARROW</span>
+  <span class="c">%SGPOLYGON</span>
+  <span class="c">%SGIMAGE</span>
+  <span class="c">%SGPOLYLINE</span>
+  <span class="c">%SGLINE</span>
+  <span class="c">%SGRECTANGLE</span>
+  <span class="c">%SGOVAL</span>
+  <span class="c">%SGTEXT</span>
+  <span class="c">%SGPOLYCONT</span>
+  <span class="c">%SGTEXTCONT</span>
 </pre></div>
 </td></tr></table>
 
-<p>%SGARROW
-  %SGPOLYGON
-  %SGIMAGE
-  %SGPOLYLINE
-  %SGLINE
-  %SGRECTANGLE
-  %SGOVAL
-  %SGTEXT
-  %SGPOLYCONT
-  %SGTEXTCONT</p>
+<h3 id="template-modification-macros">Template Modification Macros<a class="headerlink" href="#template-modification-macros" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>%MODSTYLE</code> macro allows you to easily make changes to style templates without accessing the code</li>
+<li><code>%MODTMPLT</code> macro allows you to easily make limited changes to graph templates without accessing the code</li>
+</ul>
+<h3 id="graphical-macros">Graphical Macros<a class="headerlink" href="#graphical-macros" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>%CompactMatrixMacro</code> (Author: Sanjay Matange): it help you modify graphs based on panels</li>
+<li><code>%NEWSURV</code> macro (Author: Jeff Meyers): it helps you tune the properties of survival plots</li>
+<li><code>%FORESTPLOT</code> macro (Author: Jeff Meyers): it allows another way of presenting results</li>
+<li><code>%EULER_MACRO</code>: useful to present proportion Euler diagrams</li>
+<li><code>%VENN</code> macro: useful to plot intersection between different events</li>
+<li><code>%GTLPieChartMacro</code>: useful for pie charts</li>
+</ul>
+<h3 id="export-macros">Export Macros<a class="headerlink" href="#export-macros" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://go.documentation.sas.com/?cdcId=pgmmvacdc&amp;cdcVersion=9.4&amp;docsetId=lebaseutilref&amp;docsetTarget=n0yo3bszlrh0byn1j4fxh4ndei8u.htm&amp;locale=en"><code>%DS2CSV</code></a>: exports a dataset to *.csv format.</li>
+</ul>
+<h3 id="where-to-find-these-macros">Where to Find these Macros?<a class="headerlink" href="#where-to-find-these-macros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color utility macros, SGAnnotation macros, <code>%MODSTYLE</code> and <code>%MODTMPLT</code> are SAS autocall macros</li>
+<li><a href="http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/"><code>%AXISBREAK</code></a></li>
+<li><a href="http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/"><code>%COMPACTMATRIXMACRO</code></a></li>
+<li><a href="http://blogs.sas.com/content/graphicallyspeaking/2012/08/19/compact-scatter-plot-matrix/"><code>%ORTHO3D_MACRO</code></a></li>
+<li><a href="http://www.sascommunity.org/wiki/Kaplan-Meier_Survival_Plotting_Macro_%25NEWSURV"><code>%NEWSURV</code></a></li>
+<li><a href="http://www.sascommunity.org/wiki/Forest_Plotting_Analysis_Macro_%25FORESTPLOT"><code>%FORESTPLOT</code></a></li>
+<li><a href="http://blogs.sas.com/content/graphicallyspeaking/2014/06/29/proportional-euler-diagram/"><code>%EULER_MACRO</code></a></li>
+<li><a href="http://support.sas.com/resources/papers/proceedings13/243-2013.pdf"><code>%VENN</code></a></li>
+<li><a href="http://blogs.sas.com/content/graphicallyspeaking/2012/08/26/how-about-some-pie/"><code>%GTLPIECHARTMACRO</code></a></li>
+</ul>
+<h2 id="macro-examples">Macro examples<a class="headerlink" href="#macro-examples" title="Permanent link">&para;</a></h2>
+<h3 id="macro-program-for-creating-box-plots-for-all-of-predictor-variables">Macro Program for Creating Box Plots for All of Predictor Variables<a class="headerlink" href="#macro-program-for-creating-box-plots-for-all-of-predictor-variables" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -869,76 +1060,32 @@ They can be used within a `DATA` to simplify the process of creating annotation 
 21
 22
 23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>### Template Modification Macros
-
-* `%MODSTYLE` macro allows you to easily make changes to style templates without accessing the code
-* `%MODTMPLT` macro allows you to easily make limited changes to graph templates without accessing the code
-
-### Graphical Macros
-
-* `%CompactMatrixMacro` (Author: Sanjay Matange): it help you modify graphs based on panels
-* `%NEWSURV` macro (Author: Jeff Meyers): it helps you tune the properties of survival plots
-* `%FORESTPLOT` macro (Author: Jeff Meyers): it allows another way of presenting results
-* `%EULER_MACRO`: useful to present proportion Euler diagrams
-* `%VENN` macro: useful to plot intersection between different events
-* `%GTLPieChartMacro`: useful for pie charts
-
-### Export Macros
-
-* [`%DS2CSV`](http://go.documentation.sas.com/?cdcId=pgmmvacdc&amp;cdcVersion=9.4&amp;docsetId=lebaseutilref&amp;docsetTarget=n0yo3bszlrh0byn1j4fxh4ndei8u.htm&amp;locale=en): exports a dataset to \*.csv format.
-
-### Where to Find these Macros?
-
-* Color utility macros, SGAnnotation macros, `%MODSTYLE` and `%MODTMPLT` are SAS autocall macros
-* [`%AXISBREAK`](http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/)
-* [`%COMPACTMATRIXMACRO`](http://blogs.sas.com/content/graphicallyspeaking/2014/11/18/axis-break-appearance-macro/)
-* [`%ORTHO3D_MACRO`](http://blogs.sas.com/content/graphicallyspeaking/2012/08/19/compact-scatter-plot-matrix/)
-* [`%NEWSURV`](http://www.sascommunity.org/wiki/Kaplan-Meier_Survival_Plotting_Macro_%25NEWSURV)
-* [`%FORESTPLOT`](http://www.sascommunity.org/wiki/Forest_Plotting_Analysis_Macro_%25FORESTPLOT)
-* [`%EULER_MACRO`](http://blogs.sas.com/content/graphicallyspeaking/2014/06/29/proportional-euler-diagram/)
-* [`%VENN`](http://support.sas.com/resources/papers/proceedings13/243-2013.pdf)
-* [`%GTLPIECHARTMACRO`](http://blogs.sas.com/content/graphicallyspeaking/2012/08/26/how-about-some-pie/)
-
-## Macro examples
-
-### Macro Program for Creating Box Plots for All of Predictor Variables
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">categorical</span><span class="o">=</span><span class="n">House_Style2</span> <span class="n">Overall_Qual2</span> <span class="n">Overall_Cond2</span> <span class="n">Fireplaces</span> 
+         <span class="n">Season_Sold</span> <span class="n">Garage_Type_2</span> <span class="n">Foundation_2</span> <span class="n">Heating_QC</span> 
+         <span class="n">Masonry_Veneer</span> <span class="n">Lot_Shape_2</span> <span class="n">Central_Air</span><span class="p">;</span>
+<span class="cm">/* Macro Usage: %box(DSN = , Response = , CharVar = ) */</span>
+<span class="nf">%macro</span> <span class="n">box</span><span class="p">(</span><span class="n">dsn</span>      <span class="o">=</span> <span class="p">,</span>
+           <span class="n">response</span> <span class="o">=</span> <span class="p">,</span>
+           <span class="n">Charvar</span>  <span class="o">=</span> <span class="p">);</span>
+<span class="nf">%let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="nf">%do</span> <span class="nf">%while</span><span class="p">(</span><span class="nf">%scan</span><span class="p">(</span><span class="o">&amp;</span><span class="n">charvar</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">,</span><span class="nf">%str</span><span class="p">(</span> <span class="p">))</span> <span class="o">^=</span> <span class="nf">%str</span><span class="p">())</span> <span class="p">;</span>
+    <span class="nf">%let</span> <span class="n">var</span> <span class="o">=</span> <span class="nf">%scan</span><span class="p">(</span><span class="o">&amp;</span><span class="n">charvar</span><span class="p">,</span><span class="o">&amp;</span><span class="n">i</span><span class="p">,</span><span class="nf">%str</span><span class="p">(</span> <span class="p">));</span>
+    <span class="n">proc</span> <span class="n">sgplot</span> <span class="n">data</span><span class="o">=&amp;</span><span class="n">dsn</span><span class="p">;</span>
+        <span class="n">vbox</span> <span class="o">&amp;</span><span class="n">response</span> <span class="o">/</span> <span class="n">category</span><span class="o">=&amp;</span><span class="n">var</span> 
+                         <span class="n">grouporder</span><span class="o">=</span><span class="n">ascending</span> 
+                         <span class="n">connect</span><span class="o">=</span><span class="n">mean</span><span class="p">;</span>
+        <span class="n">title</span> <span class="s">&quot;&amp;response across Levels of &amp;var&quot;</span><span class="p">;</span>
+    <span class="n">run</span><span class="p">;</span>
+    <span class="nf">%let</span> <span class="n">i</span> <span class="o">=</span> <span class="nf">%eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">;</span>
+<span class="nf">%end</span> <span class="p">;</span>
+<span class="nf">%mend</span> <span class="n">box</span><span class="p">;</span>
+<span class="nf">%box</span><span class="p">(</span><span class="n">dsn</span>      <span class="o">=</span> <span class="n">statdata</span><span class="p">.</span><span class="n">ameshousing3</span><span class="p">,</span>
+     <span class="n">response</span> <span class="o">=</span> <span class="n">SalePrice</span><span class="p">,</span>
+     <span class="n">charvar</span>  <span class="o">=</span> <span class="o">&amp;</span><span class="n">categorical</span><span class="p">);</span>
+<span class="n">title</span><span class="p">;</span>
+<span class="n">options</span> <span class="n">label</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
-
-<p>%let categorical=House_Style2 Overall_Qual2 Overall_Cond2 Fireplaces 
-         Season_Sold Garage_Type_2 Foundation_2 Heating_QC 
-         Masonry_Veneer Lot_Shape_2 Central_Air;
-/<em> Macro Usage: %box(DSN = , Response = , CharVar = ) </em>/
-%macro box(dsn      = ,
-           response = ,
-           Charvar  = );
-%let i = 1 ;
-%do %while(%scan(&amp;charvar,&amp;i,%str( )) ^= %str()) ;
-    %let var = %scan(&amp;charvar,&amp;i,%str( ));
-    proc sgplot data=&dsn;
-        vbox &amp;response / category=&amp;var 
-                         grouporder=ascending 
-                         connect=mean;
-        title "&amp;response across Levels of &amp;var";
-    run;
-    %let i = %eval(&amp;i + 1 ) ;
-%end ;
-%mend box;
-%box(dsn      = statdata.ameshousing3,
-     response = SalePrice,
-     charvar  = &amp;categorical);
-title;
-options label;
-```</p>
                 
                   
                 
@@ -972,13 +1119,13 @@ options label;
           </a>
         
         
-          <a href="../miscellanea/arrays/" title="Working with Arrays" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../wizard/" title="Using Wizard Menus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Working with Arrays
+                Using Wizard Menus
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1008,7 +1155,9 @@ options label;
       
     </div>
     
-      <script src="../assets/javascripts/application-6b599127bc.js"></script>
+      <script src="../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -1016,6 +1165,8 @@ options label;
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../js/mathjaxhelper.js"></script>
+      
+        <script src="../superfences"></script>
       
     
     

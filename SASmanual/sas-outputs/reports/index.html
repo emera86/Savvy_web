@@ -5,6 +5,7 @@
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Learning How to Program in SAS">
       
@@ -15,7 +16,7 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
       
     
     
@@ -88,17 +89,17 @@
         
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
+<div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -110,11 +111,7 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
-        </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -416,6 +413,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality tests" class="md-nav__link">
+      Normality tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
       Propensity Score
     </a>
@@ -469,6 +490,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General notes on regression procedures" class="md-nav__link">
+      General notes on regression procedures
+    </a>
+  </li>
+
         
           
           
@@ -631,15 +664,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -775,27 +820,89 @@
 
 <h2 id="proc-print">PROC PRINT<a class="headerlink" href="#proc-print" title="Permanent link">&para;</a></h2>
 <h2 id="proc-tabulate">PROC TABULATE<a class="headerlink" href="#proc-tabulate" title="Permanent link">&para;</a></h2>
-<h2 id="proc-report">PROC REPORT<a class="headerlink" href="#proc-report" title="Permanent link">&para;</a></h2>
-<ul>
-<li>How to write a header in your tables:</li>
-</ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
 6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=sashelp.cars;
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set ORDER=FREQ;
+    VAR var1 var2;
+    CLASS AEencoding;
+    CLASS grade / ORDER=FORMATTED;
+    CLASS treatment / ORDER=FORMATTED;
+    TABLE AEencoding=&#39;&#39;, treatment=&#39;Treatment/Grade&#39;*grade=&#39;&#39;*(N=&#39;N&#39; var1=&#39;%&#39;*SUM=&#39;&#39;) ALL=&#39;Total (N=# cases)&#39;*(N=&#39;N&#39; var2=&#39;%&#39;*SUM=&#39;&#39;) / BOX=&quot;Preferred MeDDRA Term&quot;;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<h2 id="proc-report">PROC REPORT<a class="headerlink" href="#proc-report" title="Permanent link">&para;</a></h2>
+<p>How to write a header/footer in your tables:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS ESCAPECHAR=&#39;^&#39;;
+
+PROC REPORT DATA=sashelp.cars;
     WHERE Make = &#39;Jaguar&#39;;
     COLUMN (&#39;1) Label 1&#39; model Invoice)
             (&#39;2) Label 2&#39; Horsepower Weight Length);
     COMPUTE BEFORE _PAGE_ / STYLE=HEADER{JUST=L FONTWEIGHT=BOLD COLOR=PURPLE};
         LINE &#39;Test of custom header&#39;;
     ENDCOMP;
+    COMPUTE AFTER / STYLE={TEXTDECORATION=UNDERLINE JUST=C COLOR=RED};
+        LINE &#39;Test of a custom footer&#39;;
+        LINE &#39;^S={color=green} Test of a custom footer with a different style&#39;;
+    ENDCOMP;
 RUN;
 </pre></div>
 </td></tr></table>
+
+<p>Specify the <code>STYLE</code> of a cell based on other cell's value:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=SAS-data-set NOWD;
+    COLUMN timeinterval date1 date2;
+    DEFINE timeinterval / DISPLAY NOPRINT; 
+    DEFINE date1 / DISPLAY;
+    DEFINE date2 / DISPLAY;
+    COMPUTE date2;
+        IF timeinterval lt 0 and timeinterval ne . then call define(_col_,&quot;style&quot;,&quot;style={foreground=red font_weight=bold}&quot;);
+        ELSE call define(_col_,&quot;style&quot;,&quot;style={foreground=green font_weight=bold}&quot;);
+    ENDCOMP;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><code>DEFINE</code> the variables involved in your conditional structure before the variable to which you want to apply the new format </li>
+<li><code>DEFINE</code> your variables as <code>DISPLAY NOPRINT</code> if you want to use them for the conditional structure but you don't want them to appear in your table</li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">Seealso</p>
+<ul>
+<li><a href="http://support.sas.com/rnd/papers/sgf07/sgf2007-report.pdf">Beyond the Basics: Advanced <code>PROC REPORT</code> Tips and Tricks</a></li>
+<li><a href="http://support.sas.com/resources/papers/proceedings13/366-2013.pdf">Creating a Plan for Your Reports and Avoiding Common Pitfalls in <code>REPORT</code> Procedure Coding</a></li>
+<li><a href="http://support.sas.com/resources/papers/proceedings10/133-2010.pdf">Turn Your Plain Report into a Painted Report Using ODS Styles</a></li>
+</ul>
+</div>
                 
                   
                 
@@ -865,7 +972,9 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
       <script>app.initialize({url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -873,6 +982,8 @@ RUN;
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
+      
+        <script src="../../superfences"></script>
       
     
     

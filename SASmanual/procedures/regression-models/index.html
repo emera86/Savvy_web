@@ -20,7 +20,7 @@
     
     
       
-        <title>PROC GLIMMIX - SAS Manual</title>
+        <title>General notes on regression procedures - SAS Manual</title>
       
     
     
@@ -81,7 +81,7 @@
                 </span>
               
             
-            PROC GLIMMIX
+            General notes on regression procedures
           
         </span>
       </div>
@@ -497,18 +497,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../regression-models/" title="General notes on regression procedures" class="md-nav__link">
-      General notes on regression procedures
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -518,11 +506,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        PROC GLIMMIX
+        General notes on regression procedures
       </label>
     
-    <a href="./" title="PROC GLIMMIX" class="md-nav__link md-nav__link--active">
-      PROC GLIMMIX
+    <a href="./" title="General notes on regression procedures" class="md-nav__link md-nav__link--active">
+      General notes on regression procedures
     </a>
     
       
@@ -534,8 +522,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Estimating an Odds Ratio for a Variable Involved in an Interaction" class="md-nav__link">
-    Estimating an Odds Ratio for a Variable Involved in an Interaction
+  <a href="#interpreting-the-results-of-the-solution-option-in-the-model-for-categorical-variables" title="Interpreting the results of the SOLUTION option in the MODEL for categorical variables" class="md-nav__link">
+    Interpreting the results of the SOLUTION option in the MODEL for categorical variables
   </a>
   
 </li>
@@ -546,6 +534,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
   </li>
 
         
@@ -729,8 +729,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Estimating an Odds Ratio for a Variable Involved in an Interaction" class="md-nav__link">
-    Estimating an Odds Ratio for a Variable Involved in an Interaction
+  <a href="#interpreting-the-results-of-the-solution-option-in-the-model-for-categorical-variables" title="Interpreting the results of the SOLUTION option in the MODEL for categorical variables" class="md-nav__link">
+    Interpreting the results of the SOLUTION option in the MODEL for categorical variables
   </a>
   
 </li>
@@ -750,88 +750,21 @@
               
                 
                 
-                  <h1>PROC GLIMMIX</h1>
+                  <h1>General notes on regression procedures</h1>
                 
-                <p>Modelling a binary reponse variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical1 categorical2;
-  MODEL response = continuous2 continuous2 categorical1 / DIST=BINARY LINK=LOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=categorical2 SOLUTION CL;
-  COVTEST / WALD;
-RUN;
+                <h2 id="interpreting-the-results-of-the-solution-option-in-the-model-for-categorical-variables">Interpreting the results of the <code>SOLUTION</code> option in the <code>MODEL</code> for categorical variables<a class="headerlink" href="#interpreting-the-results-of-the-solution-option-in-the-model-for-categorical-variables" title="Permanent link">&para;</a></h2>
+<p>In procedures that use the <em>GLM</em> parameterization for <code>CLASS</code> variables such as <code>PROC GLM</code>, <code>PROC MIXED</code> and <code>PROC GLIMMIX</code>, a predictor variable specified in the <code>CLASS</code> statement is represented in the model by a set of design variables created using <em>GLM</em> parameterization. </p>
+<p>This is a less than full-rank parameterization in which a <code>CLASS</code> variable with k levels is represented in the design matrix by a set of k 0,1-coded indicator (or <em>dummy</em>) variables. If the <code>SOLUTION</code> option in the <code>MODEL</code> statement is also specified, the following note is included in the displayed results below the parameter estimates table:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">NOTE</span><span class="o">:</span> <span class="n">The</span> <span class="n">X</span><span class="s1">&#39;X matrix has been found to be singular, and a generalized inverse was used to solve the normal equations. Terms whose estimates are followed by the letter &#39;</span><span class="n">B</span><span class="err">&#39;</span> <span class="n">are</span> <span class="n">not</span> <span class="n">uniquely</span> <span class="n">estimable</span><span class="o">.</span>
 </pre></div>
 </td></tr></table>
 
-<p>Modelling a multinomial reponse variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical1 categorical2;
-  MODEL response = continuous2 continuous2 categorical1 / DIST=MULTINOMIAL LINK=CLOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=categorical2 SOLUTION CL;
-  COVTEST / WALD;
-RUN;
-</pre></div>
-</td></tr></table>
-
-<ul>
-<li><code>LINK</code> specifies the link function in the generalized linear mixed model (<a href="http://documentation.sas.com/?docsetId=statug&amp;docsetVersion=14.2&amp;docsetTarget=statug_glimmix_syntax17.htm&amp;locale=es#statug.glimmix.gmxlinktable">link functions available</a>)<ul>
-<li><code>LINK=LOGIT</code> to use the <strong>logit</strong> link</li>
-<li><code>LINK=GENLOGIT | GLOGIT</code> to use the <strong>generalized logit</strong> link</li>
-<li><code>LINK=CUMLOGIT | CLOGIT</code> to use the <strong>cumulative logit</strong> link</li>
-</ul>
-</li>
-<li><code>DIST</code> specifies the built-in (conditional) probability distribution of the data (<a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_glimmix_syntax17.htm&amp;docsetVersion=14.2&amp;locale=es#statug.glimmix.gmxdisttable">distrubutions available and their corresponfing default link functions</a>)</li>
-</ul>
-<h2 id="estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction">Estimating an Odds Ratio for a Variable Involved in an Interaction<a class="headerlink" href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Permanent link">&para;</a></h2>
-<p>In models with <code>LINK=LOGIT | GLOGIT | CLOGIT</code>, you can obtain estimates of odds ratios through the <code>ODDSRATIO</code> options in the <code>PROC GLIMMIX</code>, <code>LSMEANS</code>, and <code>MODEL</code> statements. Note that for these link functions the <code>EXP</code> option in the <code>ESTIMATE</code> and <code>LSMESTIMATE</code> statements also produces odds or odds ratios. The <code>ODDSRATIO</code> option on the <code>PROC GLIMMIX</code> statement, requests odds ratio calculations for main effects. </p>
-<p><code>EXP</code> requests exponentiation of the estimate (<code>ESTIMATE</code> statement) or least squares means estimate (<code>LSMESTIMATE</code> statement). If you specify the <code>CL</code> or <code>ALPHA=</code> option, the (adjusted) confidence bounds are also exponentiated.</p>
-<p>By default <code>LSMEANS</code> produces estimates on the <strong>logit scale</strong>. The <code>ILINK</code> option on the <code>LSMEANS</code> statement requests that the estimates be transformed back to the scale of the original data. The <code>LSMEANS</code> output will include estimates of the probability of each combination of the predictors interactions included in your model. The <code>CL</code> option requests confidence intervals for the estimates. For nonnormal data, the <code>EXP</code> and <code>ILINK</code> options give you a way to obtain the quantity of interest on the scale of the mean (inverse link). Results presented in this fashion can be much easier to interpret than data on the link scale. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Is it correct to assume, if you're using a different link function than <code>LINK=LOGIT | GLOGIT | CLOGIT</code>, that the exponentiated estimate can still be interpreted as the Odds Ratio?</strong> 
-No, that is not correct. The odds ratio only make sense when you are comparing the predicted PROBABILITIES for two or more level of classification variables. If you use <code>DIST=GAUSSIAN</code> and <code>LINK=IDENTITY</code>, you are merely fitting a linear model to a response that has values 0 and 1. Check <a href="https://communities.sas.com/t5/SAS-Statistical-Procedures/Odds-Ratio-Calculation-for-a-link-different-than-LOGIT-CLOGIT/m-p/370446#M19424">this</a> dicussion for more information.</p>
-</div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>treatarm = {1, 2}
-visit = {1, 2, 3, 4, 5}
-
-PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical-variable(s);
-  MODEL response = predictor(s) / DIST=BINARY LINK=LOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=repeated-variable SOLUTION CL;
-  COVTEST / WALD;
-  LSMEANS treatarm*visit / SLICEDIFF=visit ODDSRATIO ILINK CL;
-  LSMESTIMATES treatarm*visit &quot;OR Visit 1&quot; 1 0 0 0 0 -1 0 0 0 0,
-               treatarm*visit &quot;OR Visit 2&quot; 0 1 0 0 0 0 -1 0 0 0 / EXP ILINK CL;
-RUN;
-</pre></div>
-</td></tr></table>
-
+<p>Note that there are many possible parameterizations, each of which imposes a <strong>different interpretation on the model parameters</strong>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">Seealso</p>
 <ul>
-<li>For more details check the <a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_glimmix_details49.htm&amp;docsetVersion=14.2&amp;locale=es">SAS documentation</a></li>
-<li>An example different procedures (<code>PROC LOGISTIC</code> and <code>PROC GLIMMIX</code>) can be found <a href="http://support.sas.com/kb/24/455.html">here</a></li>
-<li>Some other options are also discussed <a href="http://support.sas.com/resources/papers/proceedings11/216-2011.pdf">here</a> and <a href="https://support.sas.com/resources/papers/proceedings11/351-2011.pdf">here</a></li>
+<li>Check <a href="http://support.sas.com/kb/38/384.html">this</a> for a full explanation of the interpretation of the results.</li>
+<li><a href="http://support.sas.com/kb/22/585.html">Read more</a> about the <em>GLM</em> parametrization.</li>
 </ul>
 </div>
                 
@@ -852,7 +785,7 @@ RUN;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../regression-models/" title="General notes on regression procedures" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -861,19 +794,19 @@ RUN;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                General notes on regression procedures
+                Survival Analysis
               </span>
             </div>
           </a>
         
         
-          <a href="../mixed/" title="PROC MIXED" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../glimmix/" title="PROC GLIMMIX" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PROC MIXED
+                PROC GLIMMIX
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

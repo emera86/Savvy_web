@@ -20,7 +20,7 @@
     
     
       
-        <title>PROC GLIMMIX - SAS Manual</title>
+        <title>Normality tests - SAS Manual</title>
       
     
     
@@ -77,11 +77,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Specific Procedures
+                  Other Analysis
                 </span>
               
             
-            PROC GLIMMIX
+            Normality tests
           
         </span>
       </div>
@@ -380,10 +380,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Other Analysis
@@ -401,7 +403,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+    <a href="../missing-data/" title="Dealing with Missing Data" class="md-nav__link">
       Dealing with Missing Data
     </a>
   </li>
@@ -413,94 +415,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+    <a href="../interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
       Interim Analysis Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/normality-tests/" title="Normality tests" class="md-nav__link">
-      Normality tests
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
-      Propensity Score
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/roc-curve/" title="ROC curve" class="md-nav__link">
-      ROC curve
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
-      Survival Analysis
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-    
-    <label class="md-nav__link" for="nav-5">
-      Specific Procedures
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Specific Procedures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../regression-models/" title="General notes on regression procedures" class="md-nav__link">
-      General notes on regression procedures
     </a>
   </li>
 
@@ -518,11 +434,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        PROC GLIMMIX
+        Normality tests
       </label>
     
-    <a href="./" title="PROC GLIMMIX" class="md-nav__link md-nav__link--active">
-      PROC GLIMMIX
+    <a href="./" title="Normality tests" class="md-nav__link md-nav__link--active">
+      Normality tests
     </a>
     
       
@@ -534,9 +450,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Estimating an Odds Ratio for a Variable Involved in an Interaction" class="md-nav__link">
-    Estimating an Odds Ratio for a Variable Involved in an Interaction
+  <a href="#saphiro-wilk-normality-test" title="Saphiro-Wilk normality test" class="md-nav__link">
+    Saphiro-Wilk normality test
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc-univariate" title="PROC UNIVARIATE" class="md-nav__link">
+    PROC UNIVARIATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-capability" title="PROC CAPABILITY" class="md-nav__link">
+    PROC CAPABILITY
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -555,7 +491,91 @@
 
 
   <li class="md-nav__item">
-    <a href="../mixed/" title="PROC MIXED" class="md-nav__link">
+    <a href="../propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../roc-curve/" title="ROC curve" class="md-nav__link">
+      ROC curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General notes on regression procedures" class="md-nav__link">
+      General notes on regression procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
       PROC MIXED
     </a>
   </li>
@@ -729,9 +749,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Estimating an Odds Ratio for a Variable Involved in an Interaction" class="md-nav__link">
-    Estimating an Odds Ratio for a Variable Involved in an Interaction
+  <a href="#saphiro-wilk-normality-test" title="Saphiro-Wilk normality test" class="md-nav__link">
+    Saphiro-Wilk normality test
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proc-univariate" title="PROC UNIVARIATE" class="md-nav__link">
+    PROC UNIVARIATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-capability" title="PROC CAPABILITY" class="md-nav__link">
+    PROC CAPABILITY
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -750,90 +790,67 @@
               
                 
                 
-                  <h1>PROC GLIMMIX</h1>
+                  <h1>Normality tests</h1>
                 
-                <p>Modelling a binary reponse variable:</p>
+                <h2 id="saphiro-wilk-normality-test">Saphiro-Wilk normality test<a class="headerlink" href="#saphiro-wilk-normality-test" title="Permanent link">&para;</a></h2>
+<p>In statistics, the <strong>Shapiro-Wilk test</strong> is used to test the normality of a data set. It is considered one of the most powerful tests for normality contrast, especially for small samples ($n&lt;50$).</p>
+<p>Monte Carlo simulations have found that Shapiro–Wilk has <strong>the best power for a given significance</strong>, followed closely by Anderson–Darling when comparing to the Kolmogorov–Smirnov, Lilliefors, and Anderson–Darling tests.</p>
+<p>The null-hypothesis of this test is that the population is normally distributed. Thus,</p>
+<ul>
+<li>if the p-value is less than the chosen alpha level, then the null <strong>hypothesis is rejected</strong> and there is evidence that the data tested are <strong>not from a normally distributed population</strong></li>
+<li>if the p-value is greater than the chosen alpha level, then the null <strong>hypothesis cannot be rejected</strong> </li>
+</ul>
+<p>However, since the <strong>test is biased by sample size</strong>, it may be statistically significant from a normal distribution in any <strong>large samples</strong> and a <strong>Q–Q plot would be required for verification</strong> in addition to the test.</p>
+<h3 id="proc-univariate"><code>PROC UNIVARIATE</code><a class="headerlink" href="#proc-univariate" title="Permanent link">&para;</a></h3>
+<p>The <code>UNIVARIATE</code> procedure provides a variety of descriptive statistics, and draws Q-Q, stem-and-leaf, normal probability, and box plots. This procedure also conducts Shapiro-Wilk, Kolmogorov-Smirnov, Anderson-Darling and Cramer-von Misers tests. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Shapiro-Wilk <code>W</code> will be reported only if $N&lt;2000$. </p>
+</div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical1 categorical2;
-  MODEL response = continuous2 continuous2 categorical1 / DIST=BINARY LINK=LOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=categorical2 SOLUTION CL;
-  COVTEST / WALD;
-RUN;
-</pre></div>
-</td></tr></table>
-
-<p>Modelling a multinomial reponse variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical1 categorical2;
-  MODEL response = continuous2 continuous2 categorical1 / DIST=MULTINOMIAL LINK=CLOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=categorical2 SOLUTION CL;
-  COVTEST / WALD;
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC UNIVARIATE DATA=SAS-data-set NORMAL PLOT;
+  VAR variable(s);
+  QQPLOT variable /NORMAL(MU=EST SIGMA=EST COLOR=RED L=1);
+  OUTPUT OUT=normality PROBN=probn;
 RUN;
 </pre></div>
 </td></tr></table>
 
 <ul>
-<li><code>LINK</code> specifies the link function in the generalized linear mixed model (<a href="http://documentation.sas.com/?docsetId=statug&amp;docsetVersion=14.2&amp;docsetTarget=statug_glimmix_syntax17.htm&amp;locale=es#statug.glimmix.gmxlinktable">link functions available</a>)<ul>
-<li><code>LINK=LOGIT</code> to use the <strong>logit</strong> link</li>
-<li><code>LINK=GENLOGIT | GLOGIT</code> to use the <strong>generalized logit</strong> link</li>
-<li><code>LINK=CUMLOGIT | CLOGIT</code> to use the <strong>cumulative logit</strong> link</li>
+<li><code>NORMAL</code> performs normality tests</li>
+<li><code>PLOT</code> draws a stem-and-leaf and a box plots</li>
+<li><code>QQPLOT</code> draws a Q-Q plot</li>
 </ul>
-</li>
-<li><code>DIST</code> specifies the built-in (conditional) probability distribution of the data (<a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_glimmix_syntax17.htm&amp;docsetVersion=14.2&amp;locale=es#statug.glimmix.gmxdisttable">distrubutions available and their corresponfing default link functions</a>)</li>
-</ul>
-<h2 id="estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction">Estimating an Odds Ratio for a Variable Involved in an Interaction<a class="headerlink" href="#estimating-an-odds-ratio-for-a-variable-involved-in-an-interaction" title="Permanent link">&para;</a></h2>
-<p>In models with <code>LINK=LOGIT | GLOGIT | CLOGIT</code>, you can obtain estimates of odds ratios through the <code>ODDSRATIO</code> options in the <code>PROC GLIMMIX</code>, <code>LSMEANS</code>, and <code>MODEL</code> statements. Note that for these link functions the <code>EXP</code> option in the <code>ESTIMATE</code> and <code>LSMESTIMATE</code> statements also produces odds or odds ratios. The <code>ODDSRATIO</code> option on the <code>PROC GLIMMIX</code> statement, requests odds ratio calculations for main effects. </p>
-<p><code>EXP</code> requests exponentiation of the estimate (<code>ESTIMATE</code> statement) or least squares means estimate (<code>LSMESTIMATE</code> statement). If you specify the <code>CL</code> or <code>ALPHA=</code> option, the (adjusted) confidence bounds are also exponentiated.</p>
-<p>By default <code>LSMEANS</code> produces estimates on the <strong>logit scale</strong>. The <code>ILINK</code> option on the <code>LSMEANS</code> statement requests that the estimates be transformed back to the scale of the original data. The <code>LSMEANS</code> output will include estimates of the probability of each combination of the predictors interactions included in your model. The <code>CL</code> option requests confidence intervals for the estimates. For nonnormal data, the <code>EXP</code> and <code>ILINK</code> options give you a way to obtain the quantity of interest on the scale of the mean (inverse link). Results presented in this fashion can be much easier to interpret than data on the link scale. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Is it correct to assume, if you're using a different link function than <code>LINK=LOGIT | GLOGIT | CLOGIT</code>, that the exponentiated estimate can still be interpreted as the Odds Ratio?</strong> 
-No, that is not correct. The odds ratio only make sense when you are comparing the predicted PROBABILITIES for two or more level of classification variables. If you use <code>DIST=GAUSSIAN</code> and <code>LINK=IDENTITY</code>, you are merely fitting a linear model to a response that has values 0 and 1. Check <a href="https://communities.sas.com/t5/SAS-Statistical-Procedures/Odds-Ratio-Calculation-for-a-link-different-than-LOGIT-CLOGIT/m-p/370446#M19424">this</a> dicussion for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must provide a <code>VAR</code> statement when you use an <code>OUTPUT</code> statement. To store the same statistic for several analysis variables in the <code>OUT=</code> data set, you specify a list of names in the <code>OUTPUT</code> statement. <code>PROC UNIVARIATE</code> makes a one-to-one correspondence between the order of the analysis variables in the <code>VAR</code> statement and the list of names that follow a statistic keyword.   </p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>treatarm = {1, 2}
-visit = {1, 2, 3, 4, 5}
-
-PROC GLIMMIX DATA=SAS-data-set;
-  CLASS categorical-variable(s);
-  MODEL response = predictor(s) / DIST=BINARY LINK=LOGIT ODDSRATIO SOLUTION CL;
-  RANDOM intercept / SUBJECT=repeated-variable SOLUTION CL;
-  COVTEST / WALD;
-  LSMEANS treatarm*visit / SLICEDIFF=visit ODDSRATIO ILINK CL;
-  LSMESTIMATES treatarm*visit &quot;OR Visit 1&quot; 1 0 0 0 0 -1 0 0 0 0,
-               treatarm*visit &quot;OR Visit 2&quot; 0 1 0 0 0 0 -1 0 0 0 / EXP ILINK CL;
-RUN;
+<h3 id="proc-capability"><code>PROC CAPABILITY</code><a class="headerlink" href="#proc-capability" title="Permanent link">&para;</a></h3>
+<p>Like <code>UNIVARIATE</code>, the <code>CAPABILITY</code> procedure also produces various descriptive statistics and plots. <code>CAPABILITY</code> can draw a P-P plot using the <code>PPPLOT</code> option but does not support stem-and-leaf, box, and normal probability plots (it does not have the <code>PLOT</code> option). </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC CAPABILITY DATA=SAS-data-set NORMAL;
+  VAR variable(s);
+  QQPLOT variable /NORMAL(MU=EST SIGMA=EST COLOR=RED L=1);
+  PPPLOT variable /NORMAL(MU=EST SIGMA=EST COLOR=RED L=1);
+  HISTOGRAM /NORMAL(COLOR=MAROON W=4) CFILL = BLUE CFRAME = LIGR;
+  INSET MEAN STD /CFILL=BLANK FORMAT=5.2 ;
+RUN; 
 </pre></div>
 </td></tr></table>
 
-<div class="admonition seealso">
-<p class="admonition-title">Seealso</p>
 <ul>
-<li>For more details check the <a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_glimmix_details49.htm&amp;docsetVersion=14.2&amp;locale=es">SAS documentation</a></li>
-<li>An example different procedures (<code>PROC LOGISTIC</code> and <code>PROC GLIMMIX</code>) can be found <a href="http://support.sas.com/kb/24/455.html">here</a></li>
-<li>Some other options are also discussed <a href="http://support.sas.com/resources/papers/proceedings11/216-2011.pdf">here</a> and <a href="https://support.sas.com/resources/papers/proceedings11/351-2011.pdf">here</a></li>
+<li><code>NORMAL</code> performs normality tests</li>
+<li><code>QQPLOT</code>, <code>PPPLOT</code> and <code>HISTOGRAM</code> statements respectively draw a Q-Q plot, a P-P plot, and a histogram</li>
+<li><code>INSET</code> statement adds summary statistics to graphs such as a histogram and a Q-Q plot</li>
 </ul>
-</div>
                 
                   
                 
@@ -852,7 +869,7 @@ RUN;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../regression-models/" title="General notes on regression procedures" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../interim-analysis/" title="Interim Analysis Design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -861,19 +878,19 @@ RUN;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                General notes on regression procedures
+                Interim Analysis Design
               </span>
             </div>
           </a>
         
         
-          <a href="../mixed/" title="PROC MIXED" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../propensity-score/" title="Propensity Score" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PROC MIXED
+                Propensity Score
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
