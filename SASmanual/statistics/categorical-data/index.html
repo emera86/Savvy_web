@@ -423,6 +423,73 @@
     Introduction to Logistic Regression
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-vs-logistic" title="Linear vs Logistic" class="md-nav__link">
+    Linear vs Logistic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression-model" title="Linear Regression Model" class="md-nav__link">
+    Linear Regression Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-logistic-regression-model" title="Binary Logistic Regression Model" class="md-nav__link">
+    Binary Logistic Regression Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-logistic" title="PROC LOGISTIC" class="md-nav__link">
+    PROC LOGISTIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-variables-parametrization" title="Classification Variables Parametrization" class="md-nav__link">
+    Classification Variables Parametrization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effect-coding-default" title="Effect coding (default)" class="md-nav__link">
+    Effect coding (default)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-cell-coding" title="Reference cell coding" class="md-nav__link">
+    Reference cell coding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -449,6 +516,18 @@
   <li class="md-nav__item">
     <a href="../prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
       Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
     </a>
   </li>
 
@@ -822,6 +901,73 @@
     Introduction to Logistic Regression
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-vs-logistic" title="Linear vs Logistic" class="md-nav__link">
+    Linear vs Logistic
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression-model" title="Linear Regression Model" class="md-nav__link">
+    Linear Regression Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-logistic-regression-model" title="Binary Logistic Regression Model" class="md-nav__link">
+    Binary Logistic Regression Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-logistic" title="PROC LOGISTIC" class="md-nav__link">
+    PROC LOGISTIC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-variables-parametrization" title="Classification Variables Parametrization" class="md-nav__link">
+    Classification Variables Parametrization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effect-coding-default" title="Effect coding (default)" class="md-nav__link">
+    Effect coding (default)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-cell-coding" title="Reference cell coding" class="md-nav__link">
+    Reference cell coding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -967,13 +1113,115 @@ RUN;
 <li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
 </ul>
 <h2 id="introduction-to-logistic-regression">Introduction to Logistic Regression<a class="headerlink" href="#introduction-to-logistic-regression" title="Permanent link">&para;</a></h2>
-<p>Logistic Regression is a generalized linear model that you can use to predict a categorical response/outcome on the basis if one or more continuous or categorical predictor variables. There are three models:</p>
-<p><img alt="Logistic regression types" src="https://lh3.googleusercontent.com/-_wxj3yC7ZCE/WOd2RpxTQOI/AAAAAAAAAEg/HYmLKYjBYr8Thq7HwseFdK3hU8Tnreo8ACLcB/s0/logistic_regression_types.PNG" title="Logistic regression types" /></p>
-<p>Some reasons why you <strong>can't use linear regression</strong> with a <strong>binary response variable</strong> are:</p>
+<p>Logistic Regression is a generalized linear model (like Linear Regression or ANOVA) that you can use to predict a categorical response/outcome based on one or more continuous/categorical predictor variables. There are three models:</p>
+<p><img alt="Logistic regression types" src="../../images/logistic-regression-types.PNG" title="Logistic regression types" /></p>
+<h3 id="linear-vs-logistic">Linear vs Logistic<a class="headerlink" href="#linear-vs-logistic" title="Permanent link">&para;</a></h3>
+<h4 id="linear-regression-model">Linear Regression Model<a class="headerlink" href="#linear-regression-model" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Reason 1</li>
+<li>Assumes that the expected value of the response continuous variable ($Y$) has a linear relationship with the predictor variable ($X$)</li>
+<li>The conditional mean of the response hast the linear form $E(Y|X)=\beta_0+\beta_1X$ and it ranges $(-\infty,+\infty)$</li>
 </ul>
+<div class="admonition fail">
+<p class="admonition-title">Why not to use Linear Regression to model a binary response variable</p>
+<p>Following the Linear Regression Model scheme, the response variable is calculated as </p>
+<p>$Y_i=\beta_0+\beta_1\cdot X_i+\epsilon_i$, </p>
+<p>where $\beta_0$ and $\beta_1$ are obtained by the method of least squares. </p>
+<ul>
+<li>This model <strong>assumes that the data is continuous</strong>, which is not true for the case of binary data</li>
+<li>This model <strong>assumes that the mean of the response is $\beta_0+\beta_1\cdot X$</strong>, while for binary data the mean of the response is the probability of a success</li>
+<li>If the response variable has only two levels, you cannot <strong>assume the constant variance and normality</strong> that are required for linear regression</li>
+</ul>
+</div>
+<h4 id="binary-logistic-regression-model">Binary Logistic Regression Model<a class="headerlink" href="#binary-logistic-regression-model" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The predictor variable ($X$) is used to estimate the probability of a specific outcome ($p$) for which you need to use a nonlinear function</li>
+<li>The mean of the response is a probability, which is between $(0, 1)$. </li>
+<li>The <strong>Inverse Logit Function</strong> binds the linear predictor between $0$ and $1$ is defined as $p_i=(1+e^{-(\beta_0+\beta_1 X_i)})^{-1}$</li>
+<li>This model applies a <strong>Logit Transformation</strong> to the probabilities $logit(p_i)=ln\left ( \frac{p_i}{1-p_i} \right ) = \beta_0+\beta_1X_i$, so that the transformed probabilities and predictor variables end up with a linear relationship</li>
+<li>The logit is the <strong>natural log of the odds</strong> (the probability of the event occurring divided by the probability of the event not occurring)</li>
+<li>We make the <strong>assumption that the logit transformation of the probabilities results in a linear relationship with the predictor variables</strong> (we can use a linear function $X$ to model the logit in order to indireclty model the probability)</li>
+<li>The logit of the probability transforms the probability into a linear function, which has no lower or upper bounds. So a <strong>logit has no lower or upper bounds</strong>.</li>
+</ul>
+<h3 id="proc-logistic"><code>PROC LOGISTIC</code><a class="headerlink" href="#proc-logistic" title="Permanent link">&para;</a></h3>
+<p>To model categorical data yu use the <code>LOGISTIC</code> procedure. Some of the most common statements of this procedure are shown here:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll">PROC LOGISTIC DATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
+</span>    CLASS variable <span class="err">&lt;</span>(variable_options)&gt; ... <span class="nt">&lt;/ options&gt;</span>;
+<span class="hll">    MODEL response <span class="err">&lt;</span>(variable_options)&gt; = predictors <span class="nt">&lt;/ options&gt;</span>;
+</span>    UNITS independent1=list... <span class="nt">&lt;/ options&gt;</span>;
+    ODDSRATIO <span class="err">&lt;</span>&#39;label&#39;&gt; variable <span class="nt">&lt;/ options&gt;</span>;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><code>CLASS</code> is used to define the classification (categorical) predictor variables (if any); this statement must precede the <code>MODEL</code> statement</li>
+<li><code>CLODDS = PL</code> (profile likelihood) | <code>WALD</code> (default) | <code>BOTH</code> is an example of a general option that you can specify in the <code>MODEL</code> statement which computes confidence intervals for the odds ratios of all predictor variables and also enables the production of the odds ratio plot</li>
+</ul>
+<p><strong><em>Example:</em></strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC LOGISTIC DATA=statdata.sales_inc PLOTS(ONLY)=(EFFECT ODDSRATIO);
+    CLASS gender;
+    MODEL purchase(EVENT=&#39;1&#39;)=gender / CLODDS=PL;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<h3 id="classification-variables-parametrization">Classification Variables Parametrization<a class="headerlink" href="#classification-variables-parametrization" title="Permanent link">&para;</a></h3>
+<p>When the predictor variable is categorical, the assumption of linearity cannot be met. To get past the obstacle of nonlinearity, the <code>CLASS</code> statement creates a set of one or more <strong>design variables</strong> (also called dummy variables). <code>PROC LOGISTIC</code> uses these variables, and not the original ones, in model calculations.</p>
+<p>Different parametrization methods for the classification variables will produce the same results regarding the significance of the categorical predictors, but understanding the parametrization method helps to interpret the results accurately.</p>
+<p>Here we present two of the most common methods of parameterizing (<code>PARAM =</code>) the classification variables. For both of them:</p>
+<ul>
+<li>The default <strong>reference level</strong> is the level that has the highest ranked value (or the last value) when the levels are sorted in ascending alphanumeric order</li>
+<li>The number of design variables that are created are the number of levels of the classification variable -1</li>
+</ul>
+<h4 id="effect-coding-default">Effect coding (default)<a class="headerlink" href="#effect-coding-default" title="Permanent link">&para;</a></h4>
+<p>Also called <strong>deviation from the mean coding</strong>, it compares the effect of each level of the variable to the <strong>average effect of all levels</strong>. </p>
+<div class="admonition tip">
+<p class="admonition-title">Example</p>
+<p>Using this parametrization scheme the model will be described as follows</p>
+<p>$logit(p)=\beta_0+\beta_1\cdot D_{Low \ Income} + \beta_2\cdot D_{Medium \ Income}$</p>
+<p><img alt="Effect coding example" src="../../images/effect-coding-example.PNG" title="Effect coding example" /></p>
+<ul>
+<li>$\beta_0$ is the average value of the logit across all income levels</li>
+<li>$\beta_1$ is the difference between the logit for income level 1 and $\beta_0$</li>
+<li>$\beta_2$ is the difference between the logit for income level 2 and $\beta_0$</li>
+</ul>
+<p>Here's the Analysis of Maximum Likelihood Estimates table that <code>PROC LOGISTIC</code> generates for this example on which the parameter estimates ($\beta_0$, $\beta_1$, $\beta_2$) and p-values reflect differences from the overall mean value over all levels. </p>
+<p><img alt="Effect coding MLE" src="../../images/effect-coding-MLE.PNG" title="Effect coding MLE" /></p>
+<p>The p-values indicate whether each particular level is significant compared to the average effect of all levels. The p-values for $\beta_1$ and $\beta_2$ not significant meaning that the effect of those levels is not different than the average effect of low, medium and high income.</p>
+</div>
+<h4 id="reference-cell-coding">Reference cell coding<a class="headerlink" href="#reference-cell-coding" title="Permanent link">&para;</a></h4>
+<p>It compares the effect of each level of the predictor to the effect of another <strong>level that is the designated reference level</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Example</p>
+<p>To use this scheme the classification variable has to be defined in the following way</p>
+<p><code>CLASS gender (PARAM=REF REF='Male');</code></p>
+<p>Using this parametrization scheme the model will be described as follows</p>
+<p>$logit(p)=\beta_0+\beta_1\cdot D_{Low \ Income} + \beta_2\cdot D_{Medium \ Income}$</p>
+<p><img alt="Reference cell coding example" src="../../images/reference-cell-coding-example.PNG" title="Reference cell coding example" /></p>
+<ul>
+<li>$\beta_0$ is the intercept, but not in terms of where you cross the $Y$ axis, instead is the value of the logit of the probability when income is high (or at the reference level)</li>
+<li>$\beta_1$ is the difference between the logit of the probability for low and high income</li>
+<li>$\beta_2$ is the difference between the logit of the probability for medium and high income</li>
+</ul>
+<p>Here's the Analysis of Maximum Likelihood Estimates table that <code>PROC LOGISTIC</code> generates for this example on which the parameter estimates ($\beta_0$, $\beta_1$, $\beta_2$) and p-values reflect differences with respect to the reference level. </p>
+<p><img alt="Reference cell coding MLE" src="../../images/reference-cell-coding-MLE.PNG" title="Reference cell coding MLE" /></p>
+<p>The p-values indicate whether each particular level is significant compared to the reference level. The p-value for $\beta_1&lt;0.05$ is significant meaning that the effect of a low income is statistically different than the effect of a high income on the probability that people will spend at least $100\$$. The same applies to $\beta_2$.</p>
+</div>
 <h2 id="multiple-logistic-regression">Multiple Logistic Regression<a class="headerlink" href="#multiple-logistic-regression" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Identifying the use and types of logistic regression</li>
+<li>Fitting a binary logistic regression model using the <code>LOGISTIC</code> procedure</li>
+<li>Explaining effect and reference cell coding for classification variables</li>
+<li>Explaining the standard output from the <code>LOGISTIC</code> procedure</li>
+</ul>
                 
                   
                 

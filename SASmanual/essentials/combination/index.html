@@ -282,37 +282,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concatenating-data-sets" title="Concatenating Data Sets" class="md-nav__link">
-    Concatenating Data Sets
+  <a href="#concatenating-data-sets-vertical-combination" title="Concatenating Data Sets (Vertical Combination)" class="md-nav__link">
+    Concatenating Data Sets (Vertical Combination)
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#merging-sas-data-sets-horizontal-combination" title="Merging SAS Data Sets (Horizontal Combination)" class="md-nav__link">
+    Merging SAS Data Sets (Horizontal Combination)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-one-to-one" title="Merging SAS Data Sets One-to-One" class="md-nav__link">
     Merging SAS Data Sets One-to-One
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-one-to-many" title="Merging SAS Data Sets One-to-Many" class="md-nav__link">
     Merging SAS Data Sets One-to-Many
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-that-have-non-matches" title="Merging SAS Data Sets that Have Non-Matches" class="md-nav__link">
     Merging SAS Data Sets that Have Non-Matches
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-many-to-many" title="Merging SAS Data Sets Many-to-Many" class="md-nav__link">
     Merging SAS Data Sets Many-to-Many
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -429,6 +442,18 @@
   <li class="md-nav__item">
     <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
       Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
     </a>
   </li>
 
@@ -757,37 +782,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#concatenating-data-sets" title="Concatenating Data Sets" class="md-nav__link">
-    Concatenating Data Sets
+  <a href="#concatenating-data-sets-vertical-combination" title="Concatenating Data Sets (Vertical Combination)" class="md-nav__link">
+    Concatenating Data Sets (Vertical Combination)
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#merging-sas-data-sets-horizontal-combination" title="Merging SAS Data Sets (Horizontal Combination)" class="md-nav__link">
+    Merging SAS Data Sets (Horizontal Combination)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-one-to-one" title="Merging SAS Data Sets One-to-One" class="md-nav__link">
     Merging SAS Data Sets One-to-One
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-one-to-many" title="Merging SAS Data Sets One-to-Many" class="md-nav__link">
     Merging SAS Data Sets One-to-Many
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-that-have-non-matches" title="Merging SAS Data Sets that Have Non-Matches" class="md-nav__link">
     Merging SAS Data Sets that Have Non-Matches
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#merging-sas-data-sets-many-to-many" title="Merging SAS Data Sets Many-to-Many" class="md-nav__link">
     Merging SAS Data Sets Many-to-Many
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -809,8 +847,7 @@
                   <h1>Combining SAS Data Sets</h1>
                 
                 <p><a href="https://support.sas.com/edu/OLTRN/ECPRG193/m421/m421_5_a_sum.htm">Chapter summary in SAS</a></p>
-<h2 id="concatenating-data-sets">Concatenating Data Sets<a class="headerlink" href="#concatenating-data-sets" title="Permanent link">&para;</a></h2>
-<p><strong><em>Combine files vertically by concatenating</em></strong></p>
+<h2 id="concatenating-data-sets-vertical-combination">Concatenating Data Sets (Vertical Combination)<a class="headerlink" href="#concatenating-data-sets-vertical-combination" title="Permanent link">&para;</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA SAS-data-set;
@@ -833,8 +870,15 @@ RUN;
 <li>The <strong>variable attributes</strong> are assigned from the <strong>first data set</strong> in the <code>SET</code> statement</li>
 <li>You will get an <strong>error</strong> in the <code>DATA</code> step if a variable is defined with <strong>different data types</strong> in the files that you are trying to concatenate</li>
 </ul>
-<h2 id="merging-sas-data-sets-one-to-one">Merging SAS Data Sets One-to-One<a class="headerlink" href="#merging-sas-data-sets-one-to-one" title="Permanent link">&para;</a></h2>
-<p><strong><em>Combine files horizontally by merging</em></strong></p>
+<h2 id="merging-sas-data-sets-horizontal-combination">Merging SAS Data Sets (Horizontal Combination)<a class="headerlink" href="#merging-sas-data-sets-horizontal-combination" title="Permanent link">&para;</a></h2>
+<ul>
+<li>In a <strong>one-to-one</strong> relationship, a single observation in one data set is related to one, and only one, observation in another data set based on the values of one or more common variables</li>
+<li>In a <strong>one-to-many</strong> relationship, a single observation in one data set is related to one or more observations in another data set</li>
+<li>In a <strong>many-to-one</strong> relationship, multiple observations in one data set are related to one observation in another data set</li>
+<li>In a <strong>many-to-many</strong> relationship, multiple observations in one data set are related to multiple observations in another data set</li>
+<li>Sometimes the data sets have <strong>non-matches</strong>: at least one observation in one of the data sets is unrelated to any observation in another data set based on the values of one or more common variables</li>
+</ul>
+<h3 id="merging-sas-data-sets-one-to-one">Merging SAS Data Sets One-to-One<a class="headerlink" href="#merging-sas-data-sets-one-to-one" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The <strong>match-merging</strong> is a process based on the values of common variables</li>
 <li>Data sets are merged in the order that they appear in the MERGE statement</li>
@@ -852,14 +896,7 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<ul>
-<li>In a <strong>one-to-one</strong> relationship, a single observastion in one data set is related to one, and only one, observation in another data set based on the values of one or more common variables</li>
-<li>In a <strong>one-to-many</strong> relationship, a single observation in one data set is related to one or more observations in another data set</li>
-<li>In a <strong>many-to-one</strong> relationship, multiple observations in one data set are related to one observation in another data set</li>
-<li>In a <strong>many-to-many</strong> relationship, multiple observations in one data set are related to multiple observations in another data set</li>
-<li>Sometimes the data sets have <strong>non-matches</strong>: at least one observation in one of the data sets is unrelated to any observation in another data set based on the values of one or more common variables</li>
-</ul>
-<h2 id="merging-sas-data-sets-one-to-many">Merging SAS Data Sets One-to-Many<a class="headerlink" href="#merging-sas-data-sets-one-to-many" title="Permanent link">&para;</a></h2>
+<h3 id="merging-sas-data-sets-one-to-many">Merging SAS Data Sets One-to-Many<a class="headerlink" href="#merging-sas-data-sets-one-to-many" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -880,7 +917,7 @@ RUN;
 <li>Performing a merge without a BY statement merges the observations based on their positions</li>
 <li>This is almost never done intentionally and can lead to unexpected results</li>
 </ul>
-<h2 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches<a class="headerlink" href="#merging-sas-data-sets-that-have-non-matches" title="Permanent link">&para;</a></h2>
+<h3 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches<a class="headerlink" href="#merging-sas-data-sets-that-have-non-matches" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -966,7 +1003,7 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<h2 id="merging-sas-data-sets-many-to-many">Merging SAS Data Sets Many-to-Many<a class="headerlink" href="#merging-sas-data-sets-many-to-many" title="Permanent link">&para;</a></h2>
+<h3 id="merging-sas-data-sets-many-to-many">Merging SAS Data Sets Many-to-Many<a class="headerlink" href="#merging-sas-data-sets-many-to-many" title="Permanent link">&para;</a></h3>
 <p>With the macros <a href="http://www.sascommunity.org/wiki/Transpose_data_with_macro_%25MAKEWIDE_and_%25MAKELONG_(based_on_Proc_TRANSPOSE)"><code>makewide.sas</code> and <code>makelong.sas</code></a> you can </p>
 <ol>
 <li>Make one of your data sets wide</li>

@@ -493,6 +493,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -939,7 +951,7 @@
 <li>You can use a histogram or a normal probability plot of the residuals to determine whether or not the <strong>errors are normally distributed</strong></li>
 </ul>
 <p>You want to see a <strong>random scatter of the residual values</strong> above and below the reference line at 0. If you see <strong>patterns or trends</strong> in the residual values, the assumptions might not be valid and the models might have problems.</p>
-<p><img alt="Assumptions violation examples" src="https://lh3.googleusercontent.com/-84ce_WbduHI/WOOAkeq-iiI/AAAAAAAAADs/e2ZzJE_XoLE8DnfdqNt-aaHhOzw8Z-ucgCLcB/s0/assumption-violation.PNG" title="Assumptions violation examples" /></p>
+<p><img alt="Assumptions violation examples" src="../../images/assumption-violation.PNG" title="Assumptions violation examples" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To take autocorrelation (correlated over time) into account, you might need to use a regression procedure such as <strong>PROC AUTOREG</strong></p>
@@ -965,7 +977,7 @@ QUIT;
 </ul>
 <h2 id="identifying-influential-observations">Identifying Influential Observations<a class="headerlink" href="#identifying-influential-observations" title="Permanent link">&para;</a></h2>
 <p>An influential observation is different from an outlier. An <strong>outlier</strong> is an unusual observation that has a large residual compare to the rest of the points. An <strong>influential observation</strong> can sometimes have a large residual compared to the rest of the points, but it is an observation so far away from the rest of the data that it singlehandedly exerts influence on the slope of the regression line.</p>
-<p><img alt="Outlier vs influential observation" src="https://lh3.googleusercontent.com/-SRVHsMC3NQg/WOOVPEZxDLI/AAAAAAAAAEA/1vGwrG2XlWISRMTx2fguuh109zyLXfVGACLcB/s0/outlier_vs_influential-observation.PNG" title="Outlier vs influential observation" /></p>
+<p><img alt="Outlier vs influential observation" src="../../images/outlier_vs_influential-observation.PNG" title="Outlier vs influential observation" /></p>
 <h3 id="using-student-residuals-to-detect-outliers">Using <code>STUDENT</code> residuals to detect outliers<a class="headerlink" href="#using-student-residuals-to-detect-outliers" title="Permanent link">&para;</a></h3>
 <p>Also known as <strong>studientized or standardized residuals</strong>, the <code>STUDENT</code> residuals are calculated by dividing the <strong>residual by their standard errors</strong>, so you can think of them as roughly equivalent to a z-score. </p>
 <ul>

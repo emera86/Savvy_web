@@ -532,6 +532,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1007,7 +1019,7 @@
                   <h1>Analysis of Variance (ANOVA)</h1>
                 
                 <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m552/m552_7_a_sum.htm">Chapter summary in SAS</a></p>
-<p><img alt="enter image description here" src="https://lh3.googleusercontent.com/xOC5eoOUs-6v-b-VnQU6ivGQQPIOQH7ACcKMS2jfrOTK1HJLuBbchpYm3cuganuJ_gNJsBU=s0" title="ANOVA" /></p>
+<p><img alt="enter image description here" src="../../images/anova.png" title="ANOVA" /></p>
 <h2 id="graphical-analysis-of-associations">Graphical Analysis of Associations<a class="headerlink" href="#graphical-analysis-of-associations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Before analyzing your data, you need to have a general idea of any associations between <strong>predictor variables</strong> and <strong>response variables</strong></li>
@@ -1222,7 +1234,7 @@ QUIT;
 <li>The red/blue diagonal lines show the <strong>confidence intervals for the true differences of the means</strong> for each pairwise comparison</li>
 <li>The grey 45$^{\circ}$ reference line represents equality of the means (if the confidence interval crosses over it, then there is no significant difference between the two groups and the diagonal line for the pair will be <strong>dashed and red</strong>; if the difference is significant the line will be <strong>solid and blue</strong>)</li>
 </ul>
-<p><img alt="Diffogram" src="https://lh3.googleusercontent.com/-yuw0XR4JPqs/WNknWl3atwI/AAAAAAAAABk/V_lTXMtgO_QDm7VJ9jPy29h7MIxZbyhzQCLcB/s0/diffogram.png" title="Diffogram" /></p>
+<p><img alt="Diffogram" src="../../images/diffogram.png" title="Diffogram" /></p>
 <ul>
 <li>The <code>ADJUST=</code> option specifies the adjustment method for multiple comparisons</li>
 <li>If you don't specify an option SAS uses the <strong>Tukey method by default</strong>, if you specify <code>ADJUST=Dunnett</code> the GLM procedure produces multiple comparisons using <strong>Dunnett's method</strong> and a <strong>control plot</strong> <ul>
@@ -1233,7 +1245,7 @@ QUIT;
 </ul>
 </li>
 </ul>
-<p><img alt="Control plot" src="https://lh3.googleusercontent.com/-ZI5PKbFT1ns/WNkoofa4E3I/AAAAAAAAAB0/0RNlG7_94QMV3s864uB5UncYOw7VEMkYgCLcB/s0/controlplot.PNG" title="Control plot" /></p>
+<p><img alt="Control plot" src="../../images/controlplot.PNG" title="Control plot" /></p>
 <ul>
 <li><code>PDIFF=CONTROLU('value')</code> specifies the control group for the Dunnett's case: the direction of the sign in Ha is the same as the direction you are testing, so this is a <strong>one-sided upper-tailed t-test</strong></li>
 <li>If you specify <code>ADJUST=T</code> SAS will make no adjustments for multiple comparisons: is not recommended as there's a tendency to find <strong>more significant pairwise differences than might actually exist</strong></li>
@@ -1246,7 +1258,7 @@ QUIT;
 <li><strong>Main effect</strong>: is the effect of a single predictor variable</li>
 <li><strong>Interaction effects</strong>: when the relationship of the response variable with a predictor changes with the changing of another predictor variable (the effect of one variable depends on the value of the other variable)</li>
 </ul>
-<p><img alt="Interaction plot" src="https://lh3.googleusercontent.com/-GK8G9YC7d1s/WNk5aOIcxAI/AAAAAAAAACM/nuq7AoAjh98_cci-KnaWTzhjbsCW_mSHACLcB/s0/interactionplot.png" title="Interaction plot" /></p>
+<p><img alt="Interaction plot" src="../../images/interactionplot.png" title="Interaction plot" /></p>
 <p>When you consider an ANOVA with more than one predictor variable, it's called <strong>n-way ANOVA</strong> where <em>n</em> represents the number of predictor variables</p>
 <ul>
 <li>The analysis in a <strong>randomized block design</strong> is actually a <strong>special type of two-way ANOVA</strong> in which you have one factor of interest and one blocking factor</li>

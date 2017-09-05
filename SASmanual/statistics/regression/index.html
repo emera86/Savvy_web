@@ -479,6 +479,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -901,14 +913,14 @@
                   <h1>Regression</h1>
                 
                 <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m553/m553_6_a_sum.htm">Chapter summary in SAS</a></p>
-<p><img alt="Summary lessons 3-6" src="https://lh3.googleusercontent.com/-Y-23_trrs6A/WON7VhnzxPI/AAAAAAAAADY/vRxCZowh9tItWRSSGTHZYpa2Ur4Qh97nwCLcB/s0/summary3-6.png" title="Summary lessons 3-6" /></p>
+<p><img alt="Summary lessons 3-6" src="../../images/summary3-6.png" title="Summary lessons 3-6" /></p>
 <h2 id="exploratory-data-analysis">Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permanent link">&para;</a></h2>
 <p>A useful set of techniques for investigating your data is known as <strong>exploratory data analysis</strong>.</p>
 <h3 id="proc-sgcatter-scatter-plots"><code>PROC SGCATTER</code>: Scatter Plots<a class="headerlink" href="#proc-sgcatter-scatter-plots" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SGSCATTER DATA=SAS-data-base;
-    PLOT vairableY*(variableX1 variableX2) / REG;
+    PLOT variableY*(variableX1 variableX2) / REG;
 RUN;
 </pre></div>
 </td></tr></table>
@@ -917,6 +929,8 @@ RUN;
 <li>If you have <strong>so many observations</strong> that the scatter plot of the whole data set is difficult to interpret, you might run <code>PROC SGSCATTER</code> on a <strong>random sample of observations</strong></li>
 </ul>
 <h3 id="proc-corr-correlation-analysis"><code>PROC CORR</code>: Correlation Analysis<a class="headerlink" href="#proc-corr-correlation-analysis" title="Permanent link">&para;</a></h3>
+<p>There are two ways of calculating correlations: the <strong>Pearson correlation coefficient</strong> (specially used for normal distributed data) and the <strong>Spearman's rank correlation coefficient</strong> (which is best fitted when your data presents outliers).</p>
+<p>The Spearman correlation between two variables is equal to the Pearson correlation between the rank values of those two variables; while Pearson's correlation assesses linear relationships, Spearman's correlation assesses monotonic relationships (whether linear or not). Spearman's coefficient is appropriate for both continuous and discrete ordinal variables.</p>
 <p>The closer the <strong>Pearson</strong> correlation coefficient is to +1/-1, the stronger the positive/negative linear relationship is between the two variables. The closer the correlation coefficient is to 0, the weaker the linear relationship and if it is 0 variables are uncorrelated.</p>
 <ul>
 <li>When you interpret the correlation, be cautious about the effect of <strong>large sample sizes</strong>: even a correlation of 0.01 can be statistically significant with a large enough sample size and you would almost always reject the hypothesis $H_0$: $\rho =0$, even if the value of your correlation is small for all practical purposes</li>
@@ -1127,7 +1141,7 @@ RUN;
 <ul>
 <li>In <code>PROC GLM</code>, when you run a linear regression model with only two predictor variables, the output includes a contour fit plot by default. We specify <code>CONTOURFIT</code> to tell SAS to overlay the contour plot with a scatter plot of the observed data</li>
 </ul>
-<p><img alt="Contour plot" src="https://lh3.googleusercontent.com/-NLdUzu7afu8/WOJldkIvudI/AAAAAAAAACs/Vo3RCSrIwvkcOUVi8mwEiurtjsOANjBTQCLcB/s0/contour-multiple-regression.png" title="Contour plot" /></p>
+<p><img alt="Contour plot" src="../../images/contour-multiple-regression.png" title="Contour plot" /></p>
 <p>The plot shows <strong>predicted values</strong> of the response variable as <strong>gradations of the background color</strong> from blue, representing low values, to red, representing high values. The <strong>dots</strong>, which are similarly coloured, represent the <strong>actual data</strong>. Observations that are perfectly fit would show the same color within the circle as outside the circle. The <strong>lines on the graph</strong> help you read the actual predictions at even intervals.</p>
 <ul>
 <li>The <code>CONTOUR</code> option displays a contour plot of predicted values against two continuous covariates</li>
@@ -1164,7 +1178,7 @@ QUIT;
 <li>For this all-possible regression model, we add the label <code>ALL_REG:</code></li>
 <li>With <code>PLOTS=(CP)</code> we produce a plot:</li>
 </ul>
-<p><img alt="Mallows' Cp to select the best model" src="https://lh3.googleusercontent.com/-MKHCheN7vUA/WONM3WW0qSI/AAAAAAAAADE/tHJAjyHK-QE5j4UVlxmT7KHTA_bvGJLxwCLcB/s0/mallows_cp_best_model.png" title="Mallows' Cp to select the best model" /></p>
+<p><img alt="Mallows' Cp to select the best model" src="../../images/mallows_cp_best_model.png" title="Mallows' Cp to select the best model" /></p>
 <p>Each <strong>star</strong> represents the <strong>best model</strong> for a given number of parameters. The solid <strong>blue line</strong> represents <strong>Mallows' criterion</strong> for $C_p$, so using this line helps us find a good candidate model for prediction. Because we want the <strong>smallest model possible</strong>, we start at the left side of the graph, with the fewest number of parameters moving to the right until we find the <strong>first model that falls below the solid blue line</strong>. To find models for parameter estimation we have to look for models that falls below the <strong>red solid line</strong> which represent the <strong>Hocking's criterion</strong> for $C_p$ parameter estimation. If we hover over the star, we can see which variables are included in this model.</p>
 <hr />
 <p><strong><em>Stepwise selection methods</em></strong></p>
@@ -1238,11 +1252,13 @@ QUIT;
 <p>The calculations of all information criteria begin the same way:</p>
 <ol>
 <li>First you calculate $n\cdot log(SSE/n)$ </li>
-<li>Then, each criterion adds a penalty that represents the complexity of the model (each type of information criterion invokes a different penalty component)</li>
+<li>Then, each criterion adds a penalty that represents the complexity of the model (each type of information criterion invokes a different penalty component)<ul>
 <li><code>AIC</code>: $2p+n+2$</li>
 <li><code>AICC</code>: $n(n+p)/(n-p-2)$</li>
 <li><code>BIC</code>: $2(p+2)1-2q^2$</li>
 <li><code>SBC</code>: $p\cdot log(n)$</li>
+</ul>
+</li>
 </ol>
                 
                   

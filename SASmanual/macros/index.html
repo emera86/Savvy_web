@@ -367,6 +367,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -631,6 +643,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-macrovariable-from-data-set-values" title="Create Macrovariable from Data Set Values" class="md-nav__link">
+    Create Macrovariable from Data Set Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
     Macros Available in SAS
   </a>
@@ -819,6 +838,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-macrovariable-from-data-set-values" title="Create Macrovariable from Data Set Values" class="md-nav__link">
+    Create Macrovariable from Data Set Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
     Macros Available in SAS
   </a>
@@ -948,6 +974,51 @@
 <span class="nf">%mend</span><span class="p">;</span>
 
 <span class="nf">%runall</span><span class="p">(</span><span class="n">item1</span> <span class="n">item2</span> <span class="n">item3</span> <span class="n">item4</span> <span class="n">item5</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="create-macrovariable-from-data-set-values">Create Macrovariable from Data Set Values<a class="headerlink" href="#create-macrovariable-from-data-set-values" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">DATA</span> <span class="nt">_NULL_</span><span class="o">;</span>
+    <span class="nt">SET</span> <span class="nt">OddsRatios</span><span class="o">;</span>
+    <span class="nt">CALL</span> <span class="nt">SYMPUT</span> <span class="o">(</span><span class="s1">&#39;var1&#39;</span><span class="o">,</span><span class="nt">OddsRatioEst</span><span class="o">);</span>
+    <span class="nt">CALL</span> <span class="nt">SYMPUT</span> <span class="o">(</span><span class="s1">&#39;var2&#39;</span><span class="o">,</span><span class="nt">LowerCl</span><span class="o">);</span>
+    <span class="nt">CALL</span> <span class="nt">SYMPUT</span> <span class="o">(</span><span class="s1">&#39;var3&#39;</span><span class="o">,</span><span class="nt">UpperCL</span><span class="o">);</span>
+    <span class="o">*</span> <span class="nt">The</span> <span class="nt">variables</span> <span class="nt">have</span> <span class="nt">a</span> <span class="nt">lot</span> <span class="nt">of</span> <span class="nt">extra</span> <span class="nt">spaces</span><span class="o">;</span>
+    <span class="o">%</span><span class="nt">LET</span> <span class="nt">OR2report</span><span class="o">=</span><span class="nt">OR</span><span class="o">:</span> <span class="o">&amp;</span><span class="nt">var1</span><span class="o">.</span> <span class="o">(&amp;</span><span class="nt">var2</span><span class="o">.,&amp;</span><span class="nt">var3</span><span class="o">.);</span>
+    <span class="o">%</span><span class="nt">PUT</span> <span class="o">&amp;</span><span class="nt">OR2report</span><span class="o">;</span>
+<span class="nt">RUN</span><span class="o">;</span>
+
+<span class="nt">DATA</span> <span class="nt">_NULL_</span><span class="o">;</span>
+    <span class="nt">SET</span> <span class="nt">OddsRatios</span><span class="o">;</span>
+    <span class="nt">length</span> <span class="nt">OddsRatioEst</span> <span class="nt">LowerCL</span> <span class="nt">UpperCL</span> <span class="nt">7</span><span class="o">;</span>
+    <span class="nt">Estaux</span> <span class="o">=</span> <span class="nt">int</span><span class="o">(</span><span class="nt">1000</span><span class="o">*</span><span class="nt">OddsRatioEst</span><span class="o">)/</span><span class="nt">1000</span><span class="o">;</span>
+    <span class="nt">Loweraux</span> <span class="o">=</span> <span class="nt">int</span><span class="o">(</span><span class="nt">1000</span><span class="o">*</span><span class="nt">LowerCl</span><span class="o">)/</span><span class="nt">1000</span><span class="o">;</span>
+    <span class="nt">Upperaux</span> <span class="o">=</span> <span class="nt">int</span><span class="o">(</span><span class="nt">1000</span><span class="o">*</span><span class="nt">UpperCL</span><span class="o">)/</span><span class="nt">1000</span><span class="o">;</span>
+    <span class="o">*</span> <span class="nt">The</span> <span class="nt">extra</span> <span class="nt">blancks</span> <span class="nt">has</span> <span class="nt">reduced</span> <span class="nt">with</span> <span class="nt">the</span> <span class="nt">CATX</span> <span class="nt">function</span><span class="o">;</span>
+    <span class="nt">fullOR</span><span class="o">=</span><span class="nt">CATX</span><span class="o">(</span><span class="s1">&#39; &#39;</span><span class="o">,</span><span class="s1">&#39;OR:&#39;</span><span class="o">,</span><span class="nt">Estaux</span><span class="o">,</span><span class="s1">&#39;(&#39;</span><span class="o">,</span><span class="nt">Loweraux</span><span class="o">,</span><span class="s1">&#39;,&#39;</span><span class="o">,</span><span class="nt">Upperaux</span><span class="o">,</span><span class="s1">&#39;)&#39;</span><span class="o">);</span>
+    <span class="nt">CALL</span> <span class="nt">SYMPUT</span> <span class="o">(</span><span class="s1">&#39;OR2report&#39;</span><span class="o">,</span><span class="nt">fullOR</span><span class="o">);</span>
+    <span class="o">%</span><span class="nt">PUT</span> <span class="o">&amp;</span><span class="nt">OR2report</span><span class="o">;</span>
+<span class="nt">RUN</span><span class="o">;</span>
 </pre></div>
 </td></tr></table>
 

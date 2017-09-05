@@ -371,6 +371,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -895,8 +907,21 @@ RUN;
 <li><code>DEFINE</code> the variables involved in your conditional structure before the variable to which you want to apply the new format </li>
 <li><code>DEFINE</code> your variables as <code>DISPLAY NOPRINT</code> if you want to use them for the conditional structure but you don't want them to appear in your table</li>
 </ul>
-<div class="admonition seealso">
-<p class="admonition-title">Seealso</p>
+<p>Specify the <code>STYLE</code> of your global header:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=SAS-data-set HEADSKIP HEADLINE NOWINDOWS STYLE(header)={ASIS=on BACKGROUND=very light grey FONTWEIGHT=BOLD};
+    COLUMN (&quot;Style of this global header&quot; var1 var2);
+    DEFINE var1 / DISPLAY &#39;Parameters&#39; LEFT STYLE=[FONTWEIGHT=BOLD];
+    DEFINE var2 / DISPLAY &#39;Values&#39; CENTER;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
 <ul>
 <li><a href="http://support.sas.com/rnd/papers/sgf07/sgf2007-report.pdf">Beyond the Basics: Advanced <code>PROC REPORT</code> Tips and Tricks</a></li>
 <li><a href="http://support.sas.com/resources/papers/proceedings13/366-2013.pdf">Creating a Plan for Your Reports and Avoiding Common Pitfalls in <code>REPORT</code> Procedure Coding</a></li>
