@@ -479,6 +479,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -617,6 +629,26 @@
     Plots
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gplot" title="GPLOT" class="md-nav__link">
+    GPLOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sgplot" title="SGPLOT" class="md-nav__link">
+    SGPLOT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -694,15 +726,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -778,6 +822,26 @@
   <a href="#plots" title="Plots" class="md-nav__link">
     Plots
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gplot" title="GPLOT" class="md-nav__link">
+    GPLOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sgplot" title="SGPLOT" class="md-nav__link">
+    SGPLOT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -875,6 +939,25 @@ ODS SELECT ALL;  /* Reset this option to the default */
 </td></tr></table>
 
 <h2 id="plots">Plots<a class="headerlink" href="#plots" title="Permanent link">&para;</a></h2>
+<h3 id="gplot"><code>GPLOT</code><a class="headerlink" href="#gplot" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reference lines:</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SYMBOL1 COLOR=blue INTERPOL=join;
+AXIS1 LABEL=(&#39;X axis label&#39;) order=(0 to 15 by 1) reflabel=(j=c h=9pt &#39;Reference line label 1&#39; &#39;Reference line label 2&#39; &#39;Reference line label 3&#39;);
+AXIS2 LABEL=(&#39;Y axis label&#39; j=c);
+PROC GPLOT DATA=SAS-data-set;
+    PLOT variabley*variablex / HAXIS=AXIS1 VAXIS=AXIS2 HREF=6 9 13 /*location of ref lines*/;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<h3 id="sgplot"><code>SGPLOT</code><a class="headerlink" href="#sgplot" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Highlight a certain boxplot and get the plot narrower: </li>
 </ul>

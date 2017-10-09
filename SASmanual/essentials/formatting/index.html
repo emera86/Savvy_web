@@ -271,6 +271,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#creating-a-format-from-a-sas-dataset" title="Creating a Format from a SAS Dataset" class="md-nav__link">
+    Creating a Format from a SAS Dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#proc-formats-picture-statement" title="PROC FORMAT's PICTURE statement" class="md-nav__link">
     PROC FORMAT's PICTURE statement
   </a>
@@ -587,6 +594,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -741,15 +760,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -859,6 +890,13 @@
           <li class="md-nav__item">
   <a href="#proc-format" title="PROC FORMAT" class="md-nav__link">
     PROC FORMAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-format-from-a-sas-dataset" title="Creating a Format from a SAS Dataset" class="md-nav__link">
+    Creating a Format from a SAS Dataset
   </a>
   
 </li>
@@ -1036,6 +1074,30 @@ RUN;
 <li>The <code>FMTSEARCH</code> system option controls the order in which format catalogs are searched until the desired member is found.</li>
 <li>The <code>WORK.FORMATS</code> catalog is always searched first, unless it appears in the <code>FMTSEARCH</code> list.</li>
 </ul>
+<h3 id="creating-a-format-from-a-sas-dataset">Creating a Format from a SAS Dataset<a class="headerlink" href="#creating-a-format-from-a-sas-dataset" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA formatdataset;
+    SET originaldataset;
+    RETAIN fmtname &#39;$custom_format_name&#39; TYPE &#39;C&#39;;
+    RENAME index_variable=start label_variable=label;
+RUN;
+
+PROC FORMAT CNTLIN=formatdataset;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<div class="admonition summary">
+<p class="admonition-title">Summary</p>
+</div>
+<p>'See More Information'
+    <a href="http://www2.sas.com/proceedings/forum2007/068-2007.pdf">Creating a Format from Raw Data or a SAS Dataset</a></p>
 <h3 id="proc-formats-picture-statement"><a href="http://support.sas.com/documentation/cdl/en/proc/70377/HTML/default/viewer.htm#p0n990vq8gxca6n1vnsracr6jp2c.htm"><code>PROC FORMAT</code>'s <code>PICTURE</code> statement</a><a class="headerlink" href="#proc-formats-picture-statement" title="Permanent link">&para;</a></h3>
 <p><code>LOW-HIGH</code> ensures that all values are included in the range. The <code>MULT=</code> statement option specifies that each value is multiplied by 1.61. The <code>PREFIX=</code> statement adds a US dollar sign to any number that you format. The picture contains six digit selectors, five for the salary and one for the dollar sign prefix.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1

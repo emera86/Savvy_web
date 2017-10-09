@@ -344,6 +344,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#avoiding-duplicates" title="Avoiding Duplicates" class="md-nav__link">
+    Avoiding Duplicates
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -581,6 +588,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -735,15 +754,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -880,6 +911,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoiding-duplicates" title="Avoiding Duplicates" class="md-nav__link">
+    Avoiding Duplicates
+  </a>
   
 </li>
       
@@ -1032,6 +1070,30 @@ END;
 <li>An optional <code>OTHERWISE</code> statement specifies a statement to be executed if no <code>WHEN</code> condition is met</li>
 <li>An <code>END</code> statement ends a <code>SELECT</code> group</li>
 </ul>
+<h2 id="avoiding-duplicates">Avoiding Duplicates<a class="headerlink" href="#avoiding-duplicates" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* Period has more than one register per patient and the calculation of time periods between each one and the reference;
+PROC SORT DATA=period;
+    BY pt periodmax periodvisit;
+RUN;
+
+* Keep only highest (last value after the sorting);
+DATA maxperiod;
+    SET period;
+    BY pt;
+    IF last.pt;
+RUN;
+</pre></div>
+</td></tr></table>
                 
                   
                 
