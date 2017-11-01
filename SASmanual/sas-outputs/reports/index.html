@@ -951,6 +951,79 @@
 </td></tr></table>
 
 <h2 id="proc-print"><code>PROC PRINT</code><a class="headerlink" href="#proc-print" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FORMAT;
+    VALUE $nfmt 
+        &#39;Alfred&#39; = &#39;verylightgreen&#39;
+        &#39;Henry&#39; = &#39;verylightblue&#39;
+        &#39;Barbara&#39; = &#39;verylightyellow&#39;
+        &#39;Carol&#39; = &#39;verylightpurple&#39;;
+    VALUE wfmt 
+        LOW-85.99 = &#39;red&#39;
+        86-99.99 = &#39;orange&#39;
+        100-HIGH = &#39;green&#39;;
+RUN;
+
+PROC SORT DATA=sashelp.class OUT=classtest;
+    BY sex;
+RUN;
+
+PROC PRINT DATA=classtest(FIRSTOBS=2 OBS=16) N
+    STYLE(TABLE)      = {BACKGROUND=yellow RULES=rows FRAME=void CELLSPACING=0 BORDERCOLOR=red BORDERWIDTH=5}
+    STYLE(HEADER)     = {BACKGROUND=purple FONT_SIZE=12pt}
+    STYLE(GRANDTOTAL) = {BACKGROUND=pink FONT_SIZE=14pt}
+    STYLE(OBS)        = {BACKGROUND=pink COLOR=BLACK FONT_SIZE=12pt}
+    STYLE(OBSHEADER)  = {BACKGROUND=green FONT_SIZE=12pt};
+    TITLE &#39;PROC PRINT example&#39;;
+    VAR name   / STYLE(HEADER)=HEADER{FONT_SIZE=12pt} STYLE(DATA)=HEADER{FONT_SIZE=12pt BACKGROUND=$nfmt. FOREGROUND=black};
+    VAR age    / STYLE(HEADER)=HEADER{FONT_SIZE=12pt} STYLE(DATA)=HEADER{FONT_SIZE=12pt};
+    VAR height / STYLE(HEADER)=HEADER{FONT_SIZE=12pt} STYLE(DATA)={FONT_SIZE=12pt};
+    VAR weight / STYLE(HEADER)=HEADER{FONT_SIZE=12pt} STYLE(DATA)={FONT_SIZE=12pt FOREGROUND=wfmt. FONT_WEIGHT=bold};
+    BY sex;
+    SUM height weight;
+RUN; 
+</pre></div>
+</td></tr></table>
+
+<p><img alt="PROC PRINT example" src="../../images/procprint-example.PNG" title="PROC PRINT example" /></p>
+<ul>
+<li><code>FIRSTOBS</code> is the first observation printed</li>
+<li><code>OBS</code> is the last observation printed</li>
+<li><code>N</code> prints the number of observations in the data set</li>
+<li><code>BY</code> is to generate a table for each <code>BY</code> variable level (the data is expected to be ordered)</li>
+<li><code>PAGEBY</code> is for creating page breaks using a variable</li>
+<li><code>SUM</code> produces totaling variables (you will get a subtotal for each <code>BY</code> group in which there is more than one observation)</li>
+<li>You can print only certain variables or changing their order using <code>VAR</code></li>
+<li><code>FRAME=</code> defines the borders of the cells: <code>VOID</code> means no borders while <code>BOX</code> means all borders</li>
+</ul>
 <h2 id="proc-tabulate"><code>PROC TABULATE</code><a class="headerlink" href="#proc-tabulate" title="Permanent link">&para;</a></h2>
 <p><code>PROC TABULATE</code> is a procedure that displays descriptive statistics in tabular format. It computes many statistics that other procedures compute, such as <code>MEANS</code>, <code>FREQ</code>, and <code>REPORT</code> and displays these statistics in a table format. <code>TABULATE</code> will produce tables in up to three dimensions and allows, within each dimension, multiple variables to be reported one after another hierarchically. There are also some very nice mechanisms that can be used to label and format the results. </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -975,7 +1048,7 @@ RUN;
 <li>The <strong>asterisk</strong> is used to produce a <strong>cross tabulation</strong> of one variable with another (within the same dimension however, different from <code>PROC FREQ</code>).</li>
 <li>A <strong>blank</strong> is used to represent <strong>concatenation</strong> (i.e. place this output element after the preceding variable listed).</li>
 <li><strong>Parenthesis</strong> will <strong>group elements</strong> and associate an operator with each element in the group.</li>
-<li><strong>Angle brackets</strong> specify a <strong>denominator definition</strong> for use in percentage calculations. </li>
+<li><strong>Angle brackets</strong> specify a <strong>denominator definition</strong> for use in percentage calculations (e.g. <code>pctn&lt;variable&gt;</code>).</li>
 </ul>
 </li>
 </ul>

@@ -570,6 +570,19 @@
     Methods for data reduction
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factor-analysis" title="Factor Analysis" class="md-nav__link">
+    Factor Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -975,6 +988,19 @@
     Methods for data reduction
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factor-analysis" title="Factor Analysis" class="md-nav__link">
+    Factor Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1117,6 +1143,81 @@ RUN;
 <li><a href="https://stats.idre.ucla.edu/sas/output/principal-components-analysis/">Principal Component Analysis with <code>PROC FACTOR</code></a></li>
 <li><a href="http://www2.sas.com/proceedings/sugi26/p261-26.pdf">Variable Reduction for Modeling using <code>PROC VARCLUS</code></a></li>
 </ul>
+<h4 id="factor-analysis">Factor Analysis<a class="headerlink" href="#factor-analysis" title="Permanent link">&para;</a></h4>
+<p>Factor analysis is a method of data reduction.  It does this by seeking underlying unobservable variables (<strong>latent variables</strong>) that are reflected in the observed variables (<strong>manifest variables</strong>). </p>
+<ul>
+<li>There are many different <strong>methods</strong> that can be used to conduct a factor analysis (such as principal axis factor, maximum likelihood, generalized least squares, unweighted least squares). Each of them generates uncorrelated factors. </li>
+<li>There are also many different <strong>types of rotations</strong> that can be done after the initial extraction of factors, including orthogonal rotations, such as varimax and equimax, which impose the restriction that the factors cannot be correlated, and oblique rotations, such as promax, which allow the factors to be correlated with one another. It is generally considered that using a rotation in factor analysis will produce more interpretable results. If the factor analysis is being performed specifically to gain an explanation of what factors or groups exist in the data or to confirm hypothesized assumptions about the data, rotation can be especially helpful. Factor patterns can be rotated through two different ways:<ul>
+<li>Orthogonal rotations which retain uncorrelated factors</li>
+<li>Oblique rotations which create correlated factors
+While arguments exist supporting both types of rotation methods, factor analysis which uses an <strong>orthogonal rotation often creates a solution that is easier to grasp and interpret</strong> than a solution obtained from an oblique rotation. </li>
+</ul>
+</li>
+<li>You also need to determine the <strong>number of factors</strong> that you want to extract. Normally, the objetive during the initial factor analysis is to determine the minimum number of factors that will adequately account for the covariation among the larger number of analysis variables. This objective can be achieved by using any of the initial factoring methods.</li>
+</ul>
+<p>Given the number of factor analytic techniques and options, it is not surprising that different analysts could reach very different results analyzing the same data set. However, all analysts are looking for simple structure. Simple structure is pattern of results such that <strong>each variable loads highly onto one and only one factor</strong>.</p>
+<p>Factor analysis is a technique that requires a <strong>large sample size</strong> because it is based on the correlation matrix of the variables involved, and correlations usually need a large sample size before they stabilize. </p>
+<div class="admonition tip">
+<p class="admonition-title">Advisable sample size</p>
+<ul>
+<li>50 cases is very poor, 100 is poor, 200 is fair, 300 is good, 500 is very good, and 1000 or more is excellent </li>
+<li>As a rule of thumb, a bare minimum of <strong>10 observations per variable</strong> is necessary to avoid computational difficulties</li>
+</ul>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FACTOR DATA=SAS-data-set NFACTORS=3 CORR SCREE EV REORDER ROTATE=VARIMAX METHOD=PRINIT PRIORS=SMC;
+    VAR var1 var2 var3 ... varn;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><code>METHOD=</code> specifies what type of method is to be used to extract the initial factors. The <strong>Principal Components Analysis (PCA)</strong> method (<code>PRINCIPAL</code>) simply transforms the set of variables into another set of variables; that is, the data is summarized by means of a linear combination of the observed data. This transformation is performed when the objective is to account for as much variation as possible in the data. With PCA, the first component/factor is defined in such a way that the largest amount of variance in the data is explained by the first component. The second component/factor explains the second most about the variance in the data and is <strong>perpendicular (thus, uncorrelated)</strong> to the first component. The remaining components/factors are found in a similar manner.</li>
+<li><code>MINEIGEN =</code> specifies the smallest eigenvalue for which a factor is retained.</li>
+<li><code>NFACTOR =</code> specifies the number of factors to be extracted from the data. The default value, if this option is not specified, is the number of variables in the data. The optimum number can be selected by first running <code>PROC FACTOR</code> without the <code>NFACTOR</code> option and analyzing the eigenvalues and <code>SCREE</code> plot. </li>
+<li><code>REORDER</code>: This option reorders the output, so the variables that explain the largest amount of the variance for each factor are printed in descending order down to those that explain the smallest amount of the variance for each factor.</li>
+<li><code>CORR</code> generates the <strong>Correlations</strong> table containing the correlations between the original variables (the ones specified on the <code>VAR</code> statement). Before conducting a principal components analysis, you want to check the correlations between the variables.  If any of the correlations are too high (say above .9), you may need to remove one of the variables from the analysis, as the two variables seem to be measuring the same thing.  Another alternative would be to combine the variables in some way (perhaps by taking the average).  If the correlations are too low, say below .1, then one or more of the variables might load only onto one factor (in other words, make its own factor).</li>
+<li><code>EV</code> displays the eigenvectors of the reduced correlation matrix, of which the diagonal elements are replaced with the communality estimates.</li>
+<li><code>SCREE</code> or <code>PLOTS=SCREE</code> graph the eigenvalue against the factor number. The ploted values are contained in the <strong>Initial Factor Method: Iterated Principal Factor Analysis</strong> table:<ul>
+<li><strong>Iteration</strong>: This column lists the number of the iteration. </li>
+<li><strong>Change</strong>: When the change becomes smaller than the criterion, the iterating process stops.  The numbers in this column are the largest absolute difference between iterations. The difference given for the first iteration is the difference between the values at the first iteration and the squared multiple correlations (sometimes called iteration 0).</li>
+<li><strong>Communalities</strong>: These are the communality estimates at each iteration.  For each iteration, the communality for each variable is listed.</li>
+</ul>
+</li>
+<li><code>PRIORS=SMC</code> enables the squared multiple correlation to be used on the diagonal of the correlation matrix. If this option is not used, 1’s are on the diagonal, and you will do a PCA instead of a principal axis factor analysis. The <strong>Prior Communality Estimates:  SMC</strong> table gives the communality estimates prior to the rotation.  The communalities (also known as h2) are the estimates of the variance of the factors, as opposed to the variance of the variable which includes measurement error. This table contains different values:<ul>
+<li><strong>Eigenvalue</strong>: This is the initial eigenvalue.  An eigenvalue is the variance of the factor.  Because this is an unrotated solution, the first factor will account for the most variance, the second will account for the second highest amount of variance, and so on.  Some of the eigenvalues are negative because the matrix is not of full rank.  This means that there are probably only four dimensions (corresponding to the four factors whose eigenvalues are greater than zero).  Although it is strange to have a negative variance, this happens because the factor analysis is only analyzing the common variance, which is less than the total variance.  If we were doing a principal components analysis, we would have had 1’s on the diagonal, which means that all of the variance is being analyzed (which is another way of saying that we are assuming that we have no measurement error), and we would not have negative eigenvalues.  In general, it is not uncommon to have negative eigenvalues.</li>
+<li><strong>Difference</strong>: This column gives the difference between the eigenvalues and allows you to see how quickly the eigenvalues are decreasing.</li>
+<li><strong>Proportion</strong>: This is the proportion of the total variance that each factor accounts for.</li>
+<li><strong>Cumulative</strong>: This is the sum of the proportion column.</li>
+</ul>
+</li>
+<li><strong>Eigenvalues of the Reduced Correlation Matrix</strong> table contains:<ul>
+<li><strong>Eigenvalue</strong>: This is the eigenvalue obtained after the principal axis factoring but <strong>before the varimax rotation</strong>.    </li>
+<li><strong>Difference</strong>, <strong>Proportion</strong> and <strong>Cumulative</strong> show the same information described for the <strong>Prior Communality Estimates:  SMC</strong> table</li>
+</ul>
+</li>
+<li>The <strong>Eigenvectors</strong> table shows the linear combinations of the original variables. They tell you about the strength of the relationship between the original (manifest) variables and the (latent) factors.</li>
+<li>The <strong>Factor Pattern</strong> table contains the unrotated factor loadings, which are the correlations between the variable and the factor.  Because these are correlations, possible <strong>values range from -1 to +1</strong>.</li>
+<li>The <strong>Final Communality Estimates</strong> table shows the proportion of each variable’s variance that can be explained by the retained factors prior to the rotation. Variables with high values are well represented in the common factor space, while variables with low values are not well represented. They are the reproduced variances from the factors that you have extracted.  You can find these values on the diagonal of the reproduced correlation matrix.</li>
+<li>The <strong>Orthogonal Transformation Matrix</strong> table shows the matrix by which you multiply the unrotated factor matrix to get the rotated factor matrix.</li>
+<li>The <strong>Rotated Factor Pattern</strong> table contains the rotated factor loadings, which are the correlations between the variable and the factor.  Because these are correlations, possible <strong>values range from -1 to +1</strong>.<ul>
+<li>The <strong>Factor</strong> columns in this table are the rotated factors that have been extracted. These are the factors that analysts are most interested in and try to name looking at the items that load highly on it. The second factor might be called "relating to students" because items like "instructor is sensitive to students" and "instructor allows me to ask questions" load highly on it.  The third factor has to do with comparisons to other instructors and courses.</li>
+</ul>
+</li>
+<li><code>ROTATE = PROMAX</code> | <code>VARIMAX</code> invokes one of the rotation methods available. If no method is specified, the SAS default is to use no rotation. <ul>
+<li>With an orthogonal rotation, such as the <code>VARIMAX</code>, the factors are not permitted to be correlated. Orthogonal transformations simplify the interpretation of the factors by maximizing the variances of the squared loadings for each factor, which are the columns of the factor pattern. Please note that with orthogonal rotations the factor pattern and the factor structure matrices are the equal.</li>
+<li>With an oblique rotation, such as a <code>PROMAX</code> rotation, the factors are permitted to be correlated with one another and both factor pattern and factor structure matrices are produced. The factor pattern matrix gives the linear combination of the variables that make up the factors. The factor structure matrix presents the correlations between the variables and the factors. To completely interpret an oblique rotation one needs to take into account both the factor pattern and the factor structure matrices and the correlations among the factors. </li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Check these websites</p>
+<ul>
+<li><a href="https://stats.idre.ucla.edu/sas/output/factor-analysis/">Factor Analysis: SAS Annotated Output</a></li>
+<li><a href="http://www2.sas.com/proceedings/sugi22/STATS/PAPER268.PDF"><code>PROC FACTOR</code>: How to Interpret the Output of a Real-World Example</a></li>
+</ul>
+</div>
 <h3 id="standardize-your-data">Standardize your Data<a class="headerlink" href="#standardize-your-data" title="Permanent link">&para;</a></h3>
 <p>When performing multivariate analysis, having variables that are measured at different scales can influence the numerical stability and precision of the estimators. Standardizing the data prior to performing statistical analysis can often prevent this problem.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1

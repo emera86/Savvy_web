@@ -662,6 +662,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#useful-functions-for-macro-programming" title="Useful Functions for Macro Programming" class="md-nav__link">
+    Useful Functions for Macro Programming
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vvaluex-function" title="VVALUEX Function" class="md-nav__link">
+    VVALUEX Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
     Macros Available in SAS
   </a>
@@ -876,6 +896,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#useful-functions-for-macro-programming" title="Useful Functions for Macro Programming" class="md-nav__link">
+    Useful Functions for Macro Programming
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vvaluex-function" title="VVALUEX Function" class="md-nav__link">
+    VVALUEX Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#macros-available-in-sas" title="Macros Available in SAS" class="md-nav__link">
     Macros Available in SAS
   </a>
@@ -1057,6 +1097,25 @@
     <span class="nt">CALL</span> <span class="nt">SYMPUT</span> <span class="o">(</span><span class="s1">&#39;OR2report&#39;</span><span class="o">,</span><span class="nt">fullOR</span><span class="o">);</span>
     <span class="o">%</span><span class="nt">PUT</span> <span class="o">&amp;</span><span class="nt">OR2report</span><span class="o">;</span>
 <span class="nt">RUN</span><span class="o">;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="useful-functions-for-macro-programming">Useful Functions for Macro Programming<a class="headerlink" href="#useful-functions-for-macro-programming" title="Permanent link">&para;</a></h2>
+<h3 id="vvaluex-function"><code>VVALUEX</code> Function<a class="headerlink" href="#vvaluex-function" title="Permanent link">&para;</a></h3>
+<p>Returns the formatted value that is associated with the argument that you specify. The argument specifies a character constant, variable, or expression that evaluates to a variable name. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The value of the specified expression cannot denote an array reference.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date1=&#39;31mar02&#39;d;
+date2=&#39;date1&#39;;
+format date1 date7.;
+datevalue=vvaluex(date2);
+put datevalue;               /* 31MAR02 */
 </pre></div>
 </td></tr></table>
 

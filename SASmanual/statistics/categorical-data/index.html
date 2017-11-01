@@ -577,13 +577,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
-    Comparing the Binary and Multiple Logistic Regression Models
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#specifying-a-formatted-value-as-a-reference-level" title="Specifying a Formatted Value as a Reference Level" class="md-nav__link">
     Specifying a Formatted Value as a Reference Level
   </a>
@@ -619,8 +612,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-multiple-logistic-regression-models" title="Comparing the Multiple Logistic Regression Models" class="md-nav__link">
-    Comparing the Multiple Logistic Regression Models
+  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
+    Comparing the Binary and Multiple Logistic Regression Models
   </a>
   
 </li>
@@ -1224,13 +1217,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
-    Comparing the Binary and Multiple Logistic Regression Models
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#specifying-a-formatted-value-as-a-reference-level" title="Specifying a Formatted Value as a Reference Level" class="md-nav__link">
     Specifying a Formatted Value as a Reference Level
   </a>
@@ -1266,8 +1252,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-multiple-logistic-regression-models" title="Comparing the Multiple Logistic Regression Models" class="md-nav__link">
-    Comparing the Multiple Logistic Regression Models
+  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
+    Comparing the Binary and Multiple Logistic Regression Models
   </a>
   
 </li>
@@ -1365,7 +1351,7 @@ $Expected=Row \ total\cdot Column\ total/Total \ sample \ size$</p>
 <p>It is one <strong>measure of strength of an association</strong> between two categorical variables:</p>
 <ul>
 <li>For two-by-two tables, Cramer's V is in the range of -1 to 1</li>
-<li>For larger tables, Cramer's V is int he range of 0 to 1 </li>
+<li>For larger tables, Cramer's V is in the range of 0 to 1 </li>
 <li>Values farther away from 0 indicate a relatively strong association between the variables</li>
 </ul>
 <p>To measure the strength of the association between a binary predictor variable and a binary outcome variable, you can use an <strong>odds ratio</strong>: $Odds \ Ratio=\frac{Odds \ of \ Outcome \ in \ Group \ B}{Odds \ of \ Outcome \ in \ Group \ A}$; $Odds=p_{event}/(1-p_{event})$</p>
@@ -1545,17 +1531,19 @@ RUN;
 <li>Below this table, we see the probability that <code>PROC LOGISTIC</code> is modeling, as shown in the log.</li>
 <li>The <strong>Class Level Information</strong> table displays the predictor variable in the <code>CLASS</code> statement <code>Gender</code> (in the model we fixed <code>'Male'</code> as the reference level, so the design variable is 1 when <code>Gender='Female'</code> and 0 when <code>Gender='Male'</code>).</li>
 <li>The <strong>Model Convergence Status</strong> simply indicates that the convergence criterion was met. There are a number of options to control the convergence criterion, but the default is the gradient convergence criterion with a default value of $10^{-8}$.</li>
-<li>The <strong>Model Fit Statistic</strong> table reports the resuls of three tests (for the model with the intercept only and the model with the intercept and the predictor variables): AIC, SC and -2$\cdot$Log(likelihood). AIC and SC are <strong>goodness-of-fit measures</strong> that you can use to compare one model to another (lower values indicate more desirable model) and are not dependent on the number of terms in the model.<ul>
+<li>The <strong>Model Fit Statistic</strong> table reports the resuls of three tests (for the model with the intercept only and the model with the intercept and the predictor variables): AIC, SC and -2$\cdot$Log(likelihood). AIC and SC are <strong>goodness-of-fit measures</strong> that you can use to compare one model to another (lower values indicate more desirable model, although there is no standard for determining how much of a difference indicates an improvement) and are not dependent on the number of terms in the model. <ul>
 <li><strong>Akaike's Information Criterion (AIC)</strong>: it adjusts for the number of predictor valriables. It is the best statitstic to come up with the best <strong>explanatory model</strong>.</li>
 <li><strong>Schwarz's Bayesian Criterion (SC)</strong>: it adjusts for the number of predictor variables and the number of observations. This test uses a bigger penalty for extra variables and therefore favors more parsimonious models. It is the best statitstic to come up with the best <strong>predictive model</strong>.</li>
 </ul>
 </li>
 <li>The <strong>Testing Global Null Hypothesis: BETA=0</strong> table provides three statistics to test $H_0$ that all the regression coefficients in the model are 0. The <strong>Likelihood Ratio</strong> is the most reliable test, specially for small sample sizes. It is similar to the overall F test in linear regression.</li>
-<li>The <strong>Type 3 Analysis of Effects</strong> table is generated when <code>CLASS</code> specifies a categorical predictor variable. The <strong>Wald Chi-Square</strong> statistic tests the listed effect. When there is only one predictor variable in the model, the value listed in the table will be idential to the Wald test in the <strong>Testing Global Null Hypothesis</strong> table.</li>
-<li>The <strong>Analysis of Maximum Likelihood Estimates</strong> table lists the estimated model parameters, their standard errors, Wald test statistics and corresponding p-values. The parameter estimates are the estimated coefficients of the fitted logistic regression model. We can use these estimates to construct the logistic regression equation $logit(\beta)=\beta_0+\beta_1 \cdot Categorical \ predictor$.</li>
-<li>The <strong>Odds Ratio Estimates</strong> table shows the OR ratio for the modeled event. Notice that <code>PROC LOGISTIC</code> calculates Wald confidence limits by default.</li>
+<li>The <strong>Type 3 Analysis of Effects</strong> table is generated when <code>CLASS</code> specifies a categorical predictor variable. It shows the results of testing whether each individual parameter estimate is statistically different from 0 (<strong>Pr&gt;ChiSq</strong>$&lt;0.05$). The <strong>Wald Chi-Square</strong> statistic tests the listed effects. When there is only one predictor variable in the model, the value listed in the table will be identical to the Wald test in the <strong>Testing Global Null Hypothesis</strong> table.</li>
+<li>The <strong>Analysis of Maximum Likelihood Estimates</strong> table lists the estimated model parameters (the betas), their standard errors, Wald test statistics and corresponding p-values. The parameter estimates are the estimated coefficients of the fitted logistic regression model. We can use these estimates to construct the logistic regression equation $logit(\beta)=\beta_0+\beta_1 \cdot Categorical \ predictor$.</li>
+<li>The <strong>Odds Ratio Estimates</strong> table (<strong>ONLY for binary logistic regression</strong>) shows the OR ratio for the modeled event. Notice that <code>PROC LOGISTIC</code> calculates Wald confidence limits by default.</li>
 <li>The <strong>Association of Predicted Probabilities and Observed Responses</strong> table lists several goodness-of-fit measures.</li>
-<li>The <strong>Effect plot</strong> shows the levels of the <code>CLASS</code> predictor variable vs the probability of the desired outcome. </li>
+<li>The <strong>Odds Ratio Estimates and Profile-Likelihood Confidence Intervals</strong> table (<strong>ONLY for multiple logistic regression</strong>) contains the OR estimates and the profile-likelihood confidence limits that the <code>CLODDS=</code> option specified for the main effects. For multiple logistic regression, remember that <code>PROC LOGISTIC</code> calculates the adjusted odds ratios. For a continuous predictor, the odds ratio measures the change in odds associated with a one-unit difference of the predictor variable by default although it is specified otherwise in the <code>UNITS</code> statement.</li>
+<li>In the <strong>Odds Ratios plot</strong>, the dots represent the OR estimates and the horizontal lines represent the confidence intervals for those estimates. There is a reference line at one to check if the confidence intervals cross this value meaning that it is not statistically different from 1.</li>
+<li>The <strong>Effect plot</strong> shows the levels of the <code>CLASS</code> predictor variable vs the probability of the desired outcome. If you are performing a <strong>multiple logistic regression</strong> analysis where there is a continuous predictor variable it will be represented in the horizontal axis. Moreover, the lines will represent all possible combinations of the different <code>CLASS</code> variables.</li>
 </ul>
 <h4 id="iterpreting-the-odds-ratio-for-a-categorical-predictor">Iterpreting the Odds Ratio for a Categorical Predictor<a class="headerlink" href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" title="Permanent link">&para;</a></h4>
 <p>Let's see how to calculate the odds and the odds ratio from the logistic regression model. Here is the logistic regression model that predicts the logit of $p$:</p>
@@ -1573,7 +1561,7 @@ RUN;
 <ul>
 <li>A pair is <strong>concordant</strong> if the <strong>model predicts it correclty</strong>, i.e. if the observation with the desired outcome has a <strong>higher predicted probability</strong>, based on the model, than the observation without the outcome.</li>
 <li>A pair is <strong>discordant</strong> if the <strong>model does not predict it correctly</strong>, i.e. if the observation with the desired outcome has a <strong>lower predicted probability</strong>, based on the model, than the observation without the outcome.</li>
-<li>A pair is <strong>tied</strong> if it is neither concordant not discordant, i.e. the <strong>probabilities are the same</strong> and the model can not distinguished between them.</li>
+<li>A pair is <strong>tied</strong> if it is neither concordant not discordant, i.e. the <strong>probabilities are the same</strong> and the model can not distinguished between them. Tied pairs aren't very common when there are continuous variables in the model.</li>
 </ul>
 <p>The left column of the <strong>Association of Predicted Probabilities and Observed Responses</strong> table lists the percentage of pairs of each type. At the bottom is the total number of observation pairs on which the percentages are based, i.e. the number of pairs of observations with different outcome values $(N_{event=0} \cdot N_{event=1})$.</p>
 <p>More complex models have more than two predicted probabilities. However, regardless of the model's complexity, the same comparisons are made across all pairs of observations with different outcomes.</p>
@@ -1583,7 +1571,7 @@ RUN;
 <li><strong><code>Somers' D</code> (Gini coefficient)</strong>, defined as $(n_c-n_d)/(n_c+n_d+n_t)$</li>
 <li><strong>Goodman-Kruskal <code>Gamma</code></strong>, defined as $(n_c-n_d)/(n_c+n_d)$</li>
 <li><strong>Kendall's <code>Tau-a</code></strong>, defined as $(n_c-n_d)/(0.5 \cdot N(N-1))$, with $N$ being the sum of observation frequencies in the data</li>
-<li><strong>The concordance index <code>c</code></strong> is the most commonly used of these values and estimates the probability of an observation with the desired outcome having a higher predicted probability than an observation without the desired outcome and is defined as $c=\frac{n_c+0.5 \cdot n_t}{n_c+n_d+n_t}$. Note that the concordance index, c, also gives an estimate of the <strong>area under the receiver operating characteristic (ROC) curve</strong> when the response is binary.</li>
+<li><strong>The concordance index <code>c</code></strong> is the most commonly used of these values and estimates the probability of an observation with the desired outcome having a higher predicted probability than an observation without the desired outcome and is defined as $c=\frac{n_c+0.5 \cdot n_t}{n_c+n_d+n_t}$. Note that the concordance index, <code>c</code>, also gives an estimate of the <strong>area under the receiver operating characteristic (ROC) curve</strong> when the response is binary.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1609,7 +1597,8 @@ RUN;
 <p>The goal of multiple logistic regression, like multiple linear regression, is to find the subset of variables that best explains the variability of the response variable. Models that are <strong>parsimonious or simple</strong> are more likely to be numerically stable and are also easier to generalize.</p>
 <h3 id="the-backward-elimination-method-of-variable-selection">The Backward Elimination Method of Variable Selection<a class="headerlink" href="#the-backward-elimination-method-of-variable-selection" title="Permanent link">&para;</a></h3>
 <p>This method starts with a full model (a model that contains all of the main effects or predictor variables). Using an iterative process, the backward elimination method identifies and eliminates the nonsignificant predictor variables, one at a time. At each step, this method removes the least significant variable of the nonsignificant terms (the variable with the largest p-value).</p>
-<p>The smaller your significance level, the more evidence you need to keep a predictor variable in the model. This results in a more parsimonious model. </p>
+<p>The smaller your significance level, the more evidence you need to keep a predictor variable in the model. This results in a more parsimonious model.</p>
+<p>The default significance level for a predictor to stay in the model is 0.05. You can change the significance level by adding <code>SLSTAY=</code><em>value</em> or <code>SLS=</code><em>value</em> in the <code>MODEL</code>statement.</p>
 <h3 id="adjusted-odds-ratios">Adjusted Odds Ratios<a class="headerlink" href="#adjusted-odds-ratios" title="Permanent link">&para;</a></h3>
 <p>One major difference between a multiple logistic model and a logistic regression model with only one predictor variable is that the odds ratios are reported differently. Multiple logistic regression uses <strong>adjusted odds ratios</strong>. An adjusted odds ratio measures the effect of a single predictor variable on a response variable while holding all the other predictor variables constant. </p>
 <p>The adjusted odds ratio <strong>assumes that the OR for a predictor variable is the same regardless of the level of the other predictor variables</strong>. If that assumption is not true, then you need to fit <strong>a more complex model that also considers the interactions</strong> between predictor variables.</p>
@@ -1638,21 +1627,176 @@ RUN;
 <h3 id="the-units-statement">The <code>UNITS</code> Statement<a class="headerlink" href="#the-units-statement" title="Permanent link">&para;</a></h3>
 <p>The <code>UNITS</code>statement enables you to obtain customized <strong>odds ratio estimates</strong> for a specified unit of change in one or more continuous predictor variables. For each continuous predictor (or independent variable) that you want to modify, you specify the variable name, an equal sign, and a list of <strong>one or more units of change</strong>, separated by spaces, that are of interest for that variable. A unit of change can be a number, a standard deviation $(SD)$, or a number multiplied by the standard deviation $(n \times SD)$. </p>
 <p>The <code>UNITS</code> statement is optional. If you want to use the units to change that are reflected in the stored data values, you do not need to include the <code>UNITS</code> statement.</p>
-<h3 id="comparing-the-binary-and-multiple-logistic-regression-models">Comparing the Binary and Multiple Logistic Regression Models<a class="headerlink" href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Permanent link">&para;</a></h3>
 <h3 id="specifying-a-formatted-value-as-a-reference-level">Specifying a Formatted Value as a Reference Level<a class="headerlink" href="#specifying-a-formatted-value-as-a-reference-level" title="Permanent link">&para;</a></h3>
+<p>To ease the interpretation of the classification variable levels, text labels can be defined through a format definition.</p>
+<p>Appliying a format requires a change in the <code>PROC LOGISTIC</code> step. In the <code>CLASS</code> statement when you use the <code>REF=</code> option with a variable that has either a temporary or a permanent format assigned to it, you must <strong>specify the formatted value of the level instead of the stored value</strong>.</p>
 <h3 id="interaction-betweeen-variables">Interaction betweeen Variables<a class="headerlink" href="#interaction-betweeen-variables" title="Permanent link">&para;</a></h3>
+<p>When you fit a multiple logistic regression model, the simplest approach is to consider only the main effects (each predictor individually) on the response. In other words, this approach assumes that each variable has the same effect on the outcome regardless of the levels of the other variables. However, sometimes the effect of one variable on the outcome depends on the observed level of another variable. When this happens, we say that <strong>there is an interaction</strong>.</p>
+<p>Keep in mind that <strong>interactions that have more than two factors might be difficult to interpret</strong>.</p>
 <h3 id="the-backward-elimination-method-with-interactions-in-the-model">The Backward Elimination Method with Interactions in the Model<a class="headerlink" href="#the-backward-elimination-method-with-interactions-in-the-model" title="Permanent link">&para;</a></h3>
+<p>When you use the backward elimination method with interactions in the model, <code>PROC LOGISTIC</code> begins by fitting th full model with all the main effects and interactions.</p>
+<p>Using an iterative process, <code>PROC LOGISTIC</code> eliminates nonsignificant interactions one at a time, starting with the least significant interaction (largest p-value). When only significant interactions remain, <code>PROC LOGISTIC</code> turns its attention to the main effects. <code>PROC LOGISTIC</code> eliminates, one at a time, the nonsignificant main effects that are not involved in any significant interactions. </p>
+<p>When eliminating main effects, <code>PROC LOGISTIC</code> must preserve the model hierarchy. According to this requirement, for any interaction that is included in the model, all main effects that the interaction contains must also be in the model, whether or not they are significant.</p>
+<p>The <strong>final model</strong> has only significant interactions, the main effects involved in the interactions, and any other significant main effects.</p>
 <h3 id="specifying-interactions-in-the-model-statement">Specifying Interactions in the <code>MODEL</code> Statement<a class="headerlink" href="#specifying-interactions-in-the-model-statement" title="Permanent link">&para;</a></h3>
+<p>To specify interactions concisely, you can place a bar operator <code>|</code> between the names of each two main effects. The bar tells <code>PROC LOGISTIC</code> to treat the terms on either side of it as effects and also to include their combinations as interactions.</p>
+<p>If you want to limit the maximum number of variables that are involved in each interaction, you can specify <code>@integer</code> after the list of effects (e.g. <code>@2</code> to include only the two-way interactions).</p>
 <h3 id="the-oddsratio-statement">The <code>ODDSRATIO</code> Statement<a class="headerlink" href="#the-oddsratio-statement" title="Permanent link">&para;</a></h3>
-<h3 id="comparing-the-multiple-logistic-regression-models">Comparing the Multiple Logistic Regression Models<a class="headerlink" href="#comparing-the-multiple-logistic-regression-models" title="Permanent link">&para;</a></h3>
-<h3 id="interaction-plots">Interaction Plots<a class="headerlink" href="#interaction-plots" title="Permanent link">&para;</a></h3>
-<h3 id="saving-analysis-results-with-the-store-statement">Saving Analysis Results with the <code>STORE</code> Statement<a class="headerlink" href="#saving-analysis-results-with-the-store-statement" title="Permanent link">&para;</a></h3>
+<p>By default, <code>PROC LOGISTIC</code> produces the OR only for variables that are not involved in an interaction. The OR for a main effect within an interaction would be misleading. It would only show the OR for that variable, holding constant the other variable at the value 0, which might not even be a valid value.</p>
+<p>To tell <code>PROC LOGISTIC</code> to produce the OR for each value of a variable that is involved in an interaction, you can use the <code>ODDSRATIO</code> statement. You specify a separate <code>ODDSRATIO</code> statement for each variable. In this statement you can optionally specify a label for the variable. The variable name is required. At the end, you can specify options following a forward slash <code>/</code>.</p>
+<p>In this example, there are three <code>ODDSRATIO</code> statements, one for each main effect (they do not have to appear in the same order that the variables are listed in the <code>MODEL</code> statement).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PROC</span> <span class="n">LOGISTIC</span> <span class="n">DATA</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">sales_inc</span> 
+        <span class="n">PLOTS</span><span class="p">(</span><span class="n">ONLY</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">EFFECT</span> <span class="n">ODDSRATIO</span><span class="p">);</span>
+    <span class="n">CLASS</span> <span class="nf">Gender</span> <span class="p">(</span><span class="n">PARAM</span><span class="o">=</span><span class="n">REF</span> <span class="n">REF</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Male</span><span class="err">&#39;</span><span class="p">)</span>
+        <span class="n">IncLevel</span> <span class="p">(</span><span class="n">PARAM</span><span class="o">=</span><span class="n">REF</span> <span class="n">REF</span><span class="o">=</span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
+    <span class="n">UNITS</span> <span class="n">Age</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+    <span class="n">MODEL</span> <span class="nf">Purchase</span><span class="p">(</span><span class="n">EVENT</span><span class="o">=</span><span class="sc">&#39;1&#39;</span><span class="p">)</span><span class="o">=</span><span class="n">Gender</span> <span class="o">|</span> <span class="n">Age</span> <span class="o">|</span> <span class="n">IncLevel</span> <span class="mi">@2</span> <span class="o">/</span>
+        <span class="n">SELECTION</span><span class="o">=</span><span class="n">BACKWARD</span> <span class="n">CLODDS</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
+<span class="hll">    <span class="n">ODDSRATIO</span> <span class="n">Age</span> <span class="o">/</span> <span class="n">CL</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">ODDSRATIO</span> <span class="n">Gender</span> <span class="o">/</span> <span class="n">DIFF</span><span class="o">=</span><span class="n">REF</span> <span class="n">AT</span> <span class="p">(</span><span class="n">IncLevel</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span> <span class="n">CL</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">ODDSRATIO</span> <span class="n">IncLevel</span> <span class="o">/</span> <span class="n">DIFF</span><span class="o">=</span><span class="n">REF</span> <span class="n">AT</span> <span class="p">(</span><span class="n">Gender</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span> <span class="n">CL</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
+</span><span class="n">RUN</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
 <ul>
-<li>Identifying the use and types of logistic regression</li>
-<li>Fitting a binary logistic regression model using the <code>LOGISTIC</code> procedure</li>
-<li>Explaining effect and reference cell coding for classification variables</li>
-<li>Explaining the standard output from the <code>LOGISTIC</code> procedure</li>
+<li>The <code>CL = WALD (default) | PL | BOTH</code> option enables you to specify the type of confidence limits you want to produce: Wald, profile-likelihood or both.</li>
+<li>The <code>DIFF = REF | ALL (default)</code> option applies only to categorical variables. Using this option, you can specify whether <code>PROC LOGISTIC</code> computes the OR for a categorical variable against the reference level or against all of its levels.</li>
+<li>The <code>AT (covariate = value-list | REF | ALL (default))</code> option specifies fixed levels of one or more interacting variables (also called covariates). <code>PROC LOGISTIC</code> computes OR at each of the specified levels. For each categorical variable, you can specify a list of one or more formatted levels of the variable, or the keyword <code>REF</code> to select the reference level or the keyword <code>ALL</code> to select all levels of the variable. </li>
 </ul>
+<p><img alt="OR interaction table" src="../../images/OR-interaction-table.PNG" title="Table of OR in a model with interactions" /></p>
+<p>This plot shows graphically what we saw with the calculated confidence intervals in the table above.</p>
+<p><img alt="OR interaction graph" src="../../images/OR-interaction-graph.PNG" title="Graph of OR in a model with interactions" /></p>
+<h3 id="comparing-the-binary-and-multiple-logistic-regression-models">Comparing the Binary and Multiple Logistic Regression Models<a class="headerlink" href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Permanent link">&para;</a></h3>
+<p><img alt="Comparing Logistic Regression Models" src="../../images/comparing-logistic-models.png" title="Comparing Logistic Regression Models" /></p>
+<ul>
+<li>Remember that, in general, when comparing the <code>AIC</code> and <code>SC</code> statistics, smaller values mean a <strong>better model fit</strong>. Note that the <code>SC</code> value increased with the addition of the interaction. <code>SC</code> selects more parsimonious models by imposing a more severe penalty for increasing the number of parameters.</li>
+<li>When comparing the <code>c</code> statistic values, larger values indicate a <strong>better predictive model</strong>.</li>
+</ul>
+<h3 id="interaction-plots">Interaction Plots<a class="headerlink" href="#interaction-plots" title="Permanent link">&para;</a></h3>
+<p>To visualize the interaction terms you can produce an interaction plot. This plot explains more of the story behind the significant interaction in the output. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc means data=statdata.sales_inc noprint nway;
+   class IncLevel Gender;
+   var Purchase;
+   output out=bins sum(Purchase)=Purchase n(Purchase)=BinSize;
+run;
+
+data bins;
+   set bins;
+      Logit=log((Purchase+1)/(BinSize-Purchase+1));
+run;
+
+proc sgscatter data=bins;
+   plot Logit*IncLevel /group=Gender markerattrs=(size=15)
+                        join;
+   format IncLevel incfmt.;
+   label IncLevel=&#39;Income Level&#39;;
+   title;
+run;
+quit;
+</pre></div>
+</td></tr></table>
+
+<p><img alt="Interaction plot for logistic regression" src="../../images/interactionplot-logistic-regression.PNG" title="Interaction plot for logistic regression" /></p>
+<p>If there is no interaction between two variables, the slopes shold be relatively parallel.</p>
+<h3 id="saving-analysis-results-with-the-store-statement">Saving Analysis Results with the <code>STORE</code> Statement<a class="headerlink" href="#saving-analysis-results-with-the-store-statement" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>STORE</code> statement with <code>PROC LOGISTIC</code> to save your analysis results as an item store for later processing.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS SELECT NONE;
+PROC LOGISTIC DATA=statdata.ameshousing3;
+    CLASS Fireplaces (REF=&#39;0&#39;) Lot_Shape_2 (REF=&#39;Regular&#39;) / param=ref;
+    MODEL Bonus(EVENT=&#39;1&#39;)=Basement_Area | Lot_Shape_2 Fireplaces;
+    UNITS Basement_Area=100;
+<span class="hll">    STORE OUT=isbonus;
+</span>RUN;
+ODS SELECT ALL;
+
+DATA newhouses;
+    LENGTH Lot_Shape_2 $9;
+    INPUT Fireplaces Lot_Shape_2 $ Basement_Area;
+    DATALINES;
+    0 Regular 1060
+    2 Regular 775
+    2 Irregular 1100
+    1 Irregular 975
+    1 Regular 800
+    ;
+RUN;
+
+<span class="hll">PROC PLM RESTORE=isbonus;
+</span>    SCORE DATA=newhouses OUT=scored_houses / ILINK;
+    TITLE &#39;Predictions using PROC PLM&#39;;
+RUN;
+
+PROC PRINT DATA=scored_houses;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Following the keyword <code>STORE</code>, you use the <code>OUT=</code> option to specify the name of your item store.</li>
+<li>In the <code>PROC PLM</code> statement, the <code>RESTORE</code> option specifies that the predictions will be based on the analysis results saved in the item store.</li>
+<li>The <code>SCORE</code> statement specifies that SAS will score the provided data set. The <code>ILINK</code> option requests that SAS provide the predictions in the form of predicted probabilities in lieu of logits where covariate effects are additive.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure that you generate predictions only for new data records that fall within the range of the training data. If not, predictions could be invalid due to extrapolation.</p>
+<p>We assume that the modeled relationships between predictors and responses holds across the span of the observed data. We should not assume that this relationship holds everywhere.</p>
+</div>
                 
                   
                 
