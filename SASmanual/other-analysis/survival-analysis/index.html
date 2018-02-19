@@ -473,6 +473,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../sequence-design/" title="Sequence design" class="md-nav__link">
+      Sequence design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -592,6 +604,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -646,8 +670,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
     </a>
   </li>
 
@@ -698,15 +758,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvsr/" title="SAS vs R" class="md-nav__link">
+      SAS vs R
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -825,6 +897,10 @@ RUN;
 <li>In the <code>TIME</code> statement, only patients that haven't been censored are analysed </li>
 <li>The <code>STRATA</code> statement includes only non-missing data points (no <code>WHERE</code> filtering is needed) </li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are performing a survival analysis which only applies to part of your population but you need the probabilities to be referred to the total population just define the excluded subpopulation as having event at time = 0. This way your plot will not start at 1/0. This applies, for example, to <strong>locoregional control time</strong> plots on which patients without complete response are excluded (event at time = 0) and </p>
+</div>
 <h2 id="p-value-of-a-lifetest-analysis">P-value of a Lifetest Analysis<a class="headerlink" href="#p-value-of-a-lifetest-analysis" title="Permanent link">&para;</a></h2>
 <p>We select only 2 groups from the test data set (High and Low risk):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -916,7 +992,7 @@ RUN;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../roc-curve/" title="ROC curve" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../sequence-design/" title="Sequence design" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -925,7 +1001,7 @@ RUN;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ROC curve
+                Sequence design
               </span>
             </div>
           </a>

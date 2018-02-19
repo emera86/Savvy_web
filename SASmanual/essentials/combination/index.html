@@ -548,6 +548,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence design" class="md-nav__link">
+      Sequence design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
       Survival Analysis
     </a>
@@ -626,6 +638,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -680,8 +704,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
     </a>
   </li>
 
@@ -732,15 +792,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvsr/" title="SAS vs R" class="md-nav__link">
+      SAS vs R
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -933,14 +1005,25 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<p><em>In a <strong>one-to-many merge</strong>, does it matter which data set is listed first in the <code>MERGE</code> statement?</em></p>
-<p>When you reverse the order of the data sets in the <code>MERGE</code> statement, the results are the same, but the order of the variables is different. SAS performs a <strong>many-to-one merge</strong>.</p>
-<hr />
-<p><code>MERGENOBY</code> (<code>= NOWARN (default) | WARN | ERROR</code>) controls whether a message is issued when <code>MERGE</code> processing occurs without an associated <code>BY</code> statement</p>
 <ul>
-<li>Performing a merge without a BY statement merges the observations based on their positions</li>
-<li>This is almost never done intentionally and can lead to unexpected results</li>
+<li>Performing a merge without a <code>BY</code> statement merges the observations based on their positions, this is almost never done intentionally and can lead to unexpected results</li>
+<li><code>MERGENOBY</code> (<code>= NOWARN (default) | WARN | ERROR</code>) controls whether a message is issued when <code>MERGE</code> processing occurs without an associated <code>BY</code> statement</li>
+<li>When you reverse the order of the data sets in the <code>MERGE</code> statement, the results are the same, but the order of the variables is different. SAS performs a <strong>many-to-one merge</strong></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">One-line-to-Many Merge</p>
+<p>If you have a data set that is just one line that you would like to joint to all the observations of a different data set you can do it in a single <code>DATA</code> step:
+<code>DATA result-data-set;
+SET multiple-observations-data-set;
+IF _N_ EQ 1 THEN DO;
+    SET single-line-data-set;
+END;
+RUN;</code>
+If you want to perform a cross join which is functionally the same as a Cartesian product join instead you can do it in a single <code>PROC SQL</code>:
+<code>PROC SQL;
+CREATE TABLE result-data-set AS SELECT var1, var2 FROM data-set1 AS alias1 CROSS JOIN data-set2 AS alias2;
+RUN;</code></p>
+</div>
 <h3 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches<a class="headerlink" href="#merging-sas-data-sets-that-have-non-matches" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2

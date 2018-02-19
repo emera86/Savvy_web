@@ -582,6 +582,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence design" class="md-nav__link">
+      Sequence design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
       Survival Analysis
     </a>
@@ -660,6 +672,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -714,8 +738,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
     </a>
   </li>
 
@@ -766,15 +826,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvsr/" title="SAS vs R" class="md-nav__link">
+      SAS vs R
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1003,7 +1075,16 @@ ELSE statement;
 </td></tr></table>
 
 <p>In the conditional expressions involving strings watch out for possible mixed case values where the condition may not be met:  <code>country = UPCASE(country);</code> to avoid problems</p>
-<hr />
+<div class="admonition warning">
+<p class="admonition-title">What do you mean 0.73 doesn't equal 0.73?</p>
+<p>When comparing numeric values, you may get unexpected results when the values of your variables seem to be the same (but actually they are not). The key to making sure these issues do not introduce erroneous results lies in understanding how numeric values are actually stored in data sets and in memory. This is referred to as <strong>numeric representation and precision</strong>. Read this article for more information: <a href="https://www.pharmasug.org/proceedings/2014/CC/PharmaSUG-2014-CC50.pdf">Numeric Representation and Precision in SAS and Why it Matters</a>.
+Main solutions to this problem:</p>
+<ul>
+<li>The <code>ROUND</code>function: <code>A = round(A, 0.01);</code></li>
+<li>Character versions of numeric variables: <code>CharA = put(A, best.);</code></li>
+<li>Options in procedures: <code>PROC COMPARE BASE=baseds COMPARE=compds CRITERION=0.0000001;</code></li>
+</ul>
+</div>
 <h3 id="executing-multiple-statements">Executing Multiple Statements<a class="headerlink" href="#executing-multiple-statements" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2

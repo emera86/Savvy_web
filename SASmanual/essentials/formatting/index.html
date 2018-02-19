@@ -278,8 +278,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-formats-picture-statement" title="PROC FORMAT's PICTURE statement" class="md-nav__link">
-    PROC FORMAT's PICTURE statement
+  <a href="#proc-formats-picture-statement" title="PROC FORMAT's PICTURE Statement" class="md-nav__link">
+    PROC FORMAT's PICTURE Statement
   </a>
   
 </li>
@@ -298,8 +298,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-order-categorical-variables" title="How to order categorical variables" class="md-nav__link">
-    How to order categorical variables
+  <a href="#how-to-order-categorical-variables" title="How to Order Categorical Variables" class="md-nav__link">
+    How to Order Categorical Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-modify-an-existing-format" title="How to Modify an Existing Format" class="md-nav__link">
+    How to Modify an Existing Format
   </a>
   
 </li>
@@ -588,6 +595,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence design" class="md-nav__link">
+      Sequence design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
       Survival Analysis
     </a>
@@ -666,6 +685,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -720,8 +751,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sas-outputs/templates/" title="Templates" class="md-nav__link">
-      Templates
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
     </a>
   </li>
 
@@ -772,15 +839,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="../../sasvsr/" title="SAS vs R" class="md-nav__link">
+      SAS vs R
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -902,8 +981,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-formats-picture-statement" title="PROC FORMAT's PICTURE statement" class="md-nav__link">
-    PROC FORMAT's PICTURE statement
+  <a href="#proc-formats-picture-statement" title="PROC FORMAT's PICTURE Statement" class="md-nav__link">
+    PROC FORMAT's PICTURE Statement
   </a>
   
 </li>
@@ -922,8 +1001,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-order-categorical-variables" title="How to order categorical variables" class="md-nav__link">
-    How to order categorical variables
+  <a href="#how-to-order-categorical-variables" title="How to Order Categorical Variables" class="md-nav__link">
+    How to Order Categorical Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-modify-an-existing-format" title="How to Modify an Existing Format" class="md-nav__link">
+    How to Modify an Existing Format
   </a>
   
 </li>
@@ -1074,6 +1160,11 @@ RUN;
 <li>The <code>FMTSEARCH</code> system option controls the order in which format catalogs are searched until the desired member is found.</li>
 <li>The <code>WORK.FORMATS</code> catalog is always searched first, unless it appears in the <code>FMTSEARCH</code> list.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Format maximum length</p>
+<p>The maximum lenght of a custom format is defined by the length of its longer label.
+If you need to increase it you can create a larger dummy element in the format or change the format attributes (see <a href="https://luciarodrigoinsausti.com/sasmanual/essentials/formatting/#how-to-modify-an-existing-format">this example</a>). </p>
+</div>
 <h3 id="creating-a-format-from-a-sas-dataset">Creating a Format from a SAS Dataset<a class="headerlink" href="#creating-a-format-from-a-sas-dataset" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1094,11 +1185,10 @@ RUN;
 </td></tr></table>
 
 <div class="admonition summary">
-<p class="admonition-title">Summary</p>
+<p class="admonition-title">Check these websites</p>
+<p><a href="http://www2.sas.com/proceedings/forum2007/068-2007.pdf">Creating a Format from Raw Data or a SAS Dataset</a></p>
 </div>
-<p>'See More Information'
-    <a href="http://www2.sas.com/proceedings/forum2007/068-2007.pdf">Creating a Format from Raw Data or a SAS Dataset</a></p>
-<h3 id="proc-formats-picture-statement"><a href="http://support.sas.com/documentation/cdl/en/proc/70377/HTML/default/viewer.htm#p0n990vq8gxca6n1vnsracr6jp2c.htm"><code>PROC FORMAT</code>'s <code>PICTURE</code> statement</a><a class="headerlink" href="#proc-formats-picture-statement" title="Permanent link">&para;</a></h3>
+<h3 id="proc-formats-picture-statement"><a href="http://support.sas.com/documentation/cdl/en/proc/70377/HTML/default/viewer.htm#p0n990vq8gxca6n1vnsracr6jp2c.htm"><code>PROC FORMAT</code>'s <code>PICTURE</code> Statement</a><a class="headerlink" href="#proc-formats-picture-statement" title="Permanent link">&para;</a></h3>
 <p><code>LOW-HIGH</code> ensures that all values are included in the range. The <code>MULT=</code> statement option specifies that each value is multiplied by 1.61. The <code>PREFIX=</code> statement adds a US dollar sign to any number that you format. The picture contains six digit selectors, five for the salary and one for the dollar sign prefix.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1115,7 +1205,13 @@ RUN;
 </td></tr></table>
 
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-order-categorical-variables">How to order categorical variables<a class="headerlink" href="#how-to-order-categorical-variables" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-order-categorical-variables">How to Order Categorical Variables<a class="headerlink" href="#how-to-order-categorical-variables" title="Permanent link">&para;</a></h3>
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
+<ul>
+<li><a href="http://www.lexjansen.com/nesug/nesug97/coders/goldman.pdf">There Is No <code>APPEND</code> Option On <code>PROC FORMAT</code>. What Can You Do?</a></li>
+</ul>
+</div>
 <p>You first create a format that you will apply to an auxiliary variable: </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1165,6 +1261,80 @@ run;
 </td></tr></table>
 
 <p>If you then use a <code>PROC REPORT</code> to display your results, the order of appearance will be the numeric order of your auxiliary variable. By using this technique, you can specify any order for the categories of a contingency table.</p>
+<h3 id="how-to-modify-an-existing-format">How to Modify an Existing Format<a class="headerlink" href="#how-to-modify-an-existing-format" title="Permanent link">&para;</a></h3>
+<p>We first load the existing format from the catalog into a data set:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%LET fmtname = %QSYSFUNC(COMPRESS(&amp;fmtnamepoint.,%STR(%.)));</span>
+
+<span class="n">PROC</span> <span class="n">FORMAT</span> <span class="n">LIBRARY</span><span class="p">=</span><span class="n">WORK</span> <span class="n">CNTLOUT</span><span class="p">=</span><span class="n">tmpfmt1</span><span class="p">;</span>
+    <span class="n">SELECT</span> <span class="o">&amp;</span><span class="n">fmtname</span><span class="p">.;</span>
+<span class="n">RUN</span><span class="p">;</span>
+
+<span class="n">DATA</span> <span class="n">tmpfmt2</span><span class="p">;</span>
+    <span class="n">SET</span> <span class="n">tmpfmt1</span><span class="p">;</span>
+    <span class="n">KEEP</span> <span class="n">START</span> <span class="n">END</span> <span class="n">LABEL</span> <span class="n">FMTNAME</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>We create the new format entry and add it to the existing format list:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA updatefmt;
+    LENGTH FMTNAME $32. START $16. END $16. LABEL $102.;
+    FMTNAME = &quot;&amp;TIMEVARFORMAT.&quot;;
+    LABEL = &#39;Format label&#39;;
+    END = &#39;end-valule&#39;;
+    START = &#39;start-value&#39;;
+RUN;
+
+DATA newfmt;
+    SET updatefmt tmpfmt2;
+    END = TRIM(LEFT(END));
+    START = TRIM(LEFT(START));
+RUN;
+</pre></div>
+</td></tr></table>
+
+<p>Now we load the updated format to the format catalog:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS SELECT NONE;
+PROC FORMAT LIBRARY=WORK CNTLIN=newfmt FMTLIB;
+RUN;
+ODS SELECT ALL;
+</pre></div>
+</td></tr></table>
+
+<p>If you need to recover the original format after some operations you just load the original data set:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS SELECT NONE;
+PROC FORMAT LIBRARY=WORK CNTLIN=tmpfmt1 FMTLIB;
+RUN;
+ODS SELECT ALL;
+</pre></div>
+</td></tr></table>
                 
                   
                 
