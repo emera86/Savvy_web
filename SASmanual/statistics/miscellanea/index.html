@@ -701,8 +701,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sas-outputs/reports/" title="Reports" class="md-nav__link">
-      Reports
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
     </a>
   </li>
 
@@ -987,7 +987,9 @@
                 <h2 id="one-sided-vs-two-sided-tests-how-do-their-p-values-compare">One-sided vs Two-sided Tests: How do their p-values compare?<a class="headerlink" href="#one-sided-vs-two-sided-tests-how-do-their-p-values-compare" title="Permanent link">&para;</a></h2>
 <p>The default among statistical packages performing tests is to report two-tailed p-values.  Because the most commonly used test statistic distributions (standard normal, Student's t) are symmetric about zero, most one-tailed p-values can be derived from the two-tailed p-values.</p>
 <p>The null hypothesis is that the difference in means is zero.  The two-sided alternative is that the difference in means is not zero. There are two one-sided alternatives that one could opt to test instead: that the difference is positive ($diff &gt; 0$) or that the difference is negative ($diff &lt; 0$). </p>
-<p>Note that the test statistic is the same for all of these tests. The two-tailed p-value is $P &gt; |t|$. This can be rewritten as $P(&gt;x) + P(<x)$.  Because the t-distribution is symmetric about zero, these two probabilities are equal: $P > |t| = 2 \cdot  P(<x)$.  Thus, we can see that **the two-tailed p-value is twice the one-tailed p-value** for the alternative hypothesis that ($diff < 0$).  The other one-tailed alternative hypothesis has a p-value of $P(>x) = 1-(P&lt;x)$. So, depending on the direction of the one-tailed hypothesis, its p-value is either $0.5 \cdot$(two-tailed p-value) or $1-0.5 \cdot$(two-tailed p-value) if the test statistic symmetrically distributed around zero. </p>
+<p>Note that the test statistic is the same for all of these tests. The two-tailed p-value is $P &gt; |t|$. This can be rewritten as $P(&gt;x)+P(&lt;x)$. </p>
+<p>Because the t-distribution is symmetric about zero, these two probabilities are equal: $P &gt; |t| = 2 \cdot  P(<x)$. Thus, we can see that **the two-tailed p-value is twice the one-tailed p-value** for the alternative hypothesis that ($diff < 0$).  The other one-tailed alternative hypothesis has a p-value of $P(>x)=1-(P&lt;x)$. </p>
+<p>So, depending on the direction of the one-tailed hypothesis, its p-value is either $0.5 \cdot$(two-tailed p-value) or $1-0.5 \cdot$(two-tailed p-value) if the test statistic symmetrically distributed around zero. </p>
 <p>In summary, to understand the connection between the results, you have to carefully review the $H_a$ for each case: the one-sided analysis (there is a difference with a certain sign) is more restrictive and demanding than the two-sided (there is a difference). Therefore, it follows that</p>
 <ul>
 <li>the <strong>one-tail p-value is half the two-tail p-value</strong> and</li>
@@ -1002,11 +1004,33 @@
 </ul>
 </div>
 <h2 id="mcnemars-test-vs-cohens-kappa-coefficient"><a href="https://en.wikipedia.org/wiki/McNemar%27s_test">McNemar's Test</a> vs <a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen's Kappa Coefficient</a><a class="headerlink" href="#mcnemars-test-vs-cohens-kappa-coefficient" title="Permanent link">&para;</a></h2>
-<p><strong>McNemar's test</strong> is a statistical test used on paired nominal data. It is applied to 2 × 2 contingency tables with a dichotomous trait, with matched pairs of subjects, to determine whether the row and column marginal frequencies are equal (that is, whether there is "marginal homogeneity"). </p>
+<p><strong>McNemar's test</strong> is a statistical test used on paired nominal data. It is applied to $2 \times 2$ contingency tables with a dichotomous trait, with matched pairs of subjects, to determine whether the row and column marginal frequencies are equal (that is, whether there is "marginal homogeneity"). </p>
 <p>The null hypothesis of marginal homogeneity states that the two marginal probabilities for each outcome are the same.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS EXCLUDE ALL;
+PROC FREQ DATA=SAS-data-set;
+    TABLE variable1 * variable2;
+    EXACT MCNEM;
+    ODS OUTPUT MCNEMARSTEST=mcnemarresults;
+RUN;
+ODS EXCLUDE NONE;
+</pre></div>
+</td></tr></table>
+
 <p><strong>Cohen's kappa coefficient</strong> is a statistic which measures inter-rater agreement for qualitative (categorical) items. It is generally thought to be a more robust measure than simple percent agreement calculation, since $\kappa$ takes into account the possibility of the agreement occurring by chance. There is controversy surrounding Cohen’s Kappa due to the difficulty in interpreting indices of agreement. Some researchers have suggested that it is conceptually simpler to evaluate disagreement between items.</p>
 <p>If the raters are in complete agreement then $\kappa=1$. If there is no agreement among the raters other than what would be expected by chance (as given by pe), $\kappa \le 0$.</p>
 <p>Note that Cohen's kappa measures agreement between <strong>two raters only</strong>. The Fleiss kappa is a <strong>multi-rater</strong> generalization of Scott's pi statistic. Kappa is also used to compare performance in machine learning but the directional version known as Informedness or Youden's J statistic is argued to be more appropriate for supervised learning.</p>
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
+<ul>
+<li><a href="http://math.usu.edu/jrstevens/biostat/projects2013/pres_mcnemarcohen.pdf">McNemar vs. Cohen's Kappa</a></li>
+</ul>
+</div>
 <h2 id="yates-correction-for-continuity">Yates' Correction for Continuity<a class="headerlink" href="#yates-correction-for-continuity" title="Permanent link">&para;</a></h2>
 <p>Yates' correction for continuity (or Yates' chi-squared test) is used in certain situations when testing for independence in a contingency table. It is a correction made to account for the fact that both Pearson’s chi-square test and McNemar’s chi-square test are biased upwards for a 2 x 2 contingency table. An upwards bias tends to make results larger than they should be. If you are creating a 2 x 2 contingency table that uses either of these two tests, the Yates correction is usually recommended</p>
 <h2 id="cochran-mantel-haenszel-test">Cochran-Mantel-Haenszel Test<a class="headerlink" href="#cochran-mantel-haenszel-test" title="Permanent link">&para;</a></h2>
