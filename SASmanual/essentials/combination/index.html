@@ -473,10 +473,130 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Other Analysis
+      SAS vs R
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
         Other Analysis
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -590,13 +710,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Specific Procedures
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Specific Procedures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -662,13 +782,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       SAS Outputs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         SAS Outputs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -783,18 +903,6 @@
   <li class="md-nav__item">
     <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
       SAS Visual Analytics
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../sasvsr/" title="SAS vs R" class="md-nav__link">
-      SAS vs R
     </a>
   </li>
 
@@ -1012,17 +1120,17 @@ RUN;
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">One-line-to-Many Merge</p>
-<p>If you have a data set that is just one line that you would like to joint to all the observations of a different data set you can do it in a single <code>DATA</code> step:
-<code>DATA result-data-set;
+<p>If you have a data set that is just one line that you would like to joint to all the observations of a different data set you can do it in a single <code>DATA</code> step:</p>
+<p><code>DATA result-data-set;
 SET multiple-observations-data-set;
 IF _N_ EQ 1 THEN DO;
     SET single-line-data-set;
 END;
-RUN;</code>
-If you want to perform a cross join which is functionally the same as a Cartesian product join instead you can do it in a single <code>PROC SQL</code>:
-<code>PROC SQL;
-CREATE TABLE result-data-set AS SELECT var1, var2 FROM data-set1 AS alias1 CROSS JOIN data-set2 AS alias2;
 RUN;</code></p>
+<p>If you want to perform a cross join which is functionally the same as a Cartesian product join instead you can do it in a single <code>PROC SQL</code>:</p>
+<p><code>PROC SQL;
+CREATE TABLE result-data-set AS SELECT var1, var2 FROM data-set1 AS alias1 CROSS JOIN data-set2 AS alias2;
+QUIT;</code></p>
 </div>
 <h3 id="merging-sas-data-sets-that-have-non-matches">Merging SAS Data Sets that Have Non-Matches<a class="headerlink" href="#merging-sas-data-sets-that-have-non-matches" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -1196,8 +1304,6 @@ RUN;
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-        <script src="../../superfences"></script>
       
     
     
