@@ -1,0 +1,1412 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+    
+    
+      
+        <title>Model Building and Scoring for Prediction - SAS Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Basic Statistics
+                </span>
+              
+            
+            Model Building and Scoring for Prediction
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Model Building and Scoring for Prediction
+      </label>
+    
+    <a href="./" title="Model Building and Scoring for Prediction" class="md-nav__link md-nav__link--active">
+      Model Building and Scoring for Prediction
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-predictive-modeling" title="Introduction to Predictive Modeling" class="md-nav__link">
+    Introduction to Predictive Modeling
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-predictive-modeling" title="What Is Predictive Modeling?" class="md-nav__link">
+    What Is Predictive Modeling?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-complexity" title="Model Complexity" class="md-nav__link">
+    Model Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-predictive-model" title="Building a Predictive Model" class="md-nav__link">
+    Building a Predictive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-proc-glmselect-to-build-a-predictive-model" title="Using PROC GLMSELECT to Build a Predictive Model" class="md-nav__link">
+    Using PROC GLMSELECT to Build a Predictive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-predictive-model_1" title="Building a Predictive Model" class="md-nav__link">
+    Building a Predictive Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoring-predictive-models" title="Scoring Predictive Models" class="md-nav__link">
+    Scoring Predictive Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-for-scoring" title="Preparing for Scoring" class="md-nav__link">
+    Preparing for Scoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-of-scoring" title="Methods of Scoring" class="md-nav__link">
+    Methods of Scoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-data" title="Scoring Data" class="md-nav__link">
+    Scoring Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality tests" class="md-nav__link">
+      Normality tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC curve" class="md-nav__link">
+      ROC curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence design" class="md-nav__link">
+      Sequence design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General notes on regression procedures" class="md-nav__link">
+      General notes on regression procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/" title="Using Macros" class="md-nav__link">
+      Using Macros
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-predictive-modeling" title="Introduction to Predictive Modeling" class="md-nav__link">
+    Introduction to Predictive Modeling
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-predictive-modeling" title="What Is Predictive Modeling?" class="md-nav__link">
+    What Is Predictive Modeling?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-complexity" title="Model Complexity" class="md-nav__link">
+    Model Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-predictive-model" title="Building a Predictive Model" class="md-nav__link">
+    Building a Predictive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-proc-glmselect-to-build-a-predictive-model" title="Using PROC GLMSELECT to Build a Predictive Model" class="md-nav__link">
+    Using PROC GLMSELECT to Build a Predictive Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-predictive-model_1" title="Building a Predictive Model" class="md-nav__link">
+    Building a Predictive Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoring-predictive-models" title="Scoring Predictive Models" class="md-nav__link">
+    Scoring Predictive Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-for-scoring" title="Preparing for Scoring" class="md-nav__link">
+    Preparing for Scoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods-of-scoring" title="Methods of Scoring" class="md-nav__link">
+    Methods of Scoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-data" title="Scoring Data" class="md-nav__link">
+    Scoring Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Model Building and Scoring for Prediction</h1>
+                
+                <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m555/m555_3_a_sum.htm">Chapter summary in SAS</a></p>
+<p>Inferential models, such as ANOVA and linear regression, are used to test hypotheses about the data and characterize the relationships between various types of predictor variables and a response variable. But, what if you want to go beyond explaining the relationship and <strong>predict future values of the response variable</strong>?</p>
+<p>In predictive modeling, a statistical model is used to predict future values of a response variable, based on the existing values of predictor variables. In predictive modeling, the terms used to refer to the variables are often different from the terms used in explanatory modeling:</p>
+<ul>
+<li>Predictors are often called inputs, features, explanatory variables or independent variables </li>
+<li>The response variable is often called a target, an outcome or dependent variable</li>
+</ul>
+<p>In predictive modeling, the inputs and the target can be continuous, categorical, binary or any combination of these types.</p>
+<h2 id="introduction-to-predictive-modeling">Introduction to Predictive Modeling<a class="headerlink" href="#introduction-to-predictive-modeling" title="Permanent link">&para;</a></h2>
+<p>Before you can predict values, you must first build a predictive model. To build a predictive model, you can use <code>PROC GLMSELECT</code>.</p>
+<ul>
+<li>Describe the goal and uses of predictive modeling</li>
+<li>Explain how data partitioning is used in the hones assessment method of model selection</li>
+<li>Describe the relationship between model complexity and flexibility</li>
+<li>Use <code>PROC GLMSELECT</code> to build a predictive model</li>
+</ul>
+<h3 id="what-is-predictive-modeling">What Is Predictive Modeling?<a class="headerlink" href="#what-is-predictive-modeling" title="Permanent link">&para;</a></h3>
+<p>Predictive modeling uses historical data to predict future outcomes. The process of building and scoring a predictive model has two main parts: <strong>building the predictive model on existing data and then deploying the model to make predictions on new data</strong> (using a process call scoring).</p>
+<p>A predictive model consists of either a formula or rules (depending on the type of analysis that you use) based on a set of input variables that are moes likely to predict the values of a target variable. Here we will deal with predictive models based on <strong>regression models, which are parametric and have formulas</strong>. Predictive models can also be based on <strong>non-parametric models such as decision trees, which have rules</strong>.</p>
+<p>Model-based predictions are often called <strong>fact-based predictions</strong>. In contrast, decisions that are based completely on people's business expertise are often referred to as <strong>intuition-based decisions</strong>. Prediction modeling takes the guesswork out of the prediction process.</p>
+<h3 id="model-complexity">Model Complexity<a class="headerlink" href="#model-complexity" title="Permanent link">&para;</a></h3>
+<p>Whether you are doing predictive modeling or inferential modeling, you want to select a model that generalizes well, that is, the model that best fits the entire population.</p>
+<p>You assume that a sample that is used to fit the model is representative of the population. However, any given sample typically has idiosyncracies that are not found in the population. The model that best fits a sample and the population is the model that has the right complexity.</p>
+<p>A naive modeler might assume that most complex model should always outperform the others, but this is not the case. An overly complex model might be <strong>too flexible</strong>. This leads to <strong>overfitting</strong> that is, accomodating nuances of the random noise (the chance relationships) in the particular sample. Overfitting leads to models that have <strong>higher variance when they are applied to a population</strong>. For regression, including more terms in the model increases complexity.</p>
+<p>On the other hand, an inssufficiently complex model might <strong>not be flexible enough</strong>. This leads to <strong>underfitting</strong> that is, systematically missing the signal (the true relationships). This leads to <strong>biased inferences</strong>, which are inferences that are not true of the population.</p>
+<p>A model with just enough complexity, which also means <strong>just enough flexibility</strong>, gives the best generalization. The important thing to realize is that there is not one perfect model; there is always a balance between overfitting and underfitting.</p>
+<p><img alt="Model Complexity" src="../../images/model-complexity.PNG" title="Model Complexity" /></p>
+<h3 id="building-a-predictive-model">Building a Predictive Model<a class="headerlink" href="#building-a-predictive-model" title="Permanent link">&para;</a></h3>
+<p>The first part of the predictive modeling process is building the model. There are two steps to building the model: fitting the model and then, assessing model performance in order to select the model that will be deployed.</p>
+<p>To build a predictive model, a method called <strong>honest assessment</strong> is commonly used to ensure that the best model is selected. Honest assessment means that the assessment is done on a different data set than the one that was used to build the model and thus, it involves <strong>partitioning the available data</strong> typically into two data sets: a training data set and a validation data set. Both data sets contain the inputs and the target. </p>
+<ul>
+<li>The <strong>training data set</strong> is used to fit the model. In the training data set, an observation is called a <strong>training case</strong>. Other synonyms for "observation" are example, instance and record. </li>
+<li>The <strong>validation data set</strong> is a holdout sample that is used to assess model performance and select the model that has the best generalization.</li>
+<li>Sometimes there is a third partition of the data, the <strong>test data set</strong>, that is used to perform a final test on the model before the model is used for scoring. This final test can be referred to as a final honest estimate of generalization. Like the validation data set, the test data set is also referred to as a holdout data set. </li>
+</ul>
+<p>In practice, many analysts see no need for a final honest assessment of generalization based on a test data set. Instead, an optimal model is chosen using the validation data. The model assessment that is measured on the validation data, is reported as an upper bound on the performance that is expected when the model is deployed for scoring.</p>
+<p>Partitioning the data avoids overfitting problems. The classical example of overfitting is selecting linear regression models based on R square.</p>
+<p>Is it always best to partition the data set when you build a predictive model? This depends on the size of the data set. If you start with a small or medium-size data set, partitioning the data might not be efficient. The reduced sample size can severely degrade the fit of the model. In fact, computer-intensive methods, such as the <strong>cross-validation and bootstrap methods</strong>, were developed so that all the data can be used for both fitting and honest assessment. However, predictive modeling usually involves very large data sets, so partitioning the data is usually appropriate.</p>
+<p>Let's take a closer look at using honest assessment to build a predictive model. During model fitting, the training data is used to model the target. You can use one of several model selection methods.</p>
+<p>The <strong>forward selection</strong> process generates a number of possible models, which increases in complexity as variables are added to the model. Variable continue to be added as long as they meet the criterion for inclusion. For example, if you use the <strong>AICC</strong> criterion, variables will be added as long as the criterion value continues to decrease and then the process stops.</p>
+<p>From a number of models of different complexity generated with the training data on which the validation data is used to assess their performance, the chosen model will be <strong>the simplest model (more parsimonious) with the highest validation assessment or best performance on the validation data</strong>.</p>
+<h3 id="using-proc-glmselect-to-build-a-predictive-model">Using <code>PROC GLMSELECT</code> to Build a Predictive Model<a class="headerlink" href="#using-proc-glmselect-to-build-a-predictive-model" title="Permanent link">&para;</a></h3>
+<p>This procedure can build a model in two ways. The method that you use depends on the state of your data before model building begins. If your data is already partitioned into a trining data set and a validation data set, you can simply reference both data sets in the procedure. If you start with a single data set, <code>PROC GLMSELECT</code> can partition the data for you.</p>
+<p>If the validation data set already exists:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLMSELECT DATA=training-data-set
+               VALDATA=validation-data-set;
+    MODEL target(s)=input(s) &lt;/ options&gt;;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<p>If you start with a data set that is not yet partitioned:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLMSELECT DATA=training-data-set
+               <span class="nt">&lt;SEED</span><span class="err">=number</span><span class="nt">&gt;</span>;
+    MODEL target(s)=input(s) <span class="nt">&lt;/ options&gt;</span>;
+    PARTITION FRACTION (<span class="nt">&lt;TEST</span><span class="err">=fraction</span><span class="nt">&gt;&lt;VALIDATE</span><span class="err">=fraction</span><span class="nt">&gt;</span>);
+RUN;
+</pre></div>
+</td></tr></table>
+
+<p>The sum of the specified fractions must be less than 1 and the remaining fraction of the cases in the inputa data set are assigned the training role.</p>
+<p>The <code>PARTITION</code> statement requires a pseudo-random number generator to start the random selection process and a starting seed seed is needed which must be an integer. If you need to be able to reproduce your results in the future, you specify an integer that is greater than zero in the <code>SEED=</code> option in order to get the same results every time. If the <code>SEED=</code> value specifies an invalid value or no value, the seed is automatically generated from reading the time of day from the computer's clock. In most situations, it is recommended that you use the <code>SEED=</code> option and specify an integer greater than zero.</p>
+<p><img alt="Random number seed" src="../../images/random-seed.PNG" title="Random number seed" /></p>
+<h3 id="building-a-predictive-model_1">Building a Predictive Model<a class="headerlink" href="#building-a-predictive-model_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS GRAPHICS;
+
+PROC GLMSELECT DATA=training-data-set
+               PLOTS=all
+               VALDATA=validation-data-set;
+    CLASS categorical1 categorical2 / PARAM=glm REF=first;
+    MODEL target = categorical1 categorical2 interval1 interval2 / 
+            SELECTION=backward|forward|stepwise SELECT=sbc|aic CHOOSE=validate;
+    STORE OUT=output-data-set;
+    title &quot;Selecting the Best Model using Honest Assessment&quot;;
+RUN;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The <code>PARAM=</code> option specifies the parametrization method. In this case <code>glm</code> parametrization is used (same method used in <code>PROC GLM</code>). With <code>glm</code> parametrization, one design variable is produced per level of each <code>CLASS</code> variable.</li>
+<li>We specify <code>REF=first</code> so that, for each design variable, we can compare the output at the current level with the first level. By default, the reference level is the last level.</li>
+<li>The <code>SELECTION=</code> option specifies the <code>backward</code> selection model of variable selection.</li>
+<li><code>SELECT=sbc</code> indicates that the Schwarz-Bayesian criterion will be used to determine which variables remain in the model.</li>
+<li><code>CHOOSE=validate</code> specifies that <code>PROC GLMSELECT</code> will select the best model based on the validation data (the one that has the smallest overall validation error, specifically the average squared error --ASE--, which is the sum of the squared differences between the observed value and the predicted value using the model).</li>
+<li>The <code>STORE</code> statement saves the context and results of the statistical analysis in a file called an item store. It is convenient to create an item store because you can reference it in later programs and avoid having to rebuild the model. For example, you can use the item store to score new data in the next step of predictive modeling.</li>
+</ul>
+<p>Let's describe now the typical obtained results:</p>
+<ul>
+<li>The first table summarizes model information, including the data sets, variables, selction method and criteria that are used to select the variables and the final model.</li>
+<li>Then there are two <strong>Observation Profile for Analysis</strong> tables, one for the analysis (that is, training) data and the other for the validation data.</li>
+<li>The <strong>Class Level Information</strong> table shows the number of categorical variables included in the analysis. The total degrees of freedom are much higher than this number because most categorical variables have more than one level, which results in more than one design variable. The number of non-redundant design variables or degrees of freedom of a categorical variable is the total number of levels minus one.</li>
+<li>In the <strong>Dimensions</strong> table, you can see the number of effects and parameters of the analysis. The number of parameters is higher than the number of effects because some of the effects have multiple parameters. <ul>
+<li>The <strong>number of effects</strong> = number of interval variables + number of categorical variables + intercept</li>
+<li>The <strong>number of parameters</strong> = number of interval variables + number of degrees of freedom of categorical variables (addition of total number of levels - the number of categorical variables) + intercept</li>
+</ul>
+</li>
+<li>In the <strong>Backward Selection Summary</strong> table, the Step 0 row shows the number of effects and non-redundant parameters (smaller than the number of parameters that is shown in the <strong>Dimensions</strong> table) that we start with. The difference is the number of variables because there is one redundant design variable for each categorical variable. The <strong>SBC</strong> is assessed on the training data and variables are removed from the model while this produces a reduction on it. In the last row, the SBC value is followed by an asterisk, that means <strong>Optimal Value of Criterion</strong>. Remember that the SBC is also the stopping criterion because we didn't specify a different criterion. So, based on the SBC for the training data, the model at the last step is the best model. The next column reports the training average squared error, but this is not used to select the model. It seems contradictory that, as you remove variables from the model, the training ASE tends to increase. However, this is not true for the validation data set, so the validation data set gives a better idea of how the model performs on data that was not used to build the model. Remember that the model is chosen based on the validation ASE. Going down the column for the validation ASE, the values continue to decrease until a value marked with an asterisk, meaning that this is the best model based on the validation data.</li>
+<li>The <strong>Stop Details</strong> table summarizes the information that we just discussed.</li>
+<li>In the first plot, <strong>Coefficient Progression for [target]</strong>, the lower section shows the performance of all the models based on the validation ASE. In the top section you can compare the models and see how the parameters changed as variables were removed from the model. A vertical line extends up through the point for the selected model. The parameter estimates on this vertical line are of interest to us.</li>
+<li>In the <strong>Progression of Average Squared Errors by Role for [target]</strong> plot, the ASE for the validation data is plotted on the top line and the training data on the bottom line. Looking at the training data plot, notice that the ASE cannot go down; it can only go up because the backwards elimination criterion is used to remove variables from the model. For the training data, the ASE can go down only if variables are added.</li>
+<li>In the <strong>Analysis of Variance</strong> table, we see some summary information. Remember that the number of degrees of freedom in the selected model is not the number of variables.</li>
+<li>The <strong>Parameter Estimates</strong> table. For each categorical variable, the selected levels are shown and the table and the lowest one (because the <code>REF=first</code> option was defined) is used as the reference level and is then set to zero with zero degrees of freedom, which makes it the redundant design variable. This table also shows t values. We could also get p-values, but that is not useful because this model was already selected. Notice that this table lists all the categorical variables before the continuous variables.</li>
+</ul>
+<h2 id="scoring-predictive-models">Scoring Predictive Models<a class="headerlink" href="#scoring-predictive-models" title="Permanent link">&para;</a></h2>
+<p>After you build a predictive model, you are ready to deploy the model. To score new data you can use <code>PROC GLMSELECT</code> and <code>PROC PLM</code>.</p>
+<h3 id="preparing-for-scoring">Preparing for Scoring<a class="headerlink" href="#preparing-for-scoring" title="Permanent link">&para;</a></h3>
+<p>Before you start using a newly-built model to score data, some preparation of the model, the data or both is usually required.</p>
+<p>It is essential for the scoring data to be comparable to the training and validation data that were used to build the model. Before the model is build, modifications are often made to the training data, such as missing value imputation, transformations and derivation of inputs through standardization of the creation of composite variables from existing variables. The same modifications must be made to the validation data before validating the model and to the scoring data before scoring. Making the same modifications becomes more complex if the original modifications were based on parameters derived from the training data set, such as the mean or standard deviation.</p>
+<h3 id="methods-of-scoring">Methods of Scoring<a class="headerlink" href="#methods-of-scoring" title="Permanent link">&para;</a></h3>
+<p>When you score, you do not rerun the algorithm that was used to build the model. Instead, you apply the score code that is, the equations obtained from the final model to the scoring data. Let's look at three methods of scoring your data.</p>
+<ul>
+<li><strong>Method 1</strong>: a <code>SCORE</code> statement is added to the <code>PROC GLMSELECT</code> step that is used to create the model. This method is useful because you can build and score a model in one step. However, this method is inefficient if you want to score more than once or use a large data set to build a model. With this method, the model must be built from the training data each time the program is run.</li>
+<li><strong>Method 2</strong>: a <code>STORE</code> statement in the <code>PROC GLMSELECT</code> step and then a <code>SCORE</code> statement in <code>PROC PLM</code>. This method enables you to build the model only once, along with an item store, using <code>PROC GLMSELECT</code>. You can then use <code>PROC PLM</code> to score new data using the item store. Separating the code for model building and model scoring is especially helpful if your model is based on a very large training data set or if you want to scroe more than once. One potential problem with this method is that others might not be able to use this code with earlier versions of SAS or you might not want to share the entire item store.</li>
+<li><strong>Method 3</strong>: a <code>STORE</code> statement in <code>PROC GLMSELECT</code>, a <code>CODE</code> statement in <code>PROC PLM</code> to output SAS code for scoring and then a DATA step to do the scoring. Some of the previous method's problems are solved by using <code>PROC PLM</code> to write detailed scoring code, based on the item store, that is compatible with earlier versions of SAS. You can provide this code to others without having to share other information that is in the item store. The <code>DATA</code> step is then used for scoring.</li>
+</ul>
+<h3 id="scoring-data">Scoring Data<a class="headerlink" href="#scoring-data" title="Permanent link">&para;</a></h3>
+<p>Let's use the item store that we created in the last example to score data. When you score data in your work environment, you'll be scoring data that was not used in either training or validation. Here we use code that scores the data in two different ways and then compares the output from the two methods.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PROC</span> <span class="n">PLM</span> <span class="n">RESTORE</span><span class="o">=</span><span class="n">output</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">set</span><span class="p">;</span>
+    <span class="n">SCORE</span> <span class="n">DATA</span><span class="o">=</span><span class="n">data</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">score</span> <span class="n">OUT</span><span class="o">=</span><span class="n">scored</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">set1</span><span class="p">;</span>
+    <span class="n">CODE</span> <span class="kt">FILE</span><span class="o">=</span><span class="s">&quot;/folders/myfolders/scoring.sas&quot;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+
+<span class="n">DATA</span> <span class="n">scored</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">set2</span><span class="p">;</span>
+    <span class="n">SET</span> <span class="n">data</span><span class="o">-</span><span class="n">set</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">score</span><span class="p">;</span>
+    <span class="nf">%include</span> <span class="s">&quot;/folders/myfolders/scoring.sas&quot;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+
+<span class="n">PROC</span> <span class="n">COMPARE</span> <span class="n">BASE</span><span class="o">=</span><span class="n">scored</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">set1</span> <span class="n">COMPARE</span><span class="o">=</span><span class="n">scored</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">set2</span> <span class="n">CRITERION</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">predicted1</span><span class="p">;</span>
+    <span class="n">WITH</span> <span class="n">predicted2</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The <code>PROC PLM</code> uses the <code>SCORE</code> statement to score the data. By default the name <code>Predicted</code> is used for the scored variable. An statement of this kind can be used also in the <code>PROC GLMSELECT</code> to score data.</li>
+<li>The second method generates scoring code by using the <code>CODE</code> statement in <code>PROC PLM</code>, and then uses a <code>DATA</code> step to do the scoring.</li>
+<li>The <code>PROC COMPARE</code> step compares the values of the scored variable in the two output data sets. There's no need to do any preliminary matching or sorting in this case because the output data sets are based ont he same input data set; they have the same number of variables and observations, in the same order. By default, the criterion for judging the equality of the numeric values is 0.00001 which can be changed by specifying a different criterion using the <code>CRITERION=</code> option. The scored variable has a different name in the two data sets, so the two names are specified in the <code>VAR</code> (for the <code>BASE=</code>) and <code>WITH</code> (for the <code>COMPARE=</code>) statements.</li>
+</ul>
+<p>In the results, we want to look at the <strong>Values Comparison Summary</strong> to see whether the two methods produced similar predictions and check for values that are compared as unequal. You can find <strong>Values not EXACTLY Equal</strong> but, as the <strong>Maximum Difference Criterion Value</strong> indicates, the differences are too small to be important.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../categorical-data/" title="Categorical Data Analysis" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Categorical Data Analysis
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../miscellanea/" title="Miscellanea" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Miscellanea
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1460 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+    
+    
+      
+        <title>Laboratory test - SAS Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Medical terms
+                </span>
+              
+            
+            Laboratory test
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/" title="Using Macros" class="md-nav__link">
+      Using Macros
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
+    
+    <label class="md-nav__link" for="nav-13">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Laboratory test
+      </label>
+    
+    <a href="./" title="Laboratory test" class="md-nav__link md-nav__link--active">
+      Laboratory test
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hematology" title="Hematology" class="md-nav__link">
+    Hematology
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-ranges-rule-of-thumb" title="Normal Ranges' Rule of Thumb" class="md-nav__link">
+    Normal Ranges' Rule of Thumb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blood-related-anomalies" title="Blood-Related Anomalies" class="md-nav__link">
+    Blood-Related Anomalies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chemistry" title="Chemistry" class="md-nav__link">
+    Chemistry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urinalysis" title="Urinalysis" class="md-nav__link">
+    Urinalysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coagulation" title="Coagulation" class="md-nav__link">
+    Coagulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biomarkers" title="Biomarkers" class="md-nav__link">
+    Biomarkers
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
+      Introduction and Shiny basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
+      Inputs, outputs, and rendering functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
+      Reactive programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
+      Customizing appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hematology" title="Hematology" class="md-nav__link">
+    Hematology
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-ranges-rule-of-thumb" title="Normal Ranges' Rule of Thumb" class="md-nav__link">
+    Normal Ranges' Rule of Thumb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blood-related-anomalies" title="Blood-Related Anomalies" class="md-nav__link">
+    Blood-Related Anomalies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chemistry" title="Chemistry" class="md-nav__link">
+    Chemistry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urinalysis" title="Urinalysis" class="md-nav__link">
+    Urinalysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coagulation" title="Coagulation" class="md-nav__link">
+    Coagulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biomarkers" title="Biomarkers" class="md-nav__link">
+    Biomarkers
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Laboratory test</h1>
+                
+                <h2 id="hematology">Hematology<a class="headerlink" href="#hematology" title="Permanent link">&para;</a></h2>
+<p><strong>Hematology</strong> is the study of blood and blood disorders to help in the diagnosis, treatment, and prevention of diseases of the blood and bone marrow as well as of the immunologic, hemostatic (blood clotting) and vascular systems. Because of the nature of blood, the science of hematology profoundly affects the understanding of many diseases.</p>
+<p>All our <strong>blood cells develop from stem cells in the bone marrow</strong>. Stem cells are blood cells at the earliest stage of development and they stay inside the bone marrow until they are fully developed which is when they go into the bloodstream. Blood cells do not live long. The bone marrow normally makes millions of new blood cells every day to replace blood cells as they are needed.</p>
+<p>The three main types of blood cells are:</p>
+<ul>
+<li>
+<p><strong>Red blood cells (RBC) or erythrocytes</strong> are the most common type of blood cells. They lack a cell nucleus and most organelles, in order to accommodate maximum space for hemoglobin; they can be viewed as sacks of hemoglobin, with a plasma membrane as the sack.  </p>
+<ul>
+<li><strong>Hemoglobin (HGB)</strong> is an iron-containing biomolecule that can bind oxygen and is responsible for the red color of the cells and the blood.</li>
+<li>The <strong>hematocrit (HCT)</strong>, is the volume percentage of red blood cells in blood.</li>
+</ul>
+</li>
+<li>
+<p><strong>Platelets (PLAT) or thrombocytes</strong> help the blood to clot and prevent bleeding and bruising.</p>
+</li>
+<li><strong>White blood cells (WBC) or leucocytes</strong> fight and prevent infection.<ul>
+<li><strong>Basophils</strong></li>
+<li><strong>Eosinophils</strong></li>
+<li><strong>Neutrophils</strong></li>
+<li><strong>Monocytes</strong></li>
+<li><strong>Lymphocytes</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Blood cells" src="../../images/blood.PNG" title="Blood cells" /></p>
+<h3 id="normal-ranges-rule-of-thumb">Normal Ranges' Rule of Thumb<a class="headerlink" href="#normal-ranges-rule-of-thumb" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Type of blood cell</strong></th>
+<th><strong>Unit</strong></th>
+<th><strong>Levels</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red blood cells (RBC)</td>
+<td>g/l</td>
+<td>Men: 130-180, Women: 115-165</td>
+</tr>
+<tr>
+<td>Hematocrit (HCT)</td>
+<td>%</td>
+<td>Men: 41-50, Women: 36-44</td>
+</tr>
+<tr>
+<td>Hemoglobin      (Hgb)</td>
+<td>g/l</td>
+<td>Men: 13.5-16.5, Women: 12.0-15.0</td>
+</tr>
+<tr>
+<td>Platelets</td>
+<td>10^9/L</td>
+<td>150-400</td>
+</tr>
+<tr>
+<td>White blood cells</td>
+<td>10^9/L</td>
+<td>4.0-11.0</td>
+</tr>
+<tr>
+<td>Neutrophils</td>
+<td>10^9/L</td>
+<td>2.0-7.5</td>
+</tr>
+<tr>
+<td>Lymphocytes</td>
+<td>10^9/L</td>
+<td>1.5-4.5</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
+</div>
+<ul>
+<li><a href="../Laboratory values">http://globalrph.com/laboratory-values/</a></li>
+</ul>
+<h3 id="blood-related-anomalies">Blood-Related Anomalies<a class="headerlink" href="#blood-related-anomalies" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Leucocytosis</strong>, often defined as an elevated white blood cell (WBC) count greater than $11000/mm^3$ ($11.0 \cdot 10^9/L$) in nonpregnant adults, is a relatively common finding with a wide differential. It is important for clinicians to be able to distinguish malignant from nonmalignant etiologies, and to differentiate between the most common nonmalignant causes of leukocytosis. Leukocytosis in the range of approximately $50-100 \cdot 10^9/L$ is sometimes referred to as a <strong>leukemoid reaction</strong>. This level of elevation can occur in some severe infections, such as Clostridium difficile infection, sepsis, organ rejection, or in patients with solid tumors. Leukocytosis greater than $100 \cdot 10^9/L$ is almost always caused by leukemias or myeloproliferative disorders.</li>
+<li>An abnormally low hematocrit (as well as a decrease in the total amount of red blood cells or hemoglobin in the blood) may suggest <strong>anemia</strong>, a decrease in the total amount of red blood cells, while an abnormally high hematocrit is called <strong>polycythemia</strong>. Both are potentially life-threatening disorders.</li>
+<li><strong>Thrombocythemia or thrombocytosis</strong> is the presence of high platelet counts in the blood. Although often symptomless, it can predispose to thrombosis in some patients. Thrombocytosis can be contrasted with <strong>thrombocytopenia</strong>, a loss of platelets in the blood.</li>
+</ul>
+<h2 id="chemistry">Chemistry<a class="headerlink" href="#chemistry" title="Permanent link">&para;</a></h2>
+<h2 id="urinalysis">Urinalysis<a class="headerlink" href="#urinalysis" title="Permanent link">&para;</a></h2>
+<h2 id="coagulation">Coagulation<a class="headerlink" href="#coagulation" title="Permanent link">&para;</a></h2>
+<h2 id="biomarkers">Biomarkers<a class="headerlink" href="#biomarkers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>CEA (carcinoembryonic antigen)</strong> is a protein found in many types of cells but associated with tumors and the developing fetus. A common cutoff is $5 \mu g/L$ (values bigger than this could be a sign of disease).</li>
+<li>Mutations in <strong>KRAS exon 2</strong>, <strong>BRAF</strong> and <strong>PIK3CA</strong> are commonly present in colorectal cancer (CRC).</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../general/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                General
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Introduction and Shiny basics
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
