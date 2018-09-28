@@ -1,0 +1,1883 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+    
+    
+      
+        <title>Using Macro Functions - SAS Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Using Macros
+                </span>
+              
+            
+            Using Macro Functions
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Using Macro Functions
+      </label>
+    
+    <a href="./" title="Using Macro Functions" class="md-nav__link md-nav__link--active">
+      Using Macro Functions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-macro-functions" title="Overview of Macro Functions" class="md-nav__link">
+    Overview of Macro Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macro-functions" title="Macro Functions" class="md-nav__link">
+    Macro Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-macro-character-functions" title="Using Macro Character Functions" class="md-nav__link">
+    Using Macro Character Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#substr-function" title="%SUBSTR Function" class="md-nav__link">
+    %SUBSTR Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-function" title="%SCAN Function" class="md-nav__link">
+    %SCAN Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upcase-function" title="%UPCASE Function" class="md-nav__link">
+    %UPCASE Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-function" title="%INDEX Function" class="md-nav__link">
+    %INDEX Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-arithmetic-and-logical-expressions" title="Using Arithmetic and Logical Expressions" class="md-nav__link">
+    Using Arithmetic and Logical Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eval-function" title="%EVAL Function" class="md-nav__link">
+    %EVAL Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysevalf-function" title="%SYSEVALF Function" class="md-nav__link">
+    %SYSEVALF Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-sas-functions-with-macro-variables" title="Using SAS Functions with Macro Variables" class="md-nav__link">
+    Using SAS Functions with Macro Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sysfunc-function" title="%SYSFUNC Function" class="md-nav__link">
+    %SYSFUNC Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-macro-functions-to-mask-special-characters" title="Using Macro Functions to Mask Special Characters" class="md-nav__link">
+    Using Macro Functions to Mask Special Characters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#str-macro-quoting-function" title="%STR Macro Quoting Function" class="md-nav__link">
+    %STR Macro Quoting Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrstr-macro-quoting-function" title="%NRSTR Macro Quoting Function" class="md-nav__link">
+    %NRSTR Macro Quoting Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-is-not-a-macro-language-statement" title="%INCLUDE Is Not a Macro Language Statement" class="md-nav__link">
+    %INCLUDE Is Not a Macro Language Statement
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
+      Laboratory test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
+      Introduction and Shiny basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
+      Inputs, outputs, and rendering functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
+      Reactive programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
+      Customizing appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-macro-functions" title="Overview of Macro Functions" class="md-nav__link">
+    Overview of Macro Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macro-functions" title="Macro Functions" class="md-nav__link">
+    Macro Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-macro-character-functions" title="Using Macro Character Functions" class="md-nav__link">
+    Using Macro Character Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#substr-function" title="%SUBSTR Function" class="md-nav__link">
+    %SUBSTR Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-function" title="%SCAN Function" class="md-nav__link">
+    %SCAN Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upcase-function" title="%UPCASE Function" class="md-nav__link">
+    %UPCASE Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-function" title="%INDEX Function" class="md-nav__link">
+    %INDEX Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-arithmetic-and-logical-expressions" title="Using Arithmetic and Logical Expressions" class="md-nav__link">
+    Using Arithmetic and Logical Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eval-function" title="%EVAL Function" class="md-nav__link">
+    %EVAL Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysevalf-function" title="%SYSEVALF Function" class="md-nav__link">
+    %SYSEVALF Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-sas-functions-with-macro-variables" title="Using SAS Functions with Macro Variables" class="md-nav__link">
+    Using SAS Functions with Macro Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sysfunc-function" title="%SYSFUNC Function" class="md-nav__link">
+    %SYSFUNC Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-macro-functions-to-mask-special-characters" title="Using Macro Functions to Mask Special Characters" class="md-nav__link">
+    Using Macro Functions to Mask Special Characters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#str-macro-quoting-function" title="%STR Macro Quoting Function" class="md-nav__link">
+    %STR Macro Quoting Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrstr-macro-quoting-function" title="%NRSTR Macro Quoting Function" class="md-nav__link">
+    %NRSTR Macro Quoting Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-is-not-a-macro-language-statement" title="%INCLUDE Is Not a Macro Language Statement" class="md-nav__link">
+    %INCLUDE Is Not a Macro Language Statement
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Using Macro Functions</h1>
+                
+                <h2 id="overview-of-macro-functions">Overview of Macro Functions<a class="headerlink" href="#overview-of-macro-functions" title="Permanent link">&para;</a></h2>
+<h3 id="macro-functions">Macro Functions<a class="headerlink" href="#macro-functions" title="Permanent link">&para;</a></h3>
+<p>Macro functions enable you to manipulate text strings that SAS inserts in your code. When you submit a program, SAS executes the macro functions before the program compiles. To use a macro function, specify the function name, which starts with a percent sign. Enclose the function arguments in parentheses, separated by commas.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%function</span><span class="o">-</span><span class="n">name</span> <span class="p">(</span><span class="n">argument</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="p">,</span> <span class="n">argument</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>The arguments can include:</p>
+<ul>
+<li>Constant text (<code>S&amp;P 500</code>)</li>
+<li>Macro variable references (<code>&amp;sysdate9</code>)</li>
+<li>Macro functions (<code>%lenght(&amp;var)</code>)</li>
+<li>Macro calls (<code>%time</code>)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you use constant text, do not enclose the text in quotation marks. If you do include them, they'll become part of the argument.</p>
+</div>
+<p>You can use all macro functions in both open code and macro definitions. Macro functions are categorized in four types:</p>
+<ul>
+<li>Macro character functions</li>
+<li>Macro evaluation functions</li>
+<li>Macro quoting functions</li>
+<li>Other macro functions</li>
+</ul>
+<h2 id="using-macro-character-functions">Using Macro Character Functions<a class="headerlink" href="#using-macro-character-functions" title="Permanent link">&para;</a></h2>
+<p>Macro character functions enable you to manipulate character strings or obtain information about them.</p>
+<h3 id="substr-function"><code>%SUBSTR</code> Function<a class="headerlink" href="#substr-function" title="Permanent link">&para;</a></h3>
+<p><code>%SUBSTR</code> extracts a substring of characters from an argument consisting of a character string or text expression. Position specifies where the extraction should begin. n specifies the number of characters to extract. If you don't specify n, the remainder of the string is extracted.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%SUBSTR (argument, position &lt;, n&gt;)</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="scan-function"><code>%SCAN</code> Function<a class="headerlink" href="#scan-function" title="Permanent link">&para;</a></h3>
+<p>The <code>%SCAN</code> function enables you to extract words from a macro variable or text expression. <code>%SCAN</code> returns the nth word in an argument, where the words in the argument are separated by delimiters. If n is greater than the number of words in the argument, the function returns a null string. Delimiters refers to the characters that separate words or text expressions.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%SCAN (argument, n &lt;, delimiters&gt;)</span>
+</pre></div>
+</td></tr></table>
+
+<p>If you omit the optional delimiter information, <code>%SCAN</code> uses a default set of delimiters shown below.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Encoding</th>
+<th>Type</th>
+<th>Default Delimiters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ASCII</td>
+<td>blank</td>
+<td>. &lt; ( + &amp; ! $ * ) ; ^ - / , % &#124;</td>
+</tr>
+<tr>
+<td align="center">EBCDIC</td>
+<td>blank</td>
+<td>. &lt; ( + &#124; &amp; ! $ * ) ; ¬ - / , % ¦ ¢</td>
+</tr>
+</tbody>
+</table>
+<h3 id="upcase-function"><code>%UPCASE</code> Function<a class="headerlink" href="#upcase-function" title="Permanent link">&para;</a></h3>
+<p>The <code>%UPCASE</code> function enables you to convert characters to uppercase before substituting that value in a SAS program.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%UPCASE (argument)</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="index-function"><code>%INDEX</code> Function<a class="headerlink" href="#index-function" title="Permanent link">&para;</a></h3>
+<p>The <code>%INDEX</code> function enables you to search for a string within a source. <code>%INDEX</code> searches source for the first occurrence of string and returns the position of its first character. If an exact match of string is not found, the function returns 0.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%INDEX (source, string)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-arithmetic-and-logical-expressions">Using Arithmetic and Logical Expressions<a class="headerlink" href="#using-arithmetic-and-logical-expressions" title="Permanent link">&para;</a></h2>
+<h3 id="eval-function"><code>%EVAL</code> Function<a class="headerlink" href="#eval-function" title="Permanent link">&para;</a></h3>
+<p>The <code>%EVAL</code> function evaluates arithmetic and logical expressions.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%EVAL (arithmetic or logical expression)</span>
+</pre></div>
+</td></tr></table>
+
+<table>
+<thead>
+<tr>
+<th align="center">Arithmetic Expressions</th>
+<th>Logical Expressions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>1 + 2</code></td>
+<td><code>&amp;DAY = FRIDAY</code></td>
+</tr>
+<tr>
+<td align="center"><code>4 * 3</code></td>
+<td><code>A &lt; a</code></td>
+</tr>
+<tr>
+<td align="center"><code>4 / 2</code></td>
+<td><code>1 &lt; &amp;INDEX</code></td>
+</tr>
+<tr>
+<td align="center"><code>00FFx - 003Ax</code></td>
+<td><code>&amp;START NE &amp;END</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>When <code>%EVAL</code> evaluates an <strong>arithmetic expression</strong>, it temporarily converts operands to numeric values and performs an integer arithmetic operation. If the result of the expression is noninteger, <code>%EVAL</code> truncates the value to an integer. The result is expressed as text. The %EVAL function generates an error message in the log when it encounters an expression that contains noninteger values.</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">/* Example */</span>
+<span class="nf">%let</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">%eval</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nf">%put</span> <span class="n">x</span><span class="o">=&amp;</span><span class="n">x</span>
+<span class="cm">/*result 1*/</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>When <code>%EVAL</code> evaluates a <strong>logical expression</strong>, it returns a value of 0 to indicate that the expression is false, or a value of 1 to indicate that the expression is true.</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">/* Example */</span>
+<span class="nf">%let</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">%eval</span><span class="p">(</span><span class="mi">10</span> <span class="n">lt</span> <span class="mi">2</span><span class="p">);</span> <span class="cm">/*10 less than 2*/</span>
+<span class="cm">/*The expression is false*/</span>
+<span class="nf">%put</span> <span class="n">x</span><span class="o">=&amp;</span><span class="n">x</span>
+<span class="cm">/*result 0*/</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="sysevalf-function"><code>%SYSEVALF</code> Function<a class="headerlink" href="#sysevalf-function" title="Permanent link">&para;</a></h3>
+<p>The <code>%SYSEVALF</code> function evaluates arithmetic and logical expressions using floating-point arithmetic and returns a value that is formatted using the <code>BEST32.</code> format (meaning that decimal contributions are not accounted in the operation). The result of the evaluation is always text.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">SYSEVALF</span> <span class="p">(</span><span class="n">expression</span> <span class="o">&lt;</span><span class="p">,</span> <span class="n">conversion</span><span class="o">-</span><span class="n">type</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="cm">/* Example */</span>
+<span class="nf">%let</span> <span class="n">value</span><span class="o">=</span><span class="nf">%sysevalf</span><span class="p">(</span><span class="mf">10.5</span><span class="o">+</span><span class="mf">20.8</span><span class="p">);</span>
+<span class="nf">%put</span> <span class="mf">10.5</span><span class="o">+</span><span class="mf">20.8</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">;</span>
+<span class="cm">/* result 10.5+20.8 = 30 */</span>
+</pre></div>
+</td></tr></table>
+
+<p>You can use <code>%SYSEVALF</code> with an optional conversion type (<code>BOOLEAN</code>, <code>CEIL</code>, <code>FLOOR</code>, or <code>INTEGER</code>) that tailors the value returned by <code>%SYSEVALF</code>.</p>
+<h2 id="using-sas-functions-with-macro-variables">Using SAS Functions with Macro Variables<a class="headerlink" href="#using-sas-functions-with-macro-variables" title="Permanent link">&para;</a></h2>
+<h3 id="sysfunc-function"><code>%SYSFUNC</code> Function<a class="headerlink" href="#sysfunc-function" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>%SYSFUNC</code> macro function to execute SAS functions within the macro facility.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">SYSFUNC</span> <span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="n">function</span><span class="p">(</span><span class="n">argument</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">&lt;</span><span class="p">,</span> <span class="n">format</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="cm">/* Example */</span>
+<span class="nf">%let</span> <span class="n">current</span> <span class="o">=</span> <span class="nf">%sysfunc</span><span class="p">(</span><span class="n">time</span><span class="p">(),</span> <span class="n">time</span><span class="p">.);</span>
+</pre></div>
+</td></tr></table>
+
+<p>Because <code>%SYSFUNC</code> is a macro function, you don't enclose character values in quotation marks, as you do in SAS functions. You can specify an optional format for the value returned by the function. If you do not specify a format, numeric results are converted to a character string using the <code>BEST12.</code> format. SAS returns character results as they are, without formatting or translation.</p>
+<p>You can use almost any SAS function with the <code>%SYSFUNC</code> macro function. The exceptions are shown in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Function Type</th>
+<th>Function Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array processing</td>
+<td><code>DIM</code>, <code>HBOUND</code>, <code>LBOUND</code></td>
+</tr>
+<tr>
+<td>Variable information</td>
+<td><code>VNAME</code>, <code>VLABEL</code>, <code>MISSING</code></td>
+</tr>
+<tr>
+<td>Macro interface</td>
+<td><code>RESOLVE</code>, <code>SYMGET</code></td>
+</tr>
+<tr>
+<td>Data conversion</td>
+<td><code>INPUT</code>, <code>PUT</code></td>
+</tr>
+<tr>
+<td>Other functions</td>
+<td><code>ORCMSG</code>, <code>LAG</code>, <code>DIF</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use <code>INPUTC</code> and <code>INPUTN</code> in place of <code>INPUT</code>, and <code>PUTC</code> and <code>PUTN</code> in place of <code>PUT</code>.</p>
+</div>
+<h2 id="using-macro-functions-to-mask-special-characters">Using Macro Functions to Mask Special Characters<a class="headerlink" href="#using-macro-functions-to-mask-special-characters" title="Permanent link">&para;</a></h2>
+<p>Macro quoting functions enable you to clearly indicate to the macro processor how it is to interpret special characters and mnemonics.</p>
+<h3 id="str-macro-quoting-function"><code>%STR</code> Macro Quoting Function<a class="headerlink" href="#str-macro-quoting-function" title="Permanent link">&para;</a></h3>
+<p>The macro quoting function <code>%STR</code> masks (or quotes) special characters during compilation so that the macro processor does not interpret them as macro-level syntax.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%STR (argument)</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>%STR</code> can also be used to quote tokens that typically occur in pairs, such as the apostrophe, quotation marks, and open and closed parentheses. The unmatched token must be preceded by a <code>%</code>.
+Here is a list of all of the special characters and mnemonics masked by <code>%STR</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>+ - * / &lt; &gt; = ¬ ^ ~ ; , # blank
+AND OR NOT EQ NE LE LT GE GT IN
+&#39; &quot; ) (
+</pre></div>
+</td></tr></table>
+
+<p>Note that <code>%STR</code> does not mask the characters <code>&amp;</code> or <code>%</code>.</p>
+<h3 id="nrstr-macro-quoting-function"><code>%NRSTR</code> Macro Quoting Function<a class="headerlink" href="#nrstr-macro-quoting-function" title="Permanent link">&para;</a></h3>
+<p><code>%NRSTR</code> masks the same characters as <code>%STR</code> and also masks the special characters <code>&amp;</code> and <code>%</code>. Using <code>%NRSTR</code> instead of <code>%STR</code> prevents macro and macro variable resolution.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%NSTR (argument)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="include-is-not-a-macro-language-statement"><code>%INCLUDE</code> Is Not a Macro Language Statement<a class="headerlink" href="#include-is-not-a-macro-language-statement" title="Permanent link">&para;</a></h2>
+<p>The <code>%INCLUDE</code> statement retrieves SAS source code from an external file and places it on the input stack. It is a global SAS statement, not a macro language statement, and it can be used only on a statement boundary.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%INCLUDE file-specification &lt;/SOURCE2 &gt;;</span>
+</pre></div>
+</td></tr></table>
+
+<p>To use the <code>%INCLUDE</code> statement, you specify the keyword <code>%INCLUDE</code>, followed by a file specification. The file-specification value is the physical name or fileref of the file to be retrieved. </p>
+<p>You can optionally specify <code>SOURCE2</code> following the file specification. <code>SOURCE2</code> causes the SAS statements that are inserted into the input stack to be displayed in the SAS log. If you don't specify <code>SOURCE2</code> in the <code>%INCLUDE</code> statement, the setting of the SAS system option <code>SOURCE2</code> controls whether the inserted code is displayed.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../introducing-macrovar/" title="Introducing Macro Variables" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introducing Macro Variables
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Creating Macro Variables at Execution Time
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

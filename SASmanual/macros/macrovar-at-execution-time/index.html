@@ -1,0 +1,1752 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+    
+    
+      
+        <title>Creating Macro Variables at Execution Time - SAS Manual</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Using Macros
+                </span>
+              
+            
+            Creating Macro Variables at Execution Time
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Creating Macro Variables at Execution Time
+      </label>
+    
+    <a href="./" title="Creating Macro Variables at Execution Time" class="md-nav__link md-nav__link--active">
+      Creating Macro Variables at Execution Time
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-macro-variable-during-data-step-execution" title="Creating a Macro Variable during DATA Step Execution" class="md-nav__link">
+    Creating a Macro Variable during DATA Step Execution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-call-symputx-routine" title="Using the CALL SYMPUTX Routine" class="md-nav__link">
+    Using the CALL SYMPUTX Routine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-symputx-with-a-data-step-variable" title="Using SYMPUTX with a DATA Step Variable" class="md-nav__link">
+    Using SYMPUTX with a DATA Step Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-symputx-with-a-data-step-expression" title="Using SYMPUTX with a DATA Step Expression" class="md-nav__link">
+    Using SYMPUTX with a DATA Step Expression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-data-between-steps" title="Passing Data between Steps" class="md-nav__link">
+    Passing Data between Steps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-indirect-references-to-macro-variables" title="Creating Indirect References to Macro Variables" class="md-nav__link">
+    Creating Indirect References to Macro Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-macro-variables-using-proc-sql" title="Creating Macro Variables Using PROC SQL" class="md-nav__link">
+    Creating Macro Variables Using PROC SQL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-macro-variables-at-a-time" title="Creating Multiple Macro Variables at a Time" class="md-nav__link">
+    Creating Multiple Macro Variables at a Time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-list-of-values-in-a-macro-variable" title="Storing a List of Values in a Macro Variable" class="md-nav__link">
+    Storing a List of Values in a Macro Variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
+      PROC SQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
+      Laboratory test
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
+      Introduction and Shiny basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
+      Inputs, outputs, and rendering functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
+      Reactive programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
+      Customizing appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-macro-variable-during-data-step-execution" title="Creating a Macro Variable during DATA Step Execution" class="md-nav__link">
+    Creating a Macro Variable during DATA Step Execution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-call-symputx-routine" title="Using the CALL SYMPUTX Routine" class="md-nav__link">
+    Using the CALL SYMPUTX Routine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-symputx-with-a-data-step-variable" title="Using SYMPUTX with a DATA Step Variable" class="md-nav__link">
+    Using SYMPUTX with a DATA Step Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-symputx-with-a-data-step-expression" title="Using SYMPUTX with a DATA Step Expression" class="md-nav__link">
+    Using SYMPUTX with a DATA Step Expression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-data-between-steps" title="Passing Data between Steps" class="md-nav__link">
+    Passing Data between Steps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-indirect-references-to-macro-variables" title="Creating Indirect References to Macro Variables" class="md-nav__link">
+    Creating Indirect References to Macro Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-macro-variables-using-proc-sql" title="Creating Macro Variables Using PROC SQL" class="md-nav__link">
+    Creating Macro Variables Using PROC SQL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-macro-variables-at-a-time" title="Creating Multiple Macro Variables at a Time" class="md-nav__link">
+    Creating Multiple Macro Variables at a Time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storing-a-list-of-values-in-a-macro-variable" title="Storing a List of Values in a Macro Variable" class="md-nav__link">
+    Storing a List of Values in a Macro Variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Creating Macro Variables at Execution Time</h1>
+                
+                <h2 id="creating-a-macro-variable-during-data-step-execution">Creating a Macro Variable during <code>DATA</code> Step Execution<a class="headerlink" href="#creating-a-macro-variable-during-data-step-execution" title="Permanent link">&para;</a></h2>
+<h3 id="using-the-call-symputx-routine">Using the <code>CALL SYMPUTX</code> Routine<a class="headerlink" href="#using-the-call-symputx-routine" title="Permanent link">&para;</a></h3>
+<p>You can use the SAS <code>CALL</code> routine <code>SYMPUTX</code> to create and assign a value to a macro variable during execution.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CALL SYMPUTX(macro-variable, value);
+</pre></div>
+</td></tr></table>
+
+<p><code>CALL</code> routines are similar to functions in that you can pass arguments to them and they perform a calculation or manipulation of the arguments. <code>CALL</code> routines differ from functions in that you can't use <code>CALL</code> routines in assignment statements or expressions. <code>CALL</code> routines don't return a value. Instead, they might alter the value of one or more arguments.</p>
+<p>To invoke a SAS <code>CALL</code> routine, you specify the name of the routine after the keyword <code>CALL</code> in the <code>CALL</code> statement. The first argument to <code>SYMPUTX</code> is the name of the macro variable to be created or modified. It can be a character literal, a variable, or an expression that resolves to a valid macro variable name. The second argument is the value to be assigned to the macro variable. It can be a character or numeric constant, a variable, or an expression. If character literals are used as arguments, they must be quoted.</p>
+<p><strong>Example:</strong> What is the value of <code>foot</code> after execution of this <code>DATA</code> step?</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">data</span> <span class="n">_null_</span><span class="p">;</span>
+    <span class="n">call</span> <span class="nf">symputx</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Foot</span><span class="sc">&#39;,&#39;</span><span class="n">No</span> <span class="n">Internet</span> <span class="n">orders</span><span class="err">&#39;</span><span class="p">);</span>
+    <span class="nf">%let</span> <span class="n">foot</span><span class="o">=</span><span class="n">Some</span> <span class="n">Internet</span> <span class="n">orders</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The value of <code>foot</code> is 'No Internet Orders'. Word scanning begins. The <code>%LET</code> is executed by the macro processor. The step boundary is reached and the <code>DATA</code> step executes. <code>SYMPUTX</code> changes the value of foot.</p>
+<h3 id="using-symputx-with-a-data-step-variable">Using <code>SYMPUTX</code> with a <code>DATA</code> Step Variable<a class="headerlink" href="#using-symputx-with-a-data-step-variable" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>SYMPUTX</code> routine to assign the value of a <code>DATA</code> step variable to a macro variable. This time, the second argument will be a <code>DATA</code> step variable.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CALL SYMPUTX(macro-variable, DATA-step-variable);
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The value of the DATA step variable is assigned to the macro variable during execution.</li>
+<li>Numeric values are automatically converted to character using the BEST32. format.</li>
+<li>Leading and trailing blanks are removed from both arguments.</li>
+<li>You can assign a maximum of 32,767 characters to the receiving macro variable.</li>
+</ul>
+<h3 id="using-symputx-with-a-data-step-expression">Using <code>SYMPUTX</code> with a <code>DATA</code> Step Expression<a class="headerlink" href="#using-symputx-with-a-data-step-expression" title="Permanent link">&para;</a></h3>
+<p>The second argument to the <code>SYMPUTX</code> routine can also be an expression, and it can include arithmetic operations or function calls to manipulate data.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CALL SYMPUTX(macro-variable, expression);
+</pre></div>
+</td></tr></table>
+
+<p>You can use the <code>PUT</code> function as part of the call to the SYMPUTX routine in a <code>DATA</code> step to explicitly convert a numeric value to a character value.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PUT (source, format.);
+
+/* Example: */
+CALL SYMPUTX (&#39;date&#39;, PUT(Begin_Date, mmddyy10.));
+</pre></div>
+</td></tr></table>
+
+<p>This <code>CALL</code> statement assigns the value of the <code>DATA</code> step variable <code>Begin_Date</code> to the macro variable date. The <code>PUT</code> function explicitly converts the value of <code>Begin_Dat</code>e to a character value using the <code>MMDDYY10.</code> format. The conversion occurs before the value is assigned to the macro variable.</p>
+<h2 id="passing-data-between-steps">Passing Data between Steps<a class="headerlink" href="#passing-data-between-steps" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use a <code>DATA _NULL_</code> step with the <code>SYMPUTX</code> routine to create macro variables and pass data between program steps.</p>
+</div>
+<h3 id="creating-indirect-references-to-macro-variables">Creating Indirect References to Macro Variables<a class="headerlink" href="#creating-indirect-references-to-macro-variables" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>SYMPUTX</code> routine with <code>DATA</code> step expressions for both arguments to create a series of macro variables, each with a unique name. </p>
+<p>To create an <strong>indirect reference</strong>, you precede a name token with <strong>multiple ampersands</strong>. When the macro processor encounters two ampersands, it resolves them to one ampersand and continues to rescan from left to right, from the point where the multiple ampersands begin. This action is known as the <strong>Forward Rescan Rule</strong>.</p>
+<p><strong>Example:</strong> Given the macro variables and values shown in the following global symbol table, the <code>PROC PRINT</code> step will print all classes that are taught in a particular city. The statement is written in such a way that you would need to change only the value of <code>crslo</code>c in order for the <code>PROC PRINT</code> step to print classes that are taught in a different city.</p>
+<p><em>Global Symbol Table</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">city1</td>
+<td align="center">Dallas</td>
+</tr>
+<tr>
+<td align="center">city2</td>
+<td align="center">Boston</td>
+</tr>
+<tr>
+<td align="center">city3</td>
+<td align="center">Seattle</td>
+</tr>
+</tbody>
+</table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">crsloc</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">print</span> <span class="n">data</span><span class="o">=</span><span class="n">schedule</span><span class="p">;</span>
+    <span class="n">where</span> <span class="n">location</span><span class="o">=</span><span class="s">&quot;&amp;&amp;city&amp;crsloc&quot;</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>You precede the macro variable name <code>city</code> with <strong>two ampersands</strong>. Then you add a reference to the macro variable <code>crsloc</code> immediately after the first reference in order to build a new token.</p>
+<p>You need to use <strong>three ampersands</strong> in front of a macro variable name when its value exactly <strong>matches the name of a second macro variable</strong>.</p>
+<p><strong>Example:</strong> Given the macro variables and values shown in this global symbol table, the correspondance between each macro variable reference and its resolved value.</p>
+<p><em>Global Symbol Table</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">cat100</td>
+<td align="center">Outerwear</td>
+</tr>
+<tr>
+<td align="center">cat120</td>
+<td align="center">Accessories</td>
+</tr>
+<tr>
+<td align="center">sale</td>
+<td align="center">cat100</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Macro variable</th>
+<th align="center">Resolved value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>&amp;sale</code></td>
+<td align="center">cat100</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;sale</code></td>
+<td align="center">cat100</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;&amp;sale</code></td>
+<td align="center">Outerwear</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-macro-variables-using-proc-sql">Creating Macro Variables Using <code>PROC SQL</code><a class="headerlink" href="#creating-macro-variables-using-proc-sql" title="Permanent link">&para;</a></h2>
+<h3 id="creating-multiple-macro-variables-at-a-time">Creating Multiple Macro Variables at a Time<a class="headerlink" href="#creating-multiple-macro-variables-at-a-time" title="Permanent link">&para;</a></h3>
+<p>You can also create or update macro variables during the execution of a <code>PROC SQL</code> step.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+      SELECT column-1&lt;,column-2,…&gt;
+            INTO :macro-variable-1&lt;, :macro-variable-2,…&gt;
+            FROM table-1 | view-1
+            &lt;WHERE expression&gt;
+            &lt;ORDER BY order-by-item &lt;,...order-by-item&gt;&gt;
+            &lt;other clauses&gt;;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The <code>SELECT</code> statement generates a report by selecting one or more columns from a table</li>
+<li>The <code>INTO</code> clause in a <code>SELECT</code> statement enables you to create or update macro variables. The values of the selected columns are assigned to the new macro variables. You specify the keyword <code>INTO</code>, followed by a colon and then the name of the macro variable(s) to be created. Separate multiple macro variables with commas; each must start with a colon. The <strong>colon doesn't become part of the name</strong>.</li>
+</ul>
+<p>Unlike the <code>%LET</code> statement and the <code>SYMPUTX</code> routine, the <code>PROC SQL INTO</code> clause doesn't remove leading and trailing blanks from the values. You can use a <code>%LET</code> statement to remove any leading or trailing blanks that are stored in the value.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the <code>PROC SQL NOPRINT</code> option to suppress the report if you don't want output to be displayed.</p>
+</div>
+<p><strong>Example:</strong> The following <code>SELECT</code> statement creates a series of macro variables named <code>place1</code>, <code>place2</code>, <code>place3</code>, and so on (as many new macro variables as are needed so that each new macro variable will be assigned a value of a distinct city and state where a student lives as provided in the data set variable <code>City_State</code>). The first <code>SELECT</code> statement uses the <code>N</code> function to count the number of distinct <code>city_state</code> values and assigns this number to the macro variable <code>numlocs</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">proc</span> <span class="n">sql</span><span class="p">;</span>
+    <span class="n">select</span> <span class="nf">N</span><span class="p">(</span><span class="n">distinct</span> <span class="n">city_state</span><span class="p">)</span>
+      <span class="nl">into</span> <span class="p">:</span><span class="n">numlocs</span>
+    <span class="n">from</span> <span class="n">students</span><span class="p">;</span>
+
+    <span class="nf">%let</span> <span class="n">numlocs</span><span class="o">=&amp;</span><span class="n">numlocs</span><span class="p">;</span>
+    <span class="n">select</span> <span class="n">distinct</span> <span class="n">city_state</span>
+      <span class="nl">into</span> <span class="p">:</span><span class="n">place1</span><span class="o">-:</span><span class="n">place</span><span class="o">&amp;</span><span class="n">numlocs</span>
+    <span class="n">from</span> <span class="n">students</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="storing-a-list-of-values-in-a-macro-variable">Storing a List of Values in a Macro Variable<a class="headerlink" href="#storing-a-list-of-values-in-a-macro-variable" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>INTO</code> clause in a <code>PROC SQL</code> step to create one new macro variable for each row in the result of the <code>SELECT</code> statement. You can use an alternate form of the <code>INTO</code> clause in order to take all values of a column (variable) and concatenate them into the value of one macro variable.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL NOPRINT;
+      SELECT &lt;DISTINCT&gt;column-1
+            INTO :macro-variable-1
+            SEPARATED BY &#39;delimiter-1&#39;
+            FROM table-1 | view-1
+            &lt;WHERE expression&gt;
+            &lt;other clauses&gt;;
+QUIT;
+
+%PUT &amp;=macro-variable-1;
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The <code>INTO</code> clause names the macro variable to be created</li>
+<li>The <code>SEPARATED BY</code> clause specifies the character that will be used as a delimiter in the value of the macro variable (notice that the character is enclosed in quotation marks)</li>
+<li>The <code>DISTINCT</code> keyword eliminates duplicates by selecting unique values of the selected column</li>
+<li>After you execute the <code>PROC SQL</code> step, you can use the <code>%PUT</code> statement to write the values to the log</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../using-macrofunc/" title="Using Macro Functions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Macro Functions
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../macroprog/" title="Creating and Using Macro Programs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Creating and Using Macro Programs
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      
+      
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
