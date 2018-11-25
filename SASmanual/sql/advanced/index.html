@@ -1,0 +1,2605 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Using Advanced PROC SQL Features - SAS Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#querying-dictionary-information-and-views" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Using Advanced PROC SQL Features
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Using Advanced PROC SQL Features
+      </label>
+    
+    <a href="./" title="Using Advanced PROC SQL Features" class="md-nav__link md-nav__link--active">
+      Using Advanced PROC SQL Features
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#querying-dictionary-information-and-views" title="Querying Dictionary Information and Views" class="md-nav__link">
+    Querying Dictionary Information and Views
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploring-dictionary-tables" title="Exploring Dictionary Tables" class="md-nav__link">
+    Exploring Dictionary Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querying-dictionary-information" title="Querying Dictionary Information" class="md-nav__link">
+    Querying Dictionary Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-specific-metadata" title="Displaying Specific Metadata" class="md-nav__link">
+    Displaying Specific Metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dictionary-tables-in-other-sas-code" title="Using Dictionary Tables in Other SAS Code" class="md-nav__link">
+    Using Dictionary Tables in Other SAS Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dictionary-views" title="Using Dictionary Views" class="md-nav__link">
+    Using Dictionary Views
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-sql-procedure-options" title="Using SQL Procedure Options" class="md-nav__link">
+    Using SQL Procedure Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-controlling-processing" title="SQL Options: Controlling Processing" class="md-nav__link">
+    SQL Options: Controlling Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-controlling-display" title="SQL Options: Controlling Display" class="md-nav__link">
+    SQL Options: Controlling Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="SQL Options: Limiting the Number of Rows That SAS Writes or Reads" class="md-nav__link">
+    SQL Options: Limiting the Number of Rows That SAS Writes or Reads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-macro-language-with-proc-sql" title="Using the Macro Language with PROC SQL" class="md-nav__link">
+    Using the Macro Language with PROC SQL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-macro-facility" title="The Macro Facility" class="md-nav__link">
+    The Macro Facility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-sql-and-macro-variables" title="PROC SQL and Macro Variables" class="md-nav__link">
+    PROC SQL and Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-statement" title="%PUT statement" class="md-nav__link">
+    %PUT statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-user-defined-macro-variables" title="Creating User-Defined Macro Variables" class="md-nav__link">
+    Creating User-Defined Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolving-user-defined-macro-variables" title="Resolving User-Defined Macro Variables" class="md-nav__link">
+    Resolving User-Defined Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-macro-variable-values" title="Displaying Macro Variable Values" class="md-nav__link">
+    Displaying Macro Variable Values
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-statement_1" title="%PUT statement" class="md-nav__link">
+    %PUT statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolgen-global-system-option" title="SYMBOLGEN global system option" class="md-nav__link">
+    SYMBOLGEN global system option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-option" title="FEEDBACK option" class="md-nav__link">
+    FEEDBACK option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-query-to-generate-macro-values" title="Using a Query to Generate Macro Values" class="md-nav__link">
+    Using a Query to Generate Macro Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-single-macro-variable" title="Creating a Single Macro Variable" class="md-nav__link">
+    Creating a Single Macro Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-macro-variables" title="Creating Multiple Macro Variables" class="md-nav__link">
+    Creating Multiple Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-syntax-form" title="Second Syntax form" class="md-nav__link">
+    Second Syntax form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-syntax-form" title="Third Syntax form" class="md-nav__link">
+    Third Syntax form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#querying-dictionary-information-and-views" title="Querying Dictionary Information and Views" class="md-nav__link">
+    Querying Dictionary Information and Views
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exploring-dictionary-tables" title="Exploring Dictionary Tables" class="md-nav__link">
+    Exploring Dictionary Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querying-dictionary-information" title="Querying Dictionary Information" class="md-nav__link">
+    Querying Dictionary Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-specific-metadata" title="Displaying Specific Metadata" class="md-nav__link">
+    Displaying Specific Metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dictionary-tables-in-other-sas-code" title="Using Dictionary Tables in Other SAS Code" class="md-nav__link">
+    Using Dictionary Tables in Other SAS Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-dictionary-views" title="Using Dictionary Views" class="md-nav__link">
+    Using Dictionary Views
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-sql-procedure-options" title="Using SQL Procedure Options" class="md-nav__link">
+    Using SQL Procedure Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-controlling-processing" title="SQL Options: Controlling Processing" class="md-nav__link">
+    SQL Options: Controlling Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-controlling-display" title="SQL Options: Controlling Display" class="md-nav__link">
+    SQL Options: Controlling Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="SQL Options: Limiting the Number of Rows That SAS Writes or Reads" class="md-nav__link">
+    SQL Options: Limiting the Number of Rows That SAS Writes or Reads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-macro-language-with-proc-sql" title="Using the Macro Language with PROC SQL" class="md-nav__link">
+    Using the Macro Language with PROC SQL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-macro-facility" title="The Macro Facility" class="md-nav__link">
+    The Macro Facility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proc-sql-and-macro-variables" title="PROC SQL and Macro Variables" class="md-nav__link">
+    PROC SQL and Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#put-statement" title="%PUT statement" class="md-nav__link">
+    %PUT statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-user-defined-macro-variables" title="Creating User-Defined Macro Variables" class="md-nav__link">
+    Creating User-Defined Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolving-user-defined-macro-variables" title="Resolving User-Defined Macro Variables" class="md-nav__link">
+    Resolving User-Defined Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaying-macro-variable-values" title="Displaying Macro Variable Values" class="md-nav__link">
+    Displaying Macro Variable Values
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-statement_1" title="%PUT statement" class="md-nav__link">
+    %PUT statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolgen-global-system-option" title="SYMBOLGEN global system option" class="md-nav__link">
+    SYMBOLGEN global system option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-option" title="FEEDBACK option" class="md-nav__link">
+    FEEDBACK option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-query-to-generate-macro-values" title="Using a Query to Generate Macro Values" class="md-nav__link">
+    Using a Query to Generate Macro Values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-single-macro-variable" title="Creating a Single Macro Variable" class="md-nav__link">
+    Creating a Single Macro Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-multiple-macro-variables" title="Creating Multiple Macro Variables" class="md-nav__link">
+    Creating Multiple Macro Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-syntax-form" title="Second Syntax form" class="md-nav__link">
+    Second Syntax form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-syntax-form" title="Third Syntax form" class="md-nav__link">
+    Third Syntax form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Using Advanced PROC SQL Features</h1>
+                
+                <h2 id="querying-dictionary-information-and-views">Querying Dictionary Information and Views<a class="headerlink" href="#querying-dictionary-information-and-views" title="Permanent link">Link</a></h2>
+<h3 id="exploring-dictionary-tables">Exploring Dictionary Tables<a class="headerlink" href="#exploring-dictionary-tables" title="Permanent link">Link</a></h3>
+<p>At initialization, SAS creates special read-only dictionary tables and views that contain information about each SAS session or batch job. Dictionary tables contain data or metadata about the SAS session. SAS assigns the special reserved libref <code>Dictionary</code> to the <strong>dictionary tables</strong>.</p>
+<p>Within the dictionary tables, SAS stores library and table names in uppercase. But, SAS stores column names in the dictionary tables in the same case in which they were defined when created. So, the column names can be all lowercase, all uppercase, or mixed case.</p>
+<p>When you query a dictionary table, SAS gathers information that is pertinent to that table. The dictionary tables are only accessible with <code>PROC SQL</code>. Because dictionary tables are read-only, you cannot insert rows or columns, alter column attributes, or add integrity constraints to them.</p>
+<p>SAS provides <code>PROC SQL</code> views, based on the dictionary tables, that can be used in other SAS programming steps such as the <code>DATA</code> or <code>PROC</code> step. These views are stored in the SASHelp library and are commonly called <code>SASHELP</code> views.</p>
+<h3 id="querying-dictionary-information">Querying Dictionary Information<a class="headerlink" href="#querying-dictionary-information" title="Permanent link">Link</a></h3>
+<p>To prepare for writing a specific query, you can use a <code>DESCRIBE</code> statement to explore the structure of dictionary tables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DESCRIBE TABLE table-1&lt;, ... table-n&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>The output from the <code>DESCRIBE TABLE</code> statement is a <code>CREATE TABLE</code> statement written to the log that contains the column names and attributes.</p>
+<p>Because the libref dictionary is automatically assigned, you don't need to use a <code>LIBNAME</code> statement to run this code.</p>
+<ol>
+<li>Commonly used dictionary tables:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dictionary.Dictionaries</code></td>
+<td>Data about the dictionary tables that are created by SAS</td>
+</tr>
+<tr>
+<td><code>Dictionary.Tables</code></td>
+<td>Data about the contents of all the tables available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Columns</code></td>
+<td>Information such as name, type, length and format about all columns in all tables that are known to the current SAS session</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>SAS libraries and the contents of libraries:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dictionary.Members</code></td>
+<td>General information about the members of a SAS library</td>
+</tr>
+<tr>
+<td><code>Dictionary.Views</code></td>
+<td>Detailed information about all views available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Catalogs</code></td>
+<td>Information about catalog entries</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Indexes and integrity constraints:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dictionary.Indexes</code></td>
+<td>Information about indexes defined for all tables available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Table_Constraints</code></td>
+<td>Information about the integrity constraints in all tables available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Check_Constraints</code></td>
+<td>Information aabout check constraints in all tables available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Referential_Constraints</code></td>
+<td>Information about the referential constraints in all tables available in this SAS session</td>
+</tr>
+<tr>
+<td><code>Dictionary.Constraint_Column_Usage</code></td>
+<td>Information about the columns that are referenced by integrity constraints</td>
+</tr>
+<tr>
+<td><code>Dictionary.Constraint_Table_Usage</code></td>
+<td>Information about tables that use integrity constraints</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Global macro variables, SAS system options, and more:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dictionary.Macros</code></td>
+<td>Information about macro variables’ names and values</td>
+</tr>
+<tr>
+<td><code>Dictionary.Options</code></td>
+<td>Information about the current settings of SAS system options</td>
+</tr>
+<tr>
+<td><code>Dictionary.Titles</code></td>
+<td>Information about the text currently assigned to titles and footnotes</td>
+</tr>
+<tr>
+<td><code>Dictionary.Extfiles</code></td>
+<td>Information about currently assigned filerefs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+    describe table dictionary.tables;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="displaying-specific-metadata">Displaying Specific Metadata<a class="headerlink" href="#displaying-specific-metadata" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+      FROM table-1&lt;, ... table-n&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>If you only want to select information about specific columns, you indicate the specific columns in the <code>SELECT</code> clause.</p>
+<p>If you only want to display results from specific tables, not all tables currently available in this SAS session, you subset the tables using a ´WHERE´ clause in the query.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT object-item &lt;, ...object-item&gt;
+      FROM table-1&lt;, ... table-n&gt;;
+      WHERE libname=&#39;LIB-NAME&#39;;
+</pre></div>
+</td></tr></table>
+
+<p>When you query dictionary tables, you supply values to the <code>WHERE</code> clause in the appropriate case. Remember that library names are stored in dictionary tables in uppercase.</p>
+<p>Because different dictionary tables might store similar data using different cases, you might be tempted to use SAS functions, such as <code>UPCASE</code> or <code>LOWCASE</code>. But, the <code>WHERE</code> clause won't process most function calls, such as <code>UPCASE</code>. The functions prevent the <code>WHERE</code> clause from optimizing the condition, which could degrade performance.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Tables in the ORION Library&#39;;
+proc sql;
+select memname &#39;Table Name&#39;,
+       nobs,nvar,crdate
+   from dictionary.tables
+   where libname=&#39;ORION&#39;;
+quit;
+title;
+</pre></div>
+</td></tr></table>
+
+<h3 id="using-dictionary-tables-in-other-sas-code">Using Dictionary Tables in Other SAS Code<a class="headerlink" href="#using-dictionary-tables-in-other-sas-code" title="Permanent link">Link</a></h3>
+<p>In SAS procedures and the <code>DATA</code> step, you must refer to sashelp instead of dictionary.
+Remember that <code>PROC SQL</code> views based on the dictionary tables are stored in the sashelp library.</p>
+<p>In addition, in <code>PROC</code> and <code>DATA</code> steps, the libref <strong>cannot exceed eight characters</strong>. Most of the sashelp library dictionary view names are similar to dictionary table names, but they are shortened to eight characters or fewer. They <strong>begin with the letter v</strong>, and <strong>do not end in s</strong>. So to run correctly, you change <code>dictionary.tables</code> to <code>sashelp.vtable</code>.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Tables in the ORION Library&#39;;
+proc print data=sashelp.vtable label;
+   var memname nobs nvar;
+   where libname=&#39;ORION&#39;;
+run;
+title;
+</pre></div>
+</td></tr></table>
+
+<h3 id="using-dictionary-views">Using Dictionary Views<a class="headerlink" href="#using-dictionary-views" title="Permanent link">Link</a></h3>
+<p>To use a dictionary table in a <code>DATA</code> or <code>PROC</code> step, you can reference the views of the dictionary tables, which are available in the SASHelp library.</p>
+<p>You can browse the library to determine the name or use the name of the dictionary table to extrapolate the view name. The names of the views in SASHelp are similar to the dictionary table names, start with the letter v, are eight characters or less, and generally don't have an s on the end.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;SAS Objects by Library&#39;;
+proc tabulate data=sashelp.vmember format=8.;
+   class libname memtype;
+   keylabel N=&#39; &#39;;
+   table libname, memtype/rts=10
+         misstext=&#39;None&#39;;
+   where libname in (&#39;ORION&#39;,&#39;SASUSER&#39;,&#39;SASHELP&#39;);
+run;
+title;
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-sql-procedure-options">Using SQL Procedure Options<a class="headerlink" href="#using-sql-procedure-options" title="Permanent link">Link</a></h2>
+<p><code>PROC SQL</code> options give you finer control over your SQL processes by providing features that allow you to control your processing and your output.</p>
+<h3 id="sql-options-controlling-processing">SQL Options: Controlling Processing<a class="headerlink" href="#sql-options-controlling-processing" title="Permanent link">Link</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OUTOBS=n</code></td>
+<td>Restricts the number of rows that a query outputs</td>
+</tr>
+<tr>
+<td><code>INOBS=n</code></td>
+<td>Sets a limit of n rows from each source table that contributes to a query</td>
+</tr>
+<tr>
+<td><code>NOEXEC</code></td>
+<td>Checks syntax for all SQL statements without executing them</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql-options-controlling-display">SQL Options: Controlling Display<a class="headerlink" href="#sql-options-controlling-display" title="Permanent link">Link</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PRINT &#124; NOPRINT</code></td>
+<td>Controls whether the results of a SELECT statement are displayed as a report</td>
+</tr>
+<tr>
+<td><code>NONUMBER &#124; NUMBER</code></td>
+<td>Controls whether the row number is displayed as the first column in the query output</td>
+</tr>
+<tr>
+<td><code>NOSTIMER &#124; STIMER</code></td>
+<td>Controls whether PROC SQL writes resource utilization statistics to the SAS log</td>
+</tr>
+<tr>
+<td><code>NODOUBLE &#124; DOUBLE</code></td>
+<td>Controls whether the report is double-spaced</td>
+</tr>
+<tr>
+<td><code>NOFLOW &#124; FLOW</code></td>
+<td>Controls text wrapping in character columns</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads">SQL Options: Limiting the Number of Rows That SAS Writes or Reads<a class="headerlink" href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OUTOBS=n
+INOBS=n
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>To <strong>limit the number of output rows</strong>, you can use the <code>PROC SQL</code> option <code>OUTOBS=</code>. The value n is an integer that specifies the maximum number of rows that <code>PROC SQL</code> writes to output. </li>
+<li>To <strong>limit the number of rows that <code>PROC SQL</code> reads as input</strong>, you can use the <code>INOBS=</code> option in the <code>PROC SQL</code> statement. n is an integer that specifies the maximum number of rows that <code>PROC SQL</code> reads from each source table.</li>
+</ul>
+<p>The <code>INOBS=</code> option is generally more efficient than the <code>OUTOBS=</code> option. However, the <code>INOBS=</code> option might not always produce the desired results.</p>
+<p>If you use an inner join to combine large tables, it's most efficient to use the <code>INOBS=</code> option, if possible. If the join produces no output, try increasing the value of n.</p>
+<p>If you use an inner join to combine small tables, using the <code>OUTOBS=</code> option to limit the output rows ensures that you'll get output when matches exist.</p>
+<p><strong>Example:</strong> Limiting the Number of Rows That SAS Writes</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql outobs=10;
+title &quot;10 Most Profitable Customers&quot;;
+select Customer_ID, sum(Unit_Sales_Price-Unit_Cost_Price)
+       as Profit_2011 format=comma8.2
+   from orion.price_list as p,
+        orion.order_fact as o
+   where p.Product_ID=o.Product_id
+         and year(Order_date)=2011
+   group by Customer_ID
+   order by Profit_2011 desc;
+quit;
+title;
+</pre></div>
+</td></tr></table>
+
+<p><strong>Example:</strong> Limiting the Number of Rows That SAS Reads</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql inobs=10;
+title &quot;orion.price_list - INOBS=10&quot;;
+select Product_ID,
+       Unit_Cost_price format=comma8.2,
+       Unit_Sales_Price format=comma8.2,
+       Unit_Sales_Price-Unit_Cost_Price
+       as Margin format=comma8.2
+   from orion.price_list;
+quit;
+title;
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-the-macro-language-with-proc-sql">Using the Macro Language with <code>PROC SQL</code><a class="headerlink" href="#using-the-macro-language-with-proc-sql" title="Permanent link">Link</a></h2>
+<h3 id="the-macro-facility">The Macro Facility<a class="headerlink" href="#the-macro-facility" title="Permanent link">Link</a></h3>
+<p>The SAS macro facility consists of the macro processor and the SAS macro language. It is a text processing tool that enables you to automate and customize SAS code.</p>
+<p>The SAS macro facility enables you to assign a name to character strings or groups of SAS programming statements. Then, you can work with the names rather than the text itself. SAS inserts the new value of the macro variable throughout your <code>PROC SQL</code> statements automatically. After all macro variables are resolved, the <code>PROC SQL</code> statement executes with the values from those macro variables.</p>
+<p>The macro facility is a programming tool that you can use to substitute text in your SAS programs to automatically generate and execute code and write SAS programs that are dynamic.</p>
+<h3 id="proc-sql-and-macro-variables"><code>PROC SQL</code> and Macro Variables<a class="headerlink" href="#proc-sql-and-macro-variables" title="Permanent link">Link</a></h3>
+<p>In <code>PROC SQL</code>, you can use macro variables to store values returned by a query. You can then reference these macro variables in other <code>PROC SQL</code> statements and steps. Using macro variables in your program enables quick and easy updates, because you need to make the change in only one place.</p>
+<p>Macro variables are sometimes referred to as symbolic variables because SAS programs can reference macro variables as symbols for SAS code.</p>
+<p>Macro variables can supply a variety of information, including operating system information, SAS session information, or user-defined values. The information is stored as a text string value that remains constant until you change it. The text can include complete or partial SAS steps, as well as complete or partial SAS statements.</p>
+<p>There are two types of macro variables. SAS provides automatic macro variables. You create and define user-defined macro variables.</p>
+<p>The name and value of a macro variable are stored in an area of memory called a global symbol table, which is created by SAS at initialization.</p>
+<h3 id="put-statement"><code>%PUT</code> statement<a class="headerlink" href="#put-statement" title="Permanent link">Link</a></h3>
+<p>You can use the <code>%PUT</code> statement to write your own messages, including macro variable values, to the SAS log.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%PUT text;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The macro processor processes <code>%PUT</code>. Remember that the macro processor does not require text to be quoted.</p>
+<p>You can follow the keyword <code>%PUT</code> with optional text, and then the reference to the macro variable. <code>%PUT</code> statements are valid anywhere in a SAS program. The <code>%PUT</code> statement writes only to the SAS log and always writes to a new log line, starting in column one.</p>
+<p>You can follow the keyword, <code>%PUT</code>, with optional text, and then the reference to the macro variable.</p>
+<p>!!! note"<code>%put _all_ statement</code>"
+    To display all macro variables in the global symbol table, use the statement <code>%put _all_;</code>. This report will be written to the SAS log. To create a report of just the automatic macro variables, use the statement <code>%put _automatic_;</code>.</p>
+<h3 id="creating-user-defined-macro-variables">Creating User-Defined Macro Variables<a class="headerlink" href="#creating-user-defined-macro-variables" title="Permanent link">Link</a></h3>
+<p>You use the <code>%LET</code> statement to create a user-def <code>%LET</code> statements are global statements and are valid anywhere in a SAS program.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%LET variable=value;</span>
+</pre></div>
+</td></tr></table>
+
+<p>After the keyword <code>%LET</code>, you specify the name of the macro variable, an equal sign, and then the value of the macro variable.</p>
+<p>Macro variable names must <strong>start with letters or underscores</strong>. The rest of the name can be letters, digits, or underscores. You don't need to enclose the value of the macro variable in quotation marks. SAS considers everything that appears between the equal sign and the semicolon to be part of the macro variable value. You can assign any valid SAS variable name to a macro variable as long as the name isn't a reserved word. If you assign a macro variable name that isn't valid, SAS issues an error message in the log. Value can be any string of 0 to 65,534 characters. Value can also be a macro variable reference.</p>
+<p>SAS stores all macro variable values as text strings, even if they contain only numbers. SAS doesn't evaluate mathematical expressions in macro variable values. SAS stores the value in the case that is specified in the <code>%LET</code> statement. SAS stores quotation marks as part of the macro variable value.</p>
+<p>The <code>%LET</code> statement removes leading and trailing blanks from the macro variable value before storing it. The <code>%LET</code> statement doesn't remove blanks within the macro variable value.</p>
+<p>SAS stores the user-defined macro variable's name and value in the global symbol table until the end of your SAS session, when they are deleted from memory. Unlike column names in a data table, SAS stores the macro variable names in uppercase, regardless of how the name was created. SAS stores the values as mixed-case text depending on how they were created. But, remember that the values are all character types, even when the characters are digits.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">employee_payroll</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">BigSalary</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">Libname</span><span class="o">=</span><span class="err">&#39;</span><span class="n">orion</span><span class="err">&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="resolving-user-defined-macro-variables">Resolving User-Defined Macro Variables<a class="headerlink" href="#resolving-user-defined-macro-variables" title="Permanent link">Link</a></h3>
+<p>To reference the macro variable, you precede the name of the macro variable with an ampersand.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&amp;macro-variable-name
+</pre></div>
+</td></tr></table>
+
+<p>Although macro variables are stored in uppercase, references to macro variable names aren't case sensitive.</p>
+<p>You can reference a macro variable anywhere in a SAS program.</p>
+<p>If you need to reference a macro variable within quotation marks, such as in a title, you must use double quotation marks. The macro processor won't resolve macro variable references that appear within single quotation marks. Instead, SAS interprets the macro variable reference as part of the text string.</p>
+<p>After the program code is submitted and before the program executes, the macro processor searches for macro triggers such as &amp;. The macro processor finds the stored value for the named macro variable in the global symbol table. Then the macro processor substitutes that value into the program in place of the reference. Finally, the program executes and creates the report.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+   select Employee_ID, Salary
+      from orion.&amp;DataSetName
+      where Salary&gt;&amp;BigSalary;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="displaying-macro-variable-values">Displaying Macro Variable Values<a class="headerlink" href="#displaying-macro-variable-values" title="Permanent link">Link</a></h3>
+<h4 id="put-statement_1"><code>%PUT</code> statement<a class="headerlink" href="#put-statement_1" title="Permanent link">Link</a></h4>
+<p>You can use the <code>%PUT</code> statement to write your own messages, including macro variable values, to the SAS log. The macro processor processes <code>%PUT</code>. Remember that the macro processor does not require text to be enclosed in quotation marks.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%PUT text;</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>%PUT</code> statements are valid anywhere in a SAS program. The <code>%PUT</code> statement writes only to the SAS log and always writes to a new log line, starting in column one.</p>
+<p>You can follow the keyword, <code>%PUT</code>, with optional text, and then the reference to the macro variable.</p>
+<h4 id="symbolgen-global-system-option"><code>SYMBOLGEN</code> global system option<a class="headerlink" href="#symbolgen-global-system-option" title="Permanent link">Link</a></h4>
+<p>The <code>SYMBOLGEN</code> global system option enables SAS to display the value of the macro variable in the SAS log as it is resolved.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OPTIONS SYMBOLGEN;
+</pre></div>
+</td></tr></table>
+
+<p>The default setting for this system option is <code>NOSYMBOLGEN</code>. Because <code>SYMBOLGEN</code> is a system option, its setting remains in effect until you modify it or until you end your SAS session.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%put</span> <span class="n">The</span> <span class="n">value</span> <span class="n">of</span> <span class="n">BigSalary</span> <span class="n">is</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">Employee_Payroll</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">BigSalary</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
+<span class="n">options</span> <span class="n">symbolgen</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">sql</span><span class="p">;</span>
+<span class="n">title</span> <span class="s">&quot;Salaries &gt; &amp;bigsalary&quot;</span><span class="p">;</span>
+   <span class="n">select</span> <span class="n">Employee_ID</span><span class="p">,</span> <span class="n">Salary</span>
+      <span class="n">from</span> <span class="n">orion</span><span class="p">.</span><span class="o">&amp;</span><span class="n">DataSetName</span>
+      <span class="n">where</span> <span class="n">Salary</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+
+<span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">Employee_Payroll</span><span class="p">;</span>
+<span class="nf">%let</span> <span class="n">BigSalary</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">sql</span> <span class="n">feedback</span><span class="p">;</span>
+<span class="n">title</span> <span class="s">&quot;Salaries &gt; &amp;bigsalary&quot;</span><span class="p">;</span>
+   <span class="n">select</span>  <span class="n">Employee_ID</span><span class="p">,</span> <span class="n">Salary</span>
+      <span class="n">from</span> <span class="n">orion</span><span class="p">.</span><span class="o">&amp;</span><span class="n">DataSetName</span>
+      <span class="n">where</span> <span class="n">Salary</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="feedback-option">FEEDBACK option<a class="headerlink" href="#feedback-option" title="Permanent link">Link</a></h4>
+<p>You can use the FEEDBACK option to display the query in the SAS log after it has expanded references, such as macro variables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FEEDBACK;
+</pre></div>
+</td></tr></table>
+
+<p>The default option is <code>NOFEEDBACK</code>. <code>FEEDBACK</code> <code>PROC SQL</code> option writes the query with the substituted macro variable values to the SAS log. When you activate the <code>FEEDBACK</code> <code>PROC SQL</code> option, SAS writes a message to the log displaying the query with the references expanded.</p>
+<h4 id="using-a-query-to-generate-macro-values">Using a Query to Generate Macro Values<a class="headerlink" href="#using-a-query-to-generate-macro-values" title="Permanent link">Link</a></h4>
+<p>You can use a <code>PROC SQL</code> query to generate values that are sent to the symbol table for later use.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1 &lt;, ...column-n&gt;
+        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
+        FROM table|view
+        &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p><code>PROC SQL</code> creates macro variables or updates existing macro variables using an <code>INTO</code> clause. The <code>INTO</code> clause is located between the <code>SELECT</code> clause and the <code>FROM</code> clause. It cannot be used in a <code>CREATE TABLE</code> or <code>CREATE VIEW</code> statement.</p>
+<p>You list the names of the macro variables to be created in the <code>INTO</code> clause. Each macro variable name is preceded with a colon. <code>PROC SQL</code> generates the values that are assigned to these variables by executing the query.</p>
+<h4 id="creating-a-single-macro-variable">Creating a Single Macro Variable<a class="headerlink" href="#creating-a-single-macro-variable" title="Permanent link">Link</a></h4>
+<p>This syntax of the <code>INTO</code> clause places values from the first row returned by an SQL query into a macro variable.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1 &lt;, ...column-n&gt;
+        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
+        FROM table|view
+        &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>The value from the first column in the <code>SELECT</code> list is placed in the first macro variable listed in the INTO clause. The second column in the <code>SELECT</code> list is placed in the second macro, and so on.</p>
+<p>When storing a single value into a macro variable, <code>PROC SQL</code> preserves leading or trailing blanks. If the macro variable already exists, the <code>INTO</code> clause replaces the existing value with a new value from the <code>SELECT</code> clause. Data from additional rows returned by the query is ignored. This method is used most often with queries that return only one row.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">Dept</span><span class="o">=</span><span class="n">Sales</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">sql</span> <span class="n">noprint</span><span class="p">;</span>
+<span class="n">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
+    <span class="nl">into</span> <span class="p">:</span><span class="n">MeanSalary</span>
+    <span class="n">from</span>    <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span> <span class="n">as</span> <span class="n">p</span><span class="p">,</span>
+            <span class="n">orion</span><span class="p">.</span><span class="n">employee_organization</span> <span class="n">as</span> <span class="n">o</span>
+    <span class="n">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">o</span><span class="p">.</span><span class="n">Employee_ID</span>
+        <span class="n">and</span> <span class="n">Department</span><span class="o">=</span><span class="n">propcase</span><span class="p">(</span><span class="s">&quot;&amp;Dept&quot;</span><span class="p">);</span>
+
+<span class="n">reset</span> <span class="n">print</span> <span class="n">number</span><span class="p">;</span>
+<span class="n">title</span>  <span class="s">&quot;&amp;Dept Department Employees Earning&quot;</span><span class="p">;</span>
+<span class="n">title2</span> <span class="s">&quot;More Than The Department Average &quot;</span>
+       <span class="s">&quot;Of &amp;MeanSalary&quot;</span><span class="p">;</span>
+<span class="n">select</span> <span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span><span class="p">,</span> <span class="n">Salary</span>
+   <span class="n">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span> <span class="n">as</span> <span class="n">p</span><span class="p">,</span>
+        <span class="n">orion</span><span class="p">.</span><span class="n">employee_organization</span> <span class="n">as</span> <span class="n">o</span>
+   <span class="n">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">o</span><span class="p">.</span><span class="n">Employee_ID</span>
+         <span class="n">and</span> <span class="n">Department</span><span class="o">=</span><span class="n">Propcase</span><span class="p">(</span><span class="s">&quot;&amp;Dept&quot;</span><span class="p">)</span>
+         <span class="n">and</span> <span class="n">Salary</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">MeanSalary</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="creating-multiple-macro-variables">Creating Multiple Macro Variables<a class="headerlink" href="#creating-multiple-macro-variables" title="Permanent link">Link</a></h4>
+<p>You can use the same syntax of the <code>INTO</code> clause to create multiple macro variables from a single row. To do this, you separate each name with a comma in the <code>INTO</code> clause.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1
+        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
+        FROM table|view
+        &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>Remember that macro variables can hold only character values. So, numeric values are converted to character values by using the <code>BEST8.</code> format and are right aligned.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">proc</span> <span class="n">sql</span> <span class="n">noprint</span><span class="p">;</span>
+<span class="n">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">),</span><span class="n">min</span><span class="p">(</span><span class="n">Salary</span><span class="p">),</span><span class="n">max</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
+   <span class="nl">into</span> <span class="p">:</span><span class="n">MeanSalary</span><span class="p">,</span> <span class="o">:</span><span class="n">MinSalary</span><span class="p">,</span> <span class="o">:</span><span class="n">MaxSalary</span>
+   <span class="n">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span><span class="p">;</span>
+<span class="nf">%put</span> <span class="nl">Mean</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MeanSalary</span> <span class="nl">Min</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MinSalary</span>
+     <span class="nl">Max</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MaxSalary</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="second-syntax-form">Second Syntax form<a class="headerlink" href="#second-syntax-form" title="Permanent link">Link</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT column-a &lt;, column-b, ...&gt;
+        INTO :macro-variable-a_1 - :macro-variable-a_n
+             &lt;, :macro-variable-b_1 - :macro-variable-b_n&gt;
+        FROM table-1|view-1 &lt;table-x|view-x&gt;
+        &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<h4 id="third-syntax-form">Third Syntax form<a class="headerlink" href="#third-syntax-form" title="Permanent link">Link</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT column-1 &lt;, column-2, ...&gt;
+        INTO :macro-variable-1 SEPARATED BY &#39;delimiter&#39;
+             &lt;, :macro-variable-2 SEPARATED BY &#39;delimiter&#39;&gt;
+        FROM table-1|view-1 &lt;, ... table-x|view-x&gt;
+        &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../tables-views/" title="Creating Tables and Views" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Creating Tables and Views
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../miscellanea/" title="Miscellanea" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Miscellanea
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

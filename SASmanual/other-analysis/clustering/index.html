@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -14,9 +17,26 @@
         <meta name="author" content="Lucía Rodrigo Insausti">
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -24,30 +44,27 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
       
     
     
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
       
-        
-        
-        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
   </head>
   
-  
-  
-  
-    <body>
+    <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
@@ -55,52 +72,61 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introduction-to-cluster-analysis" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             
-              
-                <span class="md-header-nav__parent">
-                  Other Analysis
-                </span>
-              
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Clustering
+              </span>
             
-            Clustering
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -109,6 +135,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -117,6 +144,8 @@
 </header>
     
     <div class="md-container">
+      
+        
       
       
       <main class="md-main">
@@ -127,10 +156,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
     SAS Manual
   </label>
   
@@ -392,18 +423,258 @@
       
       
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-6">
       Other Analysis
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-6">
         Other Analysis
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -463,6 +734,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../effect-size/" title="Effect Size" class="md-nav__link">
       Effect Size
     </a>
@@ -499,6 +782,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../sequence-design/" title="Sequence Design" class="md-nav__link">
       Sequence Design
     </a>
@@ -523,8 +818,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../orr-dcr/" title="ORR and DCR" class="md-nav__link">
-      ORR and DCR
+    <a href="../HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
     </a>
   </li>
 
@@ -538,10 +833,10 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Clustering
       </label>
     
@@ -554,7 +849,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -729,6 +1024,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -748,121 +1045,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-5">
-      Using Macros
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Using Macros
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
-      Introducing Macro Variables
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
-      Using Macro Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
-      Creating Macro Variables at Execution Time
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
-      Creating and Using Macro Programs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
-      Using Conditional and Iterative Processing in Macro Programs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
-      Debugging Options
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
-      More on Macro Programming
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Specific Procedures
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Specific Procedures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -904,18 +1093,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
-      PROC SQL
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -928,13 +1105,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       SAS Outputs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         SAS Outputs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1048,13 +1225,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       SAS vs R
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         SAS vs R
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1192,13 +1369,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       CDISC
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         CDISC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1228,13 +1405,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-13">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-13">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1288,6 +1465,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1300,13 +1501,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-14">
       Medical terms
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-14">
         Medical terms
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1330,8 +1531,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
-      Laboratory test
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
     </a>
   </li>
 
@@ -1348,13 +1585,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
     
-    <label class="md-nav__link" for="nav-14">
+    <label class="md-nav__link" for="nav-15">
       R with Shiny
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-14">
+      <label class="md-nav__title" for="nav-15">
         R with Shiny
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1366,8 +1603,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
-      Introduction and Shiny basics
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
     </a>
   </li>
 
@@ -1378,8 +1615,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
-      Inputs, outputs, and rendering functions
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
     </a>
   </li>
 
@@ -1390,8 +1627,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
-      Reactive programming
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
     </a>
   </li>
 
@@ -1402,8 +1639,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
-      Customizing appearance
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
     </a>
   </li>
 
@@ -1428,7 +1665,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1603,6 +1840,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1618,10 +1857,10 @@
                 
                   <h1>Clustering</h1>
                 
-                <h2 id="introduction-to-cluster-analysis">Introduction to Cluster Analysis<a class="headerlink" href="#introduction-to-cluster-analysis" title="Permanent link">&para;</a></h2>
+                <h2 id="introduction-to-cluster-analysis">Introduction to Cluster Analysis<a class="headerlink" href="#introduction-to-cluster-analysis" title="Permanent link">Link</a></h2>
 <p>When subjects are sampled, randomized or allocated by clusters, several statistical problems arise. If observations within a cluster are correlated, one of the assumptions of estimation and hypothesis testing is violated. Because of this correlation, the analyses must be modified to take into account the cluster design effect. When cluster designs are used, there are two sources of variations in the observations. The first is the <strong>one between subjects within a cluster</strong>, and the second is the <strong>variability among clusters</strong>. These two sources of variation cause the variance to inflate and must be taken into account in the analysis.</p>
-<h2 id="gettin-ready-for-a-cluster-analysis">Gettin' Ready for a Cluster Analysis<a class="headerlink" href="#gettin-ready-for-a-cluster-analysis" title="Permanent link">&para;</a></h2>
-<h3 id="check-for-missing-data">Check for Missing Data<a class="headerlink" href="#check-for-missing-data" title="Permanent link">&para;</a></h3>
+<h2 id="gettin-ready-for-a-cluster-analysis">Gettin' Ready for a Cluster Analysis<a class="headerlink" href="#gettin-ready-for-a-cluster-analysis" title="Permanent link">Link</a></h2>
+<h3 id="check-for-missing-data">Check for Missing Data<a class="headerlink" href="#check-for-missing-data" title="Permanent link">Link</a></h3>
 <p>Variables with missing data should be excluded from the calculation unless they can be imputed.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1633,21 +1872,21 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<h3 id="dealing-with-categorical-variables">Dealing with Categorical Variables<a class="headerlink" href="#dealing-with-categorical-variables" title="Permanent link">&para;</a></h3>
-<h4 id="composite-variables">Composite variables<a class="headerlink" href="#composite-variables" title="Permanent link">&para;</a></h4>
+<h3 id="dealing-with-categorical-variables">Dealing with Categorical Variables<a class="headerlink" href="#dealing-with-categorical-variables" title="Permanent link">Link</a></h3>
+<h4 id="composite-variables">Composite variables<a class="headerlink" href="#composite-variables" title="Permanent link">Link</a></h4>
 <p>Other questionnaire data like binary (yes/no questions) or a spectrum of responses can be transformed into <strong>composite variables</strong> to capture multiple questions into a <strong>ranked ordinal scale</strong>. A <strong>composite variable</strong> is a variable created by combining two or more individual variables, called indicators, into a single variable. Each indicator alone doesn't provide sufficient information, but altogether they can represent the more complex concept.</p>
 <p>A lot of work goes into creating composite variables. The indicators of the multidimensional concept must be specified. It's important that each indicator contribute unique information to the final score. The formula for combining the indicators into a single score, called aggregating data, must be established. The computation involved will depend on the type of data that is being aggregated. To aggregate the data, raw scores might be summed, averaged, transformed, and/or weighted.</p>
-<h4 id="hot-encoding">Hot encoding<a class="headerlink" href="#hot-encoding" title="Permanent link">&para;</a></h4>
+<h4 id="hot-encoding">Hot encoding<a class="headerlink" href="#hot-encoding" title="Permanent link">Link</a></h4>
 <p>Check <a href="https://heuristically.wordpress.com/2013/02/11/dummy-coding-sas/">this website</a> for a macro to generate dummy variables.</p>
-<h4 id="ordinal-categorical-variables">Ordinal Categorical Variables<a class="headerlink" href="#ordinal-categorical-variables" title="Permanent link">&para;</a></h4>
+<h4 id="ordinal-categorical-variables">Ordinal Categorical Variables<a class="headerlink" href="#ordinal-categorical-variables" title="Permanent link">Link</a></h4>
 <p>If your categorical variables have an ordinal meaning you can create an auxiliary numeric variable with indexes representing the ordinal scale and use this new variable, which can be standardized, for the analysis.</p>
-<h3 id="methods-for-data-reduction">Methods for data reduction<a class="headerlink" href="#methods-for-data-reduction" title="Permanent link">&para;</a></h3>
+<h3 id="methods-for-data-reduction">Methods for data reduction<a class="headerlink" href="#methods-for-data-reduction" title="Permanent link">Link</a></h3>
 <p>You may need to reduce the number of variables to include in the analysis. There are several methods for this:</p>
 <ul>
 <li><a href="https://stats.idre.ucla.edu/sas/output/principal-components-analysis/">Principal Component Analysis with <code>PROC FACTOR</code></a></li>
 <li><a href="http://www2.sas.com/proceedings/sugi26/p261-26.pdf">Variable Reduction for Modeling using <code>PROC VARCLUS</code></a></li>
 </ul>
-<h4 id="factor-analysis">Factor Analysis<a class="headerlink" href="#factor-analysis" title="Permanent link">&para;</a></h4>
+<h4 id="factor-analysis">Factor Analysis<a class="headerlink" href="#factor-analysis" title="Permanent link">Link</a></h4>
 <p>Factor analysis is a method of data reduction.  It does this by seeking underlying unobservable variables (<strong>latent variables</strong>) that are reflected in the observed variables (<strong>manifest variables</strong>). </p>
 <ul>
 <li>There are many different <strong>methods</strong> that can be used to conduct a factor analysis (such as principal axis factor, maximum likelihood, generalized least squares, unweighted least squares). Each of them generates uncorrelated factors. </li>
@@ -1722,7 +1961,7 @@ RUN;
 <li><a href="http://www2.sas.com/proceedings/sugi22/STATS/PAPER268.PDF"><code>PROC FACTOR</code>: How to Interpret the Output of a Real-World Example</a></li>
 </ul>
 </div>
-<h3 id="standardize-your-data">Standardize your Data<a class="headerlink" href="#standardize-your-data" title="Permanent link">&para;</a></h3>
+<h3 id="standardize-your-data">Standardize your Data<a class="headerlink" href="#standardize-your-data" title="Permanent link">Link</a></h3>
 <p>When performing multivariate analysis, having variables that are measured at different scales can influence the numerical stability and precision of the estimators. Standardizing the data prior to performing statistical analysis can often prevent this problem.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1753,7 +1992,7 @@ RUN;
 <li><a href="https://support.sas.com/documentation/cdl/en/statug/63033/HTML/default/viewer.htm#statug_stdize_sect020.htm">Standardization of Variables in Cluster Analysis</a></li>
 </ul>
 </div>
-<h2 id="sas-procedures-to-perform-cluster-analysis">SAS Procedures to Perform Cluster Analysis<a class="headerlink" href="#sas-procedures-to-perform-cluster-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="sas-procedures-to-perform-cluster-analysis">SAS Procedures to Perform Cluster Analysis<a class="headerlink" href="#sas-procedures-to-perform-cluster-analysis" title="Permanent link">Link</a></h2>
 <p>Ward's minimum-variance hierarchical clustering method using agglomerative (bottom-up) approach and Ward's linkage.</p>
 <div class="admonition summary">
 <p class="admonition-title">Check these websites</p>
@@ -1761,7 +2000,7 @@ RUN;
 <li><a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_introclus_toc.htm&amp;docsetVersion=14.2">Introduction to Clustering Procedures</a></li>
 </ul>
 </div>
-<h3 id="proc-cluster-hierarchical-cluster-analysis"><code>PROC CLUSTER</code>: Hierarchical Cluster Analysis<a class="headerlink" href="#proc-cluster-hierarchical-cluster-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="proc-cluster-hierarchical-cluster-analysis"><code>PROC CLUSTER</code>: Hierarchical Cluster Analysis<a class="headerlink" href="#proc-cluster-hierarchical-cluster-analysis" title="Permanent link">Link</a></h3>
 <p>The <code>CLUSTER</code> procedure <strong>hierarchically clusters the observations</strong> in a SAS data set by using one of 11 methods. The data can be coordinates or distances. </p>
 <p>All methods are based on the usual agglomerative hierarchical clustering procedure. Each observation begins in a cluster by itself. The two closest clusters are merged to form a new cluster that replaces the two old clusters. Merging of the two closest clusters is repeated until only one cluster is left. The various clustering methods differ in how the distance between two clusters is computed.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1806,7 +2045,7 @@ run;
 <li>The values of the <code>ID</code> variable identify observations in the displayed cluster history and in the <code>OUTTREE=</code> data set. If the <code>ID</code> statement is omitted, each observation is denoted by <code>OBn</code>, where n is the observation number.</li>
 <li>The <code>VAR</code> statement lists numeric variables to be used in the cluster analysis. If you omit the <code>VAR</code> statement, all numeric variables not listed in other statements are used.</li>
 </ul>
-<h3 id="proc-fastclus-disjoint-cluster-analysis"><code>PROC FASTCLUS</code>: Disjoint Cluster Analysis<a class="headerlink" href="#proc-fastclus-disjoint-cluster-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="proc-fastclus-disjoint-cluster-analysis"><code>PROC FASTCLUS</code>: Disjoint Cluster Analysis<a class="headerlink" href="#proc-fastclus-disjoint-cluster-analysis" title="Permanent link">Link</a></h3>
 <p>The <code>FASTCLUS</code> procedure performs a <strong>disjoint cluster analysis</strong> on the basis of distances computed from one or more quantitative variables. The observations are <strong>divided into clusters such that every observation belongs to one and only one cluster</strong>; the clusters <strong>do not form a tree structure</strong> as they do in the <code>CLUSTER</code> procedure. If you want separate analyses for different numbers of clusters, you can run <code>PROC FASTCLUS</code> once for each analysis. The <code>FASTCLUS</code> procedure requires time proportional to the number of observations and thus can be used with much larger data sets than <code>PROC CLUSTER</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1870,10 +2109,10 @@ run;
 <li><a href="http://support.sas.com/resources/papers/proceedings13/447-2013.pdf">Multivariate Statistical Analysis in SAS: Segmentation and Classification of Behavioral Data</a></li>
 </ul>
 </div>
-<h3 id="mixed-clustering">Mixed Clustering<a class="headerlink" href="#mixed-clustering" title="Permanent link">&para;</a></h3>
+<h3 id="mixed-clustering">Mixed Clustering<a class="headerlink" href="#mixed-clustering" title="Permanent link">Link</a></h3>
 <p>On large data sets a useful methodology consists first in summarizing the observations in a large enough number of clusters (100 may be a standard value) and then applying a hierarchical clustering technique for aggregating these groups (Example <a href="https://support.sas.com/documentation/cdl/en/statug/63033/HTML/default/viewer.htm#statug_cluster_sect027.htm">here</a>).</p>
 <p>This procedure has the advantages of the hierarchical method for showing an optimal number of clusters and solves the difficulty of the too high initial number of observations by first clustering them, using a non hierarchical method, in a smaller number of clusters. This number is a parameter of the procedure; it must be high enough in order not to impose a prior partitionning of the data.</p>
-<h3 id="proc-varclus-variable-clustering"><code>PROC VARCLUS</code>: Variable Clustering<a class="headerlink" href="#proc-varclus-variable-clustering" title="Permanent link">&para;</a></h3>
+<h3 id="proc-varclus-variable-clustering"><code>PROC VARCLUS</code>: Variable Clustering<a class="headerlink" href="#proc-varclus-variable-clustering" title="Permanent link">Link</a></h3>
 <p>The <code>VARCLUS</code> procedure divides a set of numeric variables into disjoint or hierarchical clusters. <code>PROC VARCLUS</code> tries to maximize the variance that is explained by the cluster components, summed over all the clusters.</p>
 <p>In an ordinary principal component analysis, all components are computed from the same variables, and the first principal component is orthogonal to the second principal component and to every other principal component. In <code>PROC VARCLUS</code>, each cluster component is computed from a set of variables that is different from all the other cluster components. The first principal component of one cluster might be correlated with the first principal component of another cluster. Hence, the <code>PROC VARCLUS</code> algorithm is a type of oblique component analysis.</p>
 <p><code>PROC VARCLUS</code> can be used as a <strong>variable-reduction method</strong>. A large set of variables can often be replaced by the set of cluster components with little loss of information. A given number of cluster components does not generally explain as much variance as the same number of principal components on the full set of variables, but the cluster components are usually easier to interpret than the principal components, even if the latter are rotated.</p>
@@ -1885,7 +2124,7 @@ RUN;
 </pre></div>
 </td></tr></table>
 
-<h3 id="proc-tree"><code>PROC TREE</code><a class="headerlink" href="#proc-tree" title="Permanent link">&para;</a></h3>
+<h3 id="proc-tree"><code>PROC TREE</code><a class="headerlink" href="#proc-tree" title="Permanent link">Link</a></h3>
 <p>The <code>TREE</code> procedure produces a tree diagram from a <strong>data set created by the <code>CLUSTER</code> or <code>VARCLUS</code> procedure</strong> that contains the results of <strong>hierarchical clustering</strong> as a tree structure.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1903,7 +2142,7 @@ RUN;
 <li>The <code>ID</code> variable is used to identify the objects (leaves) in the tree on the output. The <code>ID</code> variable can be a character or numeric variable of any length. </li>
 <li>The <code>COPY</code> statement specifies one or more character or numeric variables to be copied to the <code>OUT=</code> data set.</li>
 </ul>
-<h2 id="choosing-the-optimal-number-of-clusters-for-the-analysis">Choosing the Optimal Number of Clusters for the Analysis<a class="headerlink" href="#choosing-the-optimal-number-of-clusters-for-the-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="choosing-the-optimal-number-of-clusters-for-the-analysis">Choosing the Optimal Number of Clusters for the Analysis<a class="headerlink" href="#choosing-the-optimal-number-of-clusters-for-the-analysis" title="Permanent link">Link</a></h2>
 <p>In most cases, before using a clustering technique you have no prior idea of the number of clusters which will give the better differenciation of the data. The main objective is to summarize the data in the best way possible, i.e. getting a compromise between a good degree of differentiation and a not too high number of clusters.</p>
 <p>For hierarchical clustering try the Sarle's Cubic Clustering Criterion in PROC CLUSTER:
 plot <em>CCC</em> versus the number of clusters and look for peaks where <em>ccc</em> &gt; 3 or look for local peaks of pseudo-F statistic (<em>PSF</em>) combined with a small value of the pseudo-t^2 statistic (<em>PST2</em>) and a larger pseudo t^2 for the next cluster fusion.
@@ -2031,8 +2270,8 @@ This technique is discussed in the "Applied Clustering Techniques" course notes.
 <li><a href="http://support.sas.com/documentation/cdl/en/statug/63033/HTML/default/viewer.htm#statug_introclus_sect010.htm">The Number of Clusters</a></li>
 </ul>
 </div>
-<h2 id="further-examination-of-the-cluster-analysis-solution">Further Examination of the Cluster Analysis Solution<a class="headerlink" href="#further-examination-of-the-cluster-analysis-solution" title="Permanent link">&para;</a></h2>
-<h3 id="visualizing-the-results">Visualizing the Results<a class="headerlink" href="#visualizing-the-results" title="Permanent link">&para;</a></h3>
+<h2 id="further-examination-of-the-cluster-analysis-solution">Further Examination of the Cluster Analysis Solution<a class="headerlink" href="#further-examination-of-the-cluster-analysis-solution" title="Permanent link">Link</a></h2>
+<h3 id="visualizing-the-results">Visualizing the Results<a class="headerlink" href="#visualizing-the-results" title="Permanent link">Link</a></h3>
 <p>To interpret a cluster analysis solution, the first thing you want to try is to graph the cluster in a scatter plot to see whether or not they overlap with each other in terms of their location in the $p-$dimensional space. If the vectors have a high dimensionality,  we use <strong>Canonical Discriminant Analysis (CDA)</strong>. It is a <strong>dimension-reduction technique related to principal component analysis and canonical correlation</strong>. It creates a smaller number of variables that are linear combinations of the original $p$ clustering variables. The new variables, called canonical variables, are ordered in terms of the proportion of variance in the clustering variables that is accounted for by each of the canonical variables. Usually, the majority of the variants in the clustering variable will be accounted for by the first couple of canonical varaibles and those are the variables we can plot.</p>
 <p>In SAS we can use the <code>CANDISC</code>procedure to create the canonical variables for our cluster analysis output data set that has the cluster assignment variable that we created when we ran the cluster analysis. </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -2069,7 +2308,7 @@ RUN;
 <li><a href="http://documentation.sas.com/?docsetId=statug&amp;docsetTarget=statug_introdisc_toc.htm&amp;docsetVersion=14.2">Introduction to Discriminant Procedures</a></li>
 </ul>
 </div>
-<h3 id="cluster-means-and-standard-deviations">Cluster Means and Standard Deviations<a class="headerlink" href="#cluster-means-and-standard-deviations" title="Permanent link">&para;</a></h3>
+<h3 id="cluster-means-and-standard-deviations">Cluster Means and Standard Deviations<a class="headerlink" href="#cluster-means-and-standard-deviations" title="Permanent link">Link</a></h3>
 <p>You can also check these values per cluster to detect possible similarities between groups and detect the most different ones.</p>
                 
                   
@@ -2077,6 +2316,8 @@ RUN;
               
               
                 
+
+
               
             </article>
           </div>
@@ -2089,7 +2330,7 @@ RUN;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../orr-dcr/" title="ORR and DCR" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2098,19 +2339,19 @@ RUN;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ORR and DCR
+                Odds Ratio, Hazard Ratio and Relative Risk
               </span>
             </div>
           </a>
         
         
-          <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Introducing Macro Variables
+                General Notes on Regression Procedures
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2126,9 +2367,9 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -2140,10 +2381,9 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      
-      <script>app.initialize({url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

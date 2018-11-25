@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -14,9 +17,26 @@
         <meta name="author" content="Lucía Rodrigo Insausti">
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -24,30 +44,27 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
       
     
     
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
       
-        
-        
-        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
   </head>
   
-  
-  
-  
-    <body>
+    <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
@@ -55,52 +72,61 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#basic-statistical-concepts" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             
-              
-                <span class="md-header-nav__parent">
-                  Basic Statistics
-                </span>
-              
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Introduction
+              </span>
             
-            Introduction
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -109,6 +135,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -117,6 +144,8 @@
 </header>
     
     <div class="md-container">
+      
+        
       
       
       <main class="md-main">
@@ -127,10 +156,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
     SAS Manual
   </label>
   
@@ -310,10 +341,10 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Introduction
       </label>
     
@@ -326,7 +357,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -410,6 +441,8 @@
   </a>
   
 </li>
+      
+      
       
       
       
@@ -507,166 +540,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Other Analysis
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Other Analysis
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
-      Model Selection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
-      Dealing with Missing Data
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
-      Interim Analysis Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
-      Normality Tests
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
-      Effect Size
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
-      Propensity Score
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
-      ROC Curve
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
-      Sequence Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
-      Survival Analysis
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
-      ORR and DCR
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
-      Clustering
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
       Using Macros
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Using Macros
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -768,13 +645,325 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Specific Procedures
+      Other Analysis
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
         Specific Procedures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -816,18 +1005,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
-      PROC SQL
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -840,13 +1017,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       SAS Outputs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         SAS Outputs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -960,13 +1137,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       SAS vs R
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         SAS vs R
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1104,13 +1281,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       CDISC
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         CDISC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1140,13 +1317,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-13">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-13">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1200,6 +1377,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1212,13 +1413,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-14">
       Medical terms
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-14">
         Medical terms
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1242,8 +1443,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
-      Laboratory test
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
     </a>
   </li>
 
@@ -1260,13 +1497,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
     
-    <label class="md-nav__link" for="nav-14">
+    <label class="md-nav__link" for="nav-15">
       R with Shiny
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-14">
+      <label class="md-nav__title" for="nav-15">
         R with Shiny
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1278,8 +1515,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
-      Introduction and Shiny basics
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
     </a>
   </li>
 
@@ -1290,8 +1527,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
-      Inputs, outputs, and rendering functions
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
     </a>
   </li>
 
@@ -1302,8 +1539,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
-      Reactive programming
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
     </a>
   </li>
 
@@ -1314,8 +1551,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
-      Customizing appearance
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
     </a>
   </li>
 
@@ -1340,7 +1577,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1427,6 +1664,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1442,8 +1681,7 @@
                 
                   <h1>Introduction</h1>
                 
-                <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m551/m551_6_a_sum.htm">Chapter summary in SAS</a></p>
-<h2 id="basic-statistical-concepts">Basic Statistical Concepts<a class="headerlink" href="#basic-statistical-concepts" title="Permanent link">&para;</a></h2>
+                <h2 id="basic-statistical-concepts">Basic Statistical Concepts<a class="headerlink" href="#basic-statistical-concepts" title="Permanent link">Link</a></h2>
 <p><strong><em>Descriptive statistics (exploratory data analysis, EDA)</em></strong></p>
 <ul>
 <li>Explore your data</li>
@@ -1582,7 +1820,7 @@
 </li>
 </ul>
 <hr />
-<h3 id="proc-surveyselect"><code>PROC SURVEYSELECT</code><a class="headerlink" href="#proc-surveyselect" title="Permanent link">&para;</a></h3>
+<h3 id="proc-surveyselect"><code>PROC SURVEYSELECT</code><a class="headerlink" href="#proc-surveyselect" title="Permanent link">Link</a></h3>
 <p>How to generate random (representative) samples (population subsets):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1605,20 +1843,20 @@ RUN;
 <li><code>SEED</code> specifies the initial seed for random number generation. If no <code>SEED</code> option is specified, SAS uses the system time as its seed value. This creates a different random sample every time the procedure is run.</li>
 <li><code>SAMPSIZE</code> indicates the number of observations to be included in the sample. To select a certain fraction of the original data set rather than a given number of observations, use the <code>SAMPRATE</code> option.</li>
 </ul>
-<h2 id="picturing-your-data">Picturing Your Data<a class="headerlink" href="#picturing-your-data" title="Permanent link">&para;</a></h2>
-<h3 id="proc-univariate"><code>PROC UNIVARIATE</code><a class="headerlink" href="#proc-univariate" title="Permanent link">&para;</a></h3>
+<h2 id="picturing-your-data">Picturing Your Data<a class="headerlink" href="#picturing-your-data" title="Permanent link">Link</a></h2>
+<h3 id="proc-univariate"><code>PROC UNIVARIATE</code><a class="headerlink" href="#proc-univariate" title="Permanent link">Link</a></h3>
 <p>Plots that can be produced with this procedure:</p>
 <ul>
 <li><strong>Histograms</strong></li>
 <li><strong>Normal probability plots</strong>: expected percentiles from standard normal vs actual data values</li>
 </ul>
 <p><img alt="Normal Probability Plots" src="../../images/normalprobplots.png" title="Normal Probability Plots" /></p>
-<h3 id="proc-sgscatter"><code>PROC SGSCATTER</code><a class="headerlink" href="#proc-sgscatter" title="Permanent link">&para;</a></h3>
+<h3 id="proc-sgscatter"><code>PROC SGSCATTER</code><a class="headerlink" href="#proc-sgscatter" title="Permanent link">Link</a></h3>
 <p>Plots that can be produced with this procedure:</p>
 <ul>
 <li><strong>Scatter plots</strong>: you can create a <strong>single-cell</strong> (simple Y by X) scatter plot, a <strong>multi-cell</strong> scatter plot with multiple independent scatter plots in a grid and a <strong>scatter plot matrix</strong>, which produces a matrix of scatter plots comparing multiple variables.</li>
 </ul>
-<h3 id="proc-sgplot"><code>PROC SGPLOT</code><a class="headerlink" href="#proc-sgplot" title="Permanent link">&para;</a></h3>
+<h3 id="proc-sgplot"><code>PROC SGPLOT</code><a class="headerlink" href="#proc-sgplot" title="Permanent link">Link</a></h3>
 <p>Plots that can be produced with this procedure:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1670,13 +1908,13 @@ REFLINE 1200 / axis=y lineattrs=(color=blue);
 <li><strong>Needle plot (<code>NEEDLE</code>)</strong>: creates a plot with needles connecting each point to the baseline</li>
 <li>You can also <strong>overlay plots together</strong> to produce many different types of graphs</li>
 </ul>
-<h3 id="proc-sgpanel"><code>PROC SGPANEL</code><a class="headerlink" href="#proc-sgpanel" title="Permanent link">&para;</a></h3>
+<h3 id="proc-sgpanel"><code>PROC SGPANEL</code><a class="headerlink" href="#proc-sgpanel" title="Permanent link">Link</a></h3>
 <p>Plots that can be produced with this procedure:</p>
 <ul>
 <li><strong>Panels of plots</strong> for different levels of a factor or several different time periods depending on the classification variable</li>
 <li><strong>Side-by-side histograms</strong> which provide a visual comparison for your data</li>
 </ul>
-<h3 id="proc-sgrender"><code>PROC SGRENDER</code><a class="headerlink" href="#proc-sgrender" title="Permanent link">&para;</a></h3>
+<h3 id="proc-sgrender"><code>PROC SGRENDER</code><a class="headerlink" href="#proc-sgrender" title="Permanent link">Link</a></h3>
 <ul>
 <li><strong>Plots from graphs templates you have modified or written yourself</strong></li>
 </ul>
@@ -1697,7 +1935,7 @@ REFLINE 1200 / axis=y lineattrs=(color=blue);
 </td></tr></table>
 
 <p>This option enables you to specify which graphs SAS should create, either in addtion or instead of the default plots.</p>
-<h2 id="confidence-intervals-for-the-mean">Confidence Intervals for the Mean<a class="headerlink" href="#confidence-intervals-for-the-mean" title="Permanent link">&para;</a></h2>
+<h2 id="confidence-intervals-for-the-mean">Confidence Intervals for the Mean<a class="headerlink" href="#confidence-intervals-for-the-mean" title="Permanent link">Link</a></h2>
 <ul>
 <li>A <strong>point estimator</strong> is a sample statistic used to estimate a population parameter</li>
 <li>An estimator takes on different values from sample to sample, so it's important to know its variance</li>
@@ -1718,7 +1956,7 @@ REFLINE 1200 / axis=y lineattrs=(color=blue);
 <li>The <code>CLM</code> option of <code>PROC MEANS</code> calculates the confidence limits for the mean, you can add <code>ALPHA=</code> to change the default 0.05 value for a 95% confidence level</li>
 <li>The <strong>central limit theorem</strong> states that the distribution of sample means is approximately normal regardless of the population distribution's shape, if the sample size is large enough (~30 observations)</li>
 </ul>
-<h2 id="hypothesis-testing">Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permanent link">&para;</a></h2>
+<h2 id="hypothesis-testing">Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permanent link">Link</a></h2>
 <ul>
 <li>The <strong>null hypothesis</strong> ($H_0$) is what you assume to be true when you start your analysis</li>
 <li>The <strong>alternative hypothesis</strong> ($H_a$ or $H_1$) is your initial research hypothesis, that is, your proposed explanation</li>
@@ -1794,6 +2032,8 @@ RUN;
               
               
                 
+
+
               
             </article>
           </div>
@@ -1843,9 +2083,9 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -1857,10 +2097,9 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      
-      <script>app.initialize({url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

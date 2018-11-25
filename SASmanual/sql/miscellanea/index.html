@@ -1,0 +1,1986 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Miscellanea - SAS Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introduction-to-proc-sql" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Miscellanea
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Miscellanea
+      </label>
+    
+    <a href="./" title="Miscellanea" class="md-nav__link md-nav__link--active">
+      Miscellanea
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-proc-sql" title="Introduction to PROC SQL" class="md-nav__link">
+    Introduction to PROC SQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+    Code Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-tables-filtering-specific-data" title="Creating Tables Filtering Specific Data" class="md-nav__link">
+    Creating Tables Filtering Specific Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macrovariable-creation" title="Macrovariable Creation" class="md-nav__link">
+    Macrovariable Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" title="Selecting Distinct Values of a Variable to Create a Data Set with them" class="md-nav__link">
+    Selecting Distinct Values of a Variable to Create a Data Set with them
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product-of-data-sets-all-possible-combinations" title="Cartesian Product of Data Sets (All Possible Combinations)" class="md-nav__link">
+    Cartesian Product of Data Sets (All Possible Combinations)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-maximum-value" title="Selecting the Maximum Value" class="md-nav__link">
+    Selecting the Maximum Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-grouped-elements" title="Counting Grouped Elements" class="md-nav__link">
+    Counting Grouped Elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-first-and-last-dates-related-to-a-patient" title="Selecting First and Last Dates Related to a Patient" class="md-nav__link">
+    Selecting First and Last Dates Related to a Patient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-proc-sql" title="Introduction to PROC SQL" class="md-nav__link">
+    Introduction to PROC SQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+    Code Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-tables-filtering-specific-data" title="Creating Tables Filtering Specific Data" class="md-nav__link">
+    Creating Tables Filtering Specific Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macrovariable-creation" title="Macrovariable Creation" class="md-nav__link">
+    Macrovariable Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" title="Selecting Distinct Values of a Variable to Create a Data Set with them" class="md-nav__link">
+    Selecting Distinct Values of a Variable to Create a Data Set with them
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product-of-data-sets-all-possible-combinations" title="Cartesian Product of Data Sets (All Possible Combinations)" class="md-nav__link">
+    Cartesian Product of Data Sets (All Possible Combinations)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-maximum-value" title="Selecting the Maximum Value" class="md-nav__link">
+    Selecting the Maximum Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-grouped-elements" title="Counting Grouped Elements" class="md-nav__link">
+    Counting Grouped Elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-first-and-last-dates-related-to-a-patient" title="Selecting First and Last Dates Related to a Patient" class="md-nav__link">
+    Selecting First and Last Dates Related to a Patient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Miscellanea</h1>
+                
+                <h2 id="introduction-to-proc-sql">Introduction to <code>PROC SQL</code><a class="headerlink" href="#introduction-to-proc-sql" title="Permanent link">Link</a></h2>
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
+<ul>
+<li><a href="http://support.sas.com/documentation/cdl/en/proc/61895/HTML/default/viewer.htm#a000086336.htm">SQL syntax available in SAS</a></li>
+</ul>
+</div>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">Link</a></h2>
+<h3 id="creating-tables-filtering-specific-data">Creating Tables Filtering Specific Data<a class="headerlink" href="#creating-tables-filtering-specific-data" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+   CREATE TABLE table-name AS
+   SELECT DISTINCT variable1
+   FROM origin-data-set
+   WHERE variable2 NE &#39;&#39; AND variable3 IN (&#39;value1&#39; &#39;value2&#39;) ; 
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<h3 id="macrovariable-creation">Macrovariable Creation<a class="headerlink" href="#macrovariable-creation" title="Permanent link">Link</a></h3>
+<p>Check more information in <a href="../../macros/macrovar-at-execution-time/#creating-macro-variables-using-proc-sql">this section</a>.</p>
+<p>In this code a macrovariable is created containing a list of a variable distinct values (<code>list</code>). Another macrovariable is also created whose value is the number of elements in the list (<code>nelements</code>).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* Count distinct elements;
+PROC SQL NOPRINT;
+    SELECT COUNT(DISTINCT variable2check) 
+    INTO : nelements
+    FROM original-data-set;
+QUIT;
+
+* Load these distinct elements in a macrovariable list;
+PROC SQL NOPRINT;
+    SELECT DISTINCT variable2check. 
+    INTO : list SEPARATED BY &#39;$&#39; 
+    FROM original-data-set;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<p><strong>Is there any way to do these two operations in just one <code>PROC SQL</code>?</strong> Two different <code>INTO:</code> are not compatible.</p>
+<ul>
+<li>General <code>PROC SQL</code> options:<ul>
+<li>The <code>NOPRINT</code> option avoids any output printing</li>
+</ul>
+</li>
+<li><code>SELECT</code> statement elements:<ul>
+<li>The <code>COUNT(*)</code> option counts the number of elements of the table designated in the <code>FROM</code> statement</li>
+<li>The <code>DISTINCT</code> option selects only different variable values</li>
+<li><code>INTO: name</code> creates a <code>name</code> macrovariable containing the result of that specific query</li>
+<li><code>SEPARATED BY ' '</code> defines a the separator between elements</li>
+</ul>
+</li>
+</ul>
+<h3 id="selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them">Selecting Distinct Values of a Variable to Create a Data Set with them<a class="headerlink" href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL NOPRINT;
+    CREATE TABLE new-SAS-data-set AS SELECT DISTINCT analyzed-variable
+    FROM original-SAS-data-set;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<h3 id="cartesian-product-of-data-sets-all-possible-combinations">Cartesian Product of Data Sets (All Possible Combinations)<a class="headerlink" href="#cartesian-product-of-data-sets-all-possible-combinations" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+    CREATE TABLE new-SAS-data-set AS SELECT variable1, variable2, variablE3 FROM original-SAS-data-set1 AS f1 CROSS JOIN original-SAS-data-set2 AS f2 CROSS JOIN original-SAS-data-set3 AS f3;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<h3 id="selecting-the-maximum-value">Selecting the Maximum Value<a class="headerlink" href="#selecting-the-maximum-value" title="Permanent link">Link</a></h3>
+<p>If you need only the maximum value of a certain variable for equal registers except this value, you will use the <code>MAX()</code> function. If you want to keep in the selection any other variable that you do not need to group you will need to apply the <code>MAX()</code> function to it as well.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+    CREATE TABLE new-SAS-data-set AS
+    SELECT grouped-variable1, grouped-variable2, MAX(ungrouped-variable) AS alias-ungrouped, MAX(maximized-variable) AS alias-maximized
+    FROM original-SAS-data-set
+    GROUP BY grouped-variable1, grouped-variable2;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<h3 id="counting-grouped-elements">Counting Grouped Elements<a class="headerlink" href="#counting-grouped-elements" title="Permanent link">Link</a></h3>
+<p>A simple example first.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL NOPRINT;
+    SELECT COUNTt(*)
+    INTO :nlabs
+    FROM SAS-data-set;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<p>In this first <code>PROC SQL</code> a number of count variables are created:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+    CREATE TABLE AESWPP AS
+        SELECT COHORT, AEBODSY, AEDECOD, PT, MAX(AETOXGRN) AS GRADE, COUNT(*) AS NEVENTS, 
+            NTOTPATSCOHORT.NPATS AS NTOTPATSCOHORT, 
+         100/NTOTPATSCOHORT.NPATS AS PCTPATC,
+            NTOTEVENTSCOHORT.NEVENTS AS NTOTEVENTSCOHORT, 
+         100/NTOTEVENTSCOHORT.NEVENTS AS PCTEVENTSC,
+            NTOTPATS.NPATS AS NTOTPATS, 
+         100/NTOTPATS.NPATS AS PCTPATTOT,
+            NTOTEVENTS.NEVENTS AS NTOTEVENTS, 
+         100/NTOTEVENTS.NEVENTS AS PCTOTEVENTS
+        FROM ADS.TEAE AS TEAE, 
+            (SELECT COUNT(DISTINCT PT) AS NPATS, COHORT AS COHORTP FROM ADS.TEAE GROUP BY COHORT) NTOTPATSCOHORT,
+            (SELECT COUNT(*) AS NEVENTS, COHORT AS COHORTE FROM ADS.TEAE GROUP BY COHORT) NTOTEVENTSCOHORT,
+            (SELECT COUNT(DISTINCT PT) AS NPATS FROM ADS.TEAE) NTOTPATS,
+            (SELECT COUNT(*) AS NEVENTS FROM ADS.TEAE) NTOTEVENTS
+                WHERE NTOTPATSCOHORT.COHORTP EQ TEAE.COHORT
+                    AND NTOTEVENTSCOHORT.COHORTE EQ TEAE.COHORT
+                GROUP BY COHORT, AEBODSY, AEDECOD, PT;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<p>In this second <code>PROC SQL</code> the number of certain ocurrences are counted.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
+    CREATE TABLE AESWPP_1
+        AS SELECT * ,
+            CASE 
+                WHEN GRADE EQ 1 THEN COUNT(1) 
+                ELSE 0 
+            END 
+        AS GRADE1,
+            CASE 
+                WHEN GRADE EQ 2 THEN COUNT(1) 
+                ELSE 0 
+            END 
+        AS GRADE2,
+            CASE 
+                WHEN GRADE EQ 3 THEN COUNT(1) 
+                ELSE 0 
+            END 
+        AS GRADE3,
+            CASE 
+                WHEN GRADE EQ 4 THEN COUNT(1) 
+                ELSE 0 
+            END 
+        AS GRADE4,
+            CASE 
+                WHEN GRADE EQ 5 THEN COUNT(1) 
+                ELSE 0 
+            END 
+        AS GRADE5
+            FROM AESWPP
+                GROUP BY COHORT, AEBODSY, AEDECOD, GRADE
+                    ORDER BY COHORT, AEBODSY, AEDECOD;
+QUIT;
+</pre></div>
+</td></tr></table>
+
+<h3 id="selecting-first-and-last-dates-related-to-a-patient">Selecting First and Last Dates Related to a Patient<a class="headerlink" href="#selecting-first-and-last-dates-related-to-a-patient" title="Permanent link">Link</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+    create table firstlastdates as 
+        select min(STARTDATE) as date1, max(ENDDATE) as date2, pt, visit
+            from origin-SAS-data-set 
+            group by pt, visit;
+quit; 
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../advanced/" title="Using Advanced PROC SQL Features" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Advanced PROC SQL Features
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Model Selection
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

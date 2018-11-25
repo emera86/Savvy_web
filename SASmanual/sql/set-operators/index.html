@@ -1,0 +1,2262 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Working with Set Operators - SAS Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introducing-set-operators" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Working with Set Operators
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Working with Set Operators
+      </label>
+    
+    <a href="./" title="Working with Set Operators" class="md-nav__link md-nav__link--active">
+      Working with Set Operators
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-set-operators" title="Introducing Set Operators" class="md-nav__link">
+    Introducing Set Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-set-operators" title="What Are Set Operators?" class="md-nav__link">
+    What Are Set Operators?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-set-operators-combine-rows-and-columns-by-default" title="How Set Operators Combine Rows and Columns by Default?" class="md-nav__link">
+    How Set Operators Combine Rows and Columns by Default?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-the-default-behavior-of-the-set-operators" title="Modifying the Default Behavior of the Set Operators" class="md-nav__link">
+    Modifying the Default Behavior of the Set Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-modifies-the-default-behavior-for-rows" title="ALL Modifies the Default Behavior for Rows" class="md-nav__link">
+    ALL Modifies the Default Behavior for Rows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corr-modifies-the-default-behavior-for-columns" title="CORR Modifies the Default Behavior for Columns" class="md-nav__link">
+    CORR Modifies the Default Behavior for Columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-of-a-set-operation" title="Syntax of a Set Operation" class="md-nav__link">
+    Syntax of a Set Operation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-evaluation-of-set-operators" title="Order of Evaluation of Set Operators" class="md-nav__link">
+    Order of Evaluation of Set Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-union-operator" title="Using the UNION Operator" class="md-nav__link">
+    Using the UNION Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-without-modifiers" title="Using the UNION Operator without Modifiers" class="md-nav__link">
+    Using the UNION Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-with-the-corr-modifier" title="Using the UNION Operator with the CORR Modifier" class="md-nav__link">
+    Using the UNION Operator with the CORR Modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-with-the-all-modifier" title="Using the UNION Operator with the ALL Modifier" class="md-nav__link">
+    Using the UNION Operator with the ALL Modifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-outer-union-operator" title="Using the OUTER UNION Operator" class="md-nav__link">
+    Using the OUTER UNION Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-outer-union-operator-alone-and-with-the-corr-modifier" title="Using the OUTER UNION Operator Alone and with the CORR Modifier" class="md-nav__link">
+    Using the OUTER UNION Operator Alone and with the CORR Modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outer-union-set-operation-versus-traditional-sas-programming" title="OUTER UNION Set Operation versus Traditional SAS Programming" class="md-nav__link">
+    OUTER UNION Set Operation versus Traditional SAS Programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-except-operator" title="Using the EXCEPT Operator" class="md-nav__link">
+    Using the EXCEPT Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-except-operator-without-modifiers" title="Using the EXCEPT Operator without Modifiers" class="md-nav__link">
+    Using the EXCEPT Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-except-operator-with-modifiers" title="Using the EXCEPT Operator with Modifiers" class="md-nav__link">
+    Using the EXCEPT Operator with Modifiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-intersect-operator" title="Using the INTERSECT Operator" class="md-nav__link">
+    Using the INTERSECT Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-intersect-operator-without-modifiers" title="Using the INTERSECT Operator without Modifiers" class="md-nav__link">
+    Using the INTERSECT Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-intersect-operator-with-modifiers" title="Using the INTERSECT Operator with Modifiers" class="md-nav__link">
+    Using the INTERSECT Operator with Modifiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-set-operators" title="Introducing Set Operators" class="md-nav__link">
+    Introducing Set Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-set-operators" title="What Are Set Operators?" class="md-nav__link">
+    What Are Set Operators?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-set-operators-combine-rows-and-columns-by-default" title="How Set Operators Combine Rows and Columns by Default?" class="md-nav__link">
+    How Set Operators Combine Rows and Columns by Default?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-the-default-behavior-of-the-set-operators" title="Modifying the Default Behavior of the Set Operators" class="md-nav__link">
+    Modifying the Default Behavior of the Set Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-modifies-the-default-behavior-for-rows" title="ALL Modifies the Default Behavior for Rows" class="md-nav__link">
+    ALL Modifies the Default Behavior for Rows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#corr-modifies-the-default-behavior-for-columns" title="CORR Modifies the Default Behavior for Columns" class="md-nav__link">
+    CORR Modifies the Default Behavior for Columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-of-a-set-operation" title="Syntax of a Set Operation" class="md-nav__link">
+    Syntax of a Set Operation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-evaluation-of-set-operators" title="Order of Evaluation of Set Operators" class="md-nav__link">
+    Order of Evaluation of Set Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-union-operator" title="Using the UNION Operator" class="md-nav__link">
+    Using the UNION Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-without-modifiers" title="Using the UNION Operator without Modifiers" class="md-nav__link">
+    Using the UNION Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-with-the-corr-modifier" title="Using the UNION Operator with the CORR Modifier" class="md-nav__link">
+    Using the UNION Operator with the CORR Modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-union-operator-with-the-all-modifier" title="Using the UNION Operator with the ALL Modifier" class="md-nav__link">
+    Using the UNION Operator with the ALL Modifier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-outer-union-operator" title="Using the OUTER UNION Operator" class="md-nav__link">
+    Using the OUTER UNION Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-outer-union-operator-alone-and-with-the-corr-modifier" title="Using the OUTER UNION Operator Alone and with the CORR Modifier" class="md-nav__link">
+    Using the OUTER UNION Operator Alone and with the CORR Modifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outer-union-set-operation-versus-traditional-sas-programming" title="OUTER UNION Set Operation versus Traditional SAS Programming" class="md-nav__link">
+    OUTER UNION Set Operation versus Traditional SAS Programming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-except-operator" title="Using the EXCEPT Operator" class="md-nav__link">
+    Using the EXCEPT Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-except-operator-without-modifiers" title="Using the EXCEPT Operator without Modifiers" class="md-nav__link">
+    Using the EXCEPT Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-except-operator-with-modifiers" title="Using the EXCEPT Operator with Modifiers" class="md-nav__link">
+    Using the EXCEPT Operator with Modifiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-intersect-operator" title="Using the INTERSECT Operator" class="md-nav__link">
+    Using the INTERSECT Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-intersect-operator-without-modifiers" title="Using the INTERSECT Operator without Modifiers" class="md-nav__link">
+    Using the INTERSECT Operator without Modifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-intersect-operator-with-modifiers" title="Using the INTERSECT Operator with Modifiers" class="md-nav__link">
+    Using the INTERSECT Operator with Modifiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Working with Set Operators</h1>
+                
+                <h2 id="introducing-set-operators">Introducing Set Operators<a class="headerlink" href="#introducing-set-operators" title="Permanent link">Link</a></h2>
+<h3 id="what-are-set-operators">What Are Set Operators?<a class="headerlink" href="#what-are-set-operators" title="Permanent link">Link</a></h3>
+<p>To <strong>vertically combine the results of two queries</strong>, you can use one of four set operators:</p>
+<ul>
+<li><code>UNION</code>  (ANSI standard for SQL)</li>
+<li><code>OUTER UNION</code>  (SAS enhancement)</li>
+<li><code>EXCEPT</code>  (ANSI standard for SQL)</li>
+<li><code>INTERSECT</code>  (ANSI standard for SQL)</li>
+</ul>
+<p>To modify the default behavior of a set operator, you can also use one or both of the modifiers <code>ALL</code> and <code>CORR</code>.</p>
+<p>A set operator vertically combines the intermediate result sets from two queries to produce a final result set. Set operators act on the intermediate result sets, not directly on the input tables.</p>
+<p><strong>Example:</strong> Using a Set Operator in an In-Line View</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Number of Employees Who Completed&#39;;
+title2 &#39;Training A, But Not Training B&#39;;
+proc sql;
+select count(ID) as Count
+   from (select ID, Name from orion.train_a
+         except
+         select ID, Name from orion.train_b
+            where EDate is not missing);
+quit;
+title;
+</pre></div>
+</td></tr></table>
+
+<h3 id="how-set-operators-combine-rows-and-columns-by-default">How Set Operators Combine Rows and Columns by Default?<a class="headerlink" href="#how-set-operators-combine-rows-and-columns-by-default" title="Permanent link">Link</a></h3>
+<p>By default, the set operators handle the rows in the intermediate result sets as follows:</p>
+<ul>
+<li>The <code>UNION</code> operator produces <strong>ALL UNIQUE rows from BOTH result sets</strong></li>
+<li>The <code>OUTER UNION</code> operator produces <strong>ALL rows from BOTH result sets</strong></li>
+<li>The <code>EXCEPT</code> operator produces <strong>UNIQUE rows from the FIRST result set that are NOT in the SECOND</strong></li>
+<li>The <code>INTERSECT</code> operator produces <strong>UNIQUE rows from the FIRST result set that are in the SECOND</strong></li>
+</ul>
+<p>By default, the set operators handle the columns in the intermediate result sets as follows:</p>
+<ul>
+<li>The <code>UNION</code>, <code>EXCEPT</code>, and <code>INTERSECT</code> operators <strong>align columns by their <code>POSITION</code> in both intermediate result sets</strong></li>
+<li>The <code>OUTER UNION</code> operator produces <strong>all columns from both result sets</strong></li>
+</ul>
+<h3 id="modifying-the-default-behavior-of-the-set-operators">Modifying the Default Behavior of the Set Operators<a class="headerlink" href="#modifying-the-default-behavior-of-the-set-operators" title="Permanent link">Link</a></h3>
+<p>To <strong>change the default behavior</strong> of the set operators, you can use one or both of the <strong>modifiers <code>ALL</code> and <code>CORR</code></strong> (or <code>CORRESPONDING</code>) along with each set operator.</p>
+<h4 id="all-modifies-the-default-behavior-for-rows"><code>ALL</code> Modifies the Default Behavior for Rows<a class="headerlink" href="#all-modifies-the-default-behavior-for-rows" title="Permanent link">Link</a></h4>
+<p>The <code>UNION</code>, <code>EXCEPT</code>, and <code>INTERSECT</code> set operators produce <strong>only the unique rows</strong> by default. To produce only the unique rows, <code>PROC SQL</code> must make a <strong>second pass through the data to eliminate the duplicate rows</strong>. When used with these three operators, the <strong><code>ALL</code> modifier prevents this second pass</strong>, which means it does not suppress the duplicate rows.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>ALL</code> cannot be used with the <code>OUTER UNION</code> operator.</p>
+</div>
+<h4 id="corr-modifies-the-default-behavior-for-columns"><code>CORR</code> Modifies the Default Behavior for Columns<a class="headerlink" href="#corr-modifies-the-default-behavior-for-columns" title="Permanent link">Link</a></h4>
+<p>With the <code>UNION</code>, <code>EXCEPT</code>, and <code>INTERSECT</code> operators, the <strong><code>CORR</code> modifier aligns columns that have the same <code>NAME</code> (not the same position)</strong> in both intermediate result sets <strong>instead of aligning columns by position</strong>. With these three operators, <code>CORR</code> also <strong>suppresses</strong> any columns with names that do not appear in both intermediate result sets.</p>
+<p>With the <code>OUTER UNION</code> operator, <code>CORR</code> aligns columns by <code>NAME</code>, like the other operators, instead of producing all columns. However, the final result set includes any columns that do not appear in both result sets.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember that you can use <code>ALL</code> and <code>CORR</code> separately or together, except when you are using the <code>OUTER UNION</code> operator.</p>
+</div>
+<h3 id="syntax-of-a-set-operation">Syntax of a Set Operation<a class="headerlink" href="#syntax-of-a-set-operation" title="Permanent link">Link</a></h3>
+<p>A set operation consists of two sets of query clauses that are combined by one of the four set operators and, optionally, one or both modifiers.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT ...
+  UNION | OUTER UNION | EXCEPT | INTERSECT
+  &lt;ALL&gt; &lt;CORR&gt;
+  SELECT ...;
+</pre></div>
+</td></tr></table>
+
+<p>A <code>SELECT</code> statement can contain more than one set operation.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT *
+    FROM table-one
+  UNION
+  SELECT *
+    FROM table-two
+  UNION
+  SELECT *
+    FROM table-three;
+</pre></div>
+</td></tr></table>
+
+<p>No matter how many set operations a <code>SELECT</code> statement contains, it always produces one final result set.</p>
+<h2 id="order-of-evaluation-of-set-operators">Order of Evaluation of Set Operators<a class="headerlink" href="#order-of-evaluation-of-set-operators" title="Permanent link">Link</a></h2>
+<p>If your set operation contains multiple instances of the <strong>same set operator</strong>, <code>PROC SQL</code> processes the set operations in order, from top to bottom.</p>
+<p>If a single statement contains <strong>different set operators</strong>, <code>PROC SQL</code> <strong>follows specific rules to determine the order</strong> in which to evaluate the set operations. By default, within a single statement, <code>PROC SQL</code> evaluates the <code>INTERSECT</code> operator first. The other three operators (<code>UNION</code>, <code>OUTER UNION</code>, and <code>EXCEPT</code>) have the same order of precedence, so <code>PROC SQL</code> will evaluate them in the order in which they appear in the statement. </p>
+<p>To override the default order in which <code>PROC SQL</code> evaluates the set operators, you can add parentheses to your code. <code>PROC SQL</code> combines any queries that are enclosed in parentheses first.</p>
+<p><strong>Example:</strong> Combining Set Operators</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &quot;Who on Bob&#39;s Team Has Not&quot;;
+title2 &#39;Started Any Training&#39;;
+proc sql;
+select ID, Name from orion.team
+except
+(select ID, Name from orion.train_a
+ union
+ select ID, Name from orion.train_b);
+quit;
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-the-union-operator">Using the <code>UNION</code> Operator<a class="headerlink" href="#using-the-union-operator" title="Permanent link">Link</a></h2>
+<h3 id="using-the-union-operator-without-modifiers">Using the <code>UNION</code> Operator without Modifiers<a class="headerlink" href="#using-the-union-operator-without-modifiers" title="Permanent link">Link</a></h3>
+<p>By default, to process a set operation with the <code>UNION</code> operator, the SQL processor performs two main steps:</p>
+<ol>
+<li>Vertically combines the rows from the two intermediate result sets (by default, the columns are aligned by position and to be aligned, the columns must have the same type)</li>
+<li>Identifies and removes any duplicate rows from the combined result set</li>
+</ol>
+<p>The final result set consists of the remaining rows.</p>
+<h3 id="using-the-union-operator-with-the-corr-modifier">Using the <code>UNION</code> Operator with the <code>CORR</code> Modifier<a class="headerlink" href="#using-the-union-operator-with-the-corr-modifier" title="Permanent link">Link</a></h3>
+<p>When the <code>CORR</code> modifier is used with the <code>UNION</code> operator, the SQL processor performs two main steps:</p>
+<ol>
+<li>Aligns columns by name and removes all columns that do not have a matching name in the other result set</li>
+<li>Removes the duplicate rows from the combined result set</li>
+</ol>
+<p><strong>Example:</strong> Using the <code>UNION</code> Operator with the <code>CORR</code> Modifer</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select *
+   from orion.train_a
+union corr
+select *
+   from orion.train_b
+   where Edate is
+         not missing;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="using-the-union-operator-with-the-all-modifier">Using the <code>UNION</code> Operator with the <code>ALL</code> Modifier<a class="headerlink" href="#using-the-union-operator-with-the-all-modifier" title="Permanent link">Link</a></h3>
+<p>In certain situations, you can increase the efficiency of your code by adding the <code>ALL</code> modifier to suppress the removal of duplicate rows. It makes sense to use the <code>ALL</code> modifier when the presence of duplicate rows in the final result set is not a problem, or duplicate rows are not possible (e.g. a column might have a unique or primary key constraint).</p>
+<p><strong>Example:</strong> Combining Three Queries with the <code>UNION</code> Operator and the <code>ALL</code> Modifier</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Payroll Report for Level I, II,&#39;;
+title2 &#39;and III Employees&#39;;
+
+proc sql;
+select &#39;Total Paid to ALL Level I Staff&#39;,
+       sum(Salary) format=comma12.
+   from orion.staff
+   where scan(Job_Title,-1,&#39; &#39;)=&#39;I&#39;
+union all
+select &#39;Total Paid to ALL Level II Staff&#39;,
+       sum(Salary) format=comma12.
+   from orion.staff
+   where scan(Job_Title,-1,&#39; &#39;)=&#39;II&#39;
+union all
+select &#39;Total Paid to ALL Level III Staff&#39;,
+       sum(Salary) format=comma12.
+   from orion.staff
+   where scan(Job_Title,-1,&#39; &#39;)=&#39;III&#39;;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-the-outer-union-operator">Using the <code>OUTER UNION</code> Operator<a class="headerlink" href="#using-the-outer-union-operator" title="Permanent link">Link</a></h2>
+<h3 id="using-the-outer-union-operator-alone-and-with-the-corr-modifier">Using the <code>OUTER UNION</code> Operator Alone and with the <code>CORR</code> Modifier<a class="headerlink" href="#using-the-outer-union-operator-alone-and-with-the-corr-modifier" title="Permanent link">Link</a></h3>
+<p>By default, the <code>OUTER UNION</code> operator vertically combines the rows from both intermediate result sets. However, unlike the <code>UNION</code> operator, <code>OUTER UNION</code> does not align common columns by default or remove duplicate rows.</p>
+<p>When <code>CORR</code> is used with <code>OUTER UNION</code>, it overlays common columns. However, with <code>UNION</code>, the <code>CORR</code> modifier does not suppress columns that have different names, as it does with the other set operators.</p>
+<p><strong>Example:</strong> Using the <code>OUTER UNION</code> Operator with the <code>CORR</code> Modifer</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select *
+   from orion.train_a
+outer union corr
+select *
+   from orion.train_b
+   where EDate is
+         not missing;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="outer-union-set-operation-versus-traditional-sas-programming"><code>OUTER UNION</code> Set Operation versus Traditional SAS Programming<a class="headerlink" href="#outer-union-set-operation-versus-traditional-sas-programming" title="Permanent link">Link</a></h3>
+<p>There are several methods of using SAS to vertically combine all of the rows and columns in two results sets. The most common alternative to the <code>OUTER UNION</code> set operator with the <code>CORR</code> modifier is the <code>SET</code> statement in the <code>DATA</code> step.</p>
+<h2 id="using-the-except-operator">Using the <code>EXCEPT</code> Operator<a class="headerlink" href="#using-the-except-operator" title="Permanent link">Link</a></h2>
+<h3 id="using-the-except-operator-without-modifiers">Using the <code>EXCEPT</code> Operator without Modifiers<a class="headerlink" href="#using-the-except-operator-without-modifiers" title="Permanent link">Link</a></h3>
+<p>By default, the <code>EXCEPT</code> operator vertically combines two intermediate result sets as follows:</p>
+<ol>
+<li>After producing the two intermediate result sets, <code>PROC SQL</code> removes any duplicate rows within the first result set (none of the rows in the second result set will appear in the final result, so there is no need to look for duplicates there)</li>
+<li>Aligns the columns by their position in the intermediate result sets (to be aligned, the columns must be the same type)</li>
+<li>Identifies and removes any rows in the first result set that match any rows in the second result set</li>
+</ol>
+<p>The final result set contains the rows and columns that remain in the first result set.</p>
+<h3 id="using-the-except-operator-with-modifiers">Using the <code>EXCEPT</code> Operator with Modifiers<a class="headerlink" href="#using-the-except-operator-with-modifiers" title="Permanent link">Link</a></h3>
+<p>When <code>ALL</code> is used with the <code>EXCEPT</code> operator, duplicate rows are not removed from the intermediate result sets.</p>
+<p>With <code>CORR</code>, the columns are aligned by name instead of by position in order to identify matching rows. Columns that do not have the same name in both intermediate result sets are eliminated from the final result set.</p>
+<p><strong>Example</strong>: Using the <code>EXCEPT</code> Operator with the <code>ALL</code> and <code>CORR</code> Modifers</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select *
+   from orion.train_a
+except all corr
+select *
+   from orion.train_b
+   where EDate is
+         not missing;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-the-intersect-operator">Using the <code>INTERSECT</code> Operator<a class="headerlink" href="#using-the-intersect-operator" title="Permanent link">Link</a></h2>
+<h3 id="using-the-intersect-operator-without-modifiers">Using the <code>INTERSECT</code> Operator without Modifiers<a class="headerlink" href="#using-the-intersect-operator-without-modifiers" title="Permanent link">Link</a></h3>
+<p>By default, the <code>INTERSECT</code> operator vertically combines two intermediate result sets as follows:</p>
+<ol>
+<li>After producing the two intermediate result sets, <code>PROC SQL</code> removes any duplicate rows within each of the intermediate result sets</li>
+<li>Aligns the columns by their position in the intermediate result sets (to be aligned, the columns must be the same type)</li>
+<li>Identifies any rows in the first result set that match any rows in the second result set</li>
+</ol>
+<p>The final result set contains the matching rows in the first result set. The column names in the final result set are determined by the first result set.</p>
+<h3 id="using-the-intersect-operator-with-modifiers">Using the <code>INTERSECT</code> Operator with Modifiers<a class="headerlink" href="#using-the-intersect-operator-with-modifiers" title="Permanent link">Link</a></h3>
+<p>When <code>ALL</code> is used with the <code>INTERSECT</code> operator, duplicate rows are not removed from the intermediate result sets.</p>
+<p><strong>Example:</strong> Using the <code>INTERSECT</code> Operator with the <code>ALL</code> Modifier</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select ID, Name
+   from orion.train_a
+intersect all
+select ID, Name
+   from orion.train_b
+   where EDate is
+         not missing;
+quit;
+</pre></div>
+</td></tr></table>
+
+<p>With <code>CORR</code>, the columns are aligned by name instead of by position in order to identify matching rows. Columns that do not have the same name in both intermediate result sets are eliminated from the final result set.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../nested-queries/" title="Working with Nested Queries" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Working with Nested Queries
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tables-views/" title="Creating Tables and Views" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Creating Tables and Views
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

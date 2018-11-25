@@ -1,0 +1,2200 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Working with SQL Joins - SAS Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#understanding-sql-joins" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Working with SQL Joins
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Working with SQL Joins
+      </label>
+    
+    <a href="./" title="Working with SQL Joins" class="md-nav__link md-nav__link--active">
+      Working with SQL Joins
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-sql-joins" title="Understanding SQL Joins" class="md-nav__link">
+    Understanding SQL Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inner-joins-and-outer-joins" title="Inner joins and Outer joins" class="md-nav__link">
+    Inner joins and Outer joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product" title="Cartesian product" class="md-nav__link">
+    Cartesian product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-join-cartesian-product" title="Cross Join (Cartesian product)" class="md-nav__link">
+    Cross Join (Cartesian product)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-inner-joins" title="Working with Inner Joins" class="md-nav__link">
+    Working with Inner Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performing-an-inner-join" title="Performing an Inner Join" class="md-nav__link">
+    Performing an Inner Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-alternative-syntax-for-an-inner-join" title="Using Alternative Syntax for an Inner Join" class="md-nav__link">
+    Using Alternative Syntax for an Inner Join
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-outer-joins" title="Working with Outer Joins" class="md-nav__link">
+    Working with Outer Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-left-outer-join" title="Performing a Left Outer Join" class="md-nav__link">
+    Performing a Left Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-right-outer-join" title="Performing a Right Outer Join" class="md-nav__link">
+    Performing a Right Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-full-outer-join" title="Performing a Full Outer Join" class="md-nav__link">
+    Performing a Full Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences-between-a-proc-sql-join-and-a-data-step-merge" title="Differences between a PROC SQL join and a DATA STEP merge" class="md-nav__link">
+    Differences between a PROC SQL join and a DATA STEP merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-complex-sql-joins" title="Working with Complex SQL Joins" class="md-nav__link">
+    Working with Complex SQL Joins
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-sql-joins" title="Understanding SQL Joins" class="md-nav__link">
+    Understanding SQL Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inner-joins-and-outer-joins" title="Inner joins and Outer joins" class="md-nav__link">
+    Inner joins and Outer joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-product" title="Cartesian product" class="md-nav__link">
+    Cartesian product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-join-cartesian-product" title="Cross Join (Cartesian product)" class="md-nav__link">
+    Cross Join (Cartesian product)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-inner-joins" title="Working with Inner Joins" class="md-nav__link">
+    Working with Inner Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performing-an-inner-join" title="Performing an Inner Join" class="md-nav__link">
+    Performing an Inner Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-alternative-syntax-for-an-inner-join" title="Using Alternative Syntax for an Inner Join" class="md-nav__link">
+    Using Alternative Syntax for an Inner Join
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-outer-joins" title="Working with Outer Joins" class="md-nav__link">
+    Working with Outer Joins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-left-outer-join" title="Performing a Left Outer Join" class="md-nav__link">
+    Performing a Left Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-right-outer-join" title="Performing a Right Outer Join" class="md-nav__link">
+    Performing a Right Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performing-a-full-outer-join" title="Performing a Full Outer Join" class="md-nav__link">
+    Performing a Full Outer Join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differences-between-a-proc-sql-join-and-a-data-step-merge" title="Differences between a PROC SQL join and a DATA STEP merge" class="md-nav__link">
+    Differences between a PROC SQL join and a DATA STEP merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-complex-sql-joins" title="Working with Complex SQL Joins" class="md-nav__link">
+    Working with Complex SQL Joins
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Working with SQL Joins</h1>
+                
+                <h2 id="understanding-sql-joins">Understanding SQL Joins<a class="headerlink" href="#understanding-sql-joins" title="Permanent link">Link</a></h2>
+<p>If you're working with tables that have different columns, you can combine tables horizontally to combine the columns that you want in your output.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM from-list
+  &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>To combine tables horizontally, you can use either the <code>SELECT</code> statement in <code>PROC SQL</code> or the <code>MERGE</code> statement in the <code>DATA</code> step. The results of an SQL join and a <code>DATA</code> step merge are similar but not always identical.</p>
+<p>Whatever method you use, you must also specify criteria for matching and combining the rows across the tables.</p>
+<h3 id="inner-joins-and-outer-joins">Inner joins and Outer joins<a class="headerlink" href="#inner-joins-and-outer-joins" title="Permanent link">Link</a></h3>
+<p><code>PROC SQL</code> supports two types of joins:</p>
+<ul>
+<li><strong>Inner joins:</strong> return a result table that contains all of the matching rows in the input tables. The result of an inner join does not include any nonmatching rows.</li>
+<li><strong>Outer joins:</strong> return a result table that contains all of the matching rows in the input tables and some or all of the nonmatching rows from one or both tables.</li>
+</ul>
+<p>There are three types of outer joins:</p>
+<ul>
+<li>A full outer join returns all of the matching rows plus the nonmatching rows from both tables.</li>
+<li>A left outer join returns all of the matching rows plus the nonmatching rows from the first, or left, table.</li>
+<li>A right outer join returns all of the matching rows plus the nonmatching rows from the second, or right, table.</li>
+</ul>
+<p>When performing an SQL join, the SQL processor first generates all possible combinations of all of the rows in the tables to be combined. An intermediate result table that contains all possible combinations of rows in the input tables is called a <strong>Cartesian product</strong>. From the rows in the Cartesian product, the SQL processor can then select the appropriate rows for an inner join or an outer join.</p>
+<h3 id="cartesian-product">Cartesian product<a class="headerlink" href="#cartesian-product" title="Permanent link">Link</a></h3>
+<p>The number of rows in a Cartesian product is the product of the number of rows in the contributing tables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name, table-name
+    &lt;,...table-name&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>A Cartesian product is rarely the result that you want when you join tables.</p>
+<p>To create a Cartesian product, you use the <code>SELECT</code> statement without specifying any conditions for matching rows.</p>
+<p><strong>Example:</strong> Creating a Cartesian Product </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select *
+   from customers, transactions, inventory;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="cross-join-cartesian-product">Cross Join (Cartesian product)<a class="headerlink" href="#cross-join-cartesian-product" title="Permanent link">Link</a></h3>
+<p>You can also use alternative syntax, called cross join syntax, to produce the Cartesian product of two tables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name-1 CROSS JOIN table-name-2;
+</pre></div>
+</td></tr></table>
+
+<p>In the <code>FROM</code> clause, the table names are separated by the <code>CROSS JOIN</code> keywords instead of by a comma.</p>
+<h2 id="working-with-inner-joins">Working with Inner Joins<a class="headerlink" href="#working-with-inner-joins" title="Permanent link">Link</a></h2>
+<h3 id="performing-an-inner-join">Performing an Inner Join<a class="headerlink" href="#performing-an-inner-join" title="Permanent link">Link</a></h3>
+<p>Inner join returns only the matching rows. Another way to say this is that an inner join returns rows that meet certain join conditions that you specify.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name, table-name
+  WHERE join-condition(s)
+    &lt;AND sql-expression&gt;
+  &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>The syntax for an inner join requires a <code>WHERE</code> clause in addition to the <code>SELECT</code> and <code>FROM</code> clauses. In the <code>WHERE</code> clause, one or more join conditions specify the combined rows that the query should return.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select *
+  from customers, transactions
+  where customers.ID=transactions.ID;
+quit;
+
+proc sql;
+select c.ID, Name, Action, Amount
+   from customers as c, transactions as t
+   where c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<p>The join conditions are specified as expressions. The <code>WHERE</code> clause can also contain one or more additional expressions that subset the rows in additional ways.</p>
+<p>The column or columns that are specified in join conditions are referred to as join keys.
+Using <code>PROC SQL</code>, you can also specify join keys that have different names. However, by default, a <code>DATA</code> step merge requires the join keys to have the same name in both tables.</p>
+<p><code>PROC SQL</code> can join tables that are not sorted on the join keys, unlike a <code>DATA</code> step merge.</p>
+<p>When you refer to columns in multiple tables that have the same name, you must qualify the column names to specify the location of each column. <strong>Qualified column names</strong> consist of the table name (a table qualifier), a period, and then the column name.</p>
+<p>A join on an equal condition is called an <strong>equijoin</strong>. Using <code>PROC SQL</code>, you can also join tables on an inequality. However, <code>DATA</code> step merges can only join tables on an equality.</p>
+<p>Conceptually, when <code>PROC SQL</code> processes an inner join, the SQL processor performs two main steps:</p>
+<ol>
+<li>Builds the Cartesian product of all tables listed in the <code>FROM</code> clause</li>
+<li>Eliminates the rows that don't meet the join conditions</li>
+</ol>
+<p>A <code>DATA</code> step merge does not create a Cartesian product.</p>
+<p>Unlike <code>DATA</code> step merges, SQL joins do not overlay columns that have the same name. By default, the result set contains all of the columns that have the same name.</p>
+<p>To display columns that are the same as, or derived from, columns in multiple tables, you must use a join instead of a subquery.</p>
+<p>By default, a <code>DATA</code> step merge builds a result set in the order of the join key values. <code>PROC SQL</code> does not order the rows in query results by default. To guarantee the order of the rows, you must use an <code>ORDER BY</code> clause.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name &lt;AS&gt; alias-1
+    table-name-2 &lt;AS&gt; alias-2
+  WHERE join-condition(s)
+  &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>You can simplify the syntax of your SQL joins by assigning aliases to tables in the <code>FROM</code> clause.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT c.ID, Name, Action, Amount
+    FROM customers as c, transactions as t
+    WHERE c.ID=t.ID;
+</pre></div>
+</td></tr></table>
+
+<p>After the table name, you can optionally specify the keyword <code>AS</code> and then the alias. The alias must follow the standard rules for SAS names. In other clauses, you can reference each table by its alias instead of by its full name.</p>
+<h3 id="using-alternative-syntax-for-an-inner-join">Using Alternative Syntax for an Inner Join<a class="headerlink" href="#using-alternative-syntax-for-an-inner-join" title="Permanent link">Link</a></h3>
+<p>You can also perform an inner join by using the alternative syntax shown here.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name-1 &lt;&lt;AS&gt; alias-1&gt;
+    INNER JOIN
+    table-name-2 &lt;&lt;AS&gt; alias-2&gt;
+  ON join-condition(s)
+  WHERE sql-expression
+  &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>In the alternate syntax for an inner join, the <code>FROM</code> clause uses the <code>INNER JOIN</code> keywords to join two tables. The alternate syntax uses the <code>ON</code> clause to specify the join conditions. The alternate syntax allows additional clauses, so you can still use the <code>WHERE</code> clause to specify any additional subsetting conditions.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select c.ID, Name, Action, Amount
+  from customers as c
+    inner join transactions as t
+    on c.ID=t.ID;
+quit;
+
+proc sql;
+select c.ID, Name, Action, Amount
+   from customers as c
+        inner join
+        transactions as t
+   on c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h2 id="working-with-outer-joins">Working with Outer Joins<a class="headerlink" href="#working-with-outer-joins" title="Permanent link">Link</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
+  FROM table-name &lt;&lt;AS&gt; alias&gt;
+    LEFT|RIGHT|FULL JOIN
+    table-name &lt;&lt;AS&gt; alias&gt;
+  ON join-condition(s)
+  &lt;additional clauses&gt;;
+</pre></div>
+</td></tr></table>
+
+<p>The syntax for outer joins is similar to the alternate syntax for inner joins. In an outer join, the <code>FROM</code> clause lists two table names with keywords that indicate the type of join in between: <code>LEFT JOIN</code>, <code>RIGHT JOIN</code>, or <code>FULL JOIN</code>. The left table is the first table listed, and the right table is the second table. The <code>ON</code> clause specifies the join conditions. As with inner joins, you can also add optional clauses, such as a <code>WHERE</code> clause, to subset the rows.</p>
+<h4 id="performing-a-left-outer-join">Performing a Left Outer Join<a class="headerlink" href="#performing-a-left-outer-join" title="Permanent link">Link</a></h4>
+<p>Use a left outer join to select <strong>all the rows in the customers table and only the matching rows in the transactions table</strong>.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+  SELECT *
+    FROM customers as c
+      LEFT JOIN
+      transactions as t
+        ON c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h4 id="performing-a-right-outer-join">Performing a Right Outer Join<a class="headerlink" href="#performing-a-right-outer-join" title="Permanent link">Link</a></h4>
+<p>Use a right outer join to select <strong>all the rows in the transactions table and only the matching rows in the customers table</strong>.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+  SELECT *
+    FROM customers as c
+      RIGHT JOIN transactions as t
+        ON c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h4 id="performing-a-full-outer-join">Performing a Full Outer Join<a class="headerlink" href="#performing-a-full-outer-join" title="Permanent link">Link</a></h4>
+<p>We want the query to combine and return <strong>all matching rows and also to return the rows from both tables that do not match</strong>.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+  SELECT *
+    FROM customers as c
+      FULL JOIN transactions as t
+        ON c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<p>In a full outer join, the <strong>order of the tables affects the order of the columns in the result set</strong>. The columns from the left table appear before the columns from the right table.</p>
+<p>Outer joins can only process two tables at a time. However, you can stack multiple outer joins in a single query.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>COALESCE(argument-1,argument-2&lt;,argument-n&gt;)
+</pre></div>
+</td></tr></table>
+
+<p>To overlay columns in SQL joins, you can use the <code>COALESCE</code> function, which is a SAS function. The <code>COALESCE</code> function returns the value of the first nonmissing argument from two or more arguments that you specify. An argument can be a constant, an expression, or a column name. All arguments must be of the same type.</p>
+<p><strong>Example:</strong> Using the <code>COALESCE</code> Function to Overlay Columns</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select coalesce(c.ID,t.ID) as ID,
+       Name, Action, Amount
+   from customers c full join transactions t
+   on c.ID=t.ID;
+quit;
+</pre></div>
+</td></tr></table>
+
+<h3 id="differences-between-a-proc-sql-join-and-a-data-step-merge">Differences between a <code>PROC SQL</code> join and a <code>DATA STEP</code> merge<a class="headerlink" href="#differences-between-a-proc-sql-join-and-a-data-step-merge" title="Permanent link">Link</a></h3>
+<p>The table below shows the differences between a <code>PROC SQL</code> join and a <code>DATA STEP</code> merge.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Key Points</th>
+<th align="center">SQL Join</th>
+<th align="center">DATA Step Merge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Explicit sorting of data before join/merge</td>
+<td align="center">Not required</td>
+<td align="center">Required</td>
+</tr>
+<tr>
+<td align="center">Same-name columns in join/merge expressions</td>
+<td align="center">Not required</td>
+<td align="center">Required</td>
+</tr>
+<tr>
+<td align="center">Equality in join or merge expressions</td>
+<td align="center">Not required</td>
+<td align="center">Required</td>
+</tr>
+</tbody>
+</table>
+<p>The table below shows the differences between inner and outer joins.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Key Points</th>
+<th align="center">Inner Join</th>
+<th align="center">Outer Join</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Table Limit</td>
+<td align="center">256</td>
+<td align="center">256</td>
+</tr>
+<tr>
+<td align="center">Join Behavior</td>
+<td align="center">Returns matching rows only</td>
+<td align="center">Returns matching and non-matching rows</td>
+</tr>
+<tr>
+<td align="center">Join Options</td>
+<td align="center">Matching rows only</td>
+<td align="center"><code>LEFT</code>, <code>FULL</code>, <code>RIGHT</code></td>
+</tr>
+<tr>
+<td align="center">Syntax Changes</td>
+<td align="center">Multiple tables in the <code>FROM</code> clause (separated by commas); <code>WHERE</code> clause that specifies join criteria</td>
+<td align="center"><code>ON</code> clause that specifies join criteria</td>
+</tr>
+</tbody>
+</table>
+<h2 id="working-with-complex-sql-joins">Working with Complex SQL Joins<a class="headerlink" href="#working-with-complex-sql-joins" title="Permanent link">Link</a></h2>
+<p>Even if the information you need for your report is located in only two tables, you may need to read the same table twice, or even more times.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  FROM table-name-1 &lt;AS&gt; alias-1,
+      table-name-1 &lt;AS&gt; alias-2,
+</pre></div>
+</td></tr></table>
+
+<p>In order to read from the same table twice, it must be listed in the <code>FROM</code> clause twice. A different table alias is required for each listing to distinguish the different uses. This is called a <strong>self-join</strong>, or a reflexive join.</p>
+<p><strong>Example:</strong> Performing a Complex Join</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
+select e.Employee_ID &quot;Employee ID&quot;,
+          e.Employee_Name &quot;Employee Name&quot;,
+          m.Employee_ID &quot;Manager ID&quot;,
+          m.Employee_Name &quot;Manager Name&quot;,
+          e.Country
+   from orion.employee_addresses as e,
+           orion.employee_addresses as m,
+           orion.employee_organization as o
+   where e.Employee_ID=o.Employee_ID and
+              o.Manager_ID=m.Employee_ID and
+              Department contains &#39;Sales&#39;
+   order by Country,4,1;
+quit;
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../displaying-results/" title="Displaying Query Results" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Displaying Query Results
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../nested-queries/" title="Working with Nested Queries" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Working with Nested Queries
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

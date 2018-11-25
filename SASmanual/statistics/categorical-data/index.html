@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -14,9 +17,26 @@
         <meta name="author" content="Lucía Rodrigo Insausti">
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -24,30 +44,27 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
       
     
     
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
       
-        
-        
-        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
   </head>
   
-  
-  
-  
-    <body>
+    <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
@@ -55,52 +72,61 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#describing-categorical-data" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             
-              
-                <span class="md-header-nav__parent">
-                  Basic Statistics
-                </span>
-              
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Categorical Data Analysis
+              </span>
             
-            Categorical Data Analysis
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -109,6 +135,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -117,6 +144,8 @@
 </header>
     
     <div class="md-container">
+      
+        
       
       
       <main class="md-main">
@@ -127,10 +156,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
     SAS Manual
   </label>
   
@@ -358,10 +389,10 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Categorical Data Analysis
       </label>
     
@@ -374,7 +405,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -639,6 +670,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -685,166 +718,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Other Analysis
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Other Analysis
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
-      Model Selection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
-      Dealing with Missing Data
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
-      Interim Analysis Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
-      Normality Tests
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
-      Effect Size
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
-      Propensity Score
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
-      ROC Curve
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
-      Sequence Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
-      Survival Analysis
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
-      ORR and DCR
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
-      Clustering
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
       Using Macros
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Using Macros
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -946,13 +823,325 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Specific Procedures
+      Other Analysis
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
         Specific Procedures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -994,18 +1183,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
-      PROC SQL
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -1018,13 +1195,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       SAS Outputs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         SAS Outputs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1138,13 +1315,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       SAS vs R
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         SAS vs R
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1282,13 +1459,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       CDISC
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         CDISC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1318,13 +1495,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-13">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-13">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1378,6 +1555,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1390,13 +1591,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-14">
       Medical terms
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-14">
         Medical terms
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1420,8 +1621,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
-      Laboratory test
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
     </a>
   </li>
 
@@ -1438,13 +1675,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
     
-    <label class="md-nav__link" for="nav-14">
+    <label class="md-nav__link" for="nav-15">
       R with Shiny
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-14">
+      <label class="md-nav__title" for="nav-15">
         R with Shiny
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1456,8 +1693,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny basics" class="md-nav__link">
-      Introduction and Shiny basics
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
     </a>
   </li>
 
@@ -1468,8 +1705,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/input-output/" title="Inputs, outputs, and rendering functions" class="md-nav__link">
-      Inputs, outputs, and rendering functions
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
     </a>
   </li>
 
@@ -1480,8 +1717,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/reactive/" title="Reactive programming" class="md-nav__link">
-      Reactive programming
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
     </a>
   </li>
 
@@ -1492,8 +1729,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../R-with-Shiny/custom/" title="Customizing appearance" class="md-nav__link">
-      Customizing appearance
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
     </a>
   </li>
 
@@ -1518,7 +1755,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1783,6 +2020,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1798,9 +2037,8 @@
                 
                   <h1>Categorical Data Analysis</h1>
                 
-                <p><a href="https://support.sas.com/edu/OLTRN/ECST131/m556/m556_5_a_sum.htm">Chapter summary in SAS</a></p>
-<p>When you response variable is categorical, you need to use a different kind of regression analysis: <strong>logistic regression</strong>.</p>
-<h2 id="describing-categorical-data">Describing Categorical Data<a class="headerlink" href="#describing-categorical-data" title="Permanent link">&para;</a></h2>
+                <p>When you response variable is categorical, you need to use a different kind of regression analysis: <strong>logistic regression</strong>.</p>
+<h2 id="describing-categorical-data">Describing Categorical Data<a class="headerlink" href="#describing-categorical-data" title="Permanent link">Link</a></h2>
 <p>When you examine the distribution of a <strong>categorical variable</strong>, you want to know the <strong>values</strong> of the variable and the <strong>frequency or count</strong> of each value in the data (<strong>one-way frequency able</strong>).</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1843,15 +2081,15 @@ RUN;
 <ul>
 <li><a href="http://support.sas.com/kb/36/898.html">Count the distinct values of a variable</a>: The question of how to count distinct values of a <code>CLASS</code> or <code>BY</code> variable using either <code>PROC MEANS</code> or <code>PROC SUMMARY</code> is asked frequently. While neither of these procedures has this ability, <code>PROC SQL</code> can count these values using the <code>DISTINCT</code> option and <code>PROC FREQ</code> using the <code>NLEVELS</code> option.</li>
 </ul>
-<h2 id="tests-of-association">Tests of Association<a class="headerlink" href="#tests-of-association" title="Permanent link">&para;</a></h2>
-<h3 id="pearson-chi-square-test">Pearson Chi-square Test<a class="headerlink" href="#pearson-chi-square-test" title="Permanent link">&para;</a></h3>
+<h2 id="tests-of-association">Tests of Association<a class="headerlink" href="#tests-of-association" title="Permanent link">Link</a></h2>
+<h3 id="pearson-chi-square-test">Pearson Chi-square Test<a class="headerlink" href="#pearson-chi-square-test" title="Permanent link">Link</a></h3>
 <p>To perform a <strong>formal test of association</strong> between two categorical variables, you use the (Pearson) <strong>chi-square test</strong> which measures the difference between the observed cell frequencies and the cell frequencies that are expected if there is no association between variables ($H_0$ is true): 
 $Expected=Row \ total\cdot Column\ total/Total \ sample \ size$</p>
 <ul>
 <li>If the <strong>sample size decreases</strong>, the <strong>chi-square value decreases</strong> and the <strong>p-value for the chi-square statistic increases</strong></li>
 <li>Hypothesis testing: <strong>$H_0$</strong>: no association; <strong>$H_a$</strong>: association</li>
 </ul>
-<h3 id="cramers-v-statistic">Cramer's V statistic<a class="headerlink" href="#cramers-v-statistic" title="Permanent link">&para;</a></h3>
+<h3 id="cramers-v-statistic">Cramer's V statistic<a class="headerlink" href="#cramers-v-statistic" title="Permanent link">Link</a></h3>
 <p>It is one <strong>measure of strength of an association</strong> between two categorical variables:</p>
 <ul>
 <li>For two-by-two tables, Cramer's V is in the range of -1 to 1</li>
@@ -1886,7 +2124,7 @@ RUN;
 <li><code>NOPERCENT</code> supresses the printing of the cell percentages</li>
 <li><code>RELRISK</code> (relative risk) prints a table that contains risk ratios (probability ratios) and odds ratios; <code>PROC FREQ</code> uses the <strong>classification in the first column</strong> of the crosstabulation table as the <strong>outcome of interest</strong> and the first/second row in the numerator/denominator</li>
 </ul>
-<h3 id="mantel-haenszel-chi-square-test">Mantel-Haenszel chi-square test<a class="headerlink" href="#mantel-haenszel-chi-square-test" title="Permanent link">&para;</a></h3>
+<h3 id="mantel-haenszel-chi-square-test">Mantel-Haenszel chi-square test<a class="headerlink" href="#mantel-haenszel-chi-square-test" title="Permanent link">Link</a></h3>
 <p>For <strong>ordinal associations</strong>, the <strong>Mantel-Haenszel</strong> chi-square test is a more powerful test.</p>
 <ul>
 <li>The levels must be in a <strong>logical order</strong> for the test results to be meaningful</li>
@@ -1916,11 +2154,11 @@ RUN;
 <li>The confidence bounds are valid only if the sample size is large (&gt;25)</li>
 <li>The asymptotic standard error (<strong>ASE</strong>) is used for large samples and is used to calculate the confidence intervals for various measures of association (including the Spearman correlation coefficient)</li>
 </ul>
-<h2 id="introduction-to-logistic-regression">Introduction to Logistic Regression<a class="headerlink" href="#introduction-to-logistic-regression" title="Permanent link">&para;</a></h2>
+<h2 id="introduction-to-logistic-regression">Introduction to Logistic Regression<a class="headerlink" href="#introduction-to-logistic-regression" title="Permanent link">Link</a></h2>
 <p>Logistic Regression is a generalized linear model (like Linear Regression or ANOVA) that you can use to predict a categorical response/outcome based on one or more continuous/categorical predictor variables. There are three models:</p>
 <p><img alt="Logistic regression types" src="../../images/logistic-regression-types.PNG" title="Logistic regression types" /></p>
-<h3 id="linear-vs-logistic">Linear vs Logistic<a class="headerlink" href="#linear-vs-logistic" title="Permanent link">&para;</a></h3>
-<h4 id="linear-regression-model">Linear Regression Model<a class="headerlink" href="#linear-regression-model" title="Permanent link">&para;</a></h4>
+<h3 id="linear-vs-logistic">Linear vs Logistic<a class="headerlink" href="#linear-vs-logistic" title="Permanent link">Link</a></h3>
+<h4 id="linear-regression-model">Linear Regression Model<a class="headerlink" href="#linear-regression-model" title="Permanent link">Link</a></h4>
 <ul>
 <li>Assumes that the expected value of the response continuous variable ($Y$) has a linear relationship with the predictor variable ($X$)</li>
 <li>The conditional mean of the response hast the linear form $E(Y|X)=\beta_0+\beta_1X$ and it ranges $(-\infty,+\infty)$</li>
@@ -1936,7 +2174,7 @@ RUN;
 <li>If the response variable has only two levels, you cannot <strong>assume the constant variance and normality</strong> that are required for linear regression</li>
 </ul>
 </div>
-<h4 id="binary-logistic-regression-model">Binary Logistic Regression Model<a class="headerlink" href="#binary-logistic-regression-model" title="Permanent link">&para;</a></h4>
+<h4 id="binary-logistic-regression-model">Binary Logistic Regression Model<a class="headerlink" href="#binary-logistic-regression-model" title="Permanent link">Link</a></h4>
 <ul>
 <li>The predictor variable ($X$) is used to estimate the probability of a specific outcome ($p$) for which you need to use a nonlinear function</li>
 <li>The mean of the response is a probability, which is between $(0, 1)$. </li>
@@ -1946,7 +2184,7 @@ RUN;
 <li>We make the <strong>assumption that the logit transformation of the probabilities results in a linear relationship with the predictor variables</strong> (we can use a linear function $X$ to model the logit in order to indireclty model the probability)</li>
 <li>The logit of the probability transforms the probability into a linear function, which has no lower or upper bounds. So a <strong>logit has no lower or upper bounds</strong>.</li>
 </ul>
-<h3 id="proc-logistic"><code>PROC LOGISTIC</code><a class="headerlink" href="#proc-logistic" title="Permanent link">&para;</a></h3>
+<h3 id="proc-logistic"><code>PROC LOGISTIC</code><a class="headerlink" href="#proc-logistic" title="Permanent link">Link</a></h3>
 <p>To model categorical data yu use the <code>LOGISTIC</code> procedure. Some of the most common statements of this procedure are shown here:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1966,14 +2204,14 @@ RUN;
 <li><code>CLASS</code> is used to define the classification (categorical) predictor variables (if any); this statement must precede the <code>MODEL</code> statement</li>
 <li><code>CLODDS = PL</code> (profile likelihood) | <code>WALD</code> (default) | <code>BOTH</code> is an example of a general option that you can specify in the <code>MODEL</code> statement which computes confidence intervals for the odds ratios of all predictor variables and also enables the production of the odds ratio plot</li>
 </ul>
-<div class="admonition tip">
+<div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><code>PROC LOGISTIC DATA=statdata.sales_inc PLOTS(ONLY)=(EFFECT ODDSRATIO);
+<p><pre><code>PROC LOGISTIC DATA=statdata.sales_inc PLOTS(ONLY)=(EFFECT ODDSRATIO);
     CLASS gender;
     MODEL purchase(EVENT='1')=gender / CLODDS=PL;
-RUN;</code></p>
+RUN;</code></pre></p>
 </div>
-<h3 id="classification-variables-parametrization">Classification Variables Parametrization<a class="headerlink" href="#classification-variables-parametrization" title="Permanent link">&para;</a></h3>
+<h3 id="classification-variables-parametrization">Classification Variables Parametrization<a class="headerlink" href="#classification-variables-parametrization" title="Permanent link">Link</a></h3>
 <p>When the predictor variable is categorical, the assumption of linearity cannot be met. To get past the obstacle of nonlinearity, the <code>CLASS</code> statement creates a set of one or more <strong>design variables</strong> (also called dummy variables). <code>PROC LOGISTIC</code> uses these variables, and not the original ones, in model calculations.</p>
 <p>Different parametrization methods for the classification variables will produce the same results regarding the significance of the categorical predictors, but understanding the parametrization method helps to interpret the results accurately.</p>
 <p>Here we present two of the most common methods of parameterizing (<code>PARAM =</code>) the classification variables. For both of them:</p>
@@ -1981,9 +2219,9 @@ RUN;</code></p>
 <li>The default <strong>reference level</strong> is the level that has the highest ranked value (or the last value) when the levels are sorted in ascending alphanumeric order</li>
 <li>The number of design variables (or $\beta$) that are created are the number of levels of the classification variable -1</li>
 </ul>
-<h4 id="effect-coding-default">Effect coding (default)<a class="headerlink" href="#effect-coding-default" title="Permanent link">&para;</a></h4>
+<h4 id="effect-coding-default">Effect coding (default)<a class="headerlink" href="#effect-coding-default" title="Permanent link">Link</a></h4>
 <p>Also called <strong>deviation from the mean coding</strong>, it compares the effect of each level of the variable to the <strong>average effect of all levels</strong>. </p>
-<div class="admonition tip">
+<div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Using this parametrization scheme the model will be described as follows</p>
 <p>$logit(p)=\beta_0+\beta_1\cdot D_{Low \ Income} + \beta_2\cdot D_{Medium \ Income}$</p>
@@ -1997,9 +2235,9 @@ RUN;</code></p>
 <p><img alt="Effect coding MLE" src="../../images/effect-coding-MLE.PNG" title="Effect coding MLE" /></p>
 <p>The p-values indicate whether each particular level is significant compared to the average effect of all levels. The p-values for $\beta_1$ and $\beta_2$ not significant meaning that the effect of those levels is not different than the average effect of low, medium and high income.</p>
 </div>
-<h4 id="reference-cell-coding">Reference cell coding<a class="headerlink" href="#reference-cell-coding" title="Permanent link">&para;</a></h4>
+<h4 id="reference-cell-coding">Reference cell coding<a class="headerlink" href="#reference-cell-coding" title="Permanent link">Link</a></h4>
 <p>It compares the effect of each level of the predictor to the effect of another <strong>level that is the designated reference level</strong>.</p>
-<div class="admonition tip">
+<div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>To use this scheme the classification variable has to be defined in the following way</p>
 <p><code>CLASS gender (PARAM=REF REF='Male');</code></p>
@@ -2015,7 +2253,7 @@ RUN;</code></p>
 <p><img alt="Reference cell coding MLE" src="../../images/reference-cell-coding-MLE.PNG" title="Reference cell coding MLE" /></p>
 <p>The p-values indicate whether each particular level is significant compared to the reference level. The p-value for $\beta_1&lt;0.05$ is significant meaning that the effect of a low income is statistically different than the effect of a high income on the probability that people will spend at least $100\$$. The same applies to $\beta_2$.</p>
 </div>
-<h3 id="fitting-a-binary-logistic-regression">Fitting a Binary Logistic Regression<a class="headerlink" href="#fitting-a-binary-logistic-regression" title="Permanent link">&para;</a></h3>
+<h3 id="fitting-a-binary-logistic-regression">Fitting a Binary Logistic Regression<a class="headerlink" href="#fitting-a-binary-logistic-regression" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -2049,7 +2287,7 @@ RUN;
 <li>In the <strong>Odds Ratios plot</strong>, the dots represent the OR estimates and the horizontal lines represent the confidence intervals for those estimates. There is a reference line at one to check if the confidence intervals cross this value meaning that it is not statistically different from 1.</li>
 <li>The <strong>Effect plot</strong> shows the levels of the <code>CLASS</code> predictor variable vs the probability of the desired outcome. If you are performing a <strong>multiple logistic regression</strong> analysis where there is a continuous predictor variable it will be represented in the horizontal axis. Moreover, the lines will represent all possible combinations of the different <code>CLASS</code> variables.</li>
 </ul>
-<h4 id="iterpreting-the-odds-ratio-for-a-categorical-predictor">Iterpreting the Odds Ratio for a Categorical Predictor<a class="headerlink" href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" title="Permanent link">&para;</a></h4>
+<h4 id="iterpreting-the-odds-ratio-for-a-categorical-predictor">Iterpreting the Odds Ratio for a Categorical Predictor<a class="headerlink" href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" title="Permanent link">Link</a></h4>
 <p>Let's see how to calculate the odds and the odds ratio from the logistic regression model. Here is the logistic regression model that predicts the logit of $p$:</p>
 <p>$logit(\hat p)=ln(odds)=ln\left ( \frac{p_i}{1-p_i} \right )=\beta_0 + \beta_1 \cdot Gender$</p>
 <p>According to our example the variable <code>Gender</code> is codified in a way that <code>Females=1</code> and <code>Males=0</code>, so the OR can be written:</p>
@@ -2057,9 +2295,9 @@ RUN;
 <p>$odds_{males}=e^{\beta_0}$</p>
 <p>$odds \ ratio = \frac{e^{\beta_0+\beta_1}}{e^{\beta_0}}=e^{\beta_1}$</p>
 <p>If the 95% confidence interval does not include 1, the OR is significant at the 0.05 level indicating an association between the predictor and response variables of your model.</p>
-<h4 id="iterpreting-the-odds-ratio-for-a-continuous-predictor">Iterpreting the Odds Ratio for a Continuous Predictor<a class="headerlink" href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" title="Permanent link">&para;</a></h4>
+<h4 id="iterpreting-the-odds-ratio-for-a-continuous-predictor">Iterpreting the Odds Ratio for a Continuous Predictor<a class="headerlink" href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" title="Permanent link">Link</a></h4>
 <p>For a continuous predictor variable, the OR measures the <strong>increase or decrease in odds associated with a one-unit difference</strong> of the predictor variable by default. $OR - 1 = %$ of greater odds for having one-unit of difference.</p>
-<h4 id="comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model">Comparing Pairs to Assess the Fit of a Logistic Regression Model<a class="headerlink" href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" title="Permanent link">&para;</a></h4>
+<h4 id="comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model">Comparing Pairs to Assess the Fit of a Logistic Regression Model<a class="headerlink" href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" title="Permanent link">Link</a></h4>
 <p><code>PROC LOGISTIC</code> calculates several different goodness-of-fit measures and displayed in the <strong>Association of Predicted Probabilities and Observed Responses</strong> table.</p>
 <p>One of these goodness-of-fit methods is comparing pairs (<code>Pairs</code>). To start, <code>PROC LOGISTIC</code> creates two groups of observations, one for each value of the response variable. Then, the procedure selects pairs of observations, one from each group, until no more pairs can be selected. <code>PROC LOGISTIC</code>determines whether each pair is concordant, discordant or tied.</p>
 <ul>
@@ -2077,13 +2315,13 @@ RUN;
 <li><strong>Kendall's <code>Tau-a</code></strong>, defined as $(n_c-n_d)/(0.5 \cdot N(N-1))$, with $N$ being the sum of observation frequencies in the data</li>
 <li><strong>The concordance index <code>c</code></strong> is the most commonly used of these values and estimates the probability of an observation with the desired outcome having a higher predicted probability than an observation without the desired outcome and is defined as $c=\frac{n_c+0.5 \cdot n_t}{n_c+n_d+n_t}$. Note that the concordance index, <code>c</code>, also gives an estimate of the <strong>area under the receiver operating characteristic (ROC) curve</strong> when the response is binary.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition summary">
+<p class="admonition-title">Check these websites</p>
 <p>More information about these parameters <a href="http://support.sas.com/documentation/cdl/en/statug/66859/HTML/default/viewer.htm#statug_logistic_details22.htm">here</a>.</p>
 </div>
 <p>In general, a model with higher values of these indices has better predictive ability than a model with lower values.</p>
-<h2 id="multiple-logistic-regression-model">Multiple Logistic Regression Model<a class="headerlink" href="#multiple-logistic-regression-model" title="Permanent link">&para;</a></h2>
-<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<h2 id="multiple-logistic-regression-model">Multiple Logistic Regression Model<a class="headerlink" href="#multiple-logistic-regression-model" title="Permanent link">Link</a></h2>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">Link</a></h3>
 <p>Sometimes you want to create a statistical model that explains the relationships among multiple predictors and a categorical response. You might want </p>
 <ul>
 <li>to examine the <strong>effect of each individual predictor</strong> on the response regardless of the levels of the other predictors </li>
@@ -2095,20 +2333,20 @@ RUN;
 <li>how to fit a multiple logistic regression model using the <strong>backward elimination method</strong></li>
 <li>how to fit a multiple logistic regression <strong>model with interactions</strong></li>
 </ul>
-<h3 id="multiple-logistic-regression">Multiple Logistic Regression<a class="headerlink" href="#multiple-logistic-regression" title="Permanent link">&para;</a></h3>
+<h3 id="multiple-logistic-regression">Multiple Logistic Regression<a class="headerlink" href="#multiple-logistic-regression" title="Permanent link">Link</a></h3>
 <p>Amultiple logistic regression model characterized the relationship between a categorical response variable and multiple predictor variables. The predictor variables can be continuous or categorical or both.</p>
 <p>$logit(p)=\beta_0+\beta_1 X_1 +...+\beta_k X_k$</p>
 <p>The goal of multiple logistic regression, like multiple linear regression, is to find the subset of variables that best explains the variability of the response variable. Models that are <strong>parsimonious or simple</strong> are more likely to be numerically stable and are also easier to generalize.</p>
-<h3 id="the-backward-elimination-method-of-variable-selection">The Backward Elimination Method of Variable Selection<a class="headerlink" href="#the-backward-elimination-method-of-variable-selection" title="Permanent link">&para;</a></h3>
+<h3 id="the-backward-elimination-method-of-variable-selection">The Backward Elimination Method of Variable Selection<a class="headerlink" href="#the-backward-elimination-method-of-variable-selection" title="Permanent link">Link</a></h3>
 <p>This method starts with a full model (a model that contains all of the main effects or predictor variables). Using an iterative process, the backward elimination method identifies and eliminates the nonsignificant predictor variables, one at a time. At each step, this method removes the least significant variable of the nonsignificant terms (the variable with the largest p-value).</p>
 <p>The smaller your significance level, the more evidence you need to keep a predictor variable in the model. This results in a more parsimonious model.</p>
 <p>The default significance level for a predictor to stay in the model is 0.05. You can change the significance level by adding <code>SLSTAY=</code><em>value</em> or <code>SLS=</code><em>value</em> in the <code>MODEL</code>statement.</p>
-<h3 id="adjusted-odds-ratios">Adjusted Odds Ratios<a class="headerlink" href="#adjusted-odds-ratios" title="Permanent link">&para;</a></h3>
+<h3 id="adjusted-odds-ratios">Adjusted Odds Ratios<a class="headerlink" href="#adjusted-odds-ratios" title="Permanent link">Link</a></h3>
 <p>One major difference between a multiple logistic model and a logistic regression model with only one predictor variable is that the odds ratios are reported differently. Multiple logistic regression uses <strong>adjusted odds ratios</strong>. An adjusted odds ratio measures the effect of a single predictor variable on a response variable while holding all the other predictor variables constant. </p>
 <p>The adjusted odds ratio <strong>assumes that the OR for a predictor variable is the same regardless of the level of the other predictor variables</strong>. If that assumption is not true, then you need to fit <strong>a more complex model that also considers the interactions</strong> between predictor variables.</p>
 <p>The <code>MODEL</code> statement can include the <code>CLODDS=</code> option which enables the production of the OR plot (
 <code>PLOTS(ONLY)=(EFFECT ODDSRATIO)</code>). This option can be set to <code>PL</code> so that the procedure calculates profile-likelihood confidence limits for the OR of all predictor variables. These limits are based on the log likelihood and are generally preferred, especially for <strong>smaller sample sizes</strong>.</p>
-<h3 id="specifiying-the-variable-selection-method-in-the-model-statement">Specifiying the Variable Selection Method in the <code>MODEL</code> Statement<a class="headerlink" href="#specifiying-the-variable-selection-method-in-the-model-statement" title="Permanent link">&para;</a></h3>
+<h3 id="specifiying-the-variable-selection-method-in-the-model-statement">Specifiying the Variable Selection Method in the <code>MODEL</code> Statement<a class="headerlink" href="#specifiying-the-variable-selection-method-in-the-model-statement" title="Permanent link">Link</a></h3>
 <p>To specify the method that <code>PROC LOGISTIC</code> uses to select variable in a multiple logistic regression model, you add the <code>SELECTION=</code> option to the <code>MODEL</code> statement. The possible values of the <code>SELECTION=</code> statement are</p>
 <ul>
 <li><code>NONE | N</code> (default): no selection method is used and the complete model is fitted</li>
@@ -2128,24 +2366,24 @@ RUN;
 </td></tr></table>
 
 <p>By default the procedure uses a $\alpha=0.05$ significance level to determine which variables remain in the model. If you want to change the significance level, you can use the <code>SLSTAY | SLS =</code> option in the <code>MODEL</code> statement.</p>
-<h3 id="the-units-statement">The <code>UNITS</code> Statement<a class="headerlink" href="#the-units-statement" title="Permanent link">&para;</a></h3>
+<h3 id="the-units-statement">The <code>UNITS</code> Statement<a class="headerlink" href="#the-units-statement" title="Permanent link">Link</a></h3>
 <p>The <code>UNITS</code>statement enables you to obtain customized <strong>odds ratio estimates</strong> for a specified unit of change in one or more continuous predictor variables. For each continuous predictor (or independent variable) that you want to modify, you specify the variable name, an equal sign, and a list of <strong>one or more units of change</strong>, separated by spaces, that are of interest for that variable. A unit of change can be a number, a standard deviation $(SD)$, or a number multiplied by the standard deviation $(n \times SD)$. </p>
 <p>The <code>UNITS</code> statement is optional. If you want to use the units to change that are reflected in the stored data values, you do not need to include the <code>UNITS</code> statement.</p>
-<h3 id="specifying-a-formatted-value-as-a-reference-level">Specifying a Formatted Value as a Reference Level<a class="headerlink" href="#specifying-a-formatted-value-as-a-reference-level" title="Permanent link">&para;</a></h3>
+<h3 id="specifying-a-formatted-value-as-a-reference-level">Specifying a Formatted Value as a Reference Level<a class="headerlink" href="#specifying-a-formatted-value-as-a-reference-level" title="Permanent link">Link</a></h3>
 <p>To ease the interpretation of the classification variable levels, text labels can be defined through a format definition.</p>
 <p>Appliying a format requires a change in the <code>PROC LOGISTIC</code> step. In the <code>CLASS</code> statement when you use the <code>REF=</code> option with a variable that has either a temporary or a permanent format assigned to it, you must <strong>specify the formatted value of the level instead of the stored value</strong>.</p>
-<h3 id="interaction-between-variables">Interaction between Variables<a class="headerlink" href="#interaction-between-variables" title="Permanent link">&para;</a></h3>
+<h3 id="interaction-between-variables">Interaction between Variables<a class="headerlink" href="#interaction-between-variables" title="Permanent link">Link</a></h3>
 <p>When you fit a multiple logistic regression model, the simplest approach is to consider only the main effects (each predictor individually) on the response. In other words, this approach assumes that each variable has the same effect on the outcome regardless of the levels of the other variables. However, sometimes the effect of one variable on the outcome depends on the observed level of another variable. When this happens, we say that <strong>there is an interaction</strong>.</p>
 <p>Keep in mind that <strong>interactions that have more than two factors might be difficult to interpret</strong>.</p>
-<h3 id="the-backward-elimination-method-with-interactions-in-the-model">The Backward Elimination Method with Interactions in the Model<a class="headerlink" href="#the-backward-elimination-method-with-interactions-in-the-model" title="Permanent link">&para;</a></h3>
+<h3 id="the-backward-elimination-method-with-interactions-in-the-model">The Backward Elimination Method with Interactions in the Model<a class="headerlink" href="#the-backward-elimination-method-with-interactions-in-the-model" title="Permanent link">Link</a></h3>
 <p>When you use the backward elimination method with interactions in the model, <code>PROC LOGISTIC</code> begins by fitting th full model with all the main effects and interactions.</p>
 <p>Using an iterative process, <code>PROC LOGISTIC</code> eliminates nonsignificant interactions one at a time, starting with the least significant interaction (largest p-value). When only significant interactions remain, <code>PROC LOGISTIC</code> turns its attention to the main effects. <code>PROC LOGISTIC</code> eliminates, one at a time, the nonsignificant main effects that are not involved in any significant interactions. </p>
 <p>When eliminating main effects, <code>PROC LOGISTIC</code> must preserve the model hierarchy. According to this requirement, for any interaction that is included in the model, all main effects that the interaction contains must also be in the model, whether or not they are significant.</p>
 <p>The <strong>final model</strong> has only significant interactions, the main effects involved in the interactions, and any other significant main effects.</p>
-<h3 id="specifying-interactions-in-the-model-statement">Specifying Interactions in the <code>MODEL</code> Statement<a class="headerlink" href="#specifying-interactions-in-the-model-statement" title="Permanent link">&para;</a></h3>
+<h3 id="specifying-interactions-in-the-model-statement">Specifying Interactions in the <code>MODEL</code> Statement<a class="headerlink" href="#specifying-interactions-in-the-model-statement" title="Permanent link">Link</a></h3>
 <p>To specify interactions concisely, you can place a bar operator <code>|</code> between the names of each two main effects. The bar tells <code>PROC LOGISTIC</code> to treat the terms on either side of it as effects and also to include their combinations as interactions.</p>
 <p>If you want to limit the maximum number of variables that are involved in each interaction, you can specify <code>@integer</code> after the list of effects (e.g. <code>@2</code> to include only the two-way interactions).</p>
-<h3 id="the-oddsratio-statement">The <code>ODDSRATIO</code> Statement<a class="headerlink" href="#the-oddsratio-statement" title="Permanent link">&para;</a></h3>
+<h3 id="the-oddsratio-statement">The <code>ODDSRATIO</code> Statement<a class="headerlink" href="#the-oddsratio-statement" title="Permanent link">Link</a></h3>
 <p>By default, <code>PROC LOGISTIC</code> produces the OR only for variables that are not involved in an interaction. The OR for a main effect within an interaction would be misleading. It would only show the OR for that variable, holding constant the other variable at the value 0, which might not even be a valid value.</p>
 <p>To tell <code>PROC LOGISTIC</code> to produce the OR for each value of a variable that is involved in an interaction, you can use the <code>ODDSRATIO</code> statement. You specify a separate <code>ODDSRATIO</code> statement for each variable. In this statement you can optionally specify a label for the variable. The variable name is required. At the end, you can specify options following a forward slash <code>/</code>.</p>
 <p>In this example, there are three <code>ODDSRATIO</code> statements, one for each main effect (they do not have to appear in the same order that the variables are listed in the <code>MODEL</code> statement).</p>
@@ -2181,13 +2419,13 @@ RUN;
 <p><img alt="OR interaction table" src="../../images/OR-interaction-table.PNG" title="Table of OR in a model with interactions" /></p>
 <p>This plot shows graphically what we saw with the calculated confidence intervals in the table above.</p>
 <p><img alt="OR interaction graph" src="../../images/OR-interaction-graph.PNG" title="Graph of OR in a model with interactions" /></p>
-<h3 id="comparing-the-binary-and-multiple-logistic-regression-models">Comparing the Binary and Multiple Logistic Regression Models<a class="headerlink" href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Permanent link">&para;</a></h3>
+<h3 id="comparing-the-binary-and-multiple-logistic-regression-models">Comparing the Binary and Multiple Logistic Regression Models<a class="headerlink" href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Permanent link">Link</a></h3>
 <p><img alt="Comparing Logistic Regression Models" src="../../images/comparing-logistic-models.png" title="Comparing Logistic Regression Models" /></p>
 <ul>
 <li>Remember that, in general, when comparing the <code>AIC</code> and <code>SC</code> statistics, smaller values mean a <strong>better model fit</strong>. Note that the <code>SC</code> value increased with the addition of the interaction. <code>SC</code> selects more parsimonious models by imposing a more severe penalty for increasing the number of parameters.</li>
 <li>When comparing the <code>c</code> statistic values, larger values indicate a <strong>better predictive model</strong>.</li>
 </ul>
-<h3 id="interaction-plots">Interaction Plots<a class="headerlink" href="#interaction-plots" title="Permanent link">&para;</a></h3>
+<h3 id="interaction-plots">Interaction Plots<a class="headerlink" href="#interaction-plots" title="Permanent link">Link</a></h3>
 <p>To visualize the interaction terms you can produce an interaction plot. This plot explains more of the story behind the significant interaction in the output. </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2231,7 +2469,7 @@ quit;
 
 <p><img alt="Interaction plot for logistic regression" src="../../images/interactionplot-logistic-regression.PNG" title="Interaction plot for logistic regression" /></p>
 <p>If there is no interaction between two variables, the slopes shold be relatively parallel.</p>
-<h3 id="saving-analysis-results-with-the-store-statement">Saving Analysis Results with the <code>STORE</code> Statement<a class="headerlink" href="#saving-analysis-results-with-the-store-statement" title="Permanent link">&para;</a></h3>
+<h3 id="saving-analysis-results-with-the-store-statement">Saving Analysis Results with the <code>STORE</code> Statement<a class="headerlink" href="#saving-analysis-results-with-the-store-statement" title="Permanent link">Link</a></h3>
 <p>You can use the <code>STORE</code> statement with <code>PROC LOGISTIC</code> to save your analysis results as an item store for later processing.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2307,6 +2545,8 @@ RUN;
               
               
                 
+
+
               
             </article>
           </div>
@@ -2356,9 +2596,9 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -2370,10 +2610,9 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      
-      <script>app.initialize({url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

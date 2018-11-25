@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -14,40 +17,54 @@
         <meta name="author" content="Lucía Rodrigo Insausti">
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.8.1">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
-        <title>Inputs, outputs, and rendering functions - SAS Manual</title>
+        <title>Inputs, Outputs, and Rendering Functions - SAS Manual</title>
       
     
     
-      <script src="../../assets/javascripts/modernizr-1df76c4e58.js"></script>
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application-bfecc7305d.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
       
     
     
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
       
-        
-        
-        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
   </head>
   
-  
-  
-  
-    <body>
+    <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
@@ -55,52 +72,61 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#reactive-flow" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="../.." title="SAS Manual" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
-        <span class="md-flex__ellipsis md-header-nav__title">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             
-              
-                <span class="md-header-nav__parent">
-                  R with Shiny
-                </span>
-              
+              <span class="md-header-nav__topic">
+                SAS Manual
+              </span>
+              <span class="md-header-nav__topic">
+                Inputs, Outputs, and Rendering Functions
+              </span>
             
-            Inputs, outputs, and rendering functions
           
-        </span>
+        </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result" data-md-lang-search="" data-md-lang-tokenizer="[\s\-]+">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -109,6 +135,7 @@
     </div>
   </div>
 </div>
+          
         
       </div>
       
@@ -117,6 +144,8 @@
 </header>
     
     <div class="md-container">
+      
+        
       
       
       <main class="md-main">
@@ -127,10 +156,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
     SAS Manual
   </label>
   
@@ -398,166 +429,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Other Analysis
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Other Analysis
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
-      Model Selection
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
-      Dealing with Missing Data
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
-      Interim Analysis Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
-      Normality Tests
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
-      Effect Size
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
-      Propensity Score
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
-      ROC Curve
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
-      Sequence Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
-      Survival Analysis
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/orr-dcr/" title="ORR and DCR" class="md-nav__link">
-      ORR and DCR
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
-      Clustering
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
       Using Macros
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Using Macros
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -659,13 +534,325 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Specific Procedures
+      Other Analysis
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
         Specific Procedures
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -707,18 +894,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../procedures/sql/" title="PROC SQL" class="md-nav__link">
-      PROC SQL
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -731,13 +906,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       SAS Outputs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         SAS Outputs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -851,13 +1026,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       SAS vs R
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         SAS vs R
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -995,13 +1170,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       CDISC
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         CDISC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1031,13 +1206,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
-    <label class="md-nav__link" for="nav-12">
+    <label class="md-nav__link" for="nav-13">
       Miscellanea
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-13">
         Miscellanea
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1091,6 +1266,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1103,13 +1302,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-14">
       Medical terms
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-14">
         Medical terms
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1133,8 +1332,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/labs/" title="Laboratory test" class="md-nav__link">
-      Laboratory test
+    <a href="../../medical/labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
     </a>
   </li>
 
@@ -1153,13 +1388,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15" checked>
     
-    <label class="md-nav__link" for="nav-14">
+    <label class="md-nav__link" for="nav-15">
       R with Shiny
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-14">
+      <label class="md-nav__title" for="nav-15">
         R with Shiny
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1171,8 +1406,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction and Shiny basics" class="md-nav__link">
-      Introduction and Shiny basics
+    <a href="../introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
     </a>
   </li>
 
@@ -1186,15 +1421,15 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Inputs, outputs, and rendering functions
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Inputs, Outputs, and Rendering Functions
       </label>
     
-    <a href="./" title="Inputs, outputs, and rendering functions" class="md-nav__link md-nav__link--active">
-      Inputs, outputs, and rendering functions
+    <a href="./" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link md-nav__link--active">
+      Inputs, Outputs, and Rendering Functions
     </a>
     
       
@@ -1202,7 +1437,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1323,6 +1558,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1336,8 +1573,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../reactive/" title="Reactive programming" class="md-nav__link">
-      Reactive programming
+    <a href="../reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
     </a>
   </li>
 
@@ -1348,8 +1585,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom/" title="Customizing appearance" class="md-nav__link">
-      Customizing appearance
+    <a href="../custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
     </a>
   </li>
 
@@ -1374,7 +1611,7 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1495,6 +1732,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1508,9 +1747,9 @@
               
                 
                 
-                  <h1>Inputs, outputs, and rendering functions</h1>
+                  <h1>Inputs, Outputs, and Rendering Functions</h1>
                 
-                <h2 id="reactive-flow">Reactive Flow<a class="headerlink" href="#reactive-flow" title="Permanent link">&para;</a></h2>
+                <h2 id="reactive-flow">Reactive Flow<a class="headerlink" href="#reactive-flow" title="Permanent link">Link</a></h2>
 <p>Suppose you have a <code>slinderInput</code>in your app with the <code>inputId="alpha"</code>. The value of this input is stored in <code>input$alpha</code> so when the user moves around the slider the value of the <code>alpha</code>input is updated in th einput list. Reactivity automatically occurs when an input value is used to render an output object.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1724,9 +1963,9 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </pre></div>
 </td></tr></table>
 
-<h2 id="ui-inputs">UI Inputs<a class="headerlink" href="#ui-inputs" title="Permanent link">&para;</a></h2>
+<h2 id="ui-inputs">UI Inputs<a class="headerlink" href="#ui-inputs" title="Permanent link">Link</a></h2>
 <p>Shiny provides a wide selection of input widgets:</p>
-<h3 id="checkboxinput"><strong><code>checkboxInput</code></strong><a class="headerlink" href="#checkboxinput" title="Permanent link">&para;</a></h3>
+<h3 id="checkboxinput"><strong><code>checkboxInput</code></strong><a class="headerlink" href="#checkboxinput" title="Permanent link">Link</a></h3>
 <p>Add a checkbox input to specify whether the data plotted should be shown in a data table.</p>
 <ol>
 <li><strong>UI</strong>: Add an input widget that the user can interact with to check/uncheck the box</li>
@@ -1850,7 +2089,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 <p class="admonition-title">The <code>req()</code> function</p>
 <p>If you delete the numeric value from the checkbox, you will encounter an error: <code>Error: size is not a numeric or integer vector</code>. In order to avoid such errors, which users of your app could very easily encounter, we need to hold back the output from being calculated if the input is missing. The <a href="https://shiny.rstudio.com/reference/shiny/latest/req.html"><code>req</code> function</a> is the simplest and best way to do this, it ensures that values are available ("truthy") before proceeding with a calculation or action. If any of the given values is not truthy, the operation is stopped by raising a "silent" exception (not logged by Shiny, nor displayed in the Shiny app's UI).</p>
 </div>
-<h3 id="selectinput-multiple-selection"><strong><code>selectInput</code></strong>: Multiple Selection<a class="headerlink" href="#selectinput-multiple-selection" title="Permanent link">&para;</a></h3>
+<h3 id="selectinput-multiple-selection"><strong><code>selectInput</code></strong>: Multiple Selection<a class="headerlink" href="#selectinput-multiple-selection" title="Permanent link">Link</a></h3>
 <p>The following app can be used to display movies from selected studios. There are 211 unique studios represented in this dataset, we need a better way to select than to scroll through such a long list, and we address that with the <code>selectize</code> option, which will suggest names of studios as you type them.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1947,7 +2186,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </td></tr></table>
 
 <p><img alt="Selecting multiple options with selectize" src="../../shiny-img/selectize-multiple.png" title="Selecting multiple options with selectize" /></p>
-<h3 id="daterangeinput"><strong><code>dateRangeInput</code></strong><a class="headerlink" href="#daterangeinput" title="Permanent link">&para;</a></h3>
+<h3 id="daterangeinput"><strong><code>dateRangeInput</code></strong><a class="headerlink" href="#daterangeinput" title="Permanent link">Link</a></h3>
 <p>The following app is coded to show the selected movies between two given dates using <code>dateRangeInput</code>. This input will yield a vector (<code>input$date</code>) of length two, the first element is the start date and the second is the end date. </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2058,9 +2297,9 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </td></tr></table>
 
 <p><img alt="dateRangeInput" src="../../shiny-img/dateRangeInput.png" title="dateRangeInput" /></p>
-<h2 id="rendering-functions">Rendering Functions<a class="headerlink" href="#rendering-functions" title="Permanent link">&para;</a></h2>
+<h2 id="rendering-functions">Rendering Functions<a class="headerlink" href="#rendering-functions" title="Permanent link">Link</a></h2>
 <p>Shiny provides a wide selection of input widgets, each of which works with a render function:</p>
-<h3 id="rendertable"><strong><code>renderTable</code></strong><a class="headerlink" href="#rendertable" title="Permanent link">&para;</a></h3>
+<h3 id="rendertable"><strong><code>renderTable</code></strong><a class="headerlink" href="#rendertable" title="Permanent link">Link</a></h3>
 <p>Add a table beneath the plot displaying summary statistics for a new variable: <code>score_ratio = audience_score / critics_score</code>.</p>
 <ol>
 <li>Calculate the new variable</li>
@@ -2144,7 +2383,7 @@ output<span class="o">$</span>summarytable <span class="o">&lt;-</span> renderTa
 </pre></div>
 </td></tr></table>
 
-<h3 id="rendertext"><strong><code>renderText</code></strong><a class="headerlink" href="#rendertext" title="Permanent link">&para;</a></h3>
+<h3 id="rendertext"><strong><code>renderText</code></strong><a class="headerlink" href="#rendertext" title="Permanent link">Link</a></h3>
 <p>In this app the user selects <code>x</code> and <code>y</code> variables for the scatterplot and also a <code>textOutput</code> which prints the correlation between the two selected variables as well as some informational text.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2249,14 +2488,14 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </td></tr></table>
 
 <p><img alt="renderText" src="../../shiny-img/renderText.png" title="renderText" /></p>
-<h3 id="recap-of-outputrendering-functions">Recap of Output/Rendering Functions<a class="headerlink" href="#recap-of-outputrendering-functions" title="Permanent link">&para;</a></h3>
+<h3 id="recap-of-outputrendering-functions">Recap of Output/Rendering Functions<a class="headerlink" href="#recap-of-outputrendering-functions" title="Permanent link">Link</a></h3>
 <ul>
 <li>Shiny has a variety of <code>render*</code> functions with corresponding <code>*Ourput</code> functions to create and display outputs</li>
 <li><code>render*</code> functions can take on multiple arguments, the first being the expression for the desired output</li>
 <li>The expression in the <code>render*</code> function should be wrapped in curly braces</li>
 </ul>
-<h2 id="ui-outputs">UI Outputs<a class="headerlink" href="#ui-outputs" title="Permanent link">&para;</a></h2>
-<h3 id="plotoutput"><strong><code>plotOutput</code></strong><a class="headerlink" href="#plotoutput" title="Permanent link">&para;</a></h3>
+<h2 id="ui-outputs">UI Outputs<a class="headerlink" href="#ui-outputs" title="Permanent link">Link</a></h2>
+<h3 id="plotoutput"><strong><code>plotOutput</code></strong><a class="headerlink" href="#plotoutput" title="Permanent link">Link</a></h3>
 <p>Select points on the plot via brushing, and report the selected points in a data table underneath the plot. Brushing means that the user will be able to draw a rectangle in the plotting area and drag it around.</p>
 <ol>
 <li><strong>UI</strong>: Add functionality to <code>plotOutput</code> to select points via brushing</li>
@@ -2424,7 +2663,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </td></tr></table>
 
 <p><img alt="Hover" src="../../shiny-img/hover.png" title="Hover" /></p>
-<h3 id="verbatimtextoutput"><strong><code>verbatimtextOutput</code></strong><a class="headerlink" href="#verbatimtextoutput" title="Permanent link">&para;</a></h3>
+<h3 id="verbatimtextoutput"><strong><code>verbatimtextOutput</code></strong><a class="headerlink" href="#verbatimtextoutput" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -2566,7 +2805,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </td></tr></table>
 
 <p><img alt="verbatimtextOutput" src="../../shiny-img/verbatimtextOutput.png" title="verbatimtextOutput" /></p>
-<h3 id="htmloutput"><strong><code>htmlOutput</code></strong><a class="headerlink" href="#htmloutput" title="Permanent link">&para;</a></h3>
+<h3 id="htmloutput"><strong><code>htmlOutput</code></strong><a class="headerlink" href="#htmloutput" title="Permanent link">Link</a></h3>
 <p>In the previous example the app reported averages of selected <code>x</code> and <code>y</code> variables as two separate outputs. An alternative approach would be to combine them into a single, multi-line output. For this purpose, in the next example values calculated in app chunk in the <code>paste()</code> command are used to create customized HTML output with specified formatting obtaining the same result.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2698,7 +2937,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
 </pre></div>
 </td></tr></table>
 
-<h3 id="download-data-with-downloadbutton">Download data with <strong><code>downloadButton</code></strong><a class="headerlink" href="#download-data-with-downloadbutton" title="Permanent link">&para;</a></h3>
+<h3 id="download-data-with-downloadbutton">Download data with <strong><code>downloadButton</code></strong><a class="headerlink" href="#download-data-with-downloadbutton" title="Permanent link">Link</a></h3>
 <p>In this app you get to specify the file type and the variables included in the file you will download. For downloading from a Shiny app we use the <code>downloadHandler</code> function in the server and <code>downloadButton</code> or <code>downloadLink</code> function in the UI.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -2821,6 +3060,8 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
               
               
                 
+
+
               
             </article>
           </div>
@@ -2833,7 +3074,7 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../introduction/" title="Introduction and Shiny basics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../introduction/" title="Introduction and Shiny Basics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2842,19 +3083,19 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction and Shiny basics
+                Introduction and Shiny Basics
               </span>
             </div>
           </a>
         
         
-          <a href="../reactive/" title="Reactive programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../reactive/" title="Reactive Programming" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Reactive programming
+                Reactive Programming
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2870,9 +3111,9 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
       <div class="md-footer-copyright">
         
         powered by
-        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
-        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+        <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
       
@@ -2884,10 +3125,9 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
       
     </div>
     
-      <script src="../../assets/javascripts/application-6940329b9f.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
-      
-      <script>app.initialize({url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
