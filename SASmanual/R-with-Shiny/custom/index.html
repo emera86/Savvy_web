@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -81,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,27 +96,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Customizing Appearance
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -131,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -144,7 +145,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -1340,18 +1341,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1366,6 +1355,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1473,9 +1486,9 @@
                 
                 <p>Shiny comes with a list of functions saved under tags that allow us to access HTML tags and use them to add static (as opposed to reactive) content to our apps. The tags objects in Shiny is a list of a 110 simple functions for constructing HMTL documents. Each of the elements in this list is a function that maps to an HTML tag.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>tags<span class="o">$</span>b<span class="p">(</span><span class="s">&quot;This is my first app&quot;</span><span class="p">)</span>
-<span class="o">&lt;</span>b<span class="o">&gt;</span>This is my first app<span class="o">&lt;/</span>b<span class="o">&gt;</span>
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">tags</span><span class="o">$</span><span class="nf">b</span><span class="p">(</span><span class="s">&quot;This is my first app&quot;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">This</span> <span class="n">is</span> <span class="n">my</span> <span class="n">first</span> <span class="n">app</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The most common used tags are wrapped in their own functions and you can use them without the <code>tags$</code> list. These are functions like <code>a()</code> for anchor text, <code>br()</code> for line break, <code>code()</code> for displaying code in monospace form and the heading functions (<code>h1()</code>, <code>h2()</code>, etc.).</p>
@@ -1648,181 +1661,182 @@
 166
 167
 168
-169</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>shiny<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>dplyr<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>DT<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>tools<span class="p">)</span>
-<span class="kp">load</span><span class="p">(</span><span class="kp">url</span><span class="p">(</span><span class="s">&quot;http://s3.amazonaws.com/assets.datacamp.com/production/course_4850/datasets/movies.Rdata&quot;</span><span class="p">))</span>
+169</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">DT</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tools</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="nf">url</span><span class="p">(</span><span class="s">&quot;http://s3.amazonaws.com/assets.datacamp.com/production/course_4850/datasets/movies.Rdata&quot;</span><span class="p">))</span>
 
 <span class="c1"># Define UI for application that plots features of movies</span>
-ui <span class="o">&lt;-</span> fluidPage<span class="p">(</span>
+<span class="n">ui</span> <span class="o">&lt;-</span> <span class="nf">fluidPage</span><span class="p">(</span>
 
   <span class="c1"># Sidebar layout with a input and output definitions</span>
-  sidebarLayout<span class="p">(</span>
+  <span class="nf">sidebarLayout</span><span class="p">(</span>
 
     <span class="c1"># Inputs</span>
-    sidebarPanel<span class="p">(</span>
+    <span class="nf">sidebarPanel</span><span class="p">(</span>
 
-      h3<span class="p">(</span><span class="s">&quot;Plotting&quot;</span><span class="p">),</span>      <span class="c1"># Third level header: Plotting</span>
+      <span class="nf">h3</span><span class="p">(</span><span class="s">&quot;Plotting&quot;</span><span class="p">),</span>      <span class="c1"># Third level header: Plotting</span>
 
       <span class="c1"># Select variable for y-axis </span>
-      selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> 
-                  label <span class="o">=</span> <span class="s">&quot;Y-axis:&quot;</span><span class="p">,</span>
-                  choices <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;IMDB rating&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_rating&quot;</span><span class="p">,</span> 
+      <span class="nf">selectInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> 
+                  <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Y-axis:&quot;</span><span class="p">,</span>
+                  <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;IMDB rating&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_rating&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;IMDB number of votes&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_num_votes&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Critics Score&quot;</span> <span class="o">=</span> <span class="s">&quot;critics_score&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Audience Score&quot;</span> <span class="o">=</span> <span class="s">&quot;audience_score&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Runtime&quot;</span> <span class="o">=</span> <span class="s">&quot;runtime&quot;</span><span class="p">),</span> 
-                  selected <span class="o">=</span> <span class="s">&quot;audience_score&quot;</span><span class="p">),</span>
+                  <span class="n">selected</span> <span class="o">=</span> <span class="s">&quot;audience_score&quot;</span><span class="p">),</span>
 
       <span class="c1"># Select variable for x-axis </span>
-      selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> 
-                  label <span class="o">=</span> <span class="s">&quot;X-axis:&quot;</span><span class="p">,</span>
-                  choices <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;IMDB rating&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_rating&quot;</span><span class="p">,</span> 
+      <span class="nf">selectInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> 
+                  <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;X-axis:&quot;</span><span class="p">,</span>
+                  <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;IMDB rating&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_rating&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;IMDB number of votes&quot;</span> <span class="o">=</span> <span class="s">&quot;imdb_num_votes&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Critics Score&quot;</span> <span class="o">=</span> <span class="s">&quot;critics_score&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Audience Score&quot;</span> <span class="o">=</span> <span class="s">&quot;audience_score&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Runtime&quot;</span> <span class="o">=</span> <span class="s">&quot;runtime&quot;</span><span class="p">),</span> 
-                  selected <span class="o">=</span> <span class="s">&quot;critics_score&quot;</span><span class="p">),</span>
+                  <span class="n">selected</span> <span class="o">=</span> <span class="s">&quot;critics_score&quot;</span><span class="p">),</span>
 
       <span class="c1"># Select variable for color</span>
-      selectInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;z&quot;</span><span class="p">,</span> 
-                  label <span class="o">=</span> <span class="s">&quot;Color by:&quot;</span><span class="p">,</span>
-                  choices <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Title Type&quot;</span> <span class="o">=</span> <span class="s">&quot;title_type&quot;</span><span class="p">,</span> 
+      <span class="nf">selectInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;z&quot;</span><span class="p">,</span> 
+                  <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Color by:&quot;</span><span class="p">,</span>
+                  <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Title Type&quot;</span> <span class="o">=</span> <span class="s">&quot;title_type&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Genre&quot;</span> <span class="o">=</span> <span class="s">&quot;genre&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;MPAA Rating&quot;</span> <span class="o">=</span> <span class="s">&quot;mpaa_rating&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Critics Rating&quot;</span> <span class="o">=</span> <span class="s">&quot;critics_rating&quot;</span><span class="p">,</span> 
                               <span class="s">&quot;Audience Rating&quot;</span> <span class="o">=</span> <span class="s">&quot;audience_rating&quot;</span><span class="p">),</span>
-                  selected <span class="o">=</span> <span class="s">&quot;mpaa_rating&quot;</span><span class="p">),</span>
+                  <span class="n">selected</span> <span class="o">=</span> <span class="s">&quot;mpaa_rating&quot;</span><span class="p">),</span>
 
-      hr<span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
+      <span class="nf">hr</span><span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
 
       <span class="c1"># Set alpha level</span>
-      sliderInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;alpha&quot;</span><span class="p">,</span> 
-                  label <span class="o">=</span> <span class="s">&quot;Alpha:&quot;</span><span class="p">,</span> 
-                  min <span class="o">=</span> <span class="m">0</span><span class="p">,</span> max <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
-                  value <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span>
+      <span class="nf">sliderInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;alpha&quot;</span><span class="p">,</span> 
+                  <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Alpha:&quot;</span><span class="p">,</span> 
+                  <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+                  <span class="n">value</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span>
 
       <span class="c1"># Set point size</span>
-      sliderInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;size&quot;</span><span class="p">,</span> 
-                  label <span class="o">=</span> <span class="s">&quot;Size:&quot;</span><span class="p">,</span> 
-                  min <span class="o">=</span> <span class="m">0</span><span class="p">,</span> max <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
-                  value <span class="o">=</span> <span class="m">2</span><span class="p">),</span>
+      <span class="nf">sliderInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;size&quot;</span><span class="p">,</span> 
+                  <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Size:&quot;</span><span class="p">,</span> 
+                  <span class="n">min</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+                  <span class="n">value</span> <span class="o">=</span> <span class="m">2</span><span class="p">),</span>
 
       <span class="c1"># Enter text for plot title</span>
-      textInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;plot_title&quot;</span><span class="p">,</span> 
-                label <span class="o">=</span> <span class="s">&quot;Plot title&quot;</span><span class="p">,</span> 
-                placeholder <span class="o">=</span> <span class="s">&quot;Enter text to be used as plot title&quot;</span><span class="p">),</span>
+      <span class="nf">textInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;plot_title&quot;</span><span class="p">,</span> 
+                <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Plot title&quot;</span><span class="p">,</span> 
+                <span class="n">placeholder</span> <span class="o">=</span> <span class="s">&quot;Enter text to be used as plot title&quot;</span><span class="p">),</span>
 
-      hr<span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
+      <span class="nf">hr</span><span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
 
-      h3<span class="p">(</span><span class="s">&quot;Sampling and subsetting&quot;</span><span class="p">),</span>      <span class="c1"># Third level header: Sampling and subsetting</span>
+      <span class="nf">h3</span><span class="p">(</span><span class="s">&quot;Sampling and subsetting&quot;</span><span class="p">),</span>      <span class="c1"># Third level header: Sampling and subsetting</span>
 
       <span class="c1"># Select which types of movies to plot</span>
-      checkboxGroupInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;selected_type&quot;</span><span class="p">,</span>
-                         label <span class="o">=</span> <span class="s">&quot;Select movie type(s):&quot;</span><span class="p">,</span>
-                         choices <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Documentary&quot;</span><span class="p">,</span> <span class="s">&quot;Feature Film&quot;</span><span class="p">,</span> <span class="s">&quot;TV Movie&quot;</span><span class="p">),</span>
-                         selected <span class="o">=</span> <span class="s">&quot;Feature Film&quot;</span><span class="p">),</span>
+      <span class="nf">checkboxGroupInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;selected_type&quot;</span><span class="p">,</span>
+                         <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Select movie type(s):&quot;</span><span class="p">,</span>
+                         <span class="n">choices</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Documentary&quot;</span><span class="p">,</span> <span class="s">&quot;Feature Film&quot;</span><span class="p">,</span> <span class="s">&quot;TV Movie&quot;</span><span class="p">),</span>
+                         <span class="n">selected</span> <span class="o">=</span> <span class="s">&quot;Feature Film&quot;</span><span class="p">),</span>
 
       <span class="c1"># Select sample size</span>
-      numericInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;n_samp&quot;</span><span class="p">,</span> 
-                   label <span class="o">=</span> <span class="s">&quot;Sample size:&quot;</span><span class="p">,</span> 
-                   min <span class="o">=</span> <span class="m">1</span><span class="p">,</span> max <span class="o">=</span> <span class="kp">nrow</span><span class="p">(</span>movies<span class="p">),</span> 
-                   value <span class="o">=</span> <span class="m">50</span><span class="p">),</span>
+      <span class="nf">numericInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;n_samp&quot;</span><span class="p">,</span> 
+                   <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Sample size:&quot;</span><span class="p">,</span> 
+                   <span class="n">min</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> 
+                   <span class="n">value</span> <span class="o">=</span> <span class="m">50</span><span class="p">),</span>
 
-      hr<span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
+      <span class="nf">hr</span><span class="p">(),</span>      <span class="c1"># Horizontal line for visual separation</span>
 
       <span class="c1"># Show data table</span>
-      checkboxInput<span class="p">(</span>inputId <span class="o">=</span> <span class="s">&quot;show_data&quot;</span><span class="p">,</span>
-                    label <span class="o">=</span> <span class="s">&quot;Show data table&quot;</span><span class="p">,</span>
-                    value <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+      <span class="nf">checkboxInput</span><span class="p">(</span><span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;show_data&quot;</span><span class="p">,</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;Show data table&quot;</span><span class="p">,</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 
     <span class="p">),</span>
 
     <span class="c1"># Output:</span>
-    mainPanel<span class="p">(</span>
+    <span class="nf">mainPanel</span><span class="p">(</span>
 
       <span class="c1"># Show scatterplot</span>
-      h3<span class="p">(</span><span class="s">&quot;Scatterplot&quot;</span><span class="p">),</span>          <span class="c1"># Third level header: Scatterplot</span>
-      plotOutput<span class="p">(</span>outputId <span class="o">=</span> <span class="s">&quot;scatterplot&quot;</span><span class="p">),</span>
-      br<span class="p">(),</span>          <span class="c1"># Single line break for a little bit of visual separation</span>
+      <span class="nf">h3</span><span class="p">(</span><span class="s">&quot;Scatterplot&quot;</span><span class="p">),</span>          <span class="c1"># Third level header: Scatterplot</span>
+      <span class="nf">plotOutput</span><span class="p">(</span><span class="n">outputId</span> <span class="o">=</span> <span class="s">&quot;scatterplot&quot;</span><span class="p">),</span>
+      <span class="nf">br</span><span class="p">(),</span>          <span class="c1"># Single line break for a little bit of visual separation</span>
 
       <span class="c1"># Print number of obs plotted</span>
-      h4<span class="p">(</span>uiOutput<span class="p">(</span>outputId <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">)),</span>    <span class="c1"># Fourth level header</span>
-      br<span class="p">(),</span> br<span class="p">(),</span>    <span class="c1"># Two line breaks for a little bit of visual separation</span>
+      <span class="nf">h4</span><span class="p">(</span><span class="nf">uiOutput</span><span class="p">(</span><span class="n">outputId</span> <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">)),</span>    <span class="c1"># Fourth level header</span>
+      <span class="nf">br</span><span class="p">(),</span> <span class="nf">br</span><span class="p">(),</span>    <span class="c1"># Two line breaks for a little bit of visual separation</span>
 
       <span class="c1"># Show data table</span>
-      h3<span class="p">(</span><span class="s">&quot;Data table&quot;</span><span class="p">),</span>          <span class="c1"># Third level header: Data table</span>
-      DT<span class="o">::</span>dataTableOutput<span class="p">(</span>outputId <span class="o">=</span> <span class="s">&quot;moviestable&quot;</span><span class="p">)</span>
+      <span class="nf">h3</span><span class="p">(</span><span class="s">&quot;Data table&quot;</span><span class="p">),</span>          <span class="c1"># Third level header: Data table</span>
+      <span class="n">DT</span><span class="o">::</span><span class="nf">dataTableOutput</span><span class="p">(</span><span class="n">outputId</span> <span class="o">=</span> <span class="s">&quot;moviestable&quot;</span><span class="p">)</span>
     <span class="p">)</span>
   <span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1"># Define server function required to create the scatterplot</span>
-server <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>input<span class="p">,</span> output<span class="p">,</span> session<span class="p">)</span> <span class="p">{</span>
+<span class="n">server</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="c1"># Create a subset of data filtering for selected title types</span>
-  movies_subset <span class="o">&lt;-</span> reactive<span class="p">({</span>
-    req<span class="p">(</span>input<span class="o">$</span>selected_type<span class="p">)</span> <span class="c1"># ensure availablity of value before proceeding</span>
-    filter<span class="p">(</span>movies<span class="p">,</span> title_type <span class="o">%in%</span> input<span class="o">$</span>selected_type<span class="p">)</span>
+  <span class="n">movies_subset</span> <span class="o">&lt;-</span> <span class="nf">reactive</span><span class="p">({</span>
+    <span class="nf">req</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">selected_type</span><span class="p">)</span> <span class="c1"># ensure availablity of value before proceeding</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">title_type</span> <span class="o">%in%</span> <span class="n">input</span><span class="o">$</span><span class="n">selected_type</span><span class="p">)</span>
   <span class="p">})</span>
 
   <span class="c1"># Update the maximum allowed n_samp for selected type movies</span>
-  observe<span class="p">({</span>
-    updateNumericInput<span class="p">(</span>session<span class="p">,</span> 
-                       inputId <span class="o">=</span> <span class="s">&quot;n_samp&quot;</span><span class="p">,</span>
-                       value <span class="o">=</span> <span class="kp">min</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="kp">nrow</span><span class="p">(</span>movies_subset<span class="p">())),</span>
-                       max <span class="o">=</span> <span class="kp">nrow</span><span class="p">(</span>movies_subset<span class="p">())</span>
+  <span class="nf">observe</span><span class="p">({</span>
+    <span class="nf">updateNumericInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> 
+                       <span class="n">inputId</span> <span class="o">=</span> <span class="s">&quot;n_samp&quot;</span><span class="p">,</span>
+                       <span class="n">value</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="nf">nrow</span><span class="p">(</span><span class="nf">movies_subset</span><span class="p">())),</span>
+                       <span class="n">max</span> <span class="o">=</span> <span class="nf">nrow</span><span class="p">(</span><span class="nf">movies_subset</span><span class="p">())</span>
     <span class="p">)</span>
   <span class="p">})</span>
 
   <span class="c1"># Create new df that is n_samp obs from selected type movies</span>
-  movies_sample <span class="o">&lt;-</span> reactive<span class="p">({</span> 
-    req<span class="p">(</span>input<span class="o">$</span>n_samp<span class="p">)</span> <span class="c1"># ensure availablity of value before proceeding</span>
-    sample_n<span class="p">(</span>movies_subset<span class="p">(),</span> input<span class="o">$</span>n_samp<span class="p">)</span>
+  <span class="n">movies_sample</span> <span class="o">&lt;-</span> <span class="nf">reactive</span><span class="p">({</span> 
+    <span class="nf">req</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">n_samp</span><span class="p">)</span> <span class="c1"># ensure availablity of value before proceeding</span>
+    <span class="nf">sample_n</span><span class="p">(</span><span class="nf">movies_subset</span><span class="p">(),</span> <span class="n">input</span><span class="o">$</span><span class="n">n_samp</span><span class="p">)</span>
   <span class="p">})</span>
 
   <span class="c1"># Create scatterplot object the plotOutput function is expecting </span>
-  output<span class="o">$</span>scatterplot <span class="o">&lt;-</span> renderPlot<span class="p">({</span>
-    ggplot<span class="p">(</span>data <span class="o">=</span> movies_sample<span class="p">(),</span> aes_string<span class="p">(</span>x <span class="o">=</span> input<span class="o">$</span>x<span class="p">,</span> y <span class="o">=</span> input<span class="o">$</span>y<span class="p">,</span>
-                                              color <span class="o">=</span> input<span class="o">$</span>z<span class="p">))</span> <span class="o">+</span>
-      geom_point<span class="p">(</span>alpha <span class="o">=</span> input<span class="o">$</span>alpha<span class="p">,</span> size <span class="o">=</span> input<span class="o">$</span>size<span class="p">)</span> <span class="o">+</span>
-      labs<span class="p">(</span>x <span class="o">=</span> toTitleCase<span class="p">(</span>str_replace_all<span class="p">(</span>input<span class="o">$</span>x<span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
-           y <span class="o">=</span> toTitleCase<span class="p">(</span>str_replace_all<span class="p">(</span>input<span class="o">$</span>y<span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
-           color <span class="o">=</span> toTitleCase<span class="p">(</span>str_replace_all<span class="p">(</span>input<span class="o">$</span>z<span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
-           title <span class="o">=</span> toTitleCase<span class="p">(</span>input<span class="o">$</span>plot_title<span class="p">))</span>
+  <span class="n">output</span><span class="o">$</span><span class="n">scatterplot</span> <span class="o">&lt;-</span> <span class="nf">renderPlot</span><span class="p">({</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">movies_sample</span><span class="p">(),</span> <span class="nf">aes_string</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">y</span><span class="p">,</span>
+                                              <span class="n">color</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">z</span><span class="p">))</span> <span class="o">+</span>
+      <span class="nf">geom_point</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">alpha</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span>
+      <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">toTitleCase</span><span class="p">(</span><span class="nf">str_replace_all</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
+           <span class="n">y</span> <span class="o">=</span> <span class="nf">toTitleCase</span><span class="p">(</span><span class="nf">str_replace_all</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
+           <span class="n">color</span> <span class="o">=</span> <span class="nf">toTitleCase</span><span class="p">(</span><span class="nf">str_replace_all</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">z</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)),</span>
+           <span class="n">title</span> <span class="o">=</span> <span class="nf">toTitleCase</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">plot_title</span><span class="p">))</span>
   <span class="p">})</span>
 
   <span class="c1"># Print number of movies plotted </span>
-  output<span class="o">$</span>n <span class="o">&lt;-</span> renderUI<span class="p">({</span>
-    types <span class="o">&lt;-</span> movies_sample<span class="p">()</span><span class="o">$</span>title_type <span class="o">%&gt;%</span> 
-      <span class="kp">factor</span><span class="p">(</span>levels <span class="o">=</span> input<span class="o">$</span>selected_type<span class="p">)</span> 
-    counts <span class="o">&lt;-</span> <span class="kp">table</span><span class="p">(</span>types<span class="p">)</span>
+  <span class="n">output</span><span class="o">$</span><span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">renderUI</span><span class="p">({</span>
+    <span class="n">types</span> <span class="o">&lt;-</span> <span class="nf">movies_sample</span><span class="p">()</span><span class="o">$</span><span class="n">title_type</span> <span class="o">%&gt;%</span> 
+      <span class="nf">factor</span><span class="p">(</span><span class="n">levels</span> <span class="o">=</span> <span class="n">input</span><span class="o">$</span><span class="n">selected_type</span><span class="p">)</span> 
+    <span class="n">counts</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
 
-    HTML<span class="p">(</span><span class="kp">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span> counts<span class="p">,</span> input<span class="o">$</span>selected_type<span class="p">,</span> <span class="s">&quot;movies in this dataset. &lt;br&gt;&quot;</span><span class="p">))</span>
+    <span class="nf">HTML</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;There are&quot;</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">input</span><span class="o">$</span><span class="n">selected_type</span><span class="p">,</span> <span class="s">&quot;movies in this dataset. &lt;br&gt;&quot;</span><span class="p">))</span>
   <span class="p">})</span>
 
   <span class="c1"># Print data table if checked</span>
-  output<span class="o">$</span>moviestable <span class="o">&lt;-</span> DT<span class="o">::</span>renderDataTable<span class="p">(</span>
-    <span class="kr">if</span><span class="p">(</span>input<span class="o">$</span>show_data<span class="p">){</span>
-      DT<span class="o">::</span>datatable<span class="p">(</span>data <span class="o">=</span> movies_sample<span class="p">()[,</span> <span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="p">],</span> 
-                    options <span class="o">=</span> <span class="kt">list</span><span class="p">(</span>pageLength <span class="o">=</span> <span class="m">10</span><span class="p">),</span> 
-                    rownames <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+  <span class="n">output</span><span class="o">$</span><span class="n">moviestable</span> <span class="o">&lt;-</span> <span class="n">DT</span><span class="o">::</span><span class="nf">renderDataTable</span><span class="p">(</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">show_data</span><span class="p">){</span>
+      <span class="n">DT</span><span class="o">::</span><span class="nf">datatable</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">movies_sample</span><span class="p">()</span><span class="n">[</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="n">]</span><span class="p">,</span> 
+                    <span class="n">options</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">pageLength</span> <span class="o">=</span> <span class="m">10</span><span class="p">),</span> 
+                    <span class="n">rownames</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">)</span>
 
   <span class="p">}</span>
 
 <span class="c1"># Create Shiny app object</span>
-shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,</span> server <span class="o">=</span> server<span class="p">)</span>
-</pre></div>
+<span class="nf">shinyApp</span><span class="p">(</span><span class="n">ui</span> <span class="o">=</span> <span class="n">ui</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="n">server</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="HTML tags" src="../../shiny-img/htmltags.png" title="HTML tags" /></p>
                 
                   
+                
                 
               
               
@@ -1864,13 +1878,11 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1878,18 +1890,15 @@ shinyApp<span class="p">(</span>ui <span class="o">=</span> ui<span class="p">,<
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#describing-categorical-data" tabindex="1" class="md-skip">
+      <a href="#describing-categorical-data" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Categorical Data Analysis
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -409,14 +410,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#describing-categorical-data" title="Describing Categorical Data" class="md-nav__link">
+  <a href="#describing-categorical-data" class="md-nav__link">
     Describing Categorical Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests-of-association" title="Tests of Association" class="md-nav__link">
+  <a href="#tests-of-association" class="md-nav__link">
     Tests of Association
   </a>
   
@@ -424,21 +425,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pearson-chi-square-test" title="Pearson Chi-square Test" class="md-nav__link">
+  <a href="#pearson-chi-square-test" class="md-nav__link">
     Pearson Chi-square Test
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cramers-v-statistic" title="Cramer's V statistic" class="md-nav__link">
+  <a href="#cramers-v-statistic" class="md-nav__link">
     Cramer's V statistic
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mantel-haenszel-chi-square-test" title="Mantel-Haenszel chi-square test" class="md-nav__link">
+  <a href="#mantel-haenszel-chi-square-test" class="md-nav__link">
     Mantel-Haenszel chi-square test
   </a>
   
@@ -450,7 +451,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-logistic-regression" title="Introduction to Logistic Regression" class="md-nav__link">
+  <a href="#introduction-to-logistic-regression" class="md-nav__link">
     Introduction to Logistic Regression
   </a>
   
@@ -458,7 +459,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linear-vs-logistic" title="Linear vs Logistic" class="md-nav__link">
+  <a href="#linear-vs-logistic" class="md-nav__link">
     Linear vs Logistic
   </a>
   
@@ -466,14 +467,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linear-regression-model" title="Linear Regression Model" class="md-nav__link">
+  <a href="#linear-regression-model" class="md-nav__link">
     Linear Regression Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#binary-logistic-regression-model" title="Binary Logistic Regression Model" class="md-nav__link">
+  <a href="#binary-logistic-regression-model" class="md-nav__link">
     Binary Logistic Regression Model
   </a>
   
@@ -485,14 +486,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-logistic" title="PROC LOGISTIC" class="md-nav__link">
+  <a href="#proc-logistic" class="md-nav__link">
     PROC LOGISTIC
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#classification-variables-parametrization" title="Classification Variables Parametrization" class="md-nav__link">
+  <a href="#classification-variables-parametrization" class="md-nav__link">
     Classification Variables Parametrization
   </a>
   
@@ -500,14 +501,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#effect-coding-default" title="Effect coding (default)" class="md-nav__link">
+  <a href="#effect-coding-default" class="md-nav__link">
     Effect coding (default)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reference-cell-coding" title="Reference cell coding" class="md-nav__link">
+  <a href="#reference-cell-coding" class="md-nav__link">
     Reference cell coding
   </a>
   
@@ -519,7 +520,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fitting-a-binary-logistic-regression" title="Fitting a Binary Logistic Regression" class="md-nav__link">
+  <a href="#fitting-a-binary-logistic-regression" class="md-nav__link">
     Fitting a Binary Logistic Regression
   </a>
   
@@ -527,21 +528,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" title="Iterpreting the Odds Ratio for a Categorical Predictor" class="md-nav__link">
+  <a href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" class="md-nav__link">
     Iterpreting the Odds Ratio for a Categorical Predictor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" title="Iterpreting the Odds Ratio for a Continuous Predictor" class="md-nav__link">
+  <a href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" class="md-nav__link">
     Iterpreting the Odds Ratio for a Continuous Predictor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" title="Comparing Pairs to Assess the Fit of a Logistic Regression Model" class="md-nav__link">
+  <a href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" class="md-nav__link">
     Comparing Pairs to Assess the Fit of a Logistic Regression Model
   </a>
   
@@ -558,7 +559,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-logistic-regression-model" title="Multiple Logistic Regression Model" class="md-nav__link">
+  <a href="#multiple-logistic-regression-model" class="md-nav__link">
     Multiple Logistic Regression Model
   </a>
   
@@ -566,98 +567,98 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multiple-logistic-regression" title="Multiple Logistic Regression" class="md-nav__link">
+  <a href="#multiple-logistic-regression" class="md-nav__link">
     Multiple Logistic Regression
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-backward-elimination-method-of-variable-selection" title="The Backward Elimination Method of Variable Selection" class="md-nav__link">
+  <a href="#the-backward-elimination-method-of-variable-selection" class="md-nav__link">
     The Backward Elimination Method of Variable Selection
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adjusted-odds-ratios" title="Adjusted Odds Ratios" class="md-nav__link">
+  <a href="#adjusted-odds-ratios" class="md-nav__link">
     Adjusted Odds Ratios
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifiying-the-variable-selection-method-in-the-model-statement" title="Specifiying the Variable Selection Method in the MODEL Statement" class="md-nav__link">
+  <a href="#specifiying-the-variable-selection-method-in-the-model-statement" class="md-nav__link">
     Specifiying the Variable Selection Method in the MODEL Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-units-statement" title="The UNITS Statement" class="md-nav__link">
+  <a href="#the-units-statement" class="md-nav__link">
     The UNITS Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-a-formatted-value-as-a-reference-level" title="Specifying a Formatted Value as a Reference Level" class="md-nav__link">
+  <a href="#specifying-a-formatted-value-as-a-reference-level" class="md-nav__link">
     Specifying a Formatted Value as a Reference Level
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interaction-between-variables" title="Interaction between Variables" class="md-nav__link">
+  <a href="#interaction-between-variables" class="md-nav__link">
     Interaction between Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-backward-elimination-method-with-interactions-in-the-model" title="The Backward Elimination Method with Interactions in the Model" class="md-nav__link">
+  <a href="#the-backward-elimination-method-with-interactions-in-the-model" class="md-nav__link">
     The Backward Elimination Method with Interactions in the Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-interactions-in-the-model-statement" title="Specifying Interactions in the MODEL Statement" class="md-nav__link">
+  <a href="#specifying-interactions-in-the-model-statement" class="md-nav__link">
     Specifying Interactions in the MODEL Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-oddsratio-statement" title="The ODDSRATIO Statement" class="md-nav__link">
+  <a href="#the-oddsratio-statement" class="md-nav__link">
     The ODDSRATIO Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
+  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" class="md-nav__link">
     Comparing the Binary and Multiple Logistic Regression Models
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interaction-plots" title="Interaction Plots" class="md-nav__link">
+  <a href="#interaction-plots" class="md-nav__link">
     Interaction Plots
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saving-analysis-results-with-the-store-statement" title="Saving Analysis Results with the STORE Statement" class="md-nav__link">
+  <a href="#saving-analysis-results-with-the-store-statement" class="md-nav__link">
     Saving Analysis Results with the STORE Statement
   </a>
   
@@ -1633,18 +1634,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1659,6 +1648,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1759,14 +1772,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#describing-categorical-data" title="Describing Categorical Data" class="md-nav__link">
+  <a href="#describing-categorical-data" class="md-nav__link">
     Describing Categorical Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tests-of-association" title="Tests of Association" class="md-nav__link">
+  <a href="#tests-of-association" class="md-nav__link">
     Tests of Association
   </a>
   
@@ -1774,21 +1787,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pearson-chi-square-test" title="Pearson Chi-square Test" class="md-nav__link">
+  <a href="#pearson-chi-square-test" class="md-nav__link">
     Pearson Chi-square Test
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cramers-v-statistic" title="Cramer's V statistic" class="md-nav__link">
+  <a href="#cramers-v-statistic" class="md-nav__link">
     Cramer's V statistic
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mantel-haenszel-chi-square-test" title="Mantel-Haenszel chi-square test" class="md-nav__link">
+  <a href="#mantel-haenszel-chi-square-test" class="md-nav__link">
     Mantel-Haenszel chi-square test
   </a>
   
@@ -1800,7 +1813,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-logistic-regression" title="Introduction to Logistic Regression" class="md-nav__link">
+  <a href="#introduction-to-logistic-regression" class="md-nav__link">
     Introduction to Logistic Regression
   </a>
   
@@ -1808,7 +1821,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linear-vs-logistic" title="Linear vs Logistic" class="md-nav__link">
+  <a href="#linear-vs-logistic" class="md-nav__link">
     Linear vs Logistic
   </a>
   
@@ -1816,14 +1829,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linear-regression-model" title="Linear Regression Model" class="md-nav__link">
+  <a href="#linear-regression-model" class="md-nav__link">
     Linear Regression Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#binary-logistic-regression-model" title="Binary Logistic Regression Model" class="md-nav__link">
+  <a href="#binary-logistic-regression-model" class="md-nav__link">
     Binary Logistic Regression Model
   </a>
   
@@ -1835,14 +1848,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-logistic" title="PROC LOGISTIC" class="md-nav__link">
+  <a href="#proc-logistic" class="md-nav__link">
     PROC LOGISTIC
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#classification-variables-parametrization" title="Classification Variables Parametrization" class="md-nav__link">
+  <a href="#classification-variables-parametrization" class="md-nav__link">
     Classification Variables Parametrization
   </a>
   
@@ -1850,14 +1863,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#effect-coding-default" title="Effect coding (default)" class="md-nav__link">
+  <a href="#effect-coding-default" class="md-nav__link">
     Effect coding (default)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reference-cell-coding" title="Reference cell coding" class="md-nav__link">
+  <a href="#reference-cell-coding" class="md-nav__link">
     Reference cell coding
   </a>
   
@@ -1869,7 +1882,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fitting-a-binary-logistic-regression" title="Fitting a Binary Logistic Regression" class="md-nav__link">
+  <a href="#fitting-a-binary-logistic-regression" class="md-nav__link">
     Fitting a Binary Logistic Regression
   </a>
   
@@ -1877,21 +1890,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" title="Iterpreting the Odds Ratio for a Categorical Predictor" class="md-nav__link">
+  <a href="#iterpreting-the-odds-ratio-for-a-categorical-predictor" class="md-nav__link">
     Iterpreting the Odds Ratio for a Categorical Predictor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" title="Iterpreting the Odds Ratio for a Continuous Predictor" class="md-nav__link">
+  <a href="#iterpreting-the-odds-ratio-for-a-continuous-predictor" class="md-nav__link">
     Iterpreting the Odds Ratio for a Continuous Predictor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" title="Comparing Pairs to Assess the Fit of a Logistic Regression Model" class="md-nav__link">
+  <a href="#comparing-pairs-to-assess-the-fit-of-a-logistic-regression-model" class="md-nav__link">
     Comparing Pairs to Assess the Fit of a Logistic Regression Model
   </a>
   
@@ -1908,7 +1921,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-logistic-regression-model" title="Multiple Logistic Regression Model" class="md-nav__link">
+  <a href="#multiple-logistic-regression-model" class="md-nav__link">
     Multiple Logistic Regression Model
   </a>
   
@@ -1916,98 +1929,98 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multiple-logistic-regression" title="Multiple Logistic Regression" class="md-nav__link">
+  <a href="#multiple-logistic-regression" class="md-nav__link">
     Multiple Logistic Regression
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-backward-elimination-method-of-variable-selection" title="The Backward Elimination Method of Variable Selection" class="md-nav__link">
+  <a href="#the-backward-elimination-method-of-variable-selection" class="md-nav__link">
     The Backward Elimination Method of Variable Selection
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adjusted-odds-ratios" title="Adjusted Odds Ratios" class="md-nav__link">
+  <a href="#adjusted-odds-ratios" class="md-nav__link">
     Adjusted Odds Ratios
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifiying-the-variable-selection-method-in-the-model-statement" title="Specifiying the Variable Selection Method in the MODEL Statement" class="md-nav__link">
+  <a href="#specifiying-the-variable-selection-method-in-the-model-statement" class="md-nav__link">
     Specifiying the Variable Selection Method in the MODEL Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-units-statement" title="The UNITS Statement" class="md-nav__link">
+  <a href="#the-units-statement" class="md-nav__link">
     The UNITS Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-a-formatted-value-as-a-reference-level" title="Specifying a Formatted Value as a Reference Level" class="md-nav__link">
+  <a href="#specifying-a-formatted-value-as-a-reference-level" class="md-nav__link">
     Specifying a Formatted Value as a Reference Level
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interaction-between-variables" title="Interaction between Variables" class="md-nav__link">
+  <a href="#interaction-between-variables" class="md-nav__link">
     Interaction between Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-backward-elimination-method-with-interactions-in-the-model" title="The Backward Elimination Method with Interactions in the Model" class="md-nav__link">
+  <a href="#the-backward-elimination-method-with-interactions-in-the-model" class="md-nav__link">
     The Backward Elimination Method with Interactions in the Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-interactions-in-the-model-statement" title="Specifying Interactions in the MODEL Statement" class="md-nav__link">
+  <a href="#specifying-interactions-in-the-model-statement" class="md-nav__link">
     Specifying Interactions in the MODEL Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-oddsratio-statement" title="The ODDSRATIO Statement" class="md-nav__link">
+  <a href="#the-oddsratio-statement" class="md-nav__link">
     The ODDSRATIO Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" title="Comparing the Binary and Multiple Logistic Regression Models" class="md-nav__link">
+  <a href="#comparing-the-binary-and-multiple-logistic-regression-models" class="md-nav__link">
     Comparing the Binary and Multiple Logistic Regression Models
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interaction-plots" title="Interaction Plots" class="md-nav__link">
+  <a href="#interaction-plots" class="md-nav__link">
     Interaction Plots
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saving-analysis-results-with-the-store-statement" title="Saving Analysis Results with the STORE Statement" class="md-nav__link">
+  <a href="#saving-analysis-results-with-the-store-statement" class="md-nav__link">
     Saving Analysis Results with the STORE Statement
   </a>
   
@@ -2043,22 +2056,22 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FREQ DATA=SAS-data-set;
-    TABLES variable1 variable2 variable3 &lt;/options&gt;;
-    &lt;additional statements&gt;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">FREQ</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="n">TABLES</span> <span class="n">variable1</span> <span class="n">variable2</span> <span class="n">variable3</span> <span class="o">&lt;/</span><span class="k">options</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="n">additional</span> <span class="n">statements</span><span class="o">&gt;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To look for a possible <strong>association</strong> between two or more categorical variables, you can create a <strong>crosstabulation</strong>/<strong>contingency table</strong> (when it displays statistics for two variables is also called <strong>two-way frequency able</strong>).</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FREQ DATA=SAS-data-set;
-    TABLES variable-rows*variable-columns &lt;/options&gt;;
-    &lt;additional statements&gt;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">FREQ</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="n">TABLES</span> <span class="k">variable</span><span class="o">-</span><span class="k">rows</span><span class="o">*</span><span class="k">variable</span><span class="o">-</span><span class="n">columns</span> <span class="o">&lt;/</span><span class="k">options</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="n">additional</span> <span class="n">statements</span><span class="o">&gt;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Two distribution plots are associated with a frequency or crosstabulation table: a <strong>frequency plot</strong>, <code>PLOTS=(FREQPLOT)</code>, and a <strong>cumulative frequency plot</strong>.</p>
@@ -2071,11 +2084,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>options validvarname=any;
-PROC FREQ DATA=SAS-data-set (RENAME=(variable1=&quot;Label variable 1&quot;n variable1=&quot;Label variable 1&quot;n));
-    TABLES &quot;Label variable 1&quot;n;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">options</span> <span class="n">validvarname</span><span class="o">=</span><span class="k">any</span><span class="p">;</span>
+<span class="n">PROC</span> <span class="n">FREQ</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="p">(</span><span class="k">RENAME</span><span class="o">=</span><span class="p">(</span><span class="n">variable1</span><span class="o">=</span><span class="ss">&quot;Label variable 1&quot;</span><span class="n">n</span> <span class="n">variable1</span><span class="o">=</span><span class="ss">&quot;Label variable 1&quot;</span><span class="n">n</span><span class="p">));</span>
+    <span class="n">TABLES</span> <span class="ss">&quot;Label variable 1&quot;</span><span class="n">n</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2109,11 +2122,11 @@ $Expected=Row \ total\cdot Column\ total/Total \ sample \ size$</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FREQ DATA=SAS-data-set;
-    TABLES variable-rows*variable-columns / CHISQ EXPECTED &lt;/options&gt;;
-    &lt;additional statements&gt;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">FREQ</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="n">TABLES</span> <span class="k">variable</span><span class="o">-</span><span class="k">rows</span><span class="o">*</span><span class="k">variable</span><span class="o">-</span><span class="n">columns</span> <span class="o">/</span> <span class="n">CHISQ</span> <span class="n">EXPECTED</span> <span class="o">&lt;/</span><span class="k">options</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="o">&lt;</span><span class="n">additional</span> <span class="n">statements</span><span class="o">&gt;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2141,11 +2154,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FREQ DATA=SAS-data-set;
-    TABLES variable-rows*variable-columns / CHISQ EXPECTED &lt;/options&gt;;
-  &lt;additional statements&gt;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">FREQ</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="n">TABLES</span> <span class="k">variable</span><span class="o">-</span><span class="k">rows</span><span class="o">*</span><span class="k">variable</span><span class="o">-</span><span class="n">columns</span> <span class="o">/</span> <span class="n">CHISQ</span> <span class="n">EXPECTED</span> <span class="o">&lt;/</span><span class="k">options</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="o">&lt;</span><span class="n">additional</span> <span class="n">statements</span><span class="o">&gt;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2185,19 +2198,19 @@ RUN;
 <li>The logit of the probability transforms the probability into a linear function, which has no lower or upper bounds. So a <strong>logit has no lower or upper bounds</strong>.</li>
 </ul>
 <h3 id="proc-logistic"><code>PROC LOGISTIC</code><a class="headerlink" href="#proc-logistic" title="Permanent link">Link</a></h3>
-<p>To model categorical data yu use the <code>LOGISTIC</code> procedure. Some of the most common statements of this procedure are shown here:</p>
+<p>To model categorical data you use the <code>LOGISTIC</code> procedure. Some of the most common statements of this procedure are shown here:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll">PROC LOGISTIC DATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="hll">PROC LOGISTIC DATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
 </span>    CLASS variable <span class="err">&lt;</span>(variable_options)&gt; ... <span class="nt">&lt;/ options&gt;</span>;
 <span class="hll">    MODEL response <span class="err">&lt;</span>(variable_options)&gt; = predictors <span class="nt">&lt;/ options&gt;</span>;
 </span>    UNITS independent1=list... <span class="nt">&lt;/ options&gt;</span>;
     ODDSRATIO <span class="err">&lt;</span>&#39;label&#39;&gt; variable <span class="nt">&lt;/ options&gt;</span>;
 RUN;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2258,12 +2271,12 @@ RUN;</code></pre></p>
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC LOGISTIC DATA=statdata.sales_inc PLOTS(ONLY)=(EFFECT);
-    CLASS Gender (PARAM=REF REF=&#39;Male&#39;);
-    MODEL Purchase(event=&#39;1&#39;) = Gender;
-    title1 &#39;LOGISTIC MODEL (1): Purchase = Gender&#39;;
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">LOGISTIC</span> <span class="k">DATA</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">sales_inc</span> <span class="n">PLOTS</span><span class="p">(</span><span class="k">ONLY</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">EFFECT</span><span class="p">);</span>
+    <span class="k">CLASS</span> <span class="n">Gender</span> <span class="p">(</span><span class="n">PARAM</span><span class="o">=</span><span class="k">REF</span> <span class="k">REF</span><span class="o">=</span><span class="s1">&#39;Male&#39;</span><span class="p">);</span>
+    <span class="n">MODEL</span> <span class="n">Purchase</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="o">=</span> <span class="n">Gender</span><span class="p">;</span>
+    <span class="n">title1</span> <span class="s1">&#39;LOGISTIC MODEL (1): Purchase = Gender&#39;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>We look at the first few tables to make sure that the model is set up the way we want</p>
@@ -2358,11 +2371,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC LOGISTIC DATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>PROC LOGISTIC DATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
     CLASS variable <span class="err">&lt;</span>(variable_options)&gt; ... <span class="nt">&lt;/ options&gt;</span>;
     MODEL response <span class="err">&lt;</span>(variable_options)&gt; = predictors <span class="err">&lt;</span>/ options SELECTION&gt;;
 RUN;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>By default the procedure uses a $\alpha=0.05$ significance level to determine which variables remain in the model. If you want to change the significance level, you can use the <code>SLSTAY | SLS =</code> option in the <code>MODEL</code> statement.</p>
@@ -2397,7 +2410,7 @@ RUN;
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PROC</span> <span class="n">LOGISTIC</span> <span class="n">DATA</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">sales_inc</span> 
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">LOGISTIC</span> <span class="n">DATA</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">sales_inc</span> 
         <span class="n">PLOTS</span><span class="p">(</span><span class="n">ONLY</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="n">EFFECT</span> <span class="n">ODDSRATIO</span><span class="p">);</span>
     <span class="n">CLASS</span> <span class="nf">Gender</span> <span class="p">(</span><span class="n">PARAM</span><span class="o">=</span><span class="n">REF</span> <span class="n">REF</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Male</span><span class="err">&#39;</span><span class="p">)</span>
         <span class="n">IncLevel</span> <span class="p">(</span><span class="n">PARAM</span><span class="o">=</span><span class="n">REF</span> <span class="n">REF</span><span class="o">=</span><span class="sc">&#39;1&#39;</span><span class="p">);</span>
@@ -2408,7 +2421,7 @@ RUN;
 </span><span class="hll">    <span class="n">ODDSRATIO</span> <span class="n">Gender</span> <span class="o">/</span> <span class="n">DIFF</span><span class="o">=</span><span class="n">REF</span> <span class="n">AT</span> <span class="p">(</span><span class="n">IncLevel</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span> <span class="n">CL</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
 </span><span class="hll">    <span class="n">ODDSRATIO</span> <span class="n">IncLevel</span> <span class="o">/</span> <span class="n">DIFF</span><span class="o">=</span><span class="n">REF</span> <span class="n">AT</span> <span class="p">(</span><span class="n">Gender</span><span class="o">=</span><span class="n">ALL</span><span class="p">)</span> <span class="n">CL</span><span class="o">=</span><span class="n">PL</span><span class="p">;</span>
 </span><span class="n">RUN</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2445,26 +2458,26 @@ RUN;
 16
 17
 18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc means data=statdata.sales_inc noprint nway;
-   class IncLevel Gender;
-   var Purchase;
-   output out=bins sum(Purchase)=Purchase n(Purchase)=BinSize;
-run;
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="n">means</span> <span class="k">data</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">sales_inc</span> <span class="n">noprint</span> <span class="n">nway</span><span class="p">;</span>
+   <span class="k">class</span> <span class="n">IncLevel</span> <span class="n">Gender</span><span class="p">;</span>
+   <span class="n">var</span> <span class="n">Purchase</span><span class="p">;</span>
+   <span class="k">output</span> <span class="k">out</span><span class="o">=</span><span class="n">bins</span> <span class="k">sum</span><span class="p">(</span><span class="n">Purchase</span><span class="p">)</span><span class="o">=</span><span class="n">Purchase</span> <span class="n">n</span><span class="p">(</span><span class="n">Purchase</span><span class="p">)</span><span class="o">=</span><span class="n">BinSize</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
 
-data bins;
-   set bins;
-      Logit=log((Purchase+1)/(BinSize-Purchase+1));
-run;
+<span class="k">data</span> <span class="n">bins</span><span class="p">;</span>
+   <span class="k">set</span> <span class="n">bins</span><span class="p">;</span>
+      <span class="n">Logit</span><span class="o">=</span><span class="n">log</span><span class="p">((</span><span class="n">Purchase</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">BinSize</span><span class="o">-</span><span class="n">Purchase</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">run</span><span class="p">;</span>
 
-proc sgscatter data=bins;
-   plot Logit*IncLevel /group=Gender markerattrs=(size=15)
-                        join;
-   format IncLevel incfmt.;
-   label IncLevel=&#39;Income Level&#39;;
-   title;
-run;
-quit;
-</pre></div>
+<span class="n">proc</span> <span class="n">sgscatter</span> <span class="k">data</span><span class="o">=</span><span class="n">bins</span><span class="p">;</span>
+   <span class="n">plot</span> <span class="n">Logit</span><span class="o">*</span><span class="n">IncLevel</span> <span class="o">/</span><span class="k">group</span><span class="o">=</span><span class="n">Gender</span> <span class="n">markerattrs</span><span class="o">=</span><span class="p">(</span><span class="k">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+                        <span class="k">join</span><span class="p">;</span>
+   <span class="n">format</span> <span class="n">IncLevel</span> <span class="n">incfmt</span><span class="p">.;</span>
+   <span class="n">label</span> <span class="n">IncLevel</span><span class="o">=</span><span class="s1">&#39;Income Level&#39;</span><span class="p">;</span>
+   <span class="n">title</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Interaction plot for logistic regression" src="../../images/interactionplot-logistic-regression.PNG" title="Interaction plot for logistic regression" /></p>
@@ -2498,35 +2511,35 @@ quit;
 25
 26
 27
-28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS SELECT NONE;
-PROC LOGISTIC DATA=statdata.ameshousing3;
-    CLASS Fireplaces (REF=&#39;0&#39;) Lot_Shape_2 (REF=&#39;Regular&#39;) / param=ref;
-    MODEL Bonus(EVENT=&#39;1&#39;)=Basement_Area | Lot_Shape_2 Fireplaces;
-    UNITS Basement_Area=100;
-<span class="hll">    STORE OUT=isbonus;
-</span>RUN;
-ODS SELECT ALL;
+28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ODS</span> <span class="k">SELECT</span> <span class="k">NONE</span><span class="p">;</span>
+<span class="n">PROC</span> <span class="n">LOGISTIC</span> <span class="k">DATA</span><span class="o">=</span><span class="n">statdata</span><span class="p">.</span><span class="n">ameshousing3</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">Fireplaces</span> <span class="p">(</span><span class="k">REF</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="n">Lot_Shape_2</span> <span class="p">(</span><span class="k">REF</span><span class="o">=</span><span class="s1">&#39;Regular&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">param</span><span class="o">=</span><span class="k">ref</span><span class="p">;</span>
+    <span class="n">MODEL</span> <span class="n">Bonus</span><span class="p">(</span><span class="n">EVENT</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">=</span><span class="n">Basement_Area</span> <span class="o">|</span> <span class="n">Lot_Shape_2</span> <span class="n">Fireplaces</span><span class="p">;</span>
+    <span class="n">UNITS</span> <span class="n">Basement_Area</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span>
+<span class="hll">    <span class="n">STORE</span> <span class="k">OUT</span><span class="o">=</span><span class="n">isbonus</span><span class="p">;</span>
+</span><span class="n">RUN</span><span class="p">;</span>
+<span class="n">ODS</span> <span class="k">SELECT</span> <span class="k">ALL</span><span class="p">;</span>
 
-DATA newhouses;
-    LENGTH Lot_Shape_2 $9;
-    INPUT Fireplaces Lot_Shape_2 $ Basement_Area;
-    DATALINES;
-    0 Regular 1060
-    2 Regular 775
-    2 Irregular 1100
-    1 Irregular 975
-    1 Regular 800
-    ;
-RUN;
+<span class="k">DATA</span> <span class="n">newhouses</span><span class="p">;</span>
+    <span class="k">LENGTH</span> <span class="n">Lot_Shape_2</span> <span class="err">$</span><span class="mi">9</span><span class="p">;</span>
+    <span class="k">INPUT</span> <span class="n">Fireplaces</span> <span class="n">Lot_Shape_2</span> <span class="err">$</span> <span class="n">Basement_Area</span><span class="p">;</span>
+    <span class="n">DATALINES</span><span class="p">;</span>
+    <span class="mi">0</span> <span class="n">Regular</span> <span class="mi">1060</span>
+    <span class="mi">2</span> <span class="n">Regular</span> <span class="mi">775</span>
+    <span class="mi">2</span> <span class="n">Irregular</span> <span class="mi">1100</span>
+    <span class="mi">1</span> <span class="n">Irregular</span> <span class="mi">975</span>
+    <span class="mi">1</span> <span class="n">Regular</span> <span class="mi">800</span>
+    <span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
 
-<span class="hll">PROC PLM RESTORE=isbonus;
-</span>    SCORE DATA=newhouses OUT=scored_houses / ILINK;
-    TITLE &#39;Predictions using PROC PLM&#39;;
-RUN;
+<span class="hll"><span class="n">PROC</span> <span class="n">PLM</span> <span class="n">RESTORE</span><span class="o">=</span><span class="n">isbonus</span><span class="p">;</span>
+</span>    <span class="n">SCORE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">newhouses</span> <span class="k">OUT</span><span class="o">=</span><span class="n">scored_houses</span> <span class="o">/</span> <span class="n">ILINK</span><span class="p">;</span>
+    <span class="n">TITLE</span> <span class="s1">&#39;Predictions using PROC PLM&#39;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
 
-PROC PRINT DATA=scored_houses;
-RUN;
-</pre></div>
+<span class="n">PROC</span> <span class="n">PRINT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">scored_houses</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2541,6 +2554,7 @@ RUN;
 </div>
                 
                   
+                
                 
               
               
@@ -2596,13 +2610,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2610,18 +2622,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#graphical-analysis-of-associations" tabindex="1" class="md-skip">
+      <a href="#graphical-analysis-of-associations" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Analysis of Variance (ANOVA)
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -373,7 +374,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#graphical-analysis-of-associations" title="Graphical Analysis of Associations" class="md-nav__link">
+  <a href="#graphical-analysis-of-associations" class="md-nav__link">
     Graphical Analysis of Associations
   </a>
   
@@ -381,7 +382,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-sgplot" title="PROC SGPLOT" class="md-nav__link">
+  <a href="#proc-sgplot" class="md-nav__link">
     PROC SGPLOT
   </a>
   
@@ -393,7 +394,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-sample-t-tests" title="Two-Sample t-Tests" class="md-nav__link">
+  <a href="#two-sample-t-tests" class="md-nav__link">
     Two-Sample t-Tests
   </a>
   
@@ -401,7 +402,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-ttest" title="PROC TTEST" class="md-nav__link">
+  <a href="#proc-ttest" class="md-nav__link">
     PROC TTEST
   </a>
   
@@ -413,7 +414,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-way-anova" title="One-Way ANOVA" class="md-nav__link">
+  <a href="#one-way-anova" class="md-nav__link">
     One-Way ANOVA
   </a>
   
@@ -421,7 +422,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -433,7 +434,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anova-with-data-from-a-randomized-block-design" title="ANOVA with Data from a Randomized Block Design" class="md-nav__link">
+  <a href="#anova-with-data-from-a-randomized-block-design" class="md-nav__link">
     ANOVA with Data from a Randomized Block Design
   </a>
   
@@ -441,7 +442,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_1" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_1" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -453,7 +454,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anova-post-hoc-tests" title="ANOVA Post Hoc Tests" class="md-nav__link">
+  <a href="#anova-post-hoc-tests" class="md-nav__link">
     ANOVA Post Hoc Tests
   </a>
   
@@ -461,7 +462,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_2" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_2" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -473,7 +474,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-way-anova-with-interactions" title="Two-Way ANOVA with Interactions" class="md-nav__link">
+  <a href="#two-way-anova-with-interactions" class="md-nav__link">
     Two-Way ANOVA with Interactions
   </a>
   
@@ -481,21 +482,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_3" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_3" class="md-nav__link">
     PROC GLM
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#store-statement" title="STORE statement" class="md-nav__link">
+  <a href="#store-statement" class="md-nav__link">
     STORE statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-plm" title="PROC PLM" class="md-nav__link">
+  <a href="#proc-plm" class="md-nav__link">
     PROC PLM
   </a>
   
@@ -1507,18 +1508,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1533,6 +1522,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1633,7 +1646,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#graphical-analysis-of-associations" title="Graphical Analysis of Associations" class="md-nav__link">
+  <a href="#graphical-analysis-of-associations" class="md-nav__link">
     Graphical Analysis of Associations
   </a>
   
@@ -1641,7 +1654,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-sgplot" title="PROC SGPLOT" class="md-nav__link">
+  <a href="#proc-sgplot" class="md-nav__link">
     PROC SGPLOT
   </a>
   
@@ -1653,7 +1666,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-sample-t-tests" title="Two-Sample t-Tests" class="md-nav__link">
+  <a href="#two-sample-t-tests" class="md-nav__link">
     Two-Sample t-Tests
   </a>
   
@@ -1661,7 +1674,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-ttest" title="PROC TTEST" class="md-nav__link">
+  <a href="#proc-ttest" class="md-nav__link">
     PROC TTEST
   </a>
   
@@ -1673,7 +1686,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-way-anova" title="One-Way ANOVA" class="md-nav__link">
+  <a href="#one-way-anova" class="md-nav__link">
     One-Way ANOVA
   </a>
   
@@ -1681,7 +1694,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -1693,7 +1706,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anova-with-data-from-a-randomized-block-design" title="ANOVA with Data from a Randomized Block Design" class="md-nav__link">
+  <a href="#anova-with-data-from-a-randomized-block-design" class="md-nav__link">
     ANOVA with Data from a Randomized Block Design
   </a>
   
@@ -1701,7 +1714,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_1" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_1" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -1713,7 +1726,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anova-post-hoc-tests" title="ANOVA Post Hoc Tests" class="md-nav__link">
+  <a href="#anova-post-hoc-tests" class="md-nav__link">
     ANOVA Post Hoc Tests
   </a>
   
@@ -1721,7 +1734,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_2" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_2" class="md-nav__link">
     PROC GLM
   </a>
   
@@ -1733,7 +1746,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-way-anova-with-interactions" title="Two-Way ANOVA with Interactions" class="md-nav__link">
+  <a href="#two-way-anova-with-interactions" class="md-nav__link">
     Two-Way ANOVA with Interactions
   </a>
   
@@ -1741,21 +1754,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-glm_3" title="PROC GLM" class="md-nav__link">
+  <a href="#proc-glm_3" class="md-nav__link">
     PROC GLM
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#store-statement" title="STORE statement" class="md-nav__link">
+  <a href="#store-statement" class="md-nav__link">
     STORE statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-plm" title="PROC PLM" class="md-nav__link">
+  <a href="#proc-plm" class="md-nav__link">
     PROC PLM
   </a>
   
@@ -1799,11 +1812,11 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SGPLOT DATA=SAS-data-set;
-    VBOX response-variable / CATEGORY=predictor-variable
-    CONNECT=MEAN DATALABEL=outlier-ID-variable;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">SGPLOT</span> <span class="nv">DATA</span><span class="o">=</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span><span class="c1">;</span>
+    <span class="nv">VBOX</span> <span class="nv">response</span><span class="o">-</span><span class="nv">variable</span> <span class="o">/</span> <span class="nv">CATEGORY</span><span class="o">=</span><span class="nv">predictor</span><span class="o">-</span><span class="nv">variable</span>
+    <span class="k">CONNECT</span><span class="o">=</span><span class="nv">MEAN</span> <span class="nv">DATALABEL</span><span class="o">=</span><span class="nv">outlier</span><span class="o">-</span><span class="nv">ID</span><span class="o">-</span><span class="nv">variable</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="two-sample-t-tests">Two-Sample t-Tests<a class="headerlink" href="#two-sample-t-tests" title="Permanent link">Link</a></h2>
@@ -1833,12 +1846,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TTEST DATA=SAS-data-set &lt;options&gt;
-    plots(shownull)=interval;         \* shownull = vertical reference line at the mean value of H0 *\
-    CLASS variable;                   \* Classification variable *\
-    VAR variable(s);                  \* Continuous response variables *\
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TTEST</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="o">&lt;</span><span class="k">options</span><span class="o">&gt;</span>
+    <span class="n">plots</span><span class="p">(</span><span class="n">shownull</span><span class="p">)</span><span class="o">=</span><span class="nb">interval</span><span class="p">;</span>         <span class="err">\</span><span class="o">*</span> <span class="n">shownull</span> <span class="o">=</span> <span class="n">vertical</span> <span class="n">reference</span> <span class="n">line</span> <span class="k">at</span> <span class="n">the</span> <span class="n">mean</span> <span class="n">value</span> <span class="k">of</span> <span class="n">H0</span> <span class="o">*</span><span class="err">\</span>
+    <span class="k">CLASS</span> <span class="k">variable</span><span class="p">;</span>                   <span class="err">\</span><span class="o">*</span> <span class="n">Classification</span> <span class="k">variable</span> <span class="o">*</span><span class="err">\</span>
+    <span class="n">VAR</span> <span class="k">variable</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>                  <span class="err">\</span><span class="o">*</span> <span class="n">Continuous</span> <span class="n">response</span> <span class="n">variables</span> <span class="o">*</span><span class="err">\</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <hr />
@@ -1851,12 +1864,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TTEST DATA=SAS-data-set 
-    plots(only shownull)=interval H0=0 SIDES=u;     \* only = suppress the default plots; u/l = upper/lower-tailed t-test  *\
-    CLASS variable;                                 \* Classification variable *\
-    VAR variable(s);                                \* Continuous response variables *\
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TTEST</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> 
+    <span class="n">plots</span><span class="p">(</span><span class="k">only</span> <span class="n">shownull</span><span class="p">)</span><span class="o">=</span><span class="nb">interval</span> <span class="n">H0</span><span class="o">=</span><span class="mi">0</span> <span class="n">SIDES</span><span class="o">=</span><span class="n">u</span><span class="p">;</span>     <span class="err">\</span><span class="o">*</span> <span class="k">only</span> <span class="o">=</span> <span class="n">suppress</span> <span class="n">the</span> <span class="k">default</span> <span class="n">plots</span><span class="p">;</span> <span class="n">u</span><span class="o">/</span><span class="n">l</span> <span class="o">=</span> <span class="k">upper</span><span class="o">/</span><span class="k">lower</span><span class="o">-</span><span class="n">tailed</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>  <span class="o">*</span><span class="err">\</span>
+    <span class="k">CLASS</span> <span class="k">variable</span><span class="p">;</span>                                 <span class="err">\</span><span class="o">*</span> <span class="n">Classification</span> <span class="k">variable</span> <span class="o">*</span><span class="err">\</span>
+    <span class="n">VAR</span> <span class="k">variable</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>                                <span class="err">\</span><span class="o">*</span> <span class="n">Continuous</span> <span class="n">response</span> <span class="n">variables</span> <span class="o">*</span><span class="err">\</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="one-way-anova">One-Way ANOVA<a class="headerlink" href="#one-way-anova" title="Permanent link">Link</a></h2>
@@ -1886,14 +1899,14 @@ RUN;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLM DATA=SAS-data-set
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>PROC GLM DATA=SAS-data-set
          PLOTS(ONLY)=DIAGNOSTICS(UNPACK);     /* print each plot on a separated page */
     CLASS variable(s);
     MODEL dependents=intependents <span class="nt">&lt;/options&gt;</span>;
     MEANS effects / HOVTEST <span class="nt">&lt;/options&gt;</span>;    
 RUN;
 QUIT;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1936,13 +1949,13 @@ QUIT;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLM DATA=SAS-data-set
-         PLOTS(ONLY)=DIAGNOSTICS(UNPACK);   /* print each plot on a separated page */
-    CLASS variable(s) blocking-factor(s);
-    MODEL dependents=intependents blocking-factor(s)&lt;/options&gt;;
-RUN;
-QUIT;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">GLM</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span>
+         <span class="n">PLOTS</span><span class="p">(</span><span class="k">ONLY</span><span class="p">)</span><span class="o">=</span><span class="k">DIAGNOSTICS</span><span class="p">(</span><span class="n">UNPACK</span><span class="p">);</span>   <span class="cm">/* print each plot on a separated page */</span>
+    <span class="k">CLASS</span> <span class="k">variable</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">blocking</span><span class="o">-</span><span class="n">factor</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">MODEL</span> <span class="n">dependents</span><span class="o">=</span><span class="n">intependents</span> <span class="n">blocking</span><span class="o">-</span><span class="n">factor</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&lt;/</span><span class="k">options</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1981,7 +1994,7 @@ QUIT;
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLM DATA=SAS-data-set;
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>PROC GLM DATA=SAS-data-set;
     CLASS variable(s);
     MODEL dependents=intependents <span class="nt">&lt;/options&gt;</span>;
     LSMEANS effects <span class="nt">&lt;/options-test-1&gt;</span>;  
@@ -1990,7 +2003,7 @@ QUIT;
     LSMEANS effects <span class="nt">&lt;/options-test-n&gt;</span>;  
 RUN;
 QUIT;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2046,14 +2059,14 @@ QUIT;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLM DATA=SAS-data-set;
-    CLASS independent1 independent2;
-    MODEL dependent = independent1 independent2 independent1*independent2;
-    or
-    MODEL dependent = independent1 | independent2;
-RUN;
-QUIT;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">GLM</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">independent1</span> <span class="n">independent2</span><span class="p">;</span>
+    <span class="n">MODEL</span> <span class="n">dependent</span> <span class="o">=</span> <span class="n">independent1</span> <span class="n">independent2</span> <span class="n">independent1</span><span class="o">*</span><span class="n">independent2</span><span class="p">;</span>
+    <span class="k">or</span>
+    <span class="n">MODEL</span> <span class="n">dependent</span> <span class="o">=</span> <span class="n">independent1</span> <span class="o">|</span> <span class="n">independent2</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>This program is <strong>fitting to this model</strong>:</p>
@@ -2078,13 +2091,13 @@ QUIT;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC GLM DATA=SAS-data-set ORDER=INTERNAL PLOTS(ONLY)=INTPLOT;
-    CLASS independent1 independent2;
-    MODEL dependent = intependent1 independent2 independent1*independent2;
-    LSMEANS independent1*independent2 / SLICE= independent1;
-RUN;
-QUIT;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">GLM</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">ORDER</span><span class="o">=</span><span class="n">INTERNAL</span> <span class="n">PLOTS</span><span class="p">(</span><span class="k">ONLY</span><span class="p">)</span><span class="o">=</span><span class="n">INTPLOT</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">independent1</span> <span class="n">independent2</span><span class="p">;</span>
+    <span class="n">MODEL</span> <span class="n">dependent</span> <span class="o">=</span> <span class="n">intependent1</span> <span class="n">independent2</span> <span class="n">independent1</span><span class="o">*</span><span class="n">independent2</span><span class="p">;</span>
+    <span class="n">LSMEANS</span> <span class="n">independent1</span><span class="o">*</span><span class="n">independent2</span> <span class="o">/</span> <span class="n">SLICE</span><span class="o">=</span> <span class="n">independent1</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>SAS creates two types of mean plots when you use the <code>LSMEANS</code> statement with an interaction term:</p>
@@ -2096,9 +2109,9 @@ QUIT;
 <h3 id="store-statement"><code>STORE</code> statement<a class="headerlink" href="#store-statement" title="Permanent link">Link</a></h3>
 <p>You can add a <code>STORE</code> statement to save your analysis results in an <strong>item store</strong> (a binary file format that cannot be modified). This allows you to <strong>run post-processing analysis</strong> on the stored results even if you no longer have access to the original data set. The <code>STORE</code> statement applies to the following SAS/STAT procedures: <code>GENMOD</code>, <code>GLIMMIX</code>, <code>GLM</code>, <code>GLMSELECT</code>, <code>LOGISTIC</code>, <code>MIXED</code>, <code>ORTHOREG</code>, <code>PHREG</code>, <code>PROBIT</code>, <code>SURVEYLOGISTIC</code>, <code>SURVEYPHREG</code>, and <code>SURVEYREG</code>.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>STORE <span class="nt">&lt;OUT</span><span class="err">=</span><span class="nt">&gt;</span>item-store-name
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>STORE <span class="nt">&lt;OUT</span><span class="err">=</span><span class="nt">&gt;</span>item-store-name
     <span class="err">&lt;</span>/ LABEL=&#39;label&#39;&gt;;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2117,17 +2130,17 @@ QUIT;
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC PLM RESTORE=item-store-specification <span class="nt">&lt;options&gt;</span>;
-    EFFECTPLOT INTERACTION(SLICEBY=variable) <span class="nt">&lt;plot-type</span> <span class="err">&lt;(plot-definition</span> <span class="err">options)</span><span class="nt">&gt;</span>&gt; / CLM <span class="nt">&lt;/ options&gt;</span>;
-    LSMEANS <span class="nt">&lt;model-effects&gt;</span> <span class="nt">&lt;/ options&gt;</span>;
-    LSMESTIMATE model-effect <span class="err">&lt;</span>&#39;label&#39;&gt; values
-        <span class="nt">&lt;divisor</span><span class="err">=n</span><span class="nt">&gt;</span><span class="err">&lt;</span>,...<span class="err">&lt;</span>&#39;label&#39;&gt; values
-        <span class="nt">&lt;divisor</span><span class="err">=n</span><span class="nt">&gt;</span> <span class="nt">&lt;/ options&gt;</span>;
-    SHOW options;
-    SLICE model-effect / SLICEBY=variable ADJUST=tukey <span class="nt">&lt;/ options&gt;</span>;
-    WHERE expression;
-RUN;
-</pre></div>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">PLM</span> <span class="nv">RESTORE</span><span class="o">=</span><span class="nv">item</span><span class="o">-</span><span class="nv">store</span><span class="o">-</span><span class="nv">specification</span> <span class="o">&lt;</span><span class="nv">options</span><span class="o">&gt;</span><span class="c1">;</span>
+    <span class="nv">EFFECTPLOT</span> <span class="nv">INTERACTION</span><span class="ss">(</span><span class="nv">SLICEBY</span><span class="o">=</span><span class="nv">variable</span><span class="ss">)</span> <span class="o">&lt;</span><span class="nv">plot</span><span class="o">-</span><span class="nv">type</span> <span class="o">&lt;</span><span class="ss">(</span><span class="nv">plot</span><span class="o">-</span><span class="nv">definition</span> <span class="nv">options</span><span class="ss">)</span><span class="o">&gt;&gt;</span> <span class="o">/</span> <span class="nv">CLM</span> <span class="o">&lt;/</span> <span class="nv">options</span><span class="o">&gt;</span><span class="c1">;</span>
+    <span class="nv">LSMEANS</span> <span class="o">&lt;</span><span class="nv">model</span><span class="o">-</span><span class="nv">effects</span><span class="o">&gt;</span> <span class="o">&lt;/</span> <span class="nv">options</span><span class="o">&gt;</span><span class="c1">;</span>
+    <span class="nv">LSMESTIMATE</span> <span class="nv">model</span><span class="o">-</span><span class="nv">effect</span> <span class="o">&lt;</span><span class="s1">&#39;</span><span class="s">label</span><span class="s1">&#39;</span><span class="o">&gt;</span> <span class="nv">values</span>
+        <span class="o">&lt;</span><span class="nv">divisor</span><span class="o">=</span><span class="nv">n</span><span class="o">&gt;&lt;</span>,...<span class="o">&lt;</span><span class="s1">&#39;</span><span class="s">label</span><span class="s1">&#39;</span><span class="o">&gt;</span> <span class="nv">values</span>
+        <span class="o">&lt;</span><span class="nv">divisor</span><span class="o">=</span><span class="nv">n</span><span class="o">&gt;</span> <span class="o">&lt;/</span> <span class="nv">options</span><span class="o">&gt;</span><span class="c1">;</span>
+    <span class="k">SHOW</span> <span class="nv">options</span><span class="c1">;</span>
+    <span class="nv">SLICE</span> <span class="nv">model</span><span class="o">-</span><span class="nv">effect</span> <span class="o">/</span> <span class="nv">SLICEBY</span><span class="o">=</span><span class="nv">variable</span> <span class="nv">ADJUST</span><span class="o">=</span><span class="nv">tukey</span> <span class="o">&lt;/</span> <span class="nv">options</span><span class="o">&gt;</span><span class="c1">;</span>
+    <span class="nv">WHERE</span> <span class="nv">expression</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2141,6 +2154,7 @@ RUN;
 </ul>
                 
                   
+                
                 
               
               
@@ -2196,13 +2210,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2210,18 +2222,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

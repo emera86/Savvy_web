@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#querying-dictionary-information-and-views" tabindex="1" class="md-skip">
+      <a href="#querying-dictionary-information-and-views" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Using Advanced PROC SQL Features
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -661,7 +662,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#querying-dictionary-information-and-views" title="Querying Dictionary Information and Views" class="md-nav__link">
+  <a href="#querying-dictionary-information-and-views" class="md-nav__link">
     Querying Dictionary Information and Views
   </a>
   
@@ -669,35 +670,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exploring-dictionary-tables" title="Exploring Dictionary Tables" class="md-nav__link">
+  <a href="#exploring-dictionary-tables" class="md-nav__link">
     Exploring Dictionary Tables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#querying-dictionary-information" title="Querying Dictionary Information" class="md-nav__link">
+  <a href="#querying-dictionary-information" class="md-nav__link">
     Querying Dictionary Information
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#displaying-specific-metadata" title="Displaying Specific Metadata" class="md-nav__link">
+  <a href="#displaying-specific-metadata" class="md-nav__link">
     Displaying Specific Metadata
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-dictionary-tables-in-other-sas-code" title="Using Dictionary Tables in Other SAS Code" class="md-nav__link">
+  <a href="#using-dictionary-tables-in-other-sas-code" class="md-nav__link">
     Using Dictionary Tables in Other SAS Code
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-dictionary-views" title="Using Dictionary Views" class="md-nav__link">
+  <a href="#using-dictionary-views" class="md-nav__link">
     Using Dictionary Views
   </a>
   
@@ -709,7 +710,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-sql-procedure-options" title="Using SQL Procedure Options" class="md-nav__link">
+  <a href="#using-sql-procedure-options" class="md-nav__link">
     Using SQL Procedure Options
   </a>
   
@@ -717,21 +718,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sql-options-controlling-processing" title="SQL Options: Controlling Processing" class="md-nav__link">
+  <a href="#sql-options-controlling-processing" class="md-nav__link">
     SQL Options: Controlling Processing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sql-options-controlling-display" title="SQL Options: Controlling Display" class="md-nav__link">
+  <a href="#sql-options-controlling-display" class="md-nav__link">
     SQL Options: Controlling Display
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="SQL Options: Limiting the Number of Rows That SAS Writes or Reads" class="md-nav__link">
+  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" class="md-nav__link">
     SQL Options: Limiting the Number of Rows That SAS Writes or Reads
   </a>
   
@@ -743,7 +744,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-macro-language-with-proc-sql" title="Using the Macro Language with PROC SQL" class="md-nav__link">
+  <a href="#using-the-macro-language-with-proc-sql" class="md-nav__link">
     Using the Macro Language with PROC SQL
   </a>
   
@@ -751,42 +752,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-macro-facility" title="The Macro Facility" class="md-nav__link">
+  <a href="#the-macro-facility" class="md-nav__link">
     The Macro Facility
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-sql-and-macro-variables" title="PROC SQL and Macro Variables" class="md-nav__link">
+  <a href="#proc-sql-and-macro-variables" class="md-nav__link">
     PROC SQL and Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#put-statement" title="%PUT statement" class="md-nav__link">
+  <a href="#put-statement" class="md-nav__link">
     %PUT statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-user-defined-macro-variables" title="Creating User-Defined Macro Variables" class="md-nav__link">
+  <a href="#creating-user-defined-macro-variables" class="md-nav__link">
     Creating User-Defined Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#resolving-user-defined-macro-variables" title="Resolving User-Defined Macro Variables" class="md-nav__link">
+  <a href="#resolving-user-defined-macro-variables" class="md-nav__link">
     Resolving User-Defined Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#displaying-macro-variable-values" title="Displaying Macro Variable Values" class="md-nav__link">
+  <a href="#displaying-macro-variable-values" class="md-nav__link">
     Displaying Macro Variable Values
   </a>
   
@@ -794,56 +795,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#put-statement_1" title="%PUT statement" class="md-nav__link">
+  <a href="#put-statement_1" class="md-nav__link">
     %PUT statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#symbolgen-global-system-option" title="SYMBOLGEN global system option" class="md-nav__link">
+  <a href="#symbolgen-global-system-option" class="md-nav__link">
     SYMBOLGEN global system option
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#feedback-option" title="FEEDBACK option" class="md-nav__link">
+  <a href="#feedback-option" class="md-nav__link">
     FEEDBACK option
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-a-query-to-generate-macro-values" title="Using a Query to Generate Macro Values" class="md-nav__link">
+  <a href="#using-a-query-to-generate-macro-values" class="md-nav__link">
     Using a Query to Generate Macro Values
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-a-single-macro-variable" title="Creating a Single Macro Variable" class="md-nav__link">
+  <a href="#creating-a-single-macro-variable" class="md-nav__link">
     Creating a Single Macro Variable
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-multiple-macro-variables" title="Creating Multiple Macro Variables" class="md-nav__link">
+  <a href="#creating-multiple-macro-variables" class="md-nav__link">
     Creating Multiple Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#second-syntax-form" title="Second Syntax form" class="md-nav__link">
+  <a href="#second-syntax-form" class="md-nav__link">
     Second Syntax form
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#third-syntax-form" title="Third Syntax form" class="md-nav__link">
+  <a href="#third-syntax-form" class="md-nav__link">
     Third Syntax form
   </a>
   
@@ -1572,18 +1573,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1598,6 +1587,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1698,7 +1711,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#querying-dictionary-information-and-views" title="Querying Dictionary Information and Views" class="md-nav__link">
+  <a href="#querying-dictionary-information-and-views" class="md-nav__link">
     Querying Dictionary Information and Views
   </a>
   
@@ -1706,35 +1719,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exploring-dictionary-tables" title="Exploring Dictionary Tables" class="md-nav__link">
+  <a href="#exploring-dictionary-tables" class="md-nav__link">
     Exploring Dictionary Tables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#querying-dictionary-information" title="Querying Dictionary Information" class="md-nav__link">
+  <a href="#querying-dictionary-information" class="md-nav__link">
     Querying Dictionary Information
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#displaying-specific-metadata" title="Displaying Specific Metadata" class="md-nav__link">
+  <a href="#displaying-specific-metadata" class="md-nav__link">
     Displaying Specific Metadata
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-dictionary-tables-in-other-sas-code" title="Using Dictionary Tables in Other SAS Code" class="md-nav__link">
+  <a href="#using-dictionary-tables-in-other-sas-code" class="md-nav__link">
     Using Dictionary Tables in Other SAS Code
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-dictionary-views" title="Using Dictionary Views" class="md-nav__link">
+  <a href="#using-dictionary-views" class="md-nav__link">
     Using Dictionary Views
   </a>
   
@@ -1746,7 +1759,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-sql-procedure-options" title="Using SQL Procedure Options" class="md-nav__link">
+  <a href="#using-sql-procedure-options" class="md-nav__link">
     Using SQL Procedure Options
   </a>
   
@@ -1754,21 +1767,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sql-options-controlling-processing" title="SQL Options: Controlling Processing" class="md-nav__link">
+  <a href="#sql-options-controlling-processing" class="md-nav__link">
     SQL Options: Controlling Processing
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sql-options-controlling-display" title="SQL Options: Controlling Display" class="md-nav__link">
+  <a href="#sql-options-controlling-display" class="md-nav__link">
     SQL Options: Controlling Display
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="SQL Options: Limiting the Number of Rows That SAS Writes or Reads" class="md-nav__link">
+  <a href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" class="md-nav__link">
     SQL Options: Limiting the Number of Rows That SAS Writes or Reads
   </a>
   
@@ -1780,7 +1793,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-macro-language-with-proc-sql" title="Using the Macro Language with PROC SQL" class="md-nav__link">
+  <a href="#using-the-macro-language-with-proc-sql" class="md-nav__link">
     Using the Macro Language with PROC SQL
   </a>
   
@@ -1788,42 +1801,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-macro-facility" title="The Macro Facility" class="md-nav__link">
+  <a href="#the-macro-facility" class="md-nav__link">
     The Macro Facility
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-sql-and-macro-variables" title="PROC SQL and Macro Variables" class="md-nav__link">
+  <a href="#proc-sql-and-macro-variables" class="md-nav__link">
     PROC SQL and Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#put-statement" title="%PUT statement" class="md-nav__link">
+  <a href="#put-statement" class="md-nav__link">
     %PUT statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-user-defined-macro-variables" title="Creating User-Defined Macro Variables" class="md-nav__link">
+  <a href="#creating-user-defined-macro-variables" class="md-nav__link">
     Creating User-Defined Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#resolving-user-defined-macro-variables" title="Resolving User-Defined Macro Variables" class="md-nav__link">
+  <a href="#resolving-user-defined-macro-variables" class="md-nav__link">
     Resolving User-Defined Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#displaying-macro-variable-values" title="Displaying Macro Variable Values" class="md-nav__link">
+  <a href="#displaying-macro-variable-values" class="md-nav__link">
     Displaying Macro Variable Values
   </a>
   
@@ -1831,56 +1844,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#put-statement_1" title="%PUT statement" class="md-nav__link">
+  <a href="#put-statement_1" class="md-nav__link">
     %PUT statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#symbolgen-global-system-option" title="SYMBOLGEN global system option" class="md-nav__link">
+  <a href="#symbolgen-global-system-option" class="md-nav__link">
     SYMBOLGEN global system option
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#feedback-option" title="FEEDBACK option" class="md-nav__link">
+  <a href="#feedback-option" class="md-nav__link">
     FEEDBACK option
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-a-query-to-generate-macro-values" title="Using a Query to Generate Macro Values" class="md-nav__link">
+  <a href="#using-a-query-to-generate-macro-values" class="md-nav__link">
     Using a Query to Generate Macro Values
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-a-single-macro-variable" title="Creating a Single Macro Variable" class="md-nav__link">
+  <a href="#creating-a-single-macro-variable" class="md-nav__link">
     Creating a Single Macro Variable
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-multiple-macro-variables" title="Creating Multiple Macro Variables" class="md-nav__link">
+  <a href="#creating-multiple-macro-variables" class="md-nav__link">
     Creating Multiple Macro Variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#second-syntax-form" title="Second Syntax form" class="md-nav__link">
+  <a href="#second-syntax-form" class="md-nav__link">
     Second Syntax form
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#third-syntax-form" title="Third Syntax form" class="md-nav__link">
+  <a href="#third-syntax-form" class="md-nav__link">
     Third Syntax form
   </a>
   
@@ -1923,8 +1936,8 @@
 <p>SAS provides <code>PROC SQL</code> views, based on the dictionary tables, that can be used in other SAS programming steps such as the <code>DATA</code> or <code>PROC</code> step. These views are stored in the SASHelp library and are commonly called <code>SASHELP</code> views.</p>
 <h3 id="querying-dictionary-information">Querying Dictionary Information<a class="headerlink" href="#querying-dictionary-information" title="Permanent link">Link</a></h3>
 <p>To prepare for writing a specific query, you can use a <code>DESCRIBE</code> statement to explore the structure of dictionary tables.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DESCRIBE TABLE table-1&lt;, ... table-n&gt;;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">DESCRIBE</span> <span class="k">TABLE</span> <span class="k">table</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">table</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The output from the <code>DESCRIBE TABLE</code> statement is a <code>CREATE TABLE</code> statement written to the log that contains the column names and attributes.</p>
@@ -2048,27 +2061,27 @@
 <p><strong>Example:</strong></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-    describe table dictionary.tables;
-quit;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+    <span class="k">describe</span> <span class="k">table</span> <span class="k">dictionary</span><span class="p">.</span><span class="n">tables</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="displaying-specific-metadata">Displaying Specific Metadata<a class="headerlink" href="#displaying-specific-metadata" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
-      FROM table-1&lt;, ... table-n&gt;;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+      <span class="k">FROM</span> <span class="k">table</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">table</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>If you only want to select information about specific columns, you indicate the specific columns in the <code>SELECT</code> clause.</p>
 <p>If you only want to display results from specific tables, not all tables currently available in this SAS session, you subset the tables using a ´WHERE´ clause in the query.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT object-item &lt;, ...object-item&gt;
-      FROM table-1&lt;, ... table-n&gt;;
-      WHERE libname=&#39;LIB-NAME&#39;;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+      <span class="k">FROM</span> <span class="k">table</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">table</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">;</span>
+      <span class="k">WHERE</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;LIB-NAME&#39;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>When you query dictionary tables, you supply values to the <code>WHERE</code> clause in the appropriate case. Remember that library names are stored in dictionary tables in uppercase.</p>
@@ -2081,15 +2094,15 @@ quit;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Tables in the ORION Library&#39;;
-proc sql;
-select memname &#39;Table Name&#39;,
-       nobs,nvar,crdate
-   from dictionary.tables
-   where libname=&#39;ORION&#39;;
-quit;
-title;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">title</span> <span class="s1">&#39;Tables in the ORION Library&#39;</span><span class="p">;</span>
+<span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">memname</span> <span class="s1">&#39;Table Name&#39;</span><span class="p">,</span>
+       <span class="n">nobs</span><span class="p">,</span><span class="n">nvar</span><span class="p">,</span><span class="n">crdate</span>
+   <span class="k">from</span> <span class="k">dictionary</span><span class="p">.</span><span class="n">tables</span>
+   <span class="k">where</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;ORION&#39;</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="using-dictionary-tables-in-other-sas-code">Using Dictionary Tables in Other SAS Code<a class="headerlink" href="#using-dictionary-tables-in-other-sas-code" title="Permanent link">Link</a></h3>
@@ -2102,13 +2115,13 @@ Remember that <code>PROC SQL</code> views based on the dictionary tables are sto
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;Tables in the ORION Library&#39;;
-proc print data=sashelp.vtable label;
-   var memname nobs nvar;
-   where libname=&#39;ORION&#39;;
-run;
-title;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">title</span> <span class="s1">&#39;Tables in the ORION Library&#39;</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">print</span> <span class="k">data</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">vtable</span> <span class="n">label</span><span class="p">;</span>
+   <span class="n">var</span> <span class="n">memname</span> <span class="n">nobs</span> <span class="n">nvar</span><span class="p">;</span>
+   <span class="k">where</span> <span class="n">libname</span><span class="o">=</span><span class="s1">&#39;ORION&#39;</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="using-dictionary-views">Using Dictionary Views<a class="headerlink" href="#using-dictionary-views" title="Permanent link">Link</a></h3>
@@ -2123,16 +2136,16 @@ title;
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>title &#39;SAS Objects by Library&#39;;
-proc tabulate data=sashelp.vmember format=8.;
-   class libname memtype;
-   keylabel N=&#39; &#39;;
-   table libname, memtype/rts=10
-         misstext=&#39;None&#39;;
-   where libname in (&#39;ORION&#39;,&#39;SASUSER&#39;,&#39;SASHELP&#39;);
-run;
-title;
-</pre></div>
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">title</span> <span class="s1">&#39;SAS Objects by Library&#39;</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">tabulate</span> <span class="k">data</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">vmember</span> <span class="n">format</span><span class="o">=</span><span class="mi">8</span><span class="p">.;</span>
+   <span class="k">class</span> <span class="n">libname</span> <span class="n">memtype</span><span class="p">;</span>
+   <span class="n">keylabel</span> <span class="n">N</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">;</span>
+   <span class="k">table</span> <span class="n">libname</span><span class="p">,</span> <span class="n">memtype</span><span class="o">/</span><span class="n">rts</span><span class="o">=</span><span class="mi">10</span>
+         <span class="n">misstext</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">;</span>
+   <span class="k">where</span> <span class="n">libname</span> <span class="k">in</span> <span class="p">(</span><span class="s1">&#39;ORION&#39;</span><span class="p">,</span><span class="s1">&#39;SASUSER&#39;</span><span class="p">,</span><span class="s1">&#39;SASHELP&#39;</span><span class="p">);</span>
+<span class="n">run</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="using-sql-procedure-options">Using SQL Procedure Options<a class="headerlink" href="#using-sql-procedure-options" title="Permanent link">Link</a></h2>
@@ -2193,9 +2206,9 @@ title;
 </table>
 <h3 id="sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads">SQL Options: Limiting the Number of Rows That SAS Writes or Reads<a class="headerlink" href="#sql-options-limiting-the-number-of-rows-that-sas-writes-or-reads" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OUTOBS=n
-INOBS=n
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">OUTOBS</span><span class="o">=</span><span class="n">n</span>
+<span class="n">INOBS</span><span class="o">=</span><span class="n">n</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2217,19 +2230,19 @@ INOBS=n
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql outobs=10;
-title &quot;10 Most Profitable Customers&quot;;
-select Customer_ID, sum(Unit_Sales_Price-Unit_Cost_Price)
-       as Profit_2011 format=comma8.2
-   from orion.price_list as p,
-        orion.order_fact as o
-   where p.Product_ID=o.Product_id
-         and year(Order_date)=2011
-   group by Customer_ID
-   order by Profit_2011 desc;
-quit;
-title;
-</pre></div>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span> <span class="n">outobs</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">title</span> <span class="ss">&quot;10 Most Profitable Customers&quot;</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Customer_ID</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">Unit_Sales_Price</span><span class="o">-</span><span class="n">Unit_Cost_Price</span><span class="p">)</span>
+       <span class="k">as</span> <span class="n">Profit_2011</span> <span class="n">format</span><span class="o">=</span><span class="n">comma8</span><span class="p">.</span><span class="mi">2</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">price_list</span> <span class="k">as</span> <span class="n">p</span><span class="p">,</span>
+        <span class="n">orion</span><span class="p">.</span><span class="n">order_fact</span> <span class="k">as</span> <span class="n">o</span>
+   <span class="k">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Product_ID</span><span class="o">=</span><span class="n">o</span><span class="p">.</span><span class="n">Product_id</span>
+         <span class="k">and</span> <span class="k">year</span><span class="p">(</span><span class="n">Order_date</span><span class="p">)</span><span class="o">=</span><span class="mi">2011</span>
+   <span class="k">group</span> <span class="k">by</span> <span class="n">Customer_ID</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="n">Profit_2011</span> <span class="k">desc</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Example:</strong> Limiting the Number of Rows That SAS Reads</p>
@@ -2242,17 +2255,17 @@ title;
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql inobs=10;
-title &quot;orion.price_list - INOBS=10&quot;;
-select Product_ID,
-       Unit_Cost_price format=comma8.2,
-       Unit_Sales_Price format=comma8.2,
-       Unit_Sales_Price-Unit_Cost_Price
-       as Margin format=comma8.2
-   from orion.price_list;
-quit;
-title;
-</pre></div>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span> <span class="n">inobs</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">title</span> <span class="ss">&quot;orion.price_list - INOBS=10&quot;</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Product_ID</span><span class="p">,</span>
+       <span class="n">Unit_Cost_price</span> <span class="n">format</span><span class="o">=</span><span class="n">comma8</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span>
+       <span class="n">Unit_Sales_Price</span> <span class="n">format</span><span class="o">=</span><span class="n">comma8</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span>
+       <span class="n">Unit_Sales_Price</span><span class="o">-</span><span class="n">Unit_Cost_Price</span>
+       <span class="k">as</span> <span class="n">Margin</span> <span class="n">format</span><span class="o">=</span><span class="n">comma8</span><span class="p">.</span><span class="mi">2</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">price_list</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="using-the-macro-language-with-proc-sql">Using the Macro Language with <code>PROC SQL</code><a class="headerlink" href="#using-the-macro-language-with-proc-sql" title="Permanent link">Link</a></h2>
@@ -2268,8 +2281,8 @@ title;
 <p>The name and value of a macro variable are stored in an area of memory called a global symbol table, which is created by SAS at initialization.</p>
 <h3 id="put-statement"><code>%PUT</code> statement<a class="headerlink" href="#put-statement" title="Permanent link">Link</a></h3>
 <p>You can use the <code>%PUT</code> statement to write your own messages, including macro variable values, to the SAS log.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%PUT text;</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">%PUT text;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The macro processor processes <code>%PUT</code>. Remember that the macro processor does not require text to be quoted.</p>
@@ -2279,8 +2292,8 @@ title;
     To display all macro variables in the global symbol table, use the statement <code>%put _all_;</code>. This report will be written to the SAS log. To create a report of just the automatic macro variables, use the statement <code>%put _automatic_;</code>.</p>
 <h3 id="creating-user-defined-macro-variables">Creating User-Defined Macro Variables<a class="headerlink" href="#creating-user-defined-macro-variables" title="Permanent link">Link</a></h3>
 <p>You use the <code>%LET</code> statement to create a user-def <code>%LET</code> statements are global statements and are valid anywhere in a SAS program.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%LET variable=value;</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">%LET variable=value;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>After the keyword <code>%LET</code>, you specify the name of the macro variable, an equal sign, and then the value of the macro variable.</p>
@@ -2291,16 +2304,16 @@ title;
 <p><strong>Example:</strong></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">employee_payroll</span><span class="p">;</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">employee_payroll</span><span class="p">;</span>
 <span class="nf">%let</span> <span class="n">BigSalary</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
 <span class="nf">%let</span> <span class="n">Libname</span><span class="o">=</span><span class="err">&#39;</span><span class="n">orion</span><span class="err">&#39;</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="resolving-user-defined-macro-variables">Resolving User-Defined Macro Variables<a class="headerlink" href="#resolving-user-defined-macro-variables" title="Permanent link">Link</a></h3>
 <p>To reference the macro variable, you precede the name of the macro variable with an ampersand.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&amp;macro-variable-name
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">&amp;</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">name</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Although macro variables are stored in uppercase, references to macro variable names aren't case sensitive.</p>
@@ -2312,27 +2325,27 @@ title;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-   select Employee_ID, Salary
-      from orion.&amp;DataSetName
-      where Salary&gt;&amp;BigSalary;
-quit;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+   <span class="k">select</span> <span class="n">Employee_ID</span><span class="p">,</span> <span class="n">Salary</span>
+      <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="o">&amp;</span><span class="n">DataSetName</span>
+      <span class="k">where</span> <span class="n">Salary</span><span class="o">&gt;&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="displaying-macro-variable-values">Displaying Macro Variable Values<a class="headerlink" href="#displaying-macro-variable-values" title="Permanent link">Link</a></h3>
 <h4 id="put-statement_1"><code>%PUT</code> statement<a class="headerlink" href="#put-statement_1" title="Permanent link">Link</a></h4>
 <p>You can use the <code>%PUT</code> statement to write your own messages, including macro variable values, to the SAS log. The macro processor processes <code>%PUT</code>. Remember that the macro processor does not require text to be enclosed in quotation marks.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">%PUT text;</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">%PUT text;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><code>%PUT</code> statements are valid anywhere in a SAS program. The <code>%PUT</code> statement writes only to the SAS log and always writes to a new log line, starting in column one.</p>
 <p>You can follow the keyword, <code>%PUT</code>, with optional text, and then the reference to the macro variable.</p>
 <h4 id="symbolgen-global-system-option"><code>SYMBOLGEN</code> global system option<a class="headerlink" href="#symbolgen-global-system-option" title="Permanent link">Link</a></h4>
 <p>The <code>SYMBOLGEN</code> global system option enables SAS to display the value of the macro variable in the SAS log as it is resolved.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OPTIONS SYMBOLGEN;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">OPTIONS</span> <span class="n">SYMBOLGEN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The default setting for this system option is <code>NOSYMBOLGEN</code>. Because <code>SYMBOLGEN</code> is a system option, its setting remains in effect until you modify it or until you end your SAS session.</p>
@@ -2357,7 +2370,7 @@ quit;
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%put</span> <span class="n">The</span> <span class="n">value</span> <span class="n">of</span> <span class="n">BigSalary</span> <span class="n">is</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nf">%put</span> <span class="n">The</span> <span class="n">value</span> <span class="n">of</span> <span class="n">BigSalary</span> <span class="n">is</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
 <span class="nf">%let</span> <span class="n">DataSetName</span><span class="o">=</span><span class="n">Employee_Payroll</span><span class="p">;</span>
 <span class="nf">%let</span> <span class="n">BigSalary</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
 <span class="n">options</span> <span class="n">symbolgen</span><span class="p">;</span>
@@ -2378,13 +2391,13 @@ quit;
       <span class="n">where</span> <span class="n">Salary</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">BigSalary</span><span class="p">;</span>
 <span class="n">quit</span><span class="p">;</span>
 <span class="n">title</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h4 id="feedback-option">FEEDBACK option<a class="headerlink" href="#feedback-option" title="Permanent link">Link</a></h4>
 <p>You can use the FEEDBACK option to display the query in the SAS log after it has expanded references, such as macro variables.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FEEDBACK;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">FEEDBACK</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The default option is <code>NOFEEDBACK</code>. <code>FEEDBACK</code> <code>PROC SQL</code> option writes the query with the substituted macro variable values to the SAS log. When you activate the <code>FEEDBACK</code> <code>PROC SQL</code> option, SAS writes a message to the log displaying the query with the references expanded.</p>
@@ -2393,11 +2406,11 @@ quit;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1 &lt;, ...column-n&gt;
-        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
-        FROM table|view
-        &lt;additional clauses&gt;;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">column</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">column</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span>
+        <span class="k">INTO</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">table</span><span class="o">|</span><span class="k">view</span>
+        <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><code>PROC SQL</code> creates macro variables or updates existing macro variables using an <code>INTO</code> clause. The <code>INTO</code> clause is located between the <code>SELECT</code> clause and the <code>FROM</code> clause. It cannot be used in a <code>CREATE TABLE</code> or <code>CREATE VIEW</code> statement.</p>
@@ -2407,11 +2420,11 @@ quit;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1 &lt;, ...column-n&gt;
-        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
-        FROM table|view
-        &lt;additional clauses&gt;;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">column</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">column</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span>
+        <span class="k">INTO</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">table</span><span class="o">|</span><span class="k">view</span>
+        <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The value from the first column in the <code>SELECT</code> list is placed in the first macro variable listed in the INTO clause. The second column in the <code>SELECT</code> list is placed in the second macro, and so on.</p>
@@ -2437,7 +2450,7 @@ quit;
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nf">%let</span> <span class="n">Dept</span><span class="o">=</span><span class="n">Sales</span><span class="p">;</span>
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nf">%let</span> <span class="n">Dept</span><span class="o">=</span><span class="n">Sales</span><span class="p">;</span>
 <span class="n">proc</span> <span class="n">sql</span> <span class="n">noprint</span><span class="p">;</span>
 <span class="n">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
     <span class="nl">into</span> <span class="p">:</span><span class="n">MeanSalary</span>
@@ -2458,7 +2471,7 @@ quit;
          <span class="n">and</span> <span class="n">Salary</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">MeanSalary</span><span class="p">;</span>
 <span class="n">quit</span><span class="p">;</span>
 <span class="n">title</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h4 id="creating-multiple-macro-variables">Creating Multiple Macro Variables<a class="headerlink" href="#creating-multiple-macro-variables" title="Permanent link">Link</a></h4>
@@ -2466,11 +2479,11 @@ quit;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT column-1
-        INTO :macro-variable-1 &lt;, ... :macro-variable-n&gt;
-        FROM table|view
-        &lt;additional clauses&gt;;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">column</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">INTO</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">table</span><span class="o">|</span><span class="k">view</span>
+        <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Remember that macro variables can hold only character values. So, numeric values are converted to character values by using the <code>BEST8.</code> format and are right aligned.</p>
@@ -2481,14 +2494,14 @@ quit;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">proc</span> <span class="n">sql</span> <span class="n">noprint</span><span class="p">;</span>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="n">sql</span> <span class="n">noprint</span><span class="p">;</span>
 <span class="n">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">),</span><span class="n">min</span><span class="p">(</span><span class="n">Salary</span><span class="p">),</span><span class="n">max</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
    <span class="nl">into</span> <span class="p">:</span><span class="n">MeanSalary</span><span class="p">,</span> <span class="o">:</span><span class="n">MinSalary</span><span class="p">,</span> <span class="o">:</span><span class="n">MaxSalary</span>
    <span class="n">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span><span class="p">;</span>
 <span class="nf">%put</span> <span class="nl">Mean</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MeanSalary</span> <span class="nl">Min</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MinSalary</span>
      <span class="nl">Max</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MaxSalary</span><span class="p">;</span>
 <span class="n">quit</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h4 id="second-syntax-form">Second Syntax form<a class="headerlink" href="#second-syntax-form" title="Permanent link">Link</a></h4>
@@ -2496,12 +2509,12 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT column-a &lt;, column-b, ...&gt;
-        INTO :macro-variable-a_1 - :macro-variable-a_n
-             &lt;, :macro-variable-b_1 - :macro-variable-b_n&gt;
-        FROM table-1|view-1 &lt;table-x|view-x&gt;
-        &lt;additional clauses&gt;;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">SELECT</span> <span class="k">column</span><span class="o">-</span><span class="n">a</span> <span class="o">&lt;</span><span class="p">,</span> <span class="k">column</span><span class="o">-</span><span class="n">b</span><span class="p">,</span> <span class="p">...</span><span class="o">&gt;</span>
+        <span class="k">INTO</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">a_1</span> <span class="o">-</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">a_n</span>
+             <span class="o">&lt;</span><span class="p">,</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">b_1</span> <span class="o">-</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="n">b_n</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">table</span><span class="o">-</span><span class="mi">1</span><span class="o">|</span><span class="k">view</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">-</span><span class="n">x</span><span class="o">|</span><span class="k">view</span><span class="o">-</span><span class="n">x</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h4 id="third-syntax-form">Third Syntax form<a class="headerlink" href="#third-syntax-form" title="Permanent link">Link</a></h4>
@@ -2509,15 +2522,16 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT column-1 &lt;, column-2, ...&gt;
-        INTO :macro-variable-1 SEPARATED BY &#39;delimiter&#39;
-             &lt;, :macro-variable-2 SEPARATED BY &#39;delimiter&#39;&gt;
-        FROM table-1|view-1 &lt;, ... table-x|view-x&gt;
-        &lt;additional clauses&gt;;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">SELECT</span> <span class="k">column</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="k">column</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span><span class="o">&gt;</span>
+        <span class="k">INTO</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="mi">1</span> <span class="n">SEPARATED</span> <span class="k">BY</span> <span class="s1">&#39;delimiter&#39;</span>
+             <span class="o">&lt;</span><span class="p">,</span> <span class="p">:</span><span class="n">macro</span><span class="o">-</span><span class="k">variable</span><span class="o">-</span><span class="mi">2</span> <span class="n">SEPARATED</span> <span class="k">BY</span> <span class="s1">&#39;delimiter&#39;</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">table</span><span class="o">-</span><span class="mi">1</span><span class="o">|</span><span class="k">view</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">table</span><span class="o">-</span><span class="n">x</span><span class="o">|</span><span class="k">view</span><span class="o">-</span><span class="n">x</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -2573,13 +2587,11 @@ quit;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2587,18 +2599,15 @@ quit;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

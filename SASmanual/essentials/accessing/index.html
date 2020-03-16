@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#accessing-sas-libraries" tabindex="1" class="md-skip">
+      <a href="#accessing-sas-libraries" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Accessing Data
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -229,7 +230,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accessing-sas-libraries" title="Accessing SAS libraries" class="md-nav__link">
+  <a href="#accessing-sas-libraries" class="md-nav__link">
     Accessing SAS libraries
   </a>
   
@@ -237,42 +238,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#erase-the-association-between-sas-and-a-custom-library" title="Erase the association between SAS and a custom library" class="md-nav__link">
+  <a href="#erase-the-association-between-sas-and-a-custom-library" class="md-nav__link">
     Erase the association between SAS and a custom library
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#remove-data-sets-and-libraries" title="Remove data sets and libraries" class="md-nav__link">
+  <a href="#remove-data-sets-and-libraries" class="md-nav__link">
     Remove data sets and libraries
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#copy-data-sets-and-libraries" title="Copy data sets and libraries" class="md-nav__link">
+  <a href="#copy-data-sets-and-libraries" class="md-nav__link">
     Copy data sets and libraries
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-data-sets" title="Rename data sets" class="md-nav__link">
+  <a href="#rename-data-sets" class="md-nav__link">
     Rename data sets
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-contents-of-a-library" title="Check the contents of a library" class="md-nav__link">
+  <a href="#check-the-contents-of-a-library" class="md-nav__link">
     Check the contents of a library
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#print-the-full-data-set" title="Print the full data set" class="md-nav__link">
+  <a href="#print-the-full-data-set" class="md-nav__link">
     Print the full data set
   </a>
   
@@ -284,7 +285,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examining-sas-data-sets" title="Examining SAS Data Sets" class="md-nav__link">
+  <a href="#examining-sas-data-sets" class="md-nav__link">
     Examining SAS Data Sets
   </a>
   
@@ -292,14 +293,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-contents" title="PROC CONTENTS" class="md-nav__link">
+  <a href="#proc-contents" class="md-nav__link">
     PROC CONTENTS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-print" title="PROC PRINT" class="md-nav__link">
+  <a href="#proc-print" class="md-nav__link">
     PROC PRINT
   </a>
   
@@ -1455,18 +1456,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1481,6 +1470,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1581,7 +1594,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#accessing-sas-libraries" title="Accessing SAS libraries" class="md-nav__link">
+  <a href="#accessing-sas-libraries" class="md-nav__link">
     Accessing SAS libraries
   </a>
   
@@ -1589,42 +1602,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#erase-the-association-between-sas-and-a-custom-library" title="Erase the association between SAS and a custom library" class="md-nav__link">
+  <a href="#erase-the-association-between-sas-and-a-custom-library" class="md-nav__link">
     Erase the association between SAS and a custom library
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#remove-data-sets-and-libraries" title="Remove data sets and libraries" class="md-nav__link">
+  <a href="#remove-data-sets-and-libraries" class="md-nav__link">
     Remove data sets and libraries
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#copy-data-sets-and-libraries" title="Copy data sets and libraries" class="md-nav__link">
+  <a href="#copy-data-sets-and-libraries" class="md-nav__link">
     Copy data sets and libraries
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rename-data-sets" title="Rename data sets" class="md-nav__link">
+  <a href="#rename-data-sets" class="md-nav__link">
     Rename data sets
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-contents-of-a-library" title="Check the contents of a library" class="md-nav__link">
+  <a href="#check-the-contents-of-a-library" class="md-nav__link">
     Check the contents of a library
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#print-the-full-data-set" title="Print the full data set" class="md-nav__link">
+  <a href="#print-the-full-data-set" class="md-nav__link">
     Print the full data set
   </a>
   
@@ -1636,7 +1649,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examining-sas-data-sets" title="Examining SAS Data Sets" class="md-nav__link">
+  <a href="#examining-sas-data-sets" class="md-nav__link">
     Examining SAS Data Sets
   </a>
   
@@ -1644,14 +1657,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-contents" title="PROC CONTENTS" class="md-nav__link">
+  <a href="#proc-contents" class="md-nav__link">
     PROC CONTENTS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-print" title="PROC PRINT" class="md-nav__link">
+  <a href="#proc-print" class="md-nav__link">
     PROC PRINT
   </a>
   
@@ -1690,8 +1703,8 @@
 <li>The remaining characters are letters, numbers, or underscores</li>
 </ol>
 <p>Valid <strong>variable names</strong> begin with a letter or underscore, and continue with letters, numbers, or underscores. The <code>VALIDVARNAME</code> system option specifies the rules for valid SAS variable names that can be created and processed during a SAS session: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OPTIONS VALIDVARNAME=V7 (default) | UPCASE | ANY;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">OPTIONS</span> <span class="n">VALIDVARNAME</span><span class="o">=</span><span class="n">V7</span> <span class="p">(</span><span class="k">default</span><span class="p">)</span> <span class="o">|</span> <span class="n">UPCASE</span> <span class="o">|</span> <span class="k">ANY</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1704,18 +1717,18 @@
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LIBNAME</span> <span class="n">libref</span><span class="o">-</span><span class="n">name</span> <span class="err">&#39;</span><span class="n">SAS</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="n">folder</span><span class="o">-</span><span class="n">path</span><span class="err">&#39;</span> <span class="o">&lt;</span><span class="n">options</span><span class="o">&gt;</span><span class="p">;</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">LIBNAME</span> <span class="n">libref</span><span class="o">-</span><span class="n">name</span> <span class="err">&#39;</span><span class="n">SAS</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="n">folder</span><span class="o">-</span><span class="n">path</span><span class="err">&#39;</span> <span class="o">&lt;</span><span class="n">options</span><span class="o">&gt;</span><span class="p">;</span>
 
 <span class="cm">/* Example */</span>
 
 <span class="nf">%let</span> <span class="n">path</span><span class="o">=/</span><span class="n">folders</span><span class="o">/</span><span class="n">myfolders</span><span class="o">/</span><span class="n">ecprg193</span><span class="p">;</span> 
 <span class="n">libname</span> <span class="n">orion</span> <span class="s">&quot;&amp;path&quot;</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="erase-the-association-between-sas-and-a-custom-library">Erase the association between SAS and a custom library<a class="headerlink" href="#erase-the-association-between-sas-and-a-custom-library" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>LIBNAME libref-name CLEAR;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">LIBNAME</span> <span class="n">libref</span><span class="o">-</span><span class="n">name</span> <span class="n">CLEAR</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="remove-data-sets-and-libraries">Remove data sets and libraries<a class="headerlink" href="#remove-data-sets-and-libraries" title="Permanent link">Link</a></h3>
@@ -1735,7 +1748,7 @@
 14
 15
 16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">*</span> <span class="nt">Delete</span> <span class="nt">data</span> <span class="nt">sets</span> <span class="o">;</span>
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="nt">Delete</span> <span class="nt">data</span> <span class="nt">sets</span> <span class="o">;</span>
 <span class="o">*</span><span class="nt">------------------</span><span class="o">;</span>
 <span class="nt">PROC</span> <span class="nt">DELETE</span> <span class="nt">DATA</span><span class="o">=</span><span class="nt">data1</span> <span class="nt">data2</span> <span class="nt">data3</span><span class="o">;</span>
 <span class="nt">RUN</span><span class="o">;</span>
@@ -1752,7 +1765,7 @@
     <span class="nt">DELETE</span> <span class="nt">prefix-data-set</span><span class="o">:</span> <span class="nt">other-data-set</span><span class="o">;</span>
 <span class="nt">RUN</span><span class="o">;</span>
 <span class="nt">QUIT</span><span class="o">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="copy-data-sets-and-libraries">Copy data sets and libraries<a class="headerlink" href="#copy-data-sets-and-libraries" title="Permanent link">Link</a></h3>
@@ -1765,47 +1778,47 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* Copy full library ;
-*-------------------;
-PROC COPY IN=old-library OUT=new-library;
-RUN;
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="k">Copy</span> <span class="k">full</span> <span class="n">library</span> <span class="p">;</span>
+<span class="o">*</span><span class="c1">-------------------;</span>
+<span class="n">PROC</span> <span class="k">COPY</span> <span class="k">IN</span><span class="o">=</span><span class="k">old</span><span class="o">-</span><span class="n">library</span> <span class="k">OUT</span><span class="o">=</span><span class="k">new</span><span class="o">-</span><span class="n">library</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
 
-* Copy specific data sets ;
-*-------------------------;
-PROC COPY IN=old-library OUT=new-library MEMTYPE=DATA;
-   SELECT data-set1 data-set2;
-RUN;
-</pre></div>
+<span class="o">*</span> <span class="k">Copy</span> <span class="k">specific</span> <span class="k">data</span> <span class="k">sets</span> <span class="p">;</span>
+<span class="o">*</span><span class="c1">-------------------------;</span>
+<span class="n">PROC</span> <span class="k">COPY</span> <span class="k">IN</span><span class="o">=</span><span class="k">old</span><span class="o">-</span><span class="n">library</span> <span class="k">OUT</span><span class="o">=</span><span class="k">new</span><span class="o">-</span><span class="n">library</span> <span class="n">MEMTYPE</span><span class="o">=</span><span class="k">DATA</span><span class="p">;</span>
+   <span class="k">SELECT</span> <span class="k">data</span><span class="o">-</span><span class="n">set1</span> <span class="k">data</span><span class="o">-</span><span class="n">set2</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="rename-data-sets">Rename data sets<a class="headerlink" href="#rename-data-sets" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC DATASETS LIBRARY=library-name;
-   CHANGE data-set-name1=data-set-new-name1 data-set-name2=data-set-new-name2;
-RUN;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">DATASETS</span> <span class="n">LIBRARY</span><span class="o">=</span><span class="n">library</span><span class="o">-</span><span class="n">name</span><span class="p">;</span>
+   <span class="n">CHANGE</span> <span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="n">name1</span><span class="o">=</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">new</span><span class="o">-</span><span class="n">name1</span> <span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="n">name2</span><span class="o">=</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">new</span><span class="o">-</span><span class="n">name2</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="check-the-contents-of-a-library">Check the contents of a library<a class="headerlink" href="#check-the-contents-of-a-library" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC CONTENTS DATA=libref._ALL_;
-RUN;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">CONTENTS</span> <span class="k">DATA</span><span class="o">=</span><span class="n">libref</span><span class="p">.</span><span class="n">_ALL_</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To hide the descriptors of all data sets in the library (it could generate a very long report) you can add the option <code>nods</code> (only compatible with the keybord <code>_all_</code>):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC CONTENTS DATA=libref._ALL_ NODS;
-RUN;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">CONTENTS</span> <span class="k">DATA</span><span class="o">=</span><span class="n">libref</span><span class="p">.</span><span class="n">_ALL_</span> <span class="n">NODS</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="print-the-full-data-set">Print the full data set<a class="headerlink" href="#print-the-full-data-set" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC PRINT DATA=SAS-data-set;
-RUN;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">PRINT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="examining-sas-data-sets">Examining SAS Data Sets<a class="headerlink" href="#examining-sas-data-sets" title="Permanent link">Link</a></h2>
@@ -1833,6 +1846,7 @@ RUN;
 </ul>
                 
                   
+                
                 
               
               
@@ -1888,13 +1902,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1902,18 +1914,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

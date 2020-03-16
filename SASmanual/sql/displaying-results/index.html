@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#presenting-data" tabindex="1" class="md-skip">
+      <a href="#presenting-data" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Displaying Query Results
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -601,7 +602,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#presenting-data" title="Presenting Data" class="md-nav__link">
+  <a href="#presenting-data" class="md-nav__link">
     Presenting Data
   </a>
   
@@ -609,28 +610,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordering-rows" title="Ordering Rows" class="md-nav__link">
+  <a href="#ordering-rows" class="md-nav__link">
     Ordering Rows
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-labels-and-formats" title="Specifying Labels and Formats" class="md-nav__link">
+  <a href="#specifying-labels-and-formats" class="md-nav__link">
     Specifying Labels and Formats
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-titles-footnotes-and-constant-text" title="Adding Titles, Footnotes, and Constant Text" class="md-nav__link">
+  <a href="#adding-titles-footnotes-and-constant-text" class="md-nav__link">
     Adding Titles, Footnotes, and Constant Text
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#controlling-proc-sql-output" title="Controlling PROC SQL Output" class="md-nav__link">
+  <a href="#controlling-proc-sql-output" class="md-nav__link">
     Controlling PROC SQL Output
   </a>
   
@@ -642,7 +643,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#producing-summary-statistics" title="Producing Summary Statistics" class="md-nav__link">
+  <a href="#producing-summary-statistics" class="md-nav__link">
     Producing Summary Statistics
   </a>
   
@@ -650,28 +651,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-summary-functions" title="Understanding Summary Functions" class="md-nav__link">
+  <a href="#understanding-summary-functions" class="md-nav__link">
     Understanding Summary Functions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#producing-summary-statistics_1" title="Producing Summary Statistics" class="md-nav__link">
+  <a href="#producing-summary-statistics_1" class="md-nav__link">
     Producing Summary Statistics
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#calculating-summary-statistics-for-groups-of-data" title="Calculating Summary Statistics for Groups of Data" class="md-nav__link">
+  <a href="#calculating-summary-statistics-for-groups-of-data" class="md-nav__link">
     Calculating Summary Statistics for Groups of Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#grouping-data" title="Grouping Data" class="md-nav__link">
+  <a href="#grouping-data" class="md-nav__link">
     Grouping Data
   </a>
   
@@ -1455,18 +1456,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1481,6 +1470,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1581,7 +1594,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#presenting-data" title="Presenting Data" class="md-nav__link">
+  <a href="#presenting-data" class="md-nav__link">
     Presenting Data
   </a>
   
@@ -1589,28 +1602,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ordering-rows" title="Ordering Rows" class="md-nav__link">
+  <a href="#ordering-rows" class="md-nav__link">
     Ordering Rows
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-labels-and-formats" title="Specifying Labels and Formats" class="md-nav__link">
+  <a href="#specifying-labels-and-formats" class="md-nav__link">
     Specifying Labels and Formats
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#adding-titles-footnotes-and-constant-text" title="Adding Titles, Footnotes, and Constant Text" class="md-nav__link">
+  <a href="#adding-titles-footnotes-and-constant-text" class="md-nav__link">
     Adding Titles, Footnotes, and Constant Text
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#controlling-proc-sql-output" title="Controlling PROC SQL Output" class="md-nav__link">
+  <a href="#controlling-proc-sql-output" class="md-nav__link">
     Controlling PROC SQL Output
   </a>
   
@@ -1622,7 +1635,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#producing-summary-statistics" title="Producing Summary Statistics" class="md-nav__link">
+  <a href="#producing-summary-statistics" class="md-nav__link">
     Producing Summary Statistics
   </a>
   
@@ -1630,28 +1643,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-summary-functions" title="Understanding Summary Functions" class="md-nav__link">
+  <a href="#understanding-summary-functions" class="md-nav__link">
     Understanding Summary Functions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#producing-summary-statistics_1" title="Producing Summary Statistics" class="md-nav__link">
+  <a href="#producing-summary-statistics_1" class="md-nav__link">
     Producing Summary Statistics
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#calculating-summary-statistics-for-groups-of-data" title="Calculating Summary Statistics for Groups of Data" class="md-nav__link">
+  <a href="#calculating-summary-statistics-for-groups-of-data" class="md-nav__link">
     Calculating Summary Statistics for Groups of Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#grouping-data" title="Grouping Data" class="md-nav__link">
+  <a href="#grouping-data" class="md-nav__link">
     Grouping Data
   </a>
   
@@ -1687,12 +1700,12 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT object-item &lt;, ...object-item&gt;
-        FROM from-list
-        &lt;WHERE sql-expression&gt;
-        &lt;ORDER BY order-by-item &lt;DESC&gt;
-                             &lt;,... order-by-item &lt;DESC&gt;&gt;;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">from</span><span class="o">-</span><span class="n">list</span>
+        <span class="o">&lt;</span><span class="k">WHERE</span> <span class="k">sql</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;</span>
+                             <span class="o">&lt;</span><span class="p">,...</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The SQL processor determines the order in which <code>PROC SQL</code> writes the rows to the output. The processor might not output the rows in the same order as they are encountered in the table. To guarantee the order of the rows in the output, you must use an <code>ORDER BY</code> clause.</p>
@@ -1706,29 +1719,29 @@
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Employee_ID,
-       max(Qtr1,Qtr2,Qtr3,Qtr4)
-   from orion.employee_donations
-   where Paid_By=&quot;Cash or Check&quot;
-   order by 2 desc, Employee_ID;
-quit;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_ID</span><span class="p">,</span>
+       <span class="k">max</span><span class="p">(</span><span class="n">Qtr1</span><span class="p">,</span><span class="n">Qtr2</span><span class="p">,</span><span class="n">Qtr3</span><span class="p">,</span><span class="n">Qtr4</span><span class="p">)</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_donations</span>
+   <span class="k">where</span> <span class="n">Paid_By</span><span class="o">=</span><span class="ss">&quot;Cash or Check&quot;</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="mi">2</span> <span class="k">desc</span><span class="p">,</span> <span class="n">Employee_ID</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="specifying-labels-and-formats">Specifying Labels and Formats<a class="headerlink" href="#specifying-labels-and-formats" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&#39;label&#39;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="s1">&#39;label&#39;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>By default, <code>PROC SQL</code> formats output by using column attributes that are already saved in the table or, if there are no permanent attributes, by using the default attributes. However, you can use the ANSI standard column modifier to create a label that is displayed as the heading for the column in the output. The label can be stored permanently when creating or altering a table. The text can be up to 256 characters and must be enclosed in quotation marks.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>LABEL=&#39;label&#39;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">LABEL</span><span class="o">=</span><span class="s1">&#39;label&#39;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>You can take advantage of SAS enhancements, such as the <code>LABEL=</code> column modifier. You can specify the <code>LABEL=</code> column modifier after any column name or expression that is specified in the <code>SELECT</code> clause. You can specify up to 256 characters for the text. Generally, using the SAS method makes your code easier to read and follow.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FORMAT=formatw.d
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">FORMAT</span><span class="o">=</span><span class="n">formatw</span><span class="p">.</span><span class="n">d</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To make data values easier to read in output, you can use the FORMAT= column modifier to associate formats with column values. The <code>FORMAT=</code> column modifier is also a SAS enhancement. A format is an instruction that SAS uses to write data values. Formats specified in the <code>SELECT</code> clause affect only how the data values appear in the output, not how the actual data values are stored in the table.</p>
@@ -1740,22 +1753,22 @@ quit;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Employee_ID &#39;Employee ID&#39;,
-       max(Qtr1,Qtr2,Qtr3,Qtr4)
-          label=&#39;Maximum&#39; format=dollar5.
-   from orion.employee_donations
-   where Paid_By=&quot;Cash or Check&quot;
-   order by 2 desc, Employee_ID;
-quit;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_ID</span> <span class="s1">&#39;Employee ID&#39;</span><span class="p">,</span>
+       <span class="k">max</span><span class="p">(</span><span class="n">Qtr1</span><span class="p">,</span><span class="n">Qtr2</span><span class="p">,</span><span class="n">Qtr3</span><span class="p">,</span><span class="n">Qtr4</span><span class="p">)</span>
+          <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Maximum&#39;</span> <span class="n">format</span><span class="o">=</span><span class="n">dollar5</span><span class="p">.</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_donations</span>
+   <span class="k">where</span> <span class="n">Paid_By</span><span class="o">=</span><span class="ss">&quot;Cash or Check&quot;</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="mi">2</span> <span class="k">desc</span><span class="p">,</span> <span class="n">Employee_ID</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="adding-titles-footnotes-and-constant-text">Adding Titles, Footnotes, and Constant Text<a class="headerlink" href="#adding-titles-footnotes-and-constant-text" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>TITLE&lt;n&gt; &#39;text&#39;;
-FOOTNOTE&lt;n&gt; &#39;text&#39;;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">TITLE</span><span class="o">&lt;</span><span class="n">n</span><span class="o">&gt;</span> <span class="s1">&#39;text&#39;</span><span class="p">;</span>
+<span class="n">FOOTNOTE</span><span class="o">&lt;</span><span class="n">n</span><span class="o">&gt;</span> <span class="s1">&#39;text&#39;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Titles appear at the top and footnotes appear at the bottom of each page of SAS output. Titles and footnotes appear in both HTML output and listing output.</p>
@@ -1765,10 +1778,10 @@ FOOTNOTE&lt;n&gt; &#39;text&#39;;
 <p>While the <code>TITLE</code> statement with the largest number appears on the last title line, footnote lines are "pushed up" from the bottom. The <code>FOOTNOTE</code> statement with the smallest number appears on top and the footnote statement with the largest number appears on the bottom line.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
-            &#39;constant text&#39; &lt;AS alias&gt; &lt;&#39;column label&#39;&gt;
-      FROM from-list;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+            <span class="s1">&#39;constant text&#39;</span> <span class="o">&lt;</span><span class="k">AS</span> <span class="k">alias</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="s1">&#39;column label&#39;</span><span class="o">&gt;</span>
+      <span class="k">FROM</span> <span class="k">from</span><span class="o">-</span><span class="n">list</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Remember that a constant, sometimes called a literal, is a number or character string that indicates a fixed value. The <code>SELECT</code> clause can use constants as expressions.</p>
@@ -1782,49 +1795,49 @@ FOOTNOTE&lt;n&gt; &#39;text&#39;;
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-title &#39;Annual Bonuses for Active Employees&#39;;
-select Employee_ID label=&#39;Employee Number&#39;,
-       &#39;Bonus is:&#39;,
-       Salary *.05 format=comma12.2
-   from orion.employee_payroll
-   where Employee_Term_Date is missing
-   order by Salary desc;
-quit;
-title;
-</pre></div>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">proc</span> <span class="nv">sql</span><span class="c1">;</span>
+<span class="nv">title</span> <span class="s1">&#39;</span><span class="s">Annual Bonuses for Active Employees</span><span class="s1">&#39;</span><span class="c1">;</span>
+<span class="nv">select</span> <span class="nv">Employee_ID</span> <span class="nv">label</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Employee Number</span><span class="s1">&#39;</span>,
+       <span class="s1">&#39;</span><span class="s">Bonus is:</span><span class="s1">&#39;</span>,
+       <span class="nv">Salary</span> <span class="o">*</span>.<span class="mi">05</span> <span class="nv">format</span><span class="o">=</span><span class="nv">comma12</span>.<span class="mi">2</span>
+   <span class="nv">from</span> <span class="nv">orion</span>.<span class="nv">employee_payroll</span>
+   <span class="nv">where</span> <span class="nv">Employee_Term_Date</span> <span class="nv">is</span> <span class="nv">missing</span>
+   <span class="nv">order</span> <span class="nv">by</span> <span class="nv">Salary</span> <span class="nv">desc</span><span class="c1">;</span>
+<span class="nv">quit</span><span class="c1">;</span>
+<span class="nv">title</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="controlling-proc-sql-output">Controlling <code>PROC SQL</code> Output<a class="headerlink" href="#controlling-proc-sql-output" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL&lt;option(s)&gt;;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="o">&lt;</span><span class="k">option</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Options that are included in the <code>PROC SQL</code> statement are temporary and apply only to that <code>PROC SQL</code> step. If multiple queries are specified, <code>PROC SQL</code> applies the options to all of the statements in the step.</p>
 <p>After you specify an option, it remains in effect until SAS encounters the beginning of another <code>PROC SQL</code> step or or you change the option.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RESET&lt;option(s)&gt;;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">RESET</span><span class="o">&lt;</span><span class="k">option</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>RESET</code> statement enables you to add, drop, or change the options in the <code>PROC SQL</code> step without restarting the procedure. The <code>RESET</code> statement is useful to change options and add additional options not previously listed in the <code>PROC SQL</code> statement.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OUTOBS=n
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">OUTOBS</span><span class="o">=</span><span class="n">n</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>OUTOBS=</code> option restricts the number of rows that a query outputs to a report or writes to a table.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>NONUMBER | NUMBER
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">NONUMBER</span> <span class="o">|</span> <span class="nb">NUMBER</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>NUMBER</code> or <code>NONUMBER</code> option controls whether the <code>SELECT</code> statement includes a column named <code>ROW</code>, which displays row numbers as the first column of query output.This option has no effect on the underlying table. The <code>NONUMBER</code> option is the default setting.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>NODOUBLE | DOUBLE
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">NODOUBLE</span> <span class="o">|</span> <span class="n">DOUBLE</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>DOUBLE</code> or <code>NODOUBLE</code> option defines the spacing between lines for an output destination that has a physical page limitation. The <code>DOUBLE</code> option double-spaces the report, which places a blank line between the rows. The <code>NODOUBLE</code> option single-spaces the report and is the default setting.</p>
 <p>The <code>DOUBLE|NODOUBLE</code> option primarily affects the <code>LISTING</code> destination and has no effect on other output destinations such as <code>PDF</code>, <code>RTF</code>, and <code>HTML</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>NOFLOW | FLOW&lt;=n&lt;m&gt;&gt;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">NOFLOW</span> <span class="o">|</span> <span class="n">FLOW</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">&lt;</span><span class="n">m</span><span class="o">&gt;&gt;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>FLOW</code> or <code>NOFLOW</code> option defines whether character columns with long values wrap, or flow, within the column or the row wraps around to additional lines of output to display all columns. The <code>FLOW</code> option causes text to wrap or flow within column limitations rather than wrapping an entire row. The <code>NOFLOW</code> option is the default setting. The <code>FLOW</code> option affects output destinations with a physical page limitation.</p>
@@ -1834,13 +1847,13 @@ title;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql flow=5 20 double number outobs=10;
-title &quot;Sample Report&quot;;
-select *
-   from orion.employee_organization;
-quit;
-title;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span> <span class="n">flow</span><span class="o">=</span><span class="mi">5</span> <span class="mi">20</span> <span class="n">double</span> <span class="nb">number</span> <span class="n">outobs</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">title</span> <span class="ss">&quot;Sample Report&quot;</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_organization</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="producing-summary-statistics">Producing Summary Statistics<a class="headerlink" href="#producing-summary-statistics" title="Permanent link">Link</a></h2>
@@ -1902,9 +1915,9 @@ title;
 </table>
 <p>SAS and ANSI summary functions do not work exactly the same way. The main difference is in the number of arguments that each can accept. An argument of a summary function is often a column name, although there are other types of arguments as well.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SUM(argument)
-SUM(argument-1 &lt;,argument-n&gt;)
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SUM</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+<span class="k">SUM</span><span class="p">(</span><span class="n">argument</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="p">,</span><span class="n">argument</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Both ANSI functions and SAS summary functions can accept a single argument. If a summary function specifies only one column as an argument, the summary function calculates a single summary value for that column, using the values from one or more rows.</p>
@@ -1922,14 +1935,14 @@ SUM(argument-1 &lt;,argument-n&gt;)
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Employee_ID
-       label=&#39;Employee ID&#39;,
-       Qtr1,Qtr2,Qtr3,Qtr4,
-       sum(Qtr1,Qtr2,Qtr3,Qtr4)
-   from orion.employee_donations;
-quit;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_ID</span>
+       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Employee ID&#39;</span><span class="p">,</span>
+       <span class="n">Qtr1</span><span class="p">,</span><span class="n">Qtr2</span><span class="p">,</span><span class="n">Qtr3</span><span class="p">,</span><span class="n">Qtr4</span><span class="p">,</span>
+       <span class="k">sum</span><span class="p">(</span><span class="n">Qtr1</span><span class="p">,</span><span class="n">Qtr2</span><span class="p">,</span><span class="n">Qtr3</span><span class="p">,</span><span class="n">Qtr4</span><span class="p">)</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_donations</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Example:</strong> Summarizing Down a Column</p>
@@ -1937,12 +1950,12 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select sum(Qtr1)
-       &#39;Total Quarter 1 Donations&#39;
-   from orion.employee_donations;
-quit;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">Qtr1</span><span class="p">)</span>
+       <span class="s1">&#39;Total Quarter 1 Donations&#39;</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_donations</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Example:</strong> Calculating Multiple Summary Columns</p>
@@ -1952,14 +1965,14 @@ quit;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select sum(Qtr1)
-       &#39;Total Quarter 1 Donations&#39;,
-       sum(Qtr2)
-       &#39;Total Quarter 2 Donations&#39;
-   from orion.employee_donations;
-quit;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="k">sum</span><span class="p">(</span><span class="n">Qtr1</span><span class="p">)</span>
+       <span class="s1">&#39;Total Quarter 1 Donations&#39;</span><span class="p">,</span>
+       <span class="k">sum</span><span class="p">(</span><span class="n">Qtr2</span><span class="p">)</span>
+       <span class="s1">&#39;Total Quarter 2 Donations&#39;</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_donations</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Example:</strong> Counting the Number of Rows That Have a Missing Value</p>
@@ -1967,12 +1980,12 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Employee_ID
-   from orion.employee_information
-   where Employee_Term_Date is missing;
-quit;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_ID</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_information</span>
+   <span class="k">where</span> <span class="n">Employee_Term_Date</span> <span class="k">is</span> <span class="n">missing</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Example:</strong> Combining Summarized and Non-Summarized Columns</p>
@@ -1980,21 +1993,21 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proq sql;
-select Employee_Gender as Gender, avg(Salary) as Average
-   from orion.employee_information
-   where Employee_Term_Date is missing;
-quit;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proq</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_Gender</span> <span class="k">as</span> <span class="n">Gender</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span> <span class="k">as</span> <span class="n">Average</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_information</span>
+   <span class="k">where</span> <span class="n">Employee_Term_Date</span> <span class="k">is</span> <span class="n">missing</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="producing-summary-statistics_1">Producing Summary Statistics<a class="headerlink" href="#producing-summary-statistics_1" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>COUNT(argument)
-FREQ(argument)
-N(argument)
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">COUNT</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+<span class="n">FREQ</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+<span class="n">N</span><span class="p">(</span><span class="n">argument</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To count the number of rows in a table or in a subset, you can use the ANSI <code>COUNT</code> function, the ANSI <code>FREQ</code> function, or the SAS <code>N</code> function.</p>
@@ -2018,9 +2031,9 @@ N(argument)
 </ul>
 <p>There is one type of non-summarized column that you can combine with a summarized column in the <code>SELECT</code> clause to generate one row of output: a column that contains a constant value.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>OPTIONS SQLREMERGE | NOSQLREMERGE;
-PROC SQL REMERGE | NOREMERGE;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">OPTIONS</span> <span class="n">SQLREMERGE</span> <span class="o">|</span> <span class="n">NOSQLREMERGE</span><span class="p">;</span>
+<span class="n">PROC</span> <span class="k">SQL</span> <span class="n">REMERGE</span> <span class="o">|</span> <span class="n">NOREMERGE</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Although SAS <strong>remerges summary statistics by default</strong>, most database management systems do not. Instead, these other systems generate an error. To prevent SAS from remerging summary statistics in every <code>PROC SQL</code> step in the current session, you can specify the SAS system option <code>NOSQLREMERGE</code> in the <code>OPTIONS</code> statement. Remember that SAS system options remain in effect until you change them or until the end of your session.</p>
@@ -2036,18 +2049,18 @@ PROC SQL REMERGE | NOREMERGE;
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-title &quot;Male Employee Salaries&quot;;
-select Employee_ID, Salary format=comma12.,
-       Salary / sum(Salary)
-       &#39;PCT of Total&#39; format=percent6.2
-   from orion.employee_payroll
-   where Employee_Gender=&#39;M&#39;
-         and Employee_Term_Date is missing
-   order by 3 desc;
-quit;
-title;
-</pre></div>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="n">title</span> <span class="ss">&quot;Male Employee Salaries&quot;</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_ID</span><span class="p">,</span> <span class="n">Salary</span> <span class="n">format</span><span class="o">=</span><span class="n">comma12</span><span class="p">.,</span>
+       <span class="n">Salary</span> <span class="o">/</span> <span class="k">sum</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
+       <span class="s1">&#39;PCT of Total&#39;</span> <span class="n">format</span><span class="o">=</span><span class="n">percent6</span><span class="p">.</span><span class="mi">2</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span>
+   <span class="k">where</span> <span class="n">Employee_Gender</span><span class="o">=</span><span class="s1">&#39;M&#39;</span>
+         <span class="k">and</span> <span class="n">Employee_Term_Date</span> <span class="k">is</span> <span class="n">missing</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="mi">3</span> <span class="k">desc</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="grouping-data">Grouping Data<a class="headerlink" href="#grouping-data" title="Permanent link">Link</a></h3>
@@ -2056,13 +2069,13 @@ title;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  SELECT object-item &lt;, ...object-item&gt;
-        FROM from-list
-        &lt;WHERE sql-expression&gt;
-        &lt;GROUP BY object-item &lt;, ... object-item&gt;&gt;
-        &lt;ORDER BY order-by-item &lt;DESC&gt;
-                             &lt;,... order-by-item &lt;DESC&gt;&gt;;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+        <span class="k">FROM</span> <span class="k">from</span><span class="o">-</span><span class="n">list</span>
+        <span class="o">&lt;</span><span class="k">WHERE</span> <span class="k">sql</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="k">GROUP</span> <span class="k">BY</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;&gt;</span>
+        <span class="o">&lt;</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;</span>
+                             <span class="o">&lt;</span><span class="p">,...</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To summarize data by groups, you use a <code>GROUP BY</code> clause. In the <code>GROUP BY</code> clause, you specify one or more columns that you want to use to categorize the data for summarizing. As in the <code>ORDER BY</code> clause, you can specify a column name, a column alias, or an expression. You separate multiple columns with commas. In the <code>GROUP BY</code> clause, you can specify columns that are calculated in the <code>SELECT</code> clause, <strong>except for columns that are created by a summary function</strong>.</p>
@@ -2075,16 +2088,16 @@ title;
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Employee_Gender as Gender,
-       Marital_Status as M_Status,
-       avg(Salary) as Average
-   from orion.employee_information
-   where Employee_Term_Date is missing
-   group by Employee_Gender,
-             Marital_Status;
-quit;
-</pre></div>
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Employee_Gender</span> <span class="k">as</span> <span class="n">Gender</span><span class="p">,</span>
+       <span class="n">Marital_Status</span> <span class="k">as</span> <span class="n">M_Status</span><span class="p">,</span>
+       <span class="k">avg</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span> <span class="k">as</span> <span class="n">Average</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_information</span>
+   <span class="k">where</span> <span class="n">Employee_Term_Date</span> <span class="k">is</span> <span class="n">missing</span>
+   <span class="k">group</span> <span class="k">by</span> <span class="n">Employee_Gender</span><span class="p">,</span>
+             <span class="n">Marital_Status</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To select a set of rows before the query processes them, you use a <code>WHERE</code> clause. You cannot use a <code>WHERE</code> clause to subset grouped rows by referring to a summary column that is calculated in the <code>SELECT</code> clause. In a <code>WHERE</code> clause, you cannot use summary functions that specify a single argument.</p>
@@ -2094,14 +2107,14 @@ quit;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT object-item &lt;, ...object-item&gt;
-      FROM from-list
-      &lt;WHERE sql-expression&gt;
-      &lt;GROUP BY object-item &lt;, ... object-item&gt;&gt;
-      &lt;HAVING sql-expression&gt;
-      &lt;ORDER BY order-by-item &lt;DESC&gt;
-                           &lt;,... order-by-item &lt;DESC&gt;&gt;;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SELECT</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span><span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;</span>
+      <span class="k">FROM</span> <span class="k">from</span><span class="o">-</span><span class="n">list</span>
+      <span class="o">&lt;</span><span class="k">WHERE</span> <span class="k">sql</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="k">GROUP</span> <span class="k">BY</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">object</span><span class="o">-</span><span class="n">item</span><span class="o">&gt;&gt;</span>
+      <span class="o">&lt;</span><span class="k">HAVING</span> <span class="k">sql</span><span class="o">-</span><span class="n">expression</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;</span>
+                           <span class="o">&lt;</span><span class="p">,...</span> <span class="k">order</span><span class="o">-</span><span class="k">by</span><span class="o">-</span><span class="n">item</span> <span class="o">&lt;</span><span class="k">DESC</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>To select groups to appear in the output, you use the <code>HAVING</code> clause. <code>PROC SQL</code> processes the <code>HAVING</code> clause after grouping rows. Following the keyword <code>HAVING</code> is an expression that <code>PROC SQL</code> uses to subset the grouped rows that appear in the output. Expressions in the <code>HAVING</code> clause follow most of the same rules as expressions in the <code>WHERE</code> clause.</p>
@@ -2117,22 +2130,22 @@ quit;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Department, count(*) as Count
-   from orion.employee_information
-   group by Department
-   having Count ge 25;
-quit;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Department</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="k">Count</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_information</span>
+   <span class="k">group</span> <span class="k">by</span> <span class="n">Department</span>
+   <span class="k">having</span> <span class="k">Count</span> <span class="n">ge</span> <span class="mi">25</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FIND(string, substring &lt;, modifier(s)&gt; &lt;,startpos&gt;)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">FIND</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="k">substring</span> <span class="o">&lt;</span><span class="p">,</span> <span class="n">modifier</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="p">,</span><span class="n">startpos</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>FIND</code> function searches for a specific substring of characters within a character string and then performs one of the following actions:
-<em> If the <code>FIND</code> function finds all of the characters in the specified substring, the function returns an integer that represents the starting position of the substring within the string.
-</em> If the <code>FIND</code> function does not find the substring, the function returns a value of <code>0</code>.</p>
+* If the <code>FIND</code> function finds all of the characters in the specified substring, the function returns an integer that represents the starting position of the substring within the string.
+* If the <code>FIND</code> function does not find the substring, the function returns a value of <code>0</code>.</p>
 <p>The <code>FIND</code> function has four arguments, which are separated by commas. The first two arguments –  <strong>string and substring</strong> – <strong>are required</strong>, and the other two are optional. The arguments are described below:</p>
 <ul>
 <li><strong><code>string</code></strong> is what the function searches to locate the first occurrence of the substring. <code>string</code> can be a constant, a variable, or an expression that resolves to a character string.</li>
@@ -2148,20 +2161,20 @@ quit;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Department, Job_Title,
-       find(Job_Title,&quot;manager&quot;,&quot;i&quot;)
-          as Position
-   from orion.employee_organization;
-quit;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Department</span><span class="p">,</span> <span class="n">Job_Title</span><span class="p">,</span>
+       <span class="n">find</span><span class="p">(</span><span class="n">Job_Title</span><span class="p">,</span><span class="ss">&quot;manager&quot;</span><span class="p">,</span><span class="ss">&quot;i&quot;</span><span class="p">)</span>
+          <span class="k">as</span> <span class="k">Position</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_organization</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Boolean expressions are expressions that evaluate to one of two values:
-<em> <code>TRUE</code> (or 1)
-</em> <code>FALSE</code> (or 0)</p>
+* <code>TRUE</code> (or 1)
+* <code>FALSE</code> (or 0)</p>
 </div>
 <p><strong>Example:</strong> Counting Rows by Using Boolean Expressions</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -2172,19 +2185,20 @@ quit;
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-select Department,
-       sum(find(Job_Title,&quot;manager&quot;,&quot;i&quot;)&gt;0)
-          as Managers,
-       sum(find(Job_Title,&quot;manager&quot;,&quot;i&quot;)=0)
-          as Employees
-   from orion.employee_information
-   group by Department;
-quit;
-</pre></div>
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">Department</span><span class="p">,</span>
+       <span class="k">sum</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">Job_Title</span><span class="p">,</span><span class="ss">&quot;manager&quot;</span><span class="p">,</span><span class="ss">&quot;i&quot;</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+          <span class="k">as</span> <span class="n">Managers</span><span class="p">,</span>
+       <span class="k">sum</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">Job_Title</span><span class="p">,</span><span class="ss">&quot;manager&quot;</span><span class="p">,</span><span class="ss">&quot;i&quot;</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+          <span class="k">as</span> <span class="n">Employees</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_information</span>
+   <span class="k">group</span> <span class="k">by</span> <span class="n">Department</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -2240,13 +2254,11 @@ quit;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2254,18 +2266,15 @@ quit;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

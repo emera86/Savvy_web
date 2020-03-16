@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#using-sas-functions" tabindex="1" class="md-skip">
+      <a href="#using-sas-functions" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Manipulating Data
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -301,7 +302,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-sas-functions" title="Using SAS Functions" class="md-nav__link">
+  <a href="#using-sas-functions" class="md-nav__link">
     Using SAS Functions
   </a>
   
@@ -309,7 +310,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#catx-concatenation-function" title="CATX Concatenation Function" class="md-nav__link">
+  <a href="#catx-concatenation-function" class="md-nav__link">
     CATX Concatenation Function
   </a>
   
@@ -317,7 +318,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#search-for-required-values" title="Search for Required Values" class="md-nav__link">
+  <a href="#search-for-required-values" class="md-nav__link">
     Search for Required Values
   </a>
   
@@ -329,21 +330,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date-function" title="DATE Function" class="md-nav__link">
+  <a href="#date-function" class="md-nav__link">
     DATE Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#intck-time-interval-function" title="INTCK Time Interval Function" class="md-nav__link">
+  <a href="#intck-time-interval-function" class="md-nav__link">
     INTCK Time Interval Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sum-summation-function" title="SUM Summation Function" class="md-nav__link">
+  <a href="#sum-summation-function" class="md-nav__link">
     SUM Summation Function
   </a>
   
@@ -355,7 +356,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conditional-processing" title="Conditional Processing" class="md-nav__link">
+  <a href="#conditional-processing" class="md-nav__link">
     Conditional Processing
   </a>
   
@@ -363,21 +364,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#if-then-else-conditional-structures" title="IF-THEN-ELSE Conditional Structures" class="md-nav__link">
+  <a href="#if-then-else-conditional-structures" class="md-nav__link">
     IF-THEN-ELSE Conditional Structures
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#executing-multiple-statements" title="Executing Multiple Statements" class="md-nav__link">
+  <a href="#executing-multiple-statements" class="md-nav__link">
     Executing Multiple Statements
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#select-group" title="SELECT Group" class="md-nav__link">
+  <a href="#select-group" class="md-nav__link">
     SELECT Group
   </a>
   
@@ -389,7 +390,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#avoiding-duplicates" title="Avoiding Duplicates" class="md-nav__link">
+  <a href="#avoiding-duplicates" class="md-nav__link">
     Avoiding Duplicates
   </a>
   
@@ -1468,18 +1469,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1494,6 +1483,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1594,7 +1607,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-sas-functions" title="Using SAS Functions" class="md-nav__link">
+  <a href="#using-sas-functions" class="md-nav__link">
     Using SAS Functions
   </a>
   
@@ -1602,7 +1615,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#catx-concatenation-function" title="CATX Concatenation Function" class="md-nav__link">
+  <a href="#catx-concatenation-function" class="md-nav__link">
     CATX Concatenation Function
   </a>
   
@@ -1610,7 +1623,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#search-for-required-values" title="Search for Required Values" class="md-nav__link">
+  <a href="#search-for-required-values" class="md-nav__link">
     Search for Required Values
   </a>
   
@@ -1622,21 +1635,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date-function" title="DATE Function" class="md-nav__link">
+  <a href="#date-function" class="md-nav__link">
     DATE Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#intck-time-interval-function" title="INTCK Time Interval Function" class="md-nav__link">
+  <a href="#intck-time-interval-function" class="md-nav__link">
     INTCK Time Interval Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sum-summation-function" title="SUM Summation Function" class="md-nav__link">
+  <a href="#sum-summation-function" class="md-nav__link">
     SUM Summation Function
   </a>
   
@@ -1648,7 +1661,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conditional-processing" title="Conditional Processing" class="md-nav__link">
+  <a href="#conditional-processing" class="md-nav__link">
     Conditional Processing
   </a>
   
@@ -1656,21 +1669,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#if-then-else-conditional-structures" title="IF-THEN-ELSE Conditional Structures" class="md-nav__link">
+  <a href="#if-then-else-conditional-structures" class="md-nav__link">
     IF-THEN-ELSE Conditional Structures
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#executing-multiple-statements" title="Executing Multiple Statements" class="md-nav__link">
+  <a href="#executing-multiple-statements" class="md-nav__link">
     Executing Multiple Statements
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#select-group" title="SELECT Group" class="md-nav__link">
+  <a href="#select-group" class="md-nav__link">
     SELECT Group
   </a>
   
@@ -1682,7 +1695,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#avoiding-duplicates" title="Avoiding Duplicates" class="md-nav__link">
+  <a href="#avoiding-duplicates" class="md-nav__link">
     Avoiding Duplicates
   </a>
   
@@ -1711,9 +1724,9 @@
 <h2 id="using-sas-functions">Using SAS Functions<a class="headerlink" href="#using-sas-functions" title="Permanent link">Link</a></h2>
 <h3 id="catx-concatenation-function"><code>CATX</code> Concatenation Function<a class="headerlink" href="#catx-concatenation-function" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CATX(&#39; &#39;, First_Name, Last_Name)
-CATX(&#39;-&#39;,of array_name(*))
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">CATX</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">First_Name</span><span class="p">,</span> <span class="n">Last_Name</span><span class="p">)</span>
+<span class="n">CATX</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="k">of</span> <span class="n">array_name</span><span class="p">(</span><span class="o">*</span><span class="p">))</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <strong>CATX</strong> function <strong>removes leading and trailing blanks</strong>, <strong>inserts delimiters</strong>, and returns a concatenated character string. In the code, you first specify a character string that is used as a delimiter between concatenated items.</p>
@@ -1760,44 +1773,44 @@ CATX(&#39;-&#39;,of array_name(*))
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA yes;
-    SET answers;
-    IF FIND(CAT(of a1-a10),&#39;Y&#39;);
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">yes</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">answers</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">FIND</span><span class="ss">(</span><span class="nv">CAT</span><span class="ss">(</span><span class="nv">of</span> <span class="nv">a1</span><span class="o">-</span><span class="nv">a10</span><span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">Y</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Searching for multiple character values</strong> (at least two 'Y' answer in a ten-questions questionnaire):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA yes;
-    SET answers;
-    IF COUNTC(CAT(OF a1-a10),&#39;Y&#39;) GE 2;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">yes</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">answers</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">COUNTC</span><span class="ss">(</span><span class="nv">CAT</span><span class="ss">(</span><span class="nv">OF</span> <span class="nv">a1</span><span class="o">-</span><span class="nv">a10</span><span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">Y</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">GE</span> <span class="mi">2</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Searching for numeric values</strong> (at least one question answered with the value 5 in a ten-questions questionnaire):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">DATA</span> <span class="nt">yes</span><span class="o">;</span>
-    <span class="nt">SET</span> <span class="nt">answers</span><span class="o">;</span>
-    <span class="nt">IF</span> <span class="nt">FIND</span><span class="o">(</span><span class="nt">CAT</span><span class="o">(</span><span class="nt">OF</span> <span class="nt">a</span><span class="o">:),</span><span class="s1">&#39;5&#39;</span><span class="o">);</span>
-<span class="nt">RUN</span><span class="o">;</span>
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">yes</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">answers</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">FIND</span><span class="ss">(</span><span class="nv">CAT</span><span class="ss">(</span><span class="nv">OF</span> <span class="nv">a</span>:<span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">5</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Searching for a single numeric pattern</strong> (variable whose value starts with '250'):</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA diagnostic-results;
-    SET diagnostic-tests;
-    IF FIND(CATX(&#39;*&#39;, OF diag1-diag5),&#39;250&#39;) ne 0;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">diagnostic</span><span class="o">-</span><span class="nv">results</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">diagnostic</span><span class="o">-</span><span class="nv">tests</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">FIND</span><span class="ss">(</span><span class="nv">CATX</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">*</span><span class="s1">&#39;</span>, <span class="nv">OF</span> <span class="nv">diag1</span><span class="o">-</span><span class="nv">diag5</span><span class="ss">)</span>,<span class="s1">&#39;</span><span class="s">250</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="nv">ne</span> <span class="mi">0</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Searching for multiple numeric patterns</strong> (variable whose value starts with '250' or '493'):</p>
@@ -1808,15 +1821,15 @@ RUN;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA diagnostic-results;
-    LENGTH string $100;
-    SET diagnostic-tests;
-    string = CATX(&#39;*&#39;, OF diag1-diag5);
-    diabetes = (FIND(string,&#39;250&#39;) ne 0);
-    asthma = (FIND(string,&#39;493&#39;) ne 0);
-    DROP string;
-RUN;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">DATA</span> <span class="n">diagnostic</span><span class="o">-</span><span class="n">results</span><span class="p">;</span>
+    <span class="k">LENGTH</span> <span class="n">string</span> <span class="err">$</span><span class="mi">100</span><span class="p">;</span>
+    <span class="k">SET</span> <span class="n">diagnostic</span><span class="o">-</span><span class="n">tests</span><span class="p">;</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">CATX</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="k">OF</span> <span class="n">diag1</span><span class="o">-</span><span class="n">diag5</span><span class="p">);</span>
+    <span class="n">diabetes</span> <span class="o">=</span> <span class="p">(</span><span class="n">FIND</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39;250&#39;</span><span class="p">)</span> <span class="n">ne</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">asthma</span> <span class="o">=</span> <span class="p">(</span><span class="n">FIND</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="s1">&#39;493&#39;</span><span class="p">)</span> <span class="n">ne</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">DROP</span> <span class="n">string</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Search for characters in numeric variables</strong>:</p>
@@ -1826,14 +1839,14 @@ RUN;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA final-SAS-data-set;
-    SET origin-SAS-data-set;
-    ARRAY arrayname(3) item1-item3;
-    DO _N_ = 1 TO 3 UNTIL (search eq 1);
-        search = (CAT(arrayname(_N_)) IN : (&#39;171&#39; &#39;172&#39;));
-    END;
-RUN;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">final</span><span class="o">-</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">origin</span><span class="o">-</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span><span class="c1">;</span>
+    <span class="nv">ARRAY</span> <span class="nv">arrayname</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span> <span class="nv">item1</span><span class="o">-</span><span class="nv">item3</span><span class="c1">;</span>
+    <span class="k">DO</span> <span class="nv">_N_</span> <span class="o">=</span> <span class="mi">1</span> <span class="nv">TO</span> <span class="mi">3</span> <span class="k">UNTIL</span> <span class="ss">(</span><span class="nv">search</span> <span class="nv">eq</span> <span class="mi">1</span><span class="ss">)</span><span class="c1">;</span>
+        <span class="nv">search</span> <span class="o">=</span> <span class="ss">(</span><span class="nv">CAT</span><span class="ss">(</span><span class="nv">arrayname</span><span class="ss">(</span><span class="nv">_N_</span><span class="ss">))</span> <span class="nv">IN</span> : <span class="ss">(</span><span class="s1">&#39;</span><span class="s">171</span><span class="s1">&#39;</span> <span class="s1">&#39;</span><span class="s">172</span><span class="s1">&#39;</span><span class="ss">))</span><span class="c1">;</span>
+    <span class="k">END</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="date-function"><code>DATE</code> Function<a class="headerlink" href="#date-function" title="Permanent link">Link</a></h3>
@@ -1844,15 +1857,15 @@ RUN;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>YEAR(SAS-date)     
-QTR(SAS-date)
-MONTH(SAS-date)
-DAY(SAS-date)
-WEEKDAY(SAS-date)
-TODAY()                /* Obtain the current date and convert to SAS-date (no argument) */
-DATE()                 /* Obtain the current date and convert to SAS-date (no argument) */
-MDY(month, day, year)
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">YEAR</span><span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="nb">date</span><span class="p">)</span>     
+<span class="n">QTR</span><span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="nb">date</span><span class="p">)</span>
+<span class="k">MONTH</span><span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="nb">date</span><span class="p">)</span>
+<span class="k">DAY</span><span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="nb">date</span><span class="p">)</span>
+<span class="n">WEEKDAY</span><span class="p">(</span><span class="n">SAS</span><span class="o">-</span><span class="nb">date</span><span class="p">)</span>
+<span class="n">TODAY</span><span class="p">()</span>                <span class="cm">/* Obtain the current date and convert to SAS-date (no argument) */</span>
+<span class="nb">DATE</span><span class="p">()</span>                 <span class="cm">/* Obtain the current date and convert to SAS-date (no argument) */</span>
+<span class="n">MDY</span><span class="p">(</span><span class="k">month</span><span class="p">,</span> <span class="k">day</span><span class="p">,</span> <span class="k">year</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1860,8 +1873,8 @@ MDY(month, day, year)
 <li>You can subtract dates: <code>Agein2012=(Bday2012-Birth_Date)/365.25;</code></li>
 </ul>
 <h3 id="intck-time-interval-function"><code>INTCK</code> Time Interval Function<a class="headerlink" href="#intck-time-interval-function" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INTCK(&#39;year&#39;, Hire_Date, &#39;01JAN2012&#39;d)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">INTCK</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">Hire_Date</span><span class="p">,</span> <span class="s1">&#39;01JAN2012&#39;</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>INTCK</code> function returns the number of interval boundaries of a given kind that lie between the two dates, times, or datetime values. In the code, you first specify the interval value.</p>
@@ -1870,8 +1883,8 @@ MDY(month, day, year)
 <p>The <code>DROP</code> statement is a compile-time-only statement. SAS sets a drop flag for the dropped variables, but the variables are in the PDV and, therefore, are available for processing.</p>
 </div>
 <h3 id="sum-summation-function"><code>SUM</code> Summation Function<a class="headerlink" href="#sum-summation-function" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SUM(argument1, argument2, ...)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">SUM</span><span class="p">(</span><span class="n">argument1</span><span class="p">,</span> <span class="n">argument2</span><span class="p">,</span> <span class="p">...)</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1883,10 +1896,10 @@ MDY(month, day, year)
 <h3 id="if-then-else-conditional-structures"><code>IF-THEN-ELSE</code> Conditional Structures<a class="headerlink" href="#if-then-else-conditional-structures" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>IF expression THEN statement;
-ELSE IF expression THEN statement;
-ELSE statement;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">IF</span> <span class="nv">expression</span> <span class="k">THEN</span> <span class="nv">statement</span><span class="c1">;</span>
+<span class="k">ELSE</span> <span class="k">IF</span> <span class="nv">expression</span> <span class="k">THEN</span> <span class="nv">statement</span><span class="c1">;</span>
+<span class="k">ELSE</span> <span class="nv">statement</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In the conditional expressions involving strings watch out for possible mixed case values where the condition may not be met:  <code>country = UPCASE(country);</code> to avoid problems</p>
@@ -1908,15 +1921,15 @@ Main solutions to this problem:</p>
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>IF expression THEN
-    DO;
-        executable statements;
-    END;
-ELSE IF expression THEN
-    DO;
-        executable statements;
-    END;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">IF</span> <span class="nv">expression</span> <span class="k">THEN</span>
+    <span class="k">DO</span><span class="c1">;</span>
+        <span class="nv">executable</span> <span class="nv">statements</span><span class="c1">;</span>
+    <span class="k">END</span><span class="c1">;</span>
+<span class="k">ELSE</span> <span class="k">IF</span> <span class="nv">expression</span> <span class="k">THEN</span>
+    <span class="k">DO</span><span class="c1">;</span>
+        <span class="nv">executable</span> <span class="nv">statements</span><span class="c1">;</span>
+    <span class="k">END</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In the <code>DATA</code> step, the first reference to a variable determines its length. The first reference to a new variable can be in a <code>LENGTH</code> statement, an <strong>assignment</strong> statement, or <strong>another</strong> statement such as an <code>INPUT</code> statement. After a variable is created in the PDV, the length of the variable's first value doesn't matter. </p>
@@ -1940,21 +1953,21 @@ ELSE IF expression THEN
 11
 12
 13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SELECT(Gender);
-      WHEN(&#39;F&#39;) DO;
-         Gift1=&#39;Scarf&#39;;
-         Gift2=&#39;Pedometer&#39;;
-      END;
-      WHEN(&#39;M&#39;) DO;
-         Gift1=&#39;Gloves&#39;;
-         Gift2=&#39;Money Clip&#39;;
-      END;
-      OTHERWISE DO;
-         Gift1=&#39;Coffee&#39;;
-         Gift2=&#39;Calendar&#39;;
-      END;
-END;
-</pre></div>
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">SELECT</span><span class="ss">(</span><span class="nv">Gender</span><span class="ss">)</span><span class="c1">;</span>
+      <span class="nv">WHEN</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">F</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="k">DO</span><span class="c1">;</span>
+         <span class="nv">Gift1</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Scarf</span><span class="s1">&#39;</span><span class="c1">;</span>
+         <span class="nv">Gift2</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Pedometer</span><span class="s1">&#39;</span><span class="c1">;</span>
+      <span class="k">END</span><span class="c1">;</span>
+      <span class="nv">WHEN</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">M</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="k">DO</span><span class="c1">;</span>
+         <span class="nv">Gift1</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Gloves</span><span class="s1">&#39;</span><span class="c1">;</span>
+         <span class="nv">Gift2</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Money Clip</span><span class="s1">&#39;</span><span class="c1">;</span>
+      <span class="k">END</span><span class="c1">;</span>
+      <span class="nv">OTHERWISE</span> <span class="k">DO</span><span class="c1">;</span>
+         <span class="nv">Gift1</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Coffee</span><span class="s1">&#39;</span><span class="c1">;</span>
+         <span class="nv">Gift2</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Calendar</span><span class="s1">&#39;</span><span class="c1">;</span>
+      <span class="k">END</span><span class="c1">;</span>
+<span class="k">END</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1968,10 +1981,10 @@ END;
 <p>The dataset <code>period</code> has more than one register per patient and the calculation of time periods between each one and the reference.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SORT DATA=period;
-    BY pt periodmax periodvisit;
-RUN;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">SORT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">period</span><span class="p">;</span>
+    <span class="k">BY</span> <span class="n">pt</span> <span class="n">periodmax</span> <span class="n">periodvisit</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>If you want to keep only highest/lowest value (last/first value after the sorting), you need to use the <code>last.</code>/<code>.first</code> functions.</p>
@@ -1979,15 +1992,16 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA maxperiod;
-    SET period;
-    BY pt;
-    IF last.pt;
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">maxperiod</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">period</span><span class="c1">;</span>
+    <span class="nv">BY</span> <span class="nv">pt</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">last</span>.<span class="nv">pt</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -2043,13 +2057,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2057,18 +2069,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

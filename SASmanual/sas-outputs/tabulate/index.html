@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#statistics-that-are-available-in-proc-tabulate" tabindex="1" class="md-skip">
+      <a href="#statistics-that-are-available-in-proc-tabulate" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 PROC TABULATE
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -997,42 +998,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics-that-are-available-in-proc-tabulate" title="Statistics that Are Available in PROC TABULATE" class="md-nav__link">
+  <a href="#statistics-that-are-available-in-proc-tabulate" class="md-nav__link">
     Statistics that Are Available in PROC TABULATE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#single-dimensional-table" title="Single Dimensional Table" class="md-nav__link">
+  <a href="#single-dimensional-table" class="md-nav__link">
     Single Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-dimensional-table" title="Two Dimensional Table" class="md-nav__link">
+  <a href="#two-dimensional-table" class="md-nav__link">
     Two Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#three-dimensional-table" title="Three Dimensional Table" class="md-nav__link">
+  <a href="#three-dimensional-table" class="md-nav__link">
     Three Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#formatting-tables" title="Formatting tables" class="md-nav__link">
+  <a href="#formatting-tables" class="md-nav__link">
     Formatting tables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dealing-with-missing-values" title="Dealing with Missing Values" class="md-nav__link">
+  <a href="#dealing-with-missing-values" class="md-nav__link">
     Dealing with Missing Values
   </a>
   
@@ -1040,14 +1041,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#force-missing-rows-and-columns-with-classdata" title="Force Missing Rows and Columns with CLASSDATA" class="md-nav__link">
+  <a href="#force-missing-rows-and-columns-with-classdata" class="md-nav__link">
     Force Missing Rows and Columns with CLASSDATA
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-force-missing-values-to-appear" title="How to Force Missing Values to Appear" class="md-nav__link">
+  <a href="#how-to-force-missing-values-to-appear" class="md-nav__link">
     How to Force Missing Values to Appear
   </a>
   
@@ -1059,7 +1060,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     Examples
   </a>
   
@@ -1442,18 +1443,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1468,6 +1457,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1568,42 +1581,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics-that-are-available-in-proc-tabulate" title="Statistics that Are Available in PROC TABULATE" class="md-nav__link">
+  <a href="#statistics-that-are-available-in-proc-tabulate" class="md-nav__link">
     Statistics that Are Available in PROC TABULATE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#single-dimensional-table" title="Single Dimensional Table" class="md-nav__link">
+  <a href="#single-dimensional-table" class="md-nav__link">
     Single Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-dimensional-table" title="Two Dimensional Table" class="md-nav__link">
+  <a href="#two-dimensional-table" class="md-nav__link">
     Two Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#three-dimensional-table" title="Three Dimensional Table" class="md-nav__link">
+  <a href="#three-dimensional-table" class="md-nav__link">
     Three Dimensional Table
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#formatting-tables" title="Formatting tables" class="md-nav__link">
+  <a href="#formatting-tables" class="md-nav__link">
     Formatting tables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dealing-with-missing-values" title="Dealing with Missing Values" class="md-nav__link">
+  <a href="#dealing-with-missing-values" class="md-nav__link">
     Dealing with Missing Values
   </a>
   
@@ -1611,14 +1624,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#force-missing-rows-and-columns-with-classdata" title="Force Missing Rows and Columns with CLASSDATA" class="md-nav__link">
+  <a href="#force-missing-rows-and-columns-with-classdata" class="md-nav__link">
     Force Missing Rows and Columns with CLASSDATA
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-to-force-missing-values-to-appear" title="How to Force Missing Values to Appear" class="md-nav__link">
+  <a href="#how-to-force-missing-values-to-appear" class="md-nav__link">
     How to Force Missing Values to Appear
   </a>
   
@@ -1630,7 +1643,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     Examples
   </a>
   
@@ -1661,13 +1674,13 @@
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE <span class="nt">&lt;options&gt;</span>;
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>PROC TABULATE <span class="nt">&lt;options&gt;</span>;
     CLASS variables <span class="nt">&lt;/ options&gt;</span>;
     VAR variables <span class="nt">&lt;/ options&gt;</span>;
     TABLE <span class="nt">&lt;page&gt;</span>, <span class="nt">&lt;row&gt;</span>, column <span class="nt">&lt;/ options&gt;</span>;
     ... other statements...;
 RUN;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1725,12 +1738,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=sashelp.class;
-    CLASS Sex;
-    VAR Height Weight;
-    TABLE Height * (N MEAN) Height * MEAN * Sex Weight * MEAN * Sex;
-RUN; 
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="k">class</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">Sex</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">Height</span> <span class="n">Weight</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">Height</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="n">MEAN</span><span class="p">)</span> <span class="n">Height</span> <span class="o">*</span> <span class="n">MEAN</span> <span class="o">*</span> <span class="n">Sex</span> <span class="n">Weight</span> <span class="o">*</span> <span class="n">MEAN</span> <span class="o">*</span> <span class="n">Sex</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Single Dimensional Table" src="../../images/proctabulate-example-single-dimensional.PNG" title="Single Dimensional Table" /></p>
@@ -1741,12 +1754,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE data=sashelp.class;
-    CLASS Sex;
-    VAR Height Weight;
-    TABLE Sex, Height * (N MEAN MAX) Weight * (N MEAN MAX) ;
-RUN; 
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">data</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="k">class</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">Sex</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">Height</span> <span class="n">Weight</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">Sex</span><span class="p">,</span> <span class="n">Height</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="n">MEAN</span> <span class="k">MAX</span><span class="p">)</span> <span class="n">Weight</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="n">MEAN</span> <span class="k">MAX</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Two Dimensional Table (Statistics Attached to Columns)" src="../../images/proctabulate-example-two-dimensional-columns.PNG" title="Two Dimensional Table (Statistics Attached to Columns)" /></p>
@@ -1755,12 +1768,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE data=sashelp.class;
-    CLASS Sex;
-    VAR Height Weight;
-    TABLE Sex * (N MEAN MAX), Height  Weight;
-RUN; 
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">data</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="k">class</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">Sex</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">Height</span> <span class="n">Weight</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">Sex</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="n">MEAN</span> <span class="k">MAX</span><span class="p">),</span> <span class="n">Height</span>  <span class="n">Weight</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Two Dimensional Table (Statistics Attached to Rows)" src="../../images/proctabulate-example-two-dimensional-rows.PNG" title="Two Dimensional Table (Statistics Attached to Rows)" /></p>
@@ -1769,12 +1782,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=sashelp.cars;
-    CLASS DriveTrain Origin Type / MISSING;
-    VAR Weight Length;
-    TABLE Origin * Type, DriveTrain * Weight * MEAN DriveTrain * Length * MEAN;
-RUN; 
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">cars</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">DriveTrain</span> <span class="n">Origin</span> <span class="k">Type</span> <span class="o">/</span> <span class="n">MISSING</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">Weight</span> <span class="k">Length</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">Origin</span> <span class="o">*</span> <span class="k">Type</span><span class="p">,</span> <span class="n">DriveTrain</span> <span class="o">*</span> <span class="n">Weight</span> <span class="o">*</span> <span class="n">MEAN</span> <span class="n">DriveTrain</span> <span class="o">*</span> <span class="k">Length</span> <span class="o">*</span> <span class="n">MEAN</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Two Dimensional Table (Multiple CLASS variables)" src="../../images/proctabulate-example-two-dimensional-multiple-CLASS.PNG" title="Two Dimensional Table (Multiple CLASS variables)" /></p>
@@ -1782,11 +1795,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=sashelp.cars;
-    CLASS DriveTrain Origin Type;
-    TABLE (Origin All=&#39;Total&#39;) * (DriveTrain ALL=&#39;Subtotal DriveTrain&#39;), (Type ALL=&#39;Subtotal Type&#39;* N);
-RUN; 
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">cars</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">DriveTrain</span> <span class="n">Origin</span> <span class="k">Type</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="p">(</span><span class="n">Origin</span> <span class="k">All</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">DriveTrain</span> <span class="k">ALL</span><span class="o">=</span><span class="s1">&#39;Subtotal DriveTrain&#39;</span><span class="p">),</span> <span class="p">(</span><span class="k">Type</span> <span class="k">ALL</span><span class="o">=</span><span class="s1">&#39;Subtotal Type&#39;</span><span class="o">*</span> <span class="n">N</span><span class="p">);</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Two Dimensional Table (Totals and Subtotals)" src="../../images/proctabulate-example-two-dimensional-totals.PNG" title="Two Dimensional Table (Totals and Subtotals)" /></p>
@@ -1796,12 +1809,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE data=sashelp.cars;
-    CLASS DriveTrain Origin Type;
-    VAR Weight Length;
-    TABLE Origin = &#39;Made in&#39;, Type = &#39;Category&#39;, DriveTrain * Weight * MEAN / BOX=_PAGE_;
-RUN; 
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">data</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">cars</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">DriveTrain</span> <span class="n">Origin</span> <span class="k">Type</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">Weight</span> <span class="k">Length</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">Origin</span> <span class="o">=</span> <span class="s1">&#39;Made in&#39;</span><span class="p">,</span> <span class="k">Type</span> <span class="o">=</span> <span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="n">DriveTrain</span> <span class="o">*</span> <span class="n">Weight</span> <span class="o">*</span> <span class="n">MEAN</span> <span class="o">/</span> <span class="n">BOX</span><span class="o">=</span><span class="n">_PAGE_</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Three Dimensional Table" src="../../images/proctabulate-example-three-dimensional.PNG" title="Three Dimensional Table" /></p>
@@ -1813,9 +1826,9 @@ statistics.</li>
 <li>Add a <code>LABEL</code> statement for variables and/or a <code>KEYLABEL</code> statement for statistics to your code:</li>
 </ol>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>LABEL var=‘label’;
-KEYLABEL stat=‘label’;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">LABEL</span> <span class="n">var</span><span class="o">=</span><span class="err">‘</span><span class="n">label</span><span class="err">’</span><span class="p">;</span>
+<span class="n">KEYLABEL</span> <span class="n">stat</span><span class="o">=</span><span class="err">‘</span><span class="n">label</span><span class="err">’</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In order to hide variable or statistic labels, you leave the label specification blank (<code>variable =‘ ’</code>). </p>
@@ -1827,15 +1840,15 @@ KEYLABEL stat=‘label’;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=sashelp.class;
-   CLASS Age Sex;
-   TABLES Age,
-          Sex=&#39;Gender&#39; *(N*{STYLE=[COLOR=Black]}
-                  PCTN=&#39;Percent&#39;   *{STYLE=[COLOR=Green]}
-                  ROWPCTN=&#39;Row Percent&#39;*{STYLE=[COLOR=Purple]}
-                  COLPCTN=&#39;Column Percent&#39; *{STYLE=[COLOR=Red]});
-RUN;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="k">class</span><span class="p">;</span>
+   <span class="k">CLASS</span> <span class="n">Age</span> <span class="n">Sex</span><span class="p">;</span>
+   <span class="n">TABLES</span> <span class="n">Age</span><span class="p">,</span>
+          <span class="n">Sex</span><span class="o">=</span><span class="s1">&#39;Gender&#39;</span> <span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="err">{</span><span class="n">STYLE</span><span class="o">=</span><span class="p">[</span><span class="n">COLOR</span><span class="o">=</span><span class="n">Black</span><span class="p">]</span><span class="err">}</span>
+                  <span class="n">PCTN</span><span class="o">=</span><span class="s1">&#39;Percent&#39;</span>   <span class="o">*</span><span class="err">{</span><span class="n">STYLE</span><span class="o">=</span><span class="p">[</span><span class="n">COLOR</span><span class="o">=</span><span class="n">Green</span><span class="p">]</span><span class="err">}</span>
+                  <span class="n">ROWPCTN</span><span class="o">=</span><span class="s1">&#39;Row Percent&#39;</span><span class="o">*</span><span class="err">{</span><span class="n">STYLE</span><span class="o">=</span><span class="p">[</span><span class="n">COLOR</span><span class="o">=</span><span class="n">Purple</span><span class="p">]</span><span class="err">}</span>
+                  <span class="n">COLPCTN</span><span class="o">=</span><span class="s1">&#39;Column Percent&#39;</span> <span class="o">*</span><span class="err">{</span><span class="n">STYLE</span><span class="o">=</span><span class="p">[</span><span class="n">COLOR</span><span class="o">=</span><span class="n">Red</span><span class="p">]</span><span class="err">}</span><span class="p">);</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Changing the font color" src="../../images/proctabulate-example-font-color.PNG" title="Changing the font color" /></p>
@@ -1844,8 +1857,8 @@ RUN;
 <li>The <code>CLASSLEV</code> statement is used to assign some style attributes to the variable values only (not to the column header)</li>
 <li>The <code>NOSEPS</code> option <strong>removes the horizontal dividers</strong> between the row values from your table</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set NOSEPS;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">NOSEPS</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1853,8 +1866,8 @@ RUN;
 <li><code>RTS=</code> specifies how wide you want the row header field to be</li>
 <li>Use the <code>BOX=</code> option to <strong>fill in the big white box in the upper left</strong></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>TABLE (...) / BOX={LABEL=&#39;Custom label for upper left box&#39;} INDENT=3 RTS=12;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">TABLE</span> <span class="ss">(</span>...<span class="ss">)</span> <span class="o">/</span> <span class="nv">BOX</span><span class="o">=</span>{<span class="nv">LABEL</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">Custom label for upper left box</span><span class="s1">&#39;</span>} <span class="nv">INDENT</span><span class="o">=</span><span class="mi">3</span> <span class="nv">RTS</span><span class="o">=</span><span class="mi">12</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Depending on where you place the style options, many different results can be achieved. If you place the style options on the <code>PROC TABULATE</code> statement, for example, you will affect all the table cells. Note that for the <code>CLASS</code>, <code>CLASSLEV</code>, <code>VAR</code>, and <code>KEYWORD</code> statements, the style options can also be specified in the dimension expression in the Table statement. See below for a list of some of the different places where you can put the style options and what portion of the table they will affect.</p>
@@ -1866,15 +1879,15 @@ RUN;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set F=10.2 S=[custom style attributes]; 
-    CLASS variable1 / S=[custom style attributes];
-    CLASSLEV variable1 / S=[custom style attributes];
-    VAR variable2;
-    TABLE variable1=&#39;&#39; all={label=&#39;Total&#39; S=[custom style attributes], 
-          MEAN={S=[custom style attributes]} * variable2 
-          / BOX={LABEL=&#39;custom label&#39; S=[custom style attributes]};
-RUN;
-</pre></div>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">F</span><span class="o">=</span><span class="mi">10</span><span class="p">.</span><span class="mi">2</span> <span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">];</span> 
+    <span class="k">CLASS</span> <span class="n">variable1</span> <span class="o">/</span> <span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">];</span>
+    <span class="n">CLASSLEV</span> <span class="n">variable1</span> <span class="o">/</span> <span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">];</span>
+    <span class="n">VAR</span> <span class="n">variable2</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">variable1</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="k">all</span><span class="o">=</span><span class="err">{</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span> <span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">],</span> 
+          <span class="n">MEAN</span><span class="o">=</span><span class="err">{</span><span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">]</span><span class="err">}</span> <span class="o">*</span> <span class="n">variable2</span> 
+          <span class="o">/</span> <span class="n">BOX</span><span class="o">=</span><span class="err">{</span><span class="n">LABEL</span><span class="o">=</span><span class="s1">&#39;custom label&#39;</span> <span class="n">S</span><span class="o">=</span><span class="p">[</span><span class="n">custom</span> <span class="n">style</span> <span class="n">attributes</span><span class="p">]</span><span class="err">}</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition note">
@@ -1902,12 +1915,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set CLASSDATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>PROC TABULATE DATA=SAS-data-set CLASSDATA=SAS-data-set <span class="nt">&lt;options&gt;</span>;
     CLASS variables <span class="nt">&lt;/options&gt;</span>;
     VAR variables <span class="nt">&lt;/options&gt;</span>;
     TABLE page, row, column <span class="nt">&lt;/options&gt;</span>;
 RUN;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Read <a href="http://support.sas.com/resources/papers/proceedings11/087-2011.pdf">this article</a> for more information.</p>
@@ -1916,11 +1929,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set ORDER=FREQ OUT=Output-SAS-data-set MISSING;
-    CLASS var1 var2 crossvar;
-    TABLE var1 var2, crossvar*(N COLPCTN) / PRINTMISS MISSTEXT=&#39;0&#39;;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">ORDER</span><span class="o">=</span><span class="n">FREQ</span> <span class="k">OUT</span><span class="o">=</span><span class="k">Output</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">MISSING</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">var1</span> <span class="n">var2</span> <span class="n">crossvar</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">var1</span> <span class="n">var2</span><span class="p">,</span> <span class="n">crossvar</span><span class="o">*</span><span class="p">(</span><span class="n">N</span> <span class="n">COLPCTN</span><span class="p">)</span> <span class="o">/</span> <span class="n">PRINTMISS</span> <span class="n">MISSTEXT</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">Link</a></h2>
@@ -1930,17 +1943,18 @@ RUN;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TABULATE DATA=SAS-data-set ORDER=FREQ;
-    VAR var1 var2;
-    CLASS AEencoding;
-    CLASS grade / ORDER=FORMATTED;
-    CLASS treatment / ORDER=FORMATTED;
-    TABLE AEencoding=&#39;&#39;, treatment=&#39;Treatment/Grade&#39;*grade=&#39;&#39;*(N=&#39;N&#39; var1=&#39;%&#39;*SUM=&#39;&#39;) ALL=&#39;Total (N=# cases)&#39;*(N=&#39;N&#39; var2=&#39;%&#39;*SUM=&#39;&#39;) / BOX=&quot;Preferred MeDDRA Term&quot;;
-RUN;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TABULATE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">ORDER</span><span class="o">=</span><span class="n">FREQ</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">var1</span> <span class="n">var2</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">AEencoding</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">grade</span> <span class="o">/</span> <span class="k">ORDER</span><span class="o">=</span><span class="n">FORMATTED</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="n">treatment</span> <span class="o">/</span> <span class="k">ORDER</span><span class="o">=</span><span class="n">FORMATTED</span><span class="p">;</span>
+    <span class="k">TABLE</span> <span class="n">AEencoding</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">treatment</span><span class="o">=</span><span class="s1">&#39;Treatment/Grade&#39;</span><span class="o">*</span><span class="n">grade</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="s1">&#39;N&#39;</span> <span class="n">var1</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="o">*</span><span class="k">SUM</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">ALL</span><span class="o">=</span><span class="s1">&#39;Total (N=# cases)&#39;</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="s1">&#39;N&#39;</span> <span class="n">var2</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="o">*</span><span class="k">SUM</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">BOX</span><span class="o">=</span><span class="ss">&quot;Preferred MeDDRA Term&quot;</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -1996,13 +2010,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2010,18 +2022,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

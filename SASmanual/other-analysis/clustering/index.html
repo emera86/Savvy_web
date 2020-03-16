@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduction-to-cluster-analysis" tabindex="1" class="md-skip">
+      <a href="#introduction-to-cluster-analysis" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Clustering
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -853,14 +854,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-cluster-analysis" title="Introduction to Cluster Analysis" class="md-nav__link">
+  <a href="#introduction-to-cluster-analysis" class="md-nav__link">
     Introduction to Cluster Analysis
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gettin-ready-for-a-cluster-analysis" title="Gettin' Ready for a Cluster Analysis" class="md-nav__link">
+  <a href="#gettin-ready-for-a-cluster-analysis" class="md-nav__link">
     Gettin' Ready for a Cluster Analysis
   </a>
   
@@ -868,14 +869,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-for-missing-data" title="Check for Missing Data" class="md-nav__link">
+  <a href="#check-for-missing-data" class="md-nav__link">
     Check for Missing Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dealing-with-categorical-variables" title="Dealing with Categorical Variables" class="md-nav__link">
+  <a href="#dealing-with-categorical-variables" class="md-nav__link">
     Dealing with Categorical Variables
   </a>
   
@@ -883,21 +884,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#composite-variables" title="Composite variables" class="md-nav__link">
+  <a href="#composite-variables" class="md-nav__link">
     Composite variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hot-encoding" title="Hot encoding" class="md-nav__link">
+  <a href="#hot-encoding" class="md-nav__link">
     Hot encoding
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ordinal-categorical-variables" title="Ordinal Categorical Variables" class="md-nav__link">
+  <a href="#ordinal-categorical-variables" class="md-nav__link">
     Ordinal Categorical Variables
   </a>
   
@@ -909,7 +910,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#methods-for-data-reduction" title="Methods for data reduction" class="md-nav__link">
+  <a href="#methods-for-data-reduction" class="md-nav__link">
     Methods for data reduction
   </a>
   
@@ -917,7 +918,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#factor-analysis" title="Factor Analysis" class="md-nav__link">
+  <a href="#factor-analysis" class="md-nav__link">
     Factor Analysis
   </a>
   
@@ -929,7 +930,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#standardize-your-data" title="Standardize your Data" class="md-nav__link">
+  <a href="#standardize-your-data" class="md-nav__link">
     Standardize your Data
   </a>
   
@@ -941,7 +942,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sas-procedures-to-perform-cluster-analysis" title="SAS Procedures to Perform Cluster Analysis" class="md-nav__link">
+  <a href="#sas-procedures-to-perform-cluster-analysis" class="md-nav__link">
     SAS Procedures to Perform Cluster Analysis
   </a>
   
@@ -949,35 +950,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-cluster-hierarchical-cluster-analysis" title="PROC CLUSTER: Hierarchical Cluster Analysis" class="md-nav__link">
+  <a href="#proc-cluster-hierarchical-cluster-analysis" class="md-nav__link">
     PROC CLUSTER: Hierarchical Cluster Analysis
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-fastclus-disjoint-cluster-analysis" title="PROC FASTCLUS: Disjoint Cluster Analysis" class="md-nav__link">
+  <a href="#proc-fastclus-disjoint-cluster-analysis" class="md-nav__link">
     PROC FASTCLUS: Disjoint Cluster Analysis
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mixed-clustering" title="Mixed Clustering" class="md-nav__link">
+  <a href="#mixed-clustering" class="md-nav__link">
     Mixed Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-varclus-variable-clustering" title="PROC VARCLUS: Variable Clustering" class="md-nav__link">
+  <a href="#proc-varclus-variable-clustering" class="md-nav__link">
     PROC VARCLUS: Variable Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-tree" title="PROC TREE" class="md-nav__link">
+  <a href="#proc-tree" class="md-nav__link">
     PROC TREE
   </a>
   
@@ -989,14 +990,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choosing-the-optimal-number-of-clusters-for-the-analysis" title="Choosing the Optimal Number of Clusters for the Analysis" class="md-nav__link">
+  <a href="#choosing-the-optimal-number-of-clusters-for-the-analysis" class="md-nav__link">
     Choosing the Optimal Number of Clusters for the Analysis
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-examination-of-the-cluster-analysis-solution" title="Further Examination of the Cluster Analysis Solution" class="md-nav__link">
+  <a href="#further-examination-of-the-cluster-analysis-solution" class="md-nav__link">
     Further Examination of the Cluster Analysis Solution
   </a>
   
@@ -1004,14 +1005,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#visualizing-the-results" title="Visualizing the Results" class="md-nav__link">
+  <a href="#visualizing-the-results" class="md-nav__link">
     Visualizing the Results
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-means-and-standard-deviations" title="Cluster Means and Standard Deviations" class="md-nav__link">
+  <a href="#cluster-means-and-standard-deviations" class="md-nav__link">
     Cluster Means and Standard Deviations
   </a>
   
@@ -1543,18 +1544,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1569,6 +1558,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1669,14 +1682,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-cluster-analysis" title="Introduction to Cluster Analysis" class="md-nav__link">
+  <a href="#introduction-to-cluster-analysis" class="md-nav__link">
     Introduction to Cluster Analysis
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gettin-ready-for-a-cluster-analysis" title="Gettin' Ready for a Cluster Analysis" class="md-nav__link">
+  <a href="#gettin-ready-for-a-cluster-analysis" class="md-nav__link">
     Gettin' Ready for a Cluster Analysis
   </a>
   
@@ -1684,14 +1697,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-for-missing-data" title="Check for Missing Data" class="md-nav__link">
+  <a href="#check-for-missing-data" class="md-nav__link">
     Check for Missing Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dealing-with-categorical-variables" title="Dealing with Categorical Variables" class="md-nav__link">
+  <a href="#dealing-with-categorical-variables" class="md-nav__link">
     Dealing with Categorical Variables
   </a>
   
@@ -1699,21 +1712,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#composite-variables" title="Composite variables" class="md-nav__link">
+  <a href="#composite-variables" class="md-nav__link">
     Composite variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hot-encoding" title="Hot encoding" class="md-nav__link">
+  <a href="#hot-encoding" class="md-nav__link">
     Hot encoding
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ordinal-categorical-variables" title="Ordinal Categorical Variables" class="md-nav__link">
+  <a href="#ordinal-categorical-variables" class="md-nav__link">
     Ordinal Categorical Variables
   </a>
   
@@ -1725,7 +1738,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#methods-for-data-reduction" title="Methods for data reduction" class="md-nav__link">
+  <a href="#methods-for-data-reduction" class="md-nav__link">
     Methods for data reduction
   </a>
   
@@ -1733,7 +1746,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#factor-analysis" title="Factor Analysis" class="md-nav__link">
+  <a href="#factor-analysis" class="md-nav__link">
     Factor Analysis
   </a>
   
@@ -1745,7 +1758,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#standardize-your-data" title="Standardize your Data" class="md-nav__link">
+  <a href="#standardize-your-data" class="md-nav__link">
     Standardize your Data
   </a>
   
@@ -1757,7 +1770,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sas-procedures-to-perform-cluster-analysis" title="SAS Procedures to Perform Cluster Analysis" class="md-nav__link">
+  <a href="#sas-procedures-to-perform-cluster-analysis" class="md-nav__link">
     SAS Procedures to Perform Cluster Analysis
   </a>
   
@@ -1765,35 +1778,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proc-cluster-hierarchical-cluster-analysis" title="PROC CLUSTER: Hierarchical Cluster Analysis" class="md-nav__link">
+  <a href="#proc-cluster-hierarchical-cluster-analysis" class="md-nav__link">
     PROC CLUSTER: Hierarchical Cluster Analysis
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-fastclus-disjoint-cluster-analysis" title="PROC FASTCLUS: Disjoint Cluster Analysis" class="md-nav__link">
+  <a href="#proc-fastclus-disjoint-cluster-analysis" class="md-nav__link">
     PROC FASTCLUS: Disjoint Cluster Analysis
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mixed-clustering" title="Mixed Clustering" class="md-nav__link">
+  <a href="#mixed-clustering" class="md-nav__link">
     Mixed Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-varclus-variable-clustering" title="PROC VARCLUS: Variable Clustering" class="md-nav__link">
+  <a href="#proc-varclus-variable-clustering" class="md-nav__link">
     PROC VARCLUS: Variable Clustering
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proc-tree" title="PROC TREE" class="md-nav__link">
+  <a href="#proc-tree" class="md-nav__link">
     PROC TREE
   </a>
   
@@ -1805,14 +1818,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choosing-the-optimal-number-of-clusters-for-the-analysis" title="Choosing the Optimal Number of Clusters for the Analysis" class="md-nav__link">
+  <a href="#choosing-the-optimal-number-of-clusters-for-the-analysis" class="md-nav__link">
     Choosing the Optimal Number of Clusters for the Analysis
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#further-examination-of-the-cluster-analysis-solution" title="Further Examination of the Cluster Analysis Solution" class="md-nav__link">
+  <a href="#further-examination-of-the-cluster-analysis-solution" class="md-nav__link">
     Further Examination of the Cluster Analysis Solution
   </a>
   
@@ -1820,14 +1833,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#visualizing-the-results" title="Visualizing the Results" class="md-nav__link">
+  <a href="#visualizing-the-results" class="md-nav__link">
     Visualizing the Results
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-means-and-standard-deviations" title="Cluster Means and Standard Deviations" class="md-nav__link">
+  <a href="#cluster-means-and-standard-deviations" class="md-nav__link">
     Cluster Means and Standard Deviations
   </a>
   
@@ -1865,11 +1878,11 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA SAS-data-set-without-missing;
-    SET SAS-data-set-with-missing;
-    IF CMISS(OF _ALL_) THEN DELETE;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span><span class="o">-</span><span class="nv">without</span><span class="o">-</span><span class="nv">missing</span><span class="c1">;</span>
+    <span class="nv">SET</span> <span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span><span class="o">-</span><span class="nv">with</span><span class="o">-</span><span class="nv">missing</span><span class="c1">;</span>
+    <span class="k">IF</span> <span class="nv">CMISS</span><span class="ss">(</span><span class="nv">OF</span> <span class="nv">_ALL_</span><span class="ss">)</span> <span class="k">THEN</span> <span class="nv">DELETE</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="dealing-with-categorical-variables">Dealing with Categorical Variables<a class="headerlink" href="#dealing-with-categorical-variables" title="Permanent link">Link</a></h3>
@@ -1909,10 +1922,10 @@ While arguments exist supporting both types of rotation methods, factor analysis
 </div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC FACTOR DATA=SAS-data-set NFACTORS=3 CORR SCREE EV REORDER ROTATE=VARIMAX METHOD=PRINIT PRIORS=SMC;
-    VAR var1 var2 var3 ... varn;
-RUN;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">FACTOR</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">NFACTORS</span><span class="o">=</span><span class="mi">3</span> <span class="n">CORR</span> <span class="n">SCREE</span> <span class="n">EV</span> <span class="n">REORDER</span> <span class="n">ROTATE</span><span class="o">=</span><span class="n">VARIMAX</span> <span class="k">METHOD</span><span class="o">=</span><span class="n">PRINIT</span> <span class="n">PRIORS</span><span class="o">=</span><span class="n">SMC</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">var1</span> <span class="n">var2</span> <span class="n">var3</span> <span class="p">...</span> <span class="n">varn</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1970,15 +1983,15 @@ RUN;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA SAS-data-set;
-    SET SAS-data-set-unformatted;
-    format variable1 variable2 variable3 10.4;
-RUN;
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">DATA</span> <span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+    <span class="k">SET</span> <span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="n">unformatted</span><span class="p">;</span>
+    <span class="n">format</span> <span class="n">variable1</span> <span class="n">variable2</span> <span class="n">variable3</span> <span class="mi">10</span><span class="p">.</span><span class="mi">4</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
 
-PROC STANDARD DATA=SAS-data-set out=SAS-output-data-set MEAN=0 STD=1;
-    VAR variable1 variable2 variable3;
-RUN;
-</pre></div>
+<span class="n">PROC</span> <span class="n">STANDARD</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">out</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">output</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">MEAN</span><span class="o">=</span><span class="mi">0</span> <span class="n">STD</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">variable1</span> <span class="n">variable2</span> <span class="n">variable3</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition warning">
@@ -2017,22 +2030,22 @@ RUN;
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data t;
-    input cid $ 1-2 income educ;
-cards;
-c1 5 5
-c2 6 6
-c3 15 14
-c4 16 15
-c5 25 20
-c6 30 19
-run;
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">data</span> <span class="n">t</span><span class="p">;</span>
+    <span class="k">input</span> <span class="n">cid</span> <span class="err">$</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span> <span class="n">income</span> <span class="n">educ</span><span class="p">;</span>
+<span class="n">cards</span><span class="p">;</span>
+<span class="n">c1</span> <span class="mi">5</span> <span class="mi">5</span>
+<span class="n">c2</span> <span class="mi">6</span> <span class="mi">6</span>
+<span class="n">c3</span> <span class="mi">15</span> <span class="mi">14</span>
+<span class="n">c4</span> <span class="mi">16</span> <span class="mi">15</span>
+<span class="n">c5</span> <span class="mi">25</span> <span class="mi">20</span>
+<span class="n">c6</span> <span class="mi">30</span> <span class="mi">19</span>
+<span class="n">run</span><span class="p">;</span>
 
-proc cluster simple noeigen method=centroid rmsstd rsquare nonorm out=tree;
-id cid;
-var income educ;
-run;
-</pre></div>
+<span class="n">proc</span> <span class="k">cluster</span> <span class="k">simple</span> <span class="n">noeigen</span> <span class="k">method</span><span class="o">=</span><span class="n">centroid</span> <span class="n">rmsstd</span> <span class="n">rsquare</span> <span class="n">nonorm</span> <span class="k">out</span><span class="o">=</span><span class="n">tree</span><span class="p">;</span>
+<span class="n">id</span> <span class="n">cid</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">income</span> <span class="n">educ</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2061,22 +2074,22 @@ run;
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data t2;
-    input cid $ 1-2 income educ;
-cards;
-c1 5 5
-c2 6 6
-c3 15 14
-c4 16 15
-c5 25 20
-c6 30 19
-run;
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">data</span> <span class="n">t2</span><span class="p">;</span>
+    <span class="k">input</span> <span class="n">cid</span> <span class="err">$</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span> <span class="n">income</span> <span class="n">educ</span><span class="p">;</span>
+<span class="n">cards</span><span class="p">;</span>
+<span class="n">c1</span> <span class="mi">5</span> <span class="mi">5</span>
+<span class="n">c2</span> <span class="mi">6</span> <span class="mi">6</span>
+<span class="n">c3</span> <span class="mi">15</span> <span class="mi">14</span>
+<span class="n">c4</span> <span class="mi">16</span> <span class="mi">15</span>
+<span class="n">c5</span> <span class="mi">25</span> <span class="mi">20</span>
+<span class="n">c6</span> <span class="mi">30</span> <span class="mi">19</span>
+<span class="n">run</span><span class="p">;</span>
 
-proc fastclus radius=0 replace=full maxclusters=3 maxiter=20 list distance;
-id cid;
-var income educ;
-run;
-</pre></div>
+<span class="n">proc</span> <span class="n">fastclus</span> <span class="n">radius</span><span class="o">=</span><span class="mi">0</span> <span class="k">replace</span><span class="o">=</span><span class="k">full</span> <span class="n">maxclusters</span><span class="o">=</span><span class="mi">3</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">20</span> <span class="n">list</span> <span class="n">distance</span><span class="p">;</span>
+<span class="n">id</span> <span class="n">cid</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">income</span> <span class="n">educ</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>You must specify either the <code>MAXCLUSTERS=</code> or the <code>RADIUS=</code> argument in the <code>PROC FASTCLUS</code> statement.</p>
@@ -2118,10 +2131,10 @@ run;
 <p><code>PROC VARCLUS</code> can be used as a <strong>variable-reduction method</strong>. A large set of variables can often be replaced by the set of cluster components with little loss of information. A given number of cluster components does not generally explain as much variance as the same number of principal components on the full set of variables, but the cluster components are usually easier to interpret than the principal components, even if the latter are rotated.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC VARCLUS DATA=SAS-data-set MAXEIGEN=0.7 OUTTREE=fortree short noprint;  
-    VAR variable1 variable2 variable3;
-RUN;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">VARCLUS</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">MAXEIGEN</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">7</span> <span class="n">OUTTREE</span><span class="o">=</span><span class="n">fortree</span> <span class="n">short</span> <span class="n">noprint</span><span class="p">;</span>  
+    <span class="n">VAR</span> <span class="n">variable1</span> <span class="n">variable2</span> <span class="n">variable3</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="proc-tree"><code>PROC TREE</code><a class="headerlink" href="#proc-tree" title="Permanent link">Link</a></h3>
@@ -2129,11 +2142,11 @@ RUN;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC TREE DATA=tree OUT=clus3 NCLUSTERS=3;
-    ID id-variable;
-    COPY variable1 variable2 variable3;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">TREE</span> <span class="k">DATA</span><span class="o">=</span><span class="n">tree</span> <span class="k">OUT</span><span class="o">=</span><span class="n">clus3</span> <span class="n">NCLUSTERS</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+    <span class="n">ID</span> <span class="n">id</span><span class="o">-</span><span class="k">variable</span><span class="p">;</span>
+    <span class="k">COPY</span> <span class="n">variable1</span> <span class="n">variable2</span> <span class="n">variable3</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>TREE</code> procedure produces a tree diagram, also known as a dendrogram or phenogram, using a data set created by the <code>CLUSTER</code> procedure. The <code>CLUSTER</code> procedure creates output data sets that contain the results of <strong>hierarchical clustering as a tree structure</strong>. The <code>TREE</code> procedure uses the output data set to produce a diagram of the tree structure.</p>
@@ -2208,7 +2221,7 @@ This technique is discussed in the "Applied Clustering Techniques" course notes.
 50
 51
 52
-53</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">*</span> <span class="n">Define</span> <span class="n">the</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">clustering</span><span class="p">;</span>
+53</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="n">Define</span> <span class="n">the</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">clustering</span><span class="p">;</span>
 <span class="o">*------------------------------------</span><span class="p">;</span>
 <span class="nf">%let</span> <span class="n">varlist</span><span class="o">=</span><span class="n">var1</span> <span class="n">var2</span> <span class="n">var3</span> <span class="n">var4</span> <span class="n">var5</span><span class="p">;</span>
 
@@ -2261,7 +2274,7 @@ This technique is discussed in the "Applied Clustering Techniques" course notes.
 <span class="n">proc</span> <span class="n">gplot</span> <span class="n">data</span><span class="o">=</span><span class="n">clus_rsq</span><span class="p">;</span>
     <span class="n">plot</span> <span class="n">over_all</span><span class="o">*</span><span class="n">nclust</span> <span class="o">/</span> <span class="n">haxis</span><span class="o">=</span><span class="n">axis1</span> <span class="n">vaxis</span><span class="o">=</span><span class="n">axis2</span> <span class="n">href</span><span class="o">=</span><span class="mi">3</span> <span class="mi">5</span><span class="p">;</span>
 <span class="n">run</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition summary">
@@ -2277,11 +2290,11 @@ This technique is discussed in the "Applied Clustering Techniques" course notes.
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC CANDISC DATA=clusterdata OUT=candata;
-    CLASS cluster-assignment-variable;
-    VAR clustering1 clustering2;
-RUN;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">CANDISC</span> <span class="k">DATA</span><span class="o">=</span><span class="n">clusterdata</span> <span class="k">OUT</span><span class="o">=</span><span class="n">candata</span><span class="p">;</span>
+    <span class="k">CLASS</span> <span class="k">cluster</span><span class="o">-</span><span class="k">assignment</span><span class="o">-</span><span class="k">variable</span><span class="p">;</span>
+    <span class="n">VAR</span> <span class="n">clustering1</span> <span class="n">clustering2</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -2292,10 +2305,10 @@ RUN;
 <p>You can then plot the first two canonical variables using the <code>SGPLOT</code> procedure:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SGPLOT DATA=candata;
-    SCATTER Y=can2 X=can1 / GROUP=cluster-assignment-variable;
-RUN;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">SGPLOT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">candata</span><span class="p">;</span>
+    <span class="n">SCATTER</span> <span class="n">Y</span><span class="o">=</span><span class="n">can2</span> <span class="n">X</span><span class="o">=</span><span class="n">can1</span> <span class="o">/</span> <span class="k">GROUP</span><span class="o">=</span><span class="k">cluster</span><span class="o">-</span><span class="k">assignment</span><span class="o">-</span><span class="k">variable</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Let's analyze the following example result for a 4-cluster analysis.</p>
@@ -2312,6 +2325,7 @@ RUN;
 <p>You can also check these values per cluster to detect possible similarities between groups and detect the most different ones.</p>
                 
                   
+                
                 
               
               
@@ -2367,13 +2381,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2381,18 +2393,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

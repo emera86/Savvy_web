@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#traditional-model-selection-algoritms" tabindex="1" class="md-skip">
+      <a href="#traditional-model-selection-algoritms" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Model Selection
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -709,7 +710,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#traditional-model-selection-algoritms" title="Traditional Model Selection Algoritms" class="md-nav__link">
+  <a href="#traditional-model-selection-algoritms" class="md-nav__link">
     Traditional Model Selection Algoritms
   </a>
   
@@ -717,28 +718,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forward-method-forward" title="Forward Method (FORWARD)" class="md-nav__link">
+  <a href="#forward-method-forward" class="md-nav__link">
     Forward Method (FORWARD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backward-method-backward" title="Backward Method (BACKWARD)" class="md-nav__link">
+  <a href="#backward-method-backward" class="md-nav__link">
     Backward Method (BACKWARD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stepwise-method-stepwise" title="Stepwise Method (STEPWISE)" class="md-nav__link">
+  <a href="#stepwise-method-stepwise" class="md-nav__link">
     Stepwise Method (STEPWISE)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     Code Examples
   </a>
   
@@ -750,7 +751,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#penalized-regression-methods-for-linear-models" title="Penalized Regression Methods for Linear Models" class="md-nav__link">
+  <a href="#penalized-regression-methods-for-linear-models" class="md-nav__link">
     Penalized Regression Methods for Linear Models
   </a>
   
@@ -758,28 +759,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#least-absolute-selection-shrinkage-operator-lasso" title="Least Absolute Selection Shrinkage Operator (LASSO)" class="md-nav__link">
+  <a href="#least-absolute-selection-shrinkage-operator-lasso" class="md-nav__link">
     Least Absolute Selection Shrinkage Operator (LASSO)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#least-angle-regression-lar" title="Least Angle Regression (LAR)" class="md-nav__link">
+  <a href="#least-angle-regression-lar" class="md-nav__link">
     Least Angle Regression (LAR)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-examples_1" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples_1" class="md-nav__link">
     Code Examples
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#lasso-regression-limitations" title="LASSO Regression Limitations" class="md-nav__link">
+  <a href="#lasso-regression-limitations" class="md-nav__link">
     LASSO Regression Limitations
   </a>
   
@@ -791,7 +792,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-selection-algorithms-pros-and-cons" title="Model Selection Algorithms Pros and Cons" class="md-nav__link">
+  <a href="#model-selection-algorithms-pros-and-cons" class="md-nav__link">
     Model Selection Algorithms Pros and Cons
   </a>
   
@@ -1462,18 +1463,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1488,6 +1477,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1588,7 +1601,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#traditional-model-selection-algoritms" title="Traditional Model Selection Algoritms" class="md-nav__link">
+  <a href="#traditional-model-selection-algoritms" class="md-nav__link">
     Traditional Model Selection Algoritms
   </a>
   
@@ -1596,28 +1609,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#forward-method-forward" title="Forward Method (FORWARD)" class="md-nav__link">
+  <a href="#forward-method-forward" class="md-nav__link">
     Forward Method (FORWARD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backward-method-backward" title="Backward Method (BACKWARD)" class="md-nav__link">
+  <a href="#backward-method-backward" class="md-nav__link">
     Backward Method (BACKWARD)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stepwise-method-stepwise" title="Stepwise Method (STEPWISE)" class="md-nav__link">
+  <a href="#stepwise-method-stepwise" class="md-nav__link">
     Stepwise Method (STEPWISE)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     Code Examples
   </a>
   
@@ -1629,7 +1642,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#penalized-regression-methods-for-linear-models" title="Penalized Regression Methods for Linear Models" class="md-nav__link">
+  <a href="#penalized-regression-methods-for-linear-models" class="md-nav__link">
     Penalized Regression Methods for Linear Models
   </a>
   
@@ -1637,28 +1650,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#least-absolute-selection-shrinkage-operator-lasso" title="Least Absolute Selection Shrinkage Operator (LASSO)" class="md-nav__link">
+  <a href="#least-absolute-selection-shrinkage-operator-lasso" class="md-nav__link">
     Least Absolute Selection Shrinkage Operator (LASSO)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#least-angle-regression-lar" title="Least Angle Regression (LAR)" class="md-nav__link">
+  <a href="#least-angle-regression-lar" class="md-nav__link">
     Least Angle Regression (LAR)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-examples_1" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples_1" class="md-nav__link">
     Code Examples
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#lasso-regression-limitations" title="LASSO Regression Limitations" class="md-nav__link">
+  <a href="#lasso-regression-limitations" class="md-nav__link">
     LASSO Regression Limitations
   </a>
   
@@ -1670,7 +1683,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-selection-algorithms-pros-and-cons" title="Model Selection Algorithms Pros and Cons" class="md-nav__link">
+  <a href="#model-selection-algorithms-pros-and-cons" class="md-nav__link">
     Model Selection Algorithms Pros and Cons
   </a>
   
@@ -1714,70 +1727,70 @@
 <p>In the traditional implementation of stepwise selection method, the same entry and removal F statistics for the forward selection and backward elimination methods are used to assess contributions of effects as they are added to or removed from a model. If at a step of the stepwise method, any effect in the model is not significant at the SLSTAY= level, then the least significant of these effects is removed from the model and the algorithm proceeds to the next step. This ensures that no effect can be added to a model while some effect currently in the model is not deemed significant. Only after all necessary deletions have been accomplished can another effect be added to the model.</p>
 <p>For selection criteria other than significance level, <code>PROC GLMSELECT</code> optionally supports a further modification in the stepwise method. In the standard stepwise method, no effect can enter the model if removing any effect currently in the model would yield an improved value of the selection criterion. In the modification, you can use the <code>DROP=COMPETITIVE</code> option to specify that addition and deletion of effects should be treated competitively. The selection criterion is evaluated for all models obtained by deleting an effect from the current model or by adding an effect to this model. The action that most improves the selection criterion is the action taken.</p>
 <h3 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>adds effects that at each step give the lowest value of the SBC statistic and stops at the step where adding any
 effect would increase the SBC statistic.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(select=SL)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>adds effects based on significance level and stops when all candidate effects for entry at a step have a
 significance level greater than the default entry significance level of 0.50.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(select=ADJRSQ stop=SL SLE=0.2)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">ADJRSQ</span> <span class="n">stop</span><span class="o">=</span><span class="n">SL</span> <span class="n">SLE</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>adds effects that at each step give the largest value of the adjusted R-square statistic and stops at the step
 where the significance level corresponding to the addition of this effect is greater than 0.2.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(select=SL stop=AIC)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span> <span class="n">stop</span><span class="o">=</span><span class="n">AIC</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>terminates at the step where the effect to be added at the next step would produce a model with an <code>AIC</code> statistic larger than the <code>AIC</code> statistic of the current model.</p>
 <p>Provided that the entry significance level is large enough that the local extremum of the named criterion occurs before the final step, specifying any of these options the same model is selected, but more steps are done in the second case:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(select=SL choose=CRITERION)
-selection=forward(select=SL stop=CRITERION)
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span> <span class="n">choose</span><span class="o">=</span><span class="n">CRITERION</span><span class="p">)</span>
+<span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span> <span class="n">stop</span><span class="o">=</span><span class="n">CRITERION</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In some cases there might be a better local extremum that cannot be reached if you specify the <code>STOP=</code> option but can be found if you use the <code>CHOOSE=</code> option. Also, you can use the <code>CHOOSE=</code> option in preference to the <code>STOP=</code> option if you want examine how the named criterion behaves as you move beyond the step where the first local minimum of this criterion occurs.</p>
 <p>Note that you can specify both the <code>CHOOSE=</code> and <code>STOP=</code> options. You might want to consider models generated by forward selection that have at most some fixed number of effects but select from within this set based on a criterion you specify. The following example requests that forward selection continue until there are 20 effects in the final model and chooses among the sequence of models the one that has the largest value of the adjusted R-square statistic. </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(stop=20 choose=ADJRSQ)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="mi">20</span> <span class="n">choose</span><span class="o">=</span><span class="n">ADJRSQ</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>You can also combine these options to select a model where one of two conditions is met. The following example chooses whatever occurs first between a local minimum of the predicted residual sum of squares (<code>PRESS</code>) and a local minimum of corrected Akaike’s information criterion (<code>AICC</code>).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(stop=AICC choose=PRESS)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="n">AICC</span> <span class="n">choose</span><span class="o">=</span><span class="n">PRESS</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><code>PROC GLMSELECT</code> enables you to specify the criterion to optimize at each step by using the <code>SELECT=</code> option. For example, the following example requests that at each step the effect that is added be the one that gives a model with the smallest value of the  Mallows’ $C_p$ statistic.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=forward(select=CP)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">forward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">CP</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>You can use <code>SELECT=</code> together with <code>CHOOSE=</code> and <code>STOP=</code>. If you specify only the <code>SELECT=</code> criterion, then this criterion is also used as the stopping criterion. In the previous example where only the selection criterion is specified, not only do effects enter based on the Mallows’ $C_p$ statistic, but the selection terminates when the $C_p$ statistic first increases.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=backward
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">backward</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>removes effects that at each step produce the largest value of the Schwarz Bayesian information criterion (<code>SBC</code>) statistic and stops at the step where removing any effect increases the <code>SBC</code> statistic.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=backward(stop=press)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">backward</span><span class="p">(</span><span class="n">stop</span><span class="o">=</span><span class="n">press</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>removes effects based on the <code>SBC</code> statistic and stops at the step where removing any effect increases the predicted residual sum of squares (<code>PRESS</code>).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=backward(select=SL)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">backward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>removes effects based on significance level and stops when all candidate effects for removal at a step have a significance level less than the default stay significance level of 0.10.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>selection=backward(select=SL choose=validate SLS=0.1)
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">selection</span><span class="o">=</span><span class="k">backward</span><span class="p">(</span><span class="k">select</span><span class="o">=</span><span class="n">SL</span> <span class="n">choose</span><span class="o">=</span><span class="n">validate</span> <span class="n">SLS</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>removes effects based on significance level and stops when all effects in the model are significant at the 0.1 level. Finally, from the sequence of models generated, choose the one that gives the smallest average square error when scored on the validation data.</p>
@@ -1799,12 +1812,12 @@ selection=forward(select=SL stop=CRITERION)
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* LASSO multiple regression with LARS algorithm k=10 fold validation;
-PROG GLMSELECT DATA=SAS-data-set PLOTS=ALL SEED=12345;
-  PARTITION ROLE=selected(train=&#39;1&#39; test=&#39;0&#39;);
-  MODEL response=predictor1 predictor2 ... predictorN / SELECTION=LAR(CHOOSE=CV STOP=NONE) CVMETHOD=RANDOM(10);
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="nv">LASSO</span> <span class="nv">multiple</span> <span class="nv">regression</span> <span class="nv">with</span> <span class="nv">LARS</span> <span class="nv">algorithm</span> <span class="nv">k</span><span class="o">=</span><span class="mi">10</span> <span class="nv">fold</span> <span class="nv">validation</span><span class="c1">;</span>
+<span class="nv">PROG</span> <span class="nv">GLMSELECT</span> <span class="nv">DATA</span><span class="o">=</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span> <span class="nv">PLOTS</span><span class="o">=</span><span class="nv">ALL</span> <span class="nv">SEED</span><span class="o">=</span><span class="mi">12345</span><span class="c1">;</span>
+  <span class="nv">PARTITION</span> <span class="nv">ROLE</span><span class="o">=</span><span class="nv">selected</span><span class="ss">(</span><span class="nv">train</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">1</span><span class="s1">&#39;</span> <span class="nv">test</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">0</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+  <span class="nv">MODEL</span> <span class="nv">response</span><span class="o">=</span><span class="nv">predictor1</span> <span class="nv">predictor2</span> ... <span class="nv">predictorN</span> <span class="o">/</span> <span class="nv">SELECTION</span><span class="o">=</span><span class="nv">LAR</span><span class="ss">(</span><span class="nv">CHOOSE</span><span class="o">=</span><span class="nv">CV</span> <span class="nv">STOP</span><span class="o">=</span><span class="nv">NONE</span><span class="ss">)</span> <span class="nv">CVMETHOD</span><span class="o">=</span><span class="k">RANDOM</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1847,6 +1860,7 @@ RUN;
 <p>However, certain features of <code>GLMSELECT</code>, in particular the procedure’s <a href="http://www2.sas.com/proceedings/sugi31/207-31.pdf">extensive capabilities for customizing the selection and its flexibility and power in specifying complex potential effects</a>, can partially mitigate these problems.</p>
                 
                   
+                
                 
               
               
@@ -1902,13 +1916,11 @@ RUN;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1916,18 +1928,15 @@ RUN;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#examples" tabindex="1" class="md-skip">
+      <a href="#examples" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 PROC REPORT
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -985,7 +986,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     Examples
   </a>
   
@@ -993,51 +994,71 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-write-a-headerfooter-in-your-tables" title="How to Write a Header/Footer in your Tables" class="md-nav__link">
+  <a href="#how-to-write-a-headerfooter-in-your-tables" class="md-nav__link">
     How to Write a Header/Footer in your Tables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specify-the-style-of-your-global-header" title="Specify the STYLE of Your Global Header" class="md-nav__link">
+  <a href="#specify-the-style-of-your-global-header" class="md-nav__link">
     Specify the STYLE of Your Global Header
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specify-the-style-of-a-cell-based-on-other-cells-value" title="Specify the STYLE of a Cell Based on Other Cell's Value" class="md-nav__link">
+  <a href="#specify-the-style-of-a-cell-based-on-other-cells-value" class="md-nav__link">
     Specify the STYLE of a Cell Based on Other Cell's Value
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#control-output-table-width" title="Control Output Table Width" class="md-nav__link">
+  <a href="#control-output-table-width" class="md-nav__link">
     Control Output Table Width
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#introducing-line-breaks" title="Introducing Line Breaks" class="md-nav__link">
+  <a href="#introducing-line-breaks" class="md-nav__link">
     Introducing Line Breaks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#working-with-across" title="Working with ACROSS" class="md-nav__link">
+  <a href="#working-with-across" class="md-nav__link">
     Working with ACROSS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-your-own-variables" title="Defining your own variables" class="md-nav__link">
+  <a href="#defining-your-own-variables" class="md-nav__link">
     Defining your own variables
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-line-statement" class="md-nav__link">
+    Using the LINE Statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-and-modifying-columns" class="md-nav__link">
+    Creating and Modifying Columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1435,18 +1456,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1461,6 +1470,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1561,7 +1594,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     Examples
   </a>
   
@@ -1569,51 +1602,71 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-write-a-headerfooter-in-your-tables" title="How to Write a Header/Footer in your Tables" class="md-nav__link">
+  <a href="#how-to-write-a-headerfooter-in-your-tables" class="md-nav__link">
     How to Write a Header/Footer in your Tables
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specify-the-style-of-your-global-header" title="Specify the STYLE of Your Global Header" class="md-nav__link">
+  <a href="#specify-the-style-of-your-global-header" class="md-nav__link">
     Specify the STYLE of Your Global Header
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specify-the-style-of-a-cell-based-on-other-cells-value" title="Specify the STYLE of a Cell Based on Other Cell's Value" class="md-nav__link">
+  <a href="#specify-the-style-of-a-cell-based-on-other-cells-value" class="md-nav__link">
     Specify the STYLE of a Cell Based on Other Cell's Value
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#control-output-table-width" title="Control Output Table Width" class="md-nav__link">
+  <a href="#control-output-table-width" class="md-nav__link">
     Control Output Table Width
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#introducing-line-breaks" title="Introducing Line Breaks" class="md-nav__link">
+  <a href="#introducing-line-breaks" class="md-nav__link">
     Introducing Line Breaks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#working-with-across" title="Working with ACROSS" class="md-nav__link">
+  <a href="#working-with-across" class="md-nav__link">
     Working with ACROSS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-your-own-variables" title="Defining your own variables" class="md-nav__link">
+  <a href="#defining-your-own-variables" class="md-nav__link">
     Defining your own variables
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-line-statement" class="md-nav__link">
+    Using the LINE Statement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-and-modifying-columns" class="md-nav__link">
+    Creating and Modifying Columns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1656,21 +1709,21 @@
 11
 12
 13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ODS ESCAPECHAR=&#39;^&#39;;
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">ODS</span> <span class="n">ESCAPECHAR</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">;</span>
 
-PROC REPORT DATA=sashelp.cars;
-    WHERE Make = &#39;Jaguar&#39;;
-    COLUMN (&#39;1) Label 1&#39; model Invoice)
-            (&#39;2) Label 2&#39; Horsepower Weight Length);
-    COMPUTE BEFORE _PAGE_ / STYLE=HEADER{JUST=L FONTWEIGHT=BOLD COLOR=PURPLE};
-        LINE &#39;Test of custom header&#39;;
-    ENDCOMP;
-    COMPUTE AFTER / STYLE={TEXTDECORATION=UNDERLINE JUST=C COLOR=RED};
-        LINE &#39;Test of a custom footer&#39;;
-        LINE &#39;^S={color=green} Test of a custom footer with a different style&#39;;
-    ENDCOMP;
-RUN;
-</pre></div>
+<span class="n">PROC</span> <span class="n">REPORT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">sashelp</span><span class="p">.</span><span class="n">cars</span><span class="p">;</span>
+    <span class="k">WHERE</span> <span class="n">Make</span> <span class="o">=</span> <span class="s1">&#39;Jaguar&#39;</span><span class="p">;</span>
+    <span class="k">COLUMN</span> <span class="p">(</span><span class="s1">&#39;1) Label 1&#39;</span> <span class="n">model</span> <span class="n">Invoice</span><span class="p">)</span>
+            <span class="p">(</span><span class="s1">&#39;2) Label 2&#39;</span> <span class="n">Horsepower</span> <span class="n">Weight</span> <span class="k">Length</span><span class="p">);</span>
+    <span class="n">COMPUTE</span> <span class="k">BEFORE</span> <span class="n">_PAGE_</span> <span class="o">/</span> <span class="n">STYLE</span><span class="o">=</span><span class="n">HEADER</span><span class="err">{</span><span class="n">JUST</span><span class="o">=</span><span class="n">L</span> <span class="n">FONTWEIGHT</span><span class="o">=</span><span class="n">BOLD</span> <span class="n">COLOR</span><span class="o">=</span><span class="n">PURPLE</span><span class="err">}</span><span class="p">;</span>
+        <span class="n">LINE</span> <span class="s1">&#39;Test of custom header&#39;</span><span class="p">;</span>
+    <span class="n">ENDCOMP</span><span class="p">;</span>
+    <span class="n">COMPUTE</span> <span class="k">AFTER</span> <span class="o">/</span> <span class="n">STYLE</span><span class="o">=</span><span class="err">{</span><span class="n">TEXTDECORATION</span><span class="o">=</span><span class="n">UNDERLINE</span> <span class="n">JUST</span><span class="o">=</span><span class="k">C</span> <span class="n">COLOR</span><span class="o">=</span><span class="n">RED</span><span class="err">}</span><span class="p">;</span>
+        <span class="n">LINE</span> <span class="s1">&#39;Test of a custom footer&#39;</span><span class="p">;</span>
+        <span class="n">LINE</span> <span class="s1">&#39;^S={color=green} Test of a custom footer with a different style&#39;</span><span class="p">;</span>
+    <span class="n">ENDCOMP</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="specify-the-style-of-your-global-header">Specify the <code>STYLE</code> of Your Global Header<a class="headerlink" href="#specify-the-style-of-your-global-header" title="Permanent link">Link</a></h3>
@@ -1678,12 +1731,12 @@ RUN;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=SAS-data-set HEADSKIP HEADLINE NOWINDOWS STYLE(header)={ASIS=on BACKGROUND=very light grey FONTWEIGHT=BOLD};
-    COLUMN (&quot;Style of this global header&quot; var1 var2);
-    DEFINE var1 / DISPLAY &#39;Parameters&#39; LEFT STYLE=[FONTWEIGHT=BOLD];
-    DEFINE var2 / DISPLAY &#39;Values&#39; CENTER;
-RUN;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="n">REPORT</span> <span class="k">DATA</span><span class="o">=</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="n">HEADSKIP</span> <span class="n">HEADLINE</span> <span class="n">NOWINDOWS</span> <span class="n">STYLE</span><span class="p">(</span><span class="n">header</span><span class="p">)</span><span class="o">=</span><span class="err">{</span><span class="n">ASIS</span><span class="o">=</span><span class="k">on</span> <span class="n">BACKGROUND</span><span class="o">=</span><span class="n">very</span> <span class="n">light</span> <span class="n">grey</span> <span class="n">FONTWEIGHT</span><span class="o">=</span><span class="n">BOLD</span><span class="err">}</span><span class="p">;</span>
+    <span class="k">COLUMN</span> <span class="p">(</span><span class="ss">&quot;Style of this global header&quot;</span> <span class="n">var1</span> <span class="n">var2</span><span class="p">);</span>
+    <span class="n">DEFINE</span> <span class="n">var1</span> <span class="o">/</span> <span class="n">DISPLAY</span> <span class="s1">&#39;Parameters&#39;</span> <span class="k">LEFT</span> <span class="n">STYLE</span><span class="o">=</span><span class="p">[</span><span class="n">FONTWEIGHT</span><span class="o">=</span><span class="n">BOLD</span><span class="p">];</span>
+    <span class="n">DEFINE</span> <span class="n">var2</span> <span class="o">/</span> <span class="n">DISPLAY</span> <span class="s1">&#39;Values&#39;</span> <span class="n">CENTER</span><span class="p">;</span>
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition summary">
@@ -1704,17 +1757,17 @@ RUN;
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=SAS-data-set NOWD;
-    COLUMN timeinterval date1 date2;
-    DEFINE timeinterval / DISPLAY NOPRINT; 
-    DEFINE date1 / DISPLAY;
-    DEFINE date2 / DISPLAY;
-    COMPUTE date2;
-        IF timeinterval lt 0 and timeinterval ne . then call define(_col_,&quot;style&quot;,&quot;style={foreground=red font_weight=bold}&quot;);
-        ELSE call define(_col_,&quot;style&quot;,&quot;style={foreground=green font_weight=bold}&quot;);
-    ENDCOMP;
-RUN;
-</pre></div>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">REPORT</span> <span class="nv">DATA</span><span class="o">=</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span> <span class="nv">NOWD</span><span class="c1">;</span>
+    <span class="nv">COLUMN</span> <span class="nv">timeinterval</span> <span class="nv">date1</span> <span class="nv">date2</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">timeinterval</span> <span class="o">/</span> <span class="nv">DISPLAY</span> <span class="nv">NOPRINT</span><span class="c1">; </span>
+    <span class="nv">DEFINE</span> <span class="nv">date1</span> <span class="o">/</span> <span class="nv">DISPLAY</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">date2</span> <span class="o">/</span> <span class="nv">DISPLAY</span><span class="c1">;</span>
+    <span class="nv">COMPUTE</span> <span class="nv">date2</span><span class="c1">;</span>
+        <span class="k">IF</span> <span class="nv">timeinterval</span> <span class="nv">lt</span> <span class="mi">0</span> <span class="nv">and</span> <span class="nv">timeinterval</span> <span class="nv">ne</span> . <span class="k">then</span> <span class="k">call</span> <span class="nl">define</span><span class="ss">(</span><span class="nv">_col_</span>,<span class="s2">&quot;</span><span class="s">style</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">style={foreground=red font_weight=bold}</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+        <span class="k">ELSE</span> <span class="k">call</span> <span class="nl">define</span><span class="ss">(</span><span class="nv">_col_</span>,<span class="s2">&quot;</span><span class="s">style</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">style={foreground=green font_weight=bold}</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">ENDCOMP</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1753,43 +1806,43 @@ RUN;
 26
 27
 28
-29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>data test;
-    input flag pt $ firstdate $ lastdate $ ;
-    datalines;
-0 X1 XX-XX-XXXX XX-XX-XXXX
-1 X2 XX-XX-XXXX XX-XX-XXXX
-0 X3 XX-XX-XXXX XX-XX-XXXX
-0 X4 XX-XX-XXXX XX-XX-XXXX
-0 X5 XX-XX-XXXX XX-XX-XXXX
-2 X6 XX-XX-XXXX XX-XX-XXXX
-;
-run;
+29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">data</span> <span class="nv">test</span><span class="c1">;</span>
+    <span class="nv">input</span> <span class="nv">flag</span> <span class="nv">pt</span> $ <span class="nv">firstdate</span> $ <span class="nv">lastdate</span> $ <span class="c1">;</span>
+    <span class="nv">datalines</span><span class="c1">;</span>
+<span class="mi">0</span> <span class="nv">X1</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="mi">1</span> <span class="nv">X2</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="mi">0</span> <span class="nv">X3</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="mi">0</span> <span class="nv">X4</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="mi">0</span> <span class="nv">X5</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="mi">2</span> <span class="nv">X6</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span> <span class="nv">XX</span><span class="o">-</span><span class="nv">XX</span><span class="o">-</span><span class="nv">XXXX</span>
+<span class="c1">;</span>
+<span class="nv">run</span><span class="c1">;</span>
 
-proc report data=test nowindows headline style(header)={background=very light grey} missing split=&#39;*&#39;;
-    column (&quot;First and Last Dates in the Study&quot; (&#39;Patient&#39; pt) (&#39;First Study Date&#39; firstdate) (&#39;Last Study Date&#39; lastdate) flag color1 color2);
-    define pt / &#39;&#39; display order=internal;
-    define firstdate / &#39;&#39; display;
-    define lastdate / &#39;&#39; display;
-    define flag / display noprint;
-    define color1 / computed noprint;
-    define color2 / computed noprint;
+<span class="nv">proc</span> <span class="nv">report</span> <span class="nv">data</span><span class="o">=</span><span class="nv">test</span> <span class="nv">nowindows</span> <span class="nv">headline</span> <span class="nv">style</span><span class="ss">(</span><span class="nv">header</span><span class="ss">)</span><span class="o">=</span>{<span class="nv">background</span><span class="o">=</span><span class="nv">very</span> <span class="nv">light</span> <span class="nv">grey</span>} <span class="nv">missing</span> <span class="nv">split</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">*</span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">column</span> <span class="ss">(</span><span class="s2">&quot;</span><span class="s">First and Last Dates in the Study</span><span class="s2">&quot;</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">Patient</span><span class="s1">&#39;</span> <span class="nv">pt</span><span class="ss">)</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">First Study Date</span><span class="s1">&#39;</span> <span class="nv">firstdate</span><span class="ss">)</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">Last Study Date</span><span class="s1">&#39;</span> <span class="nv">lastdate</span><span class="ss">)</span> <span class="nv">flag</span> <span class="nv">color1</span> <span class="nv">color2</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">pt</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">display</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span> <span class="nv">descending</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">firstdate</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">display</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">lastdate</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">display</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">flag</span> <span class="o">/</span> <span class="nv">display</span> <span class="nv">noprint</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">color1</span> <span class="o">/</span> <span class="nv">computed</span> <span class="nv">noprint</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">color2</span> <span class="o">/</span> <span class="nv">computed</span> <span class="nv">noprint</span><span class="c1">;</span>
 
-    compute color1;
-        if flag eq 1 then call define(&#39;firstdate&#39;,&quot;style&quot;,&quot;style={background=yellow}&quot;);
-    endcomp;
+    <span class="nv">compute</span> <span class="nv">color1</span><span class="c1">;</span>
+        <span class="k">if</span> <span class="nv">flag</span> <span class="nv">eq</span> <span class="mi">1</span> <span class="k">then</span> <span class="k">call</span> <span class="nl">define</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">firstdate</span><span class="s1">&#39;</span>,<span class="s2">&quot;</span><span class="s">style</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">style={background=yellow}</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">endcomp</span><span class="c1">;</span>
 
-    compute color2;
-        if flag eq 2 then call define(&#39;lastdate&#39;,&quot;style&quot;,&quot;style={background=yellow}&quot;);
-    endcomp;
-run;
-</pre></div>
+    <span class="nv">compute</span> <span class="nv">color2</span><span class="c1">;</span>
+        <span class="k">if</span> <span class="nv">flag</span> <span class="nv">eq</span> <span class="mi">2</span> <span class="k">then</span> <span class="k">call</span> <span class="nl">define</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">lastdate</span><span class="s1">&#39;</span>,<span class="s2">&quot;</span><span class="s">style</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">style={background=yellow}</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">endcomp</span><span class="c1">;</span>
+<span class="nv">run</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><img alt="Example of cell's style based on value" src="../../images/proc-report-style-cell.png" title="Example of cell's style based on value" /></p>
 <h3 id="control-output-table-width">Control Output Table Width<a class="headerlink" href="#control-output-table-width" title="Permanent link">Link</a></h3>
 <p>If the margins of the page are defined</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>options topmargin=.98in bottommargin=.98in leftmargin=1.18in rightmargin=.98in;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">options</span> <span class="n">topmargin</span><span class="o">=</span><span class="p">.</span><span class="mi">98</span><span class="k">in</span> <span class="n">bottommargin</span><span class="o">=</span><span class="p">.</span><span class="mi">98</span><span class="k">in</span> <span class="n">leftmargin</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">18</span><span class="k">in</span> <span class="n">rightmargin</span><span class="o">=</span><span class="p">.</span><span class="mi">98</span><span class="k">in</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>and you </p>
@@ -1800,7 +1853,7 @@ run;
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">proc</span> <span class="nt">report</span> <span class="nt">data</span><span class="o">=</span><span class="nt">LEDDall2report_ago</span> <span class="nt">split</span><span class="o">=</span><span class="s1">&#39;*&#39;</span> <span class="nt">nowd</span> <span class="nt">colwidth</span><span class="o">=</span><span class="nt">10</span> <span class="nt">headline</span> <span class="nt">headskip</span> <span class="nt">missing</span> <span class="nt">spanrows</span> <span class="nt">style</span><span class="o">(</span><span class="nt">report</span><span class="o">)=</span><span class="p">{</span><span class="err">width=100%</span><span class="p">}</span><span class="o">;</span>
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nt">proc</span> <span class="nt">report</span> <span class="nt">data</span><span class="o">=</span><span class="nt">LEDDall2report_ago</span> <span class="nt">split</span><span class="o">=</span><span class="s1">&#39;*&#39;</span> <span class="nt">nowd</span> <span class="nt">colwidth</span><span class="o">=</span><span class="nt">10</span> <span class="nt">headline</span> <span class="nt">headskip</span> <span class="nt">missing</span> <span class="nt">spanrows</span> <span class="nt">style</span><span class="o">(</span><span class="nt">report</span><span class="o">)=</span><span class="p">{</span><span class="err">width=100%</span><span class="p">}</span><span class="o">;</span>
             <span class="nt">column</span> <span class="o">(</span><span class="s2">&quot;Dosis equivalente de levodopa diaria y número de fármacos de agonistas dopaminérgicos: descripción del cambio respecto a basal&quot;</span> <span class="nt">ind</span> <span class="nt">texto</span> <span class="nt">param</span> <span class="nt">grupo1</span> <span class="nt">grupo2</span> <span class="nt">grupo3</span> <span class="nt">grupo4</span> <span class="nt">pvalor</span> <span class="nt">flag</span> <span class="nt">flag2</span><span class="o">);</span>
             <span class="nt">define</span> <span class="nt">ind</span> <span class="o">/</span> <span class="nt">order</span> <span class="nt">noprint</span><span class="o">;</span>
             <span class="nt">define</span> <span class="nt">texto</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nt">style</span><span class="o">(</span><span class="nt">column</span><span class="o">)=</span><span class="cp">[</span><span class="n">width</span><span class="o">=</span><span class="mi">7</span><span class="o">%</span><span class="cp">]</span><span class="o">;</span>
@@ -1808,7 +1861,7 @@ run;
             <span class="nt">define</span> <span class="nt">grupo1</span> <span class="o">/</span> <span class="s2">&quot;Visita 1 * (N=59)&quot;</span> <span class="nt">style</span><span class="o">(</span><span class="nt">column</span><span class="o">)=</span><span class="cp">[</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="o">%</span><span class="cp">]</span><span class="o">;</span>
             <span class="o">(...)</span>
 <span class="nt">run</span><span class="o">;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="introducing-line-breaks">Introducing Line Breaks<a class="headerlink" href="#introducing-line-breaks" title="Permanent link">Link</a></h3>
@@ -1836,10 +1889,10 @@ RUN;</p>
     DEFINE addblock / COMPUTED 'Mailing~Address' FLOW WIDTH=30;</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>COMPUTE addblock / CHAR LENGTH=40;
-    addblock=CATX(&#39;^n&#39;,name,address,catx(&#39;, &#39;,city,state));
-ENDCOMP;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">COMPUTE</span> <span class="n">addblock</span> <span class="o">/</span> <span class="nb">CHAR</span> <span class="k">LENGTH</span><span class="o">=</span><span class="mi">40</span><span class="p">;</span>
+    <span class="n">addblock</span><span class="o">=</span><span class="n">CATX</span><span class="p">(</span><span class="s1">&#39;^n&#39;</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">address</span><span class="p">,</span><span class="n">catx</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">,</span><span class="n">city</span><span class="p">,</span><span class="k">state</span><span class="p">));</span>
+<span class="n">ENDCOMP</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>RUN;
@@ -1858,20 +1911,20 @@ ENDCOMP;
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=SAS-data-set NOWINDOWS HEADLINE STYLE(HEADER)={BACKGROUND=VERY LIGHT GREY} MISSING SPLIT=&#39;*&#39;;
-    COLUMN (&quot;Sample report&quot; var1 var2 var3);
-    DEFINE var1 / &#39;Label 1&#39; GROUP ORDER=INTERNAL;
-    DEFINE var2 / &#39;Label 2&#39; DISPLAY;
-    DEFINE var3 / &#39;Label 3&#39; DISPLAY;
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">REPORT</span> <span class="nv">DATA</span><span class="o">=</span><span class="nv">SAS</span><span class="o">-</span><span class="nv">data</span><span class="o">-</span><span class="nv">set</span> <span class="nv">NOWINDOWS</span> <span class="nv">HEADLINE</span> <span class="nv">STYLE</span><span class="ss">(</span><span class="nv">HEADER</span><span class="ss">)</span><span class="o">=</span>{<span class="nv">BACKGROUND</span><span class="o">=</span><span class="nv">VERY</span> <span class="nv">LIGHT</span> <span class="nv">GREY</span>} <span class="nv">MISSING</span> <span class="nv">SPLIT</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">*</span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">COLUMN</span> <span class="ss">(</span><span class="s2">&quot;</span><span class="s">Sample report</span><span class="s2">&quot;</span> <span class="nv">var1</span> <span class="nv">var2</span> <span class="nv">var3</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">var1</span> <span class="o">/</span> <span class="s1">&#39;</span><span class="s">Label 1</span><span class="s1">&#39;</span> <span class="nv">GROUP</span> <span class="nv">ORDER</span><span class="o">=</span><span class="nv">INTERNAL</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">var2</span> <span class="o">/</span> <span class="s1">&#39;</span><span class="s">Label 2</span><span class="s1">&#39;</span> <span class="nv">DISPLAY</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">var3</span> <span class="o">/</span> <span class="s1">&#39;</span><span class="s">Label 3</span><span class="s1">&#39;</span> <span class="nv">DISPLAY</span><span class="c1">;</span>
 
-    * Introduce some line separations between var1 values;
-    BREAK BEFORE var1 / SUMMARIZE STYLE=[BACKGROUND=VERY LIGHT GREY];
-    * Avoid repeated labels;
-    COMPUTE var2;
-         IF MISSING(_BREAK_) THEN var1=&#39; &#39;;
-    ENDCOMP;
-RUN;
-</pre></div>
+    <span class="o">*</span> <span class="nv">Introduce</span> <span class="nv">some</span> <span class="nv">line</span> <span class="nv">separations</span> <span class="nv">between</span> <span class="nv">var1</span> <span class="nv">values</span><span class="c1">;</span>
+    <span class="k">BREAK</span> <span class="nv">BEFORE</span> <span class="nv">var1</span> <span class="o">/</span> <span class="nv">SUMMARIZE</span> <span class="nv">STYLE</span><span class="o">=</span>[<span class="nv">BACKGROUND</span><span class="o">=</span><span class="nv">VERY</span> <span class="nv">LIGHT</span> <span class="nv">GREY</span>]<span class="c1">;</span>
+    <span class="o">*</span> <span class="nv">Avoid</span> <span class="nv">repeated</span> <span class="nv">labels</span><span class="c1">;</span>
+    <span class="nv">COMPUTE</span> <span class="nv">var2</span><span class="c1">;</span>
+         <span class="k">IF</span> <span class="nv">MISSING</span><span class="ss">(</span><span class="nv">_BREAK_</span><span class="ss">)</span> <span class="k">THEN</span> <span class="nv">var1</span><span class="o">=</span><span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">ENDCOMP</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition tip">
@@ -1891,16 +1944,16 @@ If you describe the new value of <code>.</code> as <code>' '</code> your numbers
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC REPORT DATA=_AUX3 NOWINDOWS  
-    HEADLINE STYLE(HEADER)={BACKGROUND=VERY LIGHT GREY} MISSING SPLIT=&#39;*&#39;;
-    COLUMN(&quot;&amp;&amp;VAR&amp;I (&amp;&amp;UNIT&amp;I)&quot; &amp;TIMEVAR. (&#39;STATISTICS&#39; _LABEL_) &amp;STRATAVAR., COL1);
-    DEFINE _LABEL_ / &#39;&#39; GROUP ORDER=DATA;
-    DEFINE &amp;STRATAVAR./ &#39;&#39; ACROSS NOZERO ORDER=INTERNAL;
-    /* NOZERO = SINCE ALL PRODUCT CATEGORIES WILL NOT BE REPRESENTED FOR EACH PRODUCT LINE IN THE TABLE */
-    DEFINE &amp;TIMEVAR./ &#39;&#39; F=&amp;TIMEFMT. GROUP ORDER=INTERNAL; 
-    DEFINE COL1/ &#39;&#39; GROUP;
-RUN;
-</pre></div>
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">REPORT</span> <span class="nv">DATA</span><span class="o">=</span><span class="nv">_AUX3</span> <span class="nv">NOWINDOWS</span>  
+    <span class="nv">HEADLINE</span> <span class="nv">STYLE</span><span class="ss">(</span><span class="nv">HEADER</span><span class="ss">)</span><span class="o">=</span>{<span class="nv">BACKGROUND</span><span class="o">=</span><span class="nv">VERY</span> <span class="nv">LIGHT</span> <span class="nv">GREY</span>} <span class="nv">MISSING</span> <span class="nv">SPLIT</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">*</span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">COLUMN</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">&amp;&amp;VAR&amp;I (&amp;&amp;UNIT&amp;I)</span><span class="s2">&quot;</span> <span class="o">&amp;</span><span class="nv">TIMEVAR</span>. <span class="ss">(</span><span class="s1">&#39;</span><span class="s">STATISTICS</span><span class="s1">&#39;</span> <span class="nv">_LABEL_</span><span class="ss">)</span> <span class="o">&amp;</span><span class="nv">STRATAVAR</span>., <span class="nv">COL1</span><span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="nv">_LABEL_</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">GROUP</span> <span class="nv">ORDER</span><span class="o">=</span><span class="nv">DATA</span><span class="c1">;</span>
+    <span class="nv">DEFINE</span> <span class="o">&amp;</span><span class="nv">STRATAVAR</span>.<span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">ACROSS</span> <span class="nv">NOZERO</span> <span class="nv">ORDER</span><span class="o">=</span><span class="nv">INTERNAL</span><span class="c1">;</span>
+    <span class="cm">/* NOZERO = SINCE ALL PRODUCT CATEGORIES WILL NOT BE REPRESENTED FOR EACH PRODUCT LINE IN THE TABLE */</span>
+    <span class="nv">DEFINE</span> <span class="o">&amp;</span><span class="nv">TIMEVAR</span>.<span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">F</span><span class="o">=&amp;</span><span class="nv">TIMEFMT</span>. <span class="nv">GROUP</span> <span class="nv">ORDER</span><span class="o">=</span><span class="nv">INTERNAL</span><span class="c1">; </span>
+    <span class="nv">DEFINE</span> <span class="nv">COL1</span><span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">GROUP</span><span class="c1">;</span>
+<span class="nv">RUN</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1931,33 +1984,33 @@ RUN;
 23
 24
 25
-26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc report data=_data2report nowindows headline style(header)={background=very light grey} missing split=&#39;*&#39;;
-    column(&quot;Lab tests (Hematology): normal, high abnormal and low abnormal results n(%)&quot; lbtest trtgrpnum (&#39;Value at * screening&#39; clinsigSCR) (&#39;Day 6&#39; clinsig60, npctn60 _dummy) (&#39;Early Termination Day&#39; clinsigET, npctnET _dummy));
-    define lbtest / &#39;&#39; group order=internal;
-    define trtgrpnum/ &#39;&#39; group order=internal;
-    define clinsigSCR / &#39;&#39; group order=internal;
-    define clinsig60 / &#39;&#39; across nozero order=internal;
-    define clinsigET / &#39;&#39; across nozero order=internal;
-    * nozdero = since all product categories will not be represented for each product line in the table;
-    define npctn60/ group &#39;&#39;;
-    define npctnET/ group &#39;&#39;;
-    define _dummy / computed noprint; /* This variable is created to avoid an error message */
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">proc</span> <span class="nv">report</span> <span class="nv">data</span><span class="o">=</span><span class="nv">_data2report</span> <span class="nv">nowindows</span> <span class="nv">headline</span> <span class="nv">style</span><span class="ss">(</span><span class="nv">header</span><span class="ss">)</span><span class="o">=</span>{<span class="nv">background</span><span class="o">=</span><span class="nv">very</span> <span class="nv">light</span> <span class="nv">grey</span>} <span class="nv">missing</span> <span class="nv">split</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">*</span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">column</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Lab tests (Hematology): normal, high abnormal and low abnormal results n(%)</span><span class="s2">&quot;</span> <span class="nv">lbtest</span> <span class="nv">trtgrpnum</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">Value at * screening</span><span class="s1">&#39;</span> <span class="nv">clinsigSCR</span><span class="ss">)</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">Day 6</span><span class="s1">&#39;</span> <span class="nv">clinsig60</span>, <span class="nv">npctn60</span> <span class="nv">_dummy</span><span class="ss">)</span> <span class="ss">(</span><span class="s1">&#39;</span><span class="s">Early Termination Day</span><span class="s1">&#39;</span> <span class="nv">clinsigET</span>, <span class="nv">npctnET</span> <span class="nv">_dummy</span><span class="ss">))</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">lbtest</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">group</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">trtgrpnum</span><span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">group</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">clinsigSCR</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">group</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">clinsig60</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">across</span> <span class="nv">nozero</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">clinsigET</span> <span class="o">/</span> <span class="s1">&#39;&#39;</span> <span class="nv">across</span> <span class="nv">nozero</span> <span class="nv">order</span><span class="o">=</span><span class="nv">internal</span><span class="c1">;</span>
+    <span class="o">*</span> <span class="nv">nozdero</span> <span class="o">=</span> <span class="nv">since</span> <span class="nv">all</span> <span class="nv">product</span> <span class="nv">categories</span> <span class="nv">will</span> <span class="nv">not</span> <span class="nv">be</span> <span class="nv">represented</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">product</span> <span class="nv">line</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">table</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">npctn60</span><span class="o">/</span> <span class="nv">group</span> <span class="s1">&#39;&#39;</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">npctnET</span><span class="o">/</span> <span class="nv">group</span> <span class="s1">&#39;&#39;</span><span class="c1">;</span>
+    <span class="nv">define</span> <span class="nv">_dummy</span> <span class="o">/</span> <span class="nv">computed</span> <span class="nv">noprint</span><span class="c1">; /* This variable is created to avoid an error message */</span>
 
-    compute after/style=[just=L foreground=black FONT_SIZE=9pt];
-        line &quot;Table footer line 1&quot;;
-        line &quot;Table footer line 2&quot;;
-    endcomp;
+    <span class="nv">compute</span> <span class="nv">after</span><span class="o">/</span><span class="nv">style</span><span class="o">=</span>[<span class="nv">just</span><span class="o">=</span><span class="nv">L</span> <span class="nv">foreground</span><span class="o">=</span><span class="nv">black</span> <span class="nv">FONT_SIZE</span><span class="o">=</span><span class="mi">9</span><span class="nv">pt</span>]<span class="c1">;</span>
+        <span class="nv">line</span> <span class="s2">&quot;</span><span class="s">Table footer line 1</span><span class="s2">&quot;</span><span class="c1">;</span>
+        <span class="nv">line</span> <span class="s2">&quot;</span><span class="s">Table footer line 2</span><span class="s2">&quot;</span><span class="c1">;</span>
+    <span class="nv">endcomp</span><span class="c1">;</span>
 
-    * Introduce some line separations between arms of treatment;
-    break after trtgrpnum / skip;
-    * Introduce some line separations between tests;
-    break before lbtest / summarize style=[background=very light grey FONT_WEIGHT=BOLD];
-    * Avoid repeated labels;
-    compute npctn60;
-        if missing(_break_) then lbtest=&#39; &#39;;
-    endcomp;
-run;
-</pre></div>
+    <span class="o">*</span> <span class="nv">Introduce</span> <span class="nv">some</span> <span class="nv">line</span> <span class="nv">separations</span> <span class="nv">between</span> <span class="nv">arms</span> <span class="nv">of</span> <span class="nv">treatment</span><span class="c1">;</span>
+    <span class="k">break</span> <span class="nv">after</span> <span class="nv">trtgrpnum</span> <span class="o">/</span> <span class="nv">skip</span><span class="c1">;</span>
+    <span class="o">*</span> <span class="nv">Introduce</span> <span class="nv">some</span> <span class="nv">line</span> <span class="nv">separations</span> <span class="nv">between</span> <span class="nv">tests</span><span class="c1">;</span>
+    <span class="k">break</span> <span class="nv">before</span> <span class="nv">lbtest</span> <span class="o">/</span> <span class="nv">summarize</span> <span class="nv">style</span><span class="o">=</span>[<span class="nv">background</span><span class="o">=</span><span class="nv">very</span> <span class="nv">light</span> <span class="nv">grey</span> <span class="nv">FONT_WEIGHT</span><span class="o">=</span><span class="nv">BOLD</span>]<span class="c1">;</span>
+    <span class="o">*</span> <span class="nv">Avoid</span> <span class="nv">repeated</span> <span class="nv">labels</span><span class="c1">;</span>
+    <span class="nv">compute</span> <span class="nv">npctn60</span><span class="c1">;</span>
+        <span class="k">if</span> <span class="nv">missing</span><span class="ss">(</span><span class="nv">_break_</span><span class="ss">)</span> <span class="k">then</span> <span class="nv">lbtest</span><span class="o">=</span><span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span><span class="c1">;</span>
+    <span class="nv">endcomp</span><span class="c1">;</span>
+<span class="nv">run</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition summary">
@@ -1976,86 +2029,84 @@ run;
 </div>
 <p>There are two basic types of compute blocks; those that are <strong>associated with a location</strong> (the option <code>BEFORE</code> or <code>AFTER</code> follows the <code>COMPUTE</code> keyword), and those <strong>associated only with a report item</strong>. While the structure and execution of these two types of compute blocks is similar, how they are used and the timing of their execution can be quite different.</p>
 <p>The compute block starts with the <code>COMPUTE</code> statement and terminates with the <code>ENDCOMP</code> statement. Usually the compute block is placed in the <code>REPORT</code> step after the <code>DEFINE</code> statements. The syntax of the compute block looks something like:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>compute <span class="nt">&lt;location&gt;</span> <span class="nt">&lt;report_item&gt;</span> <span class="nt">&lt;/ options&gt;</span>;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>compute <span class="nt">&lt;location&gt;</span> <span class="nt">&lt;report_item&gt;</span> <span class="nt">&lt;/ options&gt;</span>;
     one or more SAS language elements
 endcomp;
-````
-
-The components of the `COMPUTE` statement include:
-
-* **`location`** (`BEFORE` | `AFTER`): Specifies when the compute block is to execute and ultimately what is to be done with the result of the compute block.  When a location is specified without also specifying a report_item, the location will be at the start (`BEFORE`) or at the end (`AFTER`) of the report.
-* **`report_item`**: When the result of the compute block is associated with a variable or report item, its name is supplied here. This `report_item` variable can be any variable on the `COLUMN` statement. When `report_item` is a variable that either groups or orders rows (usage of `GROUP` or `ORDER`) you may also use `BEFORE` and `AFTER` to apply the result at the start or end of each group. 
-* **`options`**: Several options are available that can be used to determine the appearance and location of the result of the compute block.
-* **`SAS language elements`**: Any number of SAS language elements can be used within the compute block. These include the use of executable statements, logical processing (`IF-THEN`/`ELSE`), and most of the functions available in the DATA step.
-
-The compute block can be placed anywhere within the `REPORT` step, however generally compute blocks are grouped following the `DEFINE` statements.
-
-#### Using the `LINE` Statement
-
-* It can be used to insert a **blank line**
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
-<p>COMPUTE AFTER variable1;
-    LINE ' ';
-ENDCOMP;</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* It can be used to **add lines of text**
-</pre></div>
+<p>The components of the <code>COMPUTE</code> statement include:</p>
+<ul>
+<li><strong><code>location</code></strong> (<code>BEFORE</code> | <code>AFTER</code>): Specifies when the compute block is to execute and ultimately what is to be done with the result of the compute block.  When a location is specified without also specifying a report_item, the location will be at the start (<code>BEFORE</code>) or at the end (<code>AFTER</code>) of the report.</li>
+<li><strong><code>report_item</code></strong>: When the result of the compute block is associated with a variable or report item, its name is supplied here. This <code>report_item</code> variable can be any variable on the <code>COLUMN</code> statement. When <code>report_item</code> is a variable that either groups or orders rows (usage of <code>GROUP</code> or <code>ORDER</code>) you may also use <code>BEFORE</code> and <code>AFTER</code> to apply the result at the start or end of each group. </li>
+<li><strong><code>options</code></strong>: Several options are available that can be used to determine the appearance and location of the result of the compute block.</li>
+<li><strong><code>SAS language elements</code></strong>: Any number of SAS language elements can be used within the compute block. These include the use of executable statements, logical processing (<code>IF-THEN</code>/<code>ELSE</code>), and most of the functions available in the DATA step.</li>
+</ul>
+<p>The compute block can be placed anywhere within the <code>REPORT</code> step, however generally compute blocks are grouped following the <code>DEFINE</code> statements.</p>
+<h4 id="using-the-line-statement">Using the <code>LINE</code> Statement<a class="headerlink" href="#using-the-line-statement" title="Permanent link">Link</a></h4>
+<ul>
+<li>It can be used to insert a <strong>blank line</strong></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">COMPUTE</span> <span class="k">AFTER</span> <span class="n">variable1</span><span class="p">;</span>
+    <span class="n">LINE</span> <span class="s1">&#39; &#39;</span><span class="p">;</span>
+<span class="n">ENDCOMP</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
-<p>COMPUTE AFTER;
- LINE @20 'Some custom text';
- LINE @20 'More custom text';
-ENDCOMP;</p>
+<ul>
+<li>It can be used to <strong>add lines of text</strong></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">COMPUTE</span> <span class="n">AFTER</span><span class="p">;</span>
+ <span class="n">LINE</span> <span class="mi">@20</span> <span class="err">&#39;</span><span class="n">Some</span> <span class="n">custom</span> <span class="n">text</span><span class="err">&#39;</span><span class="p">;</span>
+ <span class="n">LINE</span> <span class="mi">@20</span> <span class="err">&#39;</span><span class="n">More</span> <span class="n">custom</span> <span class="n">text</span><span class="err">&#39;</span><span class="p">;</span>
+<span class="n">ENDCOMP</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In these <code>LINE</code> statements the <code>@</code> is used, as it is in the <code>DATA</code> step <code>PUT</code> statement, to designate the column number. If a specific column is not specified with the <code>@</code>, and no justification options are specified, text will be centered.
+When writing to <code>ODS</code> destinations other than <code>LISTING</code>, proportional fonts may make exact placement of values difficult, and may require you to use a trial-and-error approach, and to make things more interesting some destinations ignore the <code>@</code> altogether. </p>
+</div>
+<ul>
+<li>It can be used to <strong>write formatted values</strong></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">COMPUTE</span> <span class="n">BEFORE</span> <span class="n">variable1</span><span class="p">;</span>
+    <span class="n">line</span> <span class="mi">@3</span> <span class="n">variable1</span> <span class="err">$</span><span class="n">formatname</span><span class="p">.;</span>
+<span class="n">ENDCOMP</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The format could have also been used in the <code>DEFINE</code> statement, however in this case we wanted to show the unformatted value as well as the formatted group header.</p>
+</div>
+<h4 id="creating-and-modifying-columns">Creating and Modifying Columns<a class="headerlink" href="#creating-and-modifying-columns" title="Permanent link">Link</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>!!! note
-    In these `LINE` statements the `@` is used, as it is in the `DATA` step `PUT` statement, to designate the column number. If a specific column is not specified with the `@`, and no justification options are specified, text will be centered.
-    When writing to `ODS` destinations other than `LISTING`, proportional fonts may make exact placement of values difficult, and may require you to use a trial-and-error approach, and to make things more interesting some destinations ignore the `@` altogether. 
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">DEFINE</span> <span class="n">obs</span> <span class="o">/</span> <span class="n">COMPUTED</span><span class="p">;</span> 
 
-* It can be used to **write formatted values**
-</pre></div>
+<span class="n">COMPUTE</span> <span class="n">obs</span><span class="p">;</span>
+    <span class="n">dsobs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">dsobs</span><span class="p">;</span>
+<span class="n">ENDCOMPUTE</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
-
-<p>COMPUTE BEFORE variable1;
-    line @3 variable1 $formatname.;
-ENDCOMP;</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>!!! note
-    The format could have also been used in the `DEFINE` statement, however in this case we wanted to show the unformatted value as well as the formatted group header.
-
-#### Creating and Modifying Columns
-</pre></div>
-</td></tr></table>
-
-<p>DEFINE obs / COMPUTED; </p>
-<p>COMPUTE obs;
-    dsobs + 1;
-    obs = dsobs;
-ENDCOMPUTE;
-```</p>
                 
                   
+                
                 
               
               
@@ -2111,13 +2162,11 @@ ENDCOMPUTE;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2125,18 +2174,15 @@ ENDCOMPUTE;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduction-to-proc-sql" tabindex="1" class="md-skip">
+      <a href="#introduction-to-proc-sql" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Miscellanea
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -673,14 +674,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-proc-sql" title="Introduction to PROC SQL" class="md-nav__link">
+  <a href="#introduction-to-proc-sql" class="md-nav__link">
     Introduction to PROC SQL
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     Code Examples
   </a>
   
@@ -688,49 +689,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-tables-filtering-specific-data" title="Creating Tables Filtering Specific Data" class="md-nav__link">
+  <a href="#creating-tables-filtering-specific-data" class="md-nav__link">
     Creating Tables Filtering Specific Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#macrovariable-creation" title="Macrovariable Creation" class="md-nav__link">
+  <a href="#macrovariable-creation" class="md-nav__link">
     Macrovariable Creation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" title="Selecting Distinct Values of a Variable to Create a Data Set with them" class="md-nav__link">
+  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" class="md-nav__link">
     Selecting Distinct Values of a Variable to Create a Data Set with them
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cartesian-product-of-data-sets-all-possible-combinations" title="Cartesian Product of Data Sets (All Possible Combinations)" class="md-nav__link">
+  <a href="#cartesian-product-of-data-sets-all-possible-combinations" class="md-nav__link">
     Cartesian Product of Data Sets (All Possible Combinations)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-the-maximum-value" title="Selecting the Maximum Value" class="md-nav__link">
+  <a href="#selecting-the-maximum-value" class="md-nav__link">
     Selecting the Maximum Value
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#counting-grouped-elements" title="Counting Grouped Elements" class="md-nav__link">
+  <a href="#counting-grouped-elements" class="md-nav__link">
     Counting Grouped Elements
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-first-and-last-dates-related-to-a-patient" title="Selecting First and Last Dates Related to a Patient" class="md-nav__link">
+  <a href="#selecting-first-and-last-dates-related-to-a-patient" class="md-nav__link">
     Selecting First and Last Dates Related to a Patient
   </a>
   
@@ -1442,18 +1443,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1468,6 +1457,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1568,14 +1581,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-proc-sql" title="Introduction to PROC SQL" class="md-nav__link">
+  <a href="#introduction-to-proc-sql" class="md-nav__link">
     Introduction to PROC SQL
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-examples" title="Code Examples" class="md-nav__link">
+  <a href="#code-examples" class="md-nav__link">
     Code Examples
   </a>
   
@@ -1583,49 +1596,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-tables-filtering-specific-data" title="Creating Tables Filtering Specific Data" class="md-nav__link">
+  <a href="#creating-tables-filtering-specific-data" class="md-nav__link">
     Creating Tables Filtering Specific Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#macrovariable-creation" title="Macrovariable Creation" class="md-nav__link">
+  <a href="#macrovariable-creation" class="md-nav__link">
     Macrovariable Creation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" title="Selecting Distinct Values of a Variable to Create a Data Set with them" class="md-nav__link">
+  <a href="#selecting-distinct-values-of-a-variable-to-create-a-data-set-with-them" class="md-nav__link">
     Selecting Distinct Values of a Variable to Create a Data Set with them
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cartesian-product-of-data-sets-all-possible-combinations" title="Cartesian Product of Data Sets (All Possible Combinations)" class="md-nav__link">
+  <a href="#cartesian-product-of-data-sets-all-possible-combinations" class="md-nav__link">
     Cartesian Product of Data Sets (All Possible Combinations)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-the-maximum-value" title="Selecting the Maximum Value" class="md-nav__link">
+  <a href="#selecting-the-maximum-value" class="md-nav__link">
     Selecting the Maximum Value
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#counting-grouped-elements" title="Counting Grouped Elements" class="md-nav__link">
+  <a href="#counting-grouped-elements" class="md-nav__link">
     Counting Grouped Elements
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selecting-first-and-last-dates-related-to-a-patient" title="Selecting First and Last Dates Related to a Patient" class="md-nav__link">
+  <a href="#selecting-first-and-last-dates-related-to-a-patient" class="md-nav__link">
     Selecting First and Last Dates Related to a Patient
   </a>
   
@@ -1669,13 +1682,13 @@
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
-   CREATE TABLE table-name AS
-   SELECT DISTINCT variable1
-   FROM origin-data-set
-   WHERE variable2 NE &#39;&#39; AND variable3 IN (&#39;value1&#39; &#39;value2&#39;) ; 
-QUIT;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="p">;</span>
+   <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span> <span class="k">AS</span>
+   <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">variable1</span>
+   <span class="k">FROM</span> <span class="n">origin</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span>
+   <span class="k">WHERE</span> <span class="n">variable2</span> <span class="n">NE</span> <span class="s1">&#39;&#39;</span> <span class="k">AND</span> <span class="n">variable3</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;value1&#39;</span> <span class="s1">&#39;value2&#39;</span><span class="p">)</span> <span class="p">;</span> 
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="macrovariable-creation">Macrovariable Creation<a class="headerlink" href="#macrovariable-creation" title="Permanent link">Link</a></h3>
@@ -1693,20 +1706,20 @@ QUIT;
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* Count distinct elements;
-PROC SQL NOPRINT;
-    SELECT COUNT(DISTINCT variable2check) 
-    INTO : nelements
-    FROM original-data-set;
-QUIT;
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="k">Count</span> <span class="k">distinct</span> <span class="n">elements</span><span class="p">;</span>
+<span class="n">PROC</span> <span class="k">SQL</span> <span class="n">NOPRINT</span><span class="p">;</span>
+    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">variable2check</span><span class="p">)</span> 
+    <span class="k">INTO</span> <span class="p">:</span> <span class="n">nelements</span>
+    <span class="k">FROM</span> <span class="n">original</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
 
-* Load these distinct elements in a macrovariable list;
-PROC SQL NOPRINT;
-    SELECT DISTINCT variable2check. 
-    INTO : list SEPARATED BY &#39;$&#39; 
-    FROM original-data-set;
-QUIT;
-</pre></div>
+<span class="o">*</span> <span class="k">Load</span> <span class="n">these</span> <span class="k">distinct</span> <span class="n">elements</span> <span class="k">in</span> <span class="n">a</span> <span class="n">macrovariable</span> <span class="n">list</span><span class="p">;</span>
+<span class="n">PROC</span> <span class="k">SQL</span> <span class="n">NOPRINT</span><span class="p">;</span>
+    <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">variable2check</span><span class="p">.</span> 
+    <span class="k">INTO</span> <span class="p">:</span> <span class="n">list</span> <span class="n">SEPARATED</span> <span class="k">BY</span> <span class="s1">&#39;$&#39;</span> 
+    <span class="k">FROM</span> <span class="n">original</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><strong>Is there any way to do these two operations in just one <code>PROC SQL</code>?</strong> Two different <code>INTO:</code> are not compatible.</p>
@@ -1727,20 +1740,20 @@ QUIT;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL NOPRINT;
-    CREATE TABLE new-SAS-data-set AS SELECT DISTINCT analyzed-variable
-    FROM original-SAS-data-set;
-QUIT;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span> <span class="n">NOPRINT</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">new</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">analyzed</span><span class="o">-</span><span class="k">variable</span>
+    <span class="k">FROM</span> <span class="n">original</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="cartesian-product-of-data-sets-all-possible-combinations">Cartesian Product of Data Sets (All Possible Combinations)<a class="headerlink" href="#cartesian-product-of-data-sets-all-possible-combinations" title="Permanent link">Link</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
-    CREATE TABLE new-SAS-data-set AS SELECT variable1, variable2, variablE3 FROM original-SAS-data-set1 AS f1 CROSS JOIN original-SAS-data-set2 AS f2 CROSS JOIN original-SAS-data-set3 AS f3;
-QUIT;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">new</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">AS</span> <span class="k">SELECT</span> <span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span><span class="p">,</span> <span class="n">variablE3</span> <span class="k">FROM</span> <span class="n">original</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="n">set1</span> <span class="k">AS</span> <span class="n">f1</span> <span class="k">CROSS</span> <span class="k">JOIN</span> <span class="n">original</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="n">set2</span> <span class="k">AS</span> <span class="n">f2</span> <span class="k">CROSS</span> <span class="k">JOIN</span> <span class="n">original</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="n">set3</span> <span class="k">AS</span> <span class="n">f3</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="selecting-the-maximum-value">Selecting the Maximum Value<a class="headerlink" href="#selecting-the-maximum-value" title="Permanent link">Link</a></h3>
@@ -1750,13 +1763,13 @@ QUIT;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
-    CREATE TABLE new-SAS-data-set AS
-    SELECT grouped-variable1, grouped-variable2, MAX(ungrouped-variable) AS alias-ungrouped, MAX(maximized-variable) AS alias-maximized
-    FROM original-SAS-data-set
-    GROUP BY grouped-variable1, grouped-variable2;
-QUIT;
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">new</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> <span class="k">AS</span>
+    <span class="k">SELECT</span> <span class="n">grouped</span><span class="o">-</span><span class="n">variable1</span><span class="p">,</span> <span class="n">grouped</span><span class="o">-</span><span class="n">variable2</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">ungrouped</span><span class="o">-</span><span class="k">variable</span><span class="p">)</span> <span class="k">AS</span> <span class="k">alias</span><span class="o">-</span><span class="n">ungrouped</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">maximized</span><span class="o">-</span><span class="k">variable</span><span class="p">)</span> <span class="k">AS</span> <span class="k">alias</span><span class="o">-</span><span class="n">maximized</span>
+    <span class="k">FROM</span> <span class="n">original</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">grouped</span><span class="o">-</span><span class="n">variable1</span><span class="p">,</span> <span class="n">grouped</span><span class="o">-</span><span class="n">variable2</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="counting-grouped-elements">Counting Grouped Elements<a class="headerlink" href="#counting-grouped-elements" title="Permanent link">Link</a></h3>
@@ -1765,12 +1778,12 @@ QUIT;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL NOPRINT;
-    SELECT COUNTt(*)
-    INTO :nlabs
-    FROM SAS-data-set;
-QUIT;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span> <span class="n">NOPRINT</span><span class="p">;</span>
+    <span class="k">SELECT</span> <span class="n">COUNTt</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+    <span class="k">INTO</span> <span class="p">:</span><span class="n">nlabs</span>
+    <span class="k">FROM</span> <span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In this first <code>PROC SQL</code> a number of count variables are created:</p>
@@ -1793,27 +1806,27 @@ QUIT;
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
-    CREATE TABLE AESWPP AS
-        SELECT COHORT, AEBODSY, AEDECOD, PT, MAX(AETOXGRN) AS GRADE, COUNT(*) AS NEVENTS, 
-            NTOTPATSCOHORT.NPATS AS NTOTPATSCOHORT, 
-         100/NTOTPATSCOHORT.NPATS AS PCTPATC,
-            NTOTEVENTSCOHORT.NEVENTS AS NTOTEVENTSCOHORT, 
-         100/NTOTEVENTSCOHORT.NEVENTS AS PCTEVENTSC,
-            NTOTPATS.NPATS AS NTOTPATS, 
-         100/NTOTPATS.NPATS AS PCTPATTOT,
-            NTOTEVENTS.NEVENTS AS NTOTEVENTS, 
-         100/NTOTEVENTS.NEVENTS AS PCTOTEVENTS
-        FROM ADS.TEAE AS TEAE, 
-            (SELECT COUNT(DISTINCT PT) AS NPATS, COHORT AS COHORTP FROM ADS.TEAE GROUP BY COHORT) NTOTPATSCOHORT,
-            (SELECT COUNT(*) AS NEVENTS, COHORT AS COHORTE FROM ADS.TEAE GROUP BY COHORT) NTOTEVENTSCOHORT,
-            (SELECT COUNT(DISTINCT PT) AS NPATS FROM ADS.TEAE) NTOTPATS,
-            (SELECT COUNT(*) AS NEVENTS FROM ADS.TEAE) NTOTEVENTS
-                WHERE NTOTPATSCOHORT.COHORTP EQ TEAE.COHORT
-                    AND NTOTEVENTSCOHORT.COHORTE EQ TEAE.COHORT
-                GROUP BY COHORT, AEBODSY, AEDECOD, PT;
-QUIT;
-</pre></div>
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="p">;</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">AESWPP</span> <span class="k">AS</span>
+        <span class="k">SELECT</span> <span class="n">COHORT</span><span class="p">,</span> <span class="n">AEBODSY</span><span class="p">,</span> <span class="n">AEDECOD</span><span class="p">,</span> <span class="n">PT</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">AETOXGRN</span><span class="p">)</span> <span class="k">AS</span> <span class="n">GRADE</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NEVENTS</span><span class="p">,</span> 
+            <span class="n">NTOTPATSCOHORT</span><span class="p">.</span><span class="n">NPATS</span> <span class="k">AS</span> <span class="n">NTOTPATSCOHORT</span><span class="p">,</span> 
+         <span class="mi">100</span><span class="o">/</span><span class="n">NTOTPATSCOHORT</span><span class="p">.</span><span class="n">NPATS</span> <span class="k">AS</span> <span class="n">PCTPATC</span><span class="p">,</span>
+            <span class="n">NTOTEVENTSCOHORT</span><span class="p">.</span><span class="n">NEVENTS</span> <span class="k">AS</span> <span class="n">NTOTEVENTSCOHORT</span><span class="p">,</span> 
+         <span class="mi">100</span><span class="o">/</span><span class="n">NTOTEVENTSCOHORT</span><span class="p">.</span><span class="n">NEVENTS</span> <span class="k">AS</span> <span class="n">PCTEVENTSC</span><span class="p">,</span>
+            <span class="n">NTOTPATS</span><span class="p">.</span><span class="n">NPATS</span> <span class="k">AS</span> <span class="n">NTOTPATS</span><span class="p">,</span> 
+         <span class="mi">100</span><span class="o">/</span><span class="n">NTOTPATS</span><span class="p">.</span><span class="n">NPATS</span> <span class="k">AS</span> <span class="n">PCTPATTOT</span><span class="p">,</span>
+            <span class="n">NTOTEVENTS</span><span class="p">.</span><span class="n">NEVENTS</span> <span class="k">AS</span> <span class="n">NTOTEVENTS</span><span class="p">,</span> 
+         <span class="mi">100</span><span class="o">/</span><span class="n">NTOTEVENTS</span><span class="p">.</span><span class="n">NEVENTS</span> <span class="k">AS</span> <span class="n">PCTOTEVENTS</span>
+        <span class="k">FROM</span> <span class="n">ADS</span><span class="p">.</span><span class="n">TEAE</span> <span class="k">AS</span> <span class="n">TEAE</span><span class="p">,</span> 
+            <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">PT</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NPATS</span><span class="p">,</span> <span class="n">COHORT</span> <span class="k">AS</span> <span class="n">COHORTP</span> <span class="k">FROM</span> <span class="n">ADS</span><span class="p">.</span><span class="n">TEAE</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">COHORT</span><span class="p">)</span> <span class="n">NTOTPATSCOHORT</span><span class="p">,</span>
+            <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NEVENTS</span><span class="p">,</span> <span class="n">COHORT</span> <span class="k">AS</span> <span class="n">COHORTE</span> <span class="k">FROM</span> <span class="n">ADS</span><span class="p">.</span><span class="n">TEAE</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">COHORT</span><span class="p">)</span> <span class="n">NTOTEVENTSCOHORT</span><span class="p">,</span>
+            <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">PT</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NPATS</span> <span class="k">FROM</span> <span class="n">ADS</span><span class="p">.</span><span class="n">TEAE</span><span class="p">)</span> <span class="n">NTOTPATS</span><span class="p">,</span>
+            <span class="p">(</span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NEVENTS</span> <span class="k">FROM</span> <span class="n">ADS</span><span class="p">.</span><span class="n">TEAE</span><span class="p">)</span> <span class="n">NTOTEVENTS</span>
+                <span class="k">WHERE</span> <span class="n">NTOTPATSCOHORT</span><span class="p">.</span><span class="n">COHORTP</span> <span class="n">EQ</span> <span class="n">TEAE</span><span class="p">.</span><span class="n">COHORT</span>
+                    <span class="k">AND</span> <span class="n">NTOTEVENTSCOHORT</span><span class="p">.</span><span class="n">COHORTE</span> <span class="n">EQ</span> <span class="n">TEAE</span><span class="p">.</span><span class="n">COHORT</span>
+                <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">COHORT</span><span class="p">,</span> <span class="n">AEBODSY</span><span class="p">,</span> <span class="n">AEDECOD</span><span class="p">,</span> <span class="n">PT</span><span class="p">;</span>
+<span class="n">QUIT</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In this second <code>PROC SQL</code> the number of certain ocurrences are counted.</p>
@@ -1848,39 +1861,39 @@ QUIT;
 29
 30
 31
-32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PROC SQL;
-    CREATE TABLE AESWPP_1
-        AS SELECT * ,
-            CASE 
-                WHEN GRADE EQ 1 THEN COUNT(1) 
-                ELSE 0 
-            END 
-        AS GRADE1,
-            CASE 
-                WHEN GRADE EQ 2 THEN COUNT(1) 
-                ELSE 0 
-            END 
-        AS GRADE2,
-            CASE 
-                WHEN GRADE EQ 3 THEN COUNT(1) 
-                ELSE 0 
-            END 
-        AS GRADE3,
-            CASE 
-                WHEN GRADE EQ 4 THEN COUNT(1) 
-                ELSE 0 
-            END 
-        AS GRADE4,
-            CASE 
-                WHEN GRADE EQ 5 THEN COUNT(1) 
-                ELSE 0 
-            END 
-        AS GRADE5
-            FROM AESWPP
-                GROUP BY COHORT, AEBODSY, AEDECOD, GRADE
-                    ORDER BY COHORT, AEBODSY, AEDECOD;
-QUIT;
-</pre></div>
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">PROC</span> <span class="nv">SQL</span><span class="c1">;</span>
+    <span class="nv">CREATE</span> <span class="nv">TABLE</span> <span class="nv">AESWPP_1</span>
+        <span class="nv">AS</span> <span class="nv">SELECT</span> <span class="o">*</span> ,
+            <span class="nv">CASE</span> 
+                <span class="nv">WHEN</span> <span class="nv">GRADE</span> <span class="nv">EQ</span> <span class="mi">1</span> <span class="k">THEN</span> <span class="nv">COUNT</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> 
+                <span class="k">ELSE</span> <span class="mi">0</span> 
+            <span class="k">END</span> 
+        <span class="nv">AS</span> <span class="nv">GRADE1</span>,
+            <span class="nv">CASE</span> 
+                <span class="nv">WHEN</span> <span class="nv">GRADE</span> <span class="nv">EQ</span> <span class="mi">2</span> <span class="k">THEN</span> <span class="nv">COUNT</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> 
+                <span class="k">ELSE</span> <span class="mi">0</span> 
+            <span class="k">END</span> 
+        <span class="nv">AS</span> <span class="nv">GRADE2</span>,
+            <span class="nv">CASE</span> 
+                <span class="nv">WHEN</span> <span class="nv">GRADE</span> <span class="nv">EQ</span> <span class="mi">3</span> <span class="k">THEN</span> <span class="nv">COUNT</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> 
+                <span class="k">ELSE</span> <span class="mi">0</span> 
+            <span class="k">END</span> 
+        <span class="nv">AS</span> <span class="nv">GRADE3</span>,
+            <span class="nv">CASE</span> 
+                <span class="nv">WHEN</span> <span class="nv">GRADE</span> <span class="nv">EQ</span> <span class="mi">4</span> <span class="k">THEN</span> <span class="nv">COUNT</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> 
+                <span class="k">ELSE</span> <span class="mi">0</span> 
+            <span class="k">END</span> 
+        <span class="nv">AS</span> <span class="nv">GRADE4</span>,
+            <span class="nv">CASE</span> 
+                <span class="nv">WHEN</span> <span class="nv">GRADE</span> <span class="nv">EQ</span> <span class="mi">5</span> <span class="k">THEN</span> <span class="nv">COUNT</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span> 
+                <span class="k">ELSE</span> <span class="mi">0</span> 
+            <span class="k">END</span> 
+        <span class="nv">AS</span> <span class="nv">GRADE5</span>
+            <span class="nv">FROM</span> <span class="nv">AESWPP</span>
+                <span class="nv">GROUP</span> <span class="nv">BY</span> <span class="nv">COHORT</span>, <span class="nv">AEBODSY</span>, <span class="nv">AEDECOD</span>, <span class="nv">GRADE</span>
+                    <span class="nv">ORDER</span> <span class="nv">BY</span> <span class="nv">COHORT</span>, <span class="nv">AEBODSY</span>, <span class="nv">AEDECOD</span><span class="c1">;</span>
+<span class="nv">QUIT</span><span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="selecting-first-and-last-dates-related-to-a-patient">Selecting First and Last Dates Related to a Patient<a class="headerlink" href="#selecting-first-and-last-dates-related-to-a-patient" title="Permanent link">Link</a></h3>
@@ -1889,16 +1902,17 @@ QUIT;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-    create table firstlastdates as 
-        select min(STARTDATE) as date1, max(ENDDATE) as date2, pt, visit
-            from origin-SAS-data-set 
-            group by pt, visit;
-quit; 
-</pre></div>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+    <span class="k">create</span> <span class="k">table</span> <span class="n">firstlastdates</span> <span class="k">as</span> 
+        <span class="k">select</span> <span class="k">min</span><span class="p">(</span><span class="n">STARTDATE</span><span class="p">)</span> <span class="k">as</span> <span class="n">date1</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">ENDDATE</span><span class="p">)</span> <span class="k">as</span> <span class="n">date2</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">visit</span>
+            <span class="k">from</span> <span class="n">origin</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span> 
+            <span class="k">group</span> <span class="k">by</span> <span class="n">pt</span><span class="p">,</span> <span class="n">visit</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span> 
+</code></pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -1954,13 +1968,11 @@ quit;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1968,18 +1980,15 @@ quit;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

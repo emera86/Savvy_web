@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduction-to-reading-raw-data-files" tabindex="1" class="md-skip">
+      <a href="#introduction-to-reading-raw-data-files" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Reading Raw Data Files
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -289,28 +290,28 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-reading-raw-data-files" title="Introduction to Reading Raw Data Files" class="md-nav__link">
+  <a href="#introduction-to-reading-raw-data-files" class="md-nav__link">
     Introduction to Reading Raw Data Files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-standard-delimited-data" title="Reading Standard Delimited Data" class="md-nav__link">
+  <a href="#reading-standard-delimited-data" class="md-nav__link">
     Reading Standard Delimited Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-nonstandard-delimited-data" title="Reading Nonstandard Delimited Data" class="md-nav__link">
+  <a href="#reading-nonstandard-delimited-data" class="md-nav__link">
     Reading Nonstandard Delimited Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#validating-data" title="Validating Data" class="md-nav__link">
+  <a href="#validating-data" class="md-nav__link">
     Validating Data
   </a>
   
@@ -318,14 +319,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#missing-values-between-delimiters-consecutive-delimiters" title="Missing Values between Delimiters (Consecutive Delimiters)" class="md-nav__link">
+  <a href="#missing-values-between-delimiters-consecutive-delimiters" class="md-nav__link">
     Missing Values between Delimiters (Consecutive Delimiters)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#missing-values-at-the-end-of-a-line" title="Missing Values at the End of a Line" class="md-nav__link">
+  <a href="#missing-values-at-the-end-of-a-line" class="md-nav__link">
     Missing Values at the End of a Line
   </a>
   
@@ -1421,18 +1422,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1447,6 +1436,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1547,28 +1560,28 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-reading-raw-data-files" title="Introduction to Reading Raw Data Files" class="md-nav__link">
+  <a href="#introduction-to-reading-raw-data-files" class="md-nav__link">
     Introduction to Reading Raw Data Files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-standard-delimited-data" title="Reading Standard Delimited Data" class="md-nav__link">
+  <a href="#reading-standard-delimited-data" class="md-nav__link">
     Reading Standard Delimited Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-nonstandard-delimited-data" title="Reading Nonstandard Delimited Data" class="md-nav__link">
+  <a href="#reading-nonstandard-delimited-data" class="md-nav__link">
     Reading Nonstandard Delimited Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#validating-data" title="Validating Data" class="md-nav__link">
+  <a href="#validating-data" class="md-nav__link">
     Validating Data
   </a>
   
@@ -1576,14 +1589,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#missing-values-between-delimiters-consecutive-delimiters" title="Missing Values between Delimiters (Consecutive Delimiters)" class="md-nav__link">
+  <a href="#missing-values-between-delimiters-consecutive-delimiters" class="md-nav__link">
     Missing Values between Delimiters (Consecutive Delimiters)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#missing-values-at-the-end-of-a-line" title="Missing Values at the End of a Line" class="md-nav__link">
+  <a href="#missing-values-at-the-end-of-a-line" class="md-nav__link">
     Missing Values at the End of a Line
   </a>
   
@@ -1636,20 +1649,20 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA output-SAS-data-set-name;
-    LENGTH variable(s) &lt;$&gt; length;
-    INFILE &#39;raw-data-file-name&#39; DLM=&#39;delimiter&#39;;  
-    INPUT variable1 &lt;$&gt; variable2 &lt;$&gt; ... variableN &lt;$&gt;;       
-RUN;
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">DATA</span> <span class="k">output</span><span class="o">-</span><span class="n">SAS</span><span class="o">-</span><span class="k">data</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="n">name</span><span class="p">;</span>
+    <span class="k">LENGTH</span> <span class="k">variable</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span><span class="err">$</span><span class="o">&gt;</span> <span class="k">length</span><span class="p">;</span>
+    <span class="n">INFILE</span> <span class="s1">&#39;raw-data-file-name&#39;</span> <span class="n">DLM</span><span class="o">=</span><span class="s1">&#39;delimiter&#39;</span><span class="p">;</span>  
+    <span class="k">INPUT</span> <span class="n">variable1</span> <span class="o">&lt;</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">variable2</span> <span class="o">&lt;</span><span class="err">$</span><span class="o">&gt;</span> <span class="p">...</span> <span class="n">variableN</span> <span class="o">&lt;</span><span class="err">$</span><span class="o">&gt;</span><span class="p">;</span>       
+<span class="n">RUN</span><span class="p">;</span>
 
-/* Example */
+<span class="cm">/* Example */</span>
 
-DATA work.sales1;
-    LENGTH First_Name Last_Name $ 12 Gender $ 1;
-    INFILE &#39;&amp;path/sales.csv&#39; DLM=&#39;,&#39;;  
-    INPUT Employee_ID Gender $ Salary $ Job_Title $ Country $; 
-RUN;
-</pre></div>
+<span class="k">DATA</span> <span class="k">work</span><span class="p">.</span><span class="n">sales1</span><span class="p">;</span>
+    <span class="k">LENGTH</span> <span class="n">First_Name</span> <span class="n">Last_Name</span> <span class="err">$</span> <span class="mi">12</span> <span class="n">Gender</span> <span class="err">$</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">INFILE</span> <span class="s1">&#39;&amp;path/sales.csv&#39;</span> <span class="n">DLM</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">;</span>  
+    <span class="k">INPUT</span> <span class="n">Employee_ID</span> <span class="n">Gender</span> <span class="err">$</span> <span class="n">Salary</span> <span class="err">$</span> <span class="n">Job_Title</span> <span class="err">$</span> <span class="n">Country</span> <span class="err">$</span><span class="p">;</span> 
+<span class="n">RUN</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1670,13 +1683,13 @@ RUN;
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INPUT variable &lt;$&gt; variable &lt;:informat&gt;;
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">INPUT</span> <span class="k">variable</span> <span class="o">&lt;</span><span class="err">$</span><span class="o">&gt;</span> <span class="k">variable</span> <span class="o">&lt;</span><span class="p">:</span><span class="n">informat</span><span class="o">&gt;</span><span class="p">;</span>
 
-/* Example */
+<span class="cm">/* Example */</span>
 
-:date.
-:mmddyy.
-</pre></div>
+<span class="p">:</span><span class="nb">date</span><span class="p">.</span>
+<span class="p">:</span><span class="n">mmddyy</span><span class="p">.</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1696,17 +1709,17 @@ RUN;
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DATA (...);
-    INFILE DATALINES DLM=&#39;,&#39;;   /* only if datalines are delimited */
-    INPUT (...);
-    DATALINES;
-    &lt;instream data&gt;
-    ;
-    INPUT (...);
-    DATALINES;
-&lt;instream data&gt;
-;
-</pre></div>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">DATA</span> <span class="ss">(</span>...<span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">INFILE</span> <span class="nv">DATALINES</span> <span class="nv">DLM</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">,</span><span class="s1">&#39;</span><span class="c1">;   /* only if datalines are delimited */</span>
+    <span class="nv">INPUT</span> <span class="ss">(</span>...<span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">DATALINES</span><span class="c1">;</span>
+    <span class="o">&lt;</span><span class="nv">instream</span> <span class="nv">data</span><span class="o">&gt;</span>
+    <span class="c1">;</span>
+    <span class="nv">INPUT</span> <span class="ss">(</span>...<span class="ss">)</span><span class="c1">;</span>
+    <span class="nv">DATALINES</span><span class="c1">;</span>
+<span class="o">&lt;</span><span class="nv">instream</span> <span class="nv">data</span><span class="o">&gt;</span>
+<span class="c1">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <ul>
@@ -1733,7 +1746,7 @@ RUN;
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">/* Example */</span><span class="w"></span>
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cm">/* Example */</span><span class="w"></span>
 
 DATA<span class="w"> </span>work<span class="o">.</span>managers<span class="err">;</span><span class="w"></span>
 <span class="w">   </span>infile<span class="w"> </span>datalines<span class="w"> </span>dlm<span class="o">=</span><span class="s">&#39;/&#39;</span><span class="err">;</span><span class="w"></span>
@@ -1753,25 +1766,26 @@ proc<span class="w"> </span>print<span class="w"> </span>data<span class="o">=</
 <span class="w">   </span>format<span class="w"> </span>HireDate<span class="w"> </span>mmddyy10<span class="o">.</span><span class="err">;</span><span class="w"></span>
 run<span class="err">;</span><span class="w"></span>
 title<span class="err">;</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="validating-data">Validating Data<a class="headerlink" href="#validating-data" title="Permanent link">Link</a></h2>
 <p>When SAS encounters a data error, it prints messages and a ruler in the log and assigns a missing value to the affected variable. Then SAS continues processing.</p>
 <h3 id="missing-values-between-delimiters-consecutive-delimiters">Missing Values between Delimiters (Consecutive Delimiters)<a class="headerlink" href="#missing-values-between-delimiters-consecutive-delimiters" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INFILE &#39;raw-data-file-name&#39; &lt;DLM=&gt; DSD;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">INFILE</span> <span class="s1">&#39;raw-data-file-name&#39;</span> <span class="o">&lt;</span><span class="n">DLM</span><span class="o">=&gt;</span> <span class="n">DSD</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>DSD</code> option sets the default delimiter to a comma, treats consecutive delimiters as missing values and enables SAS to read values with embedded delimiters if the value is surrounded by quotation marks</p>
 <h3 id="missing-values-at-the-end-of-a-line">Missing Values at the End of a Line<a class="headerlink" href="#missing-values-at-the-end-of-a-line" title="Permanent link">Link</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INFILE &#39;raw-data-file-name&#39; MISSOVER;
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">INFILE</span> <span class="s1">&#39;raw-data-file-name&#39;</span> <span class="n">MISSOVER</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>With the <code>MISSOVER</code> option, if SAS reaches the end of a record without finding values for all fields, variables without values are set to missing.</p>
                 
                   
+                
                 
               
               
@@ -1827,13 +1841,11 @@ title<span class="err">;</span><span class="w"></span>
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1841,18 +1853,15 @@ title<span class="err">;</span><span class="w"></span>
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>

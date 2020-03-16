@@ -1,0 +1,2142 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Learning How to Program in SAS">
+      
+      
+      
+        <meta name="author" content="Lucía Rodrigo Insausti">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>RECIST v1.1 - SAS Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#subject-eligibility" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
+                RECIST v1.1
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="SAS Manual" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    SAS Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Gettin' Started!" class="md-nav__link">
+      Gettin' Started!
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      The Essentials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        The Essentials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/accessing/" title="Accessing Data" class="md-nav__link">
+      Accessing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reporting/" title="Producing Detailed Reports" class="md-nav__link">
+      Producing Detailed Reports
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/formatting/" title="Formatting Data Values" class="md-nav__link">
+      Formatting Data Values
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-sas/" title="Reading SAS Data Sets" class="md-nav__link">
+      Reading SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-spreadsheets/" title="Reading Spreadsheet and Database Data" class="md-nav__link">
+      Reading Spreadsheet and Database Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/reading-raw/" title="Reading Raw Data Files" class="md-nav__link">
+      Reading Raw Data Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/manipulation/" title="Manipulating Data" class="md-nav__link">
+      Manipulating Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/combination/" title="Combining SAS Data Sets" class="md-nav__link">
+      Combining SAS Data Sets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../essentials/summary/" title="Creating Summary Reports" class="md-nav__link">
+      Creating Summary Reports
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Basic Statistics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Basic Statistics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/anova/" title="Analysis of Variance (ANOVA)" class="md-nav__link">
+      Analysis of Variance (ANOVA)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/regression/" title="Regression" class="md-nav__link">
+      Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/inference/" title="Model Post-Fitting for Inference" class="md-nav__link">
+      Model Post-Fitting for Inference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/categorical-data/" title="Categorical Data Analysis" class="md-nav__link">
+      Categorical Data Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/prediction/" title="Model Building and Scoring for Prediction" class="md-nav__link">
+      Model Building and Scoring for Prediction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Using Macros
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using Macros
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/introducing-macrovar/" title="Introducing Macro Variables" class="md-nav__link">
+      Introducing Macro Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/using-macrofunc/" title="Using Macro Functions" class="md-nav__link">
+      Using Macro Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macrovar-at-execution-time/" title="Creating Macro Variables at Execution Time" class="md-nav__link">
+      Creating Macro Variables at Execution Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog/" title="Creating and Using Macro Programs" class="md-nav__link">
+      Creating and Using Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/macroprog-processing/" title="Using Conditional and Iterative Processing in Macro Programs" class="md-nav__link">
+      Using Conditional and Iterative Processing in Macro Programs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/debugging-options/" title="Debugging Options" class="md-nav__link">
+      Debugging Options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macros/more-macro/" title="More on Macro Programming" class="md-nav__link">
+      More on Macro Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/getting-started/" title="Getting Started with the SQL Procedure" class="md-nav__link">
+      Getting Started with the SQL Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/efficiencies/" title="Measuring Efficiencies" class="md-nav__link">
+      Measuring Efficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/displaying-results/" title="Displaying Query Results" class="md-nav__link">
+      Displaying Query Results
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/joins/" title="Working with SQL Joins" class="md-nav__link">
+      Working with SQL Joins
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/nested-queries/" title="Working with Nested Queries" class="md-nav__link">
+      Working with Nested Queries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/set-operators/" title="Working with Set Operators" class="md-nav__link">
+      Working with Set Operators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/tables-views/" title="Creating Tables and Views" class="md-nav__link">
+      Creating Tables and Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/advanced/" title="Using Advanced PROC SQL Features" class="md-nav__link">
+      Using Advanced PROC SQL Features
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/miscellanea/" title="Miscellanea" class="md-nav__link">
+      Miscellanea
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Other Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Other Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/model-selection/" title="Model Selection" class="md-nav__link">
+      Model Selection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/missing-data/" title="Dealing with Missing Data" class="md-nav__link">
+      Dealing with Missing Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/interim-analysis/" title="Interim Analysis Design" class="md-nav__link">
+      Interim Analysis Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/normality-tests/" title="Normality Tests" class="md-nav__link">
+      Normality Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/post-hoc-tests/" title="Post-hoc Tests" class="md-nav__link">
+      Post-hoc Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
+      Effect Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/propensity-score/" title="Propensity Score" class="md-nav__link">
+      Propensity Score
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/roc-curve/" title="ROC Curve" class="md-nav__link">
+      ROC Curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/questionnaires/" title="Questionnaires analysis" class="md-nav__link">
+      Questionnaires analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/sequence-design/" title="Sequence Design" class="md-nav__link">
+      Sequence Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/survival-analysis/" title="Survival Analysis" class="md-nav__link">
+      Survival Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/HR_vs_OR_vs_RR/" title="Odds Ratio, Hazard Ratio and Relative Risk" class="md-nav__link">
+      Odds Ratio, Hazard Ratio and Relative Risk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
+      Clustering
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Specific Procedures
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specific Procedures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/regression-models/" title="General Notes on Regression Procedures" class="md-nav__link">
+      General Notes on Regression Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/glimmix/" title="PROC GLIMMIX" class="md-nav__link">
+      PROC GLIMMIX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../procedures/mixed/" title="PROC MIXED" class="md-nav__link">
+      PROC MIXED
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      SAS Outputs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        SAS Outputs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/ods/" title="Output Delivery System" class="md-nav__link">
+      Output Delivery System
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/graphs/" title="Graphs and Plots" class="md-nav__link">
+      Graphs and Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/print/" title="PROC PRINT" class="md-nav__link">
+      PROC PRINT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/report/" title="PROC REPORT" class="md-nav__link">
+      PROC REPORT
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/tabulate/" title="PROC TABULATE" class="md-nav__link">
+      PROC TABULATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/template/" title="PROC TEMPLATE" class="md-nav__link">
+      PROC TEMPLATE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/pdf/" title="Write to pdf file" class="md-nav__link">
+      Write to pdf file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sas-outputs/excel/" title="Export to Excel file" class="md-nav__link">
+      Export to Excel file
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        SAS vs R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/importing-reporting/" title="Importing and Reporting Data" class="md-nav__link">
+      Importing and Reporting Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/variables-functions/" title="Creating New Variables, Functions and Data Tables" class="md-nav__link">
+      Creating New Variables, Functions and Data Tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/random-plotting/" title="Random Number Generation and Plotting" class="md-nav__link">
+      Random Number Generation and Plotting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/proc-ods-macros/" title="Descriptive Procedures, Output Delivery System and Macros" class="md-nav__link">
+      Descriptive Procedures, Output Delivery System and Macros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/inferential/" title="Analyzing the Data via Inferential Procedures" class="md-nav__link">
+      Analyzing the Data via Inferential Procedures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/iml/" title="Interactive Matrix Language (IML)" class="md-nav__link">
+      Interactive Matrix Language (IML)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvsr/bridge/" title="A Bridge Between SAS and R" class="md-nav__link">
+      A Bridge Between SAS and R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wizard/" title="Using Wizard Menus" class="md-nav__link">
+      Using Wizard Menus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
+      SAS Visual Analytics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      CDISC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        CDISC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Miscellanea
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Miscellanea
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/arrays/" title="Working with Arrays" class="md-nav__link">
+      Working with Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/execution-time/" title="Execution time" class="md-nav__link">
+      Execution time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/time-intervals/" title="Time intervals" class="md-nav__link">
+      Time intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/patient-identification/" title="Patient identification" class="md-nav__link">
+      Patient identification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/random-list/" title="Generating a Random List" class="md-nav__link">
+      Generating a Random List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../miscellanea/shell/" title="Shell Scripting in SAS" class="md-nav__link">
+      Shell Scripting in SAS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14" checked>
+    
+    <label class="md-nav__link" for="nav-14">
+      Medical terms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Medical terms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../labs/" title="Laboratory Test" class="md-nav__link">
+      Laboratory Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../exposure/" title="Treatment Exposure" class="md-nav__link">
+      Treatment Exposure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../orr-dcr/" title="ORR and DCR" class="md-nav__link">
+      ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RECIST v1.1
+      </label>
+    
+    <a href="./" title="RECIST v1.1" class="md-nav__link md-nav__link--active">
+      RECIST v1.1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#subject-eligibility" class="md-nav__link">
+    Subject Eligibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-assessment" class="md-nav__link">
+    Methods of Assessment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-disease-assessment" class="md-nav__link">
+    Baseline Disease Assessment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurable-lesions" class="md-nav__link">
+    Measurable lesions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-measurable-lesions" class="md-nav__link">
+    Non-measurable lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-lesions" class="md-nav__link">
+    Target Lesions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-target-lesions" class="md-nav__link">
+    Non-target Lesions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-criteria" class="md-nav__link">
+    Response Criteria
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-target-lesions" class="md-nav__link">
+    Evaluation of target lesions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-notes-on-the-assessment-of-target-lesions" class="md-nav__link">
+    Special notes on the assessment of target lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-non-target-lesions" class="md-nav__link">
+    Evaluation of non-target lesions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-lesions" class="md-nav__link">
+    New lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation" class="md-nav__link">
+    Confirmation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-assessments-and-inevaluable-designation" class="md-nav__link">
+    Missing Assessments and Inevaluable Designation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recist-faqs" class="md-nav__link">
+    RECIST FAQs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      R with Shiny
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        R with Shiny
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/introduction/" title="Introduction and Shiny Basics" class="md-nav__link">
+      Introduction and Shiny Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/input-output/" title="Inputs, Outputs, and Rendering Functions" class="md-nav__link">
+      Inputs, Outputs, and Rendering Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/reactive/" title="Reactive Programming" class="md-nav__link">
+      Reactive Programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../R-with-Shiny/custom/" title="Customizing Appearance" class="md-nav__link">
+      Customizing Appearance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#subject-eligibility" class="md-nav__link">
+    Subject Eligibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-assessment" class="md-nav__link">
+    Methods of Assessment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-disease-assessment" class="md-nav__link">
+    Baseline Disease Assessment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measurable-lesions" class="md-nav__link">
+    Measurable lesions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-measurable-lesions" class="md-nav__link">
+    Non-measurable lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-lesions" class="md-nav__link">
+    Target Lesions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-target-lesions" class="md-nav__link">
+    Non-target Lesions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-criteria" class="md-nav__link">
+    Response Criteria
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-target-lesions" class="md-nav__link">
+    Evaluation of target lesions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-notes-on-the-assessment-of-target-lesions" class="md-nav__link">
+    Special notes on the assessment of target lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-non-target-lesions" class="md-nav__link">
+    Evaluation of non-target lesions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-lesions" class="md-nav__link">
+    New lesions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation" class="md-nav__link">
+    Confirmation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-assessments-and-inevaluable-designation" class="md-nav__link">
+    Missing Assessments and Inevaluable Designation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recist-faqs" class="md-nav__link">
+    RECIST FAQs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>RECIST v1.1</h1>
+                
+                <p><strong>Response Evaluation Criteria in Solid Tumors (RECIST)</strong> were developed and published in 2000, based on the original World Health Organization (WHO) guidelines first published in 1981. In 2009, revisions were made (RECIST 1.1) incorporating major changes, including </p>
+<ul>
+<li>a reduction in the <strong>number of lesions</strong> to be assessed, </li>
+<li>a new measurement method to classify <strong>lymph nodes</strong> as pathologic or normal, </li>
+<li>the clarification of the requirement to <strong>confirm a complete response (CR) or partial response (PR)</strong> and </li>
+<li>new methodologies for more appropriate <strong>measurement of disease progression</strong>.</li>
+</ul>
+<h2 id="subject-eligibility">Subject Eligibility<a class="headerlink" href="#subject-eligibility" title="Permanent link">Link</a></h2>
+<p>Only patients with <strong>measurable disease at baseline (presence of at least one measurable lesion)</strong> should be included in protocols where objective tumor response is the primary endpoint.</p>
+<p>In studies where the primary endpoint is tumor progression (either time to progression or proportion with progression at a fixed date), the <strong>protocol must specify if entry is restricted to those with measurable disease or whether patients having non-measurable disease only are also eligible</strong>.</p>
+<h2 id="methods-of-assessment">Methods of Assessment<a class="headerlink" href="#methods-of-assessment" title="Permanent link">Link</a></h2>
+<p>The same method of assessment and the same technique should be used to characterize each identified and reported lesion at baseline and during follow-up.</p>
+<ul>
+<li>CT is the best currently available and reproducible method to measure lesions selected for response assessment. MRI is also acceptable in certain situations (e.g., for body scans but not for lung). </li>
+<li>Lesions on a chest X-ray may be considered measurable lesions if they are clearly defined and surrounded by aerated lung. However, CT is preferable.</li>
+<li>Clinical lesions will only be considered measurable when they are superficial and ≥10 mm in diameter as assessed using calipers. For the case of skin lesions, documentation by color photography, including a ruler to estimate the size of the lesion, is recommended.</li>
+<li>Ultrasound (US) should not be used to measure tumor lesions. </li>
+<li>Tumor markers alone cannot be used to assess response. If markers are initially above the upper normal limit, they must normalize for a patient to be considered in complete response.</li>
+<li>Cytology and histology can be used in rare cases (e.g., for evaluation of residual masses to differentiate between Partial Response and Complete Response or evaluation of new or enlarging effusions to differentiate between Progressive Disease and Response/Stable Disease).</li>
+<li>Use of endoscopy and laparoscopy is not advised. However, they can be used to confirm complete pathological response.</li>
+</ul>
+<h2 id="baseline-disease-assessment">Baseline Disease Assessment<a class="headerlink" href="#baseline-disease-assessment" title="Permanent link">Link</a></h2>
+<p>All baseline evaluations should be performed as closely as possible to the beginning of treatment and never more than 4 weeks before the beginning of the treatment.</p>
+<h3 id="measurable-lesions">Measurable lesions<a class="headerlink" href="#measurable-lesions" title="Permanent link">Link</a></h3>
+<p>Must be accurately measured in at least one dimension (<strong>longest diameter in the plane of measurement is to be recorded</strong>) with a minimum size of:</p>
+<ul>
+<li>10 mm by CT scan (CT scan slice thickness no greater than 5 mm; when CT scans have slice thickness &gt;5 mm, the minimum size should be twice the slice thickness).</li>
+<li>10 mm caliper measurement by clinical exam (lesions which cannot be accurately measured with calipers should be recorded as nonmeasurable).</li>
+<li>20 mm by chest X-ray.</li>
+<li><strong>Malignant lymph nodes</strong>. To be considered pathologically enlarged and measurable, a lymph node must be ≥15 mm in short axis when assessed by CT scan (CT scan slice thickness is recommended to be no greater than 5 mm). At baseline and in follow-up, only the short axis will be measured and followed.</li>
+<li><strong>Lytic bone lesions or mixed lytic-blastic lesions</strong> with identifiable soft tissue components that can be evaluated by cross-sectional imaging techniques such as CT or MRI can be considered measurable if the soft tissue component meets the definition of measurability described above. </li>
+<li><strong>‘Cystic lesions’</strong> thought to represent cystic metastases can be considered measurable if they meet the definition of measurability described above. However, if non-cystic lesions are present in the same patient, these are preferred for selection as target lesions.</li>
+</ul>
+<h3 id="non-measurable-lesions">Non-measurable lesions<a class="headerlink" href="#non-measurable-lesions" title="Permanent link">Link</a></h3>
+<p><strong>Non-measurable lesions</strong> are all other lesions, including small lesions (longest diameter &lt;10 mm or pathological lymph nodes with 10 to &lt;15 mm short axis), as well as truly non-measurable lesions. Lesions considered truly non-measurable include: leptomeningeal disease, ascites, pleural or pericardial effusion, inflammatory breast disease, lymphangitic involvement of skin or lung, abdominal masses/abdominal organomegaly identified by physical exam that is not measurable by reproducible imaging techniques.</p>
+<ul>
+<li><strong>Blastic bone lesions</strong> are non-measurable.</li>
+<li><strong>Lesions with prior local treatment</strong>, such as those situated in a previously irradiated area or in an area subjected to other loco-regional therapy, are usually not considered measurable unless there has been demonstrated progression in the lesion. Study protocols should detail the conditions under which such lesions would be considered measurable.</li>
+</ul>
+<h2 id="target-lesions">Target Lesions<a class="headerlink" href="#target-lesions" title="Permanent link">Link</a></h2>
+<ul>
+<li>All measurable lesions up to a maximum of two lesions per organ and five lesions in total, representative of all involved organs, should be identified as <strong>target lesions</strong> and recorded and measured at baseline.</li>
+<li>Target lesions should be selected on the basis of their size (lesions with the longest diameter) and be representative of all involved organs, as well as their suitability for reproducible repeated measurements.</li>
+<li>All measurements should be recorded in metric notation using calipers if clinically assessed. </li>
+</ul>
+<p>A sum of the diameters (longest for non-nodal lesions, short axis for nodal lesions) for <strong>all target lesions</strong> will be calculated and reported as the baseline sum diameters, which will be used as reference to further characterize any objective tumor regression in the measurable dimension of the disease. If lymph nodes are to be included in the sum, only the short axis will contribute. </p>
+<h2 id="non-target-lesions">Non-target Lesions<a class="headerlink" href="#non-target-lesions" title="Permanent link">Link</a></h2>
+<p>All lesions (or sites of disease) not identified as target lesions, including pathological lymph nodes and all non-measurable lesions, should be identified as <strong>non-target lesions</strong> and be recorded at baseline. Measurements of these lesions are not required and they should be followed as ‘present’, ‘absent’ or in rare cases, ‘unequivocal progression’</p>
+<h2 id="response-criteria">Response Criteria<a class="headerlink" href="#response-criteria" title="Permanent link">Link</a></h2>
+<h3 id="evaluation-of-target-lesions">Evaluation of target lesions<a class="headerlink" href="#evaluation-of-target-lesions" title="Permanent link">Link</a></h3>
+<ul>
+<li><strong>Complete Response (CR)</strong>: Disappearance of all target lesions. Any pathological lymph nodes (whether target or non-target) must
+have reduction in short axis to &lt;10 mm.</li>
+<li><strong>Partial Response (PR)</strong>: At least a 30% decrease in the sum of diameters of target lesions, taking as reference the baseline sum
+of diameters.</li>
+<li><strong>Progressive Disease (PD)</strong>: At least a 20% increase in the sum of diameters of target lesions, taking as reference the smallest sum on study (this may include the baseline sum). The sum must also demonstrate an absolute increase of at least 5 mm.</li>
+<li><strong>Stable Disease (SD)</strong>: Neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD.</li>
+</ul>
+<h4 id="special-notes-on-the-assessment-of-target-lesions">Special notes on the assessment of target lesions<a class="headerlink" href="#special-notes-on-the-assessment-of-target-lesions" title="Permanent link">Link</a></h4>
+<ul>
+<li><strong>Lymph nodes</strong> identified as target lesions should always have the actual short axis measurement recorded even if the nodes regress to below 10 mm on study. When lymph nodes are included as target lesions, the ‘sum’ of lesions may not be zero even if complete response criteria are met since a normal lymph node is defined as having a short axis of &lt;10 mm.</li>
+<li><strong>Target lesions that become ‘too small to measure’</strong>. While on study, all lesions (nodal and non-nodal) recorded at baseline should have their actual measurements recorded at each subsequent evaluation, even when very small. However, sometimes lesions or lymph nodes become so faint on a CT scan that the radiologist may not feel comfortable assigning an exact measure and may report them as being ‘too small to measure’, in which case a default value of 5 mm should be assigned.</li>
+<li><strong>Lesions that split or coalesce on treatment</strong>. When non-nodal lesions ‘fragment’, the longest diameters of the fragmented portions should be added together to calculate the target lesion sum. Similarly, as lesions coalesce, a plane between them may be maintained that would aid in obtaining maximal diameter measurements of each individual lesion. If the lesions have truly coalesced such that they are no longer separable, the vector of the longest diameter in this instance should be the maximal longest diameter for the ‘coalesced lesion’.</li>
+</ul>
+<h3 id="evaluation-of-non-target-lesions">Evaluation of non-target lesions<a class="headerlink" href="#evaluation-of-non-target-lesions" title="Permanent link">Link</a></h3>
+<ul>
+<li><strong>Complete Response (CR)</strong>: Disappearance of all non-target lesions and normalization of tumor marker levels. All lymph nodes must be non-pathological in size (&lt;10 mm short axis).</li>
+<li><strong>Non-CR / Non-PD</strong>: Persistence of one or more non-target lesion(s) and/or maintenance of tumor marker levels above normal limits.</li>
+<li><strong>Progressive Disease (PD)</strong>: Unequivocal progression of existing non-target lesions.</li>
+<li><strong>When patient has measurable disease</strong>. To achieve ‘unequivocal progression’ on the basis of the non-target disease, there must be an overall level of substantial worsening in non-target disease such that, even in presence of SD or PR in target disease, the overall tumor burden has increased sufficiently to merit discontinuation of therapy. A modest ‘increase’ in the size of one or more non-target lesions is usually not sufficient to qualify for unequivocal progression status. </li>
+<li><strong>When patient has only non-measurable disease</strong>. There is no measurable disease assessment to factor into the interpretation of an increase in non-measurable disease burden. Because worsening in non-target disease cannot be easily quantified, a useful test that can be applied is to consider if the increase in overall disease burden based on change in nonmeasurable disease is comparable in magnitude to the increase that would be required to declare PD for measurable disease. Examples include an increase in a pleural effusion from ‘trace’ to ‘large’ or an increase in lymphangitic disease from localized to widespread.</li>
+</ul>
+<h3 id="new-lesions">New lesions<a class="headerlink" href="#new-lesions" title="Permanent link">Link</a></h3>
+<p>The appearance of new malignant lesions denotes disease progression:</p>
+<ul>
+<li>The finding of a new lesion should be unequivocal (i.e., not attributable to differences in scanning technique, change in imaging modality or findings thought to represent something other than tumor, especially when the patient’s baseline lesions show partial or complete response). </li>
+<li>If a new lesion is equivocal, for example because of its small size, continued therapy and follow-up evaluation will clarify if it represents truly new disease. If repeat scans confirm there is definitely a new lesion, then progression should be declared using the date of the initial scan. </li>
+<li>A lesion identified on a follow-up study in an anatomical location that was not scanned at baseline is considered a new lesion and disease progression.</li>
+</ul>
+<p>It is sometimes reasonable to incorporate the use of FDG-PET scanning to complement CT in assessment of progression (particularly possible ‘new’ disease). New lesions on the basis of FDG-PET imaging can be identified according to the following algorithm:</p>
+<ul>
+<li><strong>Negative FDG-PET at baseline, with a positive FDG-PET at follow-up</strong> is PD based on a new lesion.</li>
+<li><strong>No FDG-PET at baseline and a positive FDG-PET at follow-up</strong>:</li>
+<li>If the positive FDG-PET at follow-up corresponds to a new site of disease confirmed by CT, this is PD.</li>
+<li>If the positive FDG-PET at follow-up is not confirmed as a new site of disease on CT, additional follow-up CT scans are needed to determine if there is truly progression occurring at that site (if so, the date of PD will be the date of the initial abnormal FDG-PET scan).</li>
+<li>If the positive FDG-PET at follow-up corresponds to a pre-existing site of disease on CT that is not progressing on the basis of the anatomic images, this is not PD.</li>
+</ul>
+<p>The following table provides  a summary of the overall response status calculation at each time point for patients who have measurable disease at baseline. </p>
+<p><strong>Time point response: Patients with target (+/– non-target) disease</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Target lesions</th>
+<th align="center">Non-target lesions</th>
+<th align="center">New lesions</th>
+<th align="center">Overall response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CR</td>
+<td align="center">CR</td>
+<td align="center">No</td>
+<td align="center">CR</td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">Non-CR /non-PD</td>
+<td align="center">No</td>
+<td align="center">PR</td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">NE</td>
+<td align="center">No</td>
+<td align="center">PR</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">Non-PD /or not all evaluated</td>
+<td align="center">No</td>
+<td align="center">PR</td>
+</tr>
+<tr>
+<td align="center">SD</td>
+<td align="center">Non-PD /or not all evaluated</td>
+<td align="center">No</td>
+<td align="center">SD</td>
+</tr>
+<tr>
+<td align="center">Not all evaluated</td>
+<td align="center">Non-PD</td>
+<td align="center">No</td>
+<td align="center">NE</td>
+</tr>
+<tr>
+<td align="center">PD</td>
+<td align="center">Any</td>
+<td align="center">Yes or No</td>
+<td align="center">PD</td>
+</tr>
+<tr>
+<td align="center">Any</td>
+<td align="center">PD</td>
+<td align="center">Yes or No</td>
+<td align="center">PD</td>
+</tr>
+<tr>
+<td align="center">Any</td>
+<td align="center">Any</td>
+<td align="center">Yes</td>
+<td align="center">PD</td>
+</tr>
+</tbody>
+</table>
+<p>When patients have non-measurable (therefore non-target) disease only, the next table is to be used.</p>
+<p><strong>Time point response: Patients with non-target disease</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Non-target lesions</th>
+<th align="center">New lesions</th>
+<th align="center">Overall response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CR</td>
+<td align="center">No</td>
+<td align="center">CR</td>
+</tr>
+<tr>
+<td align="center">Non-CR/non-PD</td>
+<td align="center">No</td>
+<td align="center">Non-CR/non-PD<sup><a href="#myfootnote1">1</a></sup></td>
+</tr>
+<tr>
+<td align="center">Not all evaluated</td>
+<td align="center">No</td>
+<td align="center">NE</td>
+</tr>
+<tr>
+<td align="center">Unequivocal PD</td>
+<td align="center">Yes or No</td>
+<td align="center">PD</td>
+</tr>
+<tr>
+<td align="center">Any</td>
+<td align="center">Yes</td>
+<td align="center">PD</td>
+</tr>
+</tbody>
+</table>
+<p><sup><a name="myfootnote1">1</a></sup>Non-CR / non-PD is preferred over ‘Stable Disease’ for non-target disease since SD is increasingly used as an endpoint for assessment of efficacy in some trials. To assign this category when no lesions can be measured is not advised.</p>
+<h2 id="confirmation">Confirmation<a class="headerlink" href="#confirmation" title="Permanent link">Link</a></h2>
+<p>In non-randomized trials where response is the primary endpoint, confirmation of PR and CR is required to ensure responses identified are not the result of measurement error. This will also permit appropriate interpretation of results in the context of historical data where response has traditionally required confirmation in such trials.</p>
+<p>However, in all other circumstances, (i.e., in randomized phase II or III trials or studies where stable disease or progression are the primary endpoints), confirmation of response is not required since it will not add value to the interpretation of trial results. However, elimination of the requirement for response confirmation may increase the importance of central review to protect against bias, in particular in studies which are not blinded.</p>
+<p>In the case of SD, measurements must have met the SD criteria at least once after study entry at a minimum interval (in general not less than 6–8 weeks) that is defined in the study protocol.</p>
+<p>The Best Overall Response (BOR) is the best response recorded from the start of the study treatment until the disease progression/recurrence:</p>
+<ul>
+<li><strong>Complete Response (CR)</strong> upon confirmation at least 4 weeks after first CR</li>
+<li><strong>Partial Response (PR)</strong> upon confirmation at least 4 weeks after first PR</li>
+<li><strong>Stable Disease (SD)</strong> should be met at least once no less than 6-8 weeks after the first dose of trial treatment/baseline assessment, otherwise the best response will be Not Evaluable (NE)</li>
+<li><strong>Progressive Disease (PD)</strong> does not need confirmation</li>
+</ul>
+<p>The criteria for confirmation of the response is summarized in the following table for the best overall response when confirmation of CR and PR are required:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Overall response 1st time point</th>
+<th align="center">Overall response subsequent time point</th>
+<th align="center">Best Overall Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CR</td>
+<td align="center">CR</td>
+<td align="center">CR</td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">PR</td>
+<td align="center">SD, PD or PR <sup><a href="#myfootnote2">2</a></sup></td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">SD</td>
+<td align="center">SD provided minimum criteria for2 SD duration met, otherwise, PD</td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">PD</td>
+<td align="center">SD provided minimum criteria for SD duration met, otherwise, PD</td>
+</tr>
+<tr>
+<td align="center">CR</td>
+<td align="center">NE</td>
+<td align="center">SD provided minimum criteria for SD duration met, otherwise, NE</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">CR</td>
+<td align="center">PR</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">PR</td>
+<td align="center">PR</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">SD</td>
+<td align="center">SD</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">PD</td>
+<td align="center">SD provided minimum criteria for SD duration met, otherwise, PD</td>
+</tr>
+<tr>
+<td align="center">PR</td>
+<td align="center">NE</td>
+<td align="center">SD provided minimum criteria for SD duration met, otherwise, NE</td>
+</tr>
+<tr>
+<td align="center">NE</td>
+<td align="center">NE</td>
+<td align="center">NE</td>
+</tr>
+</tbody>
+</table>
+<p><sup><a name="myfootnote2">2</a></sup> If a CR is truly met at first time point, then any disease seen at a subsequent time point, even disease meeting PR criteria relative to baseline, makes the disease PD at that point (since disease must have reappeared after CR). Best response would depend on whether minimum duration for SD was met. However, sometimes CR may be claimed when subsequent scans suggest small lesions were likely still present and in fact the patient had PR, not CR at the first time point. Under these circumstances, the original CR should be changed to PR and the best response is PR.</p>
+<h2 id="missing-assessments-and-inevaluable-designation">Missing Assessments and Inevaluable Designation<a class="headerlink" href="#missing-assessments-and-inevaluable-designation" title="Permanent link">Link</a></h2>
+<p>When no imaging/measurement is done at all at a particular time point, the patient is not evaluable (NE) at that time point. </p>
+<p>If only a subset of lesion measurements are made at an assessment, usually the case is also considered NE at that time point, unless a convincing argument can be made that the contribution of the individual missing lesion(s) would not change the assigned time point response. This would most likely happen in the case of PD.</p>
+<h2 id="recist-faqs">RECIST FAQs<a class="headerlink" href="#recist-faqs" title="Permanent link">Link</a></h2>
+<p><strong>When measuring the longest diameter of target lesions in response to treatment, is the same axis that was used initially used subsequently, even if there is a shape change to the lesion that may have produced a new longest diameter?</strong><br/>
+The longest diameter of the lesion should always be measured even if the actual axis is different from the one used to measure the lesion initially (or at a different time point during followup). The only exception to this is lymph nodes —per RECIST 1.1 the short axis should always be followed and as in the case of target lesions, the vector of the short axis may change on follow-up.</p>
+<p><strong>What if a single non-target lesion cannot be reviewed (for whatever reason)? Does this negate the overall assessment?</strong><br/>
+Sometimes the major contribution of a single non-target lesion may be in the setting of CR having otherwise been achieved; failure to examine one non-target in that setting will leave you unable to claim CR. It is also possible that the non-target lesion has undergone such substantial progression that it would override the target disease and render the patient PD. However, this is very unlikely, especially if the rest of the measurable disease is stable or responding.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../orr-dcr/" title="ORR and DCR" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ORR and DCR
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../irecist/" title="iRECIST" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                iRECIST
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../js/mathjaxhelper.js"></script>
+      
+    
+  </body>
+</html>

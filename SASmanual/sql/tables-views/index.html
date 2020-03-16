@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -44,22 +44,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
+    
+      
     
     
   </head>
@@ -76,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#creating-tables" tabindex="1" class="md-skip">
+      <a href="#creating-tables" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -85,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="SAS Manual" class="md-header-nav__button md-logo">
+        <a href="../.." title="SAS Manual" aria-label="SAS Manual" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,27 +100,26 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                SAS Manual
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              SAS Manual
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Creating Tables and Views
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -135,7 +137,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -148,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -649,7 +650,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-tables" title="Creating Tables" class="md-nav__link">
+  <a href="#creating-tables" class="md-nav__link">
     Creating Tables
   </a>
   
@@ -657,28 +658,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#methods-of-creating-tables-with-the-create-table-statement" title="Methods of Creating Tables with the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#methods-of-creating-tables-with-the-create-table-statement" class="md-nav__link">
     Methods of Creating Tables with the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-a-query-in-the-create-table-statement" title="Using a Query in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#using-a-query-in-the-create-table-statement" class="md-nav__link">
     Using a Query in the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-like-clause-in-the-create-table-statement" title="Using the LIKE Clause in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#using-the-like-clause-in-the-create-table-statement" class="md-nav__link">
     Using the LIKE Clause in the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-columns-in-the-create-table-statement" title="Defining Columns in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#defining-columns-in-the-create-table-statement" class="md-nav__link">
     Defining Columns in the CREATE TABLE Statement
   </a>
   
@@ -690,7 +691,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods-of-adding-data-to-a-table-with-the-insert-statement" title="Methods of Adding Data to a Table with the INSERT Statement" class="md-nav__link">
+  <a href="#methods-of-adding-data-to-a-table-with-the-insert-statement" class="md-nav__link">
     Methods of Adding Data to a Table with the INSERT Statement
   </a>
   
@@ -698,21 +699,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#specifying-column-name-value-pairs-in-the-set-clause" title="Specifying Column Name-Value Pairs in the SET Clause" class="md-nav__link">
+  <a href="#specifying-column-name-value-pairs-in-the-set-clause" class="md-nav__link">
     Specifying Column Name-Value Pairs in the SET Clause
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-an-ordered-list-of-values-in-the-values-clause" title="Specifying an Ordered List of Values in the VALUES Clause" class="md-nav__link">
+  <a href="#specifying-an-ordered-list-of-values-in-the-values-clause" class="md-nav__link">
     Specifying an Ordered List of Values in the VALUES Clause
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-a-query-in-the-insert-statement" title="Specifying a Query in the INSERT Statement" class="md-nav__link">
+  <a href="#specifying-a-query-in-the-insert-statement" class="md-nav__link">
     Specifying a Query in the INSERT Statement
   </a>
   
@@ -724,7 +725,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-proc-sql-views" title="Creating PROC SQL Views" class="md-nav__link">
+  <a href="#creating-proc-sql-views" class="md-nav__link">
     Creating PROC SQL Views
   </a>
   
@@ -732,28 +733,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-proc-sql-views" title="Understanding PROC SQL Views" class="md-nav__link">
+  <a href="#understanding-proc-sql-views" class="md-nav__link">
     Understanding PROC SQL Views
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#understanding-proc-sql-views_1" title="Understanding PROC SQL Views" class="md-nav__link">
+  <a href="#understanding-proc-sql-views_1" class="md-nav__link">
     Understanding PROC SQL Views
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-and-validating-a-proc-sql-view" title="Creating and Validating a PROC SQL View" class="md-nav__link">
+  <a href="#creating-and-validating-a-proc-sql-view" class="md-nav__link">
     Creating and Validating a PROC SQL View
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#making-a-view-portable-with-the-using-clause" title="Making a View Portable with the USING Clause" class="md-nav__link">
+  <a href="#making-a-view-portable-with-the-using-clause" class="md-nav__link">
     Making a View Portable with the USING Clause
   </a>
   
@@ -1489,18 +1490,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
-      Mutations
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../medical/exposure/" title="Treatment Exposure" class="md-nav__link">
       Treatment Exposure
     </a>
@@ -1515,6 +1504,30 @@
   <li class="md-nav__item">
     <a href="../../medical/orr-dcr/" title="ORR and DCR" class="md-nav__link">
       ORR and DCR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
+      RECIST v1.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
+      iRECIST
     </a>
   </li>
 
@@ -1615,7 +1628,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-tables" title="Creating Tables" class="md-nav__link">
+  <a href="#creating-tables" class="md-nav__link">
     Creating Tables
   </a>
   
@@ -1623,28 +1636,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#methods-of-creating-tables-with-the-create-table-statement" title="Methods of Creating Tables with the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#methods-of-creating-tables-with-the-create-table-statement" class="md-nav__link">
     Methods of Creating Tables with the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-a-query-in-the-create-table-statement" title="Using a Query in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#using-a-query-in-the-create-table-statement" class="md-nav__link">
     Using a Query in the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-like-clause-in-the-create-table-statement" title="Using the LIKE Clause in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#using-the-like-clause-in-the-create-table-statement" class="md-nav__link">
     Using the LIKE Clause in the CREATE TABLE Statement
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defining-columns-in-the-create-table-statement" title="Defining Columns in the CREATE TABLE Statement" class="md-nav__link">
+  <a href="#defining-columns-in-the-create-table-statement" class="md-nav__link">
     Defining Columns in the CREATE TABLE Statement
   </a>
   
@@ -1656,7 +1669,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods-of-adding-data-to-a-table-with-the-insert-statement" title="Methods of Adding Data to a Table with the INSERT Statement" class="md-nav__link">
+  <a href="#methods-of-adding-data-to-a-table-with-the-insert-statement" class="md-nav__link">
     Methods of Adding Data to a Table with the INSERT Statement
   </a>
   
@@ -1664,21 +1677,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#specifying-column-name-value-pairs-in-the-set-clause" title="Specifying Column Name-Value Pairs in the SET Clause" class="md-nav__link">
+  <a href="#specifying-column-name-value-pairs-in-the-set-clause" class="md-nav__link">
     Specifying Column Name-Value Pairs in the SET Clause
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-an-ordered-list-of-values-in-the-values-clause" title="Specifying an Ordered List of Values in the VALUES Clause" class="md-nav__link">
+  <a href="#specifying-an-ordered-list-of-values-in-the-values-clause" class="md-nav__link">
     Specifying an Ordered List of Values in the VALUES Clause
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specifying-a-query-in-the-insert-statement" title="Specifying a Query in the INSERT Statement" class="md-nav__link">
+  <a href="#specifying-a-query-in-the-insert-statement" class="md-nav__link">
     Specifying a Query in the INSERT Statement
   </a>
   
@@ -1690,7 +1703,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-proc-sql-views" title="Creating PROC SQL Views" class="md-nav__link">
+  <a href="#creating-proc-sql-views" class="md-nav__link">
     Creating PROC SQL Views
   </a>
   
@@ -1698,28 +1711,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-proc-sql-views" title="Understanding PROC SQL Views" class="md-nav__link">
+  <a href="#understanding-proc-sql-views" class="md-nav__link">
     Understanding PROC SQL Views
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#understanding-proc-sql-views_1" title="Understanding PROC SQL Views" class="md-nav__link">
+  <a href="#understanding-proc-sql-views_1" class="md-nav__link">
     Understanding PROC SQL Views
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-and-validating-a-proc-sql-view" title="Creating and Validating a PROC SQL View" class="md-nav__link">
+  <a href="#creating-and-validating-a-proc-sql-view" class="md-nav__link">
     Creating and Validating a PROC SQL View
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#making-a-view-portable-with-the-using-clause" title="Making a View Portable with the USING Clause" class="md-nav__link">
+  <a href="#making-a-view-portable-with-the-using-clause" class="md-nav__link">
     Making a View Portable with the USING Clause
   </a>
   
@@ -1761,9 +1774,9 @@
 <h3 id="using-a-query-in-the-create-table-statement">Using a Query in the <code>CREATE TABLE</code> Statement<a class="headerlink" href="#using-a-query-in-the-create-table-statement" title="Permanent link">Link</a></h3>
 <p>To create a table by copying columns and rows from one or more existing tables, you use a query in the <code>CREATE TABLE</code> statement.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  CREATE TABLE table-name AS
-    SELECT ...;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span> <span class="k">AS</span>
+    <span class="k">SELECT</span> <span class="p">...;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Following the <code>CREATE TABLE</code> keywords and the name of the table that you want to create, you specify the keyword <code>AS</code>. Next, you specify a query that returns the columns and rows that you want from the existing table or tables. In addition to the required <code>SELECT</code> and <code>FROM</code> clauses, you can use any of the optional clauses from a <code>SELECT</code> statement. The entire statement contains only one semicolon, which appears at the end.</p>
@@ -1782,28 +1795,28 @@
 10
 11
 12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-create table work.birthmonths as
-select Employee_Name as Name format=$25.,
-       City format=$25.,
-       month(Birth_Date) as BirthMonth
-          &#39;Birth Month&#39; format=3.
-   from orion.employee_payroll as p,
-        orion.employee_addresses as a
-   where p.Employee_ID=a.Employee_ID
-         and Employee_Term_Date is missing
-   order by BirthMonth,City,Name;
-describe table orion.birthmonths;
-quit;
-</pre></div>
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="k">work</span><span class="p">.</span><span class="n">birthmonths</span> <span class="k">as</span>
+<span class="k">select</span> <span class="n">Employee_Name</span> <span class="k">as</span> <span class="n">Name</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">25</span><span class="p">.,</span>
+       <span class="n">City</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">25</span><span class="p">.,</span>
+       <span class="k">month</span><span class="p">(</span><span class="n">Birth_Date</span><span class="p">)</span> <span class="k">as</span> <span class="n">BirthMonth</span>
+          <span class="s1">&#39;Birth Month&#39;</span> <span class="n">format</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span> <span class="k">as</span> <span class="n">p</span><span class="p">,</span>
+        <span class="n">orion</span><span class="p">.</span><span class="n">employee_addresses</span> <span class="k">as</span> <span class="n">a</span>
+   <span class="k">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="n">Employee_ID</span>
+         <span class="k">and</span> <span class="n">Employee_Term_Date</span> <span class="k">is</span> <span class="n">missing</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="n">BirthMonth</span><span class="p">,</span><span class="n">City</span><span class="p">,</span><span class="n">Name</span><span class="p">;</span>
+<span class="k">describe</span> <span class="k">table</span> <span class="n">orion</span><span class="p">.</span><span class="n">birthmonths</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="using-the-like-clause-in-the-create-table-statement">Using the <code>LIKE</code> Clause in the <code>CREATE TABLE</code> Statement<a class="headerlink" href="#using-the-like-clause-in-the-create-table-statement" title="Permanent link">Link</a></h3>
 <p>To create a table by copying columns and rows from one or more existing tables, you use a query in the <code>CREATE TABLE</code> statement.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CREATE TABLE table-name-2
-      LIKE table-name-1;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="mi">2</span>
+      <span class="k">LIKE</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Following the keywords <code>CREATE TABLE</code>, you specify the name of the table that you want to create (<code>table-name-2</code>). Table names must follow the rules for SAS names. The <code>LIKE</code> clause specifies the name of the existing table whose column structure you want to copy </p>
@@ -1811,21 +1824,21 @@ quit;
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-create table work.new_sales_staff
-   like orion.sales;
-quit;
-</pre></div>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="k">work</span><span class="p">.</span><span class="n">new_sales_staff</span>
+   <span class="k">like</span> <span class="n">orion</span><span class="p">.</span><span class="n">sales</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="defining-columns-in-the-create-table-statement">Defining Columns in the <code>CREATE TABLE</code> Statement<a class="headerlink" href="#defining-columns-in-the-create-table-statement" title="Permanent link">Link</a></h3>
 <p>To create a new, empty table that is not based on an existing table, you can define the columns in the <code>CREATE TABLE</code> statement.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CREATE TABLE table-name
-      (column-name type &lt;column-modifier(s)&gt;
-      &lt;,...column-name type &lt;column-modifier(s)&gt;&gt;);
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span>
+      <span class="p">(</span><span class="k">column</span><span class="o">-</span><span class="n">name</span> <span class="k">type</span> <span class="o">&lt;</span><span class="k">column</span><span class="o">-</span><span class="n">modifier</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="p">,...</span><span class="k">column</span><span class="o">-</span><span class="n">name</span> <span class="k">type</span> <span class="o">&lt;</span><span class="k">column</span><span class="o">-</span><span class="n">modifier</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="p">);</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Following the <code>CREATE TABLE</code> keywords, you specify the name of the table you are creating. Then you specify a set of column definitions that, together, make up the table definition. The column definitions are separated by commas. The entire table definition is enclosed in parentheses.</p>
@@ -1843,14 +1856,14 @@ quit;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-create table discounts
-   (Product_ID num format=z12.,
-    Start_Date date,
-    End_Date date,
-    Discount num format=percent.);
-quit;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">discounts</span>
+   <span class="p">(</span><span class="n">Product_ID</span> <span class="n">num</span> <span class="n">format</span><span class="o">=</span><span class="n">z12</span><span class="p">.,</span>
+    <span class="n">Start_Date</span> <span class="nb">date</span><span class="p">,</span>
+    <span class="n">End_Date</span> <span class="nb">date</span><span class="p">,</span>
+    <span class="n">Discount</span> <span class="n">num</span> <span class="n">format</span><span class="o">=</span><span class="n">percent</span><span class="p">.);</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="methods-of-adding-data-to-a-table-with-the-insert-statement">Methods of Adding Data to a Table with the <code>INSERT</code> Statement<a class="headerlink" href="#methods-of-adding-data-to-a-table-with-the-insert-statement" title="Permanent link">Link</a></h2>
@@ -1866,10 +1879,10 @@ quit;
 <p>In the <code>INSERT</code> statement, the <code>SET</code> clause specifies or alters the values of one or more columns in a row.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  INSERT INTO table-name
-        SET column-name=value,
-               column-name=value ... ;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span>
+        <span class="k">SET</span> <span class="k">column</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+               <span class="k">column</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">value</span> <span class="p">...</span> <span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <code>SET</code> clause contains one or more pairs of column names and values. In each pair, the column name and the value are joined by an equal sign. Multiple pairs are separated by commas. The column names can be listed in any order. Character values are enclosed in quotation marks.</p>
@@ -1885,28 +1898,28 @@ quit;
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-insert into discounts
-   set Product_ID=230100300006,
-       Start_Date=&#39;01MAR2013&#39;d,
-       End_Date=&#39;15MAR2013&#39;d,
-       Discount=.33
-   set Product_ID=230100600018,
-       Start_Date=&#39;16MAR2013&#39;d,
-       End_Date=&#39;31MAR2013&#39;d,
-       Discount=.15;
-quit;
-</pre></div>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">discounts</span>
+   <span class="k">set</span> <span class="n">Product_ID</span><span class="o">=</span><span class="mi">230100300006</span><span class="p">,</span>
+       <span class="n">Start_Date</span><span class="o">=</span><span class="s1">&#39;01MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+       <span class="n">End_Date</span><span class="o">=</span><span class="s1">&#39;15MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+       <span class="n">Discount</span><span class="o">=</span><span class="p">.</span><span class="mi">33</span>
+   <span class="k">set</span> <span class="n">Product_ID</span><span class="o">=</span><span class="mi">230100600018</span><span class="p">,</span>
+       <span class="n">Start_Date</span><span class="o">=</span><span class="s1">&#39;16MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+       <span class="n">End_Date</span><span class="o">=</span><span class="s1">&#39;31MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+       <span class="n">Discount</span><span class="o">=</span><span class="p">.</span><span class="mi">15</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="specifying-an-ordered-list-of-values-in-the-values-clause">Specifying an Ordered List of Values in the <code>VALUES</code> Clause<a class="headerlink" href="#specifying-an-ordered-list-of-values-in-the-values-clause" title="Permanent link">Link</a></h3>
 <p>In the <code>INSERT</code> statement, the <code>VALUES</code> clause adds values to the columns in a single row.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INSERT INTO table-name
-         &lt;(column&lt;, ... column&gt;)&gt;
-        VALUES(value,value, ... );
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span>
+         <span class="o">&lt;</span><span class="p">(</span><span class="k">column</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">column</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
+        <span class="k">VALUES</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">value</span><span class="p">,</span> <span class="p">...</span> <span class="p">);</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>After the <code>VALUES</code> keyword, you specify a list of one or more values in parentheses. Within the list, you separate multiple values with commas. To add more than one row of values to the table, you specify additional <code>VALUES</code> clauses. Multiple <code>VALUES</code> clauses are not separated by commas.</p>
@@ -1918,14 +1931,14 @@ quit;
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-insert into discounts
-   values (230100300006,&#39;01MAR2013&#39;d,
-          &#39;15MAR2013&#39;d,.33)
-   values (230100600018,&#39;16MAR2013&#39;d,
-          &#39;31MAR2013&#39;d,.15);
-quit;
-</pre></div>
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">discounts</span>
+   <span class="k">values</span> <span class="p">(</span><span class="mi">230100300006</span><span class="p">,</span><span class="s1">&#39;01MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+          <span class="s1">&#39;15MAR2013&#39;</span><span class="n">d</span><span class="p">,.</span><span class="mi">33</span><span class="p">)</span>
+   <span class="k">values</span> <span class="p">(</span><span class="mi">230100600018</span><span class="p">,</span><span class="s1">&#39;16MAR2013&#39;</span><span class="n">d</span><span class="p">,</span>
+          <span class="s1">&#39;31MAR2013&#39;</span><span class="n">d</span><span class="p">,.</span><span class="mi">15</span><span class="p">);</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="specifying-a-query-in-the-insert-statement">Specifying a Query in the <code>INSERT</code> Statement<a class="headerlink" href="#specifying-a-query-in-the-insert-statement" title="Permanent link">Link</a></h3>
@@ -1934,12 +1947,12 @@ quit;
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INSERT INTO table-name
-         &lt;(column&lt;, ... column&gt;)&gt;
-        SELECT column(s)
-               FROM table-name
-               &lt;additional clauses&gt;;
-</pre></div>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span>
+         <span class="o">&lt;</span><span class="p">(</span><span class="k">column</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="k">column</span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span>
+        <span class="k">SELECT</span> <span class="k">column</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+               <span class="k">FROM</span> <span class="k">table</span><span class="o">-</span><span class="n">name</span>
+               <span class="o">&lt;</span><span class="n">additional</span> <span class="n">clauses</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>By default, the <code>SELECT</code> clause specifies values for every column in the target table, and the order of the values must match the order of the columns in the target table. If you want to specify values in a different order or for only a subset of the columns in the target table, you can add an optional column list in parentheses after the table name in the <code>INSERT</code> statement. The order of the columns in the column list is independent of the order of the columns in the table.</p>
@@ -1952,16 +1965,16 @@ quit;
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-insert into discounts
-   (Product_ID,Discount,Start_Date,End_Date)
-   select distinct Product_ID,.35,
-          &#39;01MAR2013&#39;d,&#39;31MAR2013&#39;d
-      from orion.product_dim
-      where Supplier_Name contains
-           &#39;Pro Sportswear Inc&#39;;
-quit;
-</pre></div>
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">discounts</span>
+   <span class="p">(</span><span class="n">Product_ID</span><span class="p">,</span><span class="n">Discount</span><span class="p">,</span><span class="n">Start_Date</span><span class="p">,</span><span class="n">End_Date</span><span class="p">)</span>
+   <span class="k">select</span> <span class="k">distinct</span> <span class="n">Product_ID</span><span class="p">,.</span><span class="mi">35</span><span class="p">,</span>
+          <span class="s1">&#39;01MAR2013&#39;</span><span class="n">d</span><span class="p">,</span><span class="s1">&#39;31MAR2013&#39;</span><span class="n">d</span>
+      <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">product_dim</span>
+      <span class="k">where</span> <span class="n">Supplier_Name</span> <span class="k">contains</span>
+           <span class="s1">&#39;Pro Sportswear Inc&#39;</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="creating-proc-sql-views">Creating <code>PROC SQL</code> Views<a class="headerlink" href="#creating-proc-sql-views" title="Permanent link">Link</a></h2>
@@ -1991,9 +2004,9 @@ quit;
 <h3 id="understanding-proc-sql-views_1">Understanding <code>PROC SQL</code> Views<a class="headerlink" href="#understanding-proc-sql-views_1" title="Permanent link">Link</a></h3>
 <p>To create a <code>PROC SQL</code> view, you use the <code>CREATE VIEW</code> statement. Unlike the <code>CREATE TABLE</code> statement, the <code>CREATE VIEW</code> statement has only one form, which contains a query. When you submit the <code>CREATE VIEW</code> statement, the query's report output is suppressed.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CREATE VIEW proc-sql-view AS
-SELECT ... ;
-</pre></div>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">proc</span><span class="o">-</span><span class="k">sql</span><span class="o">-</span><span class="k">view</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="p">...</span> <span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>Following the <code>CREATE VIEW</code> keywords, you specify the name of the <code>PROC SQL</code> view that you want to create. View names must follow the rules for SAS names. You cannot specify the name of an existing table or view in the same SAS library. Then you specify the keyword <code>AS</code>, followed by the query clauses.</p>
@@ -2031,47 +2044,47 @@ SELECT ... ;
 27
 28
 29
-30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>proc sql;
-create view orion.tom_zhou as
-   select Employee_Name as Name format=$25.0,
-          Job_Title as Title format=$15.0,
-          Salary &#39;Annual Salary&#39; format=comma10.2,
-          int((today()-Employee_Hire_Date)/365.25)
-             as YOS &#39;Years of Service&#39;
-      from employee_addresses as a,
-           employee_payroll as p,
-           employee_organization as o
-      where a.Employee_ID=p.Employee_ID and
-            o.Employee_ID=p.Employee_ID and
-            Manager_ID=120102;
-describe view orion.tom_zhou;
-quit;
+30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">view</span> <span class="n">orion</span><span class="p">.</span><span class="n">tom_zhou</span> <span class="k">as</span>
+   <span class="k">select</span> <span class="n">Employee_Name</span> <span class="k">as</span> <span class="n">Name</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">25</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+          <span class="n">Job_Title</span> <span class="k">as</span> <span class="n">Title</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">15</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+          <span class="n">Salary</span> <span class="s1">&#39;Annual Salary&#39;</span> <span class="n">format</span><span class="o">=</span><span class="n">comma10</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span>
+          <span class="nb">int</span><span class="p">((</span><span class="n">today</span><span class="p">()</span><span class="o">-</span><span class="n">Employee_Hire_Date</span><span class="p">)</span><span class="o">/</span><span class="mi">365</span><span class="p">.</span><span class="mi">25</span><span class="p">)</span>
+             <span class="k">as</span> <span class="n">YOS</span> <span class="s1">&#39;Years of Service&#39;</span>
+      <span class="k">from</span> <span class="n">employee_addresses</span> <span class="k">as</span> <span class="n">a</span><span class="p">,</span>
+           <span class="n">employee_payroll</span> <span class="k">as</span> <span class="n">p</span><span class="p">,</span>
+           <span class="n">employee_organization</span> <span class="k">as</span> <span class="n">o</span>
+      <span class="k">where</span> <span class="n">a</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span> <span class="k">and</span>
+            <span class="n">o</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span> <span class="k">and</span>
+            <span class="n">Manager_ID</span><span class="o">=</span><span class="mi">120102</span><span class="p">;</span>
+<span class="k">describe</span> <span class="k">view</span> <span class="n">orion</span><span class="p">.</span><span class="n">tom_zhou</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
 
-proc sql;
-title &quot;Tom Zhou&#39;s Direct Reports&quot;;
-title2 &quot;By Title and Years of Service&quot;;
-select *
-   from orion.tom_zhou
-   order by Title desc, YOS desc;
-quit;
+<span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="n">title</span> <span class="ss">&quot;Tom Zhou&#39;s Direct Reports&quot;</span><span class="p">;</span>
+<span class="n">title2</span> <span class="ss">&quot;By Title and Years of Service&quot;</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span>
+   <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">tom_zhou</span>
+   <span class="k">order</span> <span class="k">by</span> <span class="n">Title</span> <span class="k">desc</span><span class="p">,</span> <span class="n">YOS</span> <span class="k">desc</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
 
-title &quot;Tom Zhou&#39;s Group - Salary Statistics&quot;;
-proc means data=orion.tom_zhou min mean max;
-   var salary;
-   class title;
-run;
-title;
-</pre></div>
+<span class="n">title</span> <span class="ss">&quot;Tom Zhou&#39;s Group - Salary Statistics&quot;</span><span class="p">;</span>
+<span class="n">proc</span> <span class="n">means</span> <span class="k">data</span><span class="o">=</span><span class="n">orion</span><span class="p">.</span><span class="n">tom_zhou</span> <span class="k">min</span> <span class="n">mean</span> <span class="k">max</span><span class="p">;</span>
+   <span class="n">var</span> <span class="n">salary</span><span class="p">;</span>
+   <span class="k">class</span> <span class="n">title</span><span class="p">;</span>
+<span class="n">run</span><span class="p">;</span>
+<span class="n">title</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3 id="making-a-view-portable-with-the-using-clause">Making a View Portable with the <code>USING</code> Clause<a class="headerlink" href="#making-a-view-portable-with-the-using-clause" title="Permanent link">Link</a></h3>
 <p>By using a SAS enhancement to the ANSI standard for SQL, you can create a usable view that is stored in a different physical location than its source tables. In other words, you can make the view portable. To create a portable view, you add a <code>USING</code> clause to the query in the <code>CREATE VIEW</code> statement.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CREATE VIEW proc-sql-view AS
-  SELECT ...
-        USING LIBNAME-clause&lt;, ... LIBNAME-clause&gt;;
-</pre></div>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">proc</span><span class="o">-</span><span class="k">sql</span><span class="o">-</span><span class="k">view</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="p">...</span>
+        <span class="k">USING</span> <span class="n">LIBNAME</span><span class="o">-</span><span class="n">clause</span><span class="o">&lt;</span><span class="p">,</span> <span class="p">...</span> <span class="n">LIBNAME</span><span class="o">-</span><span class="n">clause</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>In the <code>USING</code> clause, an embedded <code>LIBNAME</code> statement enables you to assign a libref that is used for the source tables. In the syntax, this is called a <code>LIBNAME</code> clause because it appears within another clause. To reference source tables in multiple libraries, you can specify multiple <code>LIBNAME</code> clauses. In the <code>FROM</code> clause, you use two-level names for the tables.</p>
@@ -2093,28 +2106,29 @@ title;
 13
 14
 15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>libname orion &#39;file-path-1&#39;;
-proc sql;
-create view orion.tom_zhou as
-   select Employee_Name as Name format=$25.0,
-          Job_Title as Title format=$15.0,
-          Salary &quot;Annual Salary&quot; format=comma10.2,
-          int((today()-Employee_Hire_Date)/365.25)
-             as YOS &#39;Years of Service&#39;
-      from orion.employee_addresses as a,
-           orion.employee_payroll as p,
-           orion.employee_organization as o
-      where a.Employee_ID=p.Employee_ID and
-            o.Employee_ID=p.Employee_ID and
-            Manager_ID=120102
-      using libname orion &#39;file-path-2&#39;;
-quit;
-</pre></div>
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">libname</span> <span class="n">orion</span> <span class="s1">&#39;file-path-1&#39;</span><span class="p">;</span>
+<span class="n">proc</span> <span class="k">sql</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">view</span> <span class="n">orion</span><span class="p">.</span><span class="n">tom_zhou</span> <span class="k">as</span>
+   <span class="k">select</span> <span class="n">Employee_Name</span> <span class="k">as</span> <span class="n">Name</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">25</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+          <span class="n">Job_Title</span> <span class="k">as</span> <span class="n">Title</span> <span class="n">format</span><span class="o">=</span><span class="err">$</span><span class="mi">15</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+          <span class="n">Salary</span> <span class="ss">&quot;Annual Salary&quot;</span> <span class="n">format</span><span class="o">=</span><span class="n">comma10</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span>
+          <span class="nb">int</span><span class="p">((</span><span class="n">today</span><span class="p">()</span><span class="o">-</span><span class="n">Employee_Hire_Date</span><span class="p">)</span><span class="o">/</span><span class="mi">365</span><span class="p">.</span><span class="mi">25</span><span class="p">)</span>
+             <span class="k">as</span> <span class="n">YOS</span> <span class="s1">&#39;Years of Service&#39;</span>
+      <span class="k">from</span> <span class="n">orion</span><span class="p">.</span><span class="n">employee_addresses</span> <span class="k">as</span> <span class="n">a</span><span class="p">,</span>
+           <span class="n">orion</span><span class="p">.</span><span class="n">employee_payroll</span> <span class="k">as</span> <span class="n">p</span><span class="p">,</span>
+           <span class="n">orion</span><span class="p">.</span><span class="n">employee_organization</span> <span class="k">as</span> <span class="n">o</span>
+      <span class="k">where</span> <span class="n">a</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span> <span class="k">and</span>
+            <span class="n">o</span><span class="p">.</span><span class="n">Employee_ID</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">Employee_ID</span> <span class="k">and</span>
+            <span class="n">Manager_ID</span><span class="o">=</span><span class="mi">120102</span>
+      <span class="k">using</span> <span class="n">libname</span> <span class="n">orion</span> <span class="s1">&#39;file-path-2&#39;</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
 
 <p><em>Note:</em> <code>file-path-1</code> is the location in which you want to create the view, and <code>file-path-2</code> is the physical location in which the source data is stored. You must have write access to the location specified as <code>file-path-1</code>.</p>
                 
                   
+                
                 
               
               
@@ -2170,13 +2184,11 @@ quit;
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2184,18 +2196,15 @@ quit;
       
     </div>
     
-      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="../../js/mathjaxhelper.js"></script>
-      
-    
-    
       
     
   </body>
