@@ -883,6 +883,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../other-analysis/adjusted-pvalue/" title="Adjusted P-value" class="md-nav__link">
+      Adjusted P-value
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../other-analysis/effect-size/" title="Effect Size" class="md-nav__link">
       Effect Size
     </a>
@@ -969,6 +981,18 @@
   <li class="md-nav__item">
     <a href="../../other-analysis/clustering/" title="Clustering" class="md-nav__link">
       Clustering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other-analysis/randomization/" title="Randomization" class="md-nav__link">
+      Randomization
     </a>
   </li>
 
@@ -1168,10 +1192,70 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      SAS vs R
+      SAS CDI
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
+        SAS CDI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SAS-CDI/intro-CDISC/" title="What is CDISC?" class="md-nav__link">
+      What is CDISC?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SAS-CDI/sdtm/" title="SDTM Basics" class="md-nav__link">
+      SDTM Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SAS-CDI/intro-CDI/" title="Introduction to CDI" class="md-nav__link">
+      Introduction to CDI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      SAS vs R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
         SAS vs R
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1299,42 +1383,6 @@
     <a href="../../sasvi/" title="SAS Visual Analytics" class="md-nav__link">
       SAS Visual Analytics
     </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
-    
-    <label class="md-nav__link" for="nav-12">
-      CDISC
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
-        CDISC
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../CDISC/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -1507,6 +1555,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../medical/sensitivity-specificity/" title="Sensitivity and Specificity" class="md-nav__link">
+      Sensitivity and Specificity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../medical/recist/" title="RECIST v1.1" class="md-nav__link">
       RECIST v1.1
     </a>
@@ -1521,6 +1581,18 @@
   <li class="md-nav__item">
     <a href="../../medical/irecist/" title="iRECIST" class="md-nav__link">
       iRECIST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../medical/mutations/" title="Mutations" class="md-nav__link">
+      Mutations
     </a>
   </li>
 
@@ -1764,13 +1836,12 @@
 <p><code>PROC SQL</code> supports two types of joins:</p>
 <ul>
 <li><strong>Inner joins:</strong> return a result table that contains all of the matching rows in the input tables. The result of an inner join does not include any nonmatching rows.</li>
-<li><strong>Outer joins:</strong> return a result table that contains all of the matching rows in the input tables and some or all of the nonmatching rows from one or both tables.</li>
+<li><strong>Outer joins:</strong> return a result table that contains all of the matching rows in the input tables and some or all of the nonmatching rows from one or both tables.<ul>
+<li>A <em>full outer join</em> returns all of the matching rows plus the nonmatching rows from both tables.</li>
+<li>A <em>left outer join</em> returns all of the matching rows plus the nonmatching rows from the first, or left, table.</li>
+<li>A <em>right outer join</em> returns all of the matching rows plus the nonmatching rows from the second, or right, table.</li>
 </ul>
-<p>There are three types of outer joins:</p>
-<ul>
-<li>A full outer join returns all of the matching rows plus the nonmatching rows from both tables.</li>
-<li>A left outer join returns all of the matching rows plus the nonmatching rows from the first, or left, table.</li>
-<li>A right outer join returns all of the matching rows plus the nonmatching rows from the second, or right, table.</li>
+</li>
 </ul>
 <p>When performing an SQL join, the SQL processor first generates all possible combinations of all of the rows in the tables to be combined. An intermediate result table that contains all possible combinations of rows in the input tables is called a <strong>Cartesian product</strong>. From the rows in the Cartesian product, the SQL processor can then select the appropriate rows for an inner join or an outer join.</p>
 <h3 id="cartesian-product">Cartesian product<a class="headerlink" href="#cartesian-product" title="Permanent link">Link</a></h3>
@@ -1805,6 +1876,21 @@
 </td></tr></table>
 
 <p>In the <code>FROM</code> clause, the table names are separated by the <code>CROSS JOIN</code> keywords instead of by a comma.</p>
+<p><strong>Example:</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">PROC</span> <span class="k">SQL</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">dataset</span><span class="o">-</span><span class="k">new</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="o">*</span>
+  <span class="k">FROM</span> <span class="n">dataset1</span> <span class="k">CROSS</span> <span class="k">JOIN</span> <span class="n">dataset2</span>
+  <span class="k">WHERE</span> <span class="n">dataset1</span><span class="p">.</span><span class="n">reference</span><span class="o">-</span><span class="k">variable</span><span class="o">=</span><span class="n">dataset2</span><span class="p">.</span><span class="n">reference</span><span class="o">-</span><span class="k">variable</span><span class="p">;</span>
+<span class="n">quit</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+
 <h2 id="working-with-inner-joins">Working with Inner Joins<a class="headerlink" href="#working-with-inner-joins" title="Permanent link">Link</a></h2>
 <h3 id="performing-an-inner-join">Performing an Inner Join<a class="headerlink" href="#performing-an-inner-join" title="Permanent link">Link</a></h3>
 <p>Inner join returns only the matching rows. Another way to say this is that an inner join returns rows that meet certain join conditions that you specify.</p>
